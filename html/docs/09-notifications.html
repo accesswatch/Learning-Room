@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
+  <title>Notifications - GitHub Learning Room</title>
+  <link rel="stylesheet" href="./styles/github-markdown.css">
+  <link rel="stylesheet" href="./styles/highlight.css">
+  <link rel="stylesheet" href="./styles/custom.css">
+  <style>
+    .markdown-body {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+    @media (max-width: 767px) {
+      .markdown-body {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <a href="./index.html">Home</a>
+  </nav>
+  <main class="markdown-body">
+    <h1>Notifications</h1>
+<h2>Managing Your GitHub Notification Inbox</h2>
+<blockquote>
+<p>GitHub notifications are how GitHub tells you when something needs your attention. This guide teaches you to keep the inbox useful — not overwhelming — using only your keyboard and screen reader.</p>
+</blockquote>
+<hr>
+<h2>What Generates a Notification?</h2>
+<p>GitHub sends you a notification when:</p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>You are notified if...</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Someone @mentions you</td>
+<td><code>@your-username</code> appears in any issue, PR, or discussion</td>
+</tr>
+<tr>
+<td>A PR is assigned to you for review</td>
+<td>You are added as a reviewer</td>
+</tr>
+<tr>
+<td>An issue or PR is assigned to you</td>
+<td>You are assigned</td>
+</tr>
+<tr>
+<td>There is activity on a thread you are subscribed to</td>
+<td>You commented, were mentioned, or chose to subscribe</td>
+</tr>
+<tr>
+<td>A CI check fails on your PR</td>
+<td>Actions sends a failure notification</td>
+</tr>
+<tr>
+<td>A release is published</td>
+<td>You are watching the repo for all activity</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Notification Subscription Levels</h2>
+<p>For each repository, you choose how many notifications to receive:</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>What You Receive</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Participating and @mentions</strong></td>
+<td>Only notifications where you participated (commented, were assigned, @mentioned). Recommended for most repos.</td>
+</tr>
+<tr>
+<td><strong>All Activity</strong></td>
+<td>Every issue opened, every comment, every PR. Only use this for your own repos or very active contribution.</td>
+</tr>
+<tr>
+<td><strong>Ignore</strong></td>
+<td>No notifications from this repo at all.</td>
+</tr>
+<tr>
+<td><strong>Custom</strong></td>
+<td>Fine-grained control: issues only, PRs only, releases, etc.</td>
+</tr>
+</tbody></table>
+<h3>Changing your watch settings for a repo</h3>
+<p>From the repository page:</p>
+<pre><code>Step 1: Find the &quot;Watch&quot; button in the repo header
+  • B to navigate buttons → find &quot;Watch [N]&quot; or &quot;Unwatch&quot; button
+  • Or use D → repository header landmark
+Step 2: Enter to open the dropdown
+Step 3: ↑/↓ to navigate the subscription options
+Step 4: Enter to select your preferred level
+Step 5: The button label updates to confirm your choice
+</code></pre>
+<p><strong>Recommended setting for most repos:</strong> &quot;Participating and @mentions only&quot; — you stay in the loop on what involves you without noise.</p>
+<hr>
+<h2>The Notifications Inbox</h2>
+<p>Navigate to your inbox: <code>https://github.com/notifications</code> or press <code>G</code> then <code>N</code> (GitHub keyboard shortcut).</p>
+<p><strong>Screen reader note:</strong> The <code>G N</code> shortcut uses two sequential key presses (not simultaneous). Press <code>G</code>, release it, then press <code>N</code>. This works in Browse Mode.</p>
+<h3>Page structure</h3>
+<pre><code>[Filters sidebar on left]     ← Unread / Participating / @Mentions / Assigned / etc.
+[Notification list in center] ← Each notification is a row
+[Detail pane on right]        ← Preview the notification (can be disabled)
+</code></pre>
+<h3>Navigating the notification list</h3>
+<p><strong>NVDA/JAWS:</strong></p>
+<pre><code>Step 1: D → main content landmark
+Step 2: H to navigate group headings (Today / Yesterday / This week / Older)
+Step 3: Tab through individual notifications
+   — each notification row announces: repo name, issue/PR title, event type, time
+Step 4: Enter to open the notification (goes to the issue/PR page)
+</code></pre>
+<p><strong>VoiceOver:</strong></p>
+<pre><code>Step 1: VO+U → Main → navigate to notification list
+Step 2: VO+Down to move through notifications
+Step 3: VO+Space to open a notification
+</code></pre>
+<h3>What is announced per notification</h3>
+<blockquote>
+<p>&quot;microsoft/vscode — Add keyboard shortcut for accessible view — @username mentioned you — 2 hours ago&quot;</p>
+</blockquote>
+<p>Components: <strong>repo/org</strong> | <strong>thread title</strong> | <strong>event type</strong> | <strong>timestamp</strong></p>
+<hr>
+<h2>Inbox Actions — Keyboard Shortcuts</h2>
+<p>These shortcuts work when a notification is focused in the inbox:</p>
+<table>
+<thead>
+<tr>
+<th>Shortcut</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>E</code></td>
+<td>Mark as done (archive from inbox)</td>
+</tr>
+<tr>
+<td><code>Shift+I</code></td>
+<td>Mark as read without opening</td>
+</tr>
+<tr>
+<td><code>Shift+U</code></td>
+<td>Mark as unread</td>
+</tr>
+<tr>
+<td><code>M</code></td>
+<td>Mute thread (no more notifications from this thread)</td>
+</tr>
+<tr>
+<td><code>S</code></td>
+<td>Save for later</td>
+</tr>
+<tr>
+<td><code>Enter</code></td>
+<td>Open the notification</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>Screen reader note:</strong> These are GitHub&#39;s own keyboard shortcuts. In Browse Mode, some of these letters are also navigation keys. To use these shortcuts reliably, make sure focus is on the notification row (tab to it) rather than in browse/reading mode.</p>
+</blockquote>
+<hr>
+<h2>Filtering the Inbox</h2>
+<p>The left sidebar has quick filters. Use <code>Tab</code> or <code>K</code> to navigate to them:</p>
+<table>
+<thead>
+<tr>
+<th>Filter</th>
+<th>Shows</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Inbox</td>
+<td>All active notifications (default)</td>
+</tr>
+<tr>
+<td>Unread</td>
+<td>Only unread notifications</td>
+</tr>
+<tr>
+<td>Saved</td>
+<td>Notifications you saved with <code>S</code></td>
+</tr>
+<tr>
+<td>Done</td>
+<td>Archived (marked done) notifications</td>
+</tr>
+<tr>
+<td>@Mentioned</td>
+<td>Only threads where you were directly @mentioned</td>
+</tr>
+<tr>
+<td>Assigned</td>
+<td>Issues and PRs assigned to you</td>
+</tr>
+<tr>
+<td>Review requested</td>
+<td>PRs where your review is requested</td>
+</tr>
+<tr>
+<td>Participating</td>
+<td>All threads you participated in</td>
+</tr>
+</tbody></table>
+<h3>Filtering by repository or organization</h3>
+<p>At the top of the notification list there is a filter/search field:</p>
+<pre><code>Step 1: F or E to reach the filter input
+Step 2: Focus Mode → type repo name or org name
+Step 3: Results filter in real time
+Step 4: Esc to clear the filter
+</code></pre>
+<hr>
+<h2>Managing Notifications at Scale</h2>
+<h3>The &quot;mark all as done&quot; workflow</h3>
+<p>After a busy day or coming back from time away, clear your inbox methodically:</p>
+<ol>
+<li>Open Notifications inbox</li>
+<li>Tab to &quot;Mark all as done&quot; button → Enter (clears everything at once)</li>
+<li>Then use the &quot;Done&quot; filter to retrieve any you want to revisit</li>
+</ol>
+<h3>Muting a noisy thread</h3>
+<p>If a thread generates too many notifications (a heated discussion, a large PR with many comments):</p>
+<pre><code>Step 1: Open the notification
+Step 2: On the issue/PR page, find the &quot;Unsubscribe&quot; link
+  • Navigate sidebar → &quot;Notifications&quot; section
+  • Press Unsubscribe button
+Step 3: Or from the inbox: focus the notification → press M
+</code></pre>
+<h3>Dealing with @mentions you didn&#39;t expect</h3>
+<p>If you were @mentioned in an unfamiliar thread:</p>
+<ol>
+<li>Read the thread for context before responding</li>
+<li>If it seems like a mistake, a simple &quot;I don&#39;t think this mention was meant for me — feel free to remove it!&quot; is enough</li>
+<li>Unsubscribe after reading if you don&#39;t need to stay in the loop</li>
+</ol>
+<hr>
+<h2>Notification Settings — Per Your Account</h2>
+<p>Global notification preferences are at <code>https://github.com/settings/notifications</code>.</p>
+<p>Key settings to review:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Recommendation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Email delivery</strong></td>
+<td>Choose Participating and @mentions unless you prefer email for everything</td>
+</tr>
+<tr>
+<td><strong>GitHub Mobile</strong></td>
+<td>Enable only if you use GitHub Mobile — mobile notifications can duplicate desktop ones</td>
+</tr>
+<tr>
+<td><strong>Watching</strong></td>
+<td>&quot;Participating and @mentions&quot; unless you are an active maintainer</td>
+</tr>
+<tr>
+<td><strong>Organization alerts</strong></td>
+<td>Enable for orgs where you have responsibilities</td>
+</tr>
+</tbody></table>
+<p>Navigate this settings page:</p>
+<pre><code>H → navigate to each settings section heading
+F or E → navigate form fields within each section
+Tab → move between options within a form group
+</code></pre>
+<hr>
+<h2>Starring vs. Watching — What Is the Difference?</h2>
+<p>New contributors often confuse these two. They appear next to each other on every repository page and do completely different things.</p>
+<h3>Starring a Repository</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>What it does</strong></td>
+<td>Bookmarks the repository to your Stars list at <code>github.com/stars</code></td>
+</tr>
+<tr>
+<td><strong>Notifications</strong></td>
+<td><strong>None.</strong> Starring never sends you any notifications</td>
+</tr>
+<tr>
+<td><strong>Visibility</strong></td>
+<td>Public — anyone can see what you&#39;ve starred on your profile</td>
+</tr>
+<tr>
+<td><strong>Use case</strong></td>
+<td>&quot;I want to save this for later&quot; or &quot;I want to show appreciation&quot;</td>
+</tr>
+<tr>
+<td><strong>Keyboard path</strong></td>
+<td>On any repo page: <code>B</code> to navigate buttons → find &quot;Star&quot; button → Enter</td>
+</tr>
+</tbody></table>
+<p>Starring is GitHub&#39;s equivalent of a bookmark + public endorsement. The star count on a repository is a community signal of popularity. Many maintainers watch their star count as a rough measure of interest.</p>
+<h3>Watching a Repository</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>What it does</strong></td>
+<td>Subscribes you to notifications from that repository</td>
+</tr>
+<tr>
+<td><strong>Notifications</strong></td>
+<td>Sends notifications based on your chosen level (see below)</td>
+</tr>
+<tr>
+<td><strong>Visibility</strong></td>
+<td>Private — other users cannot see what you&#39;re watching</td>
+</tr>
+<tr>
+<td><strong>Use case</strong></td>
+<td>&quot;I need to stay informed about activity in this repo&quot;</td>
+</tr>
+<tr>
+<td><strong>Keyboard path</strong></td>
+<td><code>B</code> → find &quot;Watch&quot; button → Enter → ↑/↓ to pick a level → Enter</td>
+</tr>
+</tbody></table>
+<h3>Common Mistake: Accidental Watching</h3>
+<p>When you comment on an issue or PR in a repository, GitHub <strong>automatically subscribes you</strong> to that thread — but not the whole repository. However, if you once click &quot;Watch&quot; on a busy repository (say, a popular open source project), you will receive a notification for every issue opened and every comment posted — potentially hundreds per day.</p>
+<p><strong>How to silence a repository you accidentally over-subscribed to:</strong></p>
+<pre><code>Step 1: Navigate to the repository
+Step 2: B → Find &quot;Unwatch&quot; button → Enter
+Step 3: Select &quot;Participating and @mentions&quot;
+Step 4: Enter to confirm
+</code></pre>
+<p>This immediately reduces notifications from that repository to only threads you personally participated in.</p>
+<h3>Recommended Watching Strategy for This Workshop</h3>
+<table>
+<thead>
+<tr>
+<th>Repository</th>
+<th>Recommended Watch Level</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>accesswatch/agent-forge</code></td>
+<td><strong>Participating and @mentions</strong> — you contribute there, you only need to hear back when someone replies to you</td>
+</tr>
+<tr>
+<td>Your own fork</td>
+<td><strong>All Activity</strong> — this is your fork; know everything</td>
+</tr>
+<tr>
+<td>Very busy popular repos</td>
+<td><strong>Ignore</strong> or <strong>Participating</strong> — do not watch for All Activity</td>
+</tr>
+<tr>
+<td>Repos you&#39;re evaluating</td>
+<td><strong>Star only</strong> — save without subscribing</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Screen Reader Tips for the Notification Inbox</h2>
+<h3>NVDA</h3>
+<ul>
+<li>The notification list is complex — use <code>Tab</code> to navigate individual rows rather than Browse Mode arrow keys</li>
+<li>After marking notifications done (press <code>E</code>), the next notification automatically receives focus</li>
+<li>Use <code>NVDA+F7</code> → Links to get a filtered list of notification titles to scan quickly</li>
+</ul>
+<h3>JAWS</h3>
+<ul>
+<li>Like NVDA, use <code>Tab</code> for row navigation in the inbox</li>
+<li><code>Insert+F6</code> (Headings list) to jump between date group headings (Today, This Week, etc.)</li>
+<li>The inbox updates in real time — JAWS will announce new notifications as they arrive</li>
+</ul>
+<h3>VoiceOver</h3>
+<ul>
+<li>Use <code>VO+U</code> → Landmarks → Main to reach the notification list quickly</li>
+<li><code>VO+Space</code> to activate a row, <code>VO+Escape</code> to return to the list</li>
+<li>With Quick Nav on, <code>H</code> navigates the date group headings</li>
+</ul>
+<hr>
+<h2>The GitHub Mobile App — A Reference Note</h2>
+<p>GitHub has an iOS and Android app that supports push notifications. While the app itself is not covered as a primary tool in this workshop, it is worth knowing:</p>
+<ul>
+<li>Push notifications can alert you to review requests even when you&#39;re away from your computer</li>
+<li>The mobile app does work with iOS VoiceOver and Android TalkBack</li>
+<li>For primary contribution work, the desktop browser experience remains more fully featured</li>
+</ul>
+<hr>
+<blockquote>
+<h3>🔥 Day 2 Amplifier — Agent Forge: <code>@daily-briefing</code></h3>
+<p><strong>Manage your notification inbox manually before using any agent.</strong> The signal-versus-noise judgment you develop — what to act on, what to watch, what to mute — is the same judgment the agent applies when prioritizing its output. Without that judgment, you cannot evaluate whether the agent&#39;s prioritization is correct or whether it surfaced the things that actually matter to you.</p>
+<p>Once you have mastered manual notification management:</p>
+<ul>
+<li><strong>In VS Code</strong> — <code>@daily-briefing morning briefing</code> delivers the same information as your notification inbox, organized by priority and actionability, with the ability to reply, close, and merge from inside Copilot Chat</li>
+<li><strong>In your repo</strong> — Fork <code>agent-forge</code> and every collaborator on your project can run <code>@daily-briefing</code> against your shared repository; the whole team stays aligned from a single command with no inbox required</li>
+<li><strong>In the cloud</strong> — GitHub Agentic Workflows can run on a schedule and post a team digest to a designated issue each morning, surfacing what needs attention before anyone opens their notifications</li>
+</ul>
+<p><em>Your notification discipline today becomes the standard the agent enforces at scale tomorrow.</em></p>
+</blockquote>
+<hr>
+<p><em>Next: <a href="../DAY2_AGENDA.md">Day 2 Agenda</a></em>
+<em>Back: <a href="08-labels-milestones-projects.md">Labels, Milestones, and Projects</a></em>
+<em>Related: <a href="07-culture-etiquette.md">Culture &amp; Etiquette</a> | <a href="04-working-with-issues.md">Working with Issues</a></em></p>
+
+  </main>
+  <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
+    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com">Back to GitHub</a></p>
+  </footer>
+</body>
+</html>

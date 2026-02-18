@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
+  <title>Troubleshooting Guide - GitHub Learning Room</title>
+  <link rel="stylesheet" href="./styles/github-markdown.css">
+  <link rel="stylesheet" href="./styles/highlight.css">
+  <link rel="stylesheet" href="./styles/custom.css">
+  <style>
+    .markdown-body {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+    @media (max-width: 767px) {
+      .markdown-body {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <a href="./index.html">Home</a>
+  </nav>
+  <main class="markdown-body">
+    <h1>Troubleshooting Guide</h1>
+<h2>Common Issues &amp; Solutions</h2>
+<hr>
+<h2>Table of Contents</h2>
+<ul>
+<li><a href="#setup--environment">Setup &amp; Environment</a></li>
+<li><a href="#git--github">Git &amp; GitHub</a></li>
+<li><a href="#vs-code--copilot">VS Code &amp; Copilot</a></li>
+<li><a href="#templates--yaml">Templates &amp; YAML</a></li>
+<li><a href="#screen-readers--accessibility">Screen Readers &amp; Accessibility</a></li>
+<li><a href="#exercises--agents">Exercises &amp; Agents</a></li>
+</ul>
+<hr>
+<h2>Setup &amp; Environment</h2>
+<h3>Problem: Git is not installed</h3>
+<p><strong>Symptoms:</strong> Terminal shows <code>git: command not found</code> or similar error.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li><strong>Windows:</strong> Download and install Git for Windows from <a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></li>
+<li><strong>macOS:</strong> Run <code>brew install git</code> (if Homebrew installed) or download from <a href="https://git-scm.com/download/mac">https://git-scm.com/download/mac</a></li>
+<li><strong>Linux:</strong> Run <code>sudo apt install git</code> (Ubuntu/Debian) or equivalent for your distribution</li>
+<li>Verify: Open terminal and type <code>git --version</code></li>
+</ol>
+<p><strong>Prevention:</strong> Complete the Pre-Workshop Setup (docs/00-pre-workshop-setup.md) before starting.</p>
+<hr>
+<h3>Problem: GitHub CLI (<code>gh</code> command) not found</h3>
+<p><strong>Symptoms:</strong> When trying <code>gh issue list</code>, terminal shows command not found.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Install GitHub CLI from <a href="https://cli.github.com/">https://cli.github.com/</a></li>
+<li>Authenticate: Run <code>gh auth login</code> and follow prompts</li>
+<li>Verify: Type <code>gh --version</code></li>
+</ol>
+<p><strong>Note:</strong> GitHub CLI is optional but recommended for faster issue/PR workflows.</p>
+<hr>
+<h3>Problem: No GitHub account or fork of the repository</h3>
+<p><strong>Symptoms:</strong> Can&#39;t clone, can&#39;t push, can&#39;t make pull requests.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Create GitHub account at <a href="https://github.com">https://github.com</a> (free tier is fine)</li>
+<li>Navigate to the original repository</li>
+<li>Click <strong>Fork</strong> button (top-right) → Creates your copy</li>
+<li>Clone YOUR fork: <code>git clone https://github.com/YOUR-USERNAME/REPO-NAME.git</code></li>
+<li>Verify fork worked: <code>git remote -v</code> (should show your fork&#39;s URL)</li>
+</ol>
+<hr>
+<h2>Git &amp; GitHub</h2>
+<h3>Problem: Authentication fails when pushing</h3>
+<p><strong>Symptoms:</strong> &quot;Permission denied&quot; or &quot;Could not read from repository&quot; when running <code>git push</code>.</p>
+<p><strong>Causes &amp; Solutions:</strong></p>
+<p><strong>Option A: SSH Key not set up</strong></p>
+<ol>
+<li>Generate key: <code>ssh-keygen -t ed25519 -C &quot;your_email@example.com&quot;</code></li>
+<li>Accept defaults (press Enter 3 times)</li>
+<li>Add to GitHub: <a href="https://github.com/settings/ssh/new">https://github.com/settings/ssh/new</a></li>
+<li>Copy key: <ul>
+<li><strong>Windows/Linux:</strong> <code>cat ~/.ssh/id_ed25519.pub</code> (then copy output)</li>
+<li><strong>macOS:</strong> <code>cat ~/.ssh/id_ed25519.pub | pbcopy</code> (auto-copies)</li>
+</ul>
+</li>
+<li>Paste into GitHub SSH key field</li>
+<li>Test: <code>ssh -T git@github.com</code> (should say &quot;Hi [USERNAME]!&quot;)</li>
+</ol>
+<p><strong>Option B: Using HTTPS instead of SSH</strong></p>
+<ol>
+<li>On GitHub, generate Personal Access Token: <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a></li>
+<li>Use token as password when prompted after <code>git push</code></li>
+<li>Or use credential storage: <code>git config --global credential.helper store</code> (saves token securely)</li>
+</ol>
+<p><strong>Option C: Wrong remote URL</strong></p>
+<ol>
+<li>Check: <code>git remote -v</code></li>
+<li>Should show <code>origin https://github.com/YOUR-USER/REPO.git</code></li>
+<li>Fix if needed: <code>git remote set-url origin https://github.com/YOUR-USER/REPO.git</code></li>
+</ol>
+<hr>
+<h3>Problem: &quot;Fatal: not a git repository&quot;</h3>
+<p><strong>Symptoms:</strong> Running git commands gives this error.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Verify you&#39;re in the correct folder: <code>pwd</code> (or <code>Get-Location</code> on Windows)</li>
+<li>Check for <code>.git</code> folder: <code>ls -la</code> (or <code>Get-ChildItem -Force</code> on Windows)</li>
+<li>If not a git repo, you cloned incorrectly. Delete and re-clone:<pre><code class="language-bash">cd ..                                    # Go up one level
+rm -rf REPO-NAME                         # Delete folder
+git clone https://github.com/YOUR-USER/REPO.git
+cd REPO-NAME
+</code></pre>
+</li>
+</ol>
+<hr>
+<h3>Problem: Large merge conflict (don&#39;t know how to resolve)</h3>
+<p><strong>Symptoms:</strong> File shows <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD ... ======= ... &gt;&gt;&gt;&gt;&gt;&gt;&gt; branch-name</code> markers.</p>
+<p><strong>Solution - Simple Approach:</strong></p>
+<ol>
+<li><strong>Keep YOUR changes:</strong> <code>git checkout --ours [filename]</code></li>
+<li><strong>Keep THEIR changes:</strong> <code>git checkout --theirs [filename]</code></li>
+<li><strong>Abort everything:</strong> <code>git merge --abort</code> (restarts)</li>
+</ol>
+<p><strong>Solution - Manual Merge (Advanced):</strong></p>
+<ol>
+<li>Open file in VS Code</li>
+<li>Look for conflict markers (&lt;&lt;&lt;&lt; ==== &gt;&gt;&gt;&gt;)</li>
+<li>Delete the version you don&#39;t want</li>
+<li>Remove all conflict markers</li>
+<li>Run: <code>git add [filename]</code> → <code>git commit -m &quot;Resolved merge conflict&quot;</code></li>
+</ol>
+<p><strong>Prevention:</strong> Pull upstream regularly (<code>git pull upstream main</code>) to avoid stale branches.</p>
+<hr>
+<h2>VS Code &amp; Copilot</h2>
+<h3>Problem: Copilot Chat panel won&#39;t open</h3>
+<p><strong>Symptoms:</strong> Copilot Chat icon is grayed out, or Ctrl+Shift+I does nothing.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Verify GitHub Copilot extension installed:<ul>
+<li>Open Extensions: <code>Ctrl+Shift+X</code></li>
+<li>Search &quot;GitHub Copilot&quot;</li>
+<li>Should show installed with green checkmark</li>
+</ul>
+</li>
+<li>If not installed, click <strong>Install</strong></li>
+<li>If installed but grayed out, reload window:<ul>
+<li><code>Ctrl+Shift+P</code> → type &quot;Reload Window&quot; → press Enter</li>
+</ul>
+</li>
+<li>Check GitHub Copilot subscription (requires paid plan or organization access)</li>
+<li>Verify you&#39;re signed in to GitHub: Click GitHub icon (bottom-left) → Sign in if needed</li>
+</ol>
+<hr>
+<h3>Problem: Chat says &quot;You don&#39;t have access to Copilot&quot;</h3>
+<p><strong>Symptoms:</strong> Even though you have Copilot installed.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>You may need a GitHub Copilot subscription (paid, ~$10/month)</li>
+<li>Or organization membership with Copilot enabled</li>
+<li>Check your account at <a href="https://github.com/copilot/signup">https://github.com/copilot/signup</a></li>
+<li>If not active, upgrade or contact organization admin</li>
+<li><strong>For students/educators:</strong> Free access <a href="https://education.github.com/">https://education.github.com/</a></li>
+</ol>
+<hr>
+<h3>Problem: VS Code extensions not loading</h3>
+<p><strong>Symptoms:</strong> Copilot or other extensions crash or don&#39;t appear.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Open command palette: <code>Ctrl+Shift+P</code></li>
+<li>Type &quot;Developer: Reload Window&quot; → press Enter</li>
+<li>If still broken, check extensions folder for conflicts:<ul>
+<li>Close VS Code</li>
+<li>Delete <code>.vscode/extensions</code> folder (be careful!)</li>
+<li>Reopen VS Code (extensions will reinstall)</li>
+</ul>
+</li>
+<li>Check for extension errors: View → Output → Select &quot;Copilot&quot; from dropdown</li>
+</ol>
+<hr>
+<h3>Problem: File saved but git status still shows as modified</h3>
+<p><strong>Symptoms:</strong> You saved your work but <code>git status</code> says file is changed.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Verify file is actually saved: Look for white dot on tab (indicates unsaved)</li>
+<li>Manually save: <code>Ctrl+S</code></li>
+<li>Check line endings (Windows vs. Unix):<ul>
+<li>Bottom-right corner shows &quot;LF&quot; or &quot;CRLF&quot;</li>
+<li>GitHub expects &quot;LF&quot; for most files</li>
+<li>Click and change if necessary</li>
+</ul>
+</li>
+<li>Try: <code>git add [filename]</code> → see if it stages properly</li>
+</ol>
+<hr>
+<h2>Templates &amp; YAML</h2>
+<h3>Problem: &quot;Template not showing in GitHub issue creation&quot;</h3>
+<p><strong>Symptoms:</strong> Click &quot;New Issue&quot; but your custom template doesn&#39;t appear, or shows as &quot;Blank&quot; only.</p>
+<p><strong>Causes &amp; Solutions:</strong></p>
+<p><strong>Issue A: File in wrong location</strong></p>
+<ul>
+<li>Should be: <code>.github/ISSUE_TEMPLATE/your-template.yml</code></li>
+<li>Not: <code>.github/ISSUE_TEMPLATE/your-template.md</code> (wrong extension)</li>
+<li>Not: <code>.github/your-template.yml</code> (wrong folder)</li>
+</ul>
+<p><strong>Issue B: YAML syntax errors</strong></p>
+<ul>
+<li>Check for:<ul>
+<li>Missing colons after field names: <code>name:</code> not <code>name</code></li>
+<li>Inconsistent indentation (use spaces, not tabs)</li>
+<li>Mismatched quotes: <code>&quot;</code> or <code>&#39;</code> must close properly</li>
+</ul>
+</li>
+<li>Validate at: <a href="https://www.yamllint.com/">https://www.yamllint.com/</a> (paste YAML, should show ✓)</li>
+</ul>
+<p><strong>Issue C: Not committed to main branch</strong></p>
+<ul>
+<li>These files must be on GitHub&#39;s <code>main</code> or <code>master</code> branch</li>
+<li>Check: <code>git branch</code> (should be on main) then <code>git push origin main</code></li>
+<li>Verify on GitHub web: browse to <code>.github/ISSUE_TEMPLATE/</code> folder</li>
+</ul>
+<p><strong>Issue D: Browser cache</strong></p>
+<ul>
+<li>Try: Hard refresh (Ctrl+Shift+R or Cmd+Shift+R)</li>
+<li>Or: Windows → Private browsing / Incognito → try again</li>
+</ul>
+<hr>
+<h3>Problem: &quot;Required field&quot; validation not working</h3>
+<p><strong>Symptoms:</strong> You marked a field as <code>required: true</code> but it lets users submit without filling it.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Verify correct YAML nesting:<pre><code class="language-yaml">- type: input
+  id: version
+  attributes:
+    label: Version
+  validations:              # Part of TYPE, not attributes
+    required: true          # Correct level
+</code></pre>
+</li>
+<li>Not like this (too nested):<pre><code class="language-yaml">- type: input
+  attributes:
+    label: Version
+    validations:            # WRONG: Inside attributes
+      required: true
+</code></pre>
+</li>
+<li>Commit changes: <code>git push origin main</code></li>
+<li>Clear cache on GitHub (Ctrl+Shift+R)</li>
+</ol>
+<hr>
+<h3>Problem: Markdown inside template not rendering</h3>
+<p><strong>Symptoms:</strong> Markdown text appears as raw asterisks/hashes instead of formatted.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Verify correct field type:<ul>
+<li>Markdown/instructions: Use <code>type: markdown</code></li>
+<li>Form field labels: Use <code>type: input</code> or <code>type: textarea</code></li>
+</ul>
+</li>
+<li>For markdown fields, correct structure:<pre><code class="language-yaml">- type: markdown
+  attributes:
+    value: |
+      ## Your heading here
+      **Bold text** and *italic*
+</code></pre>
+</li>
+<li>The <code>|</code> after <code>value:</code> is required (tells YAML it&#39;s multi-line)</li>
+</ol>
+<hr>
+<h2>Screen Readers &amp; Accessibility</h2>
+<h3>Problem: NVDA not reading GitHub page</h3>
+<p><strong>Symptoms:</strong> Screen reader launches but nothing happens or misses content.</p>
+<p><strong>Solution - NVDA:</strong></p>
+<ol>
+<li>Verify browse mode vs. focus mode:<ul>
+<li>Launch NVDA → press <code>NVDA+Space</code> to toggle</li>
+<li>For web, use browse mode (default)</li>
+</ul>
+</li>
+<li>Use navigation keys:<ul>
+<li><code>H</code> for headings</li>
+<li><code>D</code> for landmarks (navigation, main content)</li>
+<li><code>B</code> for buttons, <code>L</code> for lists</li>
+</ul>
+</li>
+<li>Report issues: If specific page not accessible, note URL and file issue with WCAG compliance feedback</li>
+</ol>
+<hr>
+<h3>Problem: JAWS not announcing form fields correctly</h3>
+<p><strong>Symptoms:</strong> JAWS skips form inputs or doesn&#39;t say &quot;required&quot;.</p>
+<p><strong>Solution - JAWS:</strong></p>
+<ol>
+<li>Enable &quot;Forms Mode&quot; automatically: <code>Insert+Z</code> (toggle)</li>
+<li>Use <code>Insert+F6</code> to list all form controls on page</li>
+<li>Check field labels: If not announced, check GitHub template YAML has <code>label:</code> attribute</li>
+<li>Report: If needed, create accessibility issue with JAWS version and page URL</li>
+</ol>
+<hr>
+<h3>Problem: VoiceOver on macOS not reading GitHub elements</h3>
+<p><strong>Symptoms:</strong> VoiceOver skips buttons, links, or form fields.</p>
+<p><strong>Solution - VoiceOver:</strong></p>
+<ol>
+<li>Open rotor: <code>VO+U</code> (Mac Voice Over key is usually Caps Lock or Control+Option)</li>
+<li>Navigate by category (Headings, Links, Form Controls)</li>
+<li>If rotor doesn&#39;t show content, may be a GitHub rendering issue</li>
+<li>Test in Safari (often more compatible with VoiceOver)</li>
+<li>Report: Screenshot or recording with page URL to accessibility team</li>
+</ol>
+<hr>
+<h3>Problem: &quot;Form fields not marked as required for screen readers&quot;</h3>
+<p><strong>Symptoms:</strong> Screen reader doesn&#39;t announce which fields are required.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>In template YAML, use this structure:<pre><code class="language-yaml">- type: input
+  id: field_id
+  attributes:
+    label: Field Label
+  validations:
+    required: true
+</code></pre>
+</li>
+<li>GitHub automatically announces <code>required</code> if set correctly</li>
+<li>Test by:<ul>
+<li>Opening template issue form</li>
+<li>Pressing <code>Tab</code> to move to field</li>
+<li>Screen reader should say: &quot;[label] required&quot; or &quot;[label] edit text, required&quot;</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2>Exercises &amp; Agents</h2>
+<h3>Problem: &quot;Can&#39;t find the @template-builder agent&quot;</h3>
+<p><strong>Symptoms:</strong> In VS Code Copilot Chat, <code>@template-builder</code> doesn&#39;t appear or autocomplete.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Verify you have GitHub Copilot (not just free tier)</li>
+<li>Ensure <code>.github/agents/template-builder.agent.md</code> exists in repository</li>
+<li>Reload VS Code: <code>Ctrl+Shift+P</code> → &quot;Reload Window&quot;</li>
+<li>Open Copilot Chat: <code>Ctrl+Shift+I</code></li>
+<li>Type <code>@</code> and scroll to see available agents</li>
+<li>If still missing:<ul>
+<li>Check file is on <code>main</code> branch: <code>git log --oneline .github/agents/template-builder.agent.md</code></li>
+<li>Force push if needed: <code>git push origin main</code></li>
+<li>Wait 2-3 minutes for agent index to refresh</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3>Problem: Agent gives generic advice instead of using the agent&#39;s persona</h3>
+<p><strong>Symptoms:</strong> You ask @template-builder something but it responds like @issue-tracker.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Reload Copilot: Close chat panel and reopen (<code>Ctrl+Shift+I</code>)</li>
+<li>Verify you @ mentioned agent correctly: <code>@template-builder</code> (exact name)</li>
+<li>Use agent-specific slash commands: Type <code>/</code> in chat to see available commands</li>
+<li>If agent still generic:<ul>
+<li>Check <code>.agent.md</code> file syntax (must be valid YAML frontmatter)</li>
+<li>Verify system prompt describes the agent&#39;s role clearly</li>
+<li>Test with simpler question first</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3>Problem: &quot;Exercise tells me to look for a file but I can&#39;t find it&quot;</h3>
+<p><strong>Symptoms:</strong> Exercise says &quot;open the template file&quot; but you don&#39;t see it.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Verify repository structure:<pre><code class="language-bash">ls -R .github/               # Show all .github files
+</code></pre>
+</li>
+<li>Check exercise prerequisite: Is the file supposed to already exist?</li>
+<li>For templates: Should be in <code>.github/ISSUE_TEMPLATE/</code> folder</li>
+<li>For agents: Should be in <code>.github/agents/</code> folder</li>
+<li>Not there? You may have skipped a step:<ul>
+<li>Exercise A (create template) must be done before Exercise B (clone &amp; edit)</li>
+<li>Ask facilitator or re-read prerequisites</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3>Problem: Exercise tests pass locally but fail on GitHub</h3>
+<p><strong>Symptoms:</strong> Works when you test file locally, but GitHub Actions or PR validation fails.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Check YAML file exactly matches requirements:<ul>
+<li>Case-sensitive filenames: <code>accessibility-bug.yml</code> not <code>accessibility-BUG.yml</code></li>
+<li>Line endings: GitHub expects Unix (LF), not Windows (CRLF)</li>
+<li>Fix in VS Code: Bottom-right, click &quot;CRLF&quot; → change to &quot;LF&quot;</li>
+</ul>
+</li>
+<li>Verify GitHub sees the new file:<ul>
+<li>Push: <code>git add . → git commit -m &quot;...&quot; → git push origin [branch]</code></li>
+<li>Check on GitHub.com (refresh browser)</li>
+</ul>
+</li>
+<li>Check Actions/Validation output:<ul>
+<li>On your PR, scroll to &quot;Checks&quot; section</li>
+<li>Click failing check → see error message → fix file and push again</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3>Problem: &quot;Can&#39;t understand what the exercise is asking me to do&quot;</h3>
+<p><strong>Symptoms:</strong> Exercise steps are confusing or contradict each other.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Read prerequisites first: Each exercise lists what&#39;s required</li>
+<li>Look for examples: Most exercises link to reference files or screenshots</li>
+<li>Follow the &quot;What you should see&quot; checkpoint:<ul>
+<li>After each step, there&#39;s a description of what success looks like</li>
+<li>If your screen doesn&#39;t match, re-read the step</li>
+</ul>
+</li>
+<li>Try the backup steps: Most exercises have &quot;If you&#39;re stuck...&quot; section</li>
+<li>Ask for help:<ul>
+<li>Post in discussion forum or issue tracker</li>
+<li>Provide screenshot of what you&#39;re seeing</li>
+<li>Include exercise number and step number</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3>Problem: Copilot Chat freezes or stops responding</h3>
+<p><strong>Symptoms:</strong> Chat input becomes unresponsive, may show loading indefinitely.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Wait 10-15 seconds (Chat API may be slow)</li>
+<li>Reload Copilot:<ul>
+<li>Close chat panel (X button)</li>
+<li>Open again: <code>Ctrl+Shift+I</code></li>
+</ul>
+</li>
+<li>Check internet connection (Copilot requires active network)</li>
+<li>If terminal shows error, check output:<ul>
+<li>View → Output → Select &quot;GitHub Copilot&quot; from dropdown</li>
+<li>Look for error messages</li>
+</ul>
+</li>
+<li>Restart VS Code if needed:<ul>
+<li>Save work first</li>
+<li>Close completely</li>
+<li>Reopen</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2>Getting Help</h2>
+<p>If you can&#39;t find your issue here:</p>
+<ol>
+<li><strong>Check the Glossary:</strong> <code>docs/appendix-a-glossary.md</code> (term definitions)</li>
+<li><strong>Accessibility Cheatsheet:</strong> <code>docs/appendix-b-screen-reader-cheatsheet.md</code> (screen reader commands)</li>
+<li><strong>Resources:</strong> <code>RESOURCES.md</code> (links, documentation, support)</li>
+<li><strong>Issues:</strong> Open an issue on GitHub with:<ul>
+<li>What you tried</li>
+<li>What happened</li>
+<li>What you expected</li>
+<li>Screenshot if possible</li>
+<li>Screen reader used (if accessibility issue)</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p><em>Last updated: February 2026 | Maintained by GitHub Learning Community</em></p>
+
+  </main>
+  <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
+    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com">Back to GitHub</a></p>
+  </footer>
+</body>
+</html>

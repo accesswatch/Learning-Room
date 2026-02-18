@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
+  <title>explain-code.prompt - GitHub Learning Room</title>
+  <link rel="stylesheet" href="./styles/github-markdown.css">
+  <link rel="stylesheet" href="./styles/highlight.css">
+  <link rel="stylesheet" href="./styles/custom.css">
+  <style>
+    .markdown-body {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+    @media (max-width: 767px) {
+      .markdown-body {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <a href="./index.html">Home</a>
+  </nav>
+  <main class="markdown-body">
+    <hr>
+<h2>name: explain-code
+description: &quot;Understand specific lines, functions, or blocks of code in a PR diff -- plain language explanations with context&quot;
+agent: pr-review
+tools:
+  - github/*
+  - fetch
+  - readFile
+  - codebase
+  - ask_questions</h2>
+<p>Explain specific code in a pull request -- what it does, why it&#39;s there, and what changed.</p>
+<p>${input:target:What to explain -- e.g. &#39;lines 40-60 in auth.ts on PR #15&#39;, &#39;the handleAuth function in PR owner/repo#15&#39;, &#39;what changed in utils.ts&#39;}</p>
+<h2>Steps</h2>
+<ol>
+<li><p>Parse the target to extract: PR reference, file path (if specified), and line numbers or function name. Accept L-number format (e.g., &quot;L42&quot;, &quot;L40-L60&quot;) from annotated diff output.</p>
+</li>
+<li><p>Fetch the PR metadata and changed files list.</p>
+</li>
+<li><p><strong>If lines are specified</strong> (e.g., &quot;L40-L60 in auth.ts&quot; or &quot;lines 40-60 in auth.ts&quot;):</p>
+<ul>
+<li>Fetch the full file from the PR&#39;s head branch using #tool:mcp_github_github_get_file_contents.</li>
+<li>Also fetch the base branch version to show what changed.</li>
+<li>Display the target lines with <strong>line numbers on every line</strong> and ~10 lines of surrounding context.</li>
+<li>If lines were modified, show synchronized before/after with line numbers.</li>
+<li>Explain:<ul>
+<li><strong>What this code does</strong> -- line-by-line plain language breakdown</li>
+<li><strong>Why it&#39;s here</strong> -- purpose inferred from PR description, commit messages, and surrounding code</li>
+<li><strong>What changed</strong> -- before vs. after with specific L-number references</li>
+<li><strong>Side effects</strong> -- downstream impacts, state mutations, API calls, error paths</li>
+<li><strong>Potential concerns</strong> -- edge cases, missing error handling, performance implications</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>If a function/class is specified</strong> (e.g., &quot;the handleAuth function&quot;):</p>
+<ul>
+<li>Search the PR diff for the function definition.</li>
+<li>Show the full function with <strong>line numbers on every line</strong>.</li>
+<li>Explain at a higher level: purpose, parameters, return values, error handling, and how it fits the broader change.</li>
+<li>If modified, show the annotated diff for changed sections within the function.</li>
+</ul>
+</li>
+<li><p><strong>If a file is specified without lines</strong> (e.g., &quot;what changed in utils.ts&quot;):</p>
+<ul>
+<li>Show the annotated diff with dual line numbers (old/new) for that file.</li>
+<li>Include the Change Map (hunk summary table with line ranges and intent).</li>
+<li>Explain each change hunk: what was added/removed/modified and why.</li>
+</ul>
+</li>
+<li><p>After explaining, offer using L-number format:
+<em>&quot;Want me to comment on L42, suggest a fix for L41-L44, or see the full Change Map?&quot;</em></p>
+</li>
+</ol>
+
+  </main>
+  <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
+    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com">Back to GitHub</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
+  <title>team-dashboard.prompt - GitHub Learning Room</title>
+  <link rel="stylesheet" href="./styles/github-markdown.css">
+  <link rel="stylesheet" href="./styles/highlight.css">
+  <link rel="stylesheet" href="./styles/custom.css">
+  <style>
+    .markdown-body {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+    @media (max-width: 767px) {
+      .markdown-body {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <a href="./index.html">Home</a>
+  </nav>
+  <main class="markdown-body">
+    <hr>
+<h2>name: team-dashboard
+description: &quot;Team-wide activity dashboard across all repos -- review load, contribution metrics, bottlenecks, and load balancing insights in dual markdown + HTML format&quot;
+agent: analytics
+tools:
+  - github/*
+  - createFile
+  - createDirectory
+  - ask_questions</h2>
+<p>Generate a team activity dashboard covering all team members&#39; contributions, review load, and bottlenecks. Save both markdown and HTML versions.</p>
+<p>${input:scope:Optional: repo name, &#39;org:orgname&#39;, date range (e.g. &#39;last 2 weeks&#39;, &#39;this month&#39;), or specific focus (e.g. &#39;review load&#39;, &#39;bottlenecks&#39;)}</p>
+<h2>Steps</h2>
+<ol>
+<li>Get the authenticated user with #tool:mcp_github_github_get_me.</li>
+<li>Load repo scope and team roster from <code>.github/agents/preferences.md</code> if available. By default, aggregate across ALL accessible repos.</li>
+<li>For each team member (or infer from repo contributors), collect:<ul>
+<li>PRs authored and merged in the period</li>
+<li>PRs reviewed in the period</li>
+<li>Issues opened and closed</li>
+<li>Pending review requests (current backlog)</li>
+</ul>
+</li>
+<li>Calculate:<ul>
+<li><strong>Review turnaround</strong> -- average time from review request to first review per person</li>
+<li><strong>Load balance</strong> -- who has the most pending reviews vs. who has capacity</li>
+<li><strong>Contribution distribution</strong> -- PRs and issues per person</li>
+<li><strong>Bottlenecks</strong> -- PRs waiting &gt;7 days, overloaded reviewers, unresponded issues</li>
+</ul>
+</li>
+<li>Generate BOTH dashboard documents:<ul>
+<li>Markdown: <code>.github/reviews/analytics/team-dashboard-{date}.md</code></li>
+<li>HTML: <code>.github/reviews/analytics/team-dashboard-{date}.html</code>
+With sections: Health Overview, Review Load Distribution, Contribution Activity, Bottlenecks, Recommendations</li>
+</ul>
+</li>
+<li>Present a compact summary in chat with top insights and recommendations.</li>
+</ol>
+<p>After the dashboard: <em>&quot;Want to dig into any bottlenecks? Or see individual stats for a team member?&quot;</em></p>
+
+  </main>
+  <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
+    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com">Back to GitHub</a></p>
+  </footer>
+</body>
+</html>

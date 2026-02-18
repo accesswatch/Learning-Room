@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
+  <title>Working with Issues - GitHub Learning Room</title>
+  <link rel="stylesheet" href="./styles/github-markdown.css">
+  <link rel="stylesheet" href="./styles/highlight.css">
+  <link rel="stylesheet" href="./styles/custom.css">
+  <style>
+    .markdown-body {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+    @media (max-width: 767px) {
+      .markdown-body {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <a href="./index.html">Home</a>
+  </nav>
+  <main class="markdown-body">
+    <h1>Working with Issues</h1>
+<h2>Filing, Managing, and Participating in GitHub Issues</h2>
+<blockquote>
+<p>Issues are where open source collaboration begins. This guide covers everything from finding the right issue to file a perfect bug report — all with your keyboard and screen reader.</p>
+</blockquote>
+<hr>
+<h2>What Is a GitHub Issue?</h2>
+<p>An issue is a discussion thread attached to a repository. Issues are used for:</p>
+<ul>
+<li><strong>Bug reports</strong> — &quot;This feature doesn&#39;t work when using a screen reader&quot;</li>
+<li><strong>Feature requests</strong> — &quot;It would help if the submit button had an accessible label&quot;</li>
+<li><strong>Questions</strong> — &quot;How do I configure X for Y use case?&quot;</li>
+<li><strong>Tasks</strong> — &quot;Update the README with screen reader instructions&quot;</li>
+<li><strong>Accessibility reports</strong> — &quot;The infinite scroll carousel is not keyboard accessible&quot;</li>
+</ul>
+<p>Every issue has a <strong>number</strong> (<code>#42</code>), a <strong>state</strong> (Open or Closed), a <strong>title</strong>, a <strong>description</strong>, and a <strong>comment thread</strong>. Issues are public by default on public repositories.</p>
+<hr>
+<h2>Navigating to the Issues List</h2>
+<h3>From a repository page</h3>
+<ol>
+<li>Press <code>D</code> to navigate to the &quot;Repository navigation&quot; landmark</li>
+<li>Press <code>K</code> or <code>Tab</code> to move through the tab links</li>
+<li>Find &quot;Issues&quot; — it will be announced with the count: &quot;Issues, 14 open&quot;</li>
+<li>Press <code>Enter</code> to open the Issues tab</li>
+</ol>
+<h3>Direct URL</h3>
+<p>Navigate directly: <code>https://github.com/[owner]/[repo]/issues</code></p>
+<hr>
+<h2>The Issues List Page</h2>
+<h3>Page structure</h3>
+<pre><code>[Search / filter bar]          ← controls at the top
+[State tabs: Open | Closed]    ← filter by status
+[Issues list]                  ← each issue is one list item or heading
+[Pagination]                   ← at the bottom
+</code></pre>
+<h3>How to read the issue list</h3>
+<p><strong>NVDA/JAWS:</strong></p>
+<ol>
+<li>Press <code>D</code> to reach the &quot;Search Results List&quot; landmark</li>
+<li>Press <code>3</code> (h3) to navigate by issue titles — each issue title is an h3 link</li>
+<li>Press <code>I</code> to move between list items if you want more detail per item</li>
+<li>Press <code>Enter</code> on a title to open that issue</li>
+</ol>
+<p><strong>VoiceOver:</strong></p>
+<ol>
+<li><code>VO+U</code> → Landmarks → navigate to &quot;Search Results List&quot;</li>
+<li><code>VO+Down</code> to read through items</li>
+<li><code>H</code> (with Quick Nav on) or <code>VO+U</code> → Headings to jump by issue title</li>
+</ol>
+<h3>What is announced per issue</h3>
+<p>When you navigate to an issue in the list, your screen reader will announce (in some order):</p>
+<ul>
+<li>Issue title (as a link)</li>
+<li>Issue number (<code>#42</code>)</li>
+<li>Labels (e.g., &quot;bug, good first issue&quot;)</li>
+<li>Who opened it and when (&quot;Opened 3 days ago by username&quot;)</li>
+<li>Number of comments (&quot;5 comments&quot;)</li>
+</ul>
+<hr>
+<h2>Filtering and Searching Issues</h2>
+<p>Filtering lets you narrow the list to find the right issue quickly.</p>
+<h3>Using the search/filter bar</h3>
+<ol>
+<li>Press <code>F</code> or <code>E</code> to jump to the filter input field (or navigate from the landmark)</li>
+<li>Switch to Focus Mode (<code>NVDA+Space</code> / <code>Insert+Z</code>) if not already in it</li>
+<li>Type your filter or search query</li>
+<li>Press <code>Enter</code> to apply</li>
+</ol>
+<p><strong>Useful filter queries:</strong></p>
+<pre><code>is:open label:&quot;good first issue&quot;    ← great for finding your first contribution
+is:open label:accessibility         ← accessibility-related open issues
+is:open assignee:@me                ← issues assigned to you
+is:open no:assignee                 ← unassigned issues
+is:open author:@me                  ← issues you filed
+mentions:@me                        ← where you were @mentioned
+is:open is:unread                   ← issues with unread activity
+</code></pre>
+<h3>Using the filter buttons</h3>
+<p>Above the issue list, there are filter buttons for Labels, Milestones, Assignees, etc.</p>
+<pre><code>Step 1: Press B to navigate to the filter buttons
+Step 2: Find &quot;Label&quot; or &quot;Milestone&quot; button
+Step 3: Press Enter to open the dropdown
+Step 4: Use ↑/↓ to navigate options
+Step 5: Press Enter to select a label to filter by
+Step 6: Press Escape to close the dropdown (filter applies immediately)
+</code></pre>
+<h3>Open vs Closed filter</h3>
+<p>The two state links &quot;Open&quot; and &quot;Closed&quot; appear near the top of the issue list. Press <code>K</code> to navigate links until you find them, or look for them as buttons near the search bar.</p>
+<hr>
+<h2>Reading an Issue</h2>
+<h3>Landing on an issue page</h3>
+<p>When you open an issue, the page structure is:</p>
+<pre><code>[Issue title — h1]
+[Open/Closed status badge]
+[Author, timestamp, comment count]
+─────────────────────────────────
+[Issue description — Main content]   ← the original post
+[Labels, Assignees sidebar — h3s]
+─────────────────────────────────
+[Activity / Timeline]                ← comments and events
+  [First comment — h3]
+  [Second comment — h3]
+  ...
+─────────────────────────────────
+[Add a comment — landmark]
+[Comment text area]
+[Close issue / Submit button]
+</code></pre>
+<h3>Quick navigation</h3>
+<table>
+<thead>
+<tr>
+<th>Goal</th>
+<th>Key</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Hear the issue title</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>Jump to description</td>
+<td><code>2</code> (first h2 is usually &quot;Description&quot;)</td>
+</tr>
+<tr>
+<td>Jump to Activity section</td>
+<td><code>2</code> → next h2 is &quot;Activity&quot;</td>
+</tr>
+<tr>
+<td>Navigate between comments</td>
+<td><code>3</code> (each comment is h3)</td>
+</tr>
+<tr>
+<td>Jump to comment box</td>
+<td><code>D</code> → &quot;Add a comment&quot; landmark</td>
+</tr>
+<tr>
+<td>Navigate labels/assignees</td>
+<td><code>H</code> or <code>3</code> in the sidebar</td>
+</tr>
+</tbody></table>
+<h3>Reading the issue description</h3>
+<ol>
+<li>Press <code>2</code> to reach the &quot;Description&quot; heading</li>
+<li>Press <code>↓</code> to read the content line by line, OR</li>
+<li>Use <code>NVDA+↓</code> (NVDA say all) to have it read continuously</li>
+</ol>
+<p>Markdown in the description renders as proper HTML: headings become actual headings, bullets become lists, code blocks become <code>&lt;code&gt;</code> elements with the text &quot;code block&quot; announced.</p>
+<h3>Reading comments and activity</h3>
+<p>Each comment in the thread is marked as an h3. Navigate between them with <code>3</code>.</p>
+<p>Each comment announces:</p>
+<ul>
+<li>Commenter&#39;s username</li>
+<li>Timestamp (&quot;2 days ago&quot;)</li>
+<li>Body text</li>
+<li>Reactions (if any — announced as a button with an emoji and count)</li>
+<li>A &quot;Reply&quot; link</li>
+</ul>
+<p>Other timeline events (label added, PR linked, issue closed) appear between comments in the activity stream. They are typically announced as text paragraphs.</p>
+<hr>
+<h2>Leaving a Comment</h2>
+<h3>Step-by-step</h3>
+<pre><code>Step 1: Navigate to the comment box
+  • D → &quot;Add a comment&quot; landmark
+  • OR press E or F to focus the text area
+
+Step 2: Enter Focus Mode (if not already active)
+  • NVDA: Insert+Space
+  • JAWS: Insert+Z (or automatic)
+  • VoiceOver: VO+Shift+Down to interact with the text area
+
+Step 3: Type your comment
+  • Plain text is fine
+  • Use Markdown for formatting
+
+Step 4: Check your text (optional)
+  • Tab to &quot;Preview&quot; button, press Enter
+  • Browse the preview, then Tab back to &quot;Write&quot; to continue editing
+
+Step 5: Submit
+  • Ctrl+Enter (works from inside the text area)
+  • OR: Escape to stop interacting → Tab to &quot;Comment&quot; button → Enter
+</code></pre>
+<h3>Markdown formatting while typing</h3>
+<p>These keyboard shortcuts work inside the text area (Focus Mode):</p>
+<table>
+<thead>
+<tr>
+<th>Shortcut</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Ctrl+B</code></td>
+<td><strong>Bold text</strong></td>
+</tr>
+<tr>
+<td><code>Ctrl+I</code></td>
+<td><em>Italic text</em></td>
+</tr>
+<tr>
+<td><code>Ctrl+E</code></td>
+<td><code>Code span</code></td>
+</tr>
+<tr>
+<td><code>Ctrl+K</code></td>
+<td><a href="URL">Link text</a> dialog</td>
+</tr>
+<tr>
+<td><code>Ctrl+Shift+.</code></td>
+<td>&gt; Blockquote</td>
+</tr>
+<tr>
+<td><code>Ctrl+Shift+L</code></td>
+<td>- Bullet list</td>
+</tr>
+<tr>
+<td><code>Ctrl+Shift+7</code></td>
+<td>1. Numbered list</td>
+</tr>
+</tbody></table>
+<h3>GitHub shortcuts for the Issues pages</h3>
+<p>These are the GitHub built-in shortcuts for working with issues. Enable Focus Mode first (NVDA: <code>NVDA+Space</code>, JAWS: <code>Insert+Z</code>) before using single-key shortcuts.</p>
+<p><strong>On the Issues list page:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Shortcut</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>?</code></td>
+<td>Show all shortcuts for this page</td>
+</tr>
+<tr>
+<td><code>G I</code></td>
+<td>Jump to the Issues tab from anywhere in the repo</td>
+</tr>
+<tr>
+<td><code>C</code></td>
+<td>Create a new issue</td>
+</tr>
+</tbody></table>
+<p><strong>Shortcut note:</strong> For <code>G I</code>, press <code>G</code>, release it, then press <code>I</code> (two sequential key presses, not simultaneous).
+| <code>Ctrl+/</code> (Win) or <code>Cmd+/</code> (Mac) | Focus the issues search and filter bar |
+| <code>U</code> | Filter by author |
+| <code>L</code> | Filter by or edit labels |
+| <code>M</code> | Filter by or edit milestones |
+| <code>A</code> | Filter by or edit assignee |
+| <code>O</code> or <code>Enter</code> | Open the selected issue |</p>
+<p><strong>On an open issue:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Shortcut</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>M</code></td>
+<td>Set a milestone</td>
+</tr>
+<tr>
+<td><code>L</code></td>
+<td>Apply a label</td>
+</tr>
+<tr>
+<td><code>A</code></td>
+<td>Set an assignee</td>
+</tr>
+<tr>
+<td><code>X</code></td>
+<td>Link a related issue from the same repository</td>
+</tr>
+<tr>
+<td><code>R</code></td>
+<td>Quote selected text in your reply (select text first)</td>
+</tr>
+<tr>
+<td><code>Ctrl+Shift+P</code> (Win) or <code>Cmd+Shift+P</code> (Mac)</td>
+<td>Toggle Write and Preview tabs</td>
+</tr>
+<tr>
+<td><code>Ctrl+Enter</code></td>
+<td>Submit comment from inside the text area</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong><code>R</code> to quote is a power move:</strong> Select any text in a comment while in Browse Mode (<code>Shift+Arrow</code> to select), then press <code>R</code>. GitHub puts the quoted text in the comment box as a Markdown blockquote. Much faster than typing <code>&gt; </code> manually.</p>
+</blockquote>
+<p>For the full shortcut system, see <a href="appendix-b-screen-reader-cheatsheet.md#github-built-in-keyboard-shortcuts">Screen Reader Cheat Sheet — GitHub Shortcuts section</a>.</p>
+<ol>
+<li>Navigate to your comment (<code>3</code> to jump to comments)</li>
+<li>Find the &quot;...&quot; (ellipsis) menu button near your comment</li>
+<li>Press <code>Enter</code> on &quot;Edit&quot; from that menu</li>
+<li>The comment turns into a text area — switch to Focus Mode</li>
+<li>Make your changes</li>
+<li>Tab to &quot;Update comment&quot; button → Enter</li>
+</ol>
+<hr>
+<h2>Filing a New Issue</h2>
+<h3>Navigating to New Issue</h3>
+<p>From the Issues list:</p>
+<ol>
+<li>Press <code>K</code> to navigate links and find the &quot;New issue&quot; button/link</li>
+<li>Press <code>Enter</code></li>
+</ol>
+<h3>Choosing a Template</h3>
+<p>If the repo has issue templates, you will see a template picker page:</p>
+<ul>
+<li>A list of template names and descriptions</li>
+<li>Each template has an &quot;Get started&quot; button</li>
+</ul>
+<pre><code>Step 1: Press 3 to navigate template names (they are h3 links or headings)
+Step 2: Read the description below each template
+Step 3: Press Enter on &quot;Get started&quot; for the right template
+   -- or --
+Step 3 alt: Find &quot;Open a blank issue.&quot; link if no template fits
+</code></pre>
+<h3>Filling Out the Issue Form</h3>
+<p>The issue form has these fields (order may vary depending on the template):</p>
+<p><strong>Title field:</strong></p>
+<ol>
+<li>Find the Title input field (<code>F</code> or by landmark)</li>
+<li>Focus Mode → type a clear, specific title</li>
+<li>Good title: &quot;Screen reader announces wrong element count on Issues list with 50+ items&quot;</li>
+<li>Bad title: &quot;Bug with screen reader&quot;</li>
+</ol>
+<p><strong>Description / Body field:</strong></p>
+<ol>
+<li>Tab to the body text area</li>
+<li>Focus Mode → type using the Markdown template provided</li>
+<li>If no template, use this structure:</li>
+</ol>
+<pre><code class="language-markdown">## What happened
+
+Describe what you observed.
+
+## What I expected
+
+Describe what should have happened.
+
+## How to reproduce
+
+1. Step one
+2. Step two
+3. Step three
+
+## Environment
+
+- Screen reader: [NVDA 2024.1 / JAWS 2024 / VoiceOver macOS Sonoma]
+- Browser: [Chrome 124 / Firefox 125 / Safari 17]
+- OS: [Windows 11 / macOS 14]
+- GitHub interface: [Modern experience (default since Jan 2026) / Classic experience]
+
+## Additional context
+
+Any other information, screenshots (with alt text), or links.
+</code></pre>
+<p><strong>Assigning labels from the sidebar:</strong></p>
+<p>While the form is open, the sidebar has dropdowns for Labels, Assignees, and Milestone.</p>
+<pre><code>Step 1: Tab away from the text area (or press Escape to leave Focus Mode)
+Step 2: Navigate to the sidebar — press H to find &quot;Labels&quot; heading
+Step 3: Press Enter on the Labels gear/button
+Step 4: Dropdown opens → ↑/↓ to navigate labels
+Step 5: Enter to select/deselect
+Step 6: Escape to close (selections save automatically)
+</code></pre>
+<p><strong>Submitting the issue:</strong></p>
+<ol>
+<li>Tab to &quot;Submit new issue&quot; button</li>
+<li>Press <code>Enter</code></li>
+</ol>
+<hr>
+<h2>Cross-Referencing Issues</h2>
+<p>Linking issues and PRs to each other creates a trail of context that helps everyone understand the project&#39;s history.</p>
+<h3>Closing keywords in PR descriptions or issue comments</h3>
+<p>When you type these phrases in a PR description or comment (followed by an issue number), GitHub creates a connection:</p>
+<table>
+<thead>
+<tr>
+<th>Keyword</th>
+<th>Effect on merge</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Closes #42</code></td>
+<td>Closes issue #42 when the PR merges</td>
+</tr>
+<tr>
+<td><code>Fixes #42</code></td>
+<td>Same — typically for bugs</td>
+</tr>
+<tr>
+<td><code>Resolves #42</code></td>
+<td>Same — general use</td>
+</tr>
+<tr>
+<td><code>refs #42</code></td>
+<td>Creates a reference without auto-closing</td>
+</tr>
+<tr>
+<td><code>cc @username</code></td>
+<td>Notifies the person</td>
+</tr>
+</tbody></table>
+<h3>Mentioning another issue in a comment</h3>
+<p>Simply type <code>#</code> followed by a number anywhere in a comment body. GitHub autocompletes with a dropdown of matching issues and PRs:</p>
+<pre><code>Step 1: Type # in the comment box (Focus Mode)
+Step 2: A dropdown appears with issues and PRs
+Step 3: ↑/↓ to navigate, or type more numbers to filter
+Step 4: Enter to insert the reference
+</code></pre>
+<h3>Cross-repo references</h3>
+<p><code>owner/repo#42</code> — references issue #42 in a different repository.</p>
+<hr>
+<h2>Sub-Issues — Parent and Child Relationships</h2>
+<p><strong>Sub-issues</strong> (released 2025) let you nest issues inside a parent issue to break large work into tracked pieces. A &quot;parent&quot; issue contains a list of child issues; each child is a full issue with its own discussion, labels, and assignees.</p>
+<h3>When to Use Sub-Issues</h3>
+<table>
+<thead>
+<tr>
+<th>Use case</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Large feature broken down</td>
+<td>Parent: &quot;Redesign navigation&quot;; Children: &quot;Keyboard nav,&quot; &quot;Screen reader nav,&quot; &quot;Mobile nav&quot;</td>
+</tr>
+<tr>
+<td>Epic tracking</td>
+<td>Parent: &quot;WCAG 2.1 AA compliance&quot;; Children: one issue per failing criterion</td>
+</tr>
+<tr>
+<td>Release milestone</td>
+<td>Parent: &quot;v2.0 release&quot;; Children: every required PR/fix</td>
+</tr>
+</tbody></table>
+<h3>Creating a Sub-Issue</h3>
+<p>From any open issue:</p>
+<pre><code>1. Open the parent issue page
+2. Scroll to (or H-navigate to) the &quot;Sub-issues&quot; section in the issue body/sidebar
+3. Tab to &quot;Add sub-issue&quot; button → Enter
+4. Type the issue number or title to search
+5. Select the issue from the dropdown → Enter to link
+   Or: select &quot;Create new issue&quot; to create and link in one step
+</code></pre>
+<p><strong>Screen reader note:</strong> The sub-issues section is announced as a region. After linking, the child issue appears as a list item with a checkbox showing its open/closed state. Tab through to read each child&#39;s title and status.</p>
+<h3>Reading Sub-Issues on a Parent Issue</h3>
+<pre><code>H → &quot;Sub-issues&quot; heading
+↓ → list of linked child issues
+Each item: [checkbox state] [issue title] [#number] [open/closed badge]
+Tab → &quot;Add sub-issue&quot; button (if you have write access)
+</code></pre>
+<p><strong>Progress indicator:</strong> The parent issue shows a completion bar (e.g., &quot;3 of 7 completed&quot;) based on how many child issues are closed. Screen readers announce this as a progress region.</p>
+<h3>Viewing a Child Issue&#39;s Parent</h3>
+<p>Every child issue shows a &quot;Parent issue&quot; link near the top of the page (above the description). Navigate with <code>H</code> or links (<code>K</code>) to find it.</p>
+<h3>Sub-Issues vs. Task Lists</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Task list checkboxes</th>
+<th>Sub-issues</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Location</td>
+<td>Issue description (Markdown)</td>
+<td>Sidebar/section (structured data)</td>
+</tr>
+<tr>
+<td>Each item is</td>
+<td>Text line + checkbox</td>
+<td>A full GitHub issue</td>
+</tr>
+<tr>
+<td>Tracked in Projects</td>
+<td>No (checkbox only)</td>
+<td>Yes (each child tracks independently)</td>
+</tr>
+<tr>
+<td>Cross-repo</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Best for</td>
+<td>Quick checklists in one issue</td>
+<td>Multi-issue work tracking</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>Workshop tip:</strong> If you are working on a feature that requires multiple PRs or involves several team members, ask the maintainer to create a parent issue. You can then claim individual child issues without one person owning the whole feature.</p>
+</blockquote>
+<hr>
+<h2>Managing Issues (for Maintainers and Triagers)</h2>
+<h3>Closing an issue</h3>
+<ol>
+<li>Navigate to the issue page</li>
+<li>Tab to &quot;Close issue&quot; button (at the bottom of the page, near the comment box)</li>
+<li>Press <code>Enter</code></li>
+<li>Optionally leave a closing comment first</li>
+</ol>
+<h3>Reopening a closed issue</h3>
+<p>If an issue is Closed, the &quot;Close issue&quot; button becomes &quot;Reopen issue&quot; — navigate and activate to reopen.</p>
+<h3>Assigning an issue</h3>
+<p>From the issue sidebar:</p>
+<ol>
+<li>Navigate to &quot;Assignees&quot; heading (<code>3</code> or <code>H</code>)</li>
+<li>Activate the gear/plus button</li>
+<li>Type a username in the search field</li>
+<li>Select from the dropdown</li>
+</ol>
+<h3>Changing labels</h3>
+<p>From the issue sidebar:</p>
+<ol>
+<li>Navigate to &quot;Labels&quot; heading</li>
+<li>Activate the gear button</li>
+<li>Select/deselect labels from the dropdown</li>
+<li>Press Escape to save</li>
+</ol>
+<h3>Transferring or deleting an issue</h3>
+<p>Available from the &quot;...&quot; (ellipsis) button at the top of the issue — navigate buttons with <code>B</code> to find it.</p>
+<hr>
+<h2>The &quot;good first issue&quot; Label — Your Entry Point</h2>
+<p>When looking for your first open source contribution:</p>
+<ol>
+<li>Navigate to any project&#39;s Issues tab</li>
+<li>Filter by label: type <code>is:open label:&quot;good first issue&quot;</code> in the search</li>
+<li>Read through issues until you find one in your area of interest</li>
+<li>Comment on the issue: &quot;Hi, I&#39;d like to work on this. Can I be assigned?&quot;</li>
+<li>Wait for a maintainer to respond and assign you before starting work</li>
+</ol>
+<p><strong>Remember:</strong> It&#39;s respectful to ask before starting. Maintainers juggle many discussions and need to know who is working on what to avoid duplicated effort.</p>
+<hr>
+<h2>Accessibility-Specific Issue Writing Tips</h2>
+<p>When filing accessibility bugs, these details help maintainers reproduce and fix the problem:</p>
+<ol>
+<li><strong>Screen reader and version</strong> — &quot;NVDA 2024.1&quot; not just &quot;screen reader&quot;</li>
+<li><strong>OS and version</strong> — &quot;Windows 11 22H2&quot;</li>
+<li><strong>Browser and version</strong> — &quot;Chrome 124.0.6367.82&quot;</li>
+<li><strong>GitHub interface</strong> — &quot;Modern experience (default since Jan 2026)&quot; or &quot;Classic experience (opted out)&quot;</li>
+<li><strong>What was announced</strong> — quote the exact text your screen reader spoke</li>
+<li><strong>What should have been announced</strong> — describe the expected behavior</li>
+<li><strong>ARIA issue if known</strong> — e.g., &quot;The button has no accessible name&quot;</li>
+<li><strong>Steps to reproduce</strong> — numbered, step-by-step</li>
+<li><strong>Frequency</strong> — &quot;This happens every time&quot; vs &quot;intermittent&quot;</li>
+</ol>
+<p><strong>Example of a well-filed accessibility issue:</strong></p>
+<pre><code>Title: Issues list does not announce label filtering results to screen readers
+
+## What happened
+When I apply a label filter on the Issues list using the Labels dropdown,
+the filtered list updates visually but NVDA does not announce that the
+results changed or how many items are now shown.
+
+## What I expected
+After filtering, the screen reader should announce something like
+&quot;14 issues open, filtered by label: accessibility&quot; or a live region
+update indicating the results changed.
+
+## How to reproduce
+1. Navigate to any repo&#39;s Issues tab
+2. Press B to navigate to the &quot;Label&quot; filter button
+3. Press Enter to open the dropdown
+4. Select the &quot;accessibility&quot; label
+5. Press Escape to close
+6. Notice: no announcement that filtering has been applied
+
+## Environment
+- Screen reader: NVDA 2024.1 (with NVDA+Chrome)
+- Browser: Chrome 124.0.6367.82
+- OS: Windows 11 22H2
+- GitHub interface: Modern experience (default since Jan 2026)
+
+## Additional context
+JAWS 2024 also does not announce. VoiceOver on macOS Sonoma with
+Safari 17 does announce &quot;List updated&quot; when filtering is applied,
+so the macOS behavior appears correct.
+</code></pre>
+<hr>
+<blockquote>
+<h3>🔥 Day 2 Amplifier — Agent Forge: <code>@issue-tracker</code></h3>
+<p><strong>File, read, comment on, and triage real issues manually before using any agent.</strong> If you have not done the triage work yourself — reading descriptions, assigning labels, identifying duplicates — you cannot evaluate whether an agent&#39;s priority scoring is correct. The skill must exist before the amplifier is useful.</p>
+<p>Once you have mastered manual issue management:</p>
+<ul>
+<li><strong>In VS Code</strong> — <code>@issue-tracker find open issues labeled good-first-issue</code> searches cross-repository with community sentiment scoring, release-awareness prioritization, and batch-reply capability across every repo you have access to</li>
+<li><strong>In your repo</strong> — The issue templates in <code>agent-forge/.github/ISSUE_TEMPLATE/</code> structure both human filing and automated triage; fork <code>agent-forge</code> and that structure travels into any project you lead</li>
+<li><strong>In the cloud</strong> — GitHub Agentic Workflows triage new issues the moment they are opened: applying labels, posting first-response comments, adding to Project boards — the same triage actions you practiced manually today, running at scale</li>
+</ul>
+<p><em>Today you are the triage engine. On Day 2, you understand the engine well enough to direct it.</em></p>
+</blockquote>
+<hr>
+<p><em>Next: <a href="05-working-with-pull-requests.md">Working with Pull Requests</a></em>
+<em>Back: <a href="03-navigating-repositories.md">Navigating Repositories</a></em>
+<em>Related: <a href="16-issue-templates.md">Issue Templates Guide</a> | <a href="08-labels-milestones-projects.md">Labels &amp; Milestones</a> | <a href="07-culture-etiquette.md">Culture &amp; Etiquette</a></em></p>
+
+  </main>
+  <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
+    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com">Back to GitHub</a></p>
+  </footer>
+</body>
+</html>

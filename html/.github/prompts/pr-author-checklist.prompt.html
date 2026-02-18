@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
+  <title>pr-author-checklist.prompt - GitHub Learning Room</title>
+  <link rel="stylesheet" href="./styles/github-markdown.css">
+  <link rel="stylesheet" href="./styles/highlight.css">
+  <link rel="stylesheet" href="./styles/custom.css">
+  <style>
+    .markdown-body {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+    @media (max-width: 767px) {
+      .markdown-body {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <a href="./index.html">Home</a>
+  </nav>
+  <main class="markdown-body">
+    <hr>
+<h2>name: pr-author-checklist
+description: &quot;PR self-review checklist for authors -- CI status, reviewer suggestions, description quality check, and pre-submit verification&quot;
+agent: pr-review
+tools:
+  - github/*
+  - readFile
+  - textSearch
+  - codebase
+  - ask_questions</h2>
+<p>Run a pre-submit self-review checklist for a PR you authored. Checks CI, description quality, reviewers, and common issues before requesting review.</p>
+<p>${input:pr:Required: PR number or owner/repo#number}</p>
+<h2>Steps</h2>
+<ol>
+<li>Get the authenticated user with #tool:mcp_github_github_get_me.</li>
+<li>Fetch the PR metadata, diff, and check run status.</li>
+<li>Run the self-review checklist:</li>
+</ol>
+<h3>Description Quality</h3>
+<ul>
+<li><input disabled="" type="checkbox"> PR title is clear and descriptive (not &quot;fix bug&quot; or &quot;update&quot;)</li>
+<li><input disabled="" type="checkbox"> Description explains <strong>what</strong> changed and <strong>why</strong></li>
+<li><input disabled="" type="checkbox"> Linked issues are referenced (<code>Fixes #N</code> or <code>Closes #N</code>)</li>
+<li><input disabled="" type="checkbox"> Breaking changes are called out</li>
+<li><input disabled="" type="checkbox"> Screenshots included for UI changes (if applicable)</li>
+</ul>
+<h3>CI Status</h3>
+<ul>
+<li><input disabled="" type="checkbox"> All check runs passing</li>
+<li><input disabled="" type="checkbox"> No merge conflicts with the base branch</li>
+<li><input disabled="" type="checkbox"> Branch is up to date with base (or rebased recently)</li>
+</ul>
+<h3>Code Quality</h3>
+<ul>
+<li><input disabled="" type="checkbox"> No TODO/FIXME/HACK comments left in the diff</li>
+<li><input disabled="" type="checkbox"> No console.log/print/debug statements left</li>
+<li><input disabled="" type="checkbox"> No commented-out code</li>
+<li><input disabled="" type="checkbox"> No hardcoded secrets, tokens, or credentials</li>
+<li><input disabled="" type="checkbox"> Test coverage for new code</li>
+</ul>
+<h3>Reviewer Readiness</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Reviewers assigned (suggest from preferences if not)</li>
+<li><input disabled="" type="checkbox"> PR is not in draft mode (unless intentional)</li>
+<li><input disabled="" type="checkbox"> Labels are set appropriately</li>
+<li><input disabled="" type="checkbox"> Milestone set (if release-bound)</li>
+</ul>
+<ol start="4">
+<li>For each failing check, provide specific guidance on what to fix.</li>
+<li>Suggest reviewers based on:<ul>
+<li>Changed file paths matched against preferences reviewer config</li>
+<li>Who reviewed similar PRs recently</li>
+<li>Team member expertise areas from preferences</li>
+</ul>
+</li>
+<li>Summarize: <em>&quot;Your PR scores {N}/15 on the self-review checklist. {action items}. Ready to request review?&quot;</em></li>
+</ol>
+
+  </main>
+  <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
+    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com">Back to GitHub</a></p>
+  </footer>
+</body>
+</html>

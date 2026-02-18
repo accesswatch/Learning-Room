@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
+  <title>Quick Reference Guide - GitHub Learning Room</title>
+  <link rel="stylesheet" href="./styles/github-markdown.css">
+  <link rel="stylesheet" href="./styles/highlight.css">
+  <link rel="stylesheet" href="./styles/custom.css">
+  <style>
+    .markdown-body {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+    @media (max-width: 767px) {
+      .markdown-body {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <a href="./index.html">Home</a>
+  </nav>
+  <main class="markdown-body">
+    <h1>Quick Reference Guide</h1>
+<h2>Essential Commands, Shortcuts, and File Locations</h2>
+<hr>
+<h2>Screen Reader Commands for GitHub</h2>
+<h3>NVDA (Windows)</h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Jump to navigation</td>
+<td><code>D</code></td>
+</tr>
+<tr>
+<td>Jump to search/main content</td>
+<td><code>D</code> (cycle through landmarks)</td>
+</tr>
+<tr>
+<td>Read next heading</td>
+<td><code>H</code></td>
+</tr>
+<tr>
+<td>Navigate by heading level</td>
+<td><code>1</code>–<code>6</code> (headings), <code>T</code> (table), <code>B</code> (button), <code>L</code> (list)</td>
+</tr>
+<tr>
+<td>Open Focus Mode</td>
+<td><code>NVDA+Space</code> (then navigate)</td>
+</tr>
+<tr>
+<td>Announce current line</td>
+<td><code>NVDA+Up</code></td>
+</tr>
+<tr>
+<td>Read all from cursor</td>
+<td><code>NVDA+Down</code></td>
+</tr>
+<tr>
+<td>Stop reading</td>
+<td><code>Control</code></td>
+</tr>
+<tr>
+<td>Go to link list</td>
+<td><code>NVDA+F7</code></td>
+</tr>
+<tr>
+<td>Switch to Browse Mode</td>
+<td><code>NVDA+Space</code> (in a page)</td>
+</tr>
+</tbody></table>
+<h3>JAWS (Windows)</h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Virtual cursor browse</td>
+<td><code>Spacebar</code></td>
+</tr>
+<tr>
+<td>Navigate headings</td>
+<td><code>H</code> or <code>Numpad 5</code></td>
+</tr>
+<tr>
+<td>Navigate by level</td>
+<td><code>1</code>–<code>6</code></td>
+</tr>
+<tr>
+<td>Open navigation bar</td>
+<td><code>Insert+F5</code></td>
+</tr>
+<tr>
+<td>List links</td>
+<td><code>Insert+Ctrl+L</code></td>
+</tr>
+<tr>
+<td>List headings</td>
+<td><code>Insert+F6</code></td>
+</tr>
+<tr>
+<td>Toggle Focus Mode</td>
+<td><code>Enter</code> (on a page)</td>
+</tr>
+<tr>
+<td>Announce all text</td>
+<td><code>Insert+Down</code></td>
+</tr>
+<tr>
+<td>Stop reading</td>
+<td><code>Control</code></td>
+</tr>
+</tbody></table>
+<h3>VoiceOver (macOS)</h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Navigate web rotor</td>
+<td><code>VO+U</code></td>
+</tr>
+<tr>
+<td>Next/previous heading</td>
+<td><code>VO+Down</code>, <code>VO+Up</code></td>
+</tr>
+<tr>
+<td>Next/previous link</td>
+<td><code>VO+Right</code>, <code>VO+Left</code> (with Quick Nav)</td>
+</tr>
+<tr>
+<td>Activate element</td>
+<td><code>VO+Space</code></td>
+</tr>
+<tr>
+<td>Read from cursor</td>
+<td><code>VO+A</code></td>
+</tr>
+<tr>
+<td>Stop reading</td>
+<td><code>Control</code></td>
+</tr>
+<tr>
+<td>Headings rotor</td>
+<td><code>VO+U</code> → <code>H</code> (then navigate)</td>
+</tr>
+<tr>
+<td>Form controls rotor</td>
+<td><code>VO+U</code> → <code>F</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h2>GitHub Navigation Shortcuts (All Browsers)</h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Keyboard</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Open command palette</td>
+<td><code>Cmd+.</code> (macOS) / <code>Ctrl+.</code> (Windows)</td>
+</tr>
+<tr>
+<td>Jump to Issues</td>
+<td><code>G</code> then <code>I</code></td>
+</tr>
+<tr>
+<td>Jump to Pull Requests</td>
+<td><code>G</code> then <code>P</code></td>
+</tr>
+<tr>
+<td>Jump to Projects</td>
+<td><code>G</code> then <code>B</code></td>
+</tr>
+<tr>
+<td>Open issue/PR</td>
+<td><code>O</code> then <code>Enter</code></td>
+</tr>
+<tr>
+<td>Navigate PR tabs (Conversation/Commits/Files)</td>
+<td><code>←</code> / <code>→</code> Arrow keys</td>
+</tr>
+<tr>
+<td>Focus on search</td>
+<td><code>S</code> or <code>/</code></td>
+</tr>
+<tr>
+<td>Go to code</td>
+<td><code>G</code> then <code>C</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h2>VS Code Keyboard Shortcuts</h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Windows/Linux</th>
+<th>macOS</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Open Copilot Chat</td>
+<td><code>Ctrl+Shift+I</code></td>
+<td><code>Cmd+Shift+I</code></td>
+</tr>
+<tr>
+<td>Open terminal</td>
+<td><code>Ctrl+</code> `</td>
+<td><code>Ctrl+</code> `</td>
+</tr>
+<tr>
+<td>Open file search</td>
+<td><code>Ctrl+P</code></td>
+<td><code>Cmd+P</code></td>
+</tr>
+<tr>
+<td>Find in file</td>
+<td><code>Ctrl+F</code></td>
+<td><code>Cmd+F</code></td>
+</tr>
+<tr>
+<td>Replace in file</td>
+<td><code>Ctrl+H</code></td>
+<td><code>Cmd+H</code></td>
+</tr>
+<tr>
+<td>Open command palette</td>
+<td><code>Ctrl+Shift+P</code></td>
+<td><code>Cmd+Shift+P</code></td>
+</tr>
+<tr>
+<td>Extensions</td>
+<td><code>Ctrl+Shift+X</code></td>
+<td><code>Cmd+Shift+X</code></td>
+</tr>
+<tr>
+<td>Reload window</td>
+<td>(see command palette)</td>
+<td>(see command palette)</td>
+</tr>
+<tr>
+<td>Accessible Diff Viewer</td>
+<td><code>F7</code></td>
+<td><code>F7</code></td>
+</tr>
+<tr>
+<td>Accessible View</td>
+<td><code>Alt+F2</code></td>
+<td><code>Option+F2</code></td>
+</tr>
+<tr>
+<td>Format document</td>
+<td><code>Ctrl+Shift+F</code></td>
+<td><code>Cmd+Shift+F</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Git Commands (Terminal)</h2>
+<h3>Repository Setup</h3>
+<pre><code class="language-bash">git clone https://github.com/[USERNAME]/[REPO].git    # Clone your fork
+cd [REPO]                                               # Enter folder
+git remote -v                                           # View remotes
+git remote add upstream https://github.com/[ORIGINAL]   # Add upstream
+</code></pre>
+<h3>Branch Workflow</h3>
+<pre><code class="language-bash">git checkout -b [branch-name]           # Create and switch to branch
+git branch -a                            # List all branches
+git branch -d [branch-name]              # Delete local branch
+git push origin [branch-name]            # Push branch to GitHub
+</code></pre>
+<h3>Staging and Committing</h3>
+<pre><code class="language-bash">git status                               # See what changed
+git add [file]                           # Stage specific file
+git add .                                # Stage all changes
+git commit -m &quot;message&quot;                  # Commit with message
+git push origin [branch-name]            # Push commits
+</code></pre>
+<h3>Pulling Updates</h3>
+<pre><code class="language-bash">git pull origin main                     # Pull latest from your fork
+git pull upstream main                   # Pull latest from upstream
+git fetch upstream                       # Fetch without merging
+</code></pre>
+<hr>
+<h2>File Locations Reference</h2>
+<h3>Template &amp; Agent Files</h3>
+<pre><code>.github/
+├── ISSUE_TEMPLATE/
+│   ├── accessibility-bug.yml            ← Accessibility issue template
+│   ├── bug-report-template.yml
+│   └── feature-request.yml
+├── agents/
+│   ├── daily-briefing.agent.md
+│   ├── issue-tracker.agent.md
+│   ├── pr-review.agent.md
+│   ├── analytics.agent.md
+│   ├── insiders-a11y-tracker.agent.md
+│   └── template-builder.agent.md        ← The agent for building templates
+├── pull_request_template.md             ← Default PR template
+├── workflows/
+│   ├── learning-room-pr-bot.yml
+│   ├── skills-progression.yml
+│   └── student-grouping.yml
+└── data/
+    ├── challenge-progression.json
+    └── student-roster.json
+</code></pre>
+<h3>Documentation Files</h3>
+<pre><code>docs/
+├── 00-pre-workshop-setup.md             ← Start here
+├── 01-understanding-github-web-structure.md
+├── 04-working-with-issues.md            ← File issues
+├── 05-working-with-pull-requests.md     ← Review PRs
+├── 14-accessible-code-review.md         ← Day 2 manual skill
+├── 15-issue-templates.md                ← Design templates (manual)
+├── 16-agent-forge.md                    ← Automate with agents
+└── appendix-a-glossary.md               ← Term definitions
+</code></pre>
+<hr>
+<h2>YAML Template Structure (Quick Template)</h2>
+<pre><code class="language-yaml">name: Your Template Name
+description: One line description
+title: &quot;[TAG] &quot;
+labels: [&quot;label1&quot;, &quot;label2&quot;]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Before you begin
+        Please search for existing issues.
+
+  - type: input
+    id: version
+    attributes:
+      label: Version Number
+      placeholder: &quot;e.g., v2.4.1&quot;
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Explain what happened
+      placeholder: &quot;I was trying to... then...&quot;
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before Submitting
+      options:
+        - label: I searched for existing issues
+          required: true
+</code></pre>
+<hr>
+<h2>Accessibility Testing Checklist (Quick)</h2>
+<ul>
+<li><input disabled="" type="checkbox"> All form labels announced by screen reader</li>
+<li><input disabled="" type="checkbox"> Required fields marked and announced as required</li>
+<li><input disabled="" type="checkbox"> Dropdown options readable and selectable</li>
+<li><input disabled="" type="checkbox"> No labels skipped (heading hierarchy: 1→2→3, not 1→3)</li>
+<li><input disabled="" type="checkbox"> Link text is descriptive (not &quot;click here&quot;)</li>
+<li><input disabled="" type="checkbox"> Color not the only way to convey information</li>
+<li><input disabled="" type="checkbox"> Tested on: ☐ NVDA ☐ JAWS ☐ VoiceOver</li>
+</ul>
+<hr>
+<h2>Common YAML Errors &amp; Fixes</h2>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Cause</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Red squiggles on colons</td>
+<td>Missing colon after key</td>
+<td>Add <code>:</code> after field name</td>
+</tr>
+<tr>
+<td>Indentation errors</td>
+<td>Mixed spaces/tabs</td>
+<td>Use spaces only (2 or 4)</td>
+</tr>
+<tr>
+<td>Unmatched quotes</td>
+<td>Missing closing quote</td>
+<td>Check all <code>&quot;</code> have closing pair</td>
+</tr>
+<tr>
+<td>Field not showing</td>
+<td>Wrong <code>type:</code> or missing <code>id:</code></td>
+<td>Verify field has all required properties</td>
+</tr>
+<tr>
+<td>Dropdown no options</td>
+<td>Missing <code>options:</code> list</td>
+<td>Add <code>options:</code> with indented list</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Where to Find Help</h2>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>File</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Troubleshooting</td>
+<td><code>TROUBLESHOOTING.md</code></td>
+</tr>
+<tr>
+<td>Resources &amp; setup</td>
+<td><code>RESOURCES.md</code></td>
+</tr>
+<tr>
+<td>Glossary &amp; terms</td>
+<td><code>docs/appendix-a-glossary.md</code></td>
+</tr>
+<tr>
+<td>Screen reader guide</td>
+<td><code>docs/appendix-b-screen-reader-cheatsheet.md</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Accessibility Hotkeys Summary</h2>
+<p><strong>NVDA + JAWS (same):</strong> Browse web content with H (headings), T (tables), B (buttons), L (lists)<br><strong>VoiceOver:</strong> Use VO+U to open rotor, then navigate by category (Headings, Links, Form Controls)<br><strong>VS Code:</strong> F7 = Accessible Diff, Alt+F2 = Accessible View</p>
+<hr>
+<p><em>Last updated: February 2026 | For latest, see README.md</em></p>
+
+  </main>
+  <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
+    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com">Back to GitHub</a></p>
+  </footer>
+</body>
+</html>

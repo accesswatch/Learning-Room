@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
+  <title>release-prep.prompt - GitHub Learning Room</title>
+  <link rel="stylesheet" href="./styles/github-markdown.css">
+  <link rel="stylesheet" href="./styles/highlight.css">
+  <link rel="stylesheet" href="./styles/custom.css">
+  <style>
+    .markdown-body {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+    @media (max-width: 767px) {
+      .markdown-body {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <a href="./index.html">Home</a>
+  </nav>
+  <main class="markdown-body">
+    <hr>
+<h2>name: release-prep
+description: &quot;Complete release preparation workflow -- milestone check, open PRs review, release notes, changelog, and readiness checklist&quot;
+agent: daily-briefing
+tools:
+  - github/*
+  - createFile
+  - createDirectory
+  - editFiles
+  - ask_questions</h2>
+<p>Run a complete release preparation workflow. This guides you through every step needed before publishing a release.</p>
+<p>${input:details:Required: repo name and target version (e.g. &#39;owner/repo v2.0.0&#39;)}</p>
+<h2>Workflow Steps</h2>
+<p>This is a multi-step guided workflow. The agent runs each step and presents results before moving to the next.</p>
+<h3>Step 1: Milestone Check</h3>
+<ul>
+<li>Fetch the milestone for the target version</li>
+<li>List all items: closed (done), open (remaining), and their status</li>
+<li>Flag blockers: open P0/P1 items, items with no assignee</li>
+</ul>
+<h3>Step 2: Open PRs Review</h3>
+<ul>
+<li>List all PRs targeting the release branch or milestone</li>
+<li>For each: review status, CI status, merge readiness, and age</li>
+<li>Flag: PRs with failing CI, no reviews, or merge conflicts</li>
+</ul>
+<h3>Step 3: CI/CD Health</h3>
+<ul>
+<li>Check workflow status on the release branch</li>
+<li>Flag any failing tests or flaky tests</li>
+<li>Verify the build pipeline is green</li>
+</ul>
+<h3>Step 4: Security Check</h3>
+<ul>
+<li>Check for open Dependabot alerts (critical/high)</li>
+<li>Verify no known vulnerabilities in dependencies shipping with this release</li>
+<li>List any security-related PRs not yet merged</li>
+</ul>
+<h3>Step 5: Draft Release Notes</h3>
+<ul>
+<li>Collect all merged PRs since last release</li>
+<li>Auto-categorize: Breaking Changes, Features, Bug Fixes, Performance, Dependencies, Other</li>
+<li>Generate conventional-commit-style changelog</li>
+</ul>
+<h3>Step 6: Readiness Checklist</h3>
+<p>Generate a comprehensive checklist:</p>
+<ul>
+<li><input disabled="" type="checkbox"> All milestone items closed or deferred</li>
+<li><input disabled="" type="checkbox"> All PRs merged or explicitly excluded</li>
+<li><input disabled="" type="checkbox"> CI passing on release branch</li>
+<li><input disabled="" type="checkbox"> No critical/high Dependabot alerts</li>
+<li><input disabled="" type="checkbox"> Release notes reviewed</li>
+<li><input disabled="" type="checkbox"> Changelog generated</li>
+<li><input disabled="" type="checkbox"> Version bumped (if applicable)</li>
+</ul>
+<h3>Step 7: Save Documents</h3>
+<ul>
+<li>Markdown: <code>.github/reviews/releases/release-prep-{version}-{date}.md</code></li>
+<li>HTML: <code>.github/reviews/releases/release-prep-{version}-{date}.html</code></li>
+</ul>
+<h3>Step 8: Next Actions</h3>
+<p>Offer to: create the GitHub release draft, close the milestone, or notify the team.</p>
+
+  </main>
+  <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
+    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com">Back to GitHub</a></p>
+  </footer>
+</body>
+</html>

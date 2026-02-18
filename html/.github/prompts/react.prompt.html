@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
+  <title>react.prompt - GitHub Learning Room</title>
+  <link rel="stylesheet" href="./styles/github-markdown.css">
+  <link rel="stylesheet" href="./styles/highlight.css">
+  <link rel="stylesheet" href="./styles/custom.css">
+  <style>
+    .markdown-body {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+    @media (max-width: 767px) {
+      .markdown-body {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <a href="./index.html">Home</a>
+  </nav>
+  <main class="markdown-body">
+    <hr>
+<h2>name: react
+description: &quot;Add emoji reactions to issues, PRs, and comments -- thumbs up, heart, rocket, and more&quot;
+agent: issue-tracker
+tools:
+  - github/*
+  - ask_questions</h2>
+<p>Add an emoji reaction to an issue, PR, or specific comment.</p>
+<p>${input:target:What to react to -- e.g. &#39;thumbs up owner/repo#42&#39;, &#39;heart the latest comment on #42&#39;, &#39;rocket PR owner/repo#15&#39;}</p>
+<h2>Behavior</h2>
+<p>Parse the target to determine:</p>
+<ol>
+<li><p><strong>What to react to:</strong></p>
+<ul>
+<li>An <strong>issue</strong> --&gt; &quot;like #42&quot;, &quot;thumbs up issue #42&quot;</li>
+<li>A <strong>PR</strong> --&gt; &quot;rocket PR #15&quot;, &quot;thumbs up PR owner/repo#15&quot;</li>
+<li>A <strong>specific comment</strong> --&gt; &quot;heart Alice&#39;s comment on #42&quot;, &quot;like comment 3 on #42&quot;</li>
+<li>The <strong>latest comment</strong> --&gt; &quot;thumbs up the last comment on #42&quot;</li>
+</ul>
+</li>
+<li><p><strong>Which reaction:</strong></p>
+<ul>
+<li>Map natural language to GitHub reaction types:<ul>
+<li>&quot;like&quot;, &quot;agree&quot;, &quot;thumbs up&quot;, &quot;+1&quot; --&gt; <code>+1</code></li>
+<li>&quot;disagree&quot;, &quot;thumbs down&quot;, &quot;-1&quot; --&gt; <code>-1</code></li>
+<li>&quot;love&quot;, &quot;heart&quot; --&gt; <code>heart</code></li>
+<li>&quot;celebrate&quot;, &quot;hooray&quot;, &quot;tada&quot; --&gt; <code>hooray</code></li>
+<li>&quot;ship it&quot;, &quot;rocket&quot;, &quot;launch&quot; --&gt; <code>rocket</code></li>
+<li>&quot;looking&quot;, &quot;eyes&quot;, &quot;watching&quot; --&gt; <code>eyes</code></li>
+<li>&quot;funny&quot;, &quot;laugh&quot;, &quot;lol&quot; --&gt; <code>laugh</code></li>
+<li>&quot;confused&quot;, &quot;huh&quot;, &quot;what&quot; --&gt; <code>confused</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2>Steps</h2>
+<ol>
+<li>Parse the target reference to extract owner, repo, number, and optionally comment identifier.</li>
+<li>If targeting an <strong>issue or PR body</strong>:<ul>
+<li>Fetch current reactions to show what&#39;s already there.</li>
+<li>Add the reaction.</li>
+<li>Confirm: <em>&quot;Added thumbs-up to {repo}#{number}. Current reactions: +1: 6, heart: 2&quot;</em></li>
+</ul>
+</li>
+<li>If targeting a <strong>specific comment</strong>:<ul>
+<li>Fetch all comments and display a numbered list if the user didn&#39;t specify which one.</li>
+<li>Add the reaction to the identified comment.</li>
+<li>Confirm: <em>&quot;Added heart to @alice&#39;s comment on {repo}#{number}.&quot;</em></li>
+</ul>
+</li>
+<li>If the user says &quot;react to #42&quot; without specifying which reaction, show the available reactions and ask.</li>
+</ol>
+<p><strong>Never modify issue/PR state -- reactions only.</strong></p>
+
+  </main>
+  <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
+    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com">Back to GitHub</a></p>
+  </footer>
+</body>
+</html>

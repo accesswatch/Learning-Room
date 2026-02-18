@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
+  <title>notifications.prompt - GitHub Learning Room</title>
+  <link rel="stylesheet" href="./styles/github-markdown.css">
+  <link rel="stylesheet" href="./styles/highlight.css">
+  <link rel="stylesheet" href="./styles/custom.css">
+  <style>
+    .markdown-body {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+    @media (max-width: 767px) {
+      .markdown-body {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <a href="./index.html">Home</a>
+  </nav>
+  <main class="markdown-body">
+    <hr>
+<h2>name: notifications
+description: &quot;Manage GitHub notifications across all repos -- list unread, mark as read/done, unsubscribe, smart filtering by @mentions, review requests, and CI failures&quot;
+agent: daily-briefing
+tools:
+  - github/*
+  - ask_questions</h2>
+<p>Manage your GitHub notifications from the editor. List, filter, and act on notifications without opening a browser.</p>
+<p>Notifications are inherently cross-repo. Respect priority and mute settings from <code>.github/agents/preferences.md</code> if present.</p>
+<p>${input:action:Optional: &#39;unread&#39;, &#39;review requests&#39;, &#39;mentions&#39;, &#39;mark all read&#39;, specific repo, or &#39;org:orgname&#39;}</p>
+<h2>Capabilities</h2>
+<h3>List Notifications</h3>
+<ul>
+<li>Fetch unread notifications grouped by repo, then by type (review requested, mentioned, CI failure, subscribed)</li>
+<li>Show count per group and most recent notification in each</li>
+<li>Apply smart filtering from notification preferences in <code>.github/agents/preferences.md</code>:<ul>
+<li>Prioritize repos/labels/events marked as priority</li>
+<li>Dim or hide repos/labels/events marked as muted</li>
+</ul>
+</li>
+</ul>
+<h3>Filter Views</h3>
+<table>
+<thead>
+<tr>
+<th>Filter</th>
+<th>Shows</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>unread</code> (default)</td>
+<td>All unread notifications, grouped by repo</td>
+</tr>
+<tr>
+<td><code>mentions</code></td>
+<td>Only notifications where you were @mentioned</td>
+</tr>
+<tr>
+<td><code>review requests</code></td>
+<td>Only PR review request notifications</td>
+</tr>
+<tr>
+<td><code>ci failures</code></td>
+<td>Only CI/workflow failure notifications</td>
+</tr>
+<tr>
+<td><code>{repo name}</code></td>
+<td>Notifications for a specific repo</td>
+</tr>
+</tbody></table>
+<h3>Actions</h3>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>How</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Mark as read</strong></td>
+<td><code>mark #3 as read</code> or <code>mark all from repo as read</code></td>
+</tr>
+<tr>
+<td><strong>Mark as done</strong></td>
+<td><code>done with #3</code> -- marks as done in GitHub</td>
+</tr>
+<tr>
+<td><strong>Unsubscribe</strong></td>
+<td><code>unsubscribe from #3</code> -- stop notifications for that thread</td>
+</tr>
+<tr>
+<td><strong>Mark all read</strong></td>
+<td><code>mark all read</code> -- clears all unread notifications</td>
+</tr>
+</tbody></table>
+<h3>Display Format</h3>
+<pre><code>Unread Notifications (15 total)
+
+Priority (5):
+  1. [review-requested] owner/repo -- PR #42: Fix auth timeout (@alice requested your review, 2h ago)
+  2. [mention] owner/repo -- Issue #15: API breaking change (@bob mentioned you, 4h ago)
+  3. [ci-failure] owner/repo -- Build failed on main (30min ago)
+
+Normal (8):
+  4. [comment] owner/repo -- Issue #30: New feature proposal (3 new comments, 1h ago)
+  ...
+
+Muted (2 -- hidden by preferences):
+  Show muted? (y/n)
+</code></pre>
+<p>After listing: <em>&quot;Want to mark some as read, unsubscribe from any threads, or dive into a specific notification?&quot;</em></p>
+
+  </main>
+  <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
+    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com">Back to GitHub</a></p>
+  </footer>
+</body>
+</html>

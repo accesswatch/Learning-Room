@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
+  <title>FAQ: Frequently Asked Questions - GitHub Learning Room</title>
+  <link rel="stylesheet" href="./styles/github-markdown.css">
+  <link rel="stylesheet" href="./styles/highlight.css">
+  <link rel="stylesheet" href="./styles/custom.css">
+  <style>
+    .markdown-body {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+    @media (max-width: 767px) {
+      .markdown-body {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <a href="./index.html">Home</a>
+  </nav>
+  <main class="markdown-body">
+    <h1>FAQ: Frequently Asked Questions</h1>
+<hr>
+<h2>About This Guide</h2>
+<h3>Q: Is this guide only for programmers?</h3>
+<p><strong>A:</strong> No! While it focuses on GitHub (which developers use), the concepts apply to anyone collaborating on projects. The guide emphasizes accessibility and inclusive language, so non-technical team members can follow too. <strong>Start:</strong> Chapter 1 (no coding required).</p>
+<h3>Q: Do I need to know how to code to understand this guide?</h3>
+<p><strong>A:</strong> Not for most chapters. Chapters 0-14 teach GitHub concepts without requiring code knowledge. Chapters 15-17 introduce programming concepts but explain them for beginners. <strong>If you&#39;re non-technical:</strong> You can skip code examples and still understand the workflow.</p>
+<h3>Q: How long will this take?</h3>
+<p><strong>A:</strong> Depends on your path:</p>
+<ul>
+<li><strong>Core path (Day 1 only):</strong> 8 hours</li>
+<li><strong>Full curriculum:</strong> 12-15 hours</li>
+<li><strong>Just the essentials:</strong> 3-4 hours (Chapters 0, 1, 4, 5)</li>
+</ul>
+<hr>
+<h2>Is This For Me?</h2>
+<h3>Q: I&#39;m a complete beginner to GitHub. Where do I start?</h3>
+<p><strong>A:</strong> Start with <strong>Chapter 0 (Pre-Workshop Setup)</strong> to install tools, then <strong>Chapter 1 (Understanding GitHub Web Structure)</strong>. Both assume zero prior knowledge.</p>
+<h3>Q: I use GitHub at work but don&#39;t understand how to use it well. Can this help?</h3>
+<p><strong>A:</strong> Yes! <strong>Chapter 4 (Working with Issues)</strong> and <strong>Chapter 5 (Working with Pull Requests)</strong> will deepen your understanding. Then jump to <strong>Chapter 15 (Code Review)</strong> for best practices.</p>
+<h3>Q: I&#39;m a maintainer of an open-source project. What should I read?</h3>
+<p><strong>A:</strong> <strong>Chapter 8 (Labels, Milestones &amp; Projects)</strong> → <strong>Chapter 15 (Issue Templates)</strong> → <strong>Chapter 16 (Agent Forge)</strong>. These focus on organizing projects and automating common tasks.</p>
+<h3>Q: I&#39;m teaching GitHub to a group. Do I need to know everything?</h3>
+<p><strong>A:</strong> Yes, read the full curriculum first. Also read <strong>FACILITATOR.md</strong> for tips. You&#39;ll find lesson plans in <strong>Chapter 2</strong> and <strong>Chapter 10</strong> for structuring a workshop.</p>
+<h3>Q: I use screen readers (NVDA/JAWS/VoiceOver). Is this guide accessible?</h3>
+<p><strong>A:</strong> Yes! This guide was designed with accessibility in mind. Every chapter includes screen reader instructions. <strong>Chapter 15 (Accessible Code Review)</strong> has detailed keyboard-only workflows. Start: <strong>Appendix B (Screen Reader Cheatsheet)</strong> for quick commands.</p>
+<h3>Q: I&#39;m not a native English speaker. Can I understand this?</h3>
+<p><strong>A:</strong> Yes! All technical terms are defined in <strong>Appendix A (Glossary)</strong>. The language is simple and direct. If anything is unclear, open an issue on GitHub or check <strong>QUICK_REFERENCE.md</strong> (tables are easier to scan).</p>
+<hr>
+<h2>Getting Started</h2>
+<h3>Q: I installed Git, but I&#39;m getting &quot;git: command not found&quot;. What do I do?</h3>
+<p><strong>A:</strong> See <strong>TROUBLESHOOTING.md</strong> → &quot;Problem: Git is not installed&quot;. It has platform-specific steps (Windows, macOS, Linux).</p>
+<h3>Q: I created a GitHub account, but I can&#39;t clone repositories. Why?</h3>
+<p><strong>A:</strong> You likely need to set up authentication (SSH key or HTTPS). See <strong>Chapter 0 (Pre-Workshop Setup)</strong> or <strong>TROUBLESHOOTING.md</strong> → &quot;Problem: Authentication fails when pushing&quot;.</p>
+<h3>Q: Do I need to understand branching and merging before starting?</h3>
+<p><strong>A:</strong> Not required! It&#39;s covered in <strong>Chapter 5 (PRs)</strong>. You can learn as you go. <strong>Chapter 6 (Merge Conflicts)</strong> explains what to do if something breaks.</p>
+<hr>
+<h2>Issues &amp; Pull Requests</h2>
+<h3>Q: What&#39;s the difference between an issue and a pull request?</h3>
+<p><strong>A:</strong> </p>
+<ul>
+<li><strong>Issue</strong> = A problem or request (e.g., &quot;Fix login bug&quot;)</li>
+<li><strong>Pull request</strong> = Your solution (the code that fixes it)</li>
+<li><strong>See:</strong> Chapter 4 vs. Chapter 5 for details</li>
+</ul>
+<h3>Q: How do I know if I should open an issue or a PR?</h3>
+<p><strong>A:</strong></p>
+<ul>
+<li><strong>Open an issue if:</strong> You found a bug, want to suggest a feature, or have a question</li>
+<li><strong>Open a PR if:</strong> You already have code to fix/improve something</li>
+<li><strong>Both?</strong> Open issue first, discuss, then open PR with your solution</li>
+</ul>
+<h3>Q: My PR has merge conflicts. Am I in trouble?</h3>
+<p><strong>A:</strong> No! Merge conflicts are normal. See <strong>Chapter 6 (Merge Conflicts)</strong> for how to resolve them easily. It&#39;s just Git&#39;s way of saying &quot;Two people edited the same part of the file.&quot;</p>
+<h3>Q: How long does it take to get PR feedback?</h3>
+<p><strong>A:</strong> Depends on the project. Open-source projects may take days or weeks. Your company&#39;s repo might be hours. Check the project&#39;s <strong>CONTRIBUTING.md</strong> for estimated review time.</p>
+<hr>
+<h2>Templates &amp; Automation</h2>
+<h3>Q: What&#39;s an issue template and why should I care?</h3>
+<p><strong>A:</strong> Templates guide people to provide the right information when they create issues. Saves time for maintainers. <strong>See:</strong> Chapter 16 (Issue Templates) to create one.</p>
+<h3>Q: Can I use Copilot to help me review code?</h3>
+<p><strong>A:</strong> Yes! The <code>@pr-review</code> agent does exactly this. <strong>See:</strong> Chapter 16 (Agent Forge) for details.</p>
+<h3>Q: What&#39;s the <code>@template-builder</code> agent and how is it different?</h3>
+<p><strong>A:</strong> It&#39;s a NEW interactive wizard that walks you through creating issue templates using AI guidance. Instead of writing YAML manually, the agent asks questions and generates the template for you. <strong>See:</strong> Chapter 15 (Day 2 Amplifier) or Chapter 16 (Agent Forge).</p>
+<h3>Q: Do I need a paid GitHub Copilot subscription to use agents?</h3>
+<p><strong>A:</strong> Yes, agents require GitHub Copilot. Free alternatives: Use GitHub&#39;s web interface manually (still powerful!).</p>
+<hr>
+<h2>Accessibility &amp; Inclusive Practices</h2>
+<h3>Q: What makes code review &quot;accessible&quot;?</h3>
+<p><strong>A:</strong> Using keyboard shortcuts instead of mouse, testing with screen readers, writing descriptive comments. <strong>See:</strong> Chapter 15 (Accessible Code Review) for details.</p>
+<h3>Q: How do I test for accessibility in GitHub?</h3>
+<p><strong>A:</strong> Use screen readers (NVDA/JAWS/VoiceOver). <strong>See:</strong> Appendix B (Screen Reader Cheatsheet) for commands. Or use automated tools like WAVE or Axe. <strong>See:</strong> RESOURCES.md for links.</p>
+<h3>Q: Why do issue templates need to be accessible?</h3>
+<p><strong>A:</strong> So people using screen readers can fill them out easily. Required fields should be marked and announced. <strong>See:</strong> Chapter 16 (Issue Templates) for accessible template design.</p>
+<h3>Q: Can I use this guide with a screen reader?</h3>
+<p><strong>A:</strong> Yes! Every chapter has keyboard-only workflows and screen reader instructions. This guide was designed with accessibility in mind.</p>
+<hr>
+<h2>Troubleshooting &amp; Help</h2>
+<h3>Q: I followed the steps but my template doesn&#39;t show up on GitHub.</h3>
+<p><strong>A:</strong> Check:</p>
+<ol>
+<li>Is the file in the right location? (<code>.github/ISSUE_TEMPLATE/your-template.yml</code>)</li>
+<li>Is the YAML syntax correct? (Use <a href="https://www.yamllint.com/">https://www.yamllint.com/</a>)</li>
+<li>Did you push to the <code>main</code> branch?</li>
+<li>Try a hard refresh: <code>Ctrl+Shift+R</code></li>
+</ol>
+<p><strong>Full diagnostics:</strong> See TROUBLESHOOTING.md → &quot;Problem: Template not showing in GitHub&quot;</p>
+<h3>Q: The exercises don&#39;t make sense. What do I do?</h3>
+<p><strong>A:</strong> </p>
+<ol>
+<li><strong>Reread</strong> the prerequisites (listed at the start of each exercise)</li>
+<li><strong>Check</strong> the &quot;What you should see&quot; checkpoint after each step</li>
+<li><strong>Look for</strong> the &quot;If you&#39;re stuck&quot; troubleshooting section within the exercise</li>
+<li><strong>Consult:</strong> QUICK_REFERENCE.md for keyboard commands</li>
+<li><strong>Ask:</strong> Open an issue describing what&#39;s confusing</li>
+</ol>
+<h3>Q: I&#39;m stuck on a step and can&#39;t move forward. How do I get help?</h3>
+<p><strong>A:</strong> </p>
+<ol>
+<li>Check <strong>TROUBLESHOOTING.md</strong> (may have exact answer)</li>
+<li>Check <strong>QUICK_REFERENCE.md</strong> (commands, shortcuts)</li>
+<li>Check <strong>RESOURCES.md</strong> (external documentation)</li>
+<li>Open <strong>GitHub Issue</strong> with:<ul>
+<li>Screenshot or description of your problem</li>
+<li>Which exercise and step you&#39;re on</li>
+<li>What you tried</li>
+</ul>
+</li>
+</ol>
+<h3>Q: I think I found a mistake in the guide. What do I do?</h3>
+<p><strong>A:</strong> Open an issue! Describe:</p>
+<ul>
+<li>Which chapter/section</li>
+<li>What the mistake is</li>
+<li>What it should say</li>
+<li>If possible, suggest a fix</li>
+</ul>
+<p>See <strong>CONTRIBUTING.md</strong> for contribution guidelines.</p>
+<hr>
+<h2>Concepts &amp; Terminology</h2>
+<h3>Q: What&#39;s the difference between a fork and a branch?</h3>
+<p><strong>A:</strong></p>
+<ul>
+<li><strong>Fork</strong> = Your complete separate copy of a repository (on GitHub)</li>
+<li><strong>Branch</strong> = A version of the code within a repository</li>
+<li><strong>Use fork to:</strong> Contribute to someone else&#39;s open-source project</li>
+<li><strong>Use branch to:</strong> Work on features in your own repository</li>
+</ul>
+<p><strong>See:</strong> Chapter 1 for detailed explanation.</p>
+<h3>Q: What&#39;s a &quot;pull request&quot;? Why is it called that?</h3>
+<p><strong>A:</strong> </p>
+<ul>
+<li><strong>Pull request</strong> (PR) = You&#39;re asking the maintainer to &quot;pull&quot; your changes into their repository</li>
+<li>Literally: &quot;Pull my changes into your project&quot;</li>
+<li>Also called: <strong>Merge request</strong> (GitLab uses this term)</li>
+</ul>
+<h3>Q: What does &quot;merge&quot; mean?</h3>
+<p><strong>A:</strong> Combining two branches of code. After your PR is approved, it&#39;s &quot;merged&quot; into <code>main</code>. The changes become official.</p>
+<h3>Q: What&#39;s YAML and why is it used for templates?</h3>
+<p><strong>A:</strong> </p>
+<ul>
+<li><strong>YAML</strong> = A simple format for writing structured data</li>
+<li><strong>Why GitHub uses it:</strong> It&#39;s human-readable (not like XML or JSON)</li>
+<li><strong>Don&#39;t panic:</strong> Chapter 16 teaches it; you don&#39;t need to be an expert</li>
+</ul>
+<hr>
+<h2>Advanced Questions</h2>
+<h3>Q: Can I contribute to this curriculum?</h3>
+<p><strong>A:</strong> Yes! See <strong>CONTRIBUTING.md</strong> for how to submit improvements, suggest new topics, or fix issues.</p>
+<h3>Q: I want to share this guide with my team. Can I?</h3>
+<p><strong>A:</strong> Yes! The curriculum is open-source. See <strong>LICENSE</strong> file (if present) for usage rights. Typically you can share freely; credit the original authors.</p>
+<h3>Q: Can I modify the guide for my organization?</h3>
+<p><strong>A:</strong> Yes! You can fork this repository and customize for your needs. See <strong>CONTRIBUTING.md</strong> → Contributing at Scale.</p>
+<h3>Q: What if my question isn&#39;t answered here?</h3>
+<p><strong>A:</strong> </p>
+<ol>
+<li>Check <strong>Appendix A (Glossary)</strong> for term definitions</li>
+<li>Search existing <strong>GitHub Issues</strong></li>
+<li>Open a new issue: &quot;FAQ: [Your question]&quot;</li>
+<li>Or ask in <strong>Discussions</strong> section</li>
+</ol>
+<hr>
+<h2>Still Stuck?</h2>
+<p>This FAQ doesn&#39;t cover your question? Try these resources in order:</p>
+<ol>
+<li><strong>QUICK_REFERENCE.md</strong> — Commands, keyboard shortcuts, file locations</li>
+<li><strong>TROUBLESHOOTING.md</strong> — Common problems &amp; solutions</li>
+<li><strong>RESOURCES.md</strong> — External documentation and links</li>
+<li><strong>Appendix A (Glossary)</strong> — Term definitions</li>
+<li><strong>Appendix B (Screen Reader Cheatsheet)</strong> — Keyboard commands for NVDA/JAWS/VoiceOver</li>
+<li><strong>GitHub Issues</strong> — Search or open new issue</li>
+<li><strong>FACILITATOR.md</strong> — If you&#39;re leading a workshop</li>
+</ol>
+<hr>
+<p><em>Last updated: February 2026</em><br><em>Have more questions? Open an issue or discussion on GitHub!</em></p>
+
+  </main>
+  <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
+    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com">Back to GitHub</a></p>
+  </footer>
+</body>
+</html>

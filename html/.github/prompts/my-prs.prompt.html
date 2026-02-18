@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
+  <title>my-prs.prompt - GitHub Learning Room</title>
+  <link rel="stylesheet" href="./styles/github-markdown.css">
+  <link rel="stylesheet" href="./styles/highlight.css">
+  <link rel="stylesheet" href="./styles/custom.css">
+  <style>
+    .markdown-body {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+    @media (max-width: 767px) {
+      .markdown-body {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <a href="./index.html">Home</a>
+  </nav>
+  <main class="markdown-body">
+    <hr>
+<h2>name: my-prs
+description: &quot;Dashboard of your open PRs across all repos -- review status, CI, merge state, reactions, release context, and what needs attention&quot;
+agent: pr-review
+tools:
+  - github/*
+  - createFile
+  - createDirectory
+  - ask_questions</h2>
+<p>Get the current authenticated user with #tool:mcp_github_github_get_me, then search for all <strong>open</strong> pull requests authored by or assigned to that user.</p>
+<p>By default, search across ALL repos the user has access to (no <code>repo:</code> qualifier). Respect repo scope from <code>.github/agents/preferences.md</code> if present (discovery mode, include/exclude lists, per-repo overrides with <code>track.pull_requests</code> flag).</p>
+<p>${input:filter:Optional: repo name, &#39;org:orgname&#39;, &#39;needs review&#39;, &#39;approved&#39;, &#39;failing CI&#39;, or keywords}</p>
+<h2>Behavior</h2>
+<p>Parse the filter:</p>
+<ul>
+<li><strong>Repo name</strong> --&gt; scope to that repo with <code>repo:owner/name</code></li>
+<li><strong>Org name</strong> (e.g., &quot;org:microsoft&quot;) --&gt; scope to that org with <code>org:orgname</code></li>
+<li><strong>&quot;needs review&quot;</strong> --&gt; PRs with no reviews yet</li>
+<li><strong>&quot;approved&quot;</strong> --&gt; PRs with at least one approval</li>
+<li><strong>&quot;failing&quot;</strong> / <strong>&quot;CI&quot;</strong> --&gt; PRs where checks are failing</li>
+<li><strong>&quot;draft&quot;</strong> --&gt; only draft PRs</li>
+<li><strong>&quot;ready&quot;</strong> --&gt; approved + CI passing + no conflicts</li>
+<li><strong>&quot;release&quot;</strong> --&gt; PRs in a release milestone</li>
+<li><strong>Keywords</strong> --&gt; search terms</li>
+<li><strong>No filter</strong> --&gt; search ALL accessible repos</li>
+</ul>
+<p>Also search for PRs where your review was requested: <code>review-requested:USERNAME state:open</code></p>
+<h2>Enhanced Data Collection</h2>
+<p>For each PR found, also gather:</p>
+<ul>
+<li><strong>Reactions</strong> -- on the PR description. Flag Popular/Controversial/Quiet.</li>
+<li><strong>Release context</strong> -- check if the PR targets a release branch or is in a release milestone.</li>
+<li><strong>Discussions</strong> -- note related GitHub Discussions.</li>
+<li><strong>Team reviews</strong> -- who has already reviewed vs. who hasn&#39;t.</li>
+</ul>
+<h2>Output</h2>
+<p><strong>Lead with a status line:</strong> <em>&quot;You have 5 open PRs (2 ready to merge, 1 needs updates, 1 release-bound)&quot;</em></p>
+<p>Display two sections:</p>
+<h3>Your PRs ({count} items)</h3>
+<table>
+<thead>
+<tr>
+<th>Priority</th>
+<th>PR</th>
+<th>Repo</th>
+<th>Reviews</th>
+<th>CI</th>
+<th>Merge</th>
+<th>Age</th>
+<th>Reactions</th>
+<th>Release</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><a href="url">PR #N: Title</a></td>
+<td>repo</td>
+<td>2 approved</td>
+<td>Pass</td>
+<td>Clean</td>
+<td>1 day</td>
+<td>+1: 3</td>
+<td>v2.0</td>
+<td>Ready to merge</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="url">PR #N: Title</a></td>
+<td>repo</td>
+<td>Changes req.</td>
+<td>Pass</td>
+<td>Clean</td>
+<td>3 days</td>
+<td>--</td>
+<td>--</td>
+<td>Address feedback</td>
+</tr>
+</tbody></table>
+<h3>Awaiting Your Review ({count} items)</h3>
+<table>
+<thead>
+<tr>
+<th>Priority</th>
+<th>PR</th>
+<th>Repo</th>
+<th>Author</th>
+<th>Files</th>
+<th>Changes</th>
+<th>Waiting</th>
+<th>Reactions</th>
+<th>Release</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><a href="url">PR #N: Title</a></td>
+<td>repo</td>
+<td>@author</td>
+<td>5</td>
+<td>+120/-30</td>
+<td>2 days</td>
+<td>+1: 5, Popular</td>
+<td>v2.0</td>
+</tr>
+</tbody></table>
+<p><strong>Action signals:</strong></p>
+<ul>
+<li><strong>Ready to merge</strong> -- Approved, CI passing, no conflicts</li>
+<li><strong>Needs your update</strong> -- Changes requested or CI failing</li>
+<li><strong>Blocked</strong> -- Merge conflicts or blocked by dependencies</li>
+<li><strong>Awaiting others</strong> -- Waiting for reviews from others</li>
+<li><strong>Popular</strong> -- Community interest (5+ reactions)</li>
+<li><strong>Release-bound</strong> -- Targets an upcoming release</li>
+</ul>
+<p>After the table, suggest: <em>&quot;Want to merge a ready PR, start reviewing one, or generate a full PR report?&quot;</em></p>
+
+  </main>
+  <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
+    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com">Back to GitHub</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
+  <title>manage-branches.prompt - GitHub Learning Room</title>
+  <link rel="stylesheet" href="./styles/github-markdown.css">
+  <link rel="stylesheet" href="./styles/highlight.css">
+  <link rel="stylesheet" href="./styles/custom.css">
+  <style>
+    .markdown-body {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+    @media (max-width: 767px) {
+      .markdown-body {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <a href="./index.html">Home</a>
+  </nav>
+  <main class="markdown-body">
+    <hr>
+<h2>name: manage-branches
+description: &quot;Branch management -- list branches with activity, detect stale branches, compare ahead/behind, delete merged branches, show protection rules&quot;
+agent: pr-review
+tools:
+  - github/*
+  - ask_questions</h2>
+<p>Manage branches in a repository -- list, compare, clean up stale branches, and check protection rules.</p>
+<p>${input:action:Optional: &#39;list&#39;, &#39;stale&#39;, &#39;compare branch-a branch-b&#39;, &#39;cleanup&#39;, &#39;protection&#39;, or specific repo}</p>
+<h2>Capabilities</h2>
+<h3>List Branches</h3>
+<ul>
+<li>Fetch all branches with last commit date and author</li>
+<li>Sort by most recently active</li>
+<li>Show ahead/behind status relative to the default branch</li>
+<li>Flag: stale (no activity 30+ days), merged (can be deleted), protected</li>
+</ul>
+<h3>Detect Stale Branches</h3>
+<ul>
+<li>Identify branches with no commits in 30+ days (configurable)</li>
+<li>Show last commit author and date</li>
+<li>Distinguish between: merged (safe to delete), unmerged (needs review), protected (can&#39;t delete)</li>
+</ul>
+<h3>Compare Branches</h3>
+<ul>
+<li>Show commits ahead/behind between two branches</li>
+<li>List unique commits on each side</li>
+<li>Flag potential merge conflicts</li>
+</ul>
+<h3>Delete Merged Branches</h3>
+<p><strong>Safety-first approach:</strong></p>
+<ol>
+<li>List all branches that have been merged into the default branch</li>
+<li>Exclude protected branches and the default branch</li>
+<li>Show the full list with last activity date</li>
+<li>Require explicit confirmation before deletion</li>
+<li>Delete one at a time, confirming each (or batch with single confirmation if user requests)</li>
+</ol>
+<h3>Branch Protection Rules</h3>
+<ul>
+<li>Show protection rules for the default branch and any other protected branches</li>
+<li>Note: required reviews, status checks, enforcement level</li>
+</ul>
+<h3>Display Format</h3>
+<pre><code>Branches in owner/repo (15 total)
+
+Active (8):
+  main (default, protected) -- latest: 2h ago
+  feature/auth-redesign -- 3 commits ahead, 0 behind -- latest: 1 day ago
+  fix/login-timeout -- 1 commit ahead, 5 behind -- latest: 3 days ago
+
+Stale (5 -- no activity in 30+ days):
+  old/experiment -- merged, safe to delete -- last: 45 days ago
+  feature/abandoned -- NOT merged, 12 commits ahead -- last: 60 days ago
+
+Protected (2):
+  main -- requires 2 reviews, CI must pass
+  release/v2 -- requires 1 review
+</code></pre>
+<p>After listing: <em>&quot;Want to clean up the merged stale branches? Or compare two branches?&quot;</em></p>
+
+  </main>
+  <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
+    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com">Back to GitHub</a></p>
+  </footer>
+</body>
+</html>

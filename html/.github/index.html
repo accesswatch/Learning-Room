@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
+  <title>Learning Room Automation System - GitHub Learning Room</title>
+  <link rel="stylesheet" href="./styles/github-markdown.css">
+  <link rel="stylesheet" href="./styles/highlight.css">
+  <link rel="stylesheet" href="./styles/custom.css">
+  <style>
+    .markdown-body {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+    @media (max-width: 767px) {
+      .markdown-body {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <a href="./index.html">Home</a>
+  </nav>
+  <main class="markdown-body">
+    <h1>Learning Room Automation System</h1>
+<p>Complete automation infrastructure for the Learning Room workshop repository. Provides instant feedback, skill progression tracking, and automated peer pairing while preserving the educational value of human code review.</p>
+<h2>🎯 System Overview</h2>
+<p>This automation system transforms the Learning Room into a GitHub Skills-quality learning experience with three core components:</p>
+<h3>1. PR Validation Bot</h3>
+<p><strong>File:</strong> <code>.github/workflows/learning-room-pr-bot.yml</code></p>
+<p>Automatically validates pull requests and provides educational feedback:</p>
+<ul>
+<li>Welcomes first-time contributors with orientation</li>
+<li>Checks PR requirements (issue reference, description)</li>
+<li>Validates file locations (learning-room only)</li>
+<li>Comprehensive accessibility checking:<ul>
+<li>Heading hierarchy (no H1→H3 skips)</li>
+<li>Link text quality (no &quot;click here&quot;)</li>
+<li>Image alt text (required and descriptive)</li>
+<li>Broken links detection</li>
+<li>[TODO] markers (must be completed)</li>
+</ul>
+</li>
+<li>Posts structured feedback comment with fixes</li>
+<li>Auto-applies labels (documentation, accessibility, needs-work)</li>
+<li>Responds to keywords (@bot help, &quot;merge conflict&quot;, &quot;request review&quot;)</li>
+<li>Creates commit status checks</li>
+</ul>
+<p><strong>Validation Script:</strong> <code>.github/scripts/validate-pr.js</code><br><strong>Triggers:</strong> PR opened/edited/synchronized, comments created</p>
+<h3>2. Skills Progression Engine</h3>
+<p><strong>File:</strong> <code>.github/workflows/skills-progression.yml</code></p>
+<p>Tracks student progress through leveled learning paths:</p>
+<ul>
+<li>Monitors merged PRs and counts completions</li>
+<li>Awards skill-specific badges:<ul>
+<li>📝 Markdown Master</li>
+<li>♿ Accessibility Advocate</li>
+<li>👁️ Code Reviewer</li>
+<li>🤝 Team Player</li>
+<li>📚 Documentation Writer</li>
+<li>🏗️ Content Creator</li>
+</ul>
+</li>
+<li>Unlocks new challenges by level:<ul>
+<li>Beginner (0+ PRs): Basic fixes</li>
+<li>Intermediate (1+ PRs): Accessibility fundamentals</li>
+<li>Advanced (3+ PRs): Reviews and mentorship</li>
+<li>Expert (5+ PRs): Content creation</li>
+</ul>
+</li>
+<li>Celebrates milestones (1, 5, 10, 25, 50, 100 merged PRs)</li>
+<li>Posts progress updates with stats</li>
+</ul>
+<p><strong>Configuration:</strong> <code>.github/data/challenge-progression.json</code><br><strong>Triggers:</strong> PR merged (closed via merge)</p>
+<h3>3. Student Pairing &amp; Grouping</h3>
+<p><strong>File:</strong> <code>.github/workflows/student-grouping.yml</code></p>
+<p>Automates peer review assignment and study group formation:</p>
+<ul>
+<li>Assigns peer reviewers when PRs open</li>
+<li>Balances review load (least_reviews strategy)</li>
+<li>Provides review guidance to both parties</li>
+<li>Creates study groups (manual workflow dispatch):<ul>
+<li>Random shuffle</li>
+<li>Skill-balanced (mix levels)</li>
+<li>Timezone-matched</li>
+</ul>
+</li>
+<li>Posts group coordination issues</li>
+</ul>
+<p><strong>Configuration:</strong> <code>.github/data/student-roster.json</code><br><strong>Triggers:</strong> PR opened/ready_for_review, manual dispatch</p>
+<hr>
+<h2>📂 File Structure</h2>
+<pre><code>.github/
+├── workflows/
+│   ├── learning-room-pr-bot.yml      ← Main PR validation (4 jobs)
+│   ├── skills-progression.yml         ← Progress tracking (3 jobs)
+│   └── student-grouping.yml           ← Pairing &amp; grouping (2 jobs)
+├── scripts/
+│   └── validate-pr.js                 ← Node.js validation logic
+├── data/
+│   ├── challenge-progression.json     ← Levels, badges, milestones
+│   └── student-roster.json            ← Student information (update per cohort)
+└── docs/
+    ├── LEARNING_PATHS.md              ← Detailed skill progression guide
+    └── IMPLEMENTATION_GUIDE.md        ← Setup instructions for facilitators
+
+learning-room/
+├── AUTOMATION.md                      ← Student-facing bot guide
+└── docs/
+    ├── CHALLENGES.md                  ← Available challenge list
+    └── GROUP_CHALLENGES.md            ← Collaborative exercises
+</code></pre>
+<hr>
+<h2>🚀 Quick Start</h2>
+<h3>For Facilitators (First Time Setup)</h3>
+<ol>
+<li><strong>Install files</strong> (all workflows, scripts, data, docs)</li>
+<li><strong>Update student roster</strong> (<code>.github/data/student-roster.json</code>)</li>
+<li><strong>Configure permissions</strong> (Settings → Actions → Read/write + create PRs)</li>
+<li><strong>Test with PR</strong> (verify bot comments within 30 seconds)</li>
+<li><strong>Create challenge issues</strong> (pre-seed for workshop)</li>
+</ol>
+<p><strong>See:</strong> <a href="docs/IMPLEMENTATION_GUIDE.md">Implementation Guide</a> for detailed setup</p>
+<h3>For Students</h3>
+<p>When you open a PR:</p>
+<ol>
+<li>Wait ~30 seconds for bot feedback</li>
+<li>Read feedback carefully (structured by type)</li>
+<li>Fix any issues bot identifies</li>
+<li>Request human peer review</li>
+<li>Respond to both bot and human feedback</li>
+<li>Merge when approved!</li>
+</ol>
+<p><strong>See:</strong> <a href="../learning-room/AUTOMATION.md">Automation Guide</a> for how to use the bot</p>
+<hr>
+<h2>🔧 Configuration</h2>
+<h3>Student Roster (<code>.github/data/student-roster.json</code>)</h3>
+<p>Update before each workshop cohort:</p>
+<pre><code class="language-json">{
+  &quot;cohort&quot;: &quot;Workshop Name 2024&quot;,
+  &quot;facilitators&quot;: [&quot;facilitator-username&quot;],
+  &quot;students&quot;: [
+    {
+      &quot;username&quot;: &quot;github-username&quot;,
+      &quot;name&quot;: &quot;Display Name&quot;,
+      &quot;timezone&quot;: &quot;America/Los_Angeles&quot;,
+      &quot;interests&quot;: [&quot;accessibility&quot;, &quot;frontend&quot;],
+      &quot;pronouns&quot;: &quot;they/them&quot;,
+      &quot;screenReader&quot;: false,
+      &quot;mergedPRs&quot;: 0,
+      &quot;currentLevel&quot;: &quot;Beginner&quot;,
+      &quot;badges&quot;: [],
+      &quot;joinedDate&quot;: &quot;2024-01-15&quot;
+    }
+  ]
+}
+</code></pre>
+<h3>Skill Progression (<code>.github/data/challenge-progression.json</code>)</h3>
+<p>Defines levels, badges, and milestones. Default:</p>
+<ul>
+<li><strong>Beginner:</strong> 0+ PRs (3 challenges)</li>
+<li><strong>Intermediate:</strong> 1+ PRs (3 challenges)</li>
+<li><strong>Advanced:</strong> 3+ PRs (3 challenges)</li>
+<li><strong>Expert:</strong> 5+ PRs (3+ challenges)</li>
+</ul>
+<p>Adjust PR thresholds and challenge lists as needed.</p>
+<h3>Validation Rules (<code>.github/scripts/validate-pr.js</code>)</h3>
+<p>Customize checks:</p>
+<ul>
+<li><code>checkIssueReference()</code> — Require issue link patterns</li>
+<li><code>checkDescription()</code> — Minimum character count (default: 50)</li>
+<li><code>checkFileLocation()</code> — Allowed directories (default: learning-room/)</li>
+<li><code>validateMarkdownAccessibility()</code> — A11y rules (headings, links, alt text)</li>
+</ul>
+<p>Add new validation functions to <code>required</code> or <code>suggestions</code> arrays.</p>
+<hr>
+<h2>🎭 Workflow Jobs Reference</h2>
+<h3>PR Validation Bot Jobs</h3>
+<p><strong>1. <code>welcome-first-timer</code></strong></p>
+<ul>
+<li>Detects first PR (counts previous)</li>
+<li>Posts welcome message</li>
+<li>Applies labels: first-time-contributor, needs-review</li>
+</ul>
+<p><strong>2. <code>validate-pr</code></strong></p>
+<ul>
+<li>Runs validation script</li>
+<li>Posts/updates feedback comment</li>
+<li>Creates commit status check</li>
+<li>Applies labels: documentation, needs-work, accessibility</li>
+</ul>
+<p><strong>3. <code>celebrate-review</code></strong></p>
+<ul>
+<li>Triggers on approved review</li>
+<li>Congratulates both reviewer and author</li>
+</ul>
+<p><strong>4. <code>respond-to-questions</code></strong></p>
+<ul>
+<li>Triggers on comment created</li>
+<li>Detects keywords (@bot help, merge conflict, request review)</li>
+<li>Posts contextual help</li>
+</ul>
+<h3>Skills Progression Jobs</h3>
+<p><strong>1. <code>track-completion</code></strong></p>
+<ul>
+<li>Triggers on PR merge</li>
+<li>Determines skill type from issue labels</li>
+<li>Awards appropriate badge</li>
+<li>Posts achievement comment</li>
+</ul>
+<p><strong>2. <code>unlock-next-challenge</code></strong></p>
+<ul>
+<li>Counts total merged PRs</li>
+<li>Determines current level</li>
+<li>Checks for level-up</li>
+<li>Posts progress update or level-up celebration</li>
+</ul>
+<p><strong>3. <code>celebrate-milestone</code></strong></p>
+<ul>
+<li>Checks for milestone PR counts (1, 5, 10, 25, 50, 100)</li>
+<li>Posts special celebration with badge link</li>
+</ul>
+<h3>Student Grouping Jobs</h3>
+<p><strong>1. <code>assign-peer-reviewer</code></strong></p>
+<ul>
+<li>Triggers on PR opened</li>
+<li>Selects reviewer by strategy:<ul>
+<li>least_reviews (default): Balances load</li>
+<li>skill_match: Pairs by PR content</li>
+<li>random: Shuffle</li>
+</ul>
+</li>
+<li>Requests review via API</li>
+<li>Posts pairing comment with guidance</li>
+</ul>
+<p><strong>2. <code>create-study-groups</code></strong></p>
+<ul>
+<li>Manual trigger only (workflow_dispatch)</li>
+<li>Groups students by strategy:<ul>
+<li>random: Shuffle and divide</li>
+<li>skill_match: Mix skill levels</li>
+<li>timezone_match: Group by timezone</li>
+</ul>
+</li>
+<li>Creates issue per group with collaboration guide</li>
+</ul>
+<hr>
+<h2>🎓 Educational Philosophy</h2>
+<h3>Why Automation + Human Review?</h3>
+<p><strong>Automation provides:</strong></p>
+<ul>
+<li>⚡ Instant feedback (no waiting for humans)</li>
+<li>📚 Educational resources (links to learning)</li>
+<li>✅ Consistency (same standards for all)</li>
+<li>🤖 Unlimited patience (runs on every commit)</li>
+</ul>
+<p><strong>Human review provides:</strong></p>
+<ul>
+<li>💡 Creative suggestions (beyond rules)</li>
+<li>🧠 Contextual judgment (nuanced understanding)</li>
+<li>🤝 Social learning (building relationships)</li>
+<li>❤️ Encouragement and mentorship</li>
+</ul>
+<p><strong>Together:</strong> Students experience professional CI/CD workflows while building community connections.</p>
+<h3>Accessibility-First Design</h3>
+<p>All automation components:</p>
+<ul>
+<li>Use semantic Markdown (proper headings, lists, links)</li>
+<li>Include descriptive link text (never &quot;click here&quot;)</li>
+<li>Provide clear, actionable feedback</li>
+<li>Link to resources for learning</li>
+<li>Work fully with screen readers</li>
+<li>Mention screen reader considerations in guidance</li>
+</ul>
+<hr>
+<h2>🔍 Monitoring &amp; Troubleshooting</h2>
+<h3>Check Automation Health</h3>
+<p><strong>Actions Tab:</strong></p>
+<ul>
+<li>Verify workflows run on expected triggers</li>
+<li>Check for failed runs (red X)</li>
+<li>Review logs for errors</li>
+</ul>
+<p><strong>PR Checks:</strong></p>
+<ul>
+<li>Bot comment appears within 30 seconds</li>
+<li>Labels applied automatically</li>
+<li>Status checks visible</li>
+<li>Keyword responses work</li>
+</ul>
+<p><strong>Common Issues:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Bot not commenting</td>
+<td>Check workflow permissions (read/write + create PRs)</td>
+</tr>
+<tr>
+<td>Validation errors wrong</td>
+<td>Test script locally, check file paths</td>
+</tr>
+<tr>
+<td>Skills not unlocking</td>
+<td>Verify PR was merged (not just closed)</td>
+</tr>
+<tr>
+<td>Reviewer not assigned</td>
+<td>Check student roster has enough students</td>
+</tr>
+</tbody></table>
+<p><strong>See:</strong> <a href="docs/IMPLEMENTATION_GUIDE.md#step-7-troubleshooting">Implementation Guide - Troubleshooting</a></p>
+<hr>
+<h2>📊 Success Metrics</h2>
+<p>Track these to evaluate automation impact:</p>
+<p><strong>Engagement:</strong></p>
+<ul>
+<li>Number of PRs opened</li>
+<li>Merge rate (opened → merged)</li>
+<li>Time to first contribution</li>
+<li>Repeat contributions (students opening multiple PRs)</li>
+</ul>
+<p><strong>Learning:</strong></p>
+<ul>
+<li>Bot feedback comprehension (ask students)</li>
+<li>Issues fixed after bot feedback</li>
+<li>Quality of peer reviews</li>
+<li>Accessibility improvements over time</li>
+</ul>
+<p><strong>Efficiency:</strong></p>
+<ul>
+<li>Time to first feedback (bot vs human)</li>
+<li>Facilitator time spent on reviews</li>
+<li>Number of PRs requiring facilitator intervention</li>
+<li>Student satisfaction with automation</li>
+</ul>
+<hr>
+<h2>🎨 Customization Examples</h2>
+<h3>Add New Badge</h3>
+<p>Edit <code>.github/data/challenge-progression.json</code>:</p>
+<pre><code class="language-json">{
+  &quot;badges&quot;: {
+    &quot;testing&quot;: {
+      &quot;emoji&quot;: &quot;🧪&quot;,
+      &quot;title&quot;: &quot;Test Engineer&quot;,
+      &quot;description&quot;: &quot;Wrote comprehensive tests&quot;
+    }
+  }
+}
+</code></pre>
+<p>Update <code>skills-progression.yml</code> to award it when relevant.</p>
+<h3>Add Validation Check</h3>
+<p>Edit <code>.github/scripts/validate-pr.js</code>:</p>
+<pre><code class="language-javascript">function checkCodeBlocks() {
+  const hasCodeBlocks = changedContent.includes(&#39;```&#39;);
+  return {
+    passed: hasCodeBlocks,
+    message: &quot;Consider adding code examples&quot;,
+    help: &quot;Code blocks improve documentation clarity&quot;
+  };
+}
+
+// Add to suggestions array
+</code></pre>
+<h3>Change Skill Level Thresholds</h3>
+<p>Edit <code>.github/data/challenge-progression.json</code>:</p>
+<pre><code class="language-json">{
+  &quot;levels&quot;: [
+    { &quot;name&quot;: &quot;Beginner&quot;, &quot;requiredPRs&quot;: 0 },
+    { &quot;name&quot;: &quot;Intermediate&quot;, &quot;requiredPRs&quot;: 2 },  // Changed from 1
+    { &quot;name&quot;: &quot;Advanced&quot;, &quot;requiredPRs&quot;: 5 },      // Changed from 3
+    { &quot;name&quot;: &quot;Expert&quot;, &quot;requiredPRs&quot;: 10 }        // Changed from 5
+  ]
+}
+</code></pre>
+<hr>
+<h2>📚 Documentation Map</h2>
+<p><strong>For Students:</strong></p>
+<ul>
+<li>📖 <a href="../learning-room/AUTOMATION.md">Automation Guide</a> — How bot works, interpreting feedback</li>
+<li>🎯 <a href="docs/LEARNING_PATHS.md">Learning Paths</a> — Skill progression, challenge details</li>
+<li>📝 <a href="../learning-room/docs/CHALLENGES.md">Challenges List</a> — Available challenges</li>
+<li>👥 <a href="../learning-room/docs/GROUP_CHALLENGES.md">Group Challenges</a> — Collaborative exercises</li>
+</ul>
+<p><strong>For Facilitators:</strong></p>
+<ul>
+<li>🚀 <a href="docs/IMPLEMENTATION_GUIDE.md">Implementation Guide</a> — Setup instructions</li>
+<li>🎓 <a href="../FACILITATOR.md">Facilitator Guide</a> — Workshop facilitation (includes automation section)</li>
+<li>🔧 <a href="workflows/">Workflow Files</a> — Automation source code</li>
+<li>📊 <a href="data/">Data Files</a> — Configuration (roster, progression)</li>
+</ul>
+<hr>
+<h2>🤝 Contributing to Automation</h2>
+<p>Found a bug? Have a suggestion?</p>
+<ol>
+<li><strong>Open an issue</strong> with label <code>automation-feedback</code></li>
+<li><strong>Describe the problem</strong> or proposed improvement</li>
+<li><strong>Include examples</strong> (screenshots, PR links)</li>
+<li><strong>Tag facilitators</strong> for review</li>
+</ol>
+<p><strong>Common improvement areas:</strong></p>
+<ul>
+<li>Validation rules (too strict/lenient?)</li>
+<li>Bot message clarity</li>
+<li>New badge types</li>
+<li>Custom grouping strategies</li>
+<li>Additional validation checks</li>
+</ul>
+<hr>
+<h2>📝 Version History</h2>
+<p><strong>v1.0 (Current)</strong></p>
+<ul>
+<li>PR validation bot with accessibility checking</li>
+<li>Skills progression with 4 levels, 6 badges, 6 milestones</li>
+<li>Student pairing with 3 strategies</li>
+<li>Comprehensive documentation</li>
+<li>Initial challenge set (12 challenges)</li>
+</ul>
+<p><strong>Future Enhancements:</strong></p>
+<ul>
+<li>Integration with GitHub Projects for progress dashboard</li>
+<li>Automated test running for code contributions</li>
+<li>Multi-language support for international cohorts</li>
+<li>Advanced analytics and visualizations</li>
+<li>Custom achievement builder UI</li>
+</ul>
+<hr>
+<h2>🎉 Acknowledgments</h2>
+<p>This automation system was designed with these principles:</p>
+<p>✅ <strong>Accessibility First</strong> — Fully screen reader accessible<br>✅ <strong>Educational Focus</strong> — Teaches, doesn&#39;t just check<br>✅ <strong>Human-Centered</strong> — Augments, not replaces, human review<br>✅ <strong>Professional Experience</strong> — Mirrors real CI/CD workflows<br>✅ <strong>Community Building</strong> — Encourages collaboration and support  </p>
+<p>Built for the Open Source Assistive Technology Hackathon workshop.</p>
+<hr>
+<p><strong>Questions?</strong> Open an issue or reach out to workshop facilitators!</p>
+<p><strong>Ready to implement?</strong> See <a href="docs/IMPLEMENTATION_GUIDE.md">Implementation Guide</a> 🚀</p>
+
+  </main>
+  <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
+    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com">Back to GitHub</a></p>
+  </footer>
+</body>
+</html>

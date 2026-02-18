@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
+  <title>manage-issue.prompt - GitHub Learning Room</title>
+  <link rel="stylesheet" href="./styles/github-markdown.css">
+  <link rel="stylesheet" href="./styles/highlight.css">
+  <link rel="stylesheet" href="./styles/custom.css">
+  <style>
+    .markdown-body {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+    @media (max-width: 767px) {
+      .markdown-body {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <a href="./index.html">Home</a>
+  </nav>
+  <main class="markdown-body">
+    <hr>
+<h2>name: manage-issue
+description: &quot;Manage an issue -- edit, label, assign, close, reopen, lock, set milestone, or transfer&quot;
+agent: issue-tracker
+tools:
+  - github/*
+  - ask_questions</h2>
+<p>Manage a GitHub issue -- edit, label, assign, close, or perform any administrative action.</p>
+<p>${input:action:What to do -- e.g. &#39;close owner/repo#42 as completed&#39;, &#39;add bug label to #42&#39;, &#39;assign @alice to #42&#39;, &#39;set milestone v2.0 on #42&#39;}</p>
+<h2>Steps</h2>
+<ol>
+<li><p>Parse the action to determine what management operation is needed.</p>
+</li>
+<li><p>Fetch the issue with #tool:mcp_github_github_issue_read for current state.</p>
+</li>
+<li><p>Perform the requested action:</p>
+<p><strong>Edit title/body:</strong></p>
+<ul>
+<li>Show current title and body</li>
+<li>Apply the user&#39;s changes</li>
+<li>Preview and confirm before saving</li>
+</ul>
+<p><strong>Add/remove labels:</strong></p>
+<ul>
+<li>Show current labels</li>
+<li>List available labels in the repo if the user is browsing</li>
+<li>Apply changes and confirm</li>
+</ul>
+<p><strong>Assign/unassign:</strong></p>
+<ul>
+<li>Show current assignees</li>
+<li>Add or remove the specified user(s)</li>
+<li>Confirm: <em>&quot;Assigned @alice to {repo}#{number}.&quot;</em></li>
+</ul>
+<p><strong>Set milestone:</strong></p>
+<ul>
+<li>Show current milestone and available milestones</li>
+<li>Set the specified milestone</li>
+<li>Confirm</li>
+</ul>
+<p><strong>Close:</strong></p>
+<ul>
+<li>Ask for close reason: <strong>Completed</strong> or <strong>Not planned</strong></li>
+<li>Optionally draft a closing comment</li>
+<li>Confirm (state-modifying action)</li>
+<li>Close and post comment if provided</li>
+</ul>
+<p><strong>Reopen:</strong></p>
+<ul>
+<li>Show why it was closed</li>
+<li>Confirm</li>
+<li>Reopen and optionally add a comment explaining why</li>
+</ul>
+<p><strong>Lock/unlock:</strong></p>
+<ul>
+<li>Explain what locking does</li>
+<li>Optionally specify lock reason: off-topic, too heated, resolved, spam</li>
+<li>Confirm</li>
+</ul>
+<p><strong>Transfer:</strong></p>
+<ul>
+<li>Specify target repo</li>
+<li>Confirm that the issue content will be preserved</li>
+<li>Transfer and provide new link</li>
+</ul>
+</li>
+<li><p>After any action, confirm with a direct link and updated status.</p>
+</li>
+<li><p>If a workspace document exists for this issue, update it.</p>
+</li>
+</ol>
+<p><strong>Safety:</strong> All state-modifying actions (close, reopen, lock, transfer) require explicit confirmation. Label and assignment changes are confirmed with a summary.</p>
+
+  </main>
+  <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
+    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com">Back to GitHub</a></p>
+  </footer>
+</body>
+</html>

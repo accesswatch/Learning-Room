@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
+  <title>HTML Documentation Build System - GitHub Learning Room</title>
+  <link rel="stylesheet" href="./styles/github-markdown.css">
+  <link rel="stylesheet" href="./styles/highlight.css">
+  <link rel="stylesheet" href="./styles/custom.css">
+  <style>
+    .markdown-body {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+    @media (max-width: 767px) {
+      .markdown-body {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <a href="./index.html">Home</a>
+  </nav>
+  <main class="markdown-body">
+    <h1>HTML Documentation Build System</h1>
+<p>This repository automatically converts all markdown files to HTML format.</p>
+<h2>Quick Start</h2>
+<h3>View HTML Documentation</h3>
+<p>After the first build, all HTML files are available in the <code>html/</code> directory:</p>
+<ul>
+<li>Browse them directly in the repo</li>
+<li>Open <code>html/index.html</code> in your browser for the homepage</li>
+<li>All markdown files maintain their directory structure</li>
+</ul>
+<h3>Local Development</h3>
+<pre><code class="language-bash"># Install dependencies (first time only)
+npm install
+
+# Build HTML once
+npm run build:html
+
+# Watch mode — auto-rebuild on markdown changes
+npm run watch:html
+
+# Clean generated files
+npm run clean
+</code></pre>
+<h2>How It Works</h2>
+<h3>Automatic Conversion (GitHub Actions)</h3>
+<p>When you push changes to markdown files on the main branch:</p>
+<ol>
+<li>GitHub Actions workflow triggers automatically</li>
+<li>Builds HTML from all <code>.md</code> files</li>
+<li>Commits generated HTML back to the <code>html/</code> directory</li>
+<li>Commit message: &quot;Auto-generate HTML documentation from markdown [skip ci]&quot;</li>
+</ol>
+<h3>What Gets Converted</h3>
+<ul>
+<li><code>docs/*.md</code> → <code>html/docs/*.html</code></li>
+<li><code>learning-room/**/*.md</code> → <code>html/learning-room/**/*.html</code></li>
+<li><code>README.md</code> → <code>html/index.html</code></li>
+<li><code>CONTRIBUTING.md</code> → <code>html/CONTRIBUTING.html</code></li>
+<li>All other root-level <code>.md</code> files</li>
+</ul>
+<h3>HTML Features</h3>
+<p><strong>Style and Layout:</strong></p>
+<ul>
+<li>GitHub-flavored Markdown styling (familiar appearance)</li>
+<li>Responsive design (mobile and desktop)</li>
+<li>Syntax highlighting for code blocks</li>
+<li>Clean, readable typography</li>
+</ul>
+<p><strong>Accessibility:</strong></p>
+<ul>
+<li>Semantic HTML5 markup</li>
+<li>Proper ARIA labels and roles</li>
+<li>Keyboard navigation support</li>
+<li>High contrast mode support</li>
+<li>Skip-to-content links</li>
+<li>Screen reader friendly navigation</li>
+</ul>
+<p><strong>Navigation:</strong></p>
+<ul>
+<li>Breadcrumb links on every page</li>
+<li>Footer with return link</li>
+<li>Preserves all internal links between documents</li>
+</ul>
+<h2>Configuration Files</h2>
+<ul>
+<li><strong>Workflow:</strong> <code>.github/workflows/build-html.yml</code> — GitHub Actions automation</li>
+<li><strong>Build script:</strong> <code>scripts/build-html.js</code> — Conversion logic</li>
+<li><strong>Dependencies:</strong> <code>package.json</code> — Node.js packages (marked, highlight.js, etc.)</li>
+</ul>
+<h2>Customization</h2>
+<h3>Modify Styling</h3>
+<p>Edit <code>scripts/build-html.js</code> and look for the <code>customCss</code> constant to add custom styles.</p>
+<h3>Change HTML Template</h3>
+<p>Edit the <code>htmlTemplate</code> function in <code>scripts/build-html.js</code> to modify the page structure.</p>
+<h3>Update Dependencies</h3>
+<pre><code class="language-bash"># Check for updates
+npm outdated
+
+# Update packages
+npm update
+
+# Commit package.json changes
+git add package.json
+git commit -m &quot;chore: update HTML build dependencies&quot;
+</code></pre>
+<h2>Troubleshooting</h2>
+<h3>Build Fails on GitHub Actions</h3>
+<ol>
+<li>Check the <strong>Actions</strong> tab in the repository</li>
+<li>Click on the failed workflow run</li>
+<li>Review the error logs</li>
+<li>Common issues:<ul>
+<li>Markdown syntax errors (unclosed brackets, invalid links)</li>
+<li>Missing dependencies in <code>package.json</code></li>
+<li>Permissions issues (workflow needs write access)</li>
+</ul>
+</li>
+</ol>
+<h3>Local Build Errors</h3>
+<p><strong>&quot;Cannot find module &#39;marked&#39;&quot;</strong>
+→ Run <code>npm install</code> first</p>
+<p><strong>&quot;Permission denied&quot; errors</strong>
+→ Check write permissions on the <code>html/</code> directory</p>
+<p><strong>HTML doesn&#39;t look right</strong>
+→ Clear browser cache and reload</p>
+<p><strong>Watch mode not detecting changes</strong>
+→ Ensure you&#39;re saving files (Ctrl+S in VS Code)</p>
+<h3>HTML Files Not Being Committed</h3>
+<p>Check <code>.gitignore</code> to ensure <code>html/</code> is NOT listed there. The <code>html/</code> directory should be tracked by git.</p>
+<h2>For Contributors</h2>
+<p>When submitting pull requests:</p>
+<ul>
+<li><strong>Only edit markdown files</strong> — don&#39;t commit HTML changes</li>
+<li>HTML will be auto-generated when PR is merged</li>
+<li>To preview HTML locally, run <code>npm run build:html</code></li>
+<li>Add the HTML files to <code>.gitignore</code> in your local clone if you don&#39;t want to accidentally commit them</li>
+</ul>
+<h2>CI/CD Strategy</h2>
+<p>The <code>[skip ci]</code> tag in the auto-commit message prevents infinite loops:</p>
+<ol>
+<li>You push markdown changes</li>
+<li>GitHub Actions builds HTML and commits it with <code>[skip ci]</code></li>
+<li>The commit with <code>[skip ci]</code> doesn&#39;t trigger another workflow run</li>
+<li>Clean, single automated commit per markdown update</li>
+</ol>
+<h2>Additional Resources</h2>
+<ul>
+<li><a href="https://marked.js.org/">marked documentation</a> — Markdown parser</li>
+<li><a href="https://highlightjs.org/">highlight.js documentation</a> — Syntax highlighting</li>
+<li><a href="https://docs.github.com/en/actions">GitHub Actions docs</a> — CI/CD automation</li>
+<li><a href="https://github.github.com/gfm/">GitHub Markdown spec</a> — GitHub Flavored Markdown</li>
+</ul>
+<hr>
+<p>For complete contributor guidelines, see <a href="CONTRIBUTING.md#7-html-documentation-build-system">CONTRIBUTING.md</a>.</p>
+
+  </main>
+  <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
+    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com">Back to GitHub</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
+  <title>Chapter Progression Analysis - GitHub Learning Room</title>
+  <link rel="stylesheet" href="./styles/github-markdown.css">
+  <link rel="stylesheet" href="./styles/highlight.css">
+  <link rel="stylesheet" href="./styles/custom.css">
+  <style>
+    .markdown-body {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+    @media (max-width: 767px) {
+      .markdown-body {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <a href="./index.html">Home</a>
+  </nav>
+  <main class="markdown-body">
+    <h1>Chapter Progression Analysis</h1>
+<h2>Executive Summary</h2>
+<p><strong>✅ Current structure IS properly progressive.</strong> The 20 chapters (including new Learning Room guide) form a clear learning arc from absolute beginner (GitHub web) through intermediate (collaborative GitHub) to advanced (VS Code + AI/Agents). Chapter dependencies are logical. No reorganization needed.</p>
+<p><strong>✅ New &quot;The Learning Room&quot; chapter (02a) fills a critical gap</strong> — students now understand the shared environment before learning individual skills.</p>
+<hr>
+<h2>Foundation Level: Understanding the Environment</h2>
+<pre><code>00. Pre-Workshop Setup
+    └─ Objective: System ready, screen reader configured
+       Dependency: None (prerequisite step)
+
+01. Understanding GitHub Web Structure
+    └─ Objective: Mental model of how GitHub pages are organized
+       Dependency: None
+       Skills: Landmarks, headings, page layout, navigation strategy
+       Leads to: 02 (scheduling) + 03a (environment context)
+
+02. Day 1 Agenda
+    └─ Objective: Know the schedule and activities
+       Dependency: 01 (understand the tool first)
+       Introduces: Two-track learning model
+       Leads to: 03a (read about your learning environment)
+
+✨ NEW 02a. The Learning Room
+    └─ Objective: Understand shared repo, PR sharing, automation system
+       Dependency: 02 (know what skills you&#39;re practicing)
+       Skills: PR workflow, peer review, bot feedback types
+       Leads to: 03 (now you know WHY we need to navigate repos)
+</code></pre>
+<p><strong>Why This Order:</strong></p>
+<ul>
+<li>Students arrive with anxiety (&quot;Will I break something?&quot;)</li>
+<li>Chapter 01 shows how GitHub is organized (reduce anxiety)</li>
+<li>Chapter 02 shows the schedule (build confidence)</li>
+<li>Chapter 02a explains the shared environment (now they&#39;re READY)</li>
+<li>They&#39;re ready to learn individual skills (03-09)</li>
+</ul>
+<hr>
+<h2>Day 1: Skill Building (Progressive)</h2>
+<pre><code>Skill Level 1: Basic Repo Navigation
+03. Navigating Repositories ★★☆☆☆
+    └─ Dependency: 02a (know you&#39;re in a shared repo with others)
+       Skills: Finding files, reading commits, switching branches
+       Prerequisite for: 04 (can&#39;t file issue until you navigate)
+
+Skill Level 2: Issue Management
+04. Working with Issues ★★☆☆☆
+    └─ Dependency: 03 (must navigate to find the issue list)
+       Skills: Filing, searching, filtering, commenting, @mentions
+       Prerequisite for: 05 (issues and PRs are linked - &quot;Closes #X&quot;)
+
+Skill Level 3: Pull Request Mechanics
+05. Working with Pull Requests ★★★☆☆
+    └─ Dependency: 04 (PRs reference issues with &quot;Closes #XX&quot;)
+       Skills: Creating, reviewing, merging, commit history
+       Prerequisite for: 06 (conflicts only happen in PRs)
+
+Level 1 Problem-Solving: Merge Conflicts
+06. Merge Conflicts ★★★★☆
+    └─ Dependency: 05 (must understand PRs before fixing conflicts)
+       Skills: Understanding conflict markers, resolving, communicating
+       Prerequisite for: Nothing (reference when problem appears)
+       Why NOT earlier: Students must try to merge before this makes sense
+
+Soft Skills / Interaction
+07. Culture and Etiquette ★★☆☆☆
+    └─ Dependency: 05 (have written comments, now understand tone matters)
+       Skills: Communication style, inclusive language, respect, asynchronous mindset
+       Prerequisite for: 08 (labels/projects assume team coordination)
+       Why after PRs: Students have actual experience now; advice lands better
+
+Level 2: Organizing Work
+08. Labels, Milestones, and Projects ★★★☆☆
+    └─ Dependency: 07 (assumes shared team culture)
+       Skills: Categorization, filtering, cross-reference, project boards
+       Prerequisite for: 09 (notifications filtered by labels)
+       Why here: Students see their own work is now categorized
+
+Housekeeping/Optimization
+09. Notifications and Mentions ★★☆☆☆
+    └─ Dependency: 08 (can filter notifications by label)
+       Skills: Managing inbox, threading, subscribing, @mentions
+       Prerequisite for: Nothing (reference after someone gets overwhelmed)
+       Why last on Day 1: Learning to manage notifications is a &quot;nice to have,&quot; not critical
+</code></pre>
+<p><strong>Why This Sequence Works:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Chapter</th>
+<th>Why Not Earlier?</th>
+<th>Why Here?</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>03</td>
+<td>No prior context</td>
+<td>After 02a, students understand the shared repo</td>
+</tr>
+<tr>
+<td>04</td>
+<td>No navigation skills yet</td>
+<td>Students can now find the issue list</td>
+</tr>
+<tr>
+<td>05</td>
+<td>No issues to reference</td>
+<td>Students understand issue-PR link (&quot;Closes&quot;)</td>
+</tr>
+<tr>
+<td>06</td>
+<td>Conflicts don&#39;t exist yet</td>
+<td>Students will merge; conflicts become real</td>
+</tr>
+<tr>
+<td>07</td>
+<td>No communication yet</td>
+<td>Students have commented; now discuss tone</td>
+</tr>
+<tr>
+<td>08</td>
+<td>No team context</td>
+<td>Students understand collaboration is essential</td>
+</tr>
+<tr>
+<td>09</td>
+<td>Too much info early</td>
+<td>After 08, inbox management makes sense</td>
+</tr>
+</tbody></table>
+<p><strong>Cross-Level Dependencies (Non-Adjacent):</strong></p>
+<ul>
+<li>09 (notifications) → 05 (PRs generate notifications)</li>
+<li>08 (labels) → 04 (issues can be labeled)</li>
+<li>07 (culture) → ALL of 03-09 (tone matters in every interaction)</li>
+</ul>
+<hr>
+<h2>Bridge: Day 1 → Day 2</h2>
+<pre><code>10. Day 2 Agenda
+    └─ Objective: Transition from browser to IDE
+       Dependency: All of Day 1 (prerequisites established)
+       Bridges: &quot;Here&#39;s why VS Code matters&quot; + &quot;Here&#39;s how it&#39;s accessible&quot;
+       Leads to: 11 (introduces new tool: VS Code)
+</code></pre>
+<hr>
+<h2>Day 2: Skill Amplification</h2>
+<pre><code>Tool Foundation: IDE Setup
+11. VS Code: Setup &amp; Accessibility Basics ★★☆☆☆
+    └─ Dependency: 10 (understand why new tool)
+       Skills: Screen reader mode, keyboard navigation, accessibility settings
+       Prerequisite for: 12 (can&#39;t use git if VS Code is misconfigured)
+       Why NOT on Day 1: New tool requires dedicated setup time
+
+Core Tool: Version Control in IDE
+12. VS Code: Git &amp; Source Control ★★★☆☆
+    └─ Dependency: 11 (VS Code operational) + 03 (understand branches)
+       Skills: Cloning, branching, staging, committing, merge handling
+       Prerequisite for: 13 (PR extension uses git state)
+       Amplifies: Chapter 05 (PRs) but FROM THE IDE instead of browser
+
+IDE Integration: PR Extension
+13. VS Code: GitHub PR Extension ★★★☆☆
+    └─ Dependency: 12 (git status visible in extension)
+       Skills: Viewing PRs, reviewing in IDE, checking out branches
+       Prerequisite for: Nothing (can use browser instead)
+       Amplifies: Chapter 05 (PRs) — same mechanics, IDE-local view
+       Why here not earlier: Need IDE + git working first
+
+AI Assistance: Copilot Inline
+14. GitHub Copilot Basics ★★★★☆
+    └─ Dependency: 11 (Copilot runs in VS Code)
+       Skills: Accepting/rejecting suggestions, effective prompting
+       Prerequisite for: 19 (agents build on Copilot understanding)
+       Bridge concept: &quot;You understand the skill, now delegate parts to AI&quot;
+
+Expert Culminating Skill: Code Review
+15. Accessible Code Review ★★★★★
+    └─ Dependency: 05 (PRs) + 12 (git) + 13 (PR extension) + 14 (Copilot context)
+       Skills: Reviewing diffs with screen reader, leaving comments, semantic review, screen reader accessible reviewing
+       Prerequisite for: 19 (agents automate what you master here)
+       Why here: Culminating skill before showing automation; students need confidence before agentic workflows
+       Pedagogical arc: Learn manual deep skill → show how to automate it
+
+Reference/Advanced: Infrastructure &amp; Process
+16. Issue Templates ★★★☆☆
+    └─ Dependency: 04 (issue filing mechanics)
+       Skills: YAML form creation, structured issues, automation triggers
+       Prerequisite for: Nothing (optional automation)
+       Category: Advanced - for facilitators or interested students
+
+17. GitHub Actions &amp; Workflows ★★★★☆
+    └─ Dependency: 05 (PRs trigger workflows) + 14 (Copilot context)
+       Skills: YAML syntax, triggers, status checks, CI/CD basics
+       Prerequisite for: Understanding Agent Forge cloud workflows
+       Amplifies: Real automation examples
+
+Expert: Agentic Automation Synthesis
+18. Agent Forge: Five Agents + Cloud ★★★★★
+    └─ Dependency: 14 (must understand Copilot) + 15 (code review to automate)
+       Skills: Custom agents, slash commands, async cloud workflows, code review automation
+       Prerequisite for: Nothing (advanced optional amplification)
+       Why last: Shows how to automate everything learned in 14-17; complete synthesis chapter
+       Pedagogical arc: FINISH — &quot;Agent Forge does not replace what you learn. It amplifies it.&quot;
+       Quote from README: This is the final synthesis showing automation of all manual skills
+
+---
+
+## Appendices: Reference Material (No Dependency)
+</code></pre>
+<p>A. Glossary
+   └─ Can be opened anytime — define any term, any time</p>
+<p>B. Screen Reader Cheat Sheet
+   └─ Reference during exercises — keyboard shortcuts, elements list, modes</p>
+<p>C. Git Authentication
+   └─ Setup reference — SSH keys, PATs, credential managers</p>
+<p>D. GitHub Gists
+   └─ Optional feature — code snippets, sharing, embedding</p>
+<p>E. Advanced GitHub Features
+   └─ Post-workshop exploration — CLI, API, advanced settings, mobile</p>
+<p>F. VS Code Accessibility Reference
+   └─ Technical deep dive — settings, audio cues, accessibility configurations</p>
+<p>G. Resources
+   └─ Can be opened anytime — every link, tool, and reference from the event</p>
+<pre><code>
+</code></pre>
+<p><strong>Why Day 2 Order Works:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Chapter</th>
+<th>Why Here?</th>
+<th>Dependency Chain</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>11</td>
+<td>Tool setup</td>
+<td>New tool requires dedicated foundation</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Git in IDE</td>
+<td>Builds on 03 (branches) + 11 (VS Code works)</td>
+</tr>
+<tr>
+<td>13</td>
+<td>IDE PR review</td>
+<td>Builds on 12 (git state) + 05 (PR mechanics)</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Copilot assistance</td>
+<td>VS Code operational (11)</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Code Review (culminating skill)</td>
+<td>Builds on 05, 12, 13, 14; master manual deep skill before automation</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Templates</td>
+<td>Reference material; can read anytime</td>
+</tr>
+<tr>
+<td>17</td>
+<td>GitHub Actions</td>
+<td>Builds on 05 (PRs) + 14 (understanding automation)</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Agent Forge (agentic automation)</td>
+<td>Builds on 14 (Copilot) + 15 (code review mastery); FINAL synthesis</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Appendices: Reference Material (No Dependency)</h2>
+<pre><code>A. Glossary
+   └─ Can be opened anytime — define any term, any time
+
+B. Screen Reader Cheat Sheet
+   └─ Reference during exercises — keyboard shortcuts, elements list, modes
+
+C. Git Authentication
+   └─ Setup reference — SSH keys, PATs, credential managers
+
+D. GitHub Gists
+   └─ Optional feature — code snippets, sharing, embedding
+
+E. Advanced GitHub Features
+   └─ Post-workshop exploration — CLI, API, advanced settings, mobile
+
+F. VS Code Accessibility Reference
+   └─ Technical deep dive — settings, audio cues, accessibility configurations
+</code></pre>
+<p><strong>Why Appendices Have No Dependencies:</strong></p>
+<ul>
+<li>They are reference materials, not lessons</li>
+<li>Can be opened during the relevant chapter</li>
+<li>Can be skipped entirely (optional)</li>
+<li>Support both Day 1 and Day 2</li>
+</ul>
+<hr>
+<h2>Visualizing the Learning Arc</h2>
+<pre><code>FOUNDATION (Understand the Tool)
+   00 Setup
+    ↓
+   01 GitHub Structure
+    ↓
+   02 Schedule
+    ↓
+   ✨ 02a Learning Room [NEW]
+    ↓
+   ================================
+   
+SKILL BUILDING (Hands-On Practice) — DAY 1
+   03 Navigate Repos
+    ↓
+   04 File Issues
+    ↓
+   05 Create PRs
+    ↓
+   06 Resolve Conflicts (when problem arises)
+    ↓
+   07 Communication &amp; Culture
+    ↓
+   08 Organization (Labels)
+    ↓
+   09 Inbox Management
+    ↓
+   ================================
+   
+TRANSITION (Tool Change)
+   10 Day 2 Overview
+    ↓
+   ================================
+   
+SKILL AMPLIFICATION (Same Skills, New Tool) — DAY 2
+   11 VS Code Setup
+    ↓
+   12 Git in VS Code
+    ↓
+   13 PR Extension
+    ↓
+   14 Copilot Assistance
+    ↓
+   15 Culminating Code Review Skill (master the manual workflow)
+    ↓
+   16 Issue Templates (optional)
+    ↓
+   17 Agent Forge (automate everything you&#39;ve mastered)
+    ↓
+   ================================
+   
+REFERENCE
+   A-H Appendices (with G = GitHub Actions)
+    (reference, open as needed)
+</code></pre>
+<hr>
+<h2>Dependency Chain: Critical Path</h2>
+<p><strong>For a student to complete Block 5 (Real Contribution):</strong></p>
+<pre><code>Must know:
+  ✓ 00: System ready
+  ✓ 01: GitHub structure (mental model)
+  ✓ 02: What we&#39;re doing today (schedule)
+  ✓ 02a: The shared learning room (our environment)
+  ✓ 03: How to navigate repos (find the issue)
+  ✓ 04: How to work with issues (read the assignment)
+  ✓ 05: How to create and review PRs (THE MAIN SKILL)
+
+Nice to know:
+  ◇ 07: Culture/tone (makes comments better)
+  ◇ 06: Conflicts (might not arise in first PR)
+  ◇ 08-09: Labels/notifications (background context)
+</code></pre>
+<p><strong>For a student to complete Day 2:</strong></p>
+<pre><code>Must complete:
+  ✓ All of Day 1 (11 depends on 01-09)
+  ✓ 10: Day 2 overview
+  ✓ 11: VS Code setup
+  ✓ 12: Git in VS Code
+  
+Then build:
+  ◆ 13: PR extension (extends 05)
+  ◆ 14: Copilot (new skill)
+  ◆ 15: Code Review (culminating skill - master the manual deep skill)
+  ◆ 16: Issue Templates (optional advanced)
+  → 17: Agent Forge (automate what you&#39;ve mastered in 15)
+  
+Optional post-workshop:
+  📚 Appendix G: GitHub Actions (infrastructure deep-dive)
+  📚 Appendix H: GitHub Projects (boards, tables, roadmaps)
+  📚 Appendix I: GitHub Discussions
+  📚 Appendix J: GitHub Advanced Search
+  📚 Appendix K: GitHub Releases and Tags
+  📚 Appendix L: Repository Insights
+  📚 Appendix N: GitHub Flavored Markdown (advanced GFM reference)
+  📚 Appendix O: GitHub Security Features (Dependabot, scanning, advisories)
+  📚 Appendix P: Branch Protection Rules and Repository Rulesets
+  📚 Appendix Q: Resources (every link and reference)
+</code></pre>
+<hr>
+<h2>Verification: Is This Truly Progressive?</h2>
+<h3>Criterion 1: Foundation Before Complexity</h3>
+<ul>
+<li><strong>✅ PASS</strong> — Chapters 00-02a establish context; chapters 03-05 teach basic mechanics</li>
+<li><strong>✅ PASS</strong> — Chapters 06-09 assume all prior skills understood</li>
+<li><strong>✅ PASS</strong> — Chapter 10 explicitly marks transition</li>
+</ul>
+<h3>Criterion 2: Prerequisites Met</h3>
+<ul>
+<li><strong>✅ PASS</strong> — 04 (issues) comes after 03 (navigation); can&#39;t manage issues without finding them</li>
+<li><strong>✅ PASS</strong> — 05 (PRs) comes after 04 (issues); PRs reference issues</li>
+<li><strong>✅ PASS</strong> — 06 (conflicts) comes after 05 (PRs); conflicts only happen in PR merges</li>
+<li><strong>✅ PASS</strong> — 12 (git) comes after 11 (setup); git requires VS Code operational</li>
+<li><strong>✅ PASS</strong> — 13 (PR extension) comes after 12 (git state); extension depends on git</li>
+<li><strong>✅ PASS</strong> — 14 (Copilot) comes after 11 (setup); Copilot runs in VS Code</li>
+<li><strong>✅ PASS</strong> — 15 (Code Review) comes after 14 (Copilot context) + 05,12,13 (foundational skills)</li>
+<li><strong>✅ PASS</strong> — 17 (Agent Forge) comes after 14 (Copilot) + 15 (mastery of code review); automates what students have learned</li>
+<li><strong>✅ PASS</strong> — Appendix G (GitHub Actions) is heavy infrastructure, appropriately moved to optional post-workshop reference</li>
+</ul>
+<h3>Criterion 3: No Jumps or Leaps</h3>
+<ul>
+<li><strong>✅ PASS</strong> — Adjacent chapters reinforce each other</li>
+<li><strong>✅ PASS</strong> — Each chapter builds incrementally on prior knowledge</li>
+<li><strong>✅ PASS</strong> — Cross-chapter references are backward (newer chapter references prior chapter), never forward</li>
+</ul>
+<h3>Criterion 4: Day 1 → Day 2 Bridge</h3>
+<ul>
+<li><strong>✅ PASS</strong> — Chapter 10 explicitly marks the transition</li>
+<li><strong>✅ PASS</strong> — Chapter 11 repeats Day 1 foundations in new tool (accessibility, keyboard nav, landmarks)</li>
+<li><strong>✅ PASS</strong> — Chapters 12-15 show Day 1 skills (PR, git, review) amplified in VS Code</li>
+</ul>
+<h3>Criterion 5: Soft Skills Appropriately Placed</h3>
+<ul>
+<li><strong>✅ PASS</strong> — Chapter 07 (culture) comes AFTER 03-06 (students have experience)</li>
+<li><strong>✅ PASS</strong> — Chapter 08 (organization) comes AFTER 07 (assumes team coordination)</li>
+<li><strong>✅ PASS</strong> — Chapter 14 (code review) comes BEFORE Chapter 16 (students learn manual skill first, then automation)</li>
+<li><strong>✅ PASS</strong> — Chapter 16 (Agent Forge) is FINAL (student mastery of all prior skills gets automated and amplified)</li>
+</ul>
+<hr>
+<h2>Additional Improvements Made with New Chapter 02a</h2>
+<h3>Problems Solved by New Chapter</h3>
+<ol>
+<li><strong>Removed ambiguity:</strong> Students didn&#39;t understand they were working in ONE shared repo, not personal forks</li>
+<li><strong>Reduced anxiety:</strong> Explicit explanation that all PRs are visible, bot feedback is helpful, peer review is safe</li>
+<li><strong>Clarified automation:</strong> Bot + human feedback explained, automation not mysterious</li>
+<li><strong>Referenced early:</strong> Chapter 02 now points to 02a immediately, before skills chapters</li>
+<li><strong>Integrated PR sharing:</strong> Day 1 agenda Block 5 now assumes students understand the Learning Room</li>
+</ol>
+<h3>Updated Documents</h3>
+<ul>
+<li><a href="README.md">README.md</a> — Added 02a to chapter navigation</li>
+<li><a href="docs/02-day1-agenda.md">docs/02-day1-agenda.md</a> — Added &quot;Read This BEFORE Day 1&quot; section pointing to 02a</li>
+<li><a href="docs/03a-the-learning-room.md">docs/03a-the-learning-room.md</a> — New comprehensive guide</li>
+</ul>
+<hr>
+<h2>Final Recommendation</h2>
+<h3>✅ <strong>Move GitHub Actions to Appendix G — Lighter Path for Intro Course</strong></h3>
+<p><strong>Why This Change Is Correct:</strong></p>
+<p>GitHub Actions is infrastructure-heavy (YAML, triggers, CI/CD) and doesn&#39;t belong in an introductory workshop curriculum. Instead:</p>
+<ol>
+<li><strong>Core chapters end at 17:</strong> Agent Forge synthesis (final culminating chapter)</li>
+<li><strong>GitHub Actions moves to Appendix G:</strong> Available as optional post-workshop reference for advanced practitioners</li>
+<li><strong>Resources stays as Appendix Q:</strong> Final appendix with links and tools (17 appendices A–Q, no M)</li>
+</ol>
+<p><strong>Benefits of This Reordering:</strong></p>
+<ul>
+<li><strong>Lighter path for intro students</strong>: No heavy infrastructure learning before they ship their first code</li>
+<li><strong>Agent Forge becomes the natural finale</strong>: Students master code review (Ch 15) → then see it automated (Ch 17)</li>
+<li><strong>Smart optional learning</strong>: GitHub Actions available for students who want deeper automation knowledge post-workshop</li>
+<li><strong>Clear boundaries</strong>: Main curriculum (00-17) vs. Advanced References (Appendices A–Q)</li>
+<li><strong>Security coverage</strong>: New Appendix O covers Dependabot, secret scanning, code scanning, and private vulnerability reporting</li>
+<li><strong>GFM authoring reference</strong>: New Appendix N covers alert blocks, Mermaid diagrams, math, and screen reader guidance</li>
+<li><strong>Branch protection guide</strong>: New Appendix P helps contributors diagnose why PRs are blocked</li>
+</ul>
+<p><strong>Rationale:</strong></p>
+<ul>
+<li>Foundation → intermediate → advanced progression remains logical</li>
+<li>Main chapters maintain pedagogical clarity and accessibility</li>
+<li>Day 1 and Day 2 progression is clean and focused</li>
+<li>Appendices serve learners at their own pace post-workshop</li>
+</ul>
+<p><strong>Files Updated:</strong></p>
+<ul>
+<li><code>README.md</code> — Chapter count now 17 (vs 18); GitHub Actions moved to Appendix G</li>
+<li><code>CHAPTER_PROGRESSION_ANALYSIS.md</code> — Complete dependency re-verification</li>
+<li><code>docs/</code> — Files renamed to reflect new chapter/appendix structure</li>
+</ul>
+<h3>Suggested Optional Enhancements</h3>
+<ol>
+<li><p><strong>Add a &quot;Prerequisites&quot; section to each chapter</strong> — at the top, list which chapters should be read first</p>
+<p>Example:</p>
+<pre><code># 04. Working with Issues
+
+**Prerequisites:** Chapters 03 (navigation), 02a (Learning Room)
+**Recommended before:** Chapter 05 (pull requests)
+</code></pre>
+</li>
+<li><p><strong>Add forward references in chapters</strong> — hint at what&#39;s coming next</p>
+<p>Example:</p>
+<pre><code>Next chapter: Chapter 05 (Pull Requests) — you&#39;ll create PRs to resolve your issues
+</code></pre>
+</li>
+<li><p><strong>Add difficulty badges to the chapter list in README</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Chapter</th>
+<th>Difficulty</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>03</td>
+<td>Navigating Repositories</td>
+<td>⭐⭐☆☆☆ Beginner</td>
+</tr>
+<tr>
+<td>04</td>
+<td>Working with Issues</td>
+<td>⭐⭐☆☆☆ Beginner</td>
+</tr>
+<tr>
+<td>05</td>
+<td>Working with Pull Requests</td>
+<td>⭐⭐⭐☆☆ Intermediate</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<p>These are &quot;nice to have&quot; — not necessary, since the structure is already progressive.</p>
+<hr>
+<h2>Summary Table: Complete Chapter Progression</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Chapter</th>
+<th>Difficulty</th>
+<th>Prerequisite</th>
+<th>Leads To</th>
+<th>Day</th>
+<th>Category</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>00</td>
+<td>Pre-Workshop Setup</td>
+<td>⭐</td>
+<td>None</td>
+<td>01</td>
+<td>Pre</td>
+<td>Foundation</td>
+</tr>
+<tr>
+<td>01</td>
+<td>GitHub Web Structure</td>
+<td>⭐</td>
+<td>None</td>
+<td>02, 02a</td>
+<td>Pre/1</td>
+<td>Foundation</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Day 1 Agenda</td>
+<td>⭐</td>
+<td>01</td>
+<td>02a, 03</td>
+<td>1</td>
+<td>Foundation</td>
+</tr>
+<tr>
+<td>02a</td>
+<td>The Learning Room ✨</td>
+<td>⭐⭐</td>
+<td>02</td>
+<td>03, 04, 05</td>
+<td>1</td>
+<td>Foundation</td>
+</tr>
+<tr>
+<td>03</td>
+<td>Navigating Repositories</td>
+<td>⭐⭐</td>
+<td>02a</td>
+<td>04</td>
+<td>1</td>
+<td>Skill</td>
+</tr>
+<tr>
+<td>04</td>
+<td>Working with Issues</td>
+<td>⭐⭐</td>
+<td>03</td>
+<td>05</td>
+<td>1</td>
+<td>Skill</td>
+</tr>
+<tr>
+<td>05</td>
+<td>Working with PRs</td>
+<td>⭐⭐⭐</td>
+<td>04</td>
+<td>06, 07, 13, 17</td>
+<td>1</td>
+<td>Skill</td>
+</tr>
+<tr>
+<td>06</td>
+<td>Merge Conflicts</td>
+<td>⭐⭐⭐⭐</td>
+<td>05</td>
+<td>Any</td>
+<td>1</td>
+<td>Reference</td>
+</tr>
+<tr>
+<td>07</td>
+<td>Culture &amp; Etiquette</td>
+<td>⭐⭐</td>
+<td>05</td>
+<td>08</td>
+<td>1</td>
+<td>Soft Skills</td>
+</tr>
+<tr>
+<td>08</td>
+<td>Labels/Milestones</td>
+<td>⭐⭐⭐</td>
+<td>07</td>
+<td>09</td>
+<td>1</td>
+<td>Skill</td>
+</tr>
+<tr>
+<td>09</td>
+<td>Notifications</td>
+<td>⭐⭐</td>
+<td>08</td>
+<td>Any</td>
+<td>1</td>
+<td>Reference</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Day 2 Agenda</td>
+<td>⭐</td>
+<td>All of Day 1</td>
+<td>11</td>
+<td>Bridge</td>
+<td>Foundation</td>
+</tr>
+<tr>
+<td>11</td>
+<td>VS Code Setup</td>
+<td>⭐⭐</td>
+<td>10</td>
+<td>12, 13, 14</td>
+<td>2</td>
+<td>Tool</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Git in VS Code</td>
+<td>⭐⭐⭐</td>
+<td>11 + 03</td>
+<td>13, 17</td>
+<td>2</td>
+<td>Skill</td>
+</tr>
+<tr>
+<td>13</td>
+<td>PR Extension</td>
+<td>⭐⭐⭐</td>
+<td>12 + 05</td>
+<td>Any</td>
+<td>2</td>
+<td>Extension</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Copilot</td>
+<td>⭐⭐⭐⭐</td>
+<td>11</td>
+<td>15, 17</td>
+<td>2</td>
+<td>AI</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Code Review</td>
+<td>⭐⭐⭐⭐⭐</td>
+<td>05 + 12 + 13 + 14</td>
+<td>None</td>
+<td>2</td>
+<td>Expert</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Issue Templates</td>
+<td>⭐⭐⭐</td>
+<td>04</td>
+<td>None</td>
+<td>2</td>
+<td>Advanced</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Agent Forge</td>
+<td>⭐⭐⭐⭐⭐</td>
+<td>14 + 15</td>
+<td>None</td>
+<td>2</td>
+<td>Expert</td>
+</tr>
+<tr>
+<td>G</td>
+<td>GitHub Actions</td>
+<td>⭐⭐⭐⭐</td>
+<td>05 + 14</td>
+<td>None</td>
+<td>Appendix</td>
+<td>Reference</td>
+</tr>
+<tr>
+<td>H</td>
+<td>GitHub Projects</td>
+<td>⭐⭐⭐</td>
+<td>08</td>
+<td>None</td>
+<td>Appendix</td>
+<td>Reference</td>
+</tr>
+<tr>
+<td>I</td>
+<td>GitHub Discussions</td>
+<td>⭐⭐</td>
+<td>07</td>
+<td>None</td>
+<td>Appendix</td>
+<td>Reference</td>
+</tr>
+<tr>
+<td>J</td>
+<td>Advanced Search</td>
+<td>⭐⭐</td>
+<td>04 + 05</td>
+<td>None</td>
+<td>Appendix</td>
+<td>Reference</td>
+</tr>
+<tr>
+<td>K</td>
+<td>Releases &amp; Tags</td>
+<td>⭐⭐⭐</td>
+<td>05</td>
+<td>None</td>
+<td>Appendix</td>
+<td>Reference</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Repository Insights</td>
+<td>⭐⭐</td>
+<td>17</td>
+<td>None</td>
+<td>Appendix</td>
+<td>Reference</td>
+</tr>
+<tr>
+<td>N</td>
+<td>GitHub Flavored Markdown</td>
+<td>⭐⭐</td>
+<td>Any</td>
+<td>None</td>
+<td>Appendix</td>
+<td>Reference</td>
+</tr>
+<tr>
+<td>O</td>
+<td>GitHub Security Features</td>
+<td>⭐⭐⭐</td>
+<td>05 + 17</td>
+<td>None</td>
+<td>Appendix</td>
+<td>Reference</td>
+</tr>
+<tr>
+<td>P</td>
+<td>Branch Protection</td>
+<td>⭐⭐⭐</td>
+<td>05</td>
+<td>None</td>
+<td>Appendix</td>
+<td>Reference</td>
+</tr>
+<tr>
+<td>Q</td>
+<td>Resources</td>
+<td>⭐</td>
+<td>None</td>
+<td>Any</td>
+<td>Appendix</td>
+<td>Reference</td>
+</tr>
+</tbody></table>
+<hr>
+<p><em>Chapter Structure: 18 core chapters (00-17) plus 16 appendices (A–Q, no M). GitHub Actions moved to appendix for lighter intro course path. New appendices N, O, P added February 2026. All dependencies verified. Ship with confidence! 🚀</em></p>
+
+  </main>
+  <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
+    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com">Back to GitHub</a></p>
+  </footer>
+</body>
+</html>

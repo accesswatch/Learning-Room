@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
+  <title>Labels, Milestones, and Projects - GitHub Learning Room</title>
+  <link rel="stylesheet" href="./styles/github-markdown.css">
+  <link rel="stylesheet" href="./styles/highlight.css">
+  <link rel="stylesheet" href="./styles/custom.css">
+  <style>
+    .markdown-body {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+    @media (max-width: 767px) {
+      .markdown-body {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <a href="./index.html">Home</a>
+  </nav>
+  <main class="markdown-body">
+    <h1>Labels, Milestones, and Projects</h1>
+<h2>Organizing Work and Cross-Referencing on GitHub</h2>
+<blockquote>
+<p>Labels, milestones, and projects are the organizational layer of GitHub. They turn a chaotic list of issues into a structured, navigable, prioritized body of work.</p>
+</blockquote>
+<hr>
+<h2>Labels</h2>
+<h3>What Are Labels?</h3>
+<p>Labels are colored tags applied to issues and pull requests. They communicate at a glance what category, priority, or status an item belongs to. When you scan the issue list with your screen reader, labels are announced alongside each issue title.</p>
+<p>Labels are announced as: &quot;Label: bug&quot; or &quot;Labels: accessibility, good first issue&quot; depending on how many are applied.</p>
+<h3>Standard Labels You Will Find in Most Repos</h3>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>bug</code></td>
+<td>Something isn&#39;t working as expected</td>
+</tr>
+<tr>
+<td><code>enhancement</code></td>
+<td>A new feature or improvement</td>
+</tr>
+<tr>
+<td><code>documentation</code></td>
+<td>Changes or additions to documentation only</td>
+</tr>
+<tr>
+<td><code>good first issue</code></td>
+<td>Suitable for first-time contributors</td>
+</tr>
+<tr>
+<td><code>help wanted</code></td>
+<td>Maintainers are actively seeking community help</td>
+</tr>
+<tr>
+<td><code>question</code></td>
+<td>More information is needed before action</td>
+</tr>
+<tr>
+<td><code>invalid</code></td>
+<td>The issue doesn&#39;t meet the project&#39;s criteria</td>
+</tr>
+<tr>
+<td><code>wontfix</code></td>
+<td>The project won&#39;t address this (by design or out of scope)</td>
+</tr>
+<tr>
+<td><code>duplicate</code></td>
+<td>Another open issue covers the same topic</td>
+</tr>
+<tr>
+<td><code>accessibility</code></td>
+<td>Accessibility-related issue or change</td>
+</tr>
+<tr>
+<td><code>needs triage</code></td>
+<td>Not yet reviewed by a maintainer</td>
+</tr>
+</tbody></table>
+<h3>Navigating to the Labels Page</h3>
+<p>From a repository:</p>
+<ol>
+<li>Navigate to the Issues tab</li>
+<li>Press <code>K</code> to find the &quot;Labels&quot; link (near the &quot;Milestones&quot; link in the toolbar)</li>
+<li>Press <code>Enter</code></li>
+</ol>
+<p>You will see a list of all labels with their name, color description, and description.</p>
+<h3>Applying a Label to an Issue or PR</h3>
+<p>From an open issue or PR:</p>
+<pre><code>Step 1: Navigate to the sidebar on the right
+  • Press H or 3 to find the &quot;Labels&quot; heading
+Step 2: Activate the Labels gear/edit button
+  • B until you hear &quot;Labels&quot; button → Enter
+Step 3: Dropdown opens showing all available labels
+  • ↑/↓ to navigate
+  • Enter to select or deselect a label
+  • Type to filter: type &quot;access&quot; to find &quot;accessibility&quot;
+Step 4: Press Escape to close — selections save automatically
+</code></pre>
+<h3>Filtering Issues by Label</h3>
+<p>From the Issues list:</p>
+<pre><code>Option A — Using the filter bar:
+  F → type: is:open label:accessibility → Enter
+
+Option B — Using the filter button:
+  B → &quot;Label&quot; dropdown button → Enter → ↑/↓ to choose → Enter → Esc
+
+Option C — Combining labels:
+  is:open label:accessibility label:&quot;good first issue&quot;
+</code></pre>
+<h3>Creating a New Label</h3>
+<p>If you have write access:</p>
+<ol>
+<li>Navigate to Issues → Labels page</li>
+<li>Tab to &quot;New label&quot; button → Enter</li>
+<li>Fill in: Label name (F for form field), Color (use the color picker or hex code), Description</li>
+<li>Tab to &quot;Create label&quot; button → Enter</li>
+</ol>
+<p><strong>Accessibility note for color:</strong> Labels have color, but they also have a text name and description — the color is supplementary information. Screen readers announce the label name, not the color, so labels are fully accessible.</p>
+<hr>
+<h2>Milestones</h2>
+<h3>What Are Milestones?</h3>
+<p>Milestones group issues and PRs toward a shared goal or deadline. Think of a milestone as a sprint, a version release, or an event (like &quot;Hackathon Day 1 Deliverables&quot;). A milestone shows:</p>
+<ul>
+<li>A title and optional description</li>
+<li>An optional due date</li>
+<li>A progress bar (percentage of closed issues vs total)</li>
+</ul>
+<h3>Navigating to Milestones</h3>
+<p>From Issues tab:</p>
+<ol>
+<li>Press <code>K</code> to find the &quot;Milestones&quot; link → Enter</li>
+<li>You see a list of milestones, each with its title, progress, and due date</li>
+</ol>
+<p><strong>Reading a milestone:</strong>
+Each milestone is announced as a heading + progress information:</p>
+<ul>
+<li>&quot;Hackathon Day 1 Deliverables, 3 of 8 issues closed, due April 20&quot;</li>
+</ul>
+<h3>Opening a Milestone</h3>
+<ol>
+<li>Press <code>3</code> to navigate milestone titles (they are h3 links)</li>
+<li>Press <code>Enter</code> to open a milestone</li>
+<li>The milestone detail page shows all issues and PRs belonging to it</li>
+<li>Navigate the list with <code>3</code> (issue titles) or <code>I</code> (list items)</li>
+</ol>
+<h3>Adding an Issue to a Milestone</h3>
+<p>From an open issue:</p>
+<pre><code>Step 1: Navigate to the sidebar → &quot;Milestone&quot; heading (H or 3)
+Step 2: Activate the Milestone gear button
+Step 3: Select a milestone from the dropdown (↑/↓ → Enter)
+Step 4: Esc to close
+</code></pre>
+<h3>Creating a Milestone</h3>
+<p>Requires write access:</p>
+<ol>
+<li>Navigate to Milestones page</li>
+<li>Tab to &quot;New milestone&quot; button → Enter</li>
+<li>Fill in: Title, Description, Due date (optional)</li>
+<li>Tab to &quot;Create milestone&quot; → Enter</li>
+</ol>
+<p><strong>Due date field note:</strong> The date field may render as a date picker. You can:</p>
+<ul>
+<li>Type the date in <code>YYYY-MM-DD</code> format directly (most reliable)</li>
+<li>Or use arrow keys to adjust month/day/year if spin buttons are provided</li>
+<li>Or press <code>Space</code> or <code>Enter</code> to open a calendar widget (if your screen reader supports it) and arrow through dates</li>
+</ul>
+<p>Screen readers handle date pickers inconsistently — typing the date is most reliable across browsers.</p>
+<hr>
+<h2>Cross-References</h2>
+<p>Cross-references are links between issues, PRs, and commits. GitHub automatically renders <code>#42</code> as a link to issue or PR #42. This creates a web of context so any contributor can trace the history of a decision.</p>
+<h3>Types of Cross-References</h3>
+<table>
+<thead>
+<tr>
+<th>Syntax</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>#42</code></td>
+<td>Links to issue or PR #42 in the same repo</td>
+</tr>
+<tr>
+<td><code>owner/repo#42</code></td>
+<td>Links to issue #42 in a different repository</td>
+</tr>
+<tr>
+<td><code>a1b2c3d</code></td>
+<td>Links to a specific commit by its SHA hash</td>
+</tr>
+<tr>
+<td><code>@username</code></td>
+<td>Notifies and links to a GitHub user&#39;s profile</td>
+</tr>
+<tr>
+<td><code>Closes #42</code></td>
+<td>Closes issue #42 when the PR merges</td>
+</tr>
+<tr>
+<td><code>Fixes #42</code></td>
+<td>Same as Closes — conventional for bugs</td>
+</tr>
+<tr>
+<td><code>Resolves #42</code></td>
+<td>Same as Closes — general use</td>
+</tr>
+<tr>
+<td><code>Refs #42</code></td>
+<td>Links without auto-closing</td>
+</tr>
+</tbody></table>
+<h3>Typing a Cross-Reference</h3>
+<p>Inside any comment or PR description text area (Focus Mode):</p>
+<ol>
+<li>Type <code>#</code> — a live-search dropdown appears</li>
+<li>Continue typing the issue number or title fragment</li>
+<li>Use <code>↓</code> to navigate the dropdown → <code>Enter</code> to select</li>
+<li>The <code>#42</code> link is inserted automatically</li>
+</ol>
+<p>For <code>@mentions</code>:</p>
+<ol>
+<li>Type <code>@</code> followed by a username</li>
+<li>A dropdown of suggestions appears</li>
+<li><code>↓</code> to navigate → <code>Enter</code> to select</li>
+</ol>
+<h3>When the &quot;Closes&quot; Keyword Fires</h3>
+<p>The <code>Closes #42</code> keyword must appear in:</p>
+<ul>
+<li>The <strong>PR description</strong> (body text)</li>
+<li>A <strong>commit message</strong> pushed to the default branch</li>
+</ul>
+<p>It does <strong>not</strong> fire from comments on the PR. If you write &quot;Closes #42&quot; in a comment, it creates a reference but does not auto-close the issue on merge.</p>
+<hr>
+<h2>GitHub Projects</h2>
+<h3>What Is a GitHub Project?</h3>
+<p>GitHub Projects is a built-in project management tool. It can display issues and PRs from across multiple repositories in one view. Projects support three layouts:</p>
+<table>
+<thead>
+<tr>
+<th>Layout</th>
+<th>Description</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Table</strong></td>
+<td>Spreadsheet-style with custom fields</td>
+<td>Tracking detailed status</td>
+</tr>
+<tr>
+<td><strong>Board</strong></td>
+<td>Kanban columns (Todo, In Progress, Done)</td>
+<td>Visual workflow</td>
+</tr>
+<tr>
+<td><strong>Roadmap</strong></td>
+<td>Timeline/Gantt view</td>
+<td>Planning across time</td>
+</tr>
+</tbody></table>
+<h3>Finding a Project</h3>
+<p>From an organization page or repository:</p>
+<ol>
+<li>Navigate to the &quot;Projects&quot; tab</li>
+<li>Press <code>3</code> to navigate project titles (they are h3 links)</li>
+<li><code>Enter</code> to open a project</li>
+</ol>
+<h3>Navigating a Project — Table View</h3>
+<pre><code>Step 1: The main content is a large grid/table
+Step 2: T to jump to the table
+Step 3: Ctrl+Alt+↓ to navigate rows (each row is an issue or PR)
+Step 4: Ctrl+Alt+→ to navigate columns (Title, Status, Priority, etc.)
+Step 5: Enter on a row to open the issue/PR detail panel
+</code></pre>
+<p><strong>What is announced per row:</strong>
+&quot;Add keyboard navigation to carousel | Status: In Progress | Assignee: username | Priority: High&quot;</p>
+<h3>Navigating a Project — Board View</h3>
+<pre><code>Step 1: Switch to Board view using the view selector button
+Step 2: Each column (Todo / In Progress / Done) is a region
+Step 3: D to navigate between column landmarks
+Step 4: Within a column: 3 to navigate card titles, I for list items
+Step 5: Enter on a card to open the issue/PR panel
+</code></pre>
+<h3>Adding an Issue to a Project</h3>
+<p>From an open issue:</p>
+<ol>
+<li>Navigate to the sidebar &quot;Projects&quot; section (<code>H</code> or <code>3</code>)</li>
+<li>Activate the Projects gear button</li>
+<li>Select the project from the dropdown</li>
+</ol>
+<p>Or from within a project:</p>
+<ol>
+<li>Activate &quot;Add item&quot; button at the bottom of a column/table</li>
+<li>Type <code>#</code> to search for existing issues</li>
+<li>Select the issue → it&#39;s added to the project</li>
+</ol>
+<hr>
+<h2>Practical Organization Strategy for the Hackathon</h2>
+<p>Here is a recommended structure for the <code>learning-room</code> sandbox project:</p>
+<h3>Labels to create</h3>
+<pre><code>accessibility      — all a11y-related work
+documentation      — docs-only changes
+good first issue   — for new contributors
+in progress        — being actively worked on
+needs review       — PR is open, review needed
+blocked            — waiting on something external
+help wanted        — community assistance requested
+</code></pre>
+<h3>Milestone to create</h3>
+<pre><code>Name: Hackathon Day 1 Deliverables
+Due: [Day 1 date]
+Description: All contributions made during Day 1 of the Open Source AT Hackathon
+</code></pre>
+<h3>Workflow</h3>
+<pre><code>1. File an issue → add label + milestone
+2. Comment &quot;I&#39;ll work on this&quot; → add &quot;in progress&quot; label
+3. Make changes → open PR → link to issue
+4. PR merged → issue closes automatically → milestone progress updates
+</code></pre>
+<hr>
+<blockquote>
+<h3>🔥 Day 2 Amplifier — Agent Forge: <code>@issue-tracker</code> with Labels</h3>
+<p><strong>Apply labels and milestones manually in today&#39;s exercises before using any agent.</strong> Labels are the language that automation uses to filter, route, and prioritize work. If you have not designed and applied them yourself, you cannot configure them correctly for automated use — and you cannot tell when automation is applying the wrong ones.</p>
+<p>Once you have mastered manual organization:</p>
+<ul>
+<li><strong>In VS Code</strong> — <code>@issue-tracker find open issues labeled accessibility, severity-high</code> uses the exact label vocabulary you configured today, delivering prioritized cross-repository results with community engagement and release-impact scoring</li>
+<li><strong>In your repo</strong> — Agent Forge forks carry the label schema in <code>.github/ISSUE_TEMPLATE/</code>; your project&#39;s organizational language travels with every clone and does not require manual recreation</li>
+<li><strong>In the cloud</strong> — GitHub Agentic Workflows apply labels automatically when issues are opened, routing work into the right milestone and Project view without manual triage on every item — but only if your labels were designed with clear, consistent intent</li>
+</ul>
+<p><em>Labeling today is not overhead. It is configuring the input layer that every agent downstream depends on.</em></p>
+</blockquote>
+<hr>
+<p><em>Next: <a href="09-notifications.md">Notifications</a></em>
+<em>Back: <a href="07-culture-etiquette.md">Culture and Etiquette</a></em>
+<em>Related: <a href="04-working-with-issues.md">Working with Issues</a> | <a href="../DAY1_AGENDA.md">Day 1 Agenda</a></em></p>
+
+  </main>
+  <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
+    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com">Back to GitHub</a></p>
+  </footer>
+</body>
+</html>

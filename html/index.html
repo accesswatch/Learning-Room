@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
+  <title>GitHub Learning Room - GitHub Learning Room</title>
+  <link rel="stylesheet" href="./styles/github-markdown.css">
+  <link rel="stylesheet" href="./styles/highlight.css">
+  <link rel="stylesheet" href="./styles/custom.css">
+  <style>
+    .markdown-body {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+    @media (max-width: 767px) {
+      .markdown-body {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <a href="./index.html">Home</a>
+  </nav>
+  <main class="markdown-body">
+    <h1>GitHub Learning Room</h1>
+<h2>Open Source Assistive Technology Hackathon</h2>
+<blockquote>
+<p><strong>Welcome.</strong> This repository is your complete guide and companion for the two-day GitHub Learning Room. Every document here is written to be read with or without a screen reader. All steps are keyboard-accessible. You belong here.</p>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>🔥 The Central Project: Agent Forge</strong></p>
+<p>This workshop is built around a real, live open source project: <strong><a href="https://github.com/accesswatch/agent-forge">Agent Forge</a></strong> — six GitHub Copilot agents and 28 slash commands for accessible, agentic repository management. It was built by your facilitator and is MIT-licensed.</p>
+<p>You will fork it, understand it, contribute to it, and personalize it. By the end of Day 2, your name is in its commit history.</p>
+<p><strong>Agent Forge does not replace what you learn on Day 1. It amplifies it.</strong> The agents only make sense when you already understand the skills they automate. That is why Day 1 comes first — and why every guide in this repository shows you the manual path before it shows you the agent path.</p>
+</blockquote>
+<hr>
+<h2>What Is This Event?</h2>
+<p>During this two-day workshop, you will learn how to confidently navigate and contribute to open source projects on GitHub using:</p>
+<ul>
+<li>A <strong>screen reader</strong> (NVDA on Windows, JAWS on Windows, or VoiceOver on macOS)</li>
+<li><strong>Keyboard-only navigation</strong> — no mouse required</li>
+<li><strong>GitHub Copilot</strong> (Day 2) — AI-assisted writing and coding in the browser and in VS Code</li>
+</ul>
+<p>By the end of this event, you will have made <strong>real contributions</strong> to a real repository. Not simulated. Not pretend. Real.</p>
+<hr>
+<h2>Who Is This For?</h2>
+<p>This event is designed for:</p>
+<ul>
+<li>People new to GitHub who use assistive technology</li>
+<li>Developers who use screen readers and want to contribute to open source</li>
+<li>Anyone who is curious about accessible development workflows</li>
+<li>Sighted participants are welcome — all content is keyboard-navigable for everyone</li>
+</ul>
+<p>You do <strong>not</strong> need to know how to code to participate and contribute meaningfully. Documentation improvements, issue filing, accessibility bug reports, and code reviews are all valuable contributions.</p>
+<hr>
+<h2>Two-Day Overview</h2>
+<table>
+<thead>
+<tr>
+<th>Day</th>
+<th>Focus</th>
+<th>What You Will Do</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Day 1</strong></td>
+<td>GitHub Foundations</td>
+<td>Set up your environment, learn GitHub navigation with your screen reader, file your first issue, open your first pull request</td>
+</tr>
+<tr>
+<td><strong>Day 2</strong></td>
+<td>VS Code + Agent Forge</td>
+<td>Bridge from the browser to <strong>github.dev</strong> (VS Code in your browser — no install needed), then step into <strong>Visual Studio Code</strong> on the desktop, learn VS Code basics, use GitHub Copilot, activate the six Agent Forge agents, run agentic workflows in the cloud, and ship a real PR upstream to <code>accesswatch/agent-forge</code></td>
+</tr>
+</tbody></table>
+<h3>The Journey Arc</h3>
+<p>This is not a two-day course with two separate syllabi. It is one arc.</p>
+<pre><code>Day 1 — Learn the skill in the browser
+  Navigate → Issue → Pull Request → Review → Merge
+
+     ↓  (bridge: press . on any GitHub repo — VS Code opens right in your browser)
+
+github.dev — VS Code on the web, no install needed
+  Same keyboard shortcuts · Same screen reader mode · Edit files · Open PRs
+  What it cannot do: no terminal, no Copilot agents, no local extensions
+
+     ↓  (you&#39;ve earned the desktop — now it makes sense)
+
+Day 2 — Deepen with VS Code + Agent Forge
+  Learn VS Code basics → Copilot inline → Copilot Chat
+  @daily-briefing → @issue-tracker → @pr-review → @analytics → ship upstream
+</code></pre>
+<p>Every skill you build on Day 1 maps directly to an Agent Forge command on Day 2. The agent is not a shortcut — it is a multiplier. You have to understand what it is doing to know when it is wrong.</p>
+<p><strong>By the end of Day 2, you will have:</strong></p>
+<ul>
+<li>A fork of <code>agent-forge</code> with your personalized preferences</li>
+<li>At least one merged PR in a real open source project</li>
+<li>Your name in the commit history of <code>accesswatch/agent-forge</code></li>
+<li>A working set of six AI agents that travel with your fork to any repository you apply them to</li>
+</ul>
+<hr>
+<h2>How to Read These Docs</h2>
+<p>All documentation lives in the <code>docs/</code> folder. Read them in order for the full experience, or jump to what you need.</p>
+<blockquote>
+<p><strong>📄 HTML Version Available:</strong> All markdown documentation is automatically converted to HTML format. After cloning the repository, you can browse the <code>html/</code> directory for web-formatted versions of every document. See <a href="BUILD.md">BUILD.md</a> for details.</p>
+</blockquote>
+<h3>Quick Navigation</h3>
+<p><strong>Lessons</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Document</th>
+<th>What It Covers</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="docs/00-pre-workshop-setup.md">00</a></td>
+<td><strong>Pre-Workshop Setup</strong></td>
+<td>Everything to install and configure before Day 1</td>
+</tr>
+<tr>
+<td><a href="docs/01-understanding-github-web-structure.md">01</a></td>
+<td><strong>Understanding GitHub&#39;s Web Structure</strong></td>
+<td>How GitHub is organized, page types, landmark structure, heading hierarchy, and the screen reader orientation sequence</td>
+</tr>
+<tr>
+<td><a href="docs/02-navigating-repositories.md">02</a></td>
+<td><strong>Navigating Repositories</strong></td>
+<td>Step-by-step repository navigation with your screen reader</td>
+</tr>
+<tr>
+<td><a href="docs/03-the-learning-room.md">03</a></td>
+<td><strong>The Learning Room: Shared Practice Repo</strong></td>
+<td>Your shared contribution environment, PR sharing workflow, automation system, peer reviewing, and how everything works together</td>
+</tr>
+<tr>
+<td><a href="docs/04-working-with-issues.md">04</a></td>
+<td><strong>Working with Issues</strong></td>
+<td>Filing, managing, and participating in issues</td>
+</tr>
+<tr>
+<td><a href="docs/05-working-with-pull-requests.md">05</a></td>
+<td><strong>Working with Pull Requests</strong></td>
+<td>Creating, reviewing, and merging pull requests</td>
+</tr>
+<tr>
+<td><a href="docs/06-merge-conflicts.md">06</a></td>
+<td><strong>Merge Conflicts</strong></td>
+<td>Understanding, preventing, and resolving merge conflicts</td>
+</tr>
+<tr>
+<td><a href="docs/07-culture-etiquette.md">07</a></td>
+<td><strong>Culture and Etiquette</strong></td>
+<td>Open source language, tone, commenting, review etiquette</td>
+</tr>
+<tr>
+<td><a href="docs/08-labels-milestones-projects.md">08</a></td>
+<td><strong>Labels, Milestones and Projects</strong></td>
+<td>Organizing and cross-referencing work</td>
+</tr>
+<tr>
+<td><a href="docs/09-notifications.md">09</a></td>
+<td><strong>Notifications and Mentions</strong></td>
+<td>Managing your inbox, @mentions, and subscriptions</td>
+</tr>
+<tr>
+<td><a href="docs/10-vscode-basics.md">10</a></td>
+<td><strong>VS Code: Setup &amp; Accessibility Basics</strong></td>
+<td>VS Code interface, github.dev (VS Code in the browser), screen reader mode, keyboard navigation, Accessible Help/View/Diff, audio cues</td>
+</tr>
+<tr>
+<td><a href="docs/11-git-source-control.md">11</a></td>
+<td><strong>VS Code: Git &amp; Source Control</strong></td>
+<td>Cloning, Source Control panel, branching, staging, committing, Timeline view, merge conflicts, stash management</td>
+</tr>
+<tr>
+<td><a href="docs/12-github-pull-requests-extension.md">12</a></td>
+<td><strong>VS Code: GitHub Pull Requests Extension</strong></td>
+<td>Viewing PRs, checking out branches, reviewing with Accessible Diff, creating PRs, commenting, merging</td>
+</tr>
+<tr>
+<td><a href="docs/13-github-copilot.md">13</a></td>
+<td><strong>VS Code: GitHub Copilot</strong></td>
+<td>Inline suggestions, Copilot Chat, effective prompting for documentation work, custom instructions vs custom agents, Accessible View workflow</td>
+</tr>
+<tr>
+<td><a href="docs/14-accessible-code-review.md">14</a></td>
+<td><strong>Accessible Code Review</strong></td>
+<td>Navigating diffs and conducting PR reviews with a screen reader, on GitHub and in VS Code — culminating skill before automation</td>
+</tr>
+<tr>
+<td><a href="docs/15-issue-templates.md">15</a></td>
+<td><strong>Issue Templates</strong></td>
+<td>Creating and using GitHub issue templates</td>
+</tr>
+<tr>
+<td><a href="docs/16-agent-forge.md">16</a></td>
+<td><strong>Agent Forge</strong></td>
+<td>Six agents (@daily-briefing, @issue-tracker, @pr-review, @analytics, @insiders-a11y-tracker, @template-builder), 28 slash commands, building custom agents, cloud extension — agentic flow after all learning complete</td>
+</tr>
+</tbody></table>
+<p><strong>Workshop Agendas</strong> — For facilitators only (not part of learner sequence)</p>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>What It Covers</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="DAY1_AGENDA.md">DAY1_AGENDA.md</a></td>
+<td>Full Day 1 schedule, objectives, and activities</td>
+</tr>
+<tr>
+<td><a href="DAY2_AGENDA.md">DAY2_AGENDA.md</a></td>
+<td>Full Day 2 schedule, objectives, and activities</td>
+</tr>
+</tbody></table>
+<p><strong>Appendices</strong> — Reference material; open any time during the workshop</p>
+<table>
+<thead>
+<tr>
+<th>Appendix</th>
+<th>Document</th>
+<th>What It Covers</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="docs/appendix-a-glossary.md">A</a></td>
+<td><strong>GitHub Concepts Glossary</strong></td>
+<td>Every term, concept, and piece of jargon explained</td>
+</tr>
+<tr>
+<td><a href="docs/appendix-b-screen-reader-cheatsheet.md">B</a></td>
+<td><strong>Screen Reader Cheat Sheet</strong></td>
+<td>Complete NVDA, JAWS, and VoiceOver navigation commands, plus the full GitHub built-in keyboard shortcut system organized by page context</td>
+</tr>
+<tr>
+<td><a href="docs/appendix-c-git-authentication.md">C</a></td>
+<td><strong>Git Authentication</strong></td>
+<td>SSH keys, Personal Access Tokens, credential storage</td>
+</tr>
+<tr>
+<td><a href="docs/appendix-d-github-gists.md">D</a></td>
+<td><strong>GitHub Gists</strong></td>
+<td>Code snippets, sharing, embedding</td>
+</tr>
+<tr>
+<td><a href="docs/appendix-e-advanced-github-features.md">E</a></td>
+<td><strong>Advanced GitHub Features</strong></td>
+<td>GitHub CLI, API, mobile app, advanced settings</td>
+</tr>
+<tr>
+<td><a href="docs/appendix-f-vscode-accessibility-reference.md">F</a></td>
+<td><strong>VS Code Accessibility Reference</strong></td>
+<td>Complete technical reference for all accessibility settings, audio cues, diff viewer, screen reader configurations, keyboard shortcuts</td>
+</tr>
+<tr>
+<td><a href="docs/appendix-g-github-actions-workflows.md">G</a></td>
+<td><strong>GitHub Actions and Workflows</strong></td>
+<td>Deep-dive reference — automation, status checks, CI/CD workflows, and the path to agentic cloud (optional post-workshop learning)</td>
+</tr>
+<tr>
+<td><a href="docs/appendix-h-github-projects.md">H</a></td>
+<td><strong>GitHub Projects Deep Dive</strong></td>
+<td>Boards, tables, roadmaps, custom fields, automations, iterations, cross-repo projects, and accessible navigation</td>
+</tr>
+<tr>
+<td><a href="docs/appendix-i-github-discussions.md">I</a></td>
+<td><strong>GitHub Discussions</strong></td>
+<td>Forum-style conversations, Q&amp;A, polls, and accessibility navigation for discussion threads</td>
+</tr>
+<tr>
+<td><a href="docs/appendix-j-advanced-search.md">J</a></td>
+<td><strong>GitHub Advanced Search</strong></td>
+<td>Complete query language reference for searching issues, PRs, code, commits, and repositories</td>
+</tr>
+<tr>
+<td><a href="docs/appendix-k-releases-tags.md">K</a></td>
+<td><strong>GitHub Releases and Tags</strong></td>
+<td>Versioned releases, semver, reading release notes, and how your PR lands in a release</td>
+</tr>
+<tr>
+<td><a href="docs/appendix-l-repository-insights.md">L</a></td>
+<td><strong>Repository Insights</strong></td>
+<td>Pulse, Contributors, Traffic, Dependency Graph, and accessible alternatives via Agent Forge</td>
+</tr>
+<tr>
+<td><a href="docs/appendix-n-github-flavored-markdown.md">N</a></td>
+<td><strong>GitHub Flavored Markdown</strong></td>
+<td>Alert blocks, collapsible sections, Mermaid diagrams, math, footnotes, heading anchors, and screen reader guidance</td>
+</tr>
+<tr>
+<td><a href="docs/appendix-o-github-security-features.md">O</a></td>
+<td><strong>GitHub Security Features</strong></td>
+<td>Dependabot alerts and updates, secret scanning, code scanning/CodeQL, private vulnerability reporting, and SBOM</td>
+</tr>
+<tr>
+<td><a href="docs/appendix-p-branch-protection-rulesets.md">P</a></td>
+<td><strong>Branch Protection and Rulesets</strong></td>
+<td>Required reviews, status checks, repository rulesets, and diagnosing why your PR cannot be merged</td>
+</tr>
+<tr>
+<td><a href="docs/appendix-q-resources.md">Q</a></td>
+<td><strong>Resources</strong></td>
+<td>Every link, tool, and reference from this event</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>Each guide from Lesson 03 onward includes a &quot;🔥 Day 2 Amplifier&quot; callout</strong> that shows how Agent Forge extends that skill across three scopes: your VS Code editor → your repository (travels with every fork) → the cloud (GitHub Agentic Workflows running without VS Code). <strong>Learn the manual skill first (Chapter 14), then see how it&#39;s automated (Chapter 16).</strong></p>
+</blockquote>
+<hr>
+<h2>This Repository&#39;s Structure</h2>
+<blockquote>
+<p><strong>One repository, everything included.</strong> Clone or fork this repo and you have the complete workshop — all curriculum guides, Agent Forge agents and slash commands, YAML issue forms, PR template, and a practice contribution target in <code>learning-room/</code>. GitHub Skills modules cannot be bundled here (each participant activates their own copy on their own account), but links are in <code>.github/ISSUE_TEMPLATE/config.yml</code>.</p>
+</blockquote>
+<pre><code>[repo root]/
+├── README.md                            ← You are here
+├── CONTRIBUTING.md                      ← How to contribute to this repo
+├── CODE_OF_CONDUCT.md                   ← Community standards
+├── FACILITATOR.md                       ← For workshop organizers only
+├── DAY1_AGENDA.md                       ← Day 1 workshop schedule (facilitators only)
+├── DAY2_AGENDA.md                       ← Day 2 workshop schedule (facilitators only)
+├── .gitignore
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   │   ├── config.yml                   ← Links to GitHub Skills; disables blank issues
+│   │   ├── accessibility-bug.yml        ← Structured accessibility bug form (YAML)
+│   │   └── feature-request.yml         ← Feature/improvement request form (YAML)
+│   ├── PULL_REQUEST_TEMPLATE.md        ← PR checklist with accessibility section
+│   ├── agents/                          ← Agent Forge: six Copilot Chat agents
+│   │   ├── daily-briefing.agent.md
+│   │   ├── issue-tracker.agent.md
+│   │   ├── pr-review.agent.md
+│   │   ├── analytics.agent.md
+│   │   ├── insiders-a11y-tracker.agent.md
+│   │   └── preferences.example.md      ← Copy to preferences.md and personalize
+│   └── prompts/                         ← Eight slash commands for Copilot Chat
+│       ├── accessibility-check.prompt.md
+│       ├── draft-reply.prompt.md
+│       ├── find-good-first-issues.prompt.md
+│       ├── find-issues.prompt.md
+│       ├── morning-briefing.prompt.md
+│       ├── pr-summary.prompt.md
+│       ├── release-notes.prompt.md
+│       └── review-comments.prompt.md
+├── learning-room/                       ← Practice target for the contribution sprint
+│   ├── README.md
+│   └── docs/
+│       ├── welcome.md                   ← Has [TODO] sections for you to complete
+│       ├── keyboard-shortcuts.md        ← Has intentional accessibility issues to find and fix
+│       └── setup-guide.md              ← Has a broken link to find and fix
+└── docs/                               ← Full workshop curriculum (18 lessons + 16 appendices A–Q)
+    ├── 00-pre-workshop-setup.md
+    ├── 01-understanding-github-web-structure.md  ← How GitHub is organized (start here)
+    ├── 02-navigating-repositories.md  ← 🔥 Agent Forge: @daily-briefing
+    ├── 03-the-learning-room.md        ← 🎓 Read this early: your shared space and PR workflow
+    ├── 04-working-with-issues.md      ← 🔥 Agent Forge: @issue-tracker
+    ├── 05-working-with-pull-requests.md ← 🔥 Agent Forge: @pr-review
+    ├── 06-merge-conflicts.md          ← 🔥 Agent Forge: Copilot conflict prevention
+    ├── 07-culture-etiquette.md        ← 🔥 Agent Forge: output responsibility
+    ├── 08-labels-milestones-projects.md ← 🔥 Agent Forge: @issue-tracker + labels
+    ├── 09-notifications.md            ← 🔥 Agent Forge: @daily-briefing + inbox
+    ├── 10-vscode-basics.md            ← VS Code setup, github.dev, screen reader mode, accessibility basics
+    ├── 11-git-source-control.md       ← Git operations in VS Code: clone, branch, commit, merge, stash
+    ├── 12-github-pull-requests-extension.md ← GitHub PR extension: view, review, create, merge PRs
+    ├── 13-github-copilot.md           ← GitHub Copilot: inline suggestions, Chat, prompting, custom agents
+    ├── 14-accessible-code-review.md   ← Reviewer mechanics: diffs, comments, Accessible Diff Viewer — final culminating skill
+    ├── 15-issue-templates.md          ← Creating GitHub issue templates
+    ├── 16-agent-forge.md              ← 🔥 Agent Forge: six agents, 28 commands, agentic workflows — automate everything you learned
+    ├── appendix-a-glossary.md         ← Every term explained (look up any time)
+    ├── appendix-b-screen-reader-cheatsheet.md  ← Full shortcut reference (keep open)
+    ├── appendix-c-git-authentication.md ← SSH keys, PATs, credential storage
+    ├── appendix-d-github-gists.md     ← Code snippets, sharing, embedding
+    ├── appendix-e-advanced-github-features.md ← CLI, API, mobile, advanced settings
+    ├── appendix-f-vscode-accessibility-reference.md ← Complete VS Code accessibility technical reference
+    ├── appendix-g-github-actions-workflows.md ← Automation, CI/CD workflows, and agentic cloud
+    ├── appendix-h-github-projects.md  ← GitHub Projects deep dive (boards, tables, roadmaps, automations)
+    ├── appendix-i-github-discussions.md ← GitHub Discussions navigation and participation
+    ├── appendix-j-advanced-search.md  ← Search query language reference
+    ├── appendix-k-releases-tags.md    ← Releases, tags, and version numbers
+    ├── appendix-l-repository-insights.md ← Pulse, contributors, traffic, and other metrics
+    ├── appendix-n-github-flavored-markdown.md ← Alert blocks, Mermaid, math, footnotes, heading anchors
+    ├── appendix-o-github-security-features.md ← Dependabot, secret scanning, code scanning, private advisories
+    ├── appendix-p-branch-protection-rulesets.md ← Branch rules, rulesets, diagnosing blocked PRs
+    └── appendix-q-resources.md        ← Every link, tool, and reference (lookup anytime)
+
+---
+
+## Screen Reader Users: Start Here
+
+Before doing anything else, please read [**00 — Pre-Workshop Setup**](docs/00-pre-workshop-setup.md). It will walk you through:
+
+- Configuring your screen reader for GitHub
+- Verifying GitHub&#39;s modern interface is working (enabled by default as of January 2026)
+- Turning off settings that make screen reader navigation harder
+- Verifying everything works before Day 1 begins
+
+---
+
+## The Goal of This Event
+
+Open source software is built by people. Accessibility bugs in open source affect millions of people who use assistive technology every day. By learning to contribute — even something as small as filing a clear, detailed accessibility issue — you become part of fixing that. That matters.
+
+**You don&#39;t have to write a single line of code to make open source more accessible.**
+
+And by the end of Day 2, you will not just be a learner. You will be a product maker — someone who has shipped something real to a project that other people use.
+
+---
+
+## Questions Before the Event?
+
+- Join the [GitHub Accessibility Discussions](https://github.com/orgs/community/discussions/categories/accessibility) on GitHub
+- File an issue in this repository if something in these docs is unclear
+- Contact the event organizers (details provided separately)
+
+---
+
+## License
+
+All workshop documentation is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) — you are free to share and adapt with attribution.
+
+---
+
+*Built with ❤️ for the Open Source Assistive Technology Hackathon.*
+</code></pre>
+
+  </main>
+  <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
+    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com">Back to GitHub</a></p>
+  </footer>
+</body>
+</html>

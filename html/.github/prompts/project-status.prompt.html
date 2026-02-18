@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
+  <title>project-status.prompt - GitHub Learning Room</title>
+  <link rel="stylesheet" href="./styles/github-markdown.css">
+  <link rel="stylesheet" href="./styles/highlight.css">
+  <link rel="stylesheet" href="./styles/custom.css">
+  <style>
+    .markdown-body {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+    @media (max-width: 767px) {
+      .markdown-body {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <a href="./index.html">Home</a>
+  </nav>
+  <main class="markdown-body">
+    <hr>
+<h2>name: project-status
+description: &quot;GitHub Projects overview -- item counts per column, blocked items, stale items, sprint progress, and team assignments&quot;
+agent: issue-tracker
+tools:
+  - github/*
+  - createFile
+  - createDirectory
+  - ask_questions</h2>
+<p>Show the status of a GitHub Project board -- items per column, blocked items, stale items, and team workload.</p>
+<p>${input:details:Optional: project number, org/repo name, &#39;org:orgname&#39;, or &#39;my items&#39;}</p>
+<h2>Steps</h2>
+<ol>
+<li><p>Get the authenticated user with #tool:mcp_github_github_get_me.</p>
+</li>
+<li><p>Load repo scope from <code>.github/agents/preferences.md</code> if present.</p>
+</li>
+<li><p>Identify the target project:</p>
+<ul>
+<li>If a project number is given, use it directly</li>
+<li>If a repo is given, list available projects for that repo/org</li>
+<li>If &quot;my items&quot; is specified, show the user&#39;s items across all active projects</li>
+<li>Check preferences.md for configured active projects</li>
+</ul>
+</li>
+<li><p>Fetch project data:</p>
+<ul>
+<li>All items with their current status/column</li>
+<li>Item details: type (issue/PR/draft), assignee, labels, last activity</li>
+</ul>
+</li>
+<li><p>Calculate per-column metrics:</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Items</th>
+<th>Assignees</th>
+<th>Avg Age</th>
+<th>Stale (7+ days)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>To Do</td>
+<td>{N}</td>
+<td>@alice (3), @bob (2)</td>
+<td>5 days</td>
+<td>1</td>
+</tr>
+<tr>
+<td>In Progress</td>
+<td>{N}</td>
+<td>@charlie (2), @dana (1)</td>
+<td>3 days</td>
+<td>0</td>
+</tr>
+<tr>
+<td>In Review</td>
+<td>{N}</td>
+<td>--</td>
+<td>2 days</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Done</td>
+<td>{N}</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Flag attention items:</p>
+<ul>
+<li><strong>Blocked:</strong> Items marked as blocked or with a &quot;blocked&quot; label</li>
+<li><strong>Stale:</strong> Items in the same column for 7+ days with no activity</li>
+<li><strong>Unassigned:</strong> Items in &quot;In Progress&quot; or &quot;In Review&quot; with no assignee</li>
+<li><strong>Overloaded:</strong> Team members with 5+ items in progress</li>
+</ul>
+</li>
+<li><p>Show sprint/iteration progress if applicable:</p>
+<ul>
+<li>Completion percentage</li>
+<li>Burn-down status (on track / behind / ahead)</li>
+<li>Days remaining</li>
+</ul>
+</li>
+<li><p>Present in chat with option to generate a saved document.</p>
+</li>
+</ol>
+<p>After the overview: <em>&quot;Want to see a specific column, update an item&#39;s status, or check a team member&#39;s workload?&quot;</em></p>
+
+  </main>
+  <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
+    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com">Back to GitHub</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
+  <title>morning-briefing.prompt - GitHub Learning Room</title>
+  <link rel="stylesheet" href="./styles/github-markdown.css">
+  <link rel="stylesheet" href="./styles/highlight.css">
+  <link rel="stylesheet" href="./styles/custom.css">
+  <style>
+    .markdown-body {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+    @media (max-width: 767px) {
+      .markdown-body {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <a href="./index.html">Home</a>
+  </nav>
+  <main class="markdown-body">
+    <p>Produce a morning briefing of everything that needs attention across the user&#39;s repositories.</p>
+<p>Same as @daily-briefing but as a one-shot prompt invocation. Use this structure:</p>
+<pre><code>## Morning Briefing — [today&#39;s date]
+
+### Action Required
+
+#### Pull Requests Waiting for Your Review
+[Each: title, #number, repository, author, N days waiting]
+
+#### @Mentions Awaiting Response
+[Each: issue/PR title, #number, repository, who mentioned you]
+
+#### CI Failures on Your Branches
+[Each: branch, repository, which check failed]
+
+### For Your Awareness
+
+#### Issues Opened Since Yesterday
+[Each: title, #number, repository, labels]
+
+#### Your PRs With New Activity
+[Each: title, #number, what changed]
+
+### All Clear
+[List each checked category that has no items — do not omit these lines]
+</code></pre>
+<p>Cover repositories from the user&#39;s preferences file (<code>.github/agents/preferences.md</code>) if available.
+Report &quot;None&quot; explicitly for every empty section — never skip a section.
+Use UTC unless the user&#39;s preferences file specifies a time zone.</p>
+
+  </main>
+  <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
+    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com">Back to GitHub</a></p>
+  </footer>
+</body>
+</html>

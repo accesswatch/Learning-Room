@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
+  <title>Appendix E: Advanced GitHub Features - GitHub Learning Room</title>
+  <link rel="stylesheet" href="./styles/github-markdown.css">
+  <link rel="stylesheet" href="./styles/highlight.css">
+  <link rel="stylesheet" href="./styles/custom.css">
+  <style>
+    .markdown-body {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+    @media (max-width: 767px) {
+      .markdown-body {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <a href="./index.html">Home</a>
+  </nav>
+  <main class="markdown-body">
+    <h1>Appendix E: Advanced GitHub Features</h1>
+<h2>Codespaces, GitHub Pages, Profile Customization, and More</h2>
+<blockquote>
+<p>This appendix covers optional GitHub features that enhance your workflow but aren&#39;t required for basic contribution. Explore these as you become more comfortable with GitHub.</p>
+</blockquote>
+<hr>
+<h2>GitHub Codespaces</h2>
+<h3>What Is Codespaces?</h3>
+<p>GitHub Codespaces is a cloud-based development environment that runs entirely in your browser (or VS Code). Think of it as VS Code in the cloud with all your project dependencies pre-installed.</p>
+<p><strong>The value proposition:</strong></p>
+<ul>
+<li>No local setup required</li>
+<li>Works from any computer with a browser</li>
+<li>Pre-configured environments (project maintainers can define the setup)</li>
+<li>Consistent environment for all contributors</li>
+<li>Accessible from tablets or low-powered devices</li>
+</ul>
+<h3>When to Use Codespaces</h3>
+<p><strong>Good use cases:</strong></p>
+<ul>
+<li>Testing a project quickly without installing dependencies</li>
+<li>Contributing from a borrowed or public computer</li>
+<li>Working on projects with complex setup (databases, Docker, etc.)</li>
+<li>Your local machine lacks the resources to run the project</li>
+</ul>
+<p><strong>Not ideal for:</strong></p>
+<ul>
+<li>Projects you work on daily (local setup is faster)</li>
+<li>Offline work (requires internet connection)</li>
+<li>Extremely large repositories (can be slow to load)</li>
+</ul>
+<h3>Starting a Codespace</h3>
+<ol>
+<li>Navigate to any GitHub repository</li>
+<li>Select the green <strong>&quot;Code&quot;</strong> button</li>
+<li>Select the <strong>&quot;Codespaces&quot;</strong> tab</li>
+<li>Select <strong>&quot;Create codespace on main&quot;</strong> (or choose a branch)</li>
+</ol>
+<p>GitHub spins up a virtual machine with VS Code, clones the repo, and opens it in your browser.</p>
+<p><strong>Screen reader navigation:</strong></p>
+<ul>
+<li>Codespaces runs a full VS Code instance—all VS Code accessibility features apply</li>
+<li>Press <code>Shift+Alt+F1</code> to toggle screen reader mode</li>
+<li>Use the same keyboard shortcuts as desktop VS Code</li>
+<li>Terminal, editor, and sidebar are all accessible</li>
+</ul>
+<h3>Codespaces Accessibility</h3>
+<p><strong>Good news:</strong> Codespaces is built on VS Code, which has excellent screen reader support.</p>
+<p><strong>Potential challenges:</strong></p>
+<ul>
+<li>Browser-based terminals can sometimes have slight accessibility differences from native terminals</li>
+<li>Audio cues and notifications work the same as desktop VS Code</li>
+<li>Some extensions may behave differently in the browser</li>
+</ul>
+<p><strong>Recommendation:</strong> Try Codespaces for a simple project first to get comfortable before using it for critical work.</p>
+<h3>Codespaces Limits</h3>
+<p>GitHub provides a monthly allowance of free Codespaces hours based on your account type:</p>
+<ul>
+<li><strong>Free accounts:</strong> 120 core-hours/month, 15 GB storage</li>
+<li><strong>Pro accounts:</strong> 180 core-hours/month, 20 GB storage</li>
+<li><strong>Deeper use:</strong> Requires a paid plan</li>
+</ul>
+<p>Core-hours = hours × number of CPU cores. A 2-core machine for 60 hours = 120 core-hours.</p>
+<p><strong>Tip:</strong> Stop your Codespace when not using it. GitHub auto-stops after 30 minutes of inactivity by default.</p>
+<h3>Codespaces vs Local Development</h3>
+<table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>Local Development</th>
+<th>Codespaces</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Setup time</td>
+<td>Can take hours</td>
+<td>Minutes (often pre-configured)</td>
+</tr>
+<tr>
+<td>Performance</td>
+<td>Depends on your machine</td>
+<td>Depends on instance size</td>
+</tr>
+<tr>
+<td>Accessibility</td>
+<td>Native screen reader support</td>
+<td>Browser-based (excellent but not identical)</td>
+</tr>
+<tr>
+<td>Offline work</td>
+<td>✅ Yes</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td>Cost</td>
+<td>Free (uses your machine)</td>
+<td>Free tier or paid</td>
+</tr>
+<tr>
+<td>Portability</td>
+<td>Tied to one machine</td>
+<td>Access from anywhere</td>
+</tr>
+</tbody></table>
+<p><strong>Bottom line:</strong> Codespaces is a powerful option, especially for quick contributions or trying out new projects. For daily development on projects you know well, local setup is often faster and more flexible.</p>
+<hr>
+<h2>GitHub Pages</h2>
+<h3>What Is GitHub Pages?</h3>
+<p>GitHub Pages is a free static site hosting service that turns a GitHub repository into a live website. It&#39;s perfect for:</p>
+<ul>
+<li><strong>Project documentation</strong> — host your docs alongside your code</li>
+<li><strong>Personal portfolio</strong> — showcase your work at <code>username.github.io</code></li>
+<li><strong>Blogs</strong> — using static site generators like Jekyll, Hugo, or Eleventy</li>
+<li><strong>Demo sites</strong> — let users try your project without running it locally</li>
+</ul>
+<p><strong>Key constraint:</strong> Static sites only. No server-side code (PHP, Python, Node.js servers). Only HTML, CSS, JavaScript.</p>
+<h3>Types of GitHub Pages Sites</h3>
+<p><strong>1. User/Organization site:</strong> <code>username.github.io</code></p>
+<ul>
+<li>Create a repo named exactly <code>username.github.io</code> (replace <code>username</code> with your GitHub username)</li>
+<li>Push an <code>index.html</code> file to the main branch</li>
+<li>Your site appears at <code>https://username.github.io</code></li>
+</ul>
+<p><strong>2. Project site:</strong> <code>username.github.io/repo-name</code></p>
+<ul>
+<li>Any repository can have a Pages site</li>
+<li>Enable Pages in Settings → Pages</li>
+<li>Choose a branch and folder (<code>main</code> branch, <code>/docs</code> folder is common)</li>
+<li>Your site appears at <code>https://username.github.io/repo-name</code></li>
+</ul>
+<h3>Setting Up GitHub Pages</h3>
+<p><strong>Method 1: Basic HTML Site</strong></p>
+<ol>
+<li>Create a repository (or use an existing one)</li>
+<li>Add an <code>index.html</code> file:</li>
+</ol>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;My GitHub Pages Site&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to My Project&lt;/h1&gt;
+    &lt;p&gt;This is a GitHub Pages site.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ol start="3">
+<li>Navigate to <strong>Settings → Pages</strong></li>
+<li>Under &quot;Branch,&quot; select <code>main</code> and <code>/ (root)</code> or <code>/docs</code></li>
+<li>Select <strong>Save</strong></li>
+</ol>
+<p>GitHub builds and deploys your site within a few minutes. The URL appears in the Pages settings.</p>
+<p><strong>Method 2: Using Jekyll (Built-in)</strong></p>
+<p>GitHub Pages has built-in support for Jekyll, a static site generator.</p>
+<ol>
+<li>Add a <code>_config.yml</code> file to your repo:</li>
+</ol>
+<pre><code class="language-yaml">title: My Project Documentation
+description: An accessible guide to using MyProject
+theme: jekyll-theme-minimal
+</code></pre>
+<ol start="2">
+<li>Create a <code>README.md</code> or <code>index.md</code> — Jekyll converts Markdown to HTML automatically</li>
+<li>Enable Pages in Settings (same as above)</li>
+</ol>
+<p>Jekyll themes provide pre-built layouts. Browse themes at <a href="https://pages.github.com/themes/">pages.github.com/themes/</a>.</p>
+<h3>Custom Domains</h3>
+<p>You can use your own domain instead of <code>username.github.io</code>:</p>
+<ol>
+<li>Buy a domain from any registrar (Namecheap, Google Domains, etc.)</li>
+<li>In your repo&#39;s Settings → Pages, add your custom domain</li>
+<li>Configure DNS records at your registrar (GitHub provides instructions)</li>
+<li>GitHub automatically provisions an SSL certificate (HTTPS)</li>
+</ol>
+<h3>GitHub Pages Accessibility</h3>
+<p>Since you control the HTML/CSS, accessibility is entirely up to you. Best practices:</p>
+<ul>
+<li>Use semantic HTML (<code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>)</li>
+<li>Provide alt text for all images</li>
+<li>Ensure sufficient color contrast</li>
+<li>Test with a screen reader</li>
+<li>Use headings hierarchically (<code>&lt;h1&gt;</code> → <code>&lt;h2&gt;</code> → <code>&lt;h3&gt;</code>)</li>
+</ul>
+<p>Many Jekyll themes have accessibility built in. Always test before assuming.</p>
+<h3>When Not to Use GitHub Pages</h3>
+<ul>
+<li><strong>You need a database</strong> — Pages serve static files only</li>
+<li><strong>You need server-side logic</strong> — no PHP, Python, Ruby backends</li>
+<li><strong>You need authentication</strong> — no built-in login system</li>
+<li><strong>High-traffic production apps</strong> — Pages is best for documentation and small sites</li>
+</ul>
+<p>For dynamic apps, use Vercel, Netlify, Render, or a traditional web host.</p>
+<hr>
+<h2>Profile Customization</h2>
+<h3>The Special Profile README</h3>
+<p>GitHub has a hidden feature: if you create a repository named exactly <strong>your-username/your-username</strong> (e.g., <code>janesmith/janesmith</code>), the README in that repo appears on your GitHub profile page.</p>
+<p><strong>This is your profile README.</strong> It&#39;s a custom introduction visible to anyone who visits your profile.</p>
+<h3>Creating Your Profile README</h3>
+<ol>
+<li>Create a <strong>new repository</strong></li>
+<li>Name it exactly <code>your-username</code> (match your GitHub username exactly, case-sensitive)</li>
+<li>Make it <strong>public</strong></li>
+<li>Initialize with a README</li>
+<li>Edit the README with whatever you want to show on your profile</li>
+</ol>
+<p><strong>What to include:</strong></p>
+<ul>
+<li><strong>Introduction:</strong> Who you are, what you work on</li>
+<li><strong>Current focus:</strong> What projects or technologies you&#39;re learning</li>
+<li><strong>Skills:</strong> Languages, frameworks, tools (optional)</li>
+<li><strong>How to reach you:</strong> Email, LinkedIn, personal site</li>
+<li><strong>Fun facts:</strong> Hobbies, interests (optional—keeps it human)</li>
+</ul>
+<p><strong>Example profile README:</strong></p>
+<pre><code class="language-markdown"># Hi, I&#39;m Jane Smith 👋
+
+I&#39;m an accessibility advocate and open source contributor focused on making the web more inclusive.
+
+## 🔭 Current focus
+- Contributing to NVDA documentation
+- Building accessible React components
+- Learning TypeScript
+
+## 🌱 Skills
+- JavaScript, Python, HTML/CSS
+- Screen reader testing (NVDA, JAWS, VoiceOver)
+- Git, GitHub, GitHub Actions
+
+## 📫 Get in touch
+- Email: jane@example.com
+- LinkedIn: [linkedin.com/in/janesmith](https://linkedin.com/in/janesmith)
+
+## ⚡ Fun fact
+I&#39;ve been using screen readers for 8 years and believe accessible design is better design for everyone.
+</code></pre>
+<h3>Profile README Best Practices</h3>
+<p>✅ <strong>Keep it concise</strong> — visitors skim, not read<br>✅ <strong>Update occasionally</strong> — a README from 2019 looks stale<br>✅ <strong>Be authentic</strong> — people connect with real humans, not buzzwords<br>✅ <strong>Include links</strong> — make it easy to learn more or get in touch  </p>
+<p>❌ <strong>Avoid excessive badges</strong> — 50 skill badges is visual clutter and screen reader noise<br>❌ <strong>Skip auto-generated stats</strong> — &quot;commits per day&quot; widgets are often inaccessible<br>❌ <strong>Don&#39;t overthink it</strong> — a simple paragraph is better than nothing  </p>
+<h3>Screen Reader Considerations</h3>
+<ul>
+<li><strong>Use headings</strong> (<code>##</code>) for structure</li>
+<li><strong>Provide alt text</strong> for any images: <code>![Description of image](url)</code></li>
+<li><strong>Avoid ASCII art</strong> — screen readers read it character by character (annoying)</li>
+<li><strong>Test your README</strong> with a screen reader before publishing</li>
+</ul>
+<h3>Other Profile Customizations</h3>
+<p><strong>Pinned repositories (up to 6):</strong></p>
+<ul>
+<li>Highlight your best work on your profile</li>
+<li>Navigate to your profile → Select &quot;Customize your pins&quot;</li>
+<li>Choose which repos appear first</li>
+</ul>
+<p><strong>Contribution graph:</strong></p>
+<ul>
+<li>Shows your GitHub activity over the past year</li>
+<li>Green squares indicate days with commits, PRs, issues, etc.</li>
+<li>Cannot be customized but reflects consistent contribution</li>
+</ul>
+<p><strong>Status:</strong></p>
+<ul>
+<li>Set a temporary status message (e.g., &quot;🏖️ On vacation until March 15&quot;)</li>
+<li>Navigate to your profile → Select the smile icon → Set status</li>
+</ul>
+<hr>
+<h2>GitHub Sponsors (Supporting Open Source)</h2>
+<h3>What Is GitHub Sponsors?</h3>
+<p>GitHub Sponsors lets you financially support developers and projects you depend on. It&#39;s like Patreon for open source.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Developers/projects create a Sponsors profile</li>
+<li>You choose a monthly sponsorship tier ($5, $10, $25/month, etc.)</li>
+<li>Your payment goes directly to the developer (GitHub takes no fees)</li>
+</ul>
+<h3>Why Sponsor?</h3>
+<ul>
+<li><strong>Sustainability:</strong> Many open source maintainers volunteer their time. Sponsorships help them keep projects alive.</li>
+<li><strong>Gratitude:</strong> If a project saved you hours of work, sponsorship is a way to say thanks.</li>
+<li><strong>Priority support:</strong> Some maintainers offer sponsor-only Discord access, early releases, or prioritized bug fixes.</li>
+</ul>
+<h3>How to Sponsor</h3>
+<ol>
+<li>Navigate to a user or repository&#39;s GitHub page</li>
+<li>Look for the <strong>&quot;Sponsor&quot;</strong> button (heart icon)</li>
+<li>Choose a tier or custom amount</li>
+<li>Select payment method (credit card or PayPal)</li>
+<li>GitHub sends a receipt; your sponsorship appears on your profile (optionally publicly)</li>
+</ol>
+<p><strong>Screen reader navigation:</strong></p>
+<ul>
+<li>The Sponsor button appears near the profile photo or repo name</li>
+<li>Press <code>B</code> to cycle through buttons on the page until you hear &quot;Sponsor&quot;</li>
+</ul>
+<h3>Can I Receive Sponsorships?</h3>
+<p>Yes! If you maintain an open source project or contribute regularly:</p>
+<ol>
+<li>Navigate to <a href="https://github.com/sponsors">github.com/sponsors</a></li>
+<li>Select &quot;Join the waitlist&quot; or &quot;Set up sponsors&quot;</li>
+<li>Connect a payment method (Stripe or bank account)</li>
+<li>Create sponsor tiers with descriptions</li>
+<li>Promote your Sponsors page to your audience</li>
+</ol>
+<p>Many accessibility advocates successfully use Sponsors to fund their work improving assistive technology and inclusive design.</p>
+<hr>
+<h2>GitHub Discussions</h2>
+<h3>What Are Discussions?</h3>
+<p>Discussions are a separate space in a repository for community conversation. Unlike Issues (which track tasks, bugs, and features), Discussions are for:</p>
+<ul>
+<li><strong>Questions:</strong> &quot;How do I configure X?&quot;</li>
+<li><strong>Ideas:</strong> &quot;What if we added support for Y?&quot;</li>
+<li><strong>Announcements:</strong> &quot;Version 2.0 is released!&quot;</li>
+<li><strong>General chat:</strong> &quot;Introduce yourself to the community&quot;</li>
+</ul>
+<h3>Issues vs Discussions</h3>
+<table>
+<thead>
+<tr>
+<th>Use Issues For...</th>
+<th>Use Discussions For...</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Bug reports</td>
+<td>Questions</td>
+</tr>
+<tr>
+<td>Feature requests</td>
+<td>Ideas and brainstorming</td>
+</tr>
+<tr>
+<td>Specific tasks</td>
+<td>Open-ended conversation</td>
+</tr>
+<tr>
+<td>Things that need tracking</td>
+<td>Community building</td>
+</tr>
+<tr>
+<td>Things that close when done</td>
+<td>Ongoing topics</td>
+</tr>
+</tbody></table>
+<h3>Navigating Discussions</h3>
+<ol>
+<li>Go to a repository&#39;s main page</li>
+<li>Press <code>G</code> then <code>G</code> (double-tap G) to open the navigation menu</li>
+<li>Select <strong>&quot;Discussions&quot;</strong> from the tabs</li>
+</ol>
+<p>Or navigate directly to: <code>github.com/owner/repo/discussions</code></p>
+<p><strong>Screen reader navigation:</strong></p>
+<ul>
+<li>Press <code>D</code> to cycle landmarks to &quot;Main&quot;</li>
+<li>Press <code>2</code> or <code>H</code> to navigate by headings — each discussion is a heading</li>
+<li>Press <code>Enter</code> on a discussion title to open it</li>
+<li>Use <code>C</code> to jump to the comment box (if replying)</li>
+</ul>
+<h3>Discussion Categories</h3>
+<p>Repositories can create custom categories:</p>
+<ul>
+<li><strong>Q&amp;A:</strong> Ask and answer questions (can mark an answer as &quot;accepted&quot;)</li>
+<li><strong>Ideas:</strong> Propose new features or changes</li>
+<li><strong>Show and Tell:</strong> Share what you built with the project</li>
+<li><strong>Announcements:</strong> Maintainer updates (often read-only)</li>
+<li><strong>General:</strong> Everything else</li>
+</ul>
+<p><strong>Q&amp;A format:</strong> Works like StackOverflow — the original poster or a maintainer can mark a reply as the &quot;Answer,&quot; which pins it to the top.</p>
+<h3>Creating a Discussion</h3>
+<ol>
+<li>Navigate to the Discussions tab</li>
+<li>Select <strong>&quot;New discussion&quot;</strong></li>
+<li>Choose a <strong>category</strong></li>
+<li>Add a <strong>title</strong> and <strong>body</strong> (Markdown supported)</li>
+<li>Select <strong>&quot;Start discussion&quot;</strong></li>
+</ol>
+<h3>Discussion Best Practices</h3>
+<ul>
+<li><strong>Search first</strong> — your question may already be answered</li>
+<li><strong>Choose the right category</strong> — helps others find your discussion later</li>
+<li><strong>Be specific</strong> — vague questions get vague answers</li>
+<li><strong>Mark answers</strong> — if someone solves your problem, mark their reply as the answer (in Q&amp;A discussions)</li>
+<li><strong>Upvote discussions</strong> — helps maintainers see what the community cares about</li>
+</ul>
+<h3>Accessibility Notes</h3>
+<ul>
+<li>Discussions use the same accessible interface as Issues</li>
+<li>Screen readers navigate by headings, landmarks, form fields</li>
+<li>Comment editor supports Markdown and has toolbar buttons with labels</li>
+<li>Notification settings for Discussions are separate from Issues—configure in Settings → Notifications</li>
+</ul>
+<hr>
+<h2>GitHub Wikis</h2>
+<h3>What Is a GitHub Wiki?</h3>
+<p>Every repository can have a wiki — a space for documentation separate from the code. It&#39;s lightweight and Markdown-based.</p>
+<p><strong>When to use a wiki:</strong></p>
+<ul>
+<li>Multi-page documentation (tutorials, guides, FAQs)</li>
+<li>Community-editable docs (wikis can be editable by anyone)</li>
+<li>Knowledge that doesn&#39;t belong in README (too long, too specific)</li>
+</ul>
+<p><strong>When NOT to use a wiki:</strong></p>
+<ul>
+<li>Your project already uses GitHub Pages or external docs</li>
+<li>Documentation needs to be version-controlled with code (wikis are separate Git repos)</li>
+<li>You want full control (wikis are less customizable than Pages)</li>
+</ul>
+<h3>Accessing a Repo&#39;s Wiki</h3>
+<ol>
+<li>Navigate to the repository</li>
+<li>Select the <strong>&quot;Wiki&quot;</strong> tab</li>
+<li>If no wiki exists, you&#39;ll see &quot;Create the first page&quot;</li>
+</ol>
+<h3>Creating Wiki Pages</h3>
+<ol>
+<li>Go to the Wiki tab</li>
+<li>Select <strong>&quot;New page&quot;</strong></li>
+<li>Add a <strong>title</strong> and <strong>content</strong> (Markdown)</li>
+<li>Select <strong>&quot;Save&quot;</strong></li>
+</ol>
+<p>Wiki pages automatically appear in a sidebar for navigation.</p>
+<h3>Wiki Accessibility</h3>
+<ul>
+<li>GitHub&#39;s wiki editor is the same as the issue/PR comment editor</li>
+<li>All Markdown features work (headings, lists, links, code blocks)</li>
+<li>Use proper heading hierarchy (<code>##</code>, <code>###</code>) for screen reader navigation</li>
+<li>Link between wiki pages: <code>[[Page Title]]</code></li>
+<li><strong>Screen reader caveat:</strong> Wiki pages are a separate Git repository. Any changes pushed directly to the wiki&#39;s git remote are not tracked by the main repository&#39;s branch protection — meaning no PR review process applies. Treat wikis as community-editable supplementary docs, not your primary critical documentation source.</li>
+</ul>
+<hr>
+<h2>Repository Templates</h2>
+<h3>Template vs. Fork — Which One?</h3>
+<p>These are two very different actions that both appear near the &quot;Code&quot; button:</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Use when...</th>
+<th>What you get</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Fork</strong></td>
+<td>Contributing back to the original project</td>
+<td>Full git history; your changes can be PRed upstream</td>
+</tr>
+<tr>
+<td><strong>Use this template</strong></td>
+<td>Starting a <em>new</em> project based on the structure</td>
+<td>Clean git history; no connection to the original repo</td>
+</tr>
+</tbody></table>
+<p>GitHub Skills courses use <strong>&quot;Use this template&quot;</strong> — you start fresh with the course scaffold but your copy has no upstream connection.</p>
+<p>Agent-forge could serve as a template if you want to build your own agent suite starting from its structure without forking.</p>
+<h3>Creating a Template Repository</h3>
+<p>Maintainers can mark any repository as a template:</p>
+<ol>
+<li>Navigate to the repository&#39;s <strong>Settings</strong> tab</li>
+<li>Scroll to the <strong>&quot;General&quot;</strong> section → find the <strong>&quot;Template repository&quot;</strong> checkbox</li>
+<li>Check it and save</li>
+<li>The repository now shows a <strong>&quot;Use this template&quot;</strong> button instead of (or alongside) &quot;Fork&quot;</li>
+</ol>
+<h3>Using a Template Repository</h3>
+<ol>
+<li>Navigate to the template repository</li>
+<li>Select <strong>&quot;Use this template&quot;</strong> button (near the top, next to &quot;Code&quot;)</li>
+<li>Select <strong>&quot;Create a new repository&quot;</strong></li>
+<li>Name your new repository, choose visibility, and confirm</li>
+<li>GitHub creates a new repository with the template&#39;s files but <strong>no commit history</strong></li>
+</ol>
+<p><strong>Screen reader path:</strong></p>
+<pre><code>B → navigate buttons → find &quot;Use this template&quot; → Enter
+↓ → &quot;Create a new repository&quot; from the dropdown → Enter
+</code></pre>
+<hr>
+<h2>GitHub Organizations — A Contributor&#39;s View</h2>
+<h3>What Is an Organization?</h3>
+<p>A GitHub organization is an account that multiple people share. Instead of <code>github.com/username/repo</code>, organization repos live at <code>github.com/org-name/repo</code>. The workshop&#39;s central project lives at <code>github.com/accesswatch/agent-forge</code> — <code>accesswatch</code> is an organization.</p>
+<table>
+<thead>
+<tr>
+<th>Personal Account</th>
+<th>Organization Account</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Owned by one person</td>
+<td>Shared by a team or community</td>
+</tr>
+<tr>
+<td>Single-person repos</td>
+<td>Repos are shared assets</td>
+</tr>
+<tr>
+<td>Your profile at <code>github.com/username</code></td>
+<td>Org profile at <code>github.com/org-name</code></td>
+</tr>
+<tr>
+<td>You are the only admin</td>
+<td>Has owners, members, and optional teams</td>
+</tr>
+</tbody></table>
+<h3>Joining an Organization</h3>
+<p>Maintainers can invite you to join. When invited:</p>
+<ol>
+<li>You receive an email + GitHub notification</li>
+<li>Navigate to <a href="https://github.com/settings/organizations">github.com/settings/organizations</a> to accept</li>
+<li>Or click the link in the invitation email</li>
+</ol>
+<p>You can also be a <strong>public contributor</strong> to an org repo without being a member — you fork the repo and submit PRs without needing an invitation.</p>
+<h3>Organization Membership Visibility</h3>
+<ul>
+<li>By default, your org membership is <strong>private</strong> (only you and org owners can see it)</li>
+<li>You can set it to <strong>public</strong> in your organization membership settings</li>
+<li>Public membership appears on your GitHub profile under &quot;Organizations&quot;</li>
+<li>For <code>accesswatch</code>: if you become a member, set your membership public to show your contribution publicly on your profile</li>
+</ul>
+<h3>Teams Inside Organizations</h3>
+<p>Organizations can create <strong>teams</strong> (e.g., <code>@accesswatch/accessibility-reviewers</code>). When you see a team mentioned in a PR or issue, that <code>@mention</code> notifies everyone on that team. As a contributor, you don&#39;t need to create teams — just understand why you see them.</p>
+<h3>Navigating an Organization Profile Page</h3>
+<p>At <code>github.com/accesswatch</code>:</p>
+<pre><code>H → headings: org name, People, Repositories, Projects sections
+1 → jumps to the org name heading
+Links → navigate to individual repositories, members, and projects
+</code></pre>
+<p>Organization-level Projects (like the <code>accesswatch</code> project board) appear in the org&#39;s Projects tab, not inside any single repository.</p>
+<hr>
+<h2>Repository Settings — What Contributors Need to Know</h2>
+<p>You may not have Settings access to most repositories (that requires maintainer role). But knowing what&#39;s there helps you understand why a repository behaves the way it does.</p>
+<h3>Repository Visibility</h3>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it means for contributors</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Public</strong></td>
+<td>Anyone can view and fork; you don&#39;t need an account to read it</td>
+</tr>
+<tr>
+<td><strong>Private</strong></td>
+<td>Only invited users can see or contribute</td>
+</tr>
+<tr>
+<td><strong>Internal</strong> (org only)</td>
+<td>Visible to all org members; cannot be forked outside the org</td>
+</tr>
+</tbody></table>
+<p>The repository&#39;s visibility label appears on its page. Screen readers: the visibility badge is usually near the repo name heading (<code>H1</code>).</p>
+<h3>Archived Repositories</h3>
+<p>When a maintainer archives a repository, it becomes <strong>read-only</strong>:</p>
+<ul>
+<li>No new issues, PRs, or comments can be created</li>
+<li>Existing content is fully preserved and viewable</li>
+<li>The UI shows a yellow banner: &quot;This repository has been archived by the owner.&quot;</li>
+<li>Screen readers: NVDA/JAWS will read this banner when you navigate to the top of the page with <code>Ctrl+Home</code></li>
+</ul>
+<p>If you find a repo you planned to contribute to is archived, look for a fork or successor project.</p>
+<h3>Repository Topics</h3>
+<p>Topics are keyword tags on a repository (e.g., <code>accessibility</code>, <code>screen-reader</code>, <code>open-source</code>). They appear as colored chips on the repository home page and improve discoverability in GitHub search.</p>
+<ul>
+<li><strong>As a contributor:</strong> Topics tell you what the project is about at a glance</li>
+<li><strong>As a maintainer:</strong> Add topics in Settings → General → Topics section to improve search ranking</li>
+<li><strong>Screen reader:</strong> Topics are links in the &quot;About&quot; sidebar section; use <code>B</code> (next button) or Links list to reach them</li>
+</ul>
+<h3>Default Branch Name</h3>
+<p>The default branch is the one all PRs target by default. Modern projects use <code>main</code>; older projects may use <code>master</code> or another name. When you clone and create a branch, you always branch from the repository&#39;s default branch.</p>
+<p>The default branch name appears in the branch selector at the top of the Code tab.</p>
+<hr>
+<p><em>Return to: <a href="appendix-q-resources.md">Resources</a> | <a href="appendix-a-glossary.md">Glossary</a></em></p>
+
+  </main>
+  <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
+    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com">Back to GitHub</a></p>
+  </footer>
+</body>
+</html>
