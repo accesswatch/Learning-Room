@@ -141,14 +141,14 @@ When a PR has a merge conflict, you will see this message on the Conversation ta
 You will also see a “Resolve conflicts” button. If you cannot see it (it may require write access), contact the PR author.
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 Scroll to the bottom of the Conversation tab. The conflict message appears as a yellow or orange banner above the merge button area. Click **Resolve conflicts** to open the web conflict editor.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+<summary>Screen reader users (NVDA / JAWS — Windows)</summary>
 
 1. Press `D` to reach the bottom of the Conversation tab
 2. Navigate down with `H` or `↓` past the comment threads
@@ -158,7 +158,7 @@ Scroll to the bottom of the Conversation tab. The conflict message appears as a 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 1. `VO+U` → Landmarks or `VO+Down` to move toward the bottom of the Conversation tab
 2. Quick Nav `H` or `VO+Cmd+H` past comment headings until you reach the conflict notice
@@ -215,7 +215,7 @@ GitHub has a built-in conflict editor that you can use without any local tools.
 ### Step-by-step: GitHub Conflict Editor
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 1. Click **Resolve conflicts** on the PR Conversation tab
 2. GitHub opens a full-page text editor showing each conflicted file
@@ -228,7 +228,7 @@ GitHub has a built-in conflict editor that you can use without any local tools.
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+<summary>Screen reader users (NVDA / JAWS — Windows)</summary>
 
 1. Activate the **Resolve conflicts** button from the PR Conversation tab
 2. GitHub opens the conflict editor — a full-page text editor
@@ -246,7 +246,7 @@ GitHub has a built-in conflict editor that you can use without any local tools.
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 1. Activate the **Resolve conflicts** button from the PR Conversation tab
 2. GitHub opens the conflict editor — a full-page text editor
@@ -298,7 +298,7 @@ Incoming version
 ### VS Code merge conflict actions
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 When your cursor is on a conflict region, VS Code shows **CodeLens action links** above the conflict block in the editor:
 - **Accept Current Change** — keeps your version (HEAD)
@@ -311,7 +311,7 @@ Click the link you want. The conflict markers disappear and your chosen content 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+<summary>Screen reader users (NVDA / JAWS — Windows)</summary>
 
 1. Open the conflicted file
 2. Press `↓` to navigate to a conflict marker (`<<<<<<<`)
@@ -326,7 +326,7 @@ Click the link you want. The conflict markers disappear and your chosen content 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 1. Open the conflicted file
 2. `VO+Down` or arrow keys to navigate to a conflict marker (`<<<<<<<`)
@@ -431,7 +431,7 @@ Answer these three questions:
 
 ---
 
-> ### 🔥 Day 2 Amplifier — Copilot Chat & Conflict Prevention
+> ### Day 2 Amplifier — Copilot Chat & Conflict Prevention
 >
 > **Resolve at least one conflict completely by hand before using any AI assistance.** You must be able to read `<<<<<<<`, `=======`, and `>>>>>>>` markers and understand what each version represents. An AI-suggested resolution you cannot independently verify is a liability — you are accepting a change you do not understand into a codebase other people depend on.
 >

@@ -1066,7 +1066,7 @@ I use TalkBack on Android.
 
 To see every instruction file, agent, prompt, and skill currently loaded and any errors:
 
-1. In Copilot Chat, select the gear icon (⚙ Configure Chat) → **Diagnostics**
+1. In Copilot Chat, select the gear icon (Configure Chat) → **Diagnostics**
 2. Or right-click in the Chat view → **Diagnostics**
 
 This shows: which files were found, which were loaded, which have errors, and from which scope (user vs workspace vs organization).

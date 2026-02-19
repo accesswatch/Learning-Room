@@ -76,13 +76,13 @@
 <h3>Step 1: Reach the Files Changed Tab</h3>
 <p>From any pull request page:</p>
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 <p>Click the <strong>Files changed</strong> tab at the top of the PR page. The tab label shows the number of changed files (e.g., &quot;Files changed 4&quot;).</p>
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+<summary>Screen reader users (NVDA / JAWS)</summary>
 
 <pre><code class="hljs"><span class="hljs-variable">Press</span> <span class="hljs-built_in">D</span> → <span class="hljs-variable">navigate</span> <span class="hljs-variable">to</span> <span class="hljs-string">&quot;Pull request navigation tabs&quot;</span> <span class="hljs-variable">landmark</span>
 <span class="hljs-variable">Press</span> → <span class="hljs-variable">or</span> <span class="hljs-built_in">Tab</span> → <span class="hljs-variable">find</span> <span class="hljs-string">&quot;Files changed&quot;</span> <span class="hljs-variable">link</span> → <span class="hljs-built_in">Enter</span></code></pre>
@@ -90,7 +90,7 @@
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 <pre><code class="hljs"><span class="hljs-variable">VO</span><span class="hljs-operator">+</span><span class="hljs-variable">U</span> → <span class="hljs-variable">Landmarks</span> → <span class="hljs-variable">navigate</span> <span class="hljs-variable">to</span> <span class="hljs-string">&quot;Pull request navigation tabs&quot;</span>
 <span class="hljs-variable">VO</span><span class="hljs-operator">+</span><span class="hljs-built_in">Right</span> <span class="hljs-variable">or</span> <span class="hljs-variable">Quick</span> <span class="hljs-variable">Nav</span> <span class="hljs-built_in">K</span> → <span class="hljs-variable">find</span> <span class="hljs-string">&quot;Files changed&quot;</span> <span class="hljs-variable">link</span> → <span class="hljs-variable">VO</span><span class="hljs-operator">+</span><span class="hljs-built_in">Space</span></code></pre>
@@ -101,13 +101,13 @@
 <h3>Step 2: Use the File Tree to Orient Yourself</h3>
 <p>The file tree panel lists every changed file. Before reading any diff, scan this list to understand the scope of the PR.</p>
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 <p>The file tree is the left panel on the Files Changed page. Each file shows its name and a <code>+N / -N</code> badge (lines added/removed). Click any filename to scroll directly to its diff.</p>
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+<summary>Screen reader users (NVDA / JAWS)</summary>
 
 <pre><code class="hljs">Press D → navigate <span class="hljs-keyword">to</span> <span class="hljs-string">&quot;File tree&quot;</span> region
 Press ↓ <span class="hljs-keyword">to</span> move <span class="hljs-keyword">through</span> files
@@ -116,7 +116,7 @@ Press Enter <span class="hljs-keyword">on</span> a <span class="hljs-built_in">f
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 <pre><code class="hljs">VO+U → Landmarks → navigate <span class="hljs-keyword">to</span> <span class="hljs-string">&quot;File tree&quot;</span> region
 VO+Down <span class="hljs-keyword">to</span> move <span class="hljs-keyword">through</span> files
@@ -134,13 +134,13 @@ VO+Space <span class="hljs-keyword">on</span> a <span class="hljs-built_in">file
 <h3>Step 3: Navigate Between File Diffs</h3>
 <p>Each changed file in the main area is an <code>h3</code> heading containing the filename.</p>
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 <p>Scroll through the page or click a filename in the file tree on the left. Collapsed files can be expanded by clicking the file header.</p>
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+<summary>Screen reader users (NVDA / JAWS)</summary>
 
 <pre><code class="hljs">Press <span class="hljs-number">3</span> <span class="hljs-built_in">to</span> jump <span class="hljs-built_in">file</span>-<span class="hljs-keyword">by</span>-<span class="hljs-built_in">file</span> through <span class="hljs-keyword">the</span> diff
 Listen <span class="hljs-keyword">for</span>: <span class="hljs-string">&quot;learning-room/docs/keyboard-shortcuts.md — collapsed&quot;</span> <span class="hljs-keyword">or</span> <span class="hljs-string">&quot;expanded&quot;</span>
@@ -149,7 +149,7 @@ Press Enter <span class="hljs-keyword">or</span> Space <span class="hljs-built_i
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 <pre><code class="hljs">Quick Nav H <span class="hljs-keyword">or</span> VO+Cmd+H <span class="hljs-built_in">to</span> jump <span class="hljs-built_in">file</span>-<span class="hljs-keyword">by</span>-<span class="hljs-built_in">file</span> through <span class="hljs-keyword">the</span> diff
 Listen <span class="hljs-keyword">for</span>: <span class="hljs-string">&quot;learning-room/docs/keyboard-shortcuts.md — collapsed&quot;</span> <span class="hljs-keyword">or</span> <span class="hljs-string">&quot;expanded&quot;</span>
@@ -161,7 +161,7 @@ VO+Space <span class="hljs-built_in">to</span> expand <span class="hljs-keyword"
 <h3>Step 4: Read a Diff</h3>
 <p>Each file&#39;s diff is a table. Every row is one line of code.</p>
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 <ul>
 <li><strong>Green highlighted lines</strong> (with a <code>+</code>) = lines added</li>
@@ -172,7 +172,7 @@ VO+Space <span class="hljs-built_in">to</span> expand <span class="hljs-keyword"
 </details>
 
 <details>
-<summary>🔊 Screen reader users — NVDA</summary>
+<summary>Screen reader users — NVDA</summary>
 
 <pre><code class="hljs">Press T <span class="hljs-built_in">to</span> jump <span class="hljs-built_in">to</span> <span class="hljs-keyword">the</span> diff table → Insert+Space (Focus Mode)
 Press ↓ <span class="hljs-built_in">to</span> move through <span class="hljs-keyword">lines</span> <span class="hljs-literal">one</span> <span class="hljs-keyword">at</span> <span class="hljs-keyword">a</span> <span class="hljs-built_in">time</span>
@@ -180,7 +180,7 @@ Press Ctrl+Alt+→ <span class="hljs-built_in">to</span> <span class="hljs-built
 </details>
 
 <details>
-<summary>🔊 Screen reader users — JAWS</summary>
+<summary>Screen reader users — JAWS</summary>
 
 <pre><code class="hljs">Press T <span class="hljs-keyword">to</span> jump <span class="hljs-keyword">to</span> the diff <span class="hljs-keyword">table</span> → <span class="hljs-keyword">Insert</span>+Z (Virtual PC <span class="hljs-keyword">Cursor</span> <span class="hljs-keyword">off</span>)
 Press ↓ <span class="hljs-keyword">to</span> <span class="hljs-keyword">move</span> through lines
@@ -188,7 +188,7 @@ Press Ctrl+Alt+→ <span class="hljs-keyword">for</span> <span class="hljs-keywo
 </details>
 
 <details>
-<summary>🔊 Screen reader users — VoiceOver (macOS)</summary>
+<summary>Screen reader users — VoiceOver (macOS)</summary>
 
 <pre><code class="hljs">Press T <span class="hljs-keyword">or</span> VO+U → <span class="hljs-keyword">Tables</span> → <span class="hljs-keyword">select</span> the diff <span class="hljs-keyword">table</span>
 VO+Shift+↓ <span class="hljs-keyword">to</span> enter the <span class="hljs-keyword">table</span>
@@ -206,7 +206,7 @@ VO+→/← <span class="hljs-keyword">to</span> navigate <span class="hljs-keywo
 <h3>Step 5: Place an Inline Comment</h3>
 <p>When you have a specific observation about a particular line, place an inline comment directly on it.</p>
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 <ol>
 <li>Hover your mouse over a line in the diff — a <strong>blue <code>+</code></strong> (comment) button appears on the left</li>
@@ -217,7 +217,7 @@ VO+→/← <span class="hljs-keyword">to</span> navigate <span class="hljs-keywo
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+<summary>Screen reader users (NVDA / JAWS)</summary>
 
 <pre><code class="hljs"><span class="hljs-keyword">Step</span> <span class="hljs-number">1</span>: Navigate <span class="hljs-keyword">to</span> the target line <span class="hljs-built_in">in</span> the diff table (see <span class="hljs-keyword">Step</span> <span class="hljs-number">4</span>)
 <span class="hljs-keyword">Step</span> <span class="hljs-number">2</span>: <span class="hljs-keyword">While</span> focused on that line, press Tab → look <span class="hljs-keyword">for</span> a <span class="hljs-built_in">comment</span> button
@@ -230,7 +230,7 @@ VO+→/← <span class="hljs-keyword">to</span> navigate <span class="hljs-keywo
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 <pre><code class="hljs"><span class="hljs-keyword">Step</span> <span class="hljs-number">1</span>: Navigate <span class="hljs-keyword">to</span> the target line <span class="hljs-built_in">in</span> the diff table (see <span class="hljs-keyword">Step</span> <span class="hljs-number">4</span>)
 <span class="hljs-keyword">Step</span> <span class="hljs-number">2</span>: <span class="hljs-keyword">While</span> focused on that line, Tab → look <span class="hljs-keyword">for</span> a <span class="hljs-built_in">comment</span> button
@@ -247,13 +247,13 @@ VO+→/← <span class="hljs-keyword">to</span> navigate <span class="hljs-keywo
 </blockquote>
 <p><strong>Placing a multi-line comment:</strong></p>
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 <p>Click and drag across multiple line numbers in the diff gutter to select a range. A comment button appears for the selected range.</p>
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+<summary>Screen reader users (NVDA / JAWS)</summary>
 
 <pre><code class="hljs">Step <span class="hljs-number">1</span>: Navigate <span class="hljs-built_in">to</span> <span class="hljs-keyword">the</span> <span class="hljs-keyword">first</span> <span class="hljs-built_in">line</span> <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> range
 Step <span class="hljs-number">2</span>: Press Shift+↓ <span class="hljs-built_in">to</span> extend selection <span class="hljs-built_in">to</span> additional <span class="hljs-keyword">lines</span>
@@ -262,7 +262,7 @@ Step <span class="hljs-number">4</span>: Proceed <span class="hljs-keyword">as</
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 <pre><code class="hljs">Step <span class="hljs-number">1</span>: Navigate <span class="hljs-built_in">to</span> <span class="hljs-keyword">the</span> <span class="hljs-keyword">first</span> <span class="hljs-built_in">line</span> <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> range
 Step <span class="hljs-number">2</span>: Shift+↓ <span class="hljs-built_in">to</span> extend selection <span class="hljs-built_in">to</span> additional <span class="hljs-keyword">lines</span>
@@ -274,13 +274,13 @@ Step <span class="hljs-number">4</span>: VO+Space <span class="hljs-built_in">to
 <h3>Step 6: Read Existing Comments and Threads</h3>
 <p>Inline comments from other reviewers appear as <code>h3</code> headings within the diff table. Each thread shows: reviewer username, comment body, replies, a &quot;Reply&quot; link and resolution button.</p>
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 <p>Comments appear inline within the diff as collapsible cards. Click <strong>&quot;Reply…&quot;</strong> to add to a thread. Click <strong>&quot;Resolve conversation&quot;</strong> to mark a thread done (requires write access).</p>
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+<summary>Screen reader users (NVDA / JAWS)</summary>
 
 <p>Navigate them with <code>3</code> (jump to <code>h3</code> headings in the diff).</p>
 <p>To add to a thread:</p>
@@ -293,7 +293,7 @@ Step <span class="hljs-number">4</span>: VO+Space <span class="hljs-built_in">to
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 <p>Navigate with Quick Nav <code>H</code> or <code>VO+Cmd+H</code> (jump to headings in the diff).</p>
 <p>To add to a thread:</p>
@@ -309,7 +309,7 @@ Step <span class="hljs-number">4</span>: VO+Space <span class="hljs-built_in">to
 <h3>Step 7: Submit Your Review</h3>
 <p>After adding all inline comments:</p>
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 <ol>
 <li>Click the <strong>&quot;Review changes&quot;</strong> button (top-right of the Files Changed page or bottom of the PR)</li>
@@ -321,7 +321,7 @@ Step <span class="hljs-number">4</span>: VO+Space <span class="hljs-built_in">to
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+<summary>Screen reader users (NVDA / JAWS)</summary>
 
 <pre><code class="hljs"><span class="hljs-keyword">Step</span> <span class="hljs-number">1</span>: Press D → navigate <span class="hljs-keyword">to</span> <span class="hljs-string">&quot;Pull request navigation tabs&quot;</span>
 <span class="hljs-keyword">Step</span> <span class="hljs-number">2</span>: Press ← <span class="hljs-keyword">to</span> return <span class="hljs-keyword">to</span> the Conversation tab → Enter
@@ -334,7 +334,7 @@ Step <span class="hljs-number">4</span>: VO+Space <span class="hljs-built_in">to
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 <pre><code class="hljs"><span class="hljs-keyword">Step</span> <span class="hljs-number">1</span>: VO+U → Landmarks → navigate <span class="hljs-keyword">to</span> <span class="hljs-string">&quot;Pull request navigation tabs&quot;</span>
 <span class="hljs-keyword">Step</span> <span class="hljs-number">2</span>: VO+Left <span class="hljs-keyword">to</span> return <span class="hljs-keyword">to</span> the Conversation tab → VO+Space
@@ -371,13 +371,13 @@ Step <span class="hljs-number">4</span>: VO+Space <span class="hljs-built_in">to
 <h3>Step 8: Re-request Review (for Authors)</h3>
 <p>After you address review comments on your own PR:</p>
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 <p>Look in the right sidebar for the <strong>Reviewers</strong> section. Click the <strong>re-request icon</strong> (circular arrows) next to the reviewer&#39;s name to notify them that you&#39;ve pushed changes.</p>
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+<summary>Screen reader users (NVDA / JAWS)</summary>
 
 <pre><code class="hljs">Step <span class="hljs-number">1</span>: From your P<span class="hljs-string">R&#x27;s Conversation tab, find the reviewer&#x27;</span>s name <span class="hljs-keyword">in</span> the sidebar (<span class="hljs-number">3</span> → <span class="hljs-string">&quot;Reviewers&quot;</span> heading)
 Step <span class="hljs-number">2</span>: Activate the refresh/re-request icon <span class="hljs-built_in">next</span> to their name
@@ -385,7 +385,7 @@ Step <span class="hljs-number">3</span>: This re-notifies the reviewer that yo<s
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 <pre><code class="hljs"><span class="hljs-keyword">Step</span> <span class="hljs-number">1</span>: <span class="hljs-keyword">From</span> your PR<span class="hljs-comment">&#x27;s Conversation tab, Quick Nav H or VO+Cmd+H to find the &quot;Reviewers&quot; heading in the sidebar</span>
 <span class="hljs-keyword">Step</span> <span class="hljs-number">2</span>: Tab <span class="hljs-built_in">or</span> Quick Nav B <span class="hljs-keyword">to</span> find the re-request icon (<span class="hljs-string">&quot;Re-request review&quot;</span>) <span class="hljs-keyword">next</span> <span class="hljs-keyword">to</span> the reviewer<span class="hljs-comment">&#x27;s name</span>
@@ -1197,7 +1197,7 @@ The heading hierarchy skip <span class="hljs-keyword">in</span> the published do
 <p>That&#39;s the power of &quot;manual skill first, agent second.&quot; You&#39;re building that skill right now.</p>
 <hr>
 <blockquote>
-<h3>🔥 Day 2 Amplifier — Agent Forge: <code>@pr-review</code></h3>
+<h3>Day 2 Amplifier — Agent Forge: <code>@pr-review</code></h3>
 <p><strong>Review at least two pull requests manually — using the techniques in this guide — before running <code>@pr-review</code>.</strong> The agent generates a first-draft review: a line-numbered diff map, risk assessment, before/after snapshots, and suggested inline comments. Your job as reviewer is to read that draft, correct it, enrich it with context the diff cannot contain, and decide what is actually worth saying to the author.</p>
 <p>Once you have that manual foundation:</p>
 <ul>

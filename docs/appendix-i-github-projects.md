@@ -446,7 +446,7 @@ Column Breakdown:
 │ Done        │  23   │ --               │  --     │    --       │
 └─────────────┴───────┴──────────────────┴─────────┴──────────────┘
 
-⚠ Attention Items:
+Attention Items:
   Stale: "Update screen reader navigation guide" — In Review for 9 days, no activity
   Unassigned: "Triage accessibility bug backlog" in In Progress
 

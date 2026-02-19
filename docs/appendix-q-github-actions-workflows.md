@@ -111,7 +111,7 @@ jobs:
 
 **Reading this:** The workflow named "CI" runs when code is pushed to `main` or a PR targets `main`. It creates one job called `test` that runs on Linux. That job checks out the code, installs Node.js, installs dependencies, and runs the test suite.
 
-If `npm test` exits with an error, the job fails, and that failure shows up as a red ❌ on your pull request.
+If `npm test` exits with an error, the job fails, and that failure shows up as a red on your pull request.
 
 ---
 
@@ -146,7 +146,7 @@ When you open a pull request on a repo that uses GitHub Actions, you will see a 
 | ✓ checkmark | Green | All required checks passed | Good — you may be able to merge |
 | ✗ cross | Red | One or more checks failed | Do not merge — read the failure |
 | ⊘ | Grey | Check was skipped | Usually fine — skipped by design |
-| ⚠ | Yellow | Non-blocking warning | Review but may not block merge |
+| | Yellow | Non-blocking warning | Review but may not block merge |
 
 ### Navigating status checks with a screen reader
 
@@ -488,7 +488,7 @@ When you are ready to go deeper, these are the best places to start:
 
 ---
 
-> ### 🔥 Day 2 Bridge — From Actions to Agentic Workflows
+> ### Day 2 Bridge — From Actions to Agentic Workflows
 >
 > **Understand standard YAML workflow files before engaging with agentic workflows.** GitHub Agentic Workflows are not a separate technology — they are the next layer on top of what you learned here. They share the same trigger model, the same permissions system, and the same `.github/workflows/` directory. You cannot evaluate whether an agentic workflow is safe or correct unless you can already read a standard one.
 >

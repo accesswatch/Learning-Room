@@ -97,7 +97,7 @@ function checkDescription() {
   
   if (hasTemplateMarkers) {
     results.suggestions.push({
-      message: '✨ Great job using the PR template!',
+      message: 'Great job using the PR template!',
       help: 'Templates help reviewers understand your changes quickly.'
     });
   }
@@ -279,7 +279,7 @@ function validateMarkdownAccessibility(filePath) {
     const hasCodeBlocks = /```/.test(content);
     if (hasCodeBlocks) {
       results.suggestions.push({
-        message: '✨ Good use of code blocks for examples',
+        message: 'Good use of code blocks for examples',
         help: 'Code blocks help both sighted and non-sighted users understand technical content.'
       });
     }
@@ -290,7 +290,7 @@ function validateMarkdownAccessibility(filePath) {
       const tableHeaderPattern = /\|[^\n]+\|\n\|[\s:-]+\|/;
       if (tableHeaderPattern.test(content)) {
         results.suggestions.push({
-          message: '✨ Tables include proper headers',
+          message: 'Tables include proper headers',
           help: 'Screen readers announce table headers, helping users navigate data.'
         });
       } else {

@@ -48,11 +48,11 @@ GitHub introduced **alert blocks** in 2023. They render as colored, bordered cal
 
 | Type | Color | Icon | Use When... |
 |------|-------|------|-------------|
-| `NOTE` | Blue | 💡 | Supplementary information |
-| `TIP` | Green | 📝 | Best practice suggestions |
-| `IMPORTANT` | Purple | ❗ | Something the reader absolutely must know |
-| `WARNING` | Yellow | ⚠️ | Potential problem or non-obvious risk |
-| `CAUTION` | Red | 🚫 | Action could cause irreversible harm |
+| `NOTE` | Blue | | Supplementary information |
+| `TIP` | Green | | Best practice suggestions |
+| `IMPORTANT` | Purple | | Something the reader absolutely must know |
+| `WARNING` | Yellow | | Potential problem or non-obvious risk |
+| `CAUTION` | Red | | Action could cause irreversible harm |
 
 ### Screen Reader Behavior
 
@@ -254,7 +254,7 @@ You can also use named footnotes[^accessibility-note].
 
 ### How They Render
 
-The superscript `[^1]` becomes a link: **¹** — clicking it jumps to the footnote definition at the bottom. The definition includes a back-link (↩) that returns to where the footnote was referenced.
+The superscript `[^1]` becomes a link: **¹** — clicking it jumps to the footnote definition at the bottom. The definition includes a back-link () that returns to where the footnote was referenced.
 
 ### Screen Reader Behavior
 
@@ -293,7 +293,7 @@ GitHub converts the heading text to lowercase, replaces spaces with hyphens, and
 
 ### Finding the Anchor for Any Heading
 
-1. On GitHub, hover over any heading — a chain link icon (🔗) appears to the left
+1. On GitHub, hover over any heading — a chain link icon () appears to the left
 2. Right-click the icon → "Copy link address" to get the full URL with the anchor
 3. For screen reader users: navigate to the heading → Tab once → a link button appears → activate it → the URL in the address bar updates to show the anchor
 

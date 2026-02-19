@@ -31,7 +31,7 @@
   <main id="main-content" class="markdown-body">
     <h1>Learning Room Automation Guide</h1>
 <p>Welcome! The Learning Room uses intelligent automation to provide instant feedback while preserving the value of human peer review. This guide explains how the automation works and how to interpret its feedback.</p>
-<h2>🤖 What Gets Automated</h2>
+<h2>What Gets Automated</h2>
 <h3>1. PR Validation Bot</h3>
 <p>When you open a pull request, the bot automatically:</p>
 <ul>
@@ -61,29 +61,29 @@
 <li><strong>Matches by skill level</strong> to pair mentors with newcomers</li>
 </ul>
 <hr>
-<h2>📋 Understanding Bot Feedback</h2>
+<h2>Understanding Bot Feedback</h2>
 <h3>Validation Report Structure</h3>
 <p>When the bot comments on your PR, it provides:</p>
-<h4><strong>Required Checks</strong> ✅ / ❌</h4>
+<h4><strong>Required Checks</strong> /</h4>
 <p>These MUST pass before merge:</p>
 <ul>
 <li><strong>Issue Reference</strong>: PR must link to an issue (<code>Closes #123</code>)</li>
 <li><strong>Description</strong>: PR must have meaningful description (50+ characters)</li>
 <li><strong>File Location</strong>: Changes must be in <code>learning-room/</code> directory only</li>
 </ul>
-<h4><strong>Suggestions</strong> 💡</h4>
+<h4><strong>Suggestions</strong></h4>
 <p>Optional improvements that enhance quality:</p>
 <ul>
 <li>Better commit messages</li>
 <li>Additional documentation</li>
 <li>Code formatting improvements</li>
 </ul>
-<h4><strong>Accessibility Analysis</strong> ♿</h4>
+<h4><strong>Accessibility Analysis</strong></h4>
 <p>Detailed checks organized by severity:</p>
 <ul>
-<li>🔴 <strong>Errors</strong>: Block merge (broken links, missing alt text, heading skips)</li>
-<li>🟡 <strong>Warnings</strong>: Should fix (generic link text like &quot;click here&quot;)</li>
-<li>🟢 <strong>Success</strong>: Celebrates good practices (proper code blocks, descriptive links)</li>
+<li><strong>Errors</strong>: Block merge (broken links, missing alt text, heading skips)</li>
+<li><strong>Warnings</strong>: Should fix (generic link text like &quot;click here&quot;)</li>
+<li><strong>Success</strong>: Celebrates good practices (proper code blocks, descriptive links)</li>
 </ul>
 <p>Each accessibility issue includes:</p>
 <ul>
@@ -92,11 +92,11 @@
 <li><strong>How to fix it</strong> with examples</li>
 <li><strong>Resources</strong> for learning more</li>
 </ul>
-<h4><strong>Learning Resources</strong> 📖</h4>
+<h4><strong>Learning Resources</strong></h4>
 <p>Links to relevant documentation based on your PR content</p>
 <hr>
-<h2>🎯 Common Validation Issues &amp; Fixes</h2>
-<h3>❌ &quot;No issue reference found&quot;</h3>
+<h2>Common Validation Issues &amp; Fixes</h2>
+<h3>&quot;No issue reference found&quot;</h3>
 <p><strong>What this means:</strong> Your PR description doesn&#39;t link to an issue.</p>
 <p><strong>Why it matters:</strong> Linking PRs to issues provides context and helps track work.</p>
 <p><strong>How to fix:</strong>
@@ -106,7 +106,7 @@ Fixes #42
 Resolves #42</code></pre>
 <p><strong>Screen reader tip:</strong> Use the &quot;Reference in new issue&quot; button in the GitHub UI, or type <code>#</code> followed by the issue number to get autocomplete.</p>
 <hr>
-<h3>❌ &quot;Heading hierarchy violation&quot;</h3>
+<h3>&quot;Heading hierarchy violation&quot;</h3>
 <p><strong>What this means:</strong> Your document skips heading levels (e.g., H1 → H3 without H2).</p>
 <p><strong>Why it matters:</strong> Screen readers use headings for navigation. Skipping levels creates confusion.</p>
 <p><strong>Example problem:</strong></p>
@@ -122,7 +122,7 @@ Resolves #42</code></pre>
 <li><a href="../docs/14-accessible-code-review.md">Workshop: Accessible Code Review</a></li>
 </ul>
 <hr>
-<h3>🟡 &quot;Generic link text detected&quot;</h3>
+<h3>&quot;Generic link text detected&quot;</h3>
 <p><strong>What this means:</strong> Your link text is &quot;click here&quot;, &quot;here&quot;, &quot;read more&quot;, etc.</p>
 <p><strong>Why it matters:</strong> Screen reader users often navigate by links. Generic text doesn&#39;t describe the destination.</p>
 <p><strong>Example problem:</strong></p>
@@ -131,7 +131,7 @@ Resolves #42</code></pre>
 <pre><code class="hljs language-markdown">Read the [<span class="hljs-string">GitHub accessibility documentation</span>](<span class="hljs-link">https://example.com</span>).</code></pre>
 <p><strong>Key principle:</strong> Link text should make sense out of context.</p>
 <hr>
-<h3>❌ &quot;Missing alt text&quot;</h3>
+<h3>&quot;Missing alt text&quot;</h3>
 <p><strong>What this means:</strong> An image has no alt text or empty alt text.</p>
 <p><strong>Why it matters:</strong> Screen readers announce alt text so blind users understand images.</p>
 <p><strong>Example problem:</strong></p>
@@ -151,7 +151,7 @@ Resolves #42</code></pre>
 <li><a href="../docs/14-accessible-code-review.md#image-alt-text">Alt Text Workshop Section</a></li>
 </ul>
 <hr>
-<h3>❌ &quot;Broken relative link&quot;</h3>
+<h3>&quot;Broken relative link&quot;</h3>
 <p><strong>What this means:</strong> A link points to a file that doesn&#39;t exist.</p>
 <p><strong>Example problem:</strong></p>
 <pre><code class="hljs language-markdown">See [<span class="hljs-string">installation guide</span>](<span class="hljs-link">docs/install.md</span>)  ← File doesn&#x27;t exist</code></pre>
@@ -169,13 +169,13 @@ Resolves #42</code></pre>
 <li>Root of learning-room: <code>[file](../../learning-room/file.md)</code></li>
 </ul>
 <hr>
-<h3>🟡 &quot;[TODO] markers remaining&quot;</h3>
+<h3>&quot;[TODO] markers remaining&quot;</h3>
 <p><strong>What this means:</strong> Your file contains <code>[TODO]</code> placeholders.</p>
 <p><strong>Why it matters:</strong> Incomplete work shouldn&#39;t be merged.</p>
 <p><strong>How to fix:</strong>
 Complete all TODO items or remove the markers if work is done.</p>
 <hr>
-<h2>🆘 Getting Help</h2>
+<h2>Getting Help</h2>
 <h3>Ask the Bot</h3>
 <p>You can interact with the bot by commenting on your PR:</p>
 <ul>
@@ -199,7 +199,7 @@ Complete all TODO items or remove the markers if work is done.</p>
 <li>Facilitators monitor all PRs and will help</li>
 </ol>
 <hr>
-<h2>🏆 Skills Progression System</h2>
+<h2>Skills Progression System</h2>
 <h3>Skill Levels</h3>
 <p><strong>Beginner</strong> (0+ merged PRs)</p>
 <ul>
@@ -231,16 +231,16 @@ Complete all TODO items or remove the markers if work is done.</p>
 </ol>
 <h3>Achievement Badges</h3>
 <ul>
-<li>📝 <strong>Markdown Master</strong>: Completed Markdown challenge</li>
-<li>♿ <strong>Accessibility Advocate</strong>: Completed accessibility challenge</li>
-<li>👁️ <strong>Code Reviewer</strong>: Provided thorough peer review</li>
-<li>🤝 <strong>Team Player</strong>: Completed collaborative challenge</li>
-<li>⭐ <strong>Contributor</strong>: General contribution</li>
+<li><strong>Markdown Master</strong>: Completed Markdown challenge</li>
+<li><strong>Accessibility Advocate</strong>: Completed accessibility challenge</li>
+<li><strong>Code Reviewer</strong>: Provided thorough peer review</li>
+<li><strong>Team Player</strong>: Completed collaborative challenge</li>
+<li><strong>Contributor</strong>: General contribution</li>
 </ul>
 <h3>Milestones</h3>
-<p>Special celebrations at: 1, 5, 10, 25, 50, and 100 merged PRs! 🎉</p>
+<p>Special celebrations at: 1, 5, 10, 25, 50, and 100 merged PRs!</p>
 <hr>
-<h2>👥 Peer Review &amp; Grouping</h2>
+<h2>Peer Review &amp; Grouping</h2>
 <h3>Automatic Reviewer Assignment</h3>
 <p>When you open a PR:</p>
 <ol>
@@ -275,7 +275,7 @@ Complete all TODO items or remove the markers if work is done.</p>
 <li>Learn from suggestions</li>
 </ul>
 <hr>
-<h2>🔧 Troubleshooting</h2>
+<h2>Troubleshooting</h2>
 <h3>&quot;Bot comment is out of date&quot;</h3>
 <p>The bot updates its comment when you push changes. If it seems wrong:</p>
 <ol>
@@ -311,21 +311,21 @@ Complete all TODO items or remove the markers if work is done.</p>
 <li>Check if comments are from different bots/workflows</li>
 </ol>
 <hr>
-<h2>🎓 Philosophy: Automation + Human Review</h2>
+<h2>Philosophy: Automation + Human Review</h2>
 <h3>Why Both?</h3>
 <p><strong>Automation provides:</strong></p>
 <ul>
-<li>⚡ Instant feedback</li>
-<li>📚 Educational resources</li>
-<li>✅ Consistency</li>
-<li>🤖 Unlimited patience</li>
+<li>Instant feedback</li>
+<li>Educational resources</li>
+<li>Consistency</li>
+<li>Unlimited patience</li>
 </ul>
 <p><strong>Human review provides:</strong></p>
 <ul>
-<li>💡 Creative suggestions</li>
-<li>🧠 Contextual judgment</li>
-<li>🤝 Social learning</li>
-<li>❤️ Encouragement and mentorship</li>
+<li>Creative suggestions</li>
+<li>Contextual judgment</li>
+<li>Social learning</li>
+<li>Encouragement and mentorship</li>
 </ul>
 <h3>The Best of Both</h3>
 <p>By combining automation with peer review:</p>
@@ -337,7 +337,7 @@ Complete all TODO items or remove the markers if work is done.</p>
 </ul>
 <p><strong>This mirrors professional development</strong> where CI/CD handles checks and humans provide code review.</p>
 <hr>
-<h2>📚 Additional Resources</h2>
+<h2>Additional Resources</h2>
 <ul>
 <li><a href="../docs/05-working-with-pull-requests.md">Working with Pull Requests</a></li>
 <li><a href="../docs/14-accessible-code-review.md">Accessible Code Review</a></li>
@@ -346,7 +346,7 @@ Complete all TODO items or remove the markers if work is done.</p>
 <li><a href="docs/CHALLENGES.md">Available Challenges</a></li>
 </ul>
 <hr>
-<h2>💬 Feedback on Automation</h2>
+<h2>Feedback on Automation</h2>
 <p>Found a bug? Have suggestions for improving the automation?</p>
 <p>Open an issue with label <code>automation-feedback</code> and let us know!</p>
 <hr>
@@ -365,7 +365,7 @@ Complete all TODO items or remove the markers if work is done.</p>
 <li><a href="https://probot.github.io/">Probot</a> — Framework for building GitHub bots</li>
 </ul>
 <hr>
-<p><em>This system was designed with accessibility and inclusive learning at its core. Every student deserves instant, helpful feedback and supportive peer connections.</em> ♿💙</p>
+<p><em>This system was designed with accessibility and inclusive learning at its core. Every student deserves instant, helpful feedback and supportive peer connections.</em></p>
 
   </main>
   <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">

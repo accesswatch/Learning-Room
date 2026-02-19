@@ -35,14 +35,14 @@ Every issue has a **number** (`#42`), a **state** (Open or Closed), a **title**,
 ### From a repository page
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 Click the **Issues** tab in the repository navigation bar below the repository name. The tab shows the open issue count (e.g., “Issues · 14”).
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+<summary>Screen reader users (NVDA / JAWS — Windows)</summary>
 
 1. Press `D` to navigate to the "Repository navigation" landmark
 2. Press `K` or `Tab` to move through the tab links
@@ -52,7 +52,7 @@ Click the **Issues** tab in the repository navigation bar below the repository n
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 1. `VO+U` → Landmarks → navigate to "Repository navigation"
 2. `VO+Right` or Quick Nav `K` to move through tab links
@@ -81,14 +81,14 @@ Navigate directly: `https://github.com/[owner]/[repo]/issues`
 ### How to read the issue list
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 The issues list shows each issue as a row with its title, labels, number, assignee avatars, and comment count. Closed issues show a purple merged/closed badge. Click any issue title to open it. Use the **Open** and **Closed** toggle links above the list to switch between states.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+<summary>Screen reader users (NVDA / JAWS)</summary>
 
 1. Press `D` to reach the “Search Results List” landmark
 2. Press `3` (h3) to navigate by issue titles — each issue title is an h3 link
@@ -98,7 +98,7 @@ The issues list shows each issue as a row with its title, labels, number, assign
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver)</summary>
+<summary>Screen reader users (VoiceOver)</summary>
 
 1. `VO+U` → Landmarks → navigate to “Search Results List”
 2. `VO+Down` to read through items
@@ -144,14 +144,14 @@ is:open is:unread                   ← issues with unread activity
 Above the issue list, there is an **actions toolbar** with filter buttons for Labels, Milestones, Assignees, etc.
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 The filter bar sits above the issue list. Click **Label**, **Milestone**, or **Assignee** to open a dropdown, select the values you want, then click anywhere outside to close. The issue list updates immediately.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+<summary>Screen reader users (NVDA / JAWS — Windows)</summary>
 
 1. Press `Tab` from the search bar (or `Shift+Tab` from the issue list) to reach the actions toolbar
 2. Press `←/→` to move between toolbar options (Label, Milestone, Assignee, Sort)
@@ -163,7 +163,7 @@ The filter bar sits above the issue list. Click **Label**, **Milestone**, or **A
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 1. `Tab` forward from the search bar to reach the filter buttons, or use Quick Nav to find them
 2. `VO+Left/Right` to move between Label, Milestone, Assignee, Sort buttons
@@ -245,7 +245,7 @@ Other timeline events (label added, PR linked, issue closed) appear between comm
 ### Step-by-step
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 1. Scroll to the bottom of the issue page
 2. Click in the **Leave a comment** text area
@@ -258,7 +258,7 @@ To close the issue while commenting: click the arrow on the **Close issue** butt
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+<summary>Screen reader users (NVDA / JAWS — Windows)</summary>
 
 1. Navigate to the comment box: `D` → "Add a comment" landmark, or press `E` or `F` to focus the text area
 2. Enter Focus Mode: NVDA: `Insert+Space` | JAWS: `Insert+Z`
@@ -269,7 +269,7 @@ To close the issue while commenting: click the arrow on the **Close issue** butt
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 1. Navigate to the comment box: `VO+U` → Landmarks → "Add a comment", or Quick Nav `F` to jump to the text area
 2. Interact with the text area: `VO+Shift+Down`
@@ -343,14 +343,14 @@ For the full shortcut system, see [Screen Reader Cheat Sheet — GitHub Shortcut
 ### Navigating to New Issue
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 From the Issues list page, click the green **New issue** button in the top-right of the issue list. If the repository has templates, a template picker page appears — click **Get started** next to the template that fits your needs, or click **Open a blank issue** to skip templates.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+<summary>Screen reader users (NVDA / JAWS — Windows)</summary>
 
 From the Issues list:
 1. Press `K` to navigate links and find the "New issue" button/link
@@ -360,7 +360,7 @@ From the Issues list:
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 From the Issues list:
 1. Quick Nav `B` or `VO+U` → Buttons to find the "New issue" button
@@ -416,14 +416,14 @@ Any other information, screenshots (with alt text), or links.
 While the form is open, the sidebar has dropdowns for Labels, Assignees, and Milestone.
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
-In the right sidebar, click the gear icon (⚙️) next to **Labels**. A dropdown opens — click a label to select it. Click outside to close. Repeat for **Assignees** and **Milestone**.
+In the right sidebar, click the gear icon () next to **Labels**. A dropdown opens — click a label to select it. Click outside to close. Repeat for **Assignees** and **Milestone**.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+<summary>Screen reader users (NVDA / JAWS — Windows)</summary>
 
 1. `Tab` away from the text area (or press `Escape` to leave Focus Mode)
 2. Navigate to the sidebar — press `H` to find "Labels" heading
@@ -435,7 +435,7 @@ In the right sidebar, click the gear icon (⚙️) next to **Labels**. A dropdow
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 1. `VO+Shift+Up` to stop interacting with the text area
 2. `VO+U` → Headings to find the "Labels" heading in the sidebar
@@ -546,14 +546,14 @@ Every child issue shows a "Parent issue" link near the top of the page (above th
 ### Closing an issue
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 Scroll to the bottom of the issue page. Click the **Close issue** button next to the comment box. Optionally type a closing comment first. If you want to record a reason, click the dropdown arrow on the button and choose **Close as completed** or **Close as not planned**.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+<summary>Screen reader users (NVDA / JAWS — Windows)</summary>
 
 1. **Keyboard shortcut (fastest):** Navigate to the comment text area (`D` → "Add a comment" landmark), switch to Focus Mode, then press `Ctrl+Shift+Enter` to close the issue
 2. **Button approach:** `Tab` to the "Close issue" button (at the bottom of the page, near the comment box) and press `Enter`
@@ -562,7 +562,7 @@ Scroll to the bottom of the issue page. Click the **Close issue** button next to
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 1. **Keyboard shortcut (fastest):** `VO+U` → Landmarks → "Add a comment", interact with the text area (`VO+Shift+Down`), then press `Cmd+Shift+Return` to close the issue
 2. **Button approach:** Quick Nav `B` or `Tab` to find the "Close issue" button, then `VO+Space`
@@ -675,7 +675,7 @@ Go to the Learning Room repository and file a real issue:
 
 ---
 
-> ### 🔥 Day 2 Amplifier — Agent Forge: `@issue-tracker`
+> ### Day 2 Amplifier — Agent Forge: `@issue-tracker`
 >
 > **File, read, comment on, and triage real issues manually before using any agent.** If you have not done the triage work yourself — reading descriptions, assigning labels, identifying duplicates — you cannot evaluate whether an agent's priority scoring is correct. The skill must exist before the amplifier is useful.
 >

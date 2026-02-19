@@ -214,15 +214,15 @@ When answering questions, paste your code as a Gist and link to it. Readers get 
 
 | Feature | Gist | Repository |
 |---------|------|------------|
-| Issues | ❌ No | ✅ Yes |
-| Pull Requests | ❌ No | ✅ Yes |
-| GitHub Actions | ❌ No | ✅ Yes |
-| Projects | ❌ No | ✅ Yes |
-| Multiple branches | ❌ No | ✅ Yes |
-| Revisions/history | ✅ Yes | ✅ Yes |
-| Forkable | ✅ Yes | ✅ Yes |
-| Embeddable | ✅ Yes | ❌ No |
-| Comments | ✅ Yes | ✅ Yes (on issues/PRs) |
+| Issues | No | Yes |
+| Pull Requests | No | Yes |
+| GitHub Actions | No | Yes |
+| Projects | No | Yes |
+| Multiple branches | No | Yes |
+| Revisions/history | Yes | Yes |
+| Forkable | Yes | Yes |
+| Embeddable | Yes | No |
+| Comments | Yes | Yes (on issues/PRs) |
 
 ---
 

@@ -221,7 +221,7 @@ body:
 - [ ] No labels skipped (heading hierarchy: 1→2→3, not 1→3)
 - [ ] Link text is descriptive (not "click here")
 - [ ] Color not the only way to convey information
-- [ ] Tested on: ☐ NVDA ☐ JAWS ☐ VoiceOver
+- [ ] Tested on: NVDA JAWS VoiceOver
 
 ---
 

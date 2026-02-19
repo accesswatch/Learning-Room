@@ -98,14 +98,14 @@ Copilot suggests completions as you type, displayed as gray "ghost text" after y
 3. Presents the suggestion
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 The suggestion appears as **gray "ghost text"** after your cursor — a preview of what Copilot thinks you want to type next. It's there but not inserted; press `Tab` to accept it or `Escape` to dismiss.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS / VoiceOver)</summary>
+<summary>Screen reader users (NVDA / JAWS / VoiceOver)</summary>
 
 Suggestions are **announced via ARIA live regions** — ghost text is not visually meaningful to you so VS Code reads it instead:
 - **NVDA/JAWS:** "Suggestion available" (or reads the suggestion text, depending on verbosity settings)
@@ -138,7 +138,7 @@ Press `Alt+F2` (Mac: `Option+F2`) to open the suggestion in **Accessible View** 
 > **Visual users:** If Copilot's ghost text is getting in the way, skip to "Disabling Inline Suggestions" below.
 
 <details>
-<summary>🔊 Screen reader users — tuning announcement verbosity</summary>
+<summary>Screen reader users — tuning announcement verbosity</summary>
 
 **If suggestions are announced too frequently or are intrusive:**
 
@@ -187,7 +187,7 @@ Type this comment, press `Enter`, and Copilot drafts content based on your instr
 If suggestions are distracting:
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 **Temporarily (current language):**
 - Click the Copilot icon in the status bar (bottom-right `><` icon)
@@ -199,7 +199,7 @@ If suggestions are distracting:
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS / VoiceOver)</summary>
+<summary>Screen reader users (NVDA / JAWS / VoiceOver)</summary>
 
 **Temporarily (current language):**
 - `Ctrl+Shift+P` (Mac: `Cmd+Shift+P`) → type "Copilot: Disable Completions" → press `Enter`

@@ -81,14 +81,14 @@ If you already have a GitHub account, skip to [Step 2](#4-step-2--configure-gith
 6. **Human verification step**
 
    <details>
-   <summary>🖥️ Visual / mouse users</summary>
+   <summary>Visual / mouse users</summary>
 
    GitHub presents a visual CAPTCHA puzzle to verify you are human. Follow the on-screen prompts — typically clicking images that match a category, or checking a box. If the puzzle does not load, try refreshing the page.
 
    </details>
 
    <details>
-   <summary>🔊 Screen reader users</summary>
+   <summary>Screen reader users</summary>
 
    GitHub's visual CAPTCHA is a known accessibility barrier. After the CAPTCHA appears:
    - Look for a button or link labeled **"Audio"** or **"Try an audio challenge"** — an audio CAPTCHA alternative may be available
@@ -121,14 +121,14 @@ Two-factor authentication (2FA) adds a second verification step each time you si
 5. **Setting up an authenticator app:**
 
    <details>
-   <summary>🖥️ Visual / mouse users</summary>
+   <summary>Visual / mouse users</summary>
 
    The setup page shows a QR code. Open your authenticator app (Microsoft Authenticator, Google Authenticator, or Authy), choose **Add account** or the `+` button, and scan the QR code with your device camera. The app will generate 6-digit codes — enter the current code on the GitHub page to verify.
 
    </details>
 
    <details>
-   <summary>🔊 Screen reader users</summary>
+   <summary>Screen reader users</summary>
 
    The QR code image cannot be read by a screen reader. Look for a text link labeled **"Enter this text code"**, **"setup key"**, or **"can't scan the barcode?"** — GitHub provides the secret as a 32-character plain-text string. Copy it and paste it directly into your authenticator app's **manual entry** or **enter key** field.
 
@@ -208,7 +208,7 @@ The fastest path for everyone: navigate directly to **[github.com/settings/acces
 If you prefer to navigate through the interface:
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 1. Click your **profile picture** (avatar) in the top-right corner of any GitHub page
 2. A dropdown menu appears — click **Settings**
@@ -217,7 +217,7 @@ If you prefer to navigate through the interface:
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+<summary>Screen reader users (NVDA / JAWS)</summary>
 
 1. On any GitHub page, switch to Browse Mode if you are not already in it (`NVDA+Space` / JAWS virtual cursor should be on by default in browsers)
 2. Press `B` repeatedly until you hear **"Open user navigation menu, button"** (top-right of the page) and press `Enter`
@@ -228,7 +228,7 @@ If you prefer to navigate through the interface:
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver on macOS)</summary>
+<summary>Screen reader users (VoiceOver on macOS)</summary>
 
 1. Press `VO+U` to open the Rotor, arrow to Buttons, find **"Open user navigation menu"** and press `Enter`
 2. Press `VO+Down Arrow` to find **"Settings"** and press `VO+Space`
@@ -245,14 +245,14 @@ Work through each setting below. All are on the [Accessibility settings page](ht
 > **Do this first.** Hovercards are the most disruptive default setting for screen reader users on GitHub. When enabled, every link announces its hover keyboard shortcut (`H`) as you navigate past it, dramatically slowing page reading.
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 On the Accessibility settings page, look for a checkbox or toggle labeled **"Link previews"** or **"Hovercards"**. If it is turned on, click it to turn it off. The change saves automatically.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users</summary>
+<summary>Screen reader users</summary>
 
 1. On the Accessibility settings page, switch to Browse Mode if not already active
 2. Press `F` or `X` to jump through form controls until you hear **"Link previews"** or **"Hovercards"**
@@ -264,14 +264,14 @@ On the Accessibility settings page, look for a checkbox or toggle labeled **"Lin
 #### 2. Enable Link Underlines
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 Find the **Link underlines** checkbox or toggle and turn it on. This adds underlines to all links on GitHub, making them distinguishable without relying on colour alone.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users</summary>
+<summary>Screen reader users</summary>
 
 1. Press `F` or `X` to navigate form controls until you hear **"Link underlines"**
 2. If it is announced as **unchecked**, press `Space` to enable it
@@ -342,7 +342,7 @@ Both have been broadly rolled out and may already be active on your account. Che
 > Source: [accessibility.github.com/documentation/guide/issues/](https://accessibility.github.com/documentation/guide/issues/) and [accessibility.github.com/documentation/guide/pull-requests/](https://accessibility.github.com/documentation/guide/pull-requests/)
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 1. Sign in to GitHub and go to any page
 2. Click your **profile picture** (avatar) in the top-right corner
@@ -355,7 +355,7 @@ Both have been broadly rolled out and may already be active on your account. Che
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+<summary>Screen reader users (NVDA / JAWS)</summary>
 
 **NVDA or JAWS (Windows):**
 
@@ -376,7 +376,7 @@ Both have been broadly rolled out and may already be active on your account. Che
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver on macOS)</summary>
+<summary>Screen reader users (VoiceOver on macOS)</summary>
 
 1. Sign into GitHub and open any page
 2. Press `VO+U` to open the Rotor and navigate to the Buttons list
@@ -469,10 +469,10 @@ If you open Feature Preview and neither **"New Issues Experience"** nor **"New F
 
 | Browser | Windows | macOS | Notes |
 |---------|---------|-------|-------|
-| **Chrome** | ✅ Recommended | ✅ Good | Best with NVDA and JAWS |
-| **Firefox** | ✅ Recommended | ✅ Good | Excellent accessibility support on all platforms |
-| **Edge** | ✅ Acceptable | ✅ Acceptable | Chromium-based; works well |
-| **Safari** | ❌ Not available | ✅ Recommended | Best for VoiceOver on macOS |
+| **Chrome** | Recommended | Good | Best with NVDA and JAWS |
+| **Firefox** | Recommended | Good | Excellent accessibility support on all platforms |
+| **Edge** | Acceptable | Acceptable | Chromium-based; works well |
+| **Safari** | Not available | Recommended | Best for VoiceOver on macOS |
 
 **Before the workshop:** Open GitHub.com in your chosen browser with your screen reader running and confirm you can navigate the page using heading keys.
 

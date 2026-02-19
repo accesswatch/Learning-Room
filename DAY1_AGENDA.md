@@ -27,7 +27,7 @@ Three modules run across Day 1. You will set each one up during the block where 
 
 ---
 
-## ⭐ Read This BEFORE Day 1 Starts
+## Read This BEFORE Day 1 Starts
 
 **[Chapter 3: The Learning Room](docs/03-the-learning-room.md)** — Your complete guide to the shared repo, PR sharing workflow, and how the automation system works. Read this before Block 0 to understand the environment where you'll be making real contributions.
 
@@ -113,7 +113,7 @@ Establish a shared navigation foundation AND set up the Introduction to GitHub S
 
 ### Part B — Set Up Your First GitHub Skills Repository
 
-> 🌟 **Magic Moment #1:** You are about to copy a real repository to your own GitHub account. When you complete this, you will have made your first GitHub action — and Mona will respond automatically.
+> **Magic Moment #1:** You are about to copy a real repository to your own GitHub account. When you complete this, you will have made your first GitHub action — and Mona will respond automatically.
 
 **Group activity — follow together:**
 
@@ -242,7 +242,7 @@ Mona detects your commit and responds with Step 3 instructions: open a pull requ
 
 ### Part B — Set Up Communicate Using Markdown Skills Module (10 min)
 
-> 🌟 **The Markdown module** runs alongside everything else you do today. Every comment you write, every issue you file, every PR description — you are practicing Markdown in real GitHub contexts.
+> **The Markdown module** runs alongside everything else you do today. Every comment you write, every issue you file, every PR description — you are practicing Markdown in real GitHub contexts.
 
 1. Navigate to [github.com/skills/communicate-using-markdown](https://github.com/skills/communicate-using-markdown)
 2. "Start course" → create the repo in your account
@@ -272,7 +272,7 @@ Getting started with open source AT contributions.
 ```
 7. Submit the PR
 
-> 🌟 **Magic Moment #2:** Mona will respond to your PR within seconds. Navigate to the Conversations tab of your new PR. Mona has left a comment — read it with your screen reader. This is automated feedback on your real GitHub action, from an actual GitHub Actions workflow running in your repository.
+> **Magic Moment #2:** Mona will respond to your PR within seconds. Navigate to the Conversations tab of your new PR. Mona has left a comment — read it with your screen reader. This is automated feedback on your real GitHub action, from an actual GitHub Actions workflow running in your repository.
 
 ### Part D — Issues Practice in learning-room (20 min)
 
@@ -316,7 +316,7 @@ Participants understand what pull requests are, how to read one, and how to part
 
 ### Part A — Set Up Review Pull Requests Skills Module (10 min)
 
-> 🌟 **Magic Moment #3:** Instead of reviewing a pre-built PR in a shared repo, you are about to review a pull request that Mona creates *exclusively for you*, in *your own repository*. The content of the PR is real. Your review will be read by Mona and trigger the next step.
+> **Magic Moment #3:** Instead of reviewing a pre-built PR in a shared repo, you are about to review a pull request that Mona creates *exclusively for you*, in *your own repository*. The content of the PR is real. Your review will be read by Mona and trigger the next step.
 
 1. Navigate to [github.com/skills/review-pull-requests](https://github.com/skills/review-pull-requests)
 2. "Start course" → create the repo in your account
@@ -357,7 +357,7 @@ Return to your `introduction-to-github` Skills repo. Mona has been waiting for y
 4. Confirm the merge
 5. Navigate back to the Code tab — `PROFILE.md` now appears on `main`
 
-> 🌟 **Magic Moment #4:** The `introduction-to-github` course is now complete. Navigate to [github.com/skills/introduction-to-github](https://github.com/skills/introduction-to-github) — your completion badge appears on the course page. Your GitHub profile now shows this course as completed.
+> **Magic Moment #4:** The `introduction-to-github` course is now complete. Navigate to [github.com/skills/introduction-to-github](https://github.com/skills/introduction-to-github) — your completion badge appears on the course page. Your GitHub profile now shows this course as completed.
 
 ### Reference Document
 [Working with Pull Requests](docs/05-working-with-pull-requests.md)
@@ -415,7 +415,7 @@ Step 5: Open the Pull Request
   Add "Closes #[your-issue-number]"
   Submit
 
-🤖 WAIT FOR BOT (30 seconds)
+WAIT FOR BOT (30 seconds)
   A bot will automatically comment on your PR
   Read the comment carefully — it checks for:
     • Broken links
@@ -445,12 +445,12 @@ Step 8: Review someone else's PR
 
 ### What the Bot Checks
 The automation bot validates these things:
-- ✅ **Broken links** — do internal and external links work?
-- ✅ **Heading hierarchy** — no skips (H1→H3), proper structure
-- ✅ **Image descriptions** — all images have meaningful alt text
-- ✅ **Link text quality** — links use descriptive text (not "click here")
-- ✅ **[TODO] markers** — all must be completed
-- ✅ **Document formatting** — tables, code blocks, lists are correct
+- **Broken links** — do internal and external links work?
+- **Heading hierarchy** — no skips (H1→H3), proper structure
+- **Image descriptions** — all images have meaningful alt text
+- **Link text quality** — links use descriptive text (not "click here")
+- **[TODO] markers** — all must be completed
+- **Document formatting** — tables, code blocks, lists are correct
 
 **The bot is educational.** Every issue includes:
 - What the problem is
@@ -458,7 +458,7 @@ The automation bot validates these things:
 - HOW to fix it (with examples)
 - Links to learning resources
 
-📖 **See:** [Learning Room Automation Guide](learning-room/AUTOMATION.md) for detailed explanation of bot feedback
+**See:** [Learning Room Automation Guide](learning-room/AUTOMATION.md) for detailed explanation of bot feedback
 
 ### What to look for in the docs folder
 - Broken links and incorrect keyboard shortcuts
@@ -566,7 +566,7 @@ Example:
 
 ### Skills Module Completion Check (10 min)
 
-> 🌟 **Magic Moment #5:** Before the Day 2 preview, check your completions.
+> **Magic Moment #5:** Before the Day 2 preview, check your completions.
 
 1. Navigate to [github.com/skills/introduction-to-github](https://github.com/skills/introduction-to-github) — completed?
 2. Navigate to [github.com/skills/review-pull-requests](https://github.com/skills/review-pull-requests) — completed?

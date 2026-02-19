@@ -2,7 +2,7 @@
 
 Complete automation infrastructure for the Learning Room workshop repository. Provides instant feedback, skill progression tracking, and automated peer pairing while preserving the educational value of human code review.
 
-## 🎯 System Overview
+## System Overview
 
 This automation system transforms the Learning Room into a GitHub Skills-quality learning experience with three core components:
 
@@ -33,12 +33,12 @@ Automatically validates pull requests and provides educational feedback:
 Tracks student progress through leveled learning paths:
 - Monitors merged PRs and counts completions
 - Awards skill-specific badges:
-  - 📝 Markdown Master
-  - ♿ Accessibility Advocate
-  - 👁️ Code Reviewer
-  - 🤝 Team Player
-  - 📚 Documentation Writer
-  - 🏗️ Content Creator
+  - Markdown Master
+  - Accessibility Advocate
+  - Code Reviewer
+  - Team Player
+  - Documentation Writer
+  - Content Creator
 - Unlocks new challenges by level:
   - Beginner (0+ PRs): Basic fixes
   - Intermediate (1+ PRs): Accessibility fundamentals
@@ -68,7 +68,7 @@ Automates peer review assignment and study group formation:
 
 ---
 
-## 📂 File Structure
+## File Structure
 
 ```
 .github/
@@ -94,7 +94,7 @@ learning-room/
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### For Facilitators (First Time Setup)
 
@@ -120,7 +120,7 @@ When you open a PR:
 
 ---
 
-## 🔧 Configuration
+## Configuration
 
 ### Student Roster (`.github/data/student-roster.json`)
 
@@ -169,7 +169,7 @@ Add new validation functions to `required` or `suggestions` arrays.
 
 ---
 
-## 🎭 Workflow Jobs Reference
+## Workflow Jobs Reference
 
 ### PR Validation Bot Jobs
 
@@ -232,21 +232,21 @@ Add new validation functions to `required` or `suggestions` arrays.
 
 ---
 
-## 🎓 Educational Philosophy
+## Educational Philosophy
 
 ### Why Automation + Human Review?
 
 **Automation provides:**
-- ⚡ Instant feedback (no waiting for humans)
-- 📚 Educational resources (links to learning)
-- ✅ Consistency (same standards for all)
-- 🤖 Unlimited patience (runs on every commit)
+- Instant feedback (no waiting for humans)
+- Educational resources (links to learning)
+- Consistency (same standards for all)
+- Unlimited patience (runs on every commit)
 
 **Human review provides:**
-- 💡 Creative suggestions (beyond rules)
-- 🧠 Contextual judgment (nuanced understanding)
-- 🤝 Social learning (building relationships)
-- ❤️ Encouragement and mentorship
+- Creative suggestions (beyond rules)
+- Contextual judgment (nuanced understanding)
+- Social learning (building relationships)
+- Encouragement and mentorship
 
 **Together:** Students experience professional CI/CD workflows while building community connections.
 
@@ -262,7 +262,7 @@ All automation components:
 
 ---
 
-## 🔍 Monitoring & Troubleshooting
+## Monitoring & Troubleshooting
 
 ### Check Automation Health
 
@@ -290,7 +290,7 @@ All automation components:
 
 ---
 
-## 📊 Success Metrics
+## Success Metrics
 
 Track these to evaluate automation impact:
 
@@ -314,7 +314,7 @@ Track these to evaluate automation impact:
 
 ---
 
-## 🎨 Customization Examples
+## Customization Examples
 
 ### Add New Badge
 
@@ -324,7 +324,7 @@ Edit `.github/data/challenge-progression.json`:
 {
   "badges": {
     "testing": {
-      "emoji": "🧪",
+      "emoji": "",
       "title": "Test Engineer",
       "description": "Wrote comprehensive tests"
     }
@@ -368,23 +368,23 @@ Edit `.github/data/challenge-progression.json`:
 
 ---
 
-## 📚 Documentation Map
+## Documentation Map
 
 **For Students:**
-- 📖 [Automation Guide](../learning-room/AUTOMATION.md) — How bot works, interpreting feedback
-- 🎯 [Learning Paths](docs/LEARNING_PATHS.md) — Skill progression, challenge details
-- 📝 [Challenges List](../learning-room/docs/CHALLENGES.md) — Available challenges
-- 👥 [Group Challenges](../learning-room/docs/GROUP_CHALLENGES.md) — Collaborative exercises
+- [Automation Guide](../learning-room/AUTOMATION.md) — How bot works, interpreting feedback
+- [Learning Paths](docs/LEARNING_PATHS.md) — Skill progression, challenge details
+- [Challenges List](../learning-room/docs/CHALLENGES.md) — Available challenges
+- [Group Challenges](../learning-room/docs/GROUP_CHALLENGES.md) — Collaborative exercises
 
 **For Facilitators:**
-- 🚀 [Implementation Guide](docs/IMPLEMENTATION_GUIDE.md) — Setup instructions
-- 🎓 [Facilitator Guide](../FACILITATOR.md) — Workshop facilitation (includes automation section)
-- 🔧 [Workflow Files](workflows/) — Automation source code
-- 📊 [Data Files](data/) — Configuration (roster, progression)
+- [Implementation Guide](docs/IMPLEMENTATION_GUIDE.md) — Setup instructions
+- [Facilitator Guide](../FACILITATOR.md) — Workshop facilitation (includes automation section)
+- [Workflow Files](workflows/) — Automation source code
+- [Data Files](data/) — Configuration (roster, progression)
 
 ---
 
-## 🤝 Contributing to Automation
+## Contributing to Automation
 
 Found a bug? Have a suggestion?
 
@@ -402,7 +402,7 @@ Found a bug? Have a suggestion?
 
 ---
 
-## 📝 Version History
+## Version History
 
 **v1.0 (Current)**
 - PR validation bot with accessibility checking
@@ -420,15 +420,15 @@ Found a bug? Have a suggestion?
 
 ---
 
-## 🎉 Acknowledgments
+## Acknowledgments
 
 This automation system was designed with these principles:
 
-✅ **Accessibility First** — Fully screen reader accessible  
-✅ **Educational Focus** — Teaches, doesn't just check  
-✅ **Human-Centered** — Augments, not replaces, human review  
-✅ **Professional Experience** — Mirrors real CI/CD workflows  
-✅ **Community Building** — Encourages collaboration and support  
+**Accessibility First** — Fully screen reader accessible  
+**Educational Focus** — Teaches, doesn't just check  
+**Human-Centered** — Augments, not replaces, human review  
+**Professional Experience** — Mirrors real CI/CD workflows  
+**Community Building** — Encourages collaboration and support  
 
 Built for the Open Source Assistive Technology Hackathon workshop.
 
@@ -436,4 +436,4 @@ Built for the Open Source Assistive Technology Hackathon workshop.
 
 **Questions?** Open an issue or reach out to workshop facilitators!
 
-**Ready to implement?** See [Implementation Guide](docs/IMPLEMENTATION_GUIDE.md) 🚀
+**Ready to implement?** See [Implementation Guide](docs/IMPLEMENTATION_GUIDE.md)

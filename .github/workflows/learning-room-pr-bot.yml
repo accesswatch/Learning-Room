@@ -32,31 +32,35 @@ jobs:
             const isFirstPR = prs.length === 1;
             
             if (isFirstPR) {
+              const welcomeBody = [
+                '## Welcome to Your First Pull Request!',
+                '',
+                'Hi @' + context.payload.pull_request.user.login + '! This is your first PR in this repository. Congratulations on taking this important step in your open source journey!',
+                '',
+                '### What Happens Next',
+                '',
+                '1. **Automated Checks** \u2014 This bot will validate your PR (see checks below)',
+                '2. **Peer Review** \u2014 A facilitator or peer will review your changes',
+                '3. **Feedback** \u2014 You may receive suggestions for improvements',
+                '4. **Merge** \u2014 Once approved, your changes become part of the project',
+                '',
+                '### While You Wait',
+                '',
+                '- Check the automated validation report below',
+                '- Review the [PR guidelines](../../docs/05-working-with-pull-requests.md)',
+                '- Look at other open PRs to learn from examples',
+                '',
+                '**Remember:** Every experienced contributor started exactly where you are now. Questions are welcome!',
+                '',
+                '---',
+                '*This is an automated message from the Learning Room Bot. Need help? Mention @facilitator in a comment.*'
+              ].join('\n');
+
               await github.rest.issues.createComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: context.payload.pull_request.number,
-                body: `## 🎉 Welcome to Your First Pull Request!
-
-Hi @${context.payload.pull_request.user.login}! This is your first PR in this repository. Congratulations on taking this important step in your open source journey!
-
-### What Happens Next
-
-1. **Automated Checks** — This bot will validate your PR (see checks below)
-2. **Peer Review** — A facilitator or peer will review your changes
-3. **Feedback** — You may receive suggestions for improvements
-4. **Merge** — Once approved, your changes become part of the project
-
-### While You Wait
-
-- Check the automated validation report below
-- Review the [PR guidelines](../../docs/05-working-with-pull-requests.md)
-- Look at other open PRs to learn from examples
-
-**Remember:** Every experienced contributor started exactly where you are now. Questions are welcome! 🚀
-
----
-*This is an automated message from the Learning Room Bot. Need help? Mention @facilitator in a comment.*`
+                body: welcomeBody
               });
               
               await github.rest.issues.addLabels({
@@ -106,20 +110,20 @@ Hi @${context.payload.pull_request.user.login}! This is your first PR in this re
             const fs = require('fs');
             const results = JSON.parse(fs.readFileSync('validation-results.json', 'utf8'));
             
-            let status = results.passed ? '✅ **Validation Passed**' : '⚠️ **Validation Needs Attention**';
-            let emoji = results.passed ? '🎯' : '📋';
+            let status = results.passed ? '**Validation Passed**' : '**Validation Needs Attention**';
+            let emoji = results.passed ? '' : '';
             
             let body = `## ${emoji} PR Validation Report\n\n${status}\n\n`;
             
             // Required checks
             body += `### Required Checks\n\n`;
             results.required.forEach(check => {
-              const icon = check.passed ? '✅' : '❌';
+              const icon = check.passed ? '' : '';
               body += `${icon} **${check.name}**\n`;
               if (!check.passed) {
                 body += `   ${check.message}\n`;
                 if (check.help) {
-                  body += `   💡 *${check.help}*\n`;
+                  body += `   *${check.help}*\n`;
                 }
               }
               body += `\n`;
@@ -127,12 +131,12 @@ Hi @${context.payload.pull_request.user.login}! This is your first PR in this re
             
             // Optional improvements
             if (results.suggestions.length > 0) {
-              body += `### 💡 Suggestions for Improvement\n\n`;
+              body += `### Suggestions for Improvement\n\n`;
               body += `*These are optional but will make your contribution even better:*\n\n`;
               results.suggestions.forEach(suggestion => {
                 body += `- ${suggestion.message}\n`;
                 if (suggestion.help) {
-                  body += `  📖 *${suggestion.help}*\n`;
+                  body += `  *${suggestion.help}*\n`;
                 }
               });
               body += `\n`;
@@ -140,23 +144,23 @@ Hi @${context.payload.pull_request.user.login}! This is your first PR in this re
             
             // Accessibility checks
             if (results.accessibility.length > 0) {
-              body += `### ♿ Accessibility Analysis\n\n`;
+              body += `### Accessibility Analysis\n\n`;
               results.accessibility.forEach(item => {
-                const icon = item.type === 'error' ? '🚫' : item.type === 'warning' ? '⚠️' : '✅';
+                const icon = item.type === 'error' ? '' : item.type === 'warning' ? '' : '';
                 body += `${icon} **${item.title}**\n`;
                 body += `   ${item.message}\n`;
                 if (item.file) {
-                  body += `   📄 \`${item.file}\`${item.line ? ` (line ${item.line})` : ''}\n`;
+                  body += `   \`${item.file}\`${item.line ? ` (line ${item.line})` : ''}\n`;
                 }
                 if (item.fix) {
-                  body += `   🔧 **Fix:** ${item.fix}\n`;
+                  body += `   **Fix:** ${item.fix}\n`;
                 }
                 body += `\n`;
               });
             }
             
             // Learning resources
-            body += `### 📚 Learning Resources\n\n`;
+            body += `### Learning Resources\n\n`;
             body += `Based on your changes, these guides might help:\n\n`;
             results.resources.forEach(resource => {
               body += `- [${resource.title}](${resource.url})\n`;
@@ -243,20 +247,24 @@ Hi @${context.payload.pull_request.user.login}! This is your first PR in this re
         uses: actions/github-script@v7
         with:
           script: |
+            const reviewBody = [
+              '## Peer Review Complete!',
+              '',
+              'Great work, @' + context.payload.review.user.login + '! You\'ve completed a peer review.',
+              '',
+              '**Why this matters:** Code review is one of the most valuable skills in open source. You\'re helping ensure quality, sharing knowledge, and building community trust.',
+              '',
+              '@' + context.payload.pull_request.user.login + ' \u2014 your PR has been approved! A facilitator will merge it soon.',
+              '',
+              '---',
+              '*Learning Room Bot celebrates your collaboration*'
+            ].join('\n');
+
             await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.payload.pull_request.number,
-              body: `## 🌟 Peer Review Complete!
-
-Great work, @${context.payload.review.user.login}! You've completed a peer review.
-
-**Why this matters:** Code review is one of the most valuable skills in open source. You're helping ensure quality, sharing knowledge, and building community trust.
-
-@${context.payload.pull_request.user.login} — your PR has been approved! A facilitator will merge it soon.
-
----
-*Learning Room Bot celebrates your collaboration* 🎉`
+              body: reviewBody
             });
 
   respond-to-questions:
@@ -278,48 +286,54 @@ Great work, @${context.payload.review.user.login}! You've completed a peer revie
             let response = null;
             
             if (comment.includes('@bot help') || comment.includes('need help')) {
-              response = `Hi @${author}! Here are some helpful resources:
-
-📖 **Guides:**
-- [Working with Pull Requests](../../docs/05-working-with-pull-requests.md)
-- [Merge Conflicts](../../docs/06-merge-conflicts.md)
-- [Culture & Etiquette](../../docs/07-culture-etiquette.md)
-
-🔧 **Common Issues:**
-- **Merge conflicts?** Check the [Merge Conflicts guide](../../docs/06-merge-conflicts.md)
-- **Need to update your PR?** Make changes on your branch and push again
-- **Validation failing?** Read the validation report above for specific fixes
-
-💬 **Still stuck?** Mention \`@facilitator\` in a comment for human help!`;
+              response = [
+                'Hi @' + author + '! Here are some helpful resources:',
+                '',
+                '**Guides:**',
+                '- [Working with Pull Requests](../../docs/05-working-with-pull-requests.md)',
+                '- [Merge Conflicts](../../docs/06-merge-conflicts.md)',
+                '- [Culture & Etiquette](../../docs/07-culture-etiquette.md)',
+                '',
+                '**Common Issues:**',
+                '- **Merge conflicts?** Check the [Merge Conflicts guide](../../docs/06-merge-conflicts.md)',
+                '- **Need to update your PR?** Make changes on your branch and push again',
+                '- **Validation failing?** Read the validation report above for specific fixes',
+                '',
+                '**Still stuck?** Mention `@facilitator` in a comment for human help!'
+              ].join('\n');
             }
             
             if (comment.includes('merge conflict')) {
-              response = `Hi @${author}! I see you're dealing with a merge conflict.
-
-**Quick steps to resolve:**
-
-1. Go to the "Files changed" tab
-2. Click "Resolve conflicts" button
-3. GitHub's conflict editor will show you both versions
-4. Choose which lines to keep (remove the \`<<<<<<<\`, \`=======\`, \`>>>>>>>\` markers)
-5. Click "Mark as resolved"
-6. Commit the merge
-
-**Need detailed guidance?** See [Merge Conflicts Guide](../../docs/06-merge-conflicts.md)
-
-**For screen readers:** The conflict editor works best in Firefox or Edge with NVDA/JAWS. VoiceOver users: consider using github.dev (press \`.\\") for better conflict resolution.`;
+              response = [
+                'Hi @' + author + '! I see you\'re dealing with a merge conflict.',
+                '',
+                '**Quick steps to resolve:**',
+                '',
+                '1. Go to the "Files changed" tab',
+                '2. Click "Resolve conflicts" button',
+                '3. GitHub\'s conflict editor will show you both versions',
+                '4. Choose which lines to keep (remove the `<<<<<<<`, `=======`, `>>>>>>>` markers)',
+                '5. Click "Mark as resolved"',
+                '6. Commit the merge',
+                '',
+                '**Need detailed guidance?** See [Merge Conflicts Guide](../../docs/06-merge-conflicts.md)',
+                '',
+                '**For screen readers:** The conflict editor works best in Firefox or Edge with NVDA/JAWS. VoiceOver users: consider using github.dev (press the "." key) for better conflict resolution.'
+              ].join('\n');
             }
             
             if (comment.includes('how do i') && comment.includes('request review')) {
-              response = `Hi @${author}! To request a review:
-
-1. On your PR page, find the "Reviewers" section in the right sidebar
-2. Click the gear icon next to "Reviewers"
-3. Start typing a facilitator or peer's username
-4. Select them from the dropdown
-5. They'll be notified automatically
-
-**Screen reader users:** The reviewers section is after the main PR description. Navigate to the complementary landmark "Request reviewers".`;
+              response = [
+                'Hi @' + author + '! To request a review:',
+                '',
+                '1. On your PR page, find the "Reviewers" section in the right sidebar',
+                '2. Click the gear icon next to "Reviewers"',
+                '3. Start typing a facilitator or peer\'s username',
+                '4. Select them from the dropdown',
+                '5. They\'ll be notified automatically',
+                '',
+                '**Screen reader users:** The reviewers section is after the main PR description. Navigate to the complementary landmark "Request reviewers".'
+              ].join('\n');
             }
             
             if (response) {

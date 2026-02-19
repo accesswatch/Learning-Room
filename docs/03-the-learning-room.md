@@ -116,8 +116,8 @@ learning-room/
   - Markdown accessibility (headings, links, alt text, broken links)
   - [TODO] markers (all completed?)
 - Posts a comprehensive comment with:
-  - Required checks (must pass) ✅ / ❌
-  - Suggestions (optional improvements) 💡
+  - Required checks (must pass) /
+  - Suggestions (optional improvements)
   - Accessibility analysis (detailed issues + fixes)
   - Learning resources (links to docs)
 - Applies labels (documentation, accessibility, needs-review)
@@ -133,7 +133,7 @@ learning-room/
 - Posts assignment comment explaining what to look for
 - **Example:**
   ```
-  ## 👥 Peer Review Assigned
+  ## Peer Review Assigned
   
   Hi @studentA! Your PR has been automatically paired with @studentC for peer review.
   
@@ -220,21 +220,21 @@ learning-room/
 
 When you open a PR in the Learning Room, you get **three types of feedback**:
 
-### 🤖 Type 1: Automated Bot Feedback (30 seconds)
+### Type 1: Automated Bot Feedback (30 seconds)
 - Technical validation (links, headings, file locations)
 - Accessibility checking (detailed)
 - Educational messaging (WHY each thing matters)
 - Links to learning resources
 - Never fails the PR; always educational
 
-### 👥 Type 2: Peer Reviewer Feedback (15-60 minutes)
+### Type 2: Peer Reviewer Feedback (15-60 minutes)
 - Human judgment on content
 - Creative suggestions
 - Encouragement and mentorship
 - Understanding of context
 - Can approve, request changes, or comment
 
-### 🏆 Type 3: Progress Tracking (on merge)
+### Type 3: Progress Tracking (on merge)
 - Skill badges (Markdown Master, Accessibility Advocate)
 - Level progression (Beginner → Intermediate → Advanced → Expert)
 - Milestone celebrations (1st, 5th, 10th PR)
@@ -287,7 +287,7 @@ This is your collaboration space!
 ### Finding PRs to Review
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 1. Go to `github.com/[org]/learning-room`
 2. Click the **Pull Requests** tab
@@ -297,7 +297,7 @@ This is your collaboration space!
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+<summary>Screen reader users (NVDA / JAWS)</summary>
 
 ```
 1. Go to github.com/[org]/learning-room
@@ -311,7 +311,7 @@ This is your collaboration space!
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 ```
 1. Go to github.com/[org]/learning-room
@@ -327,7 +327,7 @@ This is your collaboration space!
 ### Reading a PR You're Assigned To
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 - **Conversation tab:** Scroll through the discussion. Reviewers are listed in the right sidebar.
 - **Files Changed tab:** Changed files are in a tree on the left. Click a filename to jump to its diff. Green = added lines, red = removed lines.
@@ -336,7 +336,7 @@ This is your collaboration space!
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+<summary>Screen reader users (NVDA / JAWS)</summary>
 
 ```
 Conversation Tab (reading reviews):
@@ -356,7 +356,7 @@ Files Changed Tab (what actually changed):
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 ```
 Conversation Tab (reading reviews):
@@ -377,7 +377,7 @@ Files Changed Tab (what actually changed):
 ### Leaving a Review
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 1. Scroll to the comment box on the Conversation tab
 2. Type your review comment
@@ -388,7 +388,7 @@ Files Changed Tab (what actually changed):
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+<summary>Screen reader users (NVDA / JAWS)</summary>
 
 ```
 1. On Conversation tab, scroll to comment box
@@ -406,7 +406,7 @@ Files Changed Tab (what actually changed):
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 ```
 1. On Conversation tab, Quick Nav F or VO+U → Landmarks → "Add a comment"
@@ -425,7 +425,7 @@ Files Changed Tab (what actually changed):
 ### Responding to Feedback
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 1. Open your PR (Pull Requests tab → click your PR)
 2. Read all comments and bot feedback
@@ -436,7 +436,7 @@ Files Changed Tab (what actually changed):
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+<summary>Screen reader users (NVDA / JAWS)</summary>
 
 ```
 1. Open your PR (find in Pull Requests tab)
@@ -451,7 +451,7 @@ Files Changed Tab (what actually changed):
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 ```
 1. Open your PR (find in Pull Requests tab → Quick Nav H to navigate PR titles)
@@ -502,17 +502,17 @@ No! The Learning Room has challenges for all skill levels. You can pick what int
 
 Every PR you open and merge in the Learning Room is a **real contribution**:
 
-✅ You found something to improve  
-✅ You made a meaningful change  
-✅ You received feedback (technical + human)  
-✅ You incorporated suggestions  
-✅ You merged your work  
+You found something to improve  
+You made a meaningful change  
+You received feedback (technical + human)  
+You incorporated suggestions  
+You merged your work  
 
 **That is open source contribution.** Your facilitator has a record. The GitHub repo has a record. You have a merged commit in your history.
 
 This is not hypothetical. This is not simulation. This is real.
 
-🎉
+
 
 ---
 

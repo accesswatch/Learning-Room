@@ -5,7 +5,7 @@
 
 ---
 
-> **🔥 The Central Project: Agent Forge**
+> **The Central Project: Agent Forge**
 >
 > This workshop is built around a real, live open source project: **[Agent Forge](https://github.com/accesswatch/agent-forge)** — six GitHub Copilot agents and 28 slash commands for accessible, agentic repository management. It was built by your facilitator and is MIT-licensed.
 >
@@ -82,11 +82,11 @@ Every skill you build on Day 1 maps directly to an Agent Forge command on Day 2.
 
 All documentation lives in the `docs/` folder. Read them in order for the full experience, or jump to what you need.
 
-> **📄 HTML Version Available:** All markdown documentation is automatically converted to HTML format. After cloning the repository, you can browse the `html/` directory for web-formatted versions of every document. See [BUILD.md](BUILD.md) for details.
+> **HTML Version Available:** All markdown documentation is automatically converted to HTML format. After cloning the repository, you can browse the `html/` directory for web-formatted versions of every document. See [BUILD.md](BUILD.md) for details.
 
 ### Quick Navigation
 
-> **📘 Looking for a student-friendly table of contents?** See the [Course Guide](docs/course-guide.md) — a single page with day-by-day chapter tables, grouped appendices, all 24 exercises at a glance, and where to get help.
+> **Looking for a student-friendly table of contents?** See the [Course Guide](docs/course-guide.md) — a single page with day-by-day chapter tables, grouped appendices, all 24 exercises at a glance, and where to get help.
 
 **Lessons**
 
@@ -146,7 +146,7 @@ All documentation lives in the `docs/` folder. Read them in order for the full e
 | [W](docs/appendix-w-github-copilot-reference.md) | **GitHub Copilot Reference** | Copilot features, chat participants, slash commands, MCP servers, and agentic ecosystem |
 | [X](docs/appendix-x-copilot-models.md) | **GitHub Copilot AI Models** | Model comparison, strengths, plan availability, and selection guidance |
 | [Y](docs/appendix-y-accessing-workshop-materials.md) | **Accessing and Downloading Workshop Materials** | GitHub Pages, GitHub.com, cloning, ZIP download, offline reading, folder guide |
-> **Each guide from Lesson 03 onward includes a "🔥 Day 2 Amplifier" callout** that shows how Agent Forge extends that skill across three scopes: your VS Code editor → your repository (travels with every fork) → the cloud (GitHub Agentic Workflows running without VS Code). **Learn the manual skill first (Chapter 14), then see how it's automated (Chapter 16).**
+> **Each guide from Lesson 03 onward includes a "Day 2 Amplifier" callout** that shows how Agent Forge extends that skill across three scopes: your VS Code editor → your repository (travels with every fork) → the cloud (GitHub Agentic Workflows running without VS Code). **Learn the manual skill first (Chapter 14), then see how it's automated (Chapter 16).**
 
 ---
 
@@ -191,24 +191,24 @@ All documentation lives in the `docs/` folder. Read them in order for the full e
 │       ├── keyboard-shortcuts.md        ← Has intentional accessibility issues to find and fix
 │       └── setup-guide.md              ← Has a broken link to find and fix
 └── docs/                               ← Full workshop curriculum (17 lessons + 25 appendices A–Y)
-    ├── course-guide.md                           ← 📘 Student landing page: day-by-day overview, exercises, help
+    ├── course-guide.md                           ← Student landing page: day-by-day overview, exercises, help
     ├── 00-pre-workshop-setup.md
     ├── 01-understanding-github-web-structure.md  ← How GitHub is organized (start here)
-    ├── 02-navigating-repositories.md  ← 🔥 Agent Forge: @daily-briefing
-    ├── 03-the-learning-room.md        ← 🎓 Read this early: your shared space and PR workflow
-    ├── 04-working-with-issues.md      ← 🔥 Agent Forge: @issue-tracker
-    ├── 05-working-with-pull-requests.md ← 🔥 Agent Forge: @pr-review
-    ├── 06-merge-conflicts.md          ← 🔥 Agent Forge: Copilot conflict prevention
-    ├── 07-culture-etiquette.md        ← 🔥 Agent Forge: output responsibility
-    ├── 08-labels-milestones-projects.md ← 🔥 Agent Forge: @issue-tracker + labels
-    ├── 09-notifications.md            ← 🔥 Agent Forge: @daily-briefing + inbox
+    ├── 02-navigating-repositories.md  ← Agent Forge: @daily-briefing
+    ├── 03-the-learning-room.md        ← Read this early: your shared space and PR workflow
+    ├── 04-working-with-issues.md      ← Agent Forge: @issue-tracker
+    ├── 05-working-with-pull-requests.md ← Agent Forge: @pr-review
+    ├── 06-merge-conflicts.md          ← Agent Forge: Copilot conflict prevention
+    ├── 07-culture-etiquette.md        ← Agent Forge: output responsibility
+    ├── 08-labels-milestones-projects.md ← Agent Forge: @issue-tracker + labels
+    ├── 09-notifications.md            ← Agent Forge: @daily-briefing + inbox
     ├── 10-vscode-basics.md            ← VS Code setup, github.dev, screen reader mode, accessibility basics
     ├── 11-git-source-control.md       ← Git operations in VS Code: clone, branch, commit, merge, stash
     ├── 12-github-pull-requests-extension.md ← GitHub PR extension: view, review, create, merge PRs
     ├── 13-github-copilot.md           ← GitHub Copilot: inline suggestions, Chat, prompting, custom agents
     ├── 14-accessible-code-review.md   ← Reviewer mechanics: diffs, comments, Accessible Diff Viewer — final culminating skill
     ├── 15-issue-templates.md          ← Creating GitHub issue templates
-    ├── 16-agent-forge.md              ← 🔥 Agent Forge: six agents, 28 commands, agentic workflows — automate everything you learned
+    ├── 16-agent-forge.md              ← Agent Forge: six agents, 28 commands, agentic workflows — automate everything you learned
     ├── appendix-a-glossary.md                    ← A: Every term explained (look up any time)
     ├── appendix-b-screen-reader-cheatsheet.md    ← B: Full shortcut reference, per-screen-reader tables (keep open)
     ├── appendix-c-accessibility-standards.md     ← C: WCAG 2.2, ARIA, PR checklist
@@ -291,4 +291,4 @@ All workshop documentation is licensed under [CC BY 4.0](https://creativecommons
 ---
 
 *Last reviewed: February 2026*
-*Built with ❤️ for the Open Source Assistive Technology Hackathon.*
+*Built for the Open Source Assistive Technology Hackathon.*

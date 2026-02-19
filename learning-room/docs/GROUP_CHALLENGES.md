@@ -2,7 +2,7 @@
 
 Collaborative exercises designed for study groups to work on together. These challenges promote teamwork, peer learning, and collective growth.
 
-## 🤝 How Group Challenges Work
+## How Group Challenges Work
 
 1. **All group members participate** in planning and execution
 2. **Work together** on a shared branch or multiple coordinated PRs
@@ -11,9 +11,9 @@ Collaborative exercises designed for study groups to work on together. These cha
 
 ---
 
-## 📋 Available Group Challenges
+## Available Group Challenges
 
-### 1. Documentation Sprint 📝
+### 1. Documentation Sprint
 **Difficulty:** Beginner-Intermediate  
 **Time:** 2-3 hours  
 **Group Size:** 2-4 people
@@ -46,7 +46,7 @@ Collaborative exercises designed for study groups to work on together. These cha
 
 ---
 
-### 2. Peer Review Circle 👁️
+### 2. Peer Review Circle
 **Difficulty:** Intermediate  
 **Time:** Ongoing (1 hour per round)  
 **Group Size:** 3-6 people
@@ -81,7 +81,7 @@ Collaborative exercises designed for study groups to work on together. These cha
 
 ---
 
-### 3. Accessibility Workshop 🎓
+### 3. Accessibility Workshop
 **Difficulty:** Intermediate-Advanced  
 **Time:** 3-4 hours  
 **Group Size:** 3-5 people
@@ -120,7 +120,7 @@ Collaborative exercises designed for study groups to work on together. These cha
 
 ---
 
-### 4. Challenge Creation Sprint 🏗️
+### 4. Challenge Creation Sprint
 **Difficulty:** Advanced-Expert  
 **Time:** 4-6 hours over 1-2 weeks  
 **Group Size:** 2-4 people
@@ -153,7 +153,7 @@ Collaborative exercises designed for study groups to work on together. These cha
 
 ---
 
-### 5. Full Repository Audit 🔍
+### 5. Full Repository Audit
 **Difficulty:** Advanced-Expert  
 **Time:** 6-8 hours over 2 weeks  
 **Group Size:** 3-5 people
@@ -192,7 +192,7 @@ Collaborative exercises designed for study groups to work on together. These cha
 
 ---
 
-### 6. Mentor Chain 🔗
+### 6. Mentor Chain
 **Difficulty:** All levels  
 **Time:** Ongoing (1-2 weeks)  
 **Group Size:** 3-6 people
@@ -227,7 +227,7 @@ Collaborative exercises designed for study groups to work on together. These cha
 
 ---
 
-### 7. Accessible Onboarding Flow 🚀
+### 7. Accessible Onboarding Flow
 **Difficulty:** Advanced-Expert  
 **Time:** 6-10 hours over 2 weeks  
 **Group Size:** 3-5 people
@@ -269,7 +269,7 @@ Collaborative exercises designed for study groups to work on together. These cha
 
 ---
 
-## 🎯 Group Challenge Tips
+## Group Challenge Tips
 
 ### Before Starting
 
@@ -312,7 +312,7 @@ Collaborative exercises designed for study groups to work on together. These cha
 
 ### After Completion
 
-**Celebrate!** 🎉
+**Celebrate!**
 - Tag everyone in completion comment
 - Share what you achieved
 - Post about progress milestones
@@ -330,17 +330,17 @@ Collaborative exercises designed for study groups to work on together. These cha
 
 ---
 
-## 📊 Group Challenge Badges
+## Group Challenge Badges
 
 Complete group challenges to earn special badges:
 
-- 🤝 **Team Player**: Completed 1 group challenge
-- 👥 **Collaborator**: Completed 3 group challenges
-- 🌟 **Community Leader**: Completed 5+ group challenges
+- **Team Player**: Completed 1 group challenge
+- **Collaborator**: Completed 3 group challenges
+- **Community Leader**: Completed 5+ group challenges
 
 ---
 
-## 🆘 When Groups Get Stuck
+## When Groups Get Stuck
 
 ### Common Issues
 
@@ -375,7 +375,7 @@ Complete group challenges to earn special badges:
 
 ---
 
-## 💡 Creating Custom Group Challenges
+## Creating Custom Group Challenges
 
 Have an idea for a group challenge?
 
@@ -393,7 +393,7 @@ Facilitators will review and may add it to the list!
 
 ---
 
-## 🌈 Benefits of Group Challenges
+## Benefits of Group Challenges
 
 **Learning Benefits:**
 - See diverse approaches to same problem
@@ -415,7 +415,7 @@ Facilitators will review and may add it to the list!
 
 ---
 
-## 📚 Resources
+## Resources
 
 - [Culture & Etiquette](../../docs/07-culture-etiquette.md) - Working well with others
 - [Working with PRs](../../docs/05-working-with-pull-requests.md) - Collaboration workflows
@@ -424,4 +424,4 @@ Facilitators will review and may add it to the list!
 
 ---
 
-*Group challenges designed to build collaboration skills and community connections. We learn better together!* 🤝💙
+*Group challenges designed to build collaboration skills and community connections. We learn better together!*

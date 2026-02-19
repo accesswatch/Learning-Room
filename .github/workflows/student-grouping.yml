@@ -138,46 +138,50 @@ jobs:
                 reviewers: [reviewer]
               });
               
+              const pairBody = [
+                '## Peer Review Assigned',
+                '',
+                'Hi @' + author + '! Your PR has been automatically paired with @' + reviewer + ' for peer review.',
+                '',
+                '### For @' + reviewer + ':',
+                '',
+                'This is a great opportunity to practice code review skills! Here\'s what to look for:',
+                '',
+                '**Content Quality:**',
+                '- [ ] Does the change accomplish what the issue describes?',
+                '- [ ] Is the writing clear and helpful?',
+                '- [ ] Are there any typos or grammar issues?',
+                '',
+                '**Accessibility:**',
+                '- [ ] Proper heading hierarchy (H1 \u2192 H2 \u2192 H3, no skips)?',
+                '- [ ] Descriptive link text (not "click here")?',
+                '- [ ] Alt text on images?',
+                '- [ ] [TODO] markers removed?',
+                '',
+                '**Documentation:**',
+                '- [ ] Code blocks are properly formatted?',
+                '- [ ] Tables have headers?',
+                '- [ ] References/links work correctly?',
+                '',
+                '**Review Guidelines:**',
+                '- Be kind and constructive',
+                '- Suggest improvements, don\'t just point out problems',
+                '- Ask questions if something is unclear',
+                '- Approve when ready or request changes with explanation',
+                '',
+                '**Resources:**',
+                '- [How to Review PRs](../../docs/05-working-with-pull-requests.md#reviewing-pull-requests)',
+                '- [Writing Good Review Comments](../../docs/07-culture-etiquette.md#giving-feedback)',
+                '',
+                '---',
+                '*Pairing by Learning Room Grouping Engine*'
+              ].join('\n');
+
               await github.rest.issues.createComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: context.payload.pull_request.number,
-                body: `## 👥 Peer Review Assigned
-
-Hi @${author}! Your PR has been automatically paired with @${reviewer} for peer review.
-
-### For @${reviewer}:
-
-This is a great opportunity to practice code review skills! Here's what to look for:
-
-**Content Quality:**
-- [ ] Does the change accomplish what the issue describes?
-- [ ] Is the writing clear and helpful?
-- [ ] Are there any typos or grammar issues?
-
-**Accessibility:**
-- [ ] Proper heading hierarchy (H1 → H2 → H3, no skips)?
-- [ ] Descriptive link text (not "click here")?
-- [ ] Alt text on images?
-- [ ] [TODO] markers removed?
-
-**Documentation:**
-- [ ] Code blocks are properly formatted?
-- [ ] Tables have headers?
-- [ ] References/links work correctly?
-
-**Review Guidelines:**
-- Be kind and constructive
-- Suggest improvements, don't just point out problems
-- Ask questions if something is unclear
-- Approve when ready or request changes with explanation
-
-📖 **Resources:**
-- [How to Review PRs](../../docs/05-working-with-pull-requests.md#reviewing-pull-requests)
-- [Writing Good Review Comments](../../docs/07-culture-etiquette.md#giving-feedback)
-
----
-*Pairing by Learning Room Grouping Engine* 🤝`
+                body: pairBody
               });
               
             } catch (error) {
@@ -285,57 +289,65 @@ This is a great opportunity to practice code review skills! Here's what to look 
             // Create issue for each group
             for (let i = 0; i < groups.length; i++) {
               const group = groups[i];
-              const members = group.map(s => `@${s.username}`).join(', ');
+              const members = group.map(s => '@' + s.username).join(', ');
               
+              const memberList = group
+                .map(s => '- @' + s.username + (s.timezone ? ' (' + s.timezone + ')' : ''))
+                .join('\n');
+              
+              const groupBody = [
+                '## Study Group ' + (i + 1),
+                '',
+                'Welcome to your study group! You\'ve been paired for collaborative learning and peer support.',
+                '',
+                '### Group Members',
+                memberList,
+                '',
+                '### Group Objectives',
+                '',
+                '1. **Peer Review Partnership**',
+                '   - Review each other\'s PRs',
+                '   - Provide constructive feedback',
+                '   - Learn from each other\'s approaches',
+                '',
+                '2. **Collaborative Learning**',
+                '   - Work through challenges together',
+                '   - Share resources and tips',
+                '   - Ask questions in this thread',
+                '',
+                '3. **Accountability**',
+                '   - Check in on progress',
+                '   - Celebrate successes',
+                '   - Support through challenges',
+                '',
+                '### How to Work Together',
+                '',
+                '**Review Rotation:**',
+                '- When anyone opens a PR, request review from someone in your group',
+                '- Aim to review within 24 hours',
+                '- Give thoughtful, kind feedback',
+                '',
+                '**Communication:**',
+                '- Use this issue thread for group chat',
+                '- Tag each other with questions',
+                '- Share helpful resources and insights',
+                '',
+                '**Group Activity:**',
+                'If your group wants a challenge, try the collaborative exercises in [`learning-room/docs/GROUP_CHALLENGES.md`](../../learning-room/docs/GROUP_CHALLENGES.md)',
+                '',
+                '---',
+                '*Grouped by Learning Room Pairing Engine based on: ' + strategy + '*'
+              ].join('\n');
+
               const { data: groupIssue } = await github.rest.issues.create({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                title: `Study Group ${i + 1}: ${group.map(s => s.username).join(', ')}`,
-                body: `## 👥 Study Group ${i + 1}
-
-Welcome to your study group! You've been paired for collaborative learning and peer support.
-
-### Group Members
-${group.map(s => `- @${s.username}${s.timezone ? ` (${s.timezone})` : ''}`).join('\n')}
-
-### Group Objectives
-
-1. **Peer Review Partnership**
-   - Review each other's PRs
-   - Provide constructive feedback
-   - Learn from each other's approaches
-
-2. **Collaborative Learning**
-   - Work through challenges together
-   - Share resources and tips
-   - Ask questions in this thread
-
-3. **Accountability**
-   - Check in on progress
-   - Celebrate successes
-   - Support through challenges
-
-### How to Work Together
-
-**Review Rotation:**
-- When anyone opens a PR, request review from someone in your group
-- Aim to review within 24 hours
-- Give thoughtful, kind feedback
-
-**Communication:**
-- Use this issue thread for group chat
-- Tag each other with questions
-- Share "aha!" moments and helpful resources
-
-**Group Activity:**
-If your group wants a challenge, try the collaborative exercises in [\`learning-room/docs/GROUP_CHALLENGES.md\`](../../learning-room/docs/GROUP_CHALLENGES.md)
-
----
-*Grouped by Learning Room Pairing Engine based on: ${strategy}* 🤝`,
+                title: 'Study Group ' + (i + 1) + ': ' + group.map(s => s.username).join(', '),
+                body: groupBody,
                 labels: ['study-group', 'collaboration']
               });
               
-              console.log(`Created group ${i + 1}: ${members}`);
+              console.log('Created group ' + (i + 1) + ': ' + members);
             }
             
-            console.log(`Created ${groups.length} study groups with strategy: ${strategy}`);
+            console.log('Created ' + groups.length + ' study groups with strategy: ' + strategy);

@@ -65,7 +65,7 @@ When asked to draft a reply to an issue:
 [draft text]
 ---
 
-⚠ This is a draft. Review, edit, and post it yourself. Your name goes on it.
+This is a draft. Review, edit, and post it yourself. Your name goes on it.
 ```
 
 ## Accessibility Requirements

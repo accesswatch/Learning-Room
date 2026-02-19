@@ -157,7 +157,7 @@ Agent Forge agents run in VS Code. But the same `.agent.md` files can also be in
 **Option 1: Copilot Chat with Task mode**
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 1. Open Copilot Chat on GitHub.com (icon in the top-right navigation bar)
 2. Click **Task** in the mode picker
@@ -168,7 +168,7 @@ Agent Forge agents run in VS Code. But the same `.agent.md` files can also be in
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS / VoiceOver)</summary>
+<summary>Screen reader users (NVDA / JAWS / VoiceOver)</summary>
 
 1. Open Copilot Chat on GitHub.com (navigate to icon in top-right navigation → `Enter`)
 2. The mode picker (Task vs Chat) is a set of radio buttons — navigate with `Arrow` keys to select "Task"
@@ -181,7 +181,7 @@ Agent Forge agents run in VS Code. But the same `.agent.md` files can also be in
 **Option 2: Assign an issue to Copilot**
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 1. Open any issue (or create a new one describing the task)
 2. In the **Assignees** sidebar section, click the gear icon
@@ -192,7 +192,7 @@ Agent Forge agents run in VS Code. But the same `.agent.md` files can also be in
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS / VoiceOver)</summary>
+<summary>Screen reader users (NVDA / JAWS / VoiceOver)</summary>
 
 1. Open any issue in the repository
 2. Press `B` to navigate to the Assignees gear button → `Enter` to open the popup
@@ -217,14 +217,14 @@ On any open pull request, GitHub adds a **"Summarize" button** in the PR descrip
 **When to use it:** Before doing a full accessible diff review (Chapter 14), read the Copilot summary first to orient yourself. This is especially helpful with large PRs.
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 On any open PR page, look for a **"Summarize"** or **"Copilot summary"** button near the PR description area. Click it. The summary renders within a few seconds as a new section in the PR description.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+<summary>Screen reader users (NVDA / JAWS)</summary>
 
 ```
 On any PR page:
@@ -249,14 +249,14 @@ On any issue page, Copilot adds sidebar buttons that appear once the page loads:
 - **"Suggest fix"** — proposes an approach to resolving the issue (opens a task/PR workflow)
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 Look in the right sidebar on any issue page for a **Copilot section** with "Explain" and "Suggest fix" buttons. Click the button you want; the response appears below it in the sidebar.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+<summary>Screen reader users (NVDA / JAWS)</summary>
 
 ```
 On any issue page:
@@ -280,14 +280,14 @@ Copilot response appears below the button; use H to navigate to it
 **Why it matters for Agent Forge:** When you build custom agents and prompts, you can test your system prompts and prompt templates in GitHub Models before adding them to your `.prompt.md` files — rapid iteration without burning API credits.
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 Navigate to [github.com/marketplace/models](https://github.com/marketplace/models). Browse model cards and click one to open the chat playground. Type in the prompt field and press **Send**. Results appear in the response area.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+<summary>Screen reader users (NVDA / JAWS)</summary>
 
 ```
 Navigate to https://github.com/marketplace/models
@@ -370,7 +370,7 @@ Sweeps every repository you have access to and builds a prioritized dashboard:
 - No new security alerts
 
 ## Community Activity
-- Your comment on #38 received 3 reactions (👍 ×2, ❤️ ×1)
+- Your comment on #38 received 3 reactions (×2, ×1)
 ```
 
 ---
@@ -616,7 +616,7 @@ Monitors accessibility-sensitive changes across configured repositories:
 ```markdown
 ## Accessibility Changes — agent-forge (Last 5 Commits)
 
-### ⚠️ Issues Found: 2
+### Issues Found: 2
 
 #### Issue 1: Heading Hierarchy Skip
 **File:** docs/11-vscode-basics.md  
@@ -658,7 +658,7 @@ For more information, [click here](https://example.com/guide).
 
 ---
 
-### ✅ Positive Changes: 1
+### Positive Changes: 1
 
 #### Improvement: ARIA Label Added
 **File:** docs/navigation-guide.md  
@@ -1261,12 +1261,12 @@ body:
 ##### Checkpoint: Exercise 1 Complete
 
 Verify you've accomplished:
-- ✅ Used `@template-builder` to generate a template via Ask Questions
-- ✅ Received a complete YAML template
-- ✅ Copied the template and saved it to `.github/ISSUE_TEMPLATE/`
-- ✅ Pushed it to GitHub
-- ✅ Tested it in your fork's issue form
-- ✅ Confirmed it's accessible with screen reader
+- Used `@template-builder` to generate a template via Ask Questions
+- Received a complete YAML template
+- Copied the template and saved it to `.github/ISSUE_TEMPLATE/`
+- Pushed it to GitHub
+- Tested it in your fork's issue form
+- Confirmed it's accessible with screen reader
 
 **What you learned:**
 - How AI agents can automate the mechanical parts of GitHub workflows
@@ -1445,11 +1445,11 @@ A security vulnerability report template ready for your project's use.
 ##### Checkpoint: Exercise 2 Complete
 
 Verify you've accomplished:
-- ✅ Located the agent file (template-builder.agent.md)
-- ✅ Found the Pre-Built Workflows section
-- ✅ Added a new Security Vulnerability workflow with specific fields
-- ✅ Tested the agent to confirm it recognizes your new workflow
-- ✅ Committed and pushed the changes
+- Located the agent file (template-builder.agent.md)
+- Found the Pre-Built Workflows section
+- Added a new Security Vulnerability workflow with specific fields
+- Tested the agent to confirm it recognizes your new workflow
+- Committed and pushed the changes
 
 **What you learned:**
 - How agents are just structured Markdown instructions
@@ -1540,10 +1540,10 @@ Each one follows: describe → generate → refine → deploy.
 ##### Checkpoint: Exercise 3 Complete
 
 Verify you've accomplished:
-- ✅ Generated a feature request template with the agent
-- ✅ Asked for a modification (add checkbox)
-- ✅ Requested further refinement (enhance field)
-- ✅ Observed how the agent maintains context across requests
+- Generated a feature request template with the agent
+- Asked for a modification (add checkbox)
+- Requested further refinement (enhance field)
+- Observed how the agent maintains context across requests
 
 **What you learned:**
 - Agents work best with **iterative dialogue**, not one-shot requests

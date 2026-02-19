@@ -6,10 +6,10 @@ This repository contains **educational curriculum and documentation only** — n
 
 | Content | Supported |
 |---------|-----------|
-| Curriculum documentation (docs/) | ✅ Current main branch |
-| GitHub Actions workflows (.github/workflows/) | ✅ Current main branch |
-| Build scripts (scripts/) | ✅ Current main branch |
-| AI agent prompts (.github/prompts/, .github/agents/) | ✅ Current main branch |
+| Curriculum documentation (docs/) | Current main branch |
+| GitHub Actions workflows (.github/workflows/) | Current main branch |
+| Build scripts (scripts/) | Current main branch |
+| AI agent prompts (.github/prompts/, .github/agents/) | Current main branch |
 
 ## Reporting a Vulnerability
 

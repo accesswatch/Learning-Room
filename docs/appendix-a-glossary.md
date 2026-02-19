@@ -531,9 +531,9 @@ In practice: when you open a PR, you will often see automated checks run (tests,
 ### Status Check
 
 A status check is the result of an automated test or workflow run on a PR. Status checks show as:
-- ✅ Green checkmark — all checks passed
-- ❌ Red X — one or more checks failed
-- 🟡 Yellow dot — checks are still running
+- Green checkmark — all checks passed
+- Red X — one or more checks failed
+- Yellow dot — checks are still running
 
 Maintainers often require status checks to pass before merging.
 

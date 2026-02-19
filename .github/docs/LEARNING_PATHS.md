@@ -2,7 +2,7 @@
 
 This document outlines the structured progression through Learning Room skills and challenges.
 
-## 🎯 Learning Philosophy
+## Learning Philosophy
 
 The Learning Room uses **progressive skill-building**:
 - Start with fundamentals
@@ -13,7 +13,7 @@ The Learning Room uses **progressive skill-building**:
 
 ---
 
-## 📊 Skill Levels Overview
+## Skill Levels Overview
 
 | Level | PRs Required | Focus Area | Challenges Available |
 |-------|--------------|------------|---------------------|
@@ -24,7 +24,7 @@ The Learning Room uses **progressive skill-building**:
 
 ---
 
-## 🌱 Beginner Path (0+ merged PRs)
+## Beginner Path (0+ merged PRs)
 
 ### Goal
 Get comfortable with GitHub workflow and Markdown basics.
@@ -89,7 +89,7 @@ Get comfortable with GitHub workflow and Markdown basics.
 
 ---
 
-## 🌿 Intermediate Path (1+ merged PRs)
+## Intermediate Path (1+ merged PRs)
 
 ### Goal
 Master accessibility fundamentals and document structure.
@@ -165,7 +165,7 @@ Master accessibility fundamentals and document structure.
 
 ---
 
-## 🌳 Advanced Path (3+ merged PRs)
+## Advanced Path (3+ merged PRs)
 
 ### Goal
 Conduct comprehensive accessibility reviews and mentor others.
@@ -259,7 +259,7 @@ Conduct comprehensive accessibility reviews and mentor others.
 
 ---
 
-## 🌲 Expert Path (5+ merged PRs)
+## Expert Path (5+ merged PRs)
 
 ### Goal
 Create learning content and lead community initiatives.
@@ -350,7 +350,7 @@ Create learning content and lead community initiatives.
 
 ---
 
-## 🔄 Cross-Level Challenges
+## Cross-Level Challenges
 
 These can be attempted at any level:
 
@@ -374,7 +374,7 @@ Master a specific tool and teach others:
 
 ---
 
-## 📈 Tracking Your Progress
+## Tracking Your Progress
 
 ### Automatic Tracking
 The Skills Progression Engine automatically:
@@ -399,15 +399,15 @@ After each merged PR:
 
 ---
 
-## 🎓 Graduation & Beyond
+## Graduation & Beyond
 
 ### Completing the Program
 
 You "graduate" when you:
-- ✅ Reach Expert level (5+ merged PRs)
-- ✅ Complete at least one challenge from each level
-- ✅ Mentor at least one peer
-- ✅ Create new learning content (challenge, doc, or template)
+- Reach Expert level (5+ merged PRs)
+- Complete at least one challenge from each level
+- Mentor at least one peer
+- Create new learning content (challenge, doc, or template)
 
 ### Next Steps
 
@@ -431,7 +431,7 @@ You "graduate" when you:
 
 ---
 
-## 🆘 Support & Questions
+## Support & Questions
 
 - **Stuck on a challenge?** Comment on your PR and tag your peer reviewer
 - **Need conceptual help?** Ask in your study group issue
@@ -440,7 +440,7 @@ You "graduate" when you:
 
 ---
 
-## 📚 Additional Resources
+## Additional Resources
 
 ### Accessibility
 - [WebAIM](https://webaim.org/)
@@ -458,4 +458,4 @@ You "graduate" when you:
 
 ---
 
-*Progressive learning paths designed for diverse learners. Go at your own pace, support each other, and celebrate every achievement!* 🌟
+*Progressive learning paths designed for diverse learners. Go at your own pace, support each other, and celebrate every achievement!*

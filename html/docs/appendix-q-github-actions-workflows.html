@@ -163,7 +163,7 @@
       <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Run</span> <span class="hljs-string">tests</span>
         <span class="hljs-attr">run:</span> <span class="hljs-string">npm</span> <span class="hljs-string">test</span>             <span class="hljs-comment"># Another shell command</span></code></pre>
 <p><strong>Reading this:</strong> The workflow named &quot;CI&quot; runs when code is pushed to <code>main</code> or a PR targets <code>main</code>. It creates one job called <code>test</code> that runs on Linux. That job checks out the code, installs Node.js, installs dependencies, and runs the test suite.</p>
-<p>If <code>npm test</code> exits with an error, the job fails, and that failure shows up as a red ❌ on your pull request.</p>
+<p>If <code>npm test</code> exits with an error, the job fails, and that failure shows up as a red on your pull request.</p>
 <hr>
 <h2>5. What Triggers a Workflow</h2>
 <p>The most common triggers you will encounter as a contributor:</p>
@@ -246,7 +246,7 @@
 <td>Usually fine — skipped by design</td>
 </tr>
 <tr>
-<td>⚠</td>
+<td></td>
 <td>Yellow</td>
 <td>Non-blocking warning</td>
 <td>Review but may not block merge</td>
@@ -587,7 +587,7 @@ Tab          <span class="hljs-keyword">Move </span><span class="hljs-keyword">b
 </tbody></table>
 <hr>
 <blockquote>
-<h3>🔥 Day 2 Bridge — From Actions to Agentic Workflows</h3>
+<h3>Day 2 Bridge — From Actions to Agentic Workflows</h3>
 <p><strong>Understand standard YAML workflow files before engaging with agentic workflows.</strong> GitHub Agentic Workflows are not a separate technology — they are the next layer on top of what you learned here. They share the same trigger model, the same permissions system, and the same <code>.github/workflows/</code> directory. You cannot evaluate whether an agentic workflow is safe or correct unless you can already read a standard one.</p>
 <p>The three layers, in sequence — each builds on the one before it:</p>
 <ol>

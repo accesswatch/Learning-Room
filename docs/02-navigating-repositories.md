@@ -58,14 +58,14 @@ The main tabs are: **Code**, **Issues**, **Pull Requests**, **Discussions**, **A
 ### How to reach the tabs
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 The tab bar is visible just below the repository name. Click the tab you want — **Code**, **Issues**, **Pull requests**, etc. The active tab is underlined. The number next to a tab (e.g., "Issues · 14") shows how many open items are in that section.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+<summary>Screen reader users (NVDA / JAWS)</summary>
 
 1. Press `D` to jump to the **"Repository navigation"** landmark
 2. Press `K` or `Tab` to navigate between the tab links
@@ -73,7 +73,7 @@ The tab bar is visible just below the repository name. Click the tab you want �
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver)</summary>
+<summary>Screen reader users (VoiceOver)</summary>
 
 1. `VO+U` → Landmarks rotor → navigate to **"Repository navigation"**
 2. `VO+Right` to move through items in the landmark
@@ -92,14 +92,14 @@ The files table is the core of the Code tab — it shows every file and folder i
 ### Reaching the files table
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 The file table is the main panel of the Code tab, showing folders and files with their most recent commit message and how long ago each was changed. It’s visible immediately below the branch selector. Click any folder name to open it, or click a file name to view the file.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users</summary>
+<summary>Screen reader users</summary>
 
 Press `T` to jump to the next table on the page. The first table you will hit is usually the files table. NVDA will announce: “Table with [N] rows and 3 columns.”
 
@@ -137,14 +137,14 @@ The branch selector button sits just above the files table. It lets you switch w
 ### How to open the branch selector
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 Mouse users see the current branch name as a button with a dropdown arrow (e.g., `main ▼`) just above the file table. Click it to open the branch list. Type to filter branches, then click a branch name to switch.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+<summary>Screen reader users (NVDA / JAWS)</summary>
 
 1. After reaching the repository navigation landmark, press `B` to navigate to buttons
 2. The branch button reads: “[branch-name] branch” (e.g., “main branch”)
@@ -153,7 +153,7 @@ Mouse users see the current branch name as a button with a dropdown arrow (e.g.,
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver)</summary>
+<summary>Screen reader users (VoiceOver)</summary>
 
 1. `Tab` to the branch button (it will be labeled with the current branch name)
 2. `VO+Space` to open
@@ -194,7 +194,7 @@ The repository page reloads showing the code at that tagged version.
 Cloning copies the repository to your local machine so you can work with it in VS Code or the terminal.
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 1. On the repository’s main page (Code tab), find and click the green **Code** button above the file table
 2. A popover opens showing **HTTPS**, **SSH**, and **GitHub CLI** tabs
@@ -205,7 +205,7 @@ Cloning copies the repository to your local machine so you can work with it in V
 </details>
 
 <details>
-<summary>🔊 Screen reader users</summary>
+<summary>Screen reader users</summary>
 
 1. Press `1` or `Shift+1` to navigate to the repository h1 heading
 2. Press `B` to navigate to the next button — look for the **“Code”** button
@@ -230,14 +230,14 @@ These three actions let you follow, bookmark, or copy a repository.
 ### Watching (subscribe to notifications)
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 The **Watch**, **Star**, and **Fork** buttons are at the top-right of the repository page, just below the global navigation bar. Click **Watch** to open a dropdown of subscription options: **Participating and @mentions**, **All Activity**, or **Ignore**. Select your preference and click **Apply**.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users</summary>
+<summary>Screen reader users</summary>
 
 1. Press `L` to navigate through list items to reach the **Main** landmark
 2. Continue pressing `L` until you find the **Watch** button (reads as “Watch this repository”)
@@ -250,14 +250,14 @@ The **Watch**, **Star**, and **Fork** buttons are at the top-right of the reposi
 ### Forking (create your own copy)
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 Click the **Fork** button (top-right, next to Watch and Star). A page opens asking you to choose the owner and repository name for your fork. Fill in the details and click **Create fork**.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users</summary>
+<summary>Screen reader users</summary>
 
 1. Press `L` to navigate list items in the Main landmark
 2. Press `I` to navigate individual list items until you find “Fork your own copy”
@@ -270,14 +270,14 @@ Click the **Fork** button (top-right, next to Watch and Star). A page opens aski
 ### Starring (bookmarking)
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 Click the **Star** button (top-right). The button changes to **Starred** with a filled star icon to confirm. Click it again to unstar.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users</summary>
+<summary>Screen reader users</summary>
 
 1. Press `L` to navigate list items in the Main landmark
 2. Press `I` to navigate individual list items until you find “Star this repository”
@@ -335,7 +335,7 @@ Press `B` from within the file area, OR use `D` to navigate to the "Repository f
 ### Editing a file
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 1. Open the file you want to edit
 2. Click the **pencil icon** (Edit file) in the top-right of the file content area
@@ -346,7 +346,7 @@ Press `B` from within the file area, OR use `D` to navigate to the "Repository f
 </details>
 
 <details>
-<summary>🔊 Screen reader users</summary>
+<summary>Screen reader users</summary>
 
 1. Open the file you want to edit
 2. Press `K` to navigate links until you find the **“Edit file”** link (may be labeled with a pencil icon description)
@@ -537,7 +537,7 @@ Navigate to [github.com/accesswatch/agent-forge](https://github.com/accesswatch/
 
 ---
 
-> ### 🔥 Day 2 Amplifier — Agent Forge: `@daily-briefing`
+> ### Day 2 Amplifier — Agent Forge: `@daily-briefing`
 >
 > **Navigate every folder of `agent-forge` manually today before using any agent.** Find `.github/agents/`, open a `.agent.md` file, and read it — that file is how an agent knows what to do. You must understand the structure before you can evaluate whether an agent understood it correctly.
 >

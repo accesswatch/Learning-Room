@@ -32,38 +32,38 @@ GitHub has a hidden feature: if you create a repository named exactly **your-use
 **Example profile README:**
 
 ```markdown
-# Hi, I'm Jane Smith 👋
+# Hi, I'm Jane Smith
 
 I'm an accessibility advocate and open source contributor focused on making the web more inclusive.
 
-## 🔭 Current focus
+## Current focus
 - Contributing to NVDA documentation
 - Building accessible React components
 - Learning TypeScript
 
-## 🌱 Skills
+## Skills
 - JavaScript, Python, HTML/CSS
 - Screen reader testing (NVDA, JAWS, VoiceOver)
 - Git, GitHub, GitHub Actions
 
-## 📫 Get in touch
+## Get in touch
 - Email: jane@example.com
 - LinkedIn: [linkedin.com/in/janesmith](https://linkedin.com/in/janesmith)
 
-## ⚡ Fun fact
+## Fun fact
 I've been using screen readers for 8 years and believe accessible design is better design for everyone.
 ```
 
 ### Profile README Best Practices
 
-✅ **Keep it concise** — visitors skim, not read  
-✅ **Update occasionally** — a README from 2019 looks stale  
-✅ **Be authentic** — people connect with real humans, not buzzwords  
-✅ **Include links** — make it easy to learn more or get in touch  
+**Keep it concise** — visitors skim, not read  
+**Update occasionally** — a README from 2019 looks stale  
+**Be authentic** — people connect with real humans, not buzzwords  
+**Include links** — make it easy to learn more or get in touch  
 
-❌ **Avoid excessive badges** — 50 skill badges is visual clutter and screen reader noise  
-❌ **Skip auto-generated stats** — "commits per day" widgets are often inaccessible  
-❌ **Don't overthink it** — a simple paragraph is better than nothing  
+**Avoid excessive badges** — 50 skill badges is visual clutter and screen reader noise  
+**Skip auto-generated stats** — "commits per day" widgets are often inaccessible  
+**Don't overthink it** — a simple paragraph is better than nothing  
 
 ### Screen Reader Considerations
 
@@ -88,7 +88,7 @@ I've been using screen readers for 8 years and believe accessible design is bett
 
 **Status:**
 
-- Set a temporary status message (e.g., "🏖️ On vacation until March 15")
+- Set a temporary status message (e.g., "On vacation until March 15")
 - Navigate to your profile → Select the smile icon → Set status
 
 ---

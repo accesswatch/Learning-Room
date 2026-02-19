@@ -289,7 +289,7 @@ summary:focus {
 }
 
 .markdown-body summary::before {
-  content: '▶ ';
+  content: '';
   font-size: 0.75em;
   vertical-align: middle;
 }

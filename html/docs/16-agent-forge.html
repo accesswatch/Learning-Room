@@ -212,7 +212,7 @@ Accessibility issues first, then review requests, then CI failures</code></pre>
 <p>Agent Forge agents run in VS Code. But the same <code>.agent.md</code> files can also be invoked directly on GitHub.com — no VS Code, no local clone required.</p>
 <p><strong>Option 1: Copilot Chat with Task mode</strong></p>
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 <ol>
 <li>Open Copilot Chat on GitHub.com (icon in the top-right navigation bar)</li>
@@ -224,7 +224,7 @@ Accessibility issues first, then review requests, then CI failures</code></pre>
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS / VoiceOver)</summary>
+<summary>Screen reader users (NVDA / JAWS / VoiceOver)</summary>
 
 <ol>
 <li>Open Copilot Chat on GitHub.com (navigate to icon in top-right navigation → <code>Enter</code>)</li>
@@ -237,7 +237,7 @@ Accessibility issues first, then review requests, then CI failures</code></pre>
 
 <p><strong>Option 2: Assign an issue to Copilot</strong></p>
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 <ol>
 <li>Open any issue (or create a new one describing the task)</li>
@@ -249,7 +249,7 @@ Accessibility issues first, then review requests, then CI failures</code></pre>
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS / VoiceOver)</summary>
+<summary>Screen reader users (NVDA / JAWS / VoiceOver)</summary>
 
 <ol>
 <li>Open any issue in the repository</li>
@@ -268,13 +268,13 @@ Accessibility issues first, then review requests, then CI failures</code></pre>
 <p>On any open pull request, GitHub adds a <strong>&quot;Summarize&quot; button</strong> in the PR description area. Selecting it generates a plain-language summary of what the PR changes, why, and what reviewers should focus on.</p>
 <p><strong>When to use it:</strong> Before doing a full accessible diff review (Chapter 14), read the Copilot summary first to orient yourself. This is especially helpful with large PRs.</p>
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 <p>On any open PR page, look for a <strong>&quot;Summarize&quot;</strong> or <strong>&quot;Copilot summary&quot;</strong> button near the PR description area. Click it. The summary renders within a few seconds as a new section in the PR description.</p>
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+<summary>Screen reader users (NVDA / JAWS)</summary>
 
 <pre><code class="hljs">On <span class="hljs-keyword">any</span> PR page:
 B → navigate buttons → find <span class="hljs-string">&quot;Summarize&quot;</span> <span class="hljs-keyword">or</span> <span class="hljs-string">&quot;Copilot summary&quot;</span> button → Enter
@@ -293,13 +293,13 @@ H <span class="hljs-keyword">or</span> <span class="hljs-number">2</span> → na
 <li><strong>&quot;Suggest fix&quot;</strong> — proposes an approach to resolving the issue (opens a task/PR workflow)</li>
 </ul>
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 <p>Look in the right sidebar on any issue page for a <strong>Copilot section</strong> with &quot;Explain&quot; and &quot;Suggest fix&quot; buttons. Click the button you want; the response appears below it in the sidebar.</p>
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+<summary>Screen reader users (NVDA / JAWS)</summary>
 
 <pre><code class="hljs">On <span class="hljs-keyword">any</span> issue page:
 H <span class="hljs-keyword">or</span> <span class="hljs-number">2</span> → navigate <span class="hljs-built_in">to</span> <span class="hljs-string">&quot;Copilot&quot;</span> section heading <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> sidebar
@@ -318,13 +318,13 @@ Copilot response appears below <span class="hljs-keyword">the</span> button; use
 </ul>
 <p><strong>Why it matters for Agent Forge:</strong> When you build custom agents and prompts, you can test your system prompts and prompt templates in GitHub Models before adding them to your <code>.prompt.md</code> files — rapid iteration without burning API credits.</p>
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 <p>Navigate to <a href="https://github.com/marketplace/models">github.com/marketplace/models</a>. Browse model cards and click one to open the chat playground. Type in the prompt field and press <strong>Send</strong>. Results appear in the response area.</p>
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+<summary>Screen reader users (NVDA / JAWS)</summary>
 
 <pre><code class="hljs">Navigate <span class="hljs-built_in">to</span> <span class="hljs-keyword">https</span>://github.com/marketplace/models
 H → <span class="hljs-string">&quot;Models&quot;</span> h1, <span class="hljs-keyword">then</span> model category headings
@@ -381,7 +381,7 @@ Response appears below <span class="hljs-keyword">the</span> Send button; use H 
 <span class="hljs-bullet">-</span> No new security alerts
 
 <span class="hljs-section">## Community Activity</span>
-<span class="hljs-bullet">-</span> Your comment on #38 received 3 reactions (👍 ×2, ❤️ ×1)</code></pre>
+<span class="hljs-bullet">-</span> Your comment on #38 received 3 reactions (×2, ×1)</code></pre>
 <hr>
 <h3>Agent 2: <code>@issue-tracker</code> — Issue Management</h3>
 <p><strong>Type:</strong> Both (Informational + Task-oriented)</p>
@@ -571,7 +571,7 @@ This is a valuable addition to the guide. The three typos and one clarification 
 <p><strong>Output example:</strong></p>
 <pre><code class="hljs language-markdown"><span class="hljs-section">## Accessibility Changes — agent-forge (Last 5 Commits)</span>
 
-<span class="hljs-section">### ⚠️ Issues Found: 2</span>
+<span class="hljs-section">### Issues Found: 2</span>
 
 <span class="hljs-section">#### Issue 1: Heading Hierarchy Skip</span>
 <span class="hljs-strong">**File:**</span> docs/11-vscode-basics.md  
@@ -596,7 +596,7 @@ This is a valuable addition to the guide. The three typos and one clarification 
 <p><strong>Impact:</strong> Screen reader users navigating by links will hear &quot;click here&quot; with no context about the destination.</p>
 <p><strong>Suggested Fix:</strong> Use descriptive link text: <code>Read the [complete setup guide](https://example.com/guide).</code></p>
 <hr>
-<h3>✅ Positive Changes: 1</h3>
+<h3>Positive Changes: 1</h3>
 <h4>Improvement: ARIA Label Added</h4>
 <p><strong>File:</strong> docs/navigation-guide.md<br><strong>Commit:</strong> c7d4e2f<br><strong>Line:</strong> 89  </p>
 <p><strong>Change:</strong> Added <code>aria-label</code> to icon-only button example</p>
@@ -1160,12 +1160,12 @@ git push origin main</code></pre>
 <h5>Checkpoint: Exercise 1 Complete</h5>
 <p>Verify you&#39;ve accomplished:</p>
 <ul>
-<li>✅ Used <code>@template-builder</code> to generate a template via Ask Questions</li>
-<li>✅ Received a complete YAML template</li>
-<li>✅ Copied the template and saved it to <code>.github/ISSUE_TEMPLATE/</code></li>
-<li>✅ Pushed it to GitHub</li>
-<li>✅ Tested it in your fork&#39;s issue form</li>
-<li>✅ Confirmed it&#39;s accessible with screen reader</li>
+<li>Used <code>@template-builder</code> to generate a template via Ask Questions</li>
+<li>Received a complete YAML template</li>
+<li>Copied the template and saved it to <code>.github/ISSUE_TEMPLATE/</code></li>
+<li>Pushed it to GitHub</li>
+<li>Tested it in your fork&#39;s issue form</li>
+<li>Confirmed it&#39;s accessible with screen reader</li>
 </ul>
 <p><strong>What you learned:</strong></p>
 <ul>
@@ -1330,11 +1330,11 @@ git push origin main</code></pre>
 <h5>Checkpoint: Exercise 2 Complete</h5>
 <p>Verify you&#39;ve accomplished:</p>
 <ul>
-<li>✅ Located the agent file (template-builder.agent.md)</li>
-<li>✅ Found the Pre-Built Workflows section</li>
-<li>✅ Added a new Security Vulnerability workflow with specific fields</li>
-<li>✅ Tested the agent to confirm it recognizes your new workflow</li>
-<li>✅ Committed and pushed the changes</li>
+<li>Located the agent file (template-builder.agent.md)</li>
+<li>Found the Pre-Built Workflows section</li>
+<li>Added a new Security Vulnerability workflow with specific fields</li>
+<li>Tested the agent to confirm it recognizes your new workflow</li>
+<li>Committed and pushed the changes</li>
 </ul>
 <p><strong>What you learned:</strong></p>
 <ul>
@@ -1414,10 +1414,10 @@ git push origin main</code></pre>
 <h5>Checkpoint: Exercise 3 Complete</h5>
 <p>Verify you&#39;ve accomplished:</p>
 <ul>
-<li>✅ Generated a feature request template with the agent</li>
-<li>✅ Asked for a modification (add checkbox)</li>
-<li>✅ Requested further refinement (enhance field)</li>
-<li>✅ Observed how the agent maintains context across requests</li>
+<li>Generated a feature request template with the agent</li>
+<li>Asked for a modification (add checkbox)</li>
+<li>Requested further refinement (enhance field)</li>
+<li>Observed how the agent maintains context across requests</li>
 </ul>
 <p><strong>What you learned:</strong></p>
 <ul>

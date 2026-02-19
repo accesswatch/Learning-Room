@@ -34,14 +34,14 @@ Labels are announced as: "Label: bug" or "Labels: accessibility, good first issu
 From a repository:
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 Go to the **Issues** tab, then click the **Labels** link/button (it’s in the filter toolbar above the issue list, next to Milestones). The Labels page shows every label with its colour, name, and description.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+<summary>Screen reader users (NVDA / JAWS — Windows)</summary>
 
 1. Navigate to the Issues tab
 2. Press `K` to find the "Labels" link (near the "Milestones" link in the toolbar)
@@ -50,7 +50,7 @@ Go to the **Issues** tab, then click the **Labels** link/button (it’s in the f
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 1. Navigate to the Issues tab
 2. Quick Nav `K` to find the "Labels" link (near the "Milestones" link in the toolbar)
@@ -63,14 +63,14 @@ Go to the **Issues** tab, then click the **Labels** link/button (it’s in the f
 From an open issue or PR:
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
-In the right sidebar, click the gear icon (⚙️) next to **Labels**. A dropdown opens showing all labels. Click a label to apply it (a checkmark appears). Click outside to close — the label appears immediately on the issue.
+In the right sidebar, click the gear icon () next to **Labels**. A dropdown opens showing all labels. Click a label to apply it (a checkmark appears). Click outside to close — the label appears immediately on the issue.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+<summary>Screen reader users (NVDA / JAWS — Windows)</summary>
 
 1. Navigate to the sidebar → press `H` or `3` to find the "Labels" heading
 2. Activate the Labels gear/edit button (`B` until you hear "Labels" button → `Enter`)
@@ -81,7 +81,7 @@ In the right sidebar, click the gear icon (⚙️) next to **Labels**. A dropdow
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 1. `VO+U` → Headings or Quick Nav `H` to find the "Labels" heading in the sidebar
 2. Quick Nav `B` to find the "Labels" gear/edit button → `VO+Space`
@@ -94,7 +94,7 @@ In the right sidebar, click the gear icon (⚙️) next to **Labels**. A dropdow
 ### Filtering Issues by Label
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 - **Using the filter button:** From the Issues list, click the **Label** dropdown button above the issue list, choose the label(s) you want, then click outside to apply. The active filter shows in the search bar.
 - **Using the search bar:** Click in the search/filter bar and type `label:accessibility` (for example) along with any other filters.
@@ -102,7 +102,7 @@ In the right sidebar, click the gear icon (⚙️) next to **Labels**. A dropdow
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+<summary>Screen reader users (NVDA / JAWS — Windows)</summary>
 
 **Option A — Filter bar:** Press `F` → type `is:open label:accessibility` → `Enter`
 
@@ -113,7 +113,7 @@ In the right sidebar, click the gear icon (⚙️) next to **Labels**. A dropdow
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 **Option A — Filter bar:** Quick Nav `F` to find the search bar → `VO+Shift+Down` to interact → type `is:open label:accessibility` → `Return`
 
@@ -164,14 +164,14 @@ Each milestone is announced as a heading + progress information:
 ### Adding an Issue to a Milestone
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 From the open issue, find the **Milestone** section in the right sidebar and click the gear icon. A dropdown lists available milestones — click one to assign it.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+<summary>Screen reader users (NVDA / JAWS — Windows)</summary>
 
 1. Navigate to the sidebar → "Milestone" heading (`H` or `3`)
 2. Activate the Milestone gear button
@@ -181,7 +181,7 @@ From the open issue, find the **Milestone** section in the right sidebar and cli
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 1. Quick Nav `H` or `VO+Cmd+H` to find the "Milestone" heading in the sidebar
 2. Quick Nav `B` to find and activate the Milestone gear button (`VO+Space`)
@@ -350,7 +350,7 @@ Go to the Learning Room repository and do two things:
 
 ---
 
-> ### 🔥 Day 2 Amplifier — Agent Forge: `@issue-tracker` with Labels
+> ### Day 2 Amplifier — Agent Forge: `@issue-tracker` with Labels
 >
 > **Apply labels and milestones manually in today's exercises before using any agent.** Labels are the language that automation uses to filter, route, and prioritize work. If you have not designed and applied them yourself, you cannot configure them correctly for automated use — and you cannot tell when automation is applying the wrong ones.
 >

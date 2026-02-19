@@ -248,7 +248,7 @@ This lets you commit only part of your work, leaving the rest for a later commit
 ### Staging an Entire File
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 1. Open Source Control: `Ctrl+Shift+G` (Mac: `Cmd+Shift+G`)
 2. Hover over a file in the "Changes" list — a **+** icon appears to its right
@@ -258,7 +258,7 @@ This lets you commit only part of your work, leaving the rest for a later commit
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS / VoiceOver)</summary>
+<summary>Screen reader users (NVDA / JAWS / VoiceOver)</summary>
 
 1. Open Source Control: `Ctrl+Shift+G` (Mac: `Cmd+Shift+G`)
 2. Navigate to the file in the "Changes" list

@@ -622,7 +622,7 @@ Your personal `*.instructions.md`, `*.agent.md`, and `*.prompt.md` files will sy
 
 To see which instruction files, agents, prompts, and skills are currently loaded — and check for errors:
 
-1. **Configure Chat Gear:** Click the gear (⚙) icon in the Copilot Chat header → "Diagnostics"
+1. **Configure Chat Gear:** Click the gear () icon in the Copilot Chat header → "Diagnostics"
 2. **Right-click method:** Right-click in the Chat view → "Diagnostics"
 
 The Diagnostics panel shows:
@@ -707,7 +707,7 @@ The Diagnostics panel shows:
 | New instructions file | `Ctrl+Shift+P` → "Chat: New Instructions File" |
 | New prompt/slash command file | `Ctrl+Shift+P` → "Chat: New Prompt File" |
 | Configure instructions | `Ctrl+Shift+P` → "Chat: Configure Instructions" |
-| View all loaded files and errors | Chat gear ⚙ → Diagnostics |
+| View all loaded files and errors | Chat gear → Diagnostics |
 
 ---
 

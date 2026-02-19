@@ -2,7 +2,7 @@
 
 This guide walks you through setting up and activating the complete Learning Room automation system from scratch.
 
-## 📋 Overview
+## Overview
 
 The Learning Room automation provides:
 - **PR validation bot** with accessibility checking and educational feedback
@@ -15,7 +15,7 @@ The Learning Room automation provides:
 
 ---
 
-## ✅ Pre-Implementation Checklist
+## Pre-Implementation Checklist
 
 Before starting, ensure you have:
 
@@ -28,7 +28,7 @@ Before starting, ensure you have:
 
 ---
 
-## 📦 Step 1: Install Core Automation Files
+## Step 1: Install Core Automation Files
 
 ### 1.1 Create Directory Structure
 
@@ -74,7 +74,7 @@ Copy these docs:
 
 ---
 
-## 🔧 Step 2: Configure for Your Repository
+## Step 2: Configure for Your Repository
 
 ### 2.1 Update Student Roster
 
@@ -151,7 +151,7 @@ To personalize bot language, edit:
 
 ---
 
-## 🚀 Step 3: Test the Automation
+## Step 3: Test the Automation
 
 ### 3.1 Create a Test PR
 
@@ -214,7 +214,7 @@ Verify:
 
 ---
 
-## 🎓 Step 4: Prepare Learning Content
+## Step 4: Prepare Learning Content
 
 ### 4.1 Create Practice Issues
 
@@ -270,7 +270,7 @@ Find and fix the broken internal link in `learning-room/docs/welcome.md`.
 - [ ] Bot validation passes
 - [ ] Peer review approves
 
-📖 **Resources:**
+**Resources:**
 - [Markdown Guide: Links](https://www.markdownguide.org/basic-syntax/#links)
 - [Workshop: Working with PRs](../../docs/05-working-with-pull-requests.md)
 ```
@@ -309,7 +309,7 @@ Test all internal links before workshop.
 
 ---
 
-## 📢 Step 5: Communicate to Students
+## Step 5: Communicate to Students
 
 ### 5.1 Update Main README
 
@@ -335,11 +335,11 @@ In `docs/02-day1-agenda.md` (or your Day 1 materials):
 
 Send to students before workshop:
 
-> 📧 **Pre-Workshop Note:** This workshop uses intelligent automation! When you open pull requests, a friendly bot will provide instant feedback on accessibility and document quality. The bot teaches alongside human reviewers - you'll experience both automated checks (like real CI/CD systems) and human code review. No need to prepare anything, just be ready to learn!
+> **Pre-Workshop Note:** This workshop uses intelligent automation! When you open pull requests, a friendly bot will provide instant feedback on accessibility and document quality. The bot teaches alongside human reviewers - you'll experience both automated checks (like real CI/CD systems) and human code review. No need to prepare anything, just be ready to learn!
 
 ---
 
-## 🎯 Step 6: During the Workshop
+## Step 6: During the Workshop
 
 ### 6.1 Introduce the Automation (Day 1, Block 5)
 
@@ -382,7 +382,7 @@ If workshop has 6+ students:
 
 ---
 
-## 🔍 Step 7: Troubleshooting
+## Step 7: Troubleshooting
 
 ### Bot not commenting
 
@@ -447,7 +447,7 @@ Edit `.github/data/student-roster.json`:
 
 ---
 
-## 📊 Step 8: Post-Workshop Review
+## Step 8: Post-Workshop Review
 
 ### 8.1 Collect Automation Feedback
 
@@ -502,7 +502,7 @@ Based on feedback:
 
 ---
 
-## 🚀 Advanced: Customizations
+## Advanced: Customizations
 
 ### Adding New Validation Checks
 
@@ -538,7 +538,7 @@ Edit `.github/data/challenge-progression.json`:
 {
   "badges": {
     "custom-skill": {
-      "emoji": "🎨",
+      "emoji": "",
       "title": "Custom Achievement",
       "description": "Completed custom challenge"
     }
@@ -579,7 +579,7 @@ Create GitHub Pages site that reads `student-roster.json` and displays:
 
 ---
 
-## 📚 Additional Resources
+## Additional Resources
 
 ### For Students
 - [Automation Guide](../../learning-room/AUTOMATION.md) — How the bot works
@@ -596,7 +596,7 @@ See this repository as working example of full system.
 
 ---
 
-## ✅ Implementation Checklist
+## Implementation Checklist
 
 Print this before starting:
 
@@ -640,4 +640,4 @@ Print this before starting:
 
 ---
 
-This automation system transforms the Learning Room into a GitHub Skills-quality experience while maintaining the human connection that makes learning meaningful. 🚀♿💙
+This automation system transforms the Learning Room into a GitHub Skills-quality experience while maintaining the human connection that makes learning meaningful.

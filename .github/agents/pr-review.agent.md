@@ -46,7 +46,7 @@ When asked for line-level comments:
 
 ```
 ## PR Review Draft — #[number]: [title]
-⚠ Draft only. Review, edit, and submit this under your own name.
+Draft only. Review, edit, and submit this under your own name.
 
 ### Summary
 [2–4 sentences: what changed, why, scope]
@@ -73,7 +73,7 @@ Reason: [specific explanation]
 ### Review Verdict Recommendation
 Suggested verdict: [Comment / Approve / Request Changes]
 Reason: [brief explanation]
-⚠ The reviewer decides the final verdict — not this document.
+The reviewer decides the final verdict — not this document.
 ```
 
 ## Accessibility Requirements

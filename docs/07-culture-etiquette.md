@@ -36,7 +36,7 @@ Before diving into communication norms, it helps to understand the workflow that
 6. Merge
    └─ A maintainer merges your PR into main
       The linked issue closes automatically
-      Your contribution is now part of the project ✅
+      Your contribution is now part of the project
 ```
 
 ### Why This Model Works
@@ -70,7 +70,7 @@ When you fork a repository, you get a snapshot of the project at that moment. Th
 ### Method 1: GitHub Web Interface (Easiest)
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 1. Navigate to your fork's main page: `github.com/your-username/repo-name`
 2. Look for the sync indicator: "This branch is X commits behind upstream/main"
@@ -82,7 +82,7 @@ GitHub merges the upstream changes into your fork automatically.
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS / VoiceOver)</summary>
+<summary>Screen reader users (NVDA / JAWS / VoiceOver)</summary>
 
 1. Navigate to your fork's main page: `github.com/your-username/repo-name`
 2. The sync button appears in the landmark that contains the branch selector
@@ -154,13 +154,13 @@ Every commit you make includes a message describing what changed. Good commit me
 
 **Use the imperative mood:** Write as if giving a command to the codebase.
 
-✅ "Fix broken link in README"  
-✅ "Add alt text to hero image"  
-✅ "Remove deprecated function"  
+"Fix broken link in README"  
+"Add alt text to hero image"  
+"Remove deprecated function"  
 
-❌ "Fixed broken link" — past tense  
-❌ "Fixing broken link" — gerund  
-❌ "I fixed the broken link" — too personal  
+"Fixed broken link" — past tense  
+"Fixing broken link" — gerund  
+"I fixed the broken link" — too personal  
 
 **Why imperative?** It matches Git's autogen messages: "Merge pull request #42" or "Revert commit abc123."
 
@@ -213,8 +213,8 @@ When the commit is merged, GitHub automatically closes linked issues.
 
 Each commit should represent **one logical change**. Don't bundle unrelated fixes into a single commit.
 
-✅ Good: One commit adds alt text; another fixes a typo  
-❌ Bad: One commit adds alt text, fixes a typo, reformats code, and updates dependencies  
+Good: One commit adds alt text; another fixes a typo  
+Bad: One commit adds alt text, fixes a typo, reformats code, and updates dependencies  
 
 **Why?** If a commit introduces a bug, you want to revert just that change—not everything.
 
@@ -288,8 +288,8 @@ Before identifying problems, name what is good. This is not flattery — it is a
 
 Be precise. Vague feedback is not actionable.
 
-❌ "This code is inaccessible."  
-✅ "This button has no accessible name — `aria-label` or visible text is needed for screen readers to announce its purpose."
+"This code is inaccessible."  
+"This button has no accessible name — `aria-label` or visible text is needed for screen readers to announce its purpose."
 
 ### 3. Explain why it matters
 
@@ -318,13 +318,13 @@ Help contributors understand what is a blocker versus a preference.
 
 ### Prefer "we" or describe the code, not the person
 
-❌ "You made an error here."  
-✅ "There's an error here." or "This line does X but we need Y."
+"You made an error here."  
+"There's an error here." or "This line does X but we need Y."
 
 ### Use tentative language for uncertainty
 
-❌ "This will crash on mobile."  
-✅ "I think this might cause issues on mobile — have you tested with a narrower viewport?"
+"This will crash on mobile."  
+"I think this might cause issues on mobile — have you tested with a narrower viewport?"
 
 ### Acknowledge cultural and language diversity
 
@@ -338,8 +338,8 @@ Open source is global. Contributors may be:
 
 ### Avoid urgency markers unless genuinely urgent
 
-❌ "I need this fixed ASAP"  
-✅ "This is blocking our release scheduled for next Friday — is there capacity to look at it this week?"
+"I need this fixed ASAP"  
+"This is blocking our release scheduled for next Friday — is there capacity to look at it this week?"
 
 ---
 
@@ -355,10 +355,10 @@ If you asked a question and got an answer, respond. "Thanks, that makes sense" o
 On a PR, conversations (inline comment threads) can be "resolved" once addressed. The author of the change and the reviewer can both resolve them. If you addressed a reviewer's comment, resolve the thread and leave a note: "Fixed in commit a1b2c3d."
 
 ### Do not "pile on"
-If five people already said the same thing about an issue, you don't need to add a sixth comment saying the same thing. A 👍 reaction on an existing comment is enough.
+If five people already said the same thing about an issue, you don't need to add a sixth comment saying the same thing. A reaction on an existing comment is enough.
 
 ### Reactions
-GitHub reactions (👍 ❤️ 🎉 😕 👀 🚀) are an efficient way to express agreement, appreciation, or concern without adding noise to a thread.
+GitHub reactions () are an efficient way to express agreement, appreciation, or concern without adding noise to a thread.
 
 ### Saved Replies — Your Accessibility Win
 
@@ -400,15 +400,15 @@ In a comment text area:
 ## Code Review Etiquette — For Reviewers
 
 ### Review the code, not the person
-❌ "You clearly don't understand accessibility."  
-✅ "This implementation doesn't account for keyboard navigation — here's how to add it."
+"You clearly don't understand accessibility."  
+"This implementation doesn't account for keyboard navigation — here's how to add it."
 
 ### Don't gatekeep knowledge
 If a contributor makes a mistake because they didn't know something, explain the concept. They're here to learn.
 
 ### Ask questions instead of making demands
-❌ "Change this to use `aria-label`."  
-✅ "What do you think about using `aria-label` here instead? Screen readers would then announce the button's purpose directly."
+"Change this to use `aria-label`."  
+"What do you think about using `aria-label` here instead? Screen readers would then announce the button's purpose directly."
 
 ### Distinguish opinion from requirement
 If something is your stylistic preference but NOT a bug or correctness issue, say so.
@@ -567,7 +567,7 @@ Notice: same feedback, completely different experience for the person receiving 
 
 ---
 
-> ### 🔥 Day 2 Amplifier — Agent Forge Outputs Are Your Responsibility
+> ### Day 2 Amplifier — Agent Forge Outputs Are Your Responsibility
 >
 > **Every communication principle in this guide applies with extra force when agents are involved.** When `@pr-review` generates review comments, *you* are responsible for their tone before you post them. When `@issue-tracker` drafts a triage reply, *your* name appears on it in the repository's public history. The agent writes — the contributor publishes.
 >

@@ -102,7 +102,7 @@ With `blank_issues_enabled: false`, the "Open a blank issue" link disappears fro
 When a repository has multiple templates, GitHub shows a template chooser page before the issue editor.
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 1. Click the **Issues** tab on any repository
 2. Click the **New issue** button
@@ -113,7 +113,7 @@ When a repository has multiple templates, GitHub shows a template chooser page b
 </details>
 
 <details>
-<summary>🔊 Screen reader users — NVDA / JAWS (Windows)</summary>
+<summary>Screen reader users — NVDA / JAWS (Windows)</summary>
 
 1. Navigate to the Issues tab (press `T` from the repository tabs landmark)
 2. Activate "New issue" button
@@ -126,7 +126,7 @@ When a repository has multiple templates, GitHub shows a template chooser page b
 </details>
 
 <details>
-<summary>🔊 Screen reader users — VoiceOver (macOS)</summary>
+<summary>Screen reader users — VoiceOver (macOS)</summary>
 
 1. Navigate to the Issues tab (`VO+Right` from the tab bar landmark)
 2. `VO+Space` to activate "New issue"
@@ -151,7 +151,7 @@ If you want to file an issue without using a template:
 Agent Forge uses templates to structure contributions. Navigate to `.github/ISSUE_TEMPLATE/` in the repository to read them.
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 1. Click the **Code** tab on the repository
 2. Click the `.github` folder in the file listing
@@ -161,7 +161,7 @@ Agent Forge uses templates to structure contributions. Navigate to `.github/ISSU
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS / VoiceOver)</summary>
+<summary>Screen reader users (NVDA / JAWS / VoiceOver)</summary>
 
 1. Open the Code tab
 2. Use `Ctrl+Alt+Down/Up` (NVDA/JAWS) or `VO+Arrow` (VoiceOver) in the files table to reach the `.github` folder
@@ -390,7 +390,7 @@ Screen reader and browser information is especially important for us to reproduc
 ### Creating Markdown Templates: The Manual Workflow (Browser)
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 1. Navigate to your fork of `agent-forge` on GitHub
 2. Click the **Settings** tab
@@ -403,7 +403,7 @@ Screen reader and browser information is especially important for us to reproduc
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS / VoiceOver)</summary>
+<summary>Screen reader users (NVDA / JAWS / VoiceOver)</summary>
 
 1. Navigate to your fork of `agent-forge` on GitHub
 2. Go to the Settings tab (press `T` from the tabs landmark, then navigate to "Settings")
@@ -1533,12 +1533,12 @@ what information maintainers need. This template standardizes that data:
 
 ## How Was This Tested?
 
-- ✅ YAML syntax validated (no errors)
-- ✅ Template displays correctly in GitHub web UI
-- ✅ All fields announced clearly with screen reader (NVDA/JAWS/VoiceOver)
-- ✅ Dropdown options are navigable
-- ✅ Required fields are properly marked
-- ✅ Form preview is accessible
+- YAML syntax validated (no errors)
+- Template displays correctly in GitHub web UI
+- All fields announced clearly with screen reader (NVDA/JAWS/VoiceOver)
+- Dropdown options are navigable
+- Required fields are properly marked
+- Form preview is accessible
 
 ## Related Issue
 
@@ -1562,7 +1562,7 @@ Closes #[issue number] (if there is an open issue requesting this feature)
 2. Using your screen reader, read through it:
    - Is the title clear about what you're adding?
    - Does the description explain the value of this template?
-   - Are all checkmarks (`✅`) and formatting visible?
+   - Are all checkmarks (``) and formatting visible?
 3. Make any corrections needed
 4. Do not submit yet — continue to Step 5
 
@@ -1671,10 +1671,10 @@ After completing Steps 1-7, verify:
    Project: [name]
    Why it matters to me: [1 sentence]
    
-   Current state: ☐ Exists, I maintain it
-                  ☐ Exists, I contribute to it
-                  ☐ I'm planning to create it
-                  ☐ Other: [describe]
+   Current state: Exists, I maintain it
+                  Exists, I contribute to it
+                  I'm planning to create it
+                  Other: [describe]
    ```
 
 **What success looks like:**
@@ -1974,9 +1974,9 @@ Write answers to these questions:
 
 4. **Real-world readiness:** Would you actually deploy this template to a real project?
    ```
-   Readiness: ☐ Yes, I'm confident
-              ☐ Maybe, with more testing
-              ☐ No, I need to rethink some fields
+   Readiness: Yes, I'm confident
+              Maybe, with more testing
+              No, I need to rethink some fields
    Next step: [what would you do next?]
    ```
 
@@ -1990,14 +1990,14 @@ Write answers to these questions:
 #### Checkpoint
 
 After completing Parts 1-8, you have:
-- ✅ Chosen a specific project to design for
-- ✅ Identified issue patterns and common questions
-- ✅ Designed required fields (minimal, crucial information)
-- ✅ Designed optional fields (helpful but not blocking)
-- ✅ Written clear placeholder and description text
-- ✅ Tested your template locally for syntax and accessibility
-- ✅ (Optional) Got real user feedback and refined based on it
-- ✅ Reflected on your design decisions
+- Chosen a specific project to design for
+- Identified issue patterns and common questions
+- Designed required fields (minimal, crucial information)
+- Designed optional fields (helpful but not blocking)
+- Written clear placeholder and description text
+- Tested your template locally for syntax and accessibility
+- (Optional) Got real user feedback and refined based on it
+- Reflected on your design decisions
 
 **You now understand the thinking that separates "a blank text box" from "structured, actionable contributions."**
 

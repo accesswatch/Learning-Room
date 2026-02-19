@@ -34,14 +34,14 @@ For each repository, you choose how many notifications to receive:
 ### Changing your watch settings for a repo
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 At the top of any repository page, find the **Watch** button (near Star and Fork). Click it to open a dropdown with levels: **Participating and @mentions**, **All Activity**, **Custom**, and **Ignore**. Click your preferred level — it takes effect immediately.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+<summary>Screen reader users (NVDA / JAWS — Windows)</summary>
 
 1. Find the **Watch** button in the repo header (`B` to navigate buttons → find "Watch [N]" or "Unwatch" button)
 2. Press `Enter` to open the dropdown
@@ -52,7 +52,7 @@ At the top of any repository page, find the **Watch** button (near Star and Fork
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 1. Quick Nav `B` to find the **Watch** button in the repo header (listen for "Watch" or "Unwatch")
 2. `VO+Space` to open the dropdown
@@ -83,14 +83,14 @@ Navigate to your inbox: `https://github.com/notifications` or press `G` then `N`
 ### Navigating the notification list
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 The inbox shows notifications grouped by date (Today, Yesterday, This week, Older). Each row shows the repository, the issue or PR title, the event type, and the time. Click a row to open the notification and go to the issue or PR. Use the left sidebar filters to narrow the view. The **Mark all as done** button clears the entire inbox at once.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+<summary>Screen reader users (NVDA / JAWS)</summary>
 
 1. `D` → main content landmark
 2. `H` to navigate group headings (Today / Yesterday / This week / Older)
@@ -100,7 +100,7 @@ The inbox shows notifications grouped by date (Today, Yesterday, This week, Olde
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver)</summary>
+<summary>Screen reader users (VoiceOver)</summary>
 
 1. `VO+U` → Main → navigate to notification list
 2. `VO+Down` to move through notifications
@@ -153,14 +153,14 @@ The left sidebar has quick filters. Use `Tab` or `K` to navigate to them:
 At the top of the notification list there is a filter/search field:
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 Click the filter/search box at the top of the notification list and type a repository or organization name. The list narrows in real time. Press `Escape` or clear the box to reset.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+<summary>Screen reader users (NVDA / JAWS — Windows)</summary>
 
 1. Press `F` or `E` to reach the filter input
 2. Focus Mode → type repo name or org name
@@ -170,7 +170,7 @@ Click the filter/search box at the top of the notification list and type a repos
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 1. Quick Nav `F` to reach the filter input
 2. `VO+Shift+Down` to interact → type repo or org name
@@ -195,7 +195,7 @@ After a busy day or coming back from time away, clear your inbox methodically:
 If a thread generates too many notifications:
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 1. Open the issue or PR page
 2. In the right sidebar, scroll to the **Notifications** section
@@ -205,7 +205,7 @@ If a thread generates too many notifications:
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+<summary>Screen reader users (NVDA / JAWS — Windows)</summary>
 
 1. Open the notification
 2. On the issue/PR page, navigate the sidebar to the **Notifications** section (`H` or `D`)
@@ -215,7 +215,7 @@ If a thread generates too many notifications:
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 1. Open the notification
 2. On the issue/PR page, `VO+U` → Landmarks or Quick Nav `H` to find the **Notifications** section in the sidebar
@@ -354,7 +354,7 @@ Go to [github.com/notifications](https://github.com/notifications) and practice:
 
 ---
 
-> ### 🔥 Day 2 Amplifier — Agent Forge: `@daily-briefing`
+> ### Day 2 Amplifier — Agent Forge: `@daily-briefing`
 >
 > **Manage your notification inbox manually before using any agent.** The signal-versus-noise judgment you develop — what to act on, what to watch, what to mute — is the same judgment the agent applies when prioritizing its output. Without that judgment, you cannot evaluate whether the agent's prioritization is correct or whether it surfaced the things that actually matter to you.
 >

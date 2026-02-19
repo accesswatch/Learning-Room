@@ -2,9 +2,9 @@
 
 ## Executive Summary
 
-**✅ Current structure IS properly progressive.** The 20 chapters (including new Learning Room guide) form a clear learning arc from absolute beginner (GitHub web) through intermediate (collaborative GitHub) to advanced (VS Code + AI/Agents). Chapter dependencies are logical. No reorganization needed.
+**Current structure IS properly progressive.** The 20 chapters (including new Learning Room guide) form a clear learning arc from absolute beginner (GitHub web) through intermediate (collaborative GitHub) to advanced (VS Code + AI/Agents). Chapter dependencies are logical. No reorganization needed.
 
-**✅ New "The Learning Room" chapter (02a) fills a critical gap** — students now understand the shared environment before learning individual skills.
+**New "The Learning Room" chapter (02a) fills a critical gap** — students now understand the shared environment before learning individual skills.
 
 ---
 
@@ -27,7 +27,7 @@
        Introduces: Two-track learning model
        Leads to: 03a (read about your learning environment)
 
-✨ NEW 02a. The Learning Room
+NEW 02a. The Learning Room
     └─ Objective: Understand shared repo, PR sharing, automation system
        Dependency: 02 (know what skills you're practicing)
        Skills: PR workflow, peer review, bot feedback types
@@ -47,46 +47,46 @@
 
 ```
 Skill Level 1: Basic Repo Navigation
-03. Navigating Repositories ★★☆☆☆
+03. Navigating Repositories☆☆☆
     └─ Dependency: 02a (know you're in a shared repo with others)
        Skills: Finding files, reading commits, switching branches
        Prerequisite for: 04 (can't file issue until you navigate)
 
 Skill Level 2: Issue Management
-04. Working with Issues ★★☆☆☆
+04. Working with Issues☆☆☆
     └─ Dependency: 03 (must navigate to find the issue list)
        Skills: Filing, searching, filtering, commenting, @mentions
        Prerequisite for: 05 (issues and PRs are linked - "Closes #X")
 
 Skill Level 3: Pull Request Mechanics
-05. Working with Pull Requests ★★★☆☆
+05. Working with Pull Requests☆☆
     └─ Dependency: 04 (PRs reference issues with "Closes #XX")
        Skills: Creating, reviewing, merging, commit history
        Prerequisite for: 06 (conflicts only happen in PRs)
 
 Level 1 Problem-Solving: Merge Conflicts
-06. Merge Conflicts ★★★★☆
+06. Merge Conflicts☆
     └─ Dependency: 05 (must understand PRs before fixing conflicts)
        Skills: Understanding conflict markers, resolving, communicating
        Prerequisite for: Nothing (reference when problem appears)
        Why NOT earlier: Students must try to merge before this makes sense
 
 Soft Skills / Interaction
-07. Culture and Etiquette ★★☆☆☆
+07. Culture and Etiquette☆☆☆
     └─ Dependency: 05 (have written comments, now understand tone matters)
        Skills: Communication style, inclusive language, respect, asynchronous mindset
        Prerequisite for: 08 (labels/projects assume team coordination)
        Why after PRs: Students have actual experience now; advice lands better
 
 Level 2: Organizing Work
-08. Labels, Milestones, and Projects ★★★☆☆
+08. Labels, Milestones, and Projects☆☆
     └─ Dependency: 07 (assumes shared team culture)
        Skills: Categorization, filtering, cross-reference, project boards
        Prerequisite for: 09 (notifications filtered by labels)
        Why here: Students see their own work is now categorized
 
 Housekeeping/Optimization
-09. Notifications and Mentions ★★☆☆☆
+09. Notifications and Mentions☆☆☆
     └─ Dependency: 08 (can filter notifications by label)
        Skills: Managing inbox, threading, subscribing, @mentions
        Prerequisite for: Nothing (reference after someone gets overwhelmed)
@@ -128,21 +128,21 @@ Housekeeping/Optimization
 
 ```
 Tool Foundation: IDE Setup
-11. VS Code: Setup & Accessibility Basics ★★☆☆☆
+11. VS Code: Setup & Accessibility Basics☆☆☆
     └─ Dependency: 10 (understand why new tool)
        Skills: Screen reader mode, keyboard navigation, accessibility settings
        Prerequisite for: 12 (can't use git if VS Code is misconfigured)
        Why NOT on Day 1: New tool requires dedicated setup time
 
 Core Tool: Version Control in IDE
-12. VS Code: Git & Source Control ★★★☆☆
+12. VS Code: Git & Source Control☆☆
     └─ Dependency: 11 (VS Code operational) + 03 (understand branches)
        Skills: Cloning, branching, staging, committing, merge handling
        Prerequisite for: 13 (PR extension uses git state)
        Amplifies: Chapter 05 (PRs) but FROM THE IDE instead of browser
 
 IDE Integration: PR Extension
-13. VS Code: GitHub PR Extension ★★★☆☆
+13. VS Code: GitHub PR Extension☆☆
     └─ Dependency: 12 (git status visible in extension)
        Skills: Viewing PRs, reviewing in IDE, checking out branches
        Prerequisite for: Nothing (can use browser instead)
@@ -150,14 +150,14 @@ IDE Integration: PR Extension
        Why here not earlier: Need IDE + git working first
 
 AI Assistance: Copilot Inline
-14. GitHub Copilot Basics ★★★★☆
+14. GitHub Copilot Basics☆
     └─ Dependency: 11 (Copilot runs in VS Code)
        Skills: Accepting/rejecting suggestions, effective prompting
        Prerequisite for: 19 (agents build on Copilot understanding)
        Bridge concept: "You understand the skill, now delegate parts to AI"
 
 Expert Culminating Skill: Code Review
-15. Accessible Code Review ★★★★★
+15. Accessible Code Review
     └─ Dependency: 05 (PRs) + 12 (git) + 13 (PR extension) + 14 (Copilot context)
        Skills: Reviewing diffs with screen reader, leaving comments, semantic review, screen reader accessible reviewing
        Prerequisite for: 19 (agents automate what you master here)
@@ -165,20 +165,20 @@ Expert Culminating Skill: Code Review
        Pedagogical arc: Learn manual deep skill → show how to automate it
 
 Reference/Advanced: Infrastructure & Process
-16. Issue Templates ★★★☆☆
+16. Issue Templates☆☆
     └─ Dependency: 04 (issue filing mechanics)
        Skills: YAML form creation, structured issues, automation triggers
        Prerequisite for: Nothing (optional automation)
        Category: Advanced - for facilitators or interested students
 
-17. GitHub Actions & Workflows ★★★★☆
+17. GitHub Actions & Workflows☆
     └─ Dependency: 05 (PRs trigger workflows) + 14 (Copilot context)
        Skills: YAML syntax, triggers, status checks, CI/CD basics
        Prerequisite for: Understanding Agent Forge cloud workflows
        Amplifies: Real automation examples
 
 Expert: Agentic Automation Synthesis
-18. Agent Forge: Five Agents + Cloud ★★★★★
+18. Agent Forge: Five Agents + Cloud
     └─ Dependency: 14 (must understand Copilot) + 15 (code review to automate)
        Skills: Custom agents, slash commands, async cloud workflows, code review automation
        Prerequisite for: Nothing (advanced optional amplification)
@@ -269,7 +269,7 @@ FOUNDATION (Understand the Tool)
     ↓
    02 Schedule
     ↓
-   ✨ 02a Learning Room [NEW]
+   02a Learning Room [NEW]
     ↓
    ================================
    
@@ -354,16 +354,16 @@ Then build:
   → 17: Agent Forge (automate what you've mastered in 15)
   
 Optional post-workshop:
-  📚 Appendix E: GitHub Actions (infrastructure deep-dive)
-  📚 Appendix F: GitHub Projects (boards, tables, roadmaps)
-  📚 Appendix G: GitHub Discussions
-  📚 Appendix H: GitHub Advanced Search
-  📚 Appendix I: GitHub Releases and Tags
-  📚 Appendix J: Repository Insights
-  📚 Appendix L: GitHub Flavored Markdown (advanced GFM reference)
-  📚 Appendix M: GitHub Security Features (Dependabot, scanning, advisories)
-  📚 Appendix N: Branch Protection Rules and Repository Rulesets
-  📚 Appendix O: Resources (every link and reference)
+  Appendix E: GitHub Actions (infrastructure deep-dive)
+  Appendix F: GitHub Projects (boards, tables, roadmaps)
+  Appendix G: GitHub Discussions
+  Appendix H: GitHub Advanced Search
+  Appendix I: GitHub Releases and Tags
+  Appendix J: Repository Insights
+  Appendix L: GitHub Flavored Markdown (advanced GFM reference)
+  Appendix M: GitHub Security Features (Dependabot, scanning, advisories)
+  Appendix N: Branch Protection Rules and Repository Rulesets
+  Appendix O: Resources (every link and reference)
 ```
 
 ---
@@ -371,36 +371,36 @@ Optional post-workshop:
 ## Verification: Is This Truly Progressive?
 
 ### Criterion 1: Foundation Before Complexity
-- **✅ PASS** — Chapters 00-02a establish context; chapters 03-05 teach basic mechanics
-- **✅ PASS** — Chapters 06-09 assume all prior skills understood
-- **✅ PASS** — Chapter 10 explicitly marks transition
+- **PASS** — Chapters 00-02a establish context; chapters 03-05 teach basic mechanics
+- **PASS** — Chapters 06-09 assume all prior skills understood
+- **PASS** — Chapter 10 explicitly marks transition
 
 ### Criterion 2: Prerequisites Met
-- **✅ PASS** — 04 (issues) comes after 03 (navigation); can't manage issues without finding them
-- **✅ PASS** — 05 (PRs) comes after 04 (issues); PRs reference issues
-- **✅ PASS** — 06 (conflicts) comes after 05 (PRs); conflicts only happen in PR merges
-- **✅ PASS** — 12 (git) comes after 11 (setup); git requires VS Code operational
-- **✅ PASS** — 13 (PR extension) comes after 12 (git state); extension depends on git
-- **✅ PASS** — 14 (Copilot) comes after 11 (setup); Copilot runs in VS Code
-- **✅ PASS** — 15 (Code Review) comes after 14 (Copilot context) + 05,12,13 (foundational skills)
-- **✅ PASS** — 17 (Agent Forge) comes after 14 (Copilot) + 15 (mastery of code review); automates what students have learned
-- **✅ PASS** — Appendix F (GitHub Actions) is heavy infrastructure, appropriately moved to optional post-workshop reference
+- **PASS** — 04 (issues) comes after 03 (navigation); can't manage issues without finding them
+- **PASS** — 05 (PRs) comes after 04 (issues); PRs reference issues
+- **PASS** — 06 (conflicts) comes after 05 (PRs); conflicts only happen in PR merges
+- **PASS** — 12 (git) comes after 11 (setup); git requires VS Code operational
+- **PASS** — 13 (PR extension) comes after 12 (git state); extension depends on git
+- **PASS** — 14 (Copilot) comes after 11 (setup); Copilot runs in VS Code
+- **PASS** — 15 (Code Review) comes after 14 (Copilot context) + 05,12,13 (foundational skills)
+- **PASS** — 17 (Agent Forge) comes after 14 (Copilot) + 15 (mastery of code review); automates what students have learned
+- **PASS** — Appendix F (GitHub Actions) is heavy infrastructure, appropriately moved to optional post-workshop reference
 
 ### Criterion 3: No Jumps or Leaps
-- **✅ PASS** — Adjacent chapters reinforce each other
-- **✅ PASS** — Each chapter builds incrementally on prior knowledge
-- **✅ PASS** — Cross-chapter references are backward (newer chapter references prior chapter), never forward
+- **PASS** — Adjacent chapters reinforce each other
+- **PASS** — Each chapter builds incrementally on prior knowledge
+- **PASS** — Cross-chapter references are backward (newer chapter references prior chapter), never forward
 
 ### Criterion 4: Day 1 → Day 2 Bridge
-- **✅ PASS** — Chapter 10 explicitly marks the transition
-- **✅ PASS** — Chapter 11 repeats Day 1 foundations in new tool (accessibility, keyboard nav, landmarks)
-- **✅ PASS** — Chapters 12-15 show Day 1 skills (PR, git, review) amplified in VS Code
+- **PASS** — Chapter 10 explicitly marks the transition
+- **PASS** — Chapter 11 repeats Day 1 foundations in new tool (accessibility, keyboard nav, landmarks)
+- **PASS** — Chapters 12-15 show Day 1 skills (PR, git, review) amplified in VS Code
 
 ### Criterion 5: Soft Skills Appropriately Placed
-- **✅ PASS** — Chapter 07 (culture) comes AFTER 03-06 (students have experience)
-- **✅ PASS** — Chapter 08 (organization) comes AFTER 07 (assumes team coordination)
-- **✅ PASS** — Chapter 14 (code review) comes BEFORE Chapter 16 (students learn manual skill first, then automation)
-- **✅ PASS** — Chapter 16 (Agent Forge) is FINAL (student mastery of all prior skills gets automated and amplified)
+- **PASS** — Chapter 07 (culture) comes AFTER 03-06 (students have experience)
+- **PASS** — Chapter 08 (organization) comes AFTER 07 (assumes team coordination)
+- **PASS** — Chapter 14 (code review) comes BEFORE Chapter 16 (students learn manual skill first, then automation)
+- **PASS** — Chapter 16 (Agent Forge) is FINAL (student mastery of all prior skills gets automated and amplified)
 
 ---
 
@@ -422,7 +422,7 @@ Optional post-workshop:
 
 ## Final Recommendation
 
-### ✅ **Move GitHub Actions to Appendix E — Lighter Path for Intro Course**
+### **Move GitHub Actions to Appendix E — Lighter Path for Intro Course**
 
 **Why This Change Is Correct:**
 
@@ -475,9 +475,9 @@ GitHub Actions is infrastructure-heavy (YAML, triggers, CI/CD) and doesn't belon
    
    | # | Chapter | Difficulty |
    |-|-|-|
-   | 03 | Navigating Repositories | ⭐⭐☆☆☆ Beginner |
-   | 04 | Working with Issues | ⭐⭐☆☆☆ Beginner |
-   | 05 | Working with Pull Requests | ⭐⭐⭐☆☆ Intermediate |
+   | 03 | Navigating Repositories |☆☆☆ Beginner |
+   | 04 | Working with Issues |☆☆☆ Beginner |
+   | 05 | Working with Pull Requests |☆☆ Intermediate |
 
 These are "nice to have" — not necessary, since the structure is already progressive.
 
@@ -487,36 +487,36 @@ These are "nice to have" — not necessary, since the structure is already progr
 
 | # | Chapter | Difficulty | Prerequisite | Leads To | Day | Category |
 |---|---------|-----------|--------------|----------|-----|----------|
-| 00 | Pre-Workshop Setup | ⭐ | None | 01 | Pre | Foundation |
-| 01 | GitHub Web Structure | ⭐ | None | 02, 02a | Pre/1 | Foundation |
-| 02 | Day 1 Agenda | ⭐ | 01 | 02a, 03 | 1 | Foundation |
-| 02a | The Learning Room ✨ | ⭐⭐ | 02 | 03, 04, 05 | 1 | Foundation |
-| 03 | Navigating Repositories | ⭐⭐ | 02a | 04 | 1 | Skill |
-| 04 | Working with Issues | ⭐⭐ | 03 | 05 | 1 | Skill |
-| 05 | Working with PRs | ⭐⭐⭐ | 04 | 06, 07, 13, 17 | 1 | Skill |
-| 06 | Merge Conflicts | ⭐⭐⭐⭐ | 05 | Any | 1 | Reference |
-| 07 | Culture & Etiquette | ⭐⭐ | 05 | 08 | 1 | Soft Skills |
-| 08 | Labels/Milestones | ⭐⭐⭐ | 07 | 09 | 1 | Skill |
-| 09 | Notifications | ⭐⭐ | 08 | Any | 1 | Reference |
-| 10 | Day 2 Agenda | ⭐ | All of Day 1 | 11 | Bridge | Foundation |
-| 11 | VS Code Setup | ⭐⭐ | 10 | 12, 13, 14 | 2 | Tool |
-| 12 | Git in VS Code | ⭐⭐⭐ | 11 + 03 | 13, 17 | 2 | Skill |
-| 13 | PR Extension | ⭐⭐⭐ | 12 + 05 | Any | 2 | Extension |
-| 14 | Copilot | ⭐⭐⭐⭐ | 11 | 15, 17 | 2 | AI |
-| 15 | Code Review | ⭐⭐⭐⭐⭐ | 05 + 12 + 13 + 14 | None | 2 | Expert |
-| 16 | Issue Templates | ⭐⭐⭐ | 04 | None | 2 | Advanced |
-| 17 | Agent Forge | ⭐⭐⭐⭐⭐ | 14 + 15 | None | 2 | Expert |
-| G | GitHub Actions | ⭐⭐⭐⭐ | 05 + 14 | None | Appendix | Reference |
-| H | GitHub Projects | ⭐⭐⭐ | 08 | None | Appendix | Reference |
-| I | GitHub Discussions | ⭐⭐ | 07 | None | Appendix | Reference |
-| J | Advanced Search | ⭐⭐ | 04 + 05 | None | Appendix | Reference |
-| K | Releases & Tags | ⭐⭐⭐ | 05 | None | Appendix | Reference |
-| L | Repository Insights | ⭐⭐ | 17 | None | Appendix | Reference |
-| N | GitHub Flavored Markdown | ⭐⭐ | Any | None | Appendix | Reference |
-| O | GitHub Security Features | ⭐⭐⭐ | 05 + 17 | None | Appendix | Reference |
-| P | Branch Protection | ⭐⭐⭐ | 05 | None | Appendix | Reference |
-| Q | Resources | ⭐ | None | Any | Appendix | Reference |
+| 00 | Pre-Workshop Setup | | None | 01 | Pre | Foundation |
+| 01 | GitHub Web Structure | | None | 02, 02a | Pre/1 | Foundation |
+| 02 | Day 1 Agenda | | 01 | 02a, 03 | 1 | Foundation |
+| 02a | The Learning Room | | 02 | 03, 04, 05 | 1 | Foundation |
+| 03 | Navigating Repositories | | 02a | 04 | 1 | Skill |
+| 04 | Working with Issues | | 03 | 05 | 1 | Skill |
+| 05 | Working with PRs | | 04 | 06, 07, 13, 17 | 1 | Skill |
+| 06 | Merge Conflicts | | 05 | Any | 1 | Reference |
+| 07 | Culture & Etiquette | | 05 | 08 | 1 | Soft Skills |
+| 08 | Labels/Milestones | | 07 | 09 | 1 | Skill |
+| 09 | Notifications | | 08 | Any | 1 | Reference |
+| 10 | Day 2 Agenda | | All of Day 1 | 11 | Bridge | Foundation |
+| 11 | VS Code Setup | | 10 | 12, 13, 14 | 2 | Tool |
+| 12 | Git in VS Code | | 11 + 03 | 13, 17 | 2 | Skill |
+| 13 | PR Extension | | 12 + 05 | Any | 2 | Extension |
+| 14 | Copilot | | 11 | 15, 17 | 2 | AI |
+| 15 | Code Review | | 05 + 12 + 13 + 14 | None | 2 | Expert |
+| 16 | Issue Templates | | 04 | None | 2 | Advanced |
+| 17 | Agent Forge | | 14 + 15 | None | 2 | Expert |
+| G | GitHub Actions | | 05 + 14 | None | Appendix | Reference |
+| H | GitHub Projects | | 08 | None | Appendix | Reference |
+| I | GitHub Discussions | | 07 | None | Appendix | Reference |
+| J | Advanced Search | | 04 + 05 | None | Appendix | Reference |
+| K | Releases & Tags | | 05 | None | Appendix | Reference |
+| L | Repository Insights | | 17 | None | Appendix | Reference |
+| N | GitHub Flavored Markdown | | Any | None | Appendix | Reference |
+| O | GitHub Security Features | | 05 + 17 | None | Appendix | Reference |
+| P | Branch Protection | | 05 | None | Appendix | Reference |
+| Q | Resources | | None | Any | Appendix | Reference |
 
 ---
 
-*Chapter Structure: 18 core chapters (00-17) plus 16 appendices (A–Q, no M). GitHub Actions moved to appendix for lighter intro course path. New appendices N, O, P added February 2026. All dependencies verified. Ship with confidence! 🚀*
+*Chapter Structure: 18 core chapters (00-17) plus 16 appendices (A–Q, no M). GitHub Actions moved to appendix for lighter intro course path. New appendices N, O, P added February 2026. All dependencies verified. Ship with confidence!*

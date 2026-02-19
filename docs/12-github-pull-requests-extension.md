@@ -84,14 +84,14 @@ After installation, you gain:
 **Method 1: Activity Bar**
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 Click the **GitHub logo icon** in the Activity Bar (the vertical strip of icons on the far left). It's usually the 5th or 6th icon. The GitHub Pull Requests panel opens.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS / VoiceOver)</summary>
+<summary>Screen reader users (NVDA / JAWS / VoiceOver)</summary>
 
 1. The Activity Bar is not always reachable by `Tab` from the editor
 2. Use `Ctrl+Shift+P` (Mac: `Cmd+Shift+P`) → type "GitHub Pull Requests: View Pull Request" or "Focus on Pull Requests View" → press `Enter`

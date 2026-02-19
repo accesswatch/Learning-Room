@@ -62,8 +62,8 @@ SSH uses public-key cryptography. You generate a key pair on your computer (publ
 4. Give it a descriptive name in the **Note** field: "Workshop Laptop Token"
 5. Set expiration: **30 days** or **60 days** (recommended for temporary workshop use)
 6. Select scopes:
-   - ✅ **`repo`** — Full control of private repositories (includes public repo access)
-   - ✅ **`workflow`** — Update GitHub Actions workflows (if you'll work with Actions)
+   - **`repo`** — Full control of private repositories (includes public repo access)
+   - **`workflow`** — Update GitHub Actions workflows (if you'll work with Actions)
 7. Scroll down and activate **"Generate token"**
 8. **CRITICAL:** Copy the token immediately — you cannot see it again
 

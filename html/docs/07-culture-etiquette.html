@@ -62,7 +62,7 @@
 6. Merge
    └─ A maintainer merges your PR into main
       The linked issue closes automatically
-      Your contribution is now part of the project ✅</span></code></pre>
+      Your contribution is now part of the project</span></code></pre>
 <h3>Why This Model Works</h3>
 <ul>
 <li><strong><code>main</code> is always deployable.</strong> Nothing goes into <code>main</code> directly — every change goes through a PR and review. This protects the project and all its users.</li>
@@ -86,7 +86,7 @@
 </ul>
 <h3>Method 1: GitHub Web Interface (Easiest)</h3>
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 <ol>
 <li>Navigate to your fork&#39;s main page: <code>github.com/your-username/repo-name</code></li>
@@ -98,7 +98,7 @@
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS / VoiceOver)</summary>
+<summary>Screen reader users (NVDA / JAWS / VoiceOver)</summary>
 
 <ol>
 <li>Navigate to your fork&#39;s main page: <code>github.com/your-username/repo-name</code></li>
@@ -152,8 +152,8 @@ git push origin main</code></pre>
 <h3>The First Line (Required)</h3>
 <p><strong>Keep it under 50 characters.</strong> This is the commit summary that appears in logs and GitHub&#39;s commit list. Think of it as an email subject line.</p>
 <p><strong>Use the imperative mood:</strong> Write as if giving a command to the codebase.</p>
-<p>✅ &quot;Fix broken link in README&quot;<br>✅ &quot;Add alt text to hero image&quot;<br>✅ &quot;Remove deprecated function&quot;  </p>
-<p>❌ &quot;Fixed broken link&quot; — past tense<br>❌ &quot;Fixing broken link&quot; — gerund<br>❌ &quot;I fixed the broken link&quot; — too personal  </p>
+<p>&quot;Fix broken link in README&quot;<br>&quot;Add alt text to hero image&quot;<br>&quot;Remove deprecated function&quot;  </p>
+<p>&quot;Fixed broken link&quot; — past tense<br>&quot;Fixing broken link&quot; — gerund<br>&quot;I fixed the broken link&quot; — too personal  </p>
 <p><strong>Why imperative?</strong> It matches Git&#39;s autogen messages: &quot;Merge pull request #42&quot; or &quot;Revert commit abc123.&quot;</p>
 <p><strong>Optional prefixes</strong> (common in some projects):</p>
 <ul>
@@ -190,7 +190,7 @@ Part of <span class="hljs-comment">#89</span></code></pre>
 <p>When the commit is merged, GitHub automatically closes linked issues.</p>
 <h3>Atomic Commits</h3>
 <p>Each commit should represent <strong>one logical change</strong>. Don&#39;t bundle unrelated fixes into a single commit.</p>
-<p>✅ Good: One commit adds alt text; another fixes a typo<br>❌ Bad: One commit adds alt text, fixes a typo, reformats code, and updates dependencies  </p>
+<p>Good: One commit adds alt text; another fixes a typo<br>Bad: One commit adds alt text, fixes a typo, reformats code, and updates dependencies  </p>
 <p><strong>Why?</strong> If a commit introduces a bug, you want to revert just that change—not everything.</p>
 <h3>Common mistakes to avoid:</h3>
 <ul>
@@ -248,7 +248,7 @@ Part of <span class="hljs-comment">#200</span></code></pre>
 </blockquote>
 <h3>2. Identify the specific concern</h3>
 <p>Be precise. Vague feedback is not actionable.</p>
-<p>❌ &quot;This code is inaccessible.&quot;<br>✅ &quot;This button has no accessible name — <code>aria-label</code> or visible text is needed for screen readers to announce its purpose.&quot;</p>
+<p>&quot;This code is inaccessible.&quot;<br>&quot;This button has no accessible name — <code>aria-label</code> or visible text is needed for screen readers to announce its purpose.&quot;</p>
 <h3>3. Explain why it matters</h3>
 <p>Context turns a complaint into a lesson. It also respects the contributor — they deserve to understand, not just comply.</p>
 <blockquote>
@@ -270,9 +270,9 @@ Part of <span class="hljs-comment">#200</span></code></pre>
 <hr>
 <h2>Language and Tone</h2>
 <h3>Prefer &quot;we&quot; or describe the code, not the person</h3>
-<p>❌ &quot;You made an error here.&quot;<br>✅ &quot;There&#39;s an error here.&quot; or &quot;This line does X but we need Y.&quot;</p>
+<p>&quot;You made an error here.&quot;<br>&quot;There&#39;s an error here.&quot; or &quot;This line does X but we need Y.&quot;</p>
 <h3>Use tentative language for uncertainty</h3>
-<p>❌ &quot;This will crash on mobile.&quot;<br>✅ &quot;I think this might cause issues on mobile — have you tested with a narrower viewport?&quot;</p>
+<p>&quot;This will crash on mobile.&quot;<br>&quot;I think this might cause issues on mobile — have you tested with a narrower viewport?&quot;</p>
 <h3>Acknowledge cultural and language diversity</h3>
 <p>Open source is global. Contributors may be:</p>
 <ul>
@@ -282,7 +282,7 @@ Part of <span class="hljs-comment">#200</span></code></pre>
 </ul>
 <p><strong>When reading someone&#39;s comment:</strong> Assume good intent unless there is clear evidence otherwise.<br><strong>When writing:</strong> Choose plain words over clever ones.</p>
 <h3>Avoid urgency markers unless genuinely urgent</h3>
-<p>❌ &quot;I need this fixed ASAP&quot;<br>✅ &quot;This is blocking our release scheduled for next Friday — is there capacity to look at it this week?&quot;</p>
+<p>&quot;I need this fixed ASAP&quot;<br>&quot;This is blocking our release scheduled for next Friday — is there capacity to look at it this week?&quot;</p>
 <hr>
 <h2>Commenting Etiquette</h2>
 <h3>Keep comments focused</h3>
@@ -292,9 +292,9 @@ Part of <span class="hljs-comment">#200</span></code></pre>
 <h3>Resolving conversations</h3>
 <p>On a PR, conversations (inline comment threads) can be &quot;resolved&quot; once addressed. The author of the change and the reviewer can both resolve them. If you addressed a reviewer&#39;s comment, resolve the thread and leave a note: &quot;Fixed in commit a1b2c3d.&quot;</p>
 <h3>Do not &quot;pile on&quot;</h3>
-<p>If five people already said the same thing about an issue, you don&#39;t need to add a sixth comment saying the same thing. A 👍 reaction on an existing comment is enough.</p>
+<p>If five people already said the same thing about an issue, you don&#39;t need to add a sixth comment saying the same thing. A reaction on an existing comment is enough.</p>
 <h3>Reactions</h3>
-<p>GitHub reactions (👍 ❤️ 🎉 😕 👀 🚀) are an efficient way to express agreement, appreciation, or concern without adding noise to a thread.</p>
+<p>GitHub reactions () are an efficient way to express agreement, appreciation, or concern without adding noise to a thread.</p>
 <h3>Saved Replies — Your Accessibility Win</h3>
 <p>GitHub lets you save frequently used responses as <strong>Saved Replies</strong> — reusable text snippets you can insert into any comment box with a few keystrokes. This is a significant accessibility win for anyone who types the same comments repeatedly during triage, reviews, or issue management.</p>
 <p><strong>Common uses:</strong></p>
@@ -330,11 +330,11 @@ Part of <span class="hljs-comment">#200</span></code></pre>
 <hr>
 <h2>Code Review Etiquette — For Reviewers</h2>
 <h3>Review the code, not the person</h3>
-<p>❌ &quot;You clearly don&#39;t understand accessibility.&quot;<br>✅ &quot;This implementation doesn&#39;t account for keyboard navigation — here&#39;s how to add it.&quot;</p>
+<p>&quot;You clearly don&#39;t understand accessibility.&quot;<br>&quot;This implementation doesn&#39;t account for keyboard navigation — here&#39;s how to add it.&quot;</p>
 <h3>Don&#39;t gatekeep knowledge</h3>
 <p>If a contributor makes a mistake because they didn&#39;t know something, explain the concept. They&#39;re here to learn.</p>
 <h3>Ask questions instead of making demands</h3>
-<p>❌ &quot;Change this to use <code>aria-label</code>.&quot;<br>✅ &quot;What do you think about using <code>aria-label</code> here instead? Screen readers would then announce the button&#39;s purpose directly.&quot;</p>
+<p>&quot;Change this to use <code>aria-label</code>.&quot;<br>&quot;What do you think about using <code>aria-label</code> here instead? Screen readers would then announce the button&#39;s purpose directly.&quot;</p>
 <h3>Distinguish opinion from requirement</h3>
 <p>If something is your stylistic preference but NOT a bug or correctness issue, say so.</p>
 <blockquote>
@@ -527,7 +527,7 @@ Part of <span class="hljs-comment">#200</span></code></pre>
 </blockquote>
 <hr>
 <blockquote>
-<h3>🔥 Day 2 Amplifier — Agent Forge Outputs Are Your Responsibility</h3>
+<h3>Day 2 Amplifier — Agent Forge Outputs Are Your Responsibility</h3>
 <p><strong>Every communication principle in this guide applies with extra force when agents are involved.</strong> When <code>@pr-review</code> generates review comments, <em>you</em> are responsible for their tone before you post them. When <code>@issue-tracker</code> drafts a triage reply, <em>your</em> name appears on it in the repository&#39;s public history. The agent writes — the contributor publishes.</p>
 <p>As you work with agents on Day 2, use this guide as your editing checklist:</p>
 <ul>

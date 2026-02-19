@@ -36,14 +36,14 @@ A PR shows:
 ## Navigating to Pull Requests
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 Click the **Pull requests** tab in the repository navigation bar. The tab shows the count of open PRs. Click any PR title to open it.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+<summary>Screen reader users (NVDA / JAWS — Windows)</summary>
 
 1. `D` → "Repository navigation" landmark
 2. `K` to navigate tabs → "Pull requests, [N] open"
@@ -52,7 +52,7 @@ Click the **Pull requests** tab in the repository navigation bar. The tab shows 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 1. `VO+U` → Landmarks → navigate to "Repository navigation"
 2. Quick Nav `K` or `VO+Right` to navigate tabs → "Pull requests"
@@ -118,14 +118,14 @@ A PR page has three main tabs:
 The Conversation, Commits, and Files changed tabs are in a “Pull request navigation tabs” landmark.
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 The three tabs — **Conversation**, **Commits**, and **Files changed** — appear just below the PR title. Click the tab you want. The active tab is underlined. The count on **Files changed** shows how many files were modified.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+<summary>Screen reader users (NVDA / JAWS)</summary>
 
 1. Press `D` → navigate to “Pull request navigation tabs”
 2. Press `←` or `→` arrow keys to move between tab options
@@ -134,7 +134,7 @@ The three tabs — **Conversation**, **Commits**, and **Files changed** — appe
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver)</summary>
+<summary>Screen reader users (VoiceOver)</summary>
 
 1. `VO+U` → Landmarks → “Pull request navigation tabs”
 2. `VO+Right` to move between tabs
@@ -161,14 +161,14 @@ Below the description, the status checks summary shows whether automated tests p
 - A “Show all checks” button or link
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 Status checks appear as a coloured banner below the PR description — green tick for passed, red X for failed, yellow spinner for running. Click **Show all checks** to expand the full list. Click a check name to go to its run log.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+<summary>Screen reader users (NVDA / JAWS — Windows)</summary>
 
 1. Press `H` or `2` to find the "Checks" or "Status checks" heading
 2. Press `K` to navigate links for individual check names
@@ -177,7 +177,7 @@ Status checks appear as a coloured banner below the PR description — green tic
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 1. Quick Nav `H` or `VO+Cmd+H` to jump to the "Checks" or "Status checks" heading
 2. Quick Nav `K` to navigate check name links
@@ -227,14 +227,14 @@ This is the core of a code review. You will read diffs — the before/after stat
 The file tree lists every changed file. Use it to jump directly to a specific file’s diff.
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 The file tree panel is on the left side of the Files Changed tab. It lists every modified file. Click a filename to scroll the diff view to that file. You can collapse or expand folders by clicking the arrow. Type in the filter box at the top to narrow the file list.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+<summary>Screen reader users (NVDA / JAWS — Windows)</summary>
 
 1. `D` → navigate to "File tree" region
 2. `↑/↓` to navigate the file list
@@ -243,7 +243,7 @@ The file tree panel is on the left side of the Files Changed tab. It lists every
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 1. `VO+U` → Landmarks → navigate to "File tree" region
 2. `VO+Down` to move through the file list
@@ -266,14 +266,14 @@ Each changed file has:
 ### Navigating the diff with a screen reader
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 Each file’s diff shows added lines in green and removed lines in red. Scroll the page to read through changes. Unchanged context lines are shown in white/grey. Collapse a file’s diff by clicking the arrow next to its filename heading. Use `Ctrl+F` (browser Find) to search for specific text within visible diffs.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+<summary>Screen reader users (NVDA / JAWS)</summary>
 
 1. `T` to jump to the next diff table
 2. Switch to Focus Mode: `Insert+Space` (NVDA) or `Insert+Z` (JAWS)
@@ -284,7 +284,7 @@ Each file’s diff shows added lines in green and removed lines in red. Scroll t
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver)</summary>
+<summary>Screen reader users (VoiceOver)</summary>
 
 1. `T` or `VO+U` → Tables → select the diff table
 2. `VO+Shift+Down` to enter the table
@@ -295,14 +295,14 @@ Each file’s diff shows added lines in green and removed lines in red. Scroll t
 ### Placing an inline comment on a diff line
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 Hover over any line in the diff — a blue `+` button appears on the left margin. Click it to open a comment box for that line. Type your comment, then click **Add single comment** (posts immediately) or **Start a review** (batches the comment with others). To select a range of lines, click and drag across the line numbers on the left.
 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+<summary>Screen reader users (NVDA / JAWS — Windows)</summary>
 
 1. Navigate to the specific line in the diff (using the table navigation above)
 2. While focused on that line, a comment button appears — press `Enter` or `Space` to activate it
@@ -319,7 +319,7 @@ Hover over any line in the diff — a blue `+` button appears on the left margin
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 1. Navigate to the specific line in the diff (using the table navigation above)
 2. While focused on that line, `VO+Space` on the comment button that appears
@@ -351,7 +351,7 @@ Inline comments appear as expandable threads within the diff table. Navigate to 
 ### From a fork or feature branch
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 1. Navigate to the repository on GitHub
 2. If you recently pushed, a yellow banner “Compare & pull request” appears at the top — click it
@@ -362,7 +362,7 @@ Inline comments appear as expandable threads within the diff table. Navigate to 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+<summary>Screen reader users (NVDA / JAWS — Windows)</summary>
 
 1. Navigate to the repository
 2. A "Compare & pull request" banner may appear (if you recently pushed) — activate it
@@ -372,7 +372,7 @@ Inline comments appear as expandable threads within the diff table. Navigate to 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 1. Navigate to the repository
 2. Check for a "Compare & pull request" banner — Quick Nav `B` to find and `VO+Space` to activate it
@@ -494,7 +494,7 @@ On the Files Changed tab, when you add inline comments, choose "Start a review" 
 After adding your inline comments via “Start a review,” you must submit the review to notify the PR author. The review is pending until you submit it.
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 1. Look for the **Finish your review** button in the top-right area of the Files Changed tab (it shows the number of pending comments)
 2. Click it — a popover appears with a summary text area and three radio buttons: **Comment**, **Approve**, **Request changes**
@@ -505,7 +505,7 @@ After adding your inline comments via “Start a review,” you must submit the 
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+<summary>Screen reader users (NVDA / JAWS)</summary>
 
 1. Press `1` to go to the h1 (PR title)
 2. Press `B` (or `Tab`) to navigate to the **“Submit review”** button and activate it (`Enter`/`Space`)
@@ -521,7 +521,7 @@ After adding your inline comments via “Start a review,” you must submit the 
 
 </details>
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+<summary>Screen reader users (VoiceOver — macOS)</summary>
 
 1. Quick Nav `H` or `VO+Cmd+H` to navigate to the PR title (h1)
 2. Quick Nav `B` or `Tab` to find the **"Submit review"** button → `VO+Space`
@@ -759,7 +759,7 @@ Go to the Learning Room repository's Pull Requests tab and find any open or rece
 
 ---
 
-> ### 🔥 Day 2 Amplifier — Agent Forge: `@pr-review`
+> ### Day 2 Amplifier — Agent Forge: `@pr-review`
 >
 > **Review at least two pull requests manually before using any agent.** A review generated by `@pr-review` is only as useful as your ability to read, edit, and challenge it. The agent writes a first draft — you supply the context, the history, and the final judgment that no diff can contain.
 >

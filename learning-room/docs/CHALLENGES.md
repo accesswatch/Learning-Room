@@ -6,7 +6,7 @@ This document lists all current challenges. Challenges are unlocked based on you
 
 ---
 
-## 🎯 How to Start a Challenge
+## How to Start a Challenge
 
 1. **Find an available issue** labeled with `challenge` and your skill level
 2. **Comment "I'd like to try this!"** to claim the issue
@@ -18,7 +18,7 @@ This document lists all current challenges. Challenges are unlocked based on you
 
 ---
 
-## 📝 Beginner Challenges (0+ PRs)
+## Beginner Challenges (0+ PRs)
 
 ### Challenge 1: Fix Broken Link
 - **Issue Label:** `challenge: beginner`, `skill: markdown`
@@ -87,7 +87,7 @@ This document lists all current challenges. Challenges are unlocked based on you
 
 ---
 
-## ♿ Intermediate Challenges (1+ PRs)
+## Intermediate Challenges (1+ PRs)
 
 ### Challenge 4: Fix Heading Hierarchy
 - **Issue Label:** `challenge: intermediate`, `skill: accessibility`
@@ -158,7 +158,7 @@ This document lists all current challenges. Challenges are unlocked based on you
 
 ---
 
-## 🎓 Advanced Challenges (3+ PRs)
+## Advanced Challenges (3+ PRs)
 
 ### Challenge 7: Review for Accessibility
 - **Issue Label:** `challenge: advanced`, `skill: review`
@@ -235,7 +235,7 @@ This document lists all current challenges. Challenges are unlocked based on you
 
 ---
 
-## 🏆 Expert Challenges (5+ PRs)
+## Expert Challenges (5+ PRs)
 
 ### Challenge 10: Design a Challenge
 - **Issue Label:** `challenge: expert`, `skill: creation`
@@ -314,7 +314,7 @@ This document lists all current challenges. Challenges are unlocked based on you
 
 ---
 
-## 🤝 Group Challenges
+## Group Challenges
 
 These challenges require collaboration with your study group:
 
@@ -327,7 +327,7 @@ These challenges require collaboration with your study group:
 
 ---
 
-## 🌟 Custom Challenges
+## Custom Challenges
 
 ### Have an idea not listed here?
 
@@ -342,7 +342,7 @@ Facilitators will review and may approve custom challenges!
 
 ---
 
-## 📊 Challenge Status
+## Challenge Status
 
 ### Currently Available
 Check open issues with label `challenge` to see what's available right now.
@@ -355,7 +355,7 @@ Closed issues with merged PRs represent completed challenges. Great for inspirat
 
 ---
 
-## 🆘 Need Help?
+## Need Help?
 
 ### Appendix T: Resources
 - [Learning Paths Guide](../../.github/docs/LEARNING_PATHS.md) - Detailed challenge instructions
@@ -372,7 +372,7 @@ Closed issues with merged PRs represent completed challenges. Great for inspirat
 
 ---
 
-## 🎯 Tips for Success
+## Tips for Success
 
 **Before Starting:**
 - Read the full challenge description
@@ -393,11 +393,11 @@ Closed issues with merged PRs represent completed challenges. Great for inspirat
 - Thank your reviewers
 
 **After Merging:**
-- Celebrate your achievement! 🎉
+- Celebrate your achievement!
 - Reflect on what you learned
 - Review the resources again
 - Help others with similar challenges
 
 ---
 
-*Challenges designed for progressive skill building and real-world applicability. Every challenge completed makes you a better contributor!* 💪
+*Challenges designed for progressive skill building and real-world applicability. Every challenge completed makes you a better contributor!*

@@ -25,14 +25,14 @@ GitHub's browser interface is excellent for reviewing, discussing, and triaging.
 
 | Task | Browser | VS Code |
 |------|---------|---------|
-| Navigate a repository | ✅ Excellent | ✅ Explorer sidebar |
-| Read issues and PRs | ✅ Excellent | ✅ GitHub PR extension |
-| Comment on a PR | ✅ Excellent | ✅ GitHub PR extension |
-| Edit a file | ✅ Web editor | ✅ Full text editor with Copilot |
-| Review a diff | ✅ Files Changed tab | ✅ Three-way merge view with navigation |
-| Get AI help while writing | ❌ Not available | ✅ Copilot inline + Chat |
-| Run Agent Forge agents | ❌ Not available | ✅ Copilot Chat with agent files |
-| See errors in your contribution | ❌ After push | ✅ Real-time as you type |
+| Navigate a repository | Excellent | Explorer sidebar |
+| Read issues and PRs | Excellent | GitHub PR extension |
+| Comment on a PR | Excellent | GitHub PR extension |
+| Edit a file | Web editor | Full text editor with Copilot |
+| Review a diff | Files Changed tab | Three-way merge view with navigation |
+| Get AI help while writing | Not available | Copilot inline + Chat |
+| Run Agent Forge agents | Not available | Copilot Chat with agent files |
+| See errors in your contribution | After push | Real-time as you type |
 
 For Markdown contributions (which is most of what `agent-forge` needs), VS Code gives you Copilot assistance, live preview, and the same Git workflow — with less tab switching and with agents available on every file you open.
 
@@ -75,7 +75,7 @@ Change the domain in any GitHub URL:
 **Method 3: From the Repository Page**
 
 <details>
-<summary>🖥️ Visual / mouse users</summary>
+<summary>Visual / mouse users</summary>
 
 1. Click the green **Code** button on any repository page
 2. In the dropdown, click **Open with github.dev**
@@ -83,7 +83,7 @@ Change the domain in any GitHub URL:
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS / VoiceOver)</summary>
+<summary>Screen reader users (NVDA / JAWS / VoiceOver)</summary>
 
 1. Navigate to the Code button (press `B` or `Tab` until you hear "Code, button" or similar)
 2. Press `Enter` to open the dropdown menu
@@ -98,29 +98,29 @@ Change the domain in any GitHub URL:
 
 Everything in the list below works **exactly like desktop VS Code**:
 
-✅ **Full text editor with syntax highlighting**  
-✅ **All VS Code keyboard shortcuts** (see [Keyboard Reference](13-github-copilot.md#8-keyboard-shortcuts-reference))  
-✅ **Screen reader mode** (`Shift+Alt+F1` to activate — Mac: `Shift+Option+F1`)  
-✅ **File Explorer** (`Ctrl+Shift+E` — Mac: `Cmd+Shift+E`) — browse the entire repository  
-✅ **Search across files** (`Ctrl+Shift+F` — Mac: `Cmd+Shift+F`)  
-✅ **Source Control (Git)** (`Ctrl+Shift+G` — Mac: `Cmd+Shift+G`) — stage, commit, push changes  
-✅ **Markdown preview** (`Ctrl+Shift+V` — Mac: `Cmd+Shift+V`)  
-✅ **Command Palette** (`Ctrl+Shift+P` — Mac: `Cmd+Shift+P`) — access every VS Code command  
-✅ **Go to File** (`Ctrl+P` — Mac: `Cmd+P`) — instant file picker  
-✅ **Go to Symbol** (`Ctrl+Shift+O` — Mac: `Cmd+Shift+O`) — navigate by headings in Markdown  
-✅ **Multiple editor tabs and split view**  
-✅ **Settings sync** — if you sign in, your VS Code settings apply here too
+**Full text editor with syntax highlighting**  
+**All VS Code keyboard shortcuts** (see [Keyboard Reference](13-github-copilot.md#8-keyboard-shortcuts-reference))  
+**Screen reader mode** (`Shift+Alt+F1` to activate — Mac: `Shift+Option+F1`)  
+**File Explorer** (`Ctrl+Shift+E` — Mac: `Cmd+Shift+E`) — browse the entire repository  
+**Search across files** (`Ctrl+Shift+F` — Mac: `Cmd+Shift+F`)  
+**Source Control (Git)** (`Ctrl+Shift+G` — Mac: `Cmd+Shift+G`) — stage, commit, push changes  
+**Markdown preview** (`Ctrl+Shift+V` — Mac: `Cmd+Shift+V`)  
+**Command Palette** (`Ctrl+Shift+P` — Mac: `Cmd+Shift+P`) — access every VS Code command  
+**Go to File** (`Ctrl+P` — Mac: `Cmd+P`) — instant file picker  
+**Go to Symbol** (`Ctrl+Shift+O` — Mac: `Cmd+Shift+O`) — navigate by headings in Markdown  
+**Multiple editor tabs and split view**  
+**Settings sync** — if you sign in, your VS Code settings apply here too
 
 ---
 
 ### What github.dev Does NOT Have
 
-❌ **No terminal** — can't run shell commands, npm, git CLI  
-❌ **No GitHub Copilot** — Copilot requires the desktop app or a Codespace  
-❌ **No Agent Forge agents** — agents rely on extensions that need desktop VS Code  
-❌ **No extension installation** — extensions are disabled in github.dev  
-❌ **No debugger** — debugging requires a local environment  
-❌ **No live server or preview** — except Markdown preview, which does work
+**No terminal** — can't run shell commands, npm, git CLI  
+**No GitHub Copilot** — Copilot requires the desktop app or a Codespace  
+**No Agent Forge agents** — agents rely on extensions that need desktop VS Code  
+**No extension installation** — extensions are disabled in github.dev  
+**No debugger** — debugging requires a local environment  
+**No live server or preview** — except Markdown preview, which does work
 
 These limitations are why **desktop VS Code exists**. github.dev is for quick edits and reading code. Desktop is for Copilot, agents, terminal workflows, and full development.
 

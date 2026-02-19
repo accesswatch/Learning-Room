@@ -66,41 +66,50 @@ jobs:
             
             // Award badge in comment
             const badges = {
-              'markdown': '📝 Markdown Master',
-              'accessibility': '♿ Accessibility Advocate',  
-              'review': '👁️ Code Reviewer',
-              'collaboration': '🤝 Team Player',
-              'general': '⭐ Contributor'
+              'markdown': 'Markdown Master',
+              'accessibility': 'Accessibility Advocate',  
+              'review': 'Code Reviewer',
+              'collaboration': 'Team Player',
+              'general': 'Contributor'
             };
             
             const badge = badges[skillType] || badges['general'];
             
+            const skills = {
+              'markdown': ['- Proper Markdown syntax', '- Document structure', '- Formatting best practices'],
+              'accessibility': ['- Heading hierarchy', '- Descriptive link text', '- Alt text for images', '- Screen reader considerations'],
+              'review': ['- Constructive feedback', '- Suggesting improvements', '- Thorough examination'],
+              'collaboration': ['- Clear communication', '- Following conventions', '- Team coordination']
+            };
+            const skillLines = skills[skillType] || [];
+            
+            const skillBody = [
+              '## Skill Unlocked: ' + badge,
+              '',
+              'Congratulations @' + student + '! You\'ve completed a **' + skillType + '** challenge.',
+              '',
+              '### Your Progress',
+              '',
+              'This PR demonstrated:',
+              ...skillLines,
+              '',
+              '### What\'s Next?',
+              '',
+              'Check your profile for the next available challenge, or explore:',
+              '- [Learning Path Tracker](../../.github/docs/LEARNING_PATHS.md)',
+              '- [Available Challenges](../../learning-room/docs/CHALLENGES.md)',
+              '',
+              'Keep up the amazing work!',
+              '',
+              '---',
+              '*Progress tracked by Learning Room Skills Engine*'
+            ].join('\n');
+
             await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: prNumber,
-              body: `## 🎉 Skill Unlocked: ${badge}
-
-Congratulations @${student}! You've completed a **${skillType}** challenge.
-
-### Your Progress
-
-This PR demonstrated:
-${skillType === 'markdown' ? '- ✅ Proper Markdown syntax\n- ✅ Document structure\n- ✅ Formatting best practices' : ''}
-${skillType === 'accessibility' ? '- ✅ Heading hierarchy\n- ✅ Descriptive link text\n- ✅ Alt text for images\n- ✅ Screen reader considerations' : ''}
-${skillType === 'review' ? '- ✅ Constructive feedback\n- ✅ Suggesting improvements\n- ✅ Thorough examination' : ''}
-${skillType === 'collaboration' ? '- ✅ Clear communication\n- ✅ Following conventions\n- ✅ Team coordination' : ''}
-
-### What's Next?
-
-Check your profile for the next available challenge, or explore:
-- [Learning Path Tracker](../../.github/docs/LEARNING_PATHS.md)
-- [Available Challenges](../../learning-room/docs/CHALLENGES.md)
-
-Keep up the amazing work! 🚀
-
----
-*Progress tracked by Learning Room Skills Engine*`
+              body: skillBody
             });
             
             // Add achievement label to PR
@@ -108,7 +117,7 @@ Keep up the amazing work! 🚀
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: prNumber,
-              labels: [`achievement: ${skillType}`]
+              labels: ['achievement: ' + skillType]
             });
 
   unlock-next-challenge:
@@ -192,25 +201,33 @@ Keep up the amazing work! 🚀
             
             if (currentLevel.name !== previousLevel.name) {
               // Level up!
+              const challengeList = currentLevel.challenges
+                .map(c => '- [ ] ' + c.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' '))
+                .join('\n');
+              
+              const levelUpBody = [
+                '## Level Up: ' + currentLevel.name + '!',
+                '',
+                '@' + student + ', you\'ve reached **' + currentLevel.name + '** level!',
+                '',
+                '**Stats:**',
+                '- Merged PRs: ' + mergedCount,
+                '- Level: ' + currentLevel.name,
+                '',
+                '**Unlocked Challenges:**',
+                challengeList,
+                '',
+                'Check the [Challenges Board](../../learning-room/docs/CHALLENGES.md) to get started!',
+                '',
+                '---',
+                '*Achievement unlocked by Skills Engine*'
+              ].join('\n');
+
               await github.rest.issues.createComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: context.payload.pull_request.number,
-                body: `## 🎊 Level Up: ${currentLevel.name}!
-
-@${student}, you've reached **${currentLevel.name}** level!
-
-**Stats:**
-- Merged PRs: ${mergedCount}
-- Level: ${currentLevel.name}
-
-**Unlocked Challenges:**
-${currentLevel.challenges.map(c => `- [ ] ${c.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}`).join('\n')}
-
-Check the [Challenges Board](../../learning-room/docs/CHALLENGES.md) to get started!
-
----
-*Achievement unlocked by Skills Engine* 🏆`
+                body: levelUpBody
               });
             } else {
               // Progress within level
@@ -219,22 +236,30 @@ Check the [Challenges Board](../../learning-room/docs/CHALLENGES.md) to get star
                 const nextLevel = progression.levels[nextLevelIndex];
                 const prsToNextLevel = nextLevel.requiredPRs - mergedCount;
                 
+                const challengeList = currentLevel.challenges
+                  .map(c => '- ' + c.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' '))
+                  .join('\n');
+                
+                const progressBody = [
+                  '## Progress Update',
+                  '',
+                  'Great work, @' + student + '!',
+                  '',
+                  '**Current Level:** ' + currentLevel.name,
+                  '**Merged PRs:** ' + mergedCount,
+                  '**Next Level:** ' + nextLevel.name + ' (' + prsToNextLevel + ' more merged PR' + (prsToNextLevel === 1 ? '' : 's') + ')',
+                  '',
+                  '**Available Challenges:**',
+                  challengeList,
+                  '',
+                  'Keep going!'
+                ].join('\n');
+
                 await github.rest.issues.createComment({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   issue_number: context.payload.pull_request.number,
-                  body: `## 📈 Progress Update
-
-Great work, @${student}! 
-
-**Current Level:** ${currentLevel.name}
-**Merged PRs:** ${mergedCount}
-**Next Level:** ${nextLevel.name} (${prsToNextLevel} more merged PR${prsToNextLevel === 1 ? '' : 's'})
-
-**Available Challenges:**
-${currentLevel.challenges.map(c => `- ${c.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}`).join('\n')}
-
-Keep going! 💪`
+                  body: progressBody
                 });
               }
             }
@@ -267,45 +292,43 @@ Keep going! 💪`
             const milestones = [1, 5, 10, 25, 50, 100];
             
             if (milestones.includes(count)) {
-              const emojis = {
-                1: '🎈',
-                5: '🎉',
-                10: '🏆',
-                25: '⭐',
-                50: '🌟',
-                100: '💯'
-              };
-              
               const messages = {
                 1: 'Your first merged PR! This is the start of your open source journey.',
                 5: 'Five merged contributions! You\'re building real momentum.',
                 10: 'Double digits! You\'re becoming a regular contributor.',
                 25: 'Quarter century! Your impact is undeniable.',
                 50: 'Half a hundred! You\'re a pillar of this community.',
-                100: 'ONE HUNDRED contributions! You\'re a legend! 🔥'
+                100: 'ONE HUNDRED contributions! You\'re a legend!'
               };
               
+              const filesImproved = mergedPRs.reduce((sum, pr) => sum + (pr.changed_files || 0), 0);
+              const memberSince = new Date(mergedPRs[mergedPRs.length - 1].created_at).toLocaleDateString();
+              
+              const milestoneBody = [
+                '## MILESTONE REACHED: ' + count + ' Merged PRs!',
+                '',
+                '@' + student + ' \u2014 ' + messages[count],
+                '',
+                '**Your Impact:**',
+                '- Contributions merged: ' + count,
+                '- Files improved: ' + filesImproved,
+                '- Community member since: ' + memberSince,
+                '',
+                '**Share your achievement!**',
+                'Add this badge to your GitHub profile:',
+                '',
+                '```markdown',
+                '![' + count + ' Contributions](https://img.shields.io/badge/Learning%20Room-' + count + '%20Contributions-success)',
+                '```',
+                '',
+                '---',
+                '*Milestone celebrated by Skills Engine*'
+              ].join('\n');
+
               await github.rest.issues.createComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: context.payload.pull_request.number,
-                body: `## ${emojis[count]} MILESTONE REACHED: ${count} Merged PRs!
-
-@${student} — ${messages[count]}
-
-**Your Impact:**
-- Contributions merged: ${count}
-- Files improved: ${mergedPRs.reduce((sum, pr) => sum + (pr.changed_files || 0), 0)}
-- Community member since: ${new Date(mergedPRs[mergedPRs.length - 1].created_at).toLocaleDateString()}
-
-**Share your achievement!** 
-Add this badge to your GitHub profile:
-
-\`\`\`markdown
-![${count} Contributions](https://img.shields.io/badge/Learning%20Room-${count}%20Contributions-success)
-\`\`\`
-
----
-*Milestone celebrated by Skills Engine* ${emojis[count]}`
+                body: milestoneBody
               });
             }

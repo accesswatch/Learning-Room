@@ -242,7 +242,7 @@ This diagram shows the layout of a repository home page. It is presented as ASCI
 Do this every time you land on a new GitHub page. It takes about 10 seconds once you are practiced. Make it automatic.
 
 <details>
-<summary>🖥️ Visual / mouse users — page orientation</summary>
+<summary>Visual / mouse users — page orientation</summary>
 
 When you land on a GitHub page, scan these areas to orient yourself:
 
@@ -257,7 +257,7 @@ That's your visual map. Click anything visible to navigate.
 </details>
 
 <details>
-<summary>🔊 Screen reader users (NVDA / JAWS) — 10-second orientation sequence</summary>
+<summary>Screen reader users (NVDA / JAWS) — 10-second orientation sequence</summary>
 
 ```
 Step 1: Press 1
@@ -283,7 +283,7 @@ From there, navigate with purpose: `D` to jump to regions, `H` or `3` to jump to
 </details>
 
 <details>
-<summary>🔊 Screen reader users (VoiceOver — macOS) — 10-second orientation sequence</summary>
+<summary>Screen reader users (VoiceOver — macOS) — 10-second orientation sequence</summary>
 
 ```
 Step 1: Quick Nav H (with Quick Nav on) or VO+Cmd+H → navigate to h1
@@ -505,7 +505,7 @@ Open any GitHub repository — try [github.com/accesswatch/agent-forge](https://
 
 ---
 
-## 🔥 Day 2 Amplifier
+## Day 2 Amplifier
 
 > Once you have this mental model solid, the Agent Forge agents make more sense. The `@daily-briefing` agent reads your GitHub notifications and presents a structured report — but the report structure mirrors the landmark structure of GitHub itself: global activity, then per-repo activity, then per-issue and per-PR detail. The agent describes the same building you have already walked through manually.
 

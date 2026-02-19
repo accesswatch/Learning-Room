@@ -2,7 +2,7 @@
 
 Welcome! The Learning Room uses intelligent automation to provide instant feedback while preserving the value of human peer review. This guide explains how the automation works and how to interpret its feedback.
 
-## 🤖 What Gets Automated
+## What Gets Automated
 
 ### 1. PR Validation Bot
 When you open a pull request, the bot automatically:
@@ -35,30 +35,30 @@ To ensure everyone gets reviewed:
 
 ---
 
-## 📋 Understanding Bot Feedback
+## Understanding Bot Feedback
 
 ### Validation Report Structure
 
 When the bot comments on your PR, it provides:
 
-#### **Required Checks** ✅ / ❌
+#### **Required Checks** /
 These MUST pass before merge:
 - **Issue Reference**: PR must link to an issue (`Closes #123`)
 - **Description**: PR must have meaningful description (50+ characters)
 - **File Location**: Changes must be in `learning-room/` directory only
 
-#### **Suggestions** 💡
+#### **Suggestions**
 Optional improvements that enhance quality:
 - Better commit messages
 - Additional documentation
 - Code formatting improvements
 
-#### **Accessibility Analysis** ♿
+#### **Accessibility Analysis**
 Detailed checks organized by severity:
 
-- 🔴 **Errors**: Block merge (broken links, missing alt text, heading skips)
-- 🟡 **Warnings**: Should fix (generic link text like "click here")
-- 🟢 **Success**: Celebrates good practices (proper code blocks, descriptive links)
+- **Errors**: Block merge (broken links, missing alt text, heading skips)
+- **Warnings**: Should fix (generic link text like "click here")
+- **Success**: Celebrates good practices (proper code blocks, descriptive links)
 
 Each accessibility issue includes:
 - **File and line number** where issue occurs
@@ -66,14 +66,14 @@ Each accessibility issue includes:
 - **How to fix it** with examples
 - **Resources** for learning more
 
-#### **Learning Resources** 📖
+#### **Learning Resources**
 Links to relevant documentation based on your PR content
 
 ---
 
-## 🎯 Common Validation Issues & Fixes
+## Common Validation Issues & Fixes
 
-### ❌ "No issue reference found"
+### "No issue reference found"
 
 **What this means:** Your PR description doesn't link to an issue.
 
@@ -91,7 +91,7 @@ Resolves #42
 
 ---
 
-### ❌ "Heading hierarchy violation"
+### "Heading hierarchy violation"
 
 **What this means:** Your document skips heading levels (e.g., H1 → H3 without H2).
 
@@ -116,7 +116,7 @@ Resolves #42
 
 ---
 
-### 🟡 "Generic link text detected"
+### "Generic link text detected"
 
 **What this means:** Your link text is "click here", "here", "read more", etc.
 
@@ -136,7 +136,7 @@ Read the [GitHub accessibility documentation](https://example.com).
 
 ---
 
-### ❌ "Missing alt text"
+### "Missing alt text"
 
 **What this means:** An image has no alt text or empty alt text.
 
@@ -164,7 +164,7 @@ Read the [GitHub accessibility documentation](https://example.com).
 
 ---
 
-### ❌ "Broken relative link"
+### "Broken relative link"
 
 **What this means:** A link points to a file that doesn't exist.
 
@@ -186,7 +186,7 @@ See [installation guide](docs/install.md)  ← File doesn't exist
 
 ---
 
-### 🟡 "[TODO] markers remaining"
+### "[TODO] markers remaining"
 
 **What this means:** Your file contains `[TODO]` placeholders.
 
@@ -197,7 +197,7 @@ Complete all TODO items or remove the markers if work is done.
 
 ---
 
-## 🆘 Getting Help
+## Getting Help
 
 ### Ask the Bot
 
@@ -226,7 +226,7 @@ If you're stuck:
 
 ---
 
-## 🏆 Skills Progression System
+## Skills Progression System
 
 ### Skill Levels
 
@@ -256,19 +256,19 @@ If you're stuck:
 
 ### Achievement Badges
 
-- 📝 **Markdown Master**: Completed Markdown challenge
-- ♿ **Accessibility Advocate**: Completed accessibility challenge
-- 👁️ **Code Reviewer**: Provided thorough peer review
-- 🤝 **Team Player**: Completed collaborative challenge
-- ⭐ **Contributor**: General contribution
+- **Markdown Master**: Completed Markdown challenge
+- **Accessibility Advocate**: Completed accessibility challenge
+- **Code Reviewer**: Provided thorough peer review
+- **Team Player**: Completed collaborative challenge
+- **Contributor**: General contribution
 
 ### Milestones
 
-Special celebrations at: 1, 5, 10, 25, 50, and 100 merged PRs! 🎉
+Special celebrations at: 1, 5, 10, 25, 50, and 100 merged PRs!
 
 ---
 
-## 👥 Peer Review & Grouping
+## Peer Review & Grouping
 
 ### Automatic Reviewer Assignment
 
@@ -305,7 +305,7 @@ If assigned to a group, you'll get an issue thread for communication.
 
 ---
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### "Bot comment is out of date"
 
@@ -343,21 +343,21 @@ Each PR gets ONE comment that updates. If you're seeing multiple:
 
 ---
 
-## 🎓 Philosophy: Automation + Human Review
+## Philosophy: Automation + Human Review
 
 ### Why Both?
 
 **Automation provides:**
-- ⚡ Instant feedback
-- 📚 Educational resources
-- ✅ Consistency
-- 🤖 Unlimited patience
+- Instant feedback
+- Educational resources
+- Consistency
+- Unlimited patience
 
 **Human review provides:**
-- 💡 Creative suggestions
-- 🧠 Contextual judgment
-- 🤝 Social learning
-- ❤️ Encouragement and mentorship
+- Creative suggestions
+- Contextual judgment
+- Social learning
+- Encouragement and mentorship
 
 ### The Best of Both
 
@@ -371,7 +371,7 @@ By combining automation with peer review:
 
 ---
 
-## 📚 Additional Resources
+## Additional Resources
 
 - [Working with Pull Requests](../docs/05-working-with-pull-requests.md)
 - [Accessible Code Review](../docs/14-accessible-code-review.md)
@@ -381,7 +381,7 @@ By combining automation with peer review:
 
 ---
 
-## 💬 Feedback on Automation
+## Feedback on Automation
 
 Found a bug? Have suggestions for improving the automation?
 
@@ -406,4 +406,4 @@ The automation features described above (PR validation, skills progression, stud
 
 ---
 
-*This system was designed with accessibility and inclusive learning at its core. Every student deserves instant, helpful feedback and supportive peer connections.* ♿💙
+*This system was designed with accessibility and inclusive learning at its core. Every student deserves instant, helpful feedback and supportive peer connections.*

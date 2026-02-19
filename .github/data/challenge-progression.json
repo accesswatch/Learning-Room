@@ -9,7 +9,11 @@
         "add-keyboard-shortcut",
         "complete-welcome"
       ],
-      "skills": ["markdown", "git-basics", "pr-workflow"]
+      "skills": [
+        "markdown",
+        "git-basics",
+        "pr-workflow"
+      ]
     },
     {
       "name": "Intermediate",
@@ -20,7 +24,11 @@
         "improve-link-text",
         "add-alt-text"
       ],
-      "skills": ["accessibility", "document-structure", "screen-reader-basics"]
+      "skills": [
+        "accessibility",
+        "document-structure",
+        "screen-reader-basics"
+      ]
     },
     {
       "name": "Advanced",
@@ -31,7 +39,11 @@
         "create-documentation",
         "mentor-peer"
       ],
-      "skills": ["code-review", "technical-writing", "mentorship"]
+      "skills": [
+        "code-review",
+        "technical-writing",
+        "mentorship"
+      ]
     },
     {
       "name": "Expert",
@@ -42,37 +54,35 @@
         "accessibility-audit",
         "create-template"
       ],
-      "skills": ["instructional-design", "community-leadership", "systematic-testing"]
+      "skills": [
+        "instructional-design",
+        "community-leadership",
+        "systematic-testing"
+      ]
     }
   ],
   "badges": {
     "markdown": {
-      "emoji": "📝",
       "title": "Markdown Master",
       "description": "Completed Markdown challenge"
     },
     "accessibility": {
-      "emoji": "♿",
       "title": "Accessibility Advocate",
       "description": "Completed accessibility challenge"
     },
     "review": {
-      "emoji": "👁️",
       "title": "Code Reviewer",
       "description": "Provided thorough peer review"
     },
     "collaboration": {
-      "emoji": "🤝",
       "title": "Team Player",
       "description": "Completed collaborative challenge"
     },
     "documentation": {
-      "emoji": "📚",
       "title": "Documentation Writer",
       "description": "Created comprehensive documentation"
     },
     "creation": {
-      "emoji": "🏗️",
       "title": "Content Creator",
       "description": "Designed new learning content"
     }
@@ -80,33 +90,27 @@
   "milestones": [
     {
       "prs": 1,
-      "emoji": "🎈",
       "message": "Your first merged PR! This is the start of your open source journey."
     },
     {
       "prs": 5,
-      "emoji": "🎉",
       "message": "Five merged contributions! You're building real momentum."
     },
     {
       "prs": 10,
-      "emoji": "🏆",
       "message": "Double digits! You're becoming a regular contributor."
     },
     {
       "prs": 25,
-      "emoji": "⭐",
       "message": "Quarter century! Your impact is undeniable."
     },
     {
       "prs": 50,
-      "emoji": "🌟",
       "message": "Half a hundred! You're a pillar of this community."
     },
     {
       "prs": 100,
-      "emoji": "💯",
-      "message": "ONE HUNDRED contributions! You're a legend! 🔥"
+      "message": "ONE HUNDRED contributions! You're a legend!"
     }
   ]
 }

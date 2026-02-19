@@ -39,15 +39,15 @@ See the [workshop documentation](../../docs/) for full step-by-step guidance.
 
 ---
 
-## 🤖 About the Automation Bot
+## About the Automation Bot
 
 When you open a pull request, an automated bot will:
 
-- ✅ **Check your changes** against quality standards
-- ♿ **Validate accessibility** (heading hierarchy, link text, alt text, broken links)
-- 📚 **Provide educational feedback** explaining why things matter
-- 🔗 **Link to resources** for learning more
-- 🏷️ **Apply labels** to help facilitators prioritize reviews
+- **Check your changes** against quality standards
+- **Validate accessibility** (heading hierarchy, link text, alt text, broken links)
+- **Provide educational feedback** explaining why things matter
+- **Link to resources** for learning more
+- **Apply labels** to help facilitators prioritize reviews
 
 **The bot is not a substitute for peer review!** It provides instant technical feedback so your human reviewers can focus on higher-level improvements, creative suggestions, and encouragement.
 
@@ -74,12 +74,12 @@ The bot isn't always right! If you believe feedback is incorrect:
 
 ---
 
-## 🎯 Skills & Progression
+## Skills & Progression
 
 As you complete challenges, you'll:
 - **Track progress** through skill levels (Beginner → Intermediate → Advanced → Expert)
 - **Unlock new challenges** when you reach milestones (based on merged PRs)
-- **Earn badges** for specific achievements (Markdown Master ♿ Accessibility Advocate, etc.)
+- **Earn badges** for specific achievements (Markdown Master Accessibility Advocate, etc.)
 - **Celebrate milestones** (1st, 5th, 10th PR merges)
 
 [**View Learning Paths →**](../.github/docs/LEARNING_PATHS.md)  
@@ -88,7 +88,7 @@ As you complete challenges, you'll:
 
 ---
 
-## 👥 Study Groups
+## Study Groups
 
 You may be assigned to a study group for collaborative learning. Groups:
 - Work through challenges together

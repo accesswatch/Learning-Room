@@ -22,7 +22,7 @@
 - [ ] Verified: `git --version` shows v2.20+
 - [ ] Verified: `gh auth status` shows you're logged in
 
-**Status:** ☐ Not started  ☐ In progress  ☐ Complete
+**Status:** Not started  In progress  Complete
 
 ---
 
@@ -35,7 +35,7 @@
 - [ ] Set up SSH key (optional but recommended)
 - [ ] Test: Can you clone a repository? (`git clone ...`)
 
-**Status:** ☐ Not started  ☐ In progress  ☐ Complete
+**Status:** Not started  In progress  Complete
 
 ---
 
@@ -48,7 +48,7 @@
 - [ ] Know the difference: Fork vs. Branch
 - [ ] Can explain: What is a pull request?
 
-**Status:** ☐ Not started  ☐ In progress  ☐ Complete
+**Status:** Not started  In progress  Complete
 
 ---
 
@@ -61,7 +61,7 @@
 - [ ] Found: README, CONTRIBUTING, License, Issues template
 - [ ] Understand the code structure and file tree
 
-**Status:** ☐ Not started  ☐ In progress  ☐ Complete
+**Status:** Not started  In progress  Complete
 
 ---
 
@@ -74,7 +74,7 @@
 - [ ] Reviewed: Available practice challenges
 - [ ] Understand: How bot feedback and peer review work
 
-**Status:** ☐ Not started  ☐ In progress  ☐ Complete
+**Status:** Not started  In progress  Complete
 
 ---
 
@@ -88,7 +88,7 @@
 - [ ] Know how to: Search issues, filter by label, use issue templates
 - [ ] Understand: Issue lifecycle (Open → In Progress → Done)
 
-**Status:** ☐ Not started  ☐ In progress  ☐ Complete
+**Status:** Not started  In progress  Complete
 
 ---
 
@@ -102,7 +102,7 @@
 - [ ] Know how to: See diff, leave suggestions, approve
 - [ ] Understand: PR merge strategies (Merge, Squash, Rebase)
 
-**Status:** ☐ Not started  ☐ In progress  ☐ Complete
+**Status:** Not started  In progress  Complete
 
 ---
 
@@ -115,7 +115,7 @@
 - [ ] Successfully resolved: 1+ real merge conflict
 - [ ] Know the "abort" option: `git merge --abort`
 
-**Status:** ☐ Not started  ☐ In progress  ☐ Complete
+**Status:** Not started  In progress  Complete
 
 ---
 
@@ -128,7 +128,7 @@
 - [ ] Can give constructive feedback on code
 - [ ] Understand: Inclusive language in issues/PRs
 
-**Status:** ☐ Not started  ☐ In progress  ☐ Complete
+**Status:** Not started  In progress  Complete
 
 ---
 
@@ -141,7 +141,7 @@
 - [ ] Used project board to organize work (optional: add columns and cards)
 - [ ] Filtered issues using: Labels + Milestones
 
-**Status:** ☐ Not started  ☐ In progress  ☐ Complete
+**Status:** Not started  In progress  Complete
 
 ---
 
@@ -154,7 +154,7 @@
 - [ ] Configured: Notifications for your projects
 - [ ] Know how to: Unsubscribe from threads you don't need
 
-**Status:** ☐ Not started  ☐ In progress  ☐ Complete
+**Status:** Not started  In progress  Complete
 
 ---
 
@@ -167,7 +167,7 @@
 - [ ] Know how to: Use the Command Palette (`Ctrl+Shift+P`)
 - [ ] Configured: Editor preferences for your workflow
 
-**Status:** ☐ Not started  ☐ In progress  ☐ Complete
+**Status:** Not started  In progress  Complete
 
 ---
 
@@ -180,7 +180,7 @@
 - [ ] Understand: Staging, committing, and syncing changes
 - [ ] Configured: Git credentials and remote tracking
 
-**Status:** ☐ Not started  ☐ In progress  ☐ Complete
+**Status:** Not started  In progress  Complete
 
 ---
 
@@ -193,7 +193,7 @@
 - [ ] Understand: Inline code review workflow
 - [ ] Practice: Commented on a PR from within VS Code
 
-**Status:** ☐ Not started  ☐ In progress  ☐ Complete
+**Status:** Not started  In progress  Complete
 
 ---
 
@@ -206,7 +206,7 @@
 - [ ] Know how to: Use inline suggestions, chat, and custom instructions
 - [ ] Understand: Chat participants, agents, and model selection
 
-**Status:** ☐ Not started  ☐ In progress  ☐ Complete
+**Status:** Not started  In progress  Complete
 
 ---
 
@@ -224,8 +224,8 @@
 - [ ] **Exercise B:** Use VS Code Accessible Diff Viewer
 - [ ] **Exercise C:** Comment on PR accessibility
 
-**Status:** ☐ Not started  ☐ In progress  ☐ Complete  
-**Exercises Completed:** ☐ A  ☐ B  ☐ C  ☐ All
+**Status:** Not started  In progress  Complete  
+**Exercises Completed:** A  B  C  All
 
 ---
 
@@ -244,8 +244,8 @@
 - [ ] **Exercise C:** Create PR for accessibility template
 - [ ] **Exercise D:** Design custom template for your project
 
-**Status:** ☐ Not started  ☐ In progress  ☐ Complete  
-**Exercises Completed:** ☐ A  ☐ B  ☐ C  ☐ D  ☐ All
+**Status:** Not started  In progress  Complete  
+**Exercises Completed:** A  B  C  D  All
 
 ---
 
@@ -262,24 +262,24 @@ Know what each does (read Chapter 16 for details):
 - [ ] `@template-builder` — Template wizard (NEW!)
 
 ### Exercises
-- [ ] ✅ **Exercise 1:** Generate a template with @template-builder
+- [ ] **Exercise 1:** Generate a template with @template-builder
   - [ ] Follow all 8 steps
   - [ ] Ask Questions workflow guided tour
   - [ ] Save generated template
   - [ ] Test locally or on GitHub
-- [ ] ✅ **Exercise 2:** Extend the @template-builder agent
+- [ ] **Exercise 2:** Extend the @template-builder agent
   - [ ] Follow all 6 steps
   - [ ] Edit `.github/agents/template-builder.agent.md`
   - [ ] Add new Pre-Built Workflow
   - [ ] Test agent with new workflow
-- [ ] ✅ **Exercise 3:** Iterative refinement with agents
+- [ ] **Exercise 3:** Iterative refinement with agents
   - [ ] Follow all 4 steps
   - [ ] Ask agent to modify/extend template
   - [ ] Observe pattern of interaction
   - [ ] Reflection: How does iteration work with agents?
 
-**Status:** ☐ Not started  ☐ In progress  ☐ Complete  
-**Exercises Completed:** ☐ 1  ☐ 2  ☐ 3  ☐ All
+**Status:** Not started  In progress  Complete  
+**Exercises Completed:** 1  2  3  All
 
 ---
 
@@ -303,41 +303,41 @@ The workshop includes structured exercises in the following chapters. Use this t
 
 | Chapter | Exercise | Description | Done? |
 |---------|----------|-------------|-------|
-| **Ch 1** | 60-Second Orientation | Press `1`, `D`, `2`, `H` on a repo page — prove you can navigate by ear | ☐ |
-| **Ch 2** | Five-Tab Tour | Visit Code, Issues, PRs, file finder, and README on a real repo | ☐ |
-| **Ch 3** | Individual Challenges | 12 progressive challenges in `learning-room/docs/CHALLENGES.md` | ☐ |
-| **Ch 3** | Group Challenges | 7 collaborative exercises in `learning-room/docs/GROUP_CHALLENGES.md` | ☐ |
-| **Ch 4** | File Your First Issue | Create an introduction issue in the Learning Room | ☐ |
-| **Ch 5** | Read a Real PR | Navigate a PR's description, conversation, and diff | ☐ |
-| **Ch 6** | Read a Conflict | Read merge conflict markers and identify both versions | ☐ |
-| **Ch 7** | Rewrite One Comment | Transform a dismissive review comment into constructive feedback | ☐ |
-| **Ch 8** | Label and Link | Add a label to an issue and create a cross-reference | ☐ |
-| **Ch 9** | Tame Your Inbox | Mark a notification as done and configure watch settings | ☐ |
-| **Ch 10** | Try It Right Now | Open a repo in github.dev, enable screen reader mode, explore the interface | ☐ |
-| **Ch 11** | Clone, Branch, Commit | Complete the full Git cycle: clone → branch → edit → stage → commit → push | ☐ |
-| **Ch 12** | Review a PR from VS Code | Open a diff, use Accessible Diff Viewer (`F7`), leave a comment | ☐ |
-| **Ch 13** | First Copilot Conversation | Ask Copilot Chat a question about your repo and read the response | ☐ |
-| **Ch 14** | Exercise A | Complete a web-based PR review using screen reader navigation | ☐ |
-| **Ch 14** | Exercise B | Use the VS Code Accessible Diff Viewer on the same PR | ☐ |
-| **Ch 14** | Exercise C | Compare web vs. VS Code review and document findings | ☐ |
-| **Ch 15** | Exercise A | Use an existing issue template in Agent Forge | ☐ |
-| **Ch 15** | Exercise B | Create an accessibility bug report template locally | ☐ |
-| **Ch 15** | Exercise C | Submit your template upstream via a real PR | ☐ |
-| **Ch 15** | Exercise D | Design a custom template for your own project | ☐ |
-| **Ch 16** | Exercise 1 | Generate a template with the @template-builder agent | ☐ |
-| **Ch 16** | Exercise 2 | Extend the @template-builder agent with new workflows | ☐ |
-| **Ch 16** | Exercise 3 | Practice iterative refinement with agents | ☐ |
+| **Ch 1** | 60-Second Orientation | Press `1`, `D`, `2`, `H` on a repo page — prove you can navigate by ear | |
+| **Ch 2** | Five-Tab Tour | Visit Code, Issues, PRs, file finder, and README on a real repo | |
+| **Ch 3** | Individual Challenges | 12 progressive challenges in `learning-room/docs/CHALLENGES.md` | |
+| **Ch 3** | Group Challenges | 7 collaborative exercises in `learning-room/docs/GROUP_CHALLENGES.md` | |
+| **Ch 4** | File Your First Issue | Create an introduction issue in the Learning Room | |
+| **Ch 5** | Read a Real PR | Navigate a PR's description, conversation, and diff | |
+| **Ch 6** | Read a Conflict | Read merge conflict markers and identify both versions | |
+| **Ch 7** | Rewrite One Comment | Transform a dismissive review comment into constructive feedback | |
+| **Ch 8** | Label and Link | Add a label to an issue and create a cross-reference | |
+| **Ch 9** | Tame Your Inbox | Mark a notification as done and configure watch settings | |
+| **Ch 10** | Try It Right Now | Open a repo in github.dev, enable screen reader mode, explore the interface | |
+| **Ch 11** | Clone, Branch, Commit | Complete the full Git cycle: clone → branch → edit → stage → commit → push | |
+| **Ch 12** | Review a PR from VS Code | Open a diff, use Accessible Diff Viewer (`F7`), leave a comment | |
+| **Ch 13** | First Copilot Conversation | Ask Copilot Chat a question about your repo and read the response | |
+| **Ch 14** | Exercise A | Complete a web-based PR review using screen reader navigation | |
+| **Ch 14** | Exercise B | Use the VS Code Accessible Diff Viewer on the same PR | |
+| **Ch 14** | Exercise C | Compare web vs. VS Code review and document findings | |
+| **Ch 15** | Exercise A | Use an existing issue template in Agent Forge | |
+| **Ch 15** | Exercise B | Create an accessibility bug report template locally | |
+| **Ch 15** | Exercise C | Submit your template upstream via a real PR | |
+| **Ch 15** | Exercise D | Design a custom template for your own project | |
+| **Ch 16** | Exercise 1 | Generate a template with the @template-builder agent | |
+| **Ch 16** | Exercise 2 | Extend the @template-builder agent with new workflows | |
+| **Ch 16** | Exercise 3 | Practice iterative refinement with agents | |
 
 ### Core Path (Recommended first)
-- Chapters 0-9: ☐ Not started  ☐ In progress  ☐ Complete
+- Chapters 0-9: Not started  In progress  Complete
 - **Time:** ~8 hours (includes workshop time)
 
 ### Advanced Path (Day 2)
-- Chapters 10-16: ☐ Not started  ☐ In progress  ☐ Complete
+- Chapters 10-16: Not started  In progress  Complete
 - **Time:** ~5 hours (includes exercises)
 
 ### Full Curriculum
-- All chapters + appendices: ☐ Not started  ☐ In progress  ☐ Complete
+- All chapters + appendices: Not started  In progress  Complete
 - **Time:** ~13 hours total
 
 ---
@@ -346,11 +346,11 @@ The workshop includes structured exercises in the following chapters. Use this t
 
 | Section | Time | Status |
 |---------|------|--------|
-| Pre-Workshop | 30 min | ☐ |
-| Day 1 Core (Ch 0-9) | 7.5 hrs | ☐ |
-| Day 2 Advanced (Ch 10-16) | 5 hrs | ☐ |
-| Reference/Appendices | As needed | ☐ |
-| **Total** | **~13 hrs** | ☐ |
+| Pre-Workshop | 30 min | |
+| Day 1 Core (Ch 0-9) | 7.5 hrs | |
+| Day 2 Advanced (Ch 10-16) | 5 hrs | |
+| Reference/Appendices | As needed | |
+| **Total** | **~13 hrs** | |
 
 ---
 

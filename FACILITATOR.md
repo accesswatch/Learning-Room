@@ -93,8 +93,8 @@ Settings → Features → check Discussions (useful for async Q&A)
 
 **Branch protection for `main`:**
 Settings → Branches → Add rule:
-- Require pull request before merging: ✅
-- Require at least 1 approving review: ✅
+- Require pull request before merging:
+- Require at least 1 approving review:
 - Do not require up-to-date branches before merging (reduces friction for beginners)
 
 **Mark as Template Repository (recommended):**
@@ -400,16 +400,16 @@ Run the student-grouping workflow manually:
 ### Automation Philosophy
 
 **Automation Provides:**
-- ⚡ Instant feedback (students don't wait)
-- 📚 Educational resources (links to learning materials)
-- ✅ Consistency (same standards for everyone)
-- 🤖 Unlimited patience (can run on every commit)
+- Instant feedback (students don't wait)
+- Educational resources (links to learning materials)
+- Consistency (same standards for everyone)
+- Unlimited patience (can run on every commit)
 
 **Human Review Provides:**
-- 💡 Creative suggestions (beyond rule-checking)
-- 🧠 Contextual judgment (understanding nuance)
-- 🤝 Social learning (building relationships)
-- ❤️ Encouragement (celebrating growth)
+- Creative suggestions (beyond rule-checking)
+- Contextual judgment (understanding nuance)
+- Social learning (building relationships)
+- Encouragement (celebrating growth)
 
 **The Goal:** Automation handles technical checks so humans can focus on higher-level feedback, mentorship, and community building.
 
