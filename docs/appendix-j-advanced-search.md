@@ -289,4 +289,4 @@ https://github.com/issues?q=is%3Aissue+is%3Aopen+assignee%3A%40me
 
 ---
 
-*Return to: [Resources](appendix-q-resources.md) | [Screen Reader Cheat Sheet](appendix-b-screen-reader-cheatsheet.md)*
+*Return to: [Resources](appendix-u-resources.md) | [Screen Reader Cheat Sheet](appendix-b-screen-reader-cheatsheet.md)*

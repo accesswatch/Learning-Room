@@ -22,41 +22,44 @@ learning-room/                  ← workshop repository root
 │   │   ├── accessibility-bug.yml ← accessibility bug report YAML form
 │   │   └── feature-request.yml ← feature/improvement request YAML form
 │   ├── PULL_REQUEST_TEMPLATE.md ← PR template with accessibility checklist
-│   ├── agents/                 ← Agent Forge — five Copilot agents
+│   ├── agents/                 ← Agent Forge — six Copilot agents
 │   │   ├── daily-briefing.agent.md
 │   │   ├── issue-tracker.agent.md
 │   │   ├── pr-review.agent.md
 │   │   ├── analytics.agent.md
 │   │   ├── insiders-a11y-tracker.agent.md
+│   │   ├── template-builder.agent.md
 │   │   └── preferences.example.md
-│   └── prompts/                ← 7 slash commands for Copilot Chat
-│       ├── accessibility-check.prompt.md
-│       ├── draft-reply.prompt.md
-│       ├── find-good-first-issues.prompt.md
-│       ├── find-issues.prompt.md
-│       ├── morning-briefing.prompt.md
-│       ├── pr-summary.prompt.md
-│       ├── release-notes.prompt.md
-│       └── review-comments.prompt.md
-├── docs/                       ← full workshop curriculum (16 lessons + 2 appendices)
+│   └── prompts/                ← 28 slash commands for Copilot Chat
+│       ├── a11y-update.prompt.md
+│       ├── create-issue.prompt.md
+│       ├── daily-briefing.prompt.md
+│       ├── explain-code.prompt.md
+│       ├── review-pr.prompt.md
+│       ├── triage.prompt.md
+│       └── ... (22 more — see docs/appendix-w-agent-forge-reference.md)
+├── docs/                       ← full workshop curriculum (16 chapters + appendices A–X)
 │   ├── 00-pre-workshop-setup.md
 │   ├── 01-understanding-github-web-structure.md
-│   ├── 02-day1-agenda.md
-│   ├── 03-navigating-repositories.md
+│   ├── 02-navigating-repositories.md
+│   ├── 03-the-learning-room.md
 │   ├── 04-working-with-issues.md
 │   ├── 05-working-with-pull-requests.md
 │   ├── 06-merge-conflicts.md
 │   ├── 07-culture-etiquette.md
 │   ├── 08-labels-milestones-projects.md
 │   ├── 09-notifications.md
-│   ├── 10-day2-agenda.md
-│   ├── 11-vscode-copilot.md
-│   ├── 12-issue-templates.md
-│   ├── 13-resources.md
-│   ├── 14-github-actions-workflows.md
-│   ├── 15-accessible-code-review.md
-│   ├── appendix-a-screen-reader-cheatsheet.md  ← full shortcut reference
-│   └── appendix-b-glossary.md                  ← every term explained
+│   ├── 10-vscode-basics.md
+│   ├── 11-git-source-control.md
+│   ├── 12-github-pull-requests-extension.md
+│   ├── 13-github-copilot.md
+│   ├── 14-accessible-code-review.md
+│   ├── 15-issue-templates.md
+│   ├── 16-agent-forge.md
+│   ├── appendix-a-glossary.md              ← every term explained
+│   ├── appendix-b-screen-reader-cheatsheet.md ← full shortcut reference
+│   ├── appendix-c through appendix-x      ← deep-dive references (C–X)
+│   └── (see appendix-u-resources.md for complete file listing)
 └── learning-room/              ← practice content (contribution sprint targets)
     ├── README.md
     └── docs/
@@ -150,7 +153,7 @@ what line or section to look at.]
 
 ## How to Contribute
 
-See [Working with Issues](docs/04-working-with-issues.md) and the [Day 1 Agenda](docs/02-day1-agenda.md) for the full contribution workflow.
+See [Working with Issues](docs/04-working-with-issues.md) and the [Day 1 Agenda](DAY1_AGENDA.md) for the full contribution workflow.
 ```
 
 **Pre-seeded issues to create (by file):**
@@ -232,7 +235,7 @@ Test each module at least 3 days before the workshop:
 ## Day 2 — Pre-Session Checklist
 
 - [ ] VS Code installed on any shared/demo machine
-- [ ] GitHub Copilot extension installed and authenticated
+- [ ] GitHub Copilot Chat extension installed and authenticated
 - [ ] GitHub Pull Requests extension installed
 - [ ] Agent Forge agents verified: open Copilot Chat → type `@daily-briefing morning briefing` → confirm a response
 - [ ] Slash commands verified: type `/find-issues good first issue` → confirm a response

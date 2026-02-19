@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
-  <title>GitHub Learning Curriculum - GitHub Learning Room</title>
+  <title>GitHub Learning Curriculum — GitHub Learning Room</title>
   <link rel="stylesheet" href="./styles/github-markdown.css">
   <link rel="stylesheet" href="./styles/highlight.css">
   <link rel="stylesheet" href="./styles/custom.css">
@@ -24,10 +24,11 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <nav aria-label="Breadcrumb" class="breadcrumb">
-    <a href="./index.html">Home</a>
+    <a href="./index.html">Home</a> <span aria-hidden="true">›</span> <span aria-current="page">GitHub Learning Curriculum</span>
   </nav>
-  <main class="markdown-body">
+  <main id="main-content" class="markdown-body">
     <h1>GitHub Learning Curriculum</h1>
 <h2>Executive Summary &amp; Proposal to GitHub</h2>
 <hr>
@@ -378,23 +379,22 @@
 </ul>
 <h3>3. AI Agent Integration</h3>
 <p><strong>The Template Builder Agent (NEW!)</strong> exemplifies the curriculum&#39;s approach:</p>
-<pre><code class="language-yaml">Name: @template-builder
-Feature: Interactive Ask Questions wizard
-Use Case: Guided template creation for non-technical users
-Workflow:
-  1. Ask user project type (Web app? Library? Documentation?)
-  2. Ask which fields are essential (5-field or 10-field template?)
-  3. Ask about accessibility needs (WCAG AA compliance? Screen reader tested?)
-  4. Generate YAML template with tested structure
-  5. User copy-pastes into GitHub repository
-Result: 5-minute template creation vs. 30 minutes manual YAML editing
-</code></pre>
+<pre><code class="hljs language-yaml"><span class="hljs-attr">Name:</span> <span class="hljs-string">@template-builder</span>
+<span class="hljs-attr">Feature:</span> <span class="hljs-string">Interactive</span> <span class="hljs-string">Ask</span> <span class="hljs-string">Questions</span> <span class="hljs-string">wizard</span>
+<span class="hljs-attr">Use Case:</span> <span class="hljs-string">Guided</span> <span class="hljs-string">template</span> <span class="hljs-string">creation</span> <span class="hljs-string">for</span> <span class="hljs-string">non-technical</span> <span class="hljs-string">users</span>
+<span class="hljs-attr">Workflow:</span>
+  <span class="hljs-number">1</span><span class="hljs-string">.</span> <span class="hljs-string">Ask</span> <span class="hljs-string">user</span> <span class="hljs-string">project</span> <span class="hljs-string">type</span> <span class="hljs-string">(Web</span> <span class="hljs-string">app?</span> <span class="hljs-string">Library?</span> <span class="hljs-string">Documentation?)</span>
+  <span class="hljs-number">2</span><span class="hljs-string">.</span> <span class="hljs-string">Ask</span> <span class="hljs-string">which</span> <span class="hljs-string">fields</span> <span class="hljs-string">are</span> <span class="hljs-string">essential</span> <span class="hljs-string">(5-field</span> <span class="hljs-string">or</span> <span class="hljs-number">10</span><span class="hljs-string">-field</span> <span class="hljs-string">template?)</span>
+  <span class="hljs-number">3</span><span class="hljs-string">.</span> <span class="hljs-string">Ask</span> <span class="hljs-string">about</span> <span class="hljs-string">accessibility</span> <span class="hljs-string">needs</span> <span class="hljs-string">(WCAG</span> <span class="hljs-string">AA</span> <span class="hljs-string">compliance?</span> <span class="hljs-string">Screen</span> <span class="hljs-string">reader</span> <span class="hljs-string">tested?)</span>
+  <span class="hljs-number">4</span><span class="hljs-string">.</span> <span class="hljs-string">Generate</span> <span class="hljs-string">YAML</span> <span class="hljs-string">template</span> <span class="hljs-string">with</span> <span class="hljs-string">tested</span> <span class="hljs-string">structure</span>
+  <span class="hljs-number">5</span><span class="hljs-string">.</span> <span class="hljs-string">User</span> <span class="hljs-string">copy-pastes</span> <span class="hljs-string">into</span> <span class="hljs-string">GitHub</span> <span class="hljs-string">repository</span>
+<span class="hljs-attr">Result:</span> <span class="hljs-number">5</span><span class="hljs-string">-minute</span> <span class="hljs-string">template</span> <span class="hljs-string">creation</span> <span class="hljs-string">vs.</span> <span class="hljs-number">30</span> <span class="hljs-string">minutes</span> <span class="hljs-string">manual</span> <span class="hljs-string">YAML</span> <span class="hljs-string">editing</span></code></pre>
 <p><strong>Why:</strong> Amplifies user skill; automates the repetitive parts.</p>
 <h3>4. Supporting Documentation</h3>
 <ul>
 <li><strong>QUICK_REFERENCE.md</strong> (1-page cheat sheet for commands, shortcuts, file locations)</li>
 <li><strong>TROUBLESHOOTING.md</strong> (20+ common problems with solutions)</li>
-<li><strong>RESOURCES.md</strong> (links to WCAG, screen readers, documentation)</li>
+<li><strong>appendix-u-resources.md</strong> (links to WCAG, screen readers, documentation)</li>
 <li><strong>FAQ.md</strong> (50+ questions organized by role and topic)</li>
 <li><strong>PROGRESS_TRACKER.md</strong> (printable checklist for learners)</li>
 <li><strong>ACCESSIBILITY_TESTING.md</strong> (checklist for testing templates &amp; workflows)</li>
@@ -413,12 +413,11 @@ Result: 5-minute template creation vs. 30 minutes manual YAML editing
 <p>Result: Users understand when agent output is correct or needs editing.</p>
 <h4>2. Manual → Automated → Mastered</h4>
 <p>Every exercise follows progression:</p>
-<pre><code>Manual Skill (User does 100% by hand)
+<pre><code class="hljs">Manual Skill (<span class="hljs-keyword">User</span> <span class="hljs-title">does</span> <span class="hljs-number">100</span>% by hand)
     ↓
-With Agent (User does 50%, agent does 50%)
+With Agent (<span class="hljs-keyword">User</span> <span class="hljs-title">does</span> <span class="hljs-number">50</span>%, agent does <span class="hljs-number">50</span>%)
     ↓
-Mastered (User reviews agent work, makes final call)
-</code></pre>
+Mastered (<span class="hljs-keyword">User</span> <span class="hljs-title">reviews</span> agent work, makes final call)</code></pre>
 <p><strong>Example (Ch 15 Progress):</strong></p>
 <ol>
 <li><strong>Exercise A:</strong> Design template manually (GitHub web UI)</li>
@@ -448,51 +447,56 @@ Mastered (User reviews agent work, makes final call)
 <li><strong>1 Executive Proposal</strong> (this document)</li>
 </ul>
 <h3>File Structure</h3>
-<pre><code>.github/
+<pre><code class="hljs"><span class="hljs-selector-class">.github</span>/
 ├── agents/
-│   ├── daily-briefing.agent.md
-│   ├── issue-tracker.agent.md
-│   ├── pr-review.agent.md
-│   ├── analytics.agent.md
-│   ├── insiders-a11y-tracker.agent.md
-│   └── template-builder.agent.md [NEW]
+│   ├── daily-briefing<span class="hljs-selector-class">.agent</span><span class="hljs-selector-class">.md</span>
+│   ├── issue-tracker<span class="hljs-selector-class">.agent</span><span class="hljs-selector-class">.md</span>
+│   ├── pr-review<span class="hljs-selector-class">.agent</span><span class="hljs-selector-class">.md</span>
+│   ├── analytics<span class="hljs-selector-class">.agent</span><span class="hljs-selector-class">.md</span>
+│   ├── insiders-a11y-tracker<span class="hljs-selector-class">.agent</span><span class="hljs-selector-class">.md</span>
+│   └── template-builder<span class="hljs-selector-class">.agent</span><span class="hljs-selector-class">.md</span> <span class="hljs-selector-attr">[NEW]</span>
 ├── ISSUE_TEMPLATE/
-│   └── [Accessible templates for contributors]
+│   └── <span class="hljs-selector-attr">[Accessible templates for contributors]</span>
 └── workflows/
-    └── [Learning automation workflows]
+    └── <span class="hljs-selector-attr">[Learning automation workflows]</span>
 
 docs/
-├── 00-pre-workshop-setup.md (prerequisite - not counted in 16 chapters)
-├── 01-16-core-curriculum.md
-├── appendix-a-glossary.md
-├── appendix-b-screen-reader-cheatsheet.md
-├── appendix-c-git-authentication.md
-├── appendix-d-github-gists.md
-├── appendix-e-advanced-github-features.md
-├── appendix-f-vscode-accessibility-reference.md
-├── appendix-g-github-actions-workflows.md
-├── appendix-h-github-projects.md
-├── appendix-i-github-discussions.md
-├── appendix-j-advanced-search.md
-├── appendix-k-releases-tags.md
-├── appendix-l-repository-insights.md
-├── appendix-n-github-flavored-markdown.md  [NEW]
-├── appendix-o-github-security-features.md  [NEW]
-├── appendix-p-branch-protection-rulesets.md [NEW]
-└── appendix-q-resources.md
+├── <span class="hljs-number">00</span>-pre-workshop-setup<span class="hljs-selector-class">.md</span> (prerequisite - not counted in <span class="hljs-number">16</span> chapters)
+├── <span class="hljs-number">01</span>-<span class="hljs-number">16</span>-core-curriculum<span class="hljs-selector-class">.md</span>
+├── appendix-<span class="hljs-selector-tag">a</span>-glossary<span class="hljs-selector-class">.md</span>
+├── appendix-<span class="hljs-selector-tag">b</span>-screen-reader-cheatsheet<span class="hljs-selector-class">.md</span>
+├── appendix-c-keyboard-shortcuts<span class="hljs-selector-class">.md</span>
+├── appendix-c-accessibility-standards<span class="hljs-selector-class">.md</span>
+├── appendix-d-git-authentication<span class="hljs-selector-class">.md</span>
+├── appendix-e-github-flavored-markdown<span class="hljs-selector-class">.md</span>
+├── appendix-f-github-gists<span class="hljs-selector-class">.md</span>
+├── appendix-<span class="hljs-selector-tag">g</span>-github-discussions<span class="hljs-selector-class">.md</span>
+├── appendix-h-releases-tags-insights<span class="hljs-selector-class">.md</span>
+├── appendix-<span class="hljs-selector-tag">i</span>-github-projects<span class="hljs-selector-class">.md</span>
+├── appendix-j-advanced-search<span class="hljs-selector-class">.md</span>
+├── appendix-k-branch-protection-rulesets<span class="hljs-selector-class">.md</span>
+├── appendix-l-github-security-features<span class="hljs-selector-class">.md</span>
+├── appendix-m-vscode-accessibility-reference<span class="hljs-selector-class">.md</span>
+├── appendix-n-github-codespaces<span class="hljs-selector-class">.md</span>
+├── appendix-o-github-mobile<span class="hljs-selector-class">.md</span>
+├── appendix-<span class="hljs-selector-tag">p</span>-github-pages<span class="hljs-selector-class">.md</span>
+├── appendix-<span class="hljs-selector-tag">q</span>-github-actions-workflows<span class="hljs-selector-class">.md</span>
+├── appendix-<span class="hljs-attribute">r</span>-github-profile-sponsors-wikis<span class="hljs-selector-class">.md</span>
+├── appendix-s-github-organizations-templates<span class="hljs-selector-class">.md</span>
+├── appendix-t-contributing-<span class="hljs-selector-tag">to</span>-open-<span class="hljs-selector-tag">source</span><span class="hljs-selector-class">.md</span>
+└── appendix-u-resources<span class="hljs-selector-class">.md</span>
 
 Root/
-├── README.md [Main entry point]
-├── QUICK_REFERENCE.md [1-page cheat sheet]
-├── TROUBLESHOOTING.md [20+ common issues]
-├── RESOURCES.md [External links &amp; documentation]
-├── FAQ.md [50+ questions by role]
-├── PROGRESS_TRACKER.md [Printable checklist]
-├── ACCESSIBILITY_TESTING.md [Testing checklist]
-├── CODE_OF_CONDUCT.md
-├── CONTRIBUTING.md
-└── FACILITATOR.md
-</code></pre>
+├── README<span class="hljs-selector-class">.md</span> <span class="hljs-selector-attr">[Main entry point]</span>
+├── QUICK_REFERENCE<span class="hljs-selector-class">.md</span> <span class="hljs-selector-attr">[1-page cheat sheet]</span>
+├── TROUBLESHOOTING<span class="hljs-selector-class">.md</span> <span class="hljs-selector-attr">[20+ common issues]</span>
+├── appendix-u-resources<span class="hljs-selector-class">.md</span> <span class="hljs-selector-attr">[External links &amp; documentation]</span>
+├── FAQ<span class="hljs-selector-class">.md</span> <span class="hljs-selector-attr">[50+ questions by role]</span>
+├── PROGRESS_TRACKER<span class="hljs-selector-class">.md</span> <span class="hljs-selector-attr">[Printable checklist]</span>
+├── ACCESSIBILITY_TESTING<span class="hljs-selector-class">.md</span> <span class="hljs-selector-attr">[Testing checklist]</span>
+├── CODE_OF_CONDUCT<span class="hljs-selector-class">.md</span>
+├── CONTRIBUTING<span class="hljs-selector-class">.md</span>
+└── FACILITATOR<span class="hljs-selector-class">.md</span></code></pre>
 <h3>Time Estimates for Learners</h3>
 <table>
 <thead>
@@ -710,7 +714,7 @@ Root/
 <li><strong>7 supporting guides</strong> (HTML + Markdown formats)<ul>
 <li>QUICK_REFERENCE.md — 1-page cheat sheet</li>
 <li>TROUBLESHOOTING.md — 20+ solutions</li>
-<li>RESOURCES.md — comprehensive manifest</li>
+<li>appendix-u-resources.md — comprehensive manifest</li>
 <li>FAQ.md — 50+ questions</li>
 <li>PROGRESS_TRACKER.md — printable checklist</li>
 <li>ACCESSIBILITY_TESTING.md — testing workflow</li>
@@ -832,8 +836,8 @@ Root/
 
   </main>
   <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
-    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
-    <p><a href="https://github.com">Back to GitHub</a></p>
+    <p>GitHub Learning Room — Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com/accesswatch/Learning-Room">View on GitHub</a></p>
   </footer>
 </body>
 </html>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
-  <title>Day 1 Agenda - GitHub Learning Room</title>
+  <title>Day 1 Agenda — GitHub Learning Room</title>
   <link rel="stylesheet" href="./styles/github-markdown.css">
   <link rel="stylesheet" href="./styles/highlight.css">
   <link rel="stylesheet" href="./styles/custom.css">
@@ -24,10 +24,11 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <nav aria-label="Breadcrumb" class="breadcrumb">
-    <a href="./index.html">Home</a>
+    <a href="./index.html">Home</a> <span aria-hidden="true">›</span> <span aria-current="page">Day 1 Agenda</span>
   </nav>
-  <main class="markdown-body">
+  <main id="main-content" class="markdown-body">
     <h1>Day 1 Agenda</h1>
 <h2>Open Source Assistive Technology Hackathon — GitHub Learning Lab</h2>
 <blockquote>
@@ -71,7 +72,7 @@
 <p><strong>Why this is different from a tutorial:</strong> You are not reading about GitHub. You are doing GitHub, in your own repository, and an automated system is verifying each step and giving you feedback. The mechanics are identical to what happens when you contribute to any real open source project.</p>
 <hr>
 <h2>⭐ Read This BEFORE Day 1 Starts</h2>
-<p><strong><a href="03a-the-learning-room.md">Chapter 02a: The Learning Room</a></strong> — Your complete guide to the shared repo, PR sharing workflow, and how the automation system works. Read this before Block 0 to understand the environment where you&#39;ll be making real contributions.</p>
+<p><strong><a href="docs/03-the-learning-room.md">Chapter 3: The Learning Room</a></strong> — Your complete guide to the shared repo, PR sharing workflow, and how the automation system works. Read this before Block 0 to understand the environment where you&#39;ll be making real contributions.</p>
 <hr>
 <h2>At a Glance</h2>
 <table>
@@ -166,7 +167,7 @@
 <li>Can everyone navigate to the repo URL?</li>
 <li>Does everyone&#39;s screen reader announce page headings?</li>
 <li>Is hovercards turned off? (If not — navigate to Accessibility Settings now)</li>
-<li>Can everyone access GitHub Issues and Pull Requests? (Modern experience is default as of January 2026)</li>
+<li>Can everyone access GitHub Issues and Pull Requests? (Modern experience may already be active — if not, verify via User Menu → Feature preview; see Step 4 in <a href="docs/00-pre-workshop-setup.md">Pre-Workshop Setup</a>)</li>
 </ul>
 <p><strong>Introductions:</strong></p>
 <ul>
@@ -228,7 +229,7 @@
 <p>This is the same mechanism used by open source projects with bot-assisted workflows — Dependabot, GitHub Actions CI, automated labelers. You are experiencing that pattern for the first time right now.</p>
 </blockquote>
 <h3>Reference Document</h3>
-<p><a href="appendix-b-screen-reader-cheatsheet.md">Screen Reader Cheat Sheet</a></p>
+<p><a href="docs/appendix-b-screen-reader-cheatsheet.md">Screen Reader Cheat Sheet</a></p>
 <hr>
 <h2>Block 2 — Navigating Repositories (10:15 AM, 45 min)</h2>
 <h3>Purpose</h3>
@@ -284,7 +285,7 @@ Find the answers to these questions using keyboard navigation in <code>learning-
 <li>Find how the files differ from <code>main</code></li>
 </ol>
 <h3>Reference Document</h3>
-<p><a href="docs/03-navigating-repositories.md">Navigating Repositories</a></p>
+<p><a href="docs/02-navigating-repositories.md">Navigating Repositories</a></p>
 <hr>
 <h2>Break (11:00 AM, 15 min)</h2>
 <p>Encourage participants to stand, stretch, and rest their ears. Screen reader listening is cognitively demanding work.</p>
@@ -310,12 +311,11 @@ Find the answers to these questions using keyboard navigation in <code>learning-
 <li>Name the file: <code>PROFILE.md</code></li>
 <li>In the editor (switch to Focus Mode): type a brief self-introduction:</li>
 </ol>
-<pre><code class="language-markdown"># Hello, I am [your name]
+<pre><code class="hljs language-markdown"><span class="hljs-section"># Hello, I am [your name]</span>
 
 I use [your screen reader] on [your OS].
 
-I am contributing to open source because...
-</code></pre>
+I am contributing to open source because...</code></pre>
 <ol start="5">
 <li>Commit the file to <code>my-first-branch</code> (fill in a commit message → &quot;Commit new file&quot;)</li>
 </ol>
@@ -341,14 +341,13 @@ I am contributing to open source because...
 <li>Fill in the PR title: <code>Add my profile</code></li>
 <li>In the PR description field (Focus Mode), write:\</li>
 </ol>
-<pre><code class="language-markdown">## What this adds
+<pre><code class="hljs language-markdown"><span class="hljs-section">## What this adds</span>
 
 A profile introduction for [your name].
 
-## Why
+<span class="hljs-section">## Why</span>
 
-Getting started with open source AT contributions.
-</code></pre>
+Getting started with open source AT contributions.</code></pre>
 <ol start="7">
 <li>Submit the PR</li>
 </ol>
@@ -445,7 +444,7 @@ Getting started with open source AT contributions.
 <p>🌟 <strong>Magic Moment #4:</strong> The <code>introduction-to-github</code> course is now complete. Navigate to <a href="https://github.com/skills/introduction-to-github">github.com/skills/introduction-to-github</a> — your completion badge appears on the course page. Your GitHub profile now shows this course as completed.</p>
 </blockquote>
 <h3>Reference Document</h3>
-<p><a href="05-working-with-pull-requests.md">Working with Pull Requests</a></p>
+<p><a href="docs/05-working-with-pull-requests.md">Working with Pull Requests</a></p>
 <hr>
 <h2>Lunch (1:00 PM, 60 min)</h2>
 <hr>
@@ -472,56 +471,55 @@ Getting started with open source AT contributions.
 <li>Review someone else&#39;s PR</li>
 </ol>
 <h3>Full Workflow</h3>
-<pre><code>Step 1: Find your issue
-  Issues tab → filter by Assignee: me
+<pre><code class="hljs"><span class="hljs-keyword">Step</span> <span class="hljs-number">1</span>: Find your issue
+  Issues tab → filter <span class="hljs-keyword">by</span> Assignee: <span class="hljs-keyword">me</span>
   Open the issue, read the full description
 
-Step 2: Navigate to the file
-  Use the file path in the issue description
-  Navigate via the file tree OR use &quot;Go to file&quot; (F to find the search box)
+<span class="hljs-keyword">Step</span> <span class="hljs-number">2</span>: Navigate <span class="hljs-keyword">to</span> the file
+  Use the file path <span class="hljs-keyword">in</span> the issue description
+  Navigate via the file tree <span class="hljs-built_in">OR</span> use <span class="hljs-string">&quot;Go to file&quot;</span> (F <span class="hljs-keyword">to</span> find the search box)
 
-Step 3: Edit the file on GitHub
-  Find the edit pencil button (B for buttons → &quot;Edit this file&quot;)
-  Switch to Focus Mode → make your changes
+<span class="hljs-keyword">Step</span> <span class="hljs-number">3</span>: Edit the file <span class="hljs-keyword">on</span> GitHub
+  Find the edit pencil button (B <span class="hljs-keyword">for</span> buttons → <span class="hljs-string">&quot;Edit this file&quot;</span>)
+  Switch <span class="hljs-keyword">to</span> Focus Mode → make your changes
   Use Markdown formatting
 
-Step 4: Commit and branch
-  Commit changes → select &quot;Create a new branch&quot;
+<span class="hljs-keyword">Step</span> <span class="hljs-number">4</span>: Commit <span class="hljs-built_in">and</span> branch
+  Commit changes → <span class="hljs-keyword">select</span> <span class="hljs-string">&quot;Create a new branch&quot;</span>
   Name: fix/[your-name]-[issue-number]
-  &quot;Propose changes&quot;
+  <span class="hljs-string">&quot;Propose changes&quot;</span>
 
-Step 5: Open the Pull Request
-  Fill in the PR description using the template
-  Add &quot;Closes #[your-issue-number]&quot;
+<span class="hljs-keyword">Step</span> <span class="hljs-number">5</span>: Open the Pull Request
+  Fill <span class="hljs-keyword">in</span> the PR description <span class="hljs-keyword">using</span> the template
+  Add <span class="hljs-string">&quot;Closes #[your-issue-number]&quot;</span>
   Submit
 
-🤖 WAIT FOR BOT (30 seconds)
-  A bot will automatically comment on your PR
-  Read the comment carefully — it checks for:
+🤖 WAIT <span class="hljs-keyword">FOR</span> BOT (<span class="hljs-number">30</span> seconds)
+  A bot will automatically comment <span class="hljs-keyword">on</span> your PR
+  Read the comment carefully — it checks <span class="hljs-keyword">for</span>:
     • Broken links
     • Heading hierarchy problems
     • Missing image descriptions
-    • Document structure
+    • Document <span class="hljs-keyword">structure</span>
     • Accessibility issues
-  The bot explains WHY each issue matters and links to resources
+  The bot explains WHY <span class="hljs-keyword">each</span> issue matters <span class="hljs-built_in">and</span> links <span class="hljs-keyword">to</span> resources
 
-Step 6: Fix bot issues (if any)
+<span class="hljs-keyword">Step</span> <span class="hljs-number">6</span>: Fix bot issues (<span class="hljs-keyword">if</span> any)
   Address any required checks
-  Make additional changes if the feedback is helpful
+  Make additional changes <span class="hljs-keyword">if</span> the feedback <span class="hljs-built_in">is</span> helpful
   Push your changes — the bot will re-check
 
-Step 7: Request human review
-  Click &quot;Reviewers&quot; → select another participant
-  THE BOT IS NOT A SUBSTITUTE FOR HUMAN REVIEW
+<span class="hljs-keyword">Step</span> <span class="hljs-number">7</span>: Request human review
+  Click <span class="hljs-string">&quot;Reviewers&quot;</span> → <span class="hljs-keyword">select</span> another participant
+  THE BOT <span class="hljs-built_in">IS</span> <span class="hljs-built_in">NOT</span> A SUBSTITUTE <span class="hljs-keyword">FOR</span> HUMAN REVIEW
   You need both: bot technical feedback + human judgment
 
-Step 8: Review someone else&#39;s PR
-  Find the PR opened by the person seated next to you
+<span class="hljs-keyword">Step</span> <span class="hljs-number">8</span>: Review someone <span class="hljs-keyword">else</span><span class="hljs-comment">&#x27;s PR</span>
+  Find the PR opened <span class="hljs-keyword">by</span> the person seated <span class="hljs-keyword">next</span> <span class="hljs-keyword">to</span> you
   Leave a constructive comment addressing both:
     • The issues the bot flagged (did they fix them well?)
     • Higher-level improvements (clarity, completeness, accessibility)
-  Approve if it looks good
-</code></pre>
+  Approve <span class="hljs-keyword">if</span> it looks good</code></pre>
 <h3>What the Bot Checks</h3>
 <p>The automation bot validates these things:</p>
 <ul>
@@ -539,7 +537,7 @@ Step 8: Review someone else&#39;s PR
 <li>HOW to fix it (with examples)</li>
 <li>Links to learning resources</li>
 </ul>
-<p>📖 <strong>See:</strong> <a href="../learning-room/AUTOMATION.md">Learning Room Automation Guide</a> for detailed explanation of bot feedback</p>
+<p>📖 <strong>See:</strong> <a href="learning-room/AUTOMATION.md">Learning Room Automation Guide</a> for detailed explanation of bot feedback</p>
 <h3>What to look for in the docs folder</h3>
 <ul>
 <li>Broken links and incorrect keyboard shortcuts</li>
@@ -669,7 +667,7 @@ Step 8: Review someone else&#39;s PR
 </ul>
 <p><strong>Tonight (optional):</strong></p>
 <ul>
-<li>Install VS Code and the GitHub Copilot extension (see <a href="docs/00-pre-workshop-setup.md">Pre-Workshop Setup</a>)</li>
+<li>Install VS Code and the GitHub Copilot Chat extension (see <a href="docs/00-pre-workshop-setup.md">Pre-Workshop Setup</a>)</li>
 <li>Complete any Markdown Skills module steps you didn&#39;t finish</li>
 <li>Fork <a href="https://github.com/accesswatch/agent-forge">agent-forge</a> — it will be ready and waiting when you open VS Code tomorrow</li>
 </ul>
@@ -690,22 +688,21 @@ Step 8: Review someone else&#39;s PR
 </ul>
 <p><strong>Pre-created branch:</strong> <code>day1-practice</code> with 2-3 files that differ from <code>main</code></p>
 <p><strong>Files to include:</strong></p>
-<pre><code>learning-room/
-├── README.md
-├── CODE_OF_CONDUCT.md
-├── CONTRIBUTING.md
+<pre><code class="hljs">learning-room/
+├── README<span class="hljs-selector-class">.md</span>
+├── CODE_OF_CONDUCT<span class="hljs-selector-class">.md</span>
+├── CONTRIBUTING<span class="hljs-selector-class">.md</span>
 ├── .github/
 │   ├── ISSUE_TEMPLATE/
-│   │   ├── accessibility-bug.md
-│   │   └── feature-request.md
-│   └── PULL_REQUEST_TEMPLATE.md
+│   │   ├── accessibility-bug<span class="hljs-selector-class">.md</span>
+│   │   └── feature-request<span class="hljs-selector-class">.md</span>
+│   └── PULL_REQUEST_TEMPLATE<span class="hljs-selector-class">.md</span>
 ├── docs/
-│   ├── welcome.md             ← intentional [TODO] incomplete sections
-│   ├── keyboard-shortcuts.md  ← a few intentional errors
-│   └── setup-guide.md         ← a couple broken links
-└── src/
-    └── index.html             ← missing alt texts (for the PR exercise)
-</code></pre>
+│   ├── welcome<span class="hljs-selector-class">.md</span>             ← intentional <span class="hljs-selector-attr">[TODO]</span> incomplete sections
+│   ├── keyboard-shortcuts<span class="hljs-selector-class">.md</span>  ← <span class="hljs-selector-tag">a</span> few intentional errors
+│   └── setup-guide<span class="hljs-selector-class">.md</span>         ← <span class="hljs-selector-tag">a</span> couple broken links
+└── <span class="hljs-attribute">src</span>/
+    └── index<span class="hljs-selector-class">.html</span>             ← missing alt texts (<span class="hljs-keyword">for</span> the PR exercise)</code></pre>
 <h3>Pacing Tips for Skills Modules</h3>
 <ul>
 <li><strong>Block 1, Part B:</strong> Allow 10 minutes for every participant to copy the Skills repo and see Mona&#39;s first message. If someone does not see Mona&#39;s response within 2 minutes, check: was the repo created as public? (Mona requires public visibility on the free tier.)</li>
@@ -716,12 +713,12 @@ Step 8: Review someone else&#39;s PR
 </ul>
 <hr>
 <p><em>Day 2: <a href="DAY2_AGENDA.md">Day 2 Agenda</a></em>
-<em>Related: <a href="docs/03-navigating-repositories.md">Navigating Repositories</a> | <a href="docs/04-working-with-issues.md">Working with Issues</a> | <a href="docs/05-working-with-pull-requests.md">Working with Pull Requests</a></em></p>
+<em>Related: <a href="docs/02-navigating-repositories.md">Navigating Repositories</a> | <a href="docs/04-working-with-issues.md">Working with Issues</a> | <a href="docs/05-working-with-pull-requests.md">Working with Pull Requests</a></em></p>
 
   </main>
   <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
-    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
-    <p><a href="https://github.com">Back to GitHub</a></p>
+    <p>GitHub Learning Room — Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com/accesswatch/Learning-Room">View on GitHub</a></p>
   </footer>
 </body>
 </html>

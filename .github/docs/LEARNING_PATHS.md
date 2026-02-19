@@ -161,7 +161,7 @@ Master accessibility fundamentals and document structure.
 
 **Resources:**
 - [Alt Text Guide - WebAIM](https://webaim.org/techniques/alttext/)
-- [Workshop Section on Alt Text](../../docs/15-accessible-code-review.md#image-alt-text)
+- [Workshop Section on Alt Text](../../docs/14-accessible-code-review.md#image-alt-text)
 
 ---
 

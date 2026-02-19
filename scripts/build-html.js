@@ -2,39 +2,47 @@
 
 const fs = require('fs');
 const path = require('path');
-const { marked } = require('marked');
+const { marked, Renderer } = require('marked');
 const hljs = require('highlight.js');
 const chokidar = require('chokidar');
 
-// Configure marked with syntax highlighting
+// Configure marked with syntax highlighting via custom renderer (marked v11+)
+const renderer = new Renderer();
+renderer.code = function(code, infostring, escaped) {
+  const lang = (infostring || '').match(/^\S*/)?.[0] || null;
+  const language = lang && hljs.getLanguage(lang) ? lang : null;
+  let highlighted;
+  try {
+    highlighted = language
+      ? hljs.highlight(code, { language }).value
+      : hljs.highlightAuto(code).value;
+  } catch (err) {
+    highlighted = code;
+  }
+  const cls = language ? ` class="hljs language-${language}"` : ' class="hljs"';
+  return `<pre><code${cls}>${highlighted}</code></pre>\n`;
+};
+
 marked.setOptions({
-  highlight: function(code, lang) {
-    if (lang && hljs.getLanguage(lang)) {
-      try {
-        return hljs.highlight(code, { language: lang }).value;
-      } catch (err) {
-        console.error('Highlight error:', err);
-      }
-    }
-    return hljs.highlightAuto(code).value;
-  },
-  langPrefix: 'hljs language-',
   breaks: false,
-  gfm: true
+  gfm: true,
+  renderer
 });
 
 // HTML template with accessibility features
 const htmlTemplate = (content, title, relativePath) => {
   const depth = relativePath.split('/').length - 1;
   const prefix = depth > 0 ? '../'.repeat(depth) : './';
-  
+  const isHome = relativePath === 'index.html';
+  const pageTitle = isHome ? 'GitHub Learning Room' : `${title} — GitHub Learning Room`;
+
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
-  <title>${title} - GitHub Learning Room</title>
+  <title>${pageTitle}</title>
   <link rel="stylesheet" href="${prefix}styles/github-markdown.css">
   <link rel="stylesheet" href="${prefix}styles/highlight.css">
   <link rel="stylesheet" href="${prefix}styles/custom.css">
@@ -54,15 +62,19 @@ const htmlTemplate = (content, title, relativePath) => {
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <nav aria-label="Breadcrumb" class="breadcrumb">
-    <a href="${prefix}index.html">Home</a>
+    ${isHome
+      ? '<span aria-current="page">Home</span>'
+      : `<a href="${prefix}index.html">Home</a> <span aria-hidden="true">›</span> <span aria-current="page">${title}</span>`
+    }
   </nav>
-  <main class="markdown-body">
+  <main id="main-content" class="markdown-body">
     ${content}
   </main>
   <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
-    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
-    <p><a href="https://github.com">Back to GitHub</a></p>
+    <p>GitHub Learning Room — Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com/accesswatch/Learning-Room">View on GitHub</a></p>
   </footer>
 </body>
 </html>`;
@@ -125,7 +137,7 @@ function findMarkdownFiles(dir, fileList = []) {
     
     if (stat.isDirectory()) {
       // Skip node_modules, .git, and html output directory
-      if (!['node_modules', '.git', 'html'].includes(file)) {
+      if (!['node_modules', '.git', '.github', 'html'].includes(file)) {
         findMarkdownFiles(filePath, fileList);
       }
     } else if (file.endsWith('.md')) {
@@ -164,6 +176,8 @@ body {
   max-width: 980px;
   margin: 0 auto;
   padding: 1rem 45px 0;
+  font-size: 0.875rem;
+  color: #57606a;
 }
 
 .breadcrumb a {
@@ -183,6 +197,26 @@ summary:focus {
   outline-offset: 2px;
 }
 
+/* Skip to main content link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #0969da;
+  color: #ffffff;
+  padding: 8px 16px;
+  z-index: 100;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
 /* High contrast mode support */
 @media (prefers-contrast: high) {
   body {
@@ -192,34 +226,93 @@ summary:focus {
   .markdown-body {
     color: #ffffff;
   }
+  .skip-link {
+    background: #ffffff;
+    color: #000000;
+  }
 }
 
-/* Skip to main content link */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: #0969da;
-  color: white;
-  padding: 8px;
-  z-index: 100;
-}
-
-.skip-link:focus {
-  top: 0;
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #0d1117;
+    color: #e6edf3;
+  }
+  .markdown-body {
+    color: #e6edf3;
+  }
+  .breadcrumb {
+    color: #8b949e;
+  }
+  .breadcrumb a {
+    color: #58a6ff;
+  }
+  footer {
+    border-color: #30363d !important;
+    color: #8b949e;
+  }
+  footer a {
+    color: #58a6ff;
+  }
 }
 
 /* Ensure tables are responsive */
 .markdown-body table {
   display: block;
   overflow-x: auto;
-  white-space: nowrap;
+  max-width: 100%;
+  white-space: normal;
+}
+
+/* details/summary styling for collapsible blocks */
+.markdown-body details {
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  margin: 0.75rem 0;
+}
+
+.markdown-body details[open] {
+  padding-bottom: 0.75rem;
+}
+
+.markdown-body summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.25rem 0;
+  user-select: none;
+  list-style: none;
+}
+
+.markdown-body summary::-webkit-details-marker {
+  display: none;
+}
+
+.markdown-body summary::before {
+  content: '▶ ';
+  font-size: 0.75em;
+  vertical-align: middle;
+}
+
+.markdown-body details[open] > summary::before {
+  content: '▼ ';
 }
 
 /* Print styles */
 @media print {
   .breadcrumb,
-  footer {
+  footer,
+  .skip-link {
+    display: none;
+  }
+  .markdown-body details {
+    border: none;
+    padding: 0;
+  }
+  .markdown-body details > * {
+    display: block;
+  }
+  .markdown-body summary::before {
     display: none;
   }
 }

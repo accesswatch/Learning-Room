@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
-  <title>Quick Reference Guide - GitHub Learning Room</title>
+  <title>Quick Reference Guide — GitHub Learning Room</title>
   <link rel="stylesheet" href="./styles/github-markdown.css">
   <link rel="stylesheet" href="./styles/highlight.css">
   <link rel="stylesheet" href="./styles/custom.css">
@@ -24,10 +24,11 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <nav aria-label="Breadcrumb" class="breadcrumb">
-    <a href="./index.html">Home</a>
+    <a href="./index.html">Home</a> <span aria-hidden="true">›</span> <span aria-current="page">Quick Reference Guide</span>
   </nav>
-  <main class="markdown-body">
+  <main id="main-content" class="markdown-body">
     <h1>Quick Reference Guide</h1>
 <h2>Essential Commands, Shortcuts, and File Locations</h2>
 <hr>
@@ -271,121 +272,114 @@
 </tr>
 <tr>
 <td>Format document</td>
-<td><code>Ctrl+Shift+F</code></td>
-<td><code>Cmd+Shift+F</code></td>
+<td><code>Shift+Alt+F</code></td>
+<td><code>Shift+Option+F</code></td>
 </tr>
 </tbody></table>
 <hr>
 <h2>Git Commands (Terminal)</h2>
 <h3>Repository Setup</h3>
-<pre><code class="language-bash">git clone https://github.com/[USERNAME]/[REPO].git    # Clone your fork
-cd [REPO]                                               # Enter folder
-git remote -v                                           # View remotes
-git remote add upstream https://github.com/[ORIGINAL]   # Add upstream
-</code></pre>
+<pre><code class="hljs language-bash">git <span class="hljs-built_in">clone</span> https://github.com/[USERNAME]/[REPO].git    <span class="hljs-comment"># Clone your fork</span>
+<span class="hljs-built_in">cd</span> [REPO]                                               <span class="hljs-comment"># Enter folder</span>
+git remote -v                                           <span class="hljs-comment"># View remotes</span>
+git remote add upstream https://github.com/[ORIGINAL]   <span class="hljs-comment"># Add upstream</span></code></pre>
 <h3>Branch Workflow</h3>
-<pre><code class="language-bash">git checkout -b [branch-name]           # Create and switch to branch
-git branch -a                            # List all branches
-git branch -d [branch-name]              # Delete local branch
-git push origin [branch-name]            # Push branch to GitHub
-</code></pre>
+<pre><code class="hljs language-bash">git checkout -b [branch-name]           <span class="hljs-comment"># Create and switch to branch</span>
+git branch -a                            <span class="hljs-comment"># List all branches</span>
+git branch -d [branch-name]              <span class="hljs-comment"># Delete local branch</span>
+git push origin [branch-name]            <span class="hljs-comment"># Push branch to GitHub</span></code></pre>
 <h3>Staging and Committing</h3>
-<pre><code class="language-bash">git status                               # See what changed
-git add [file]                           # Stage specific file
-git add .                                # Stage all changes
-git commit -m &quot;message&quot;                  # Commit with message
-git push origin [branch-name]            # Push commits
-</code></pre>
+<pre><code class="hljs language-bash">git status                               <span class="hljs-comment"># See what changed</span>
+git add [file]                           <span class="hljs-comment"># Stage specific file</span>
+git add .                                <span class="hljs-comment"># Stage all changes</span>
+git commit -m <span class="hljs-string">&quot;message&quot;</span>                  <span class="hljs-comment"># Commit with message</span>
+git push origin [branch-name]            <span class="hljs-comment"># Push commits</span></code></pre>
 <h3>Pulling Updates</h3>
-<pre><code class="language-bash">git pull origin main                     # Pull latest from your fork
-git pull upstream main                   # Pull latest from upstream
-git fetch upstream                       # Fetch without merging
-</code></pre>
+<pre><code class="hljs language-bash">git pull origin main                     <span class="hljs-comment"># Pull latest from your fork</span>
+git pull upstream main                   <span class="hljs-comment"># Pull latest from upstream</span>
+git fetch upstream                       <span class="hljs-comment"># Fetch without merging</span></code></pre>
 <hr>
 <h2>File Locations Reference</h2>
 <h3>Template &amp; Agent Files</h3>
-<pre><code>.github/
+<pre><code class="hljs">.github/
 ├── ISSUE_TEMPLATE/
-│   ├── accessibility-bug.yml            ← Accessibility issue template
-│   ├── bug-report-template.yml
-│   └── feature-request.yml
+│   ├── accessibility-bug<span class="hljs-selector-class">.yml</span>            ← Accessibility issue template
+│   ├── bug-report-template<span class="hljs-selector-class">.yml</span>
+│   └── feature-request<span class="hljs-selector-class">.yml</span>
 ├── agents/
-│   ├── daily-briefing.agent.md
-│   ├── issue-tracker.agent.md
-│   ├── pr-review.agent.md
-│   ├── analytics.agent.md
-│   ├── insiders-a11y-tracker.agent.md
-│   └── template-builder.agent.md        ← The agent for building templates
-├── pull_request_template.md             ← Default PR template
+│   ├── daily-briefing<span class="hljs-selector-class">.agent</span><span class="hljs-selector-class">.md</span>
+│   ├── issue-tracker<span class="hljs-selector-class">.agent</span><span class="hljs-selector-class">.md</span>
+│   ├── pr-review<span class="hljs-selector-class">.agent</span><span class="hljs-selector-class">.md</span>
+│   ├── analytics<span class="hljs-selector-class">.agent</span><span class="hljs-selector-class">.md</span>
+│   ├── insiders-a11y-tracker<span class="hljs-selector-class">.agent</span><span class="hljs-selector-class">.md</span>
+│   └── template-builder<span class="hljs-selector-class">.agent</span><span class="hljs-selector-class">.md</span>        ← The agent <span class="hljs-keyword">for</span> building templates
+├── pull_request_template<span class="hljs-selector-class">.md</span>             ← Default PR template
 ├── workflows/
-│   ├── learning-room-pr-bot.yml
-│   ├── skills-progression.yml
-│   └── student-grouping.yml
+│   ├── learning-room-pr-bot<span class="hljs-selector-class">.yml</span>
+│   ├── skills-progression<span class="hljs-selector-class">.yml</span>
+│   └── student-grouping<span class="hljs-selector-class">.yml</span>
 └── data/
-    ├── challenge-progression.json
-    └── student-roster.json
-</code></pre>
+    ├── challenge-progression<span class="hljs-selector-class">.json</span>
+    └── student-roster.json</code></pre>
 <h3>Documentation Files</h3>
-<pre><code>docs/
-├── 00-pre-workshop-setup.md             ← Start here
-├── 01-understanding-github-web-structure.md
-├── 04-working-with-issues.md            ← File issues
-├── 05-working-with-pull-requests.md     ← Review PRs
-├── 14-accessible-code-review.md         ← Day 2 manual skill
-├── 15-issue-templates.md                ← Design templates (manual)
-├── 16-agent-forge.md                    ← Automate with agents
-└── appendix-a-glossary.md               ← Term definitions
-</code></pre>
+<pre><code class="hljs">docs/
+├── <span class="hljs-number">00</span>-pre-workshop-setup.<span class="hljs-built_in">md</span>             ← <span class="hljs-built_in">Start</span> here
+├── <span class="hljs-number">01</span>-understanding-github-web-structure.<span class="hljs-built_in">md</span>
+├── <span class="hljs-number">04</span>-working-with-issues.<span class="hljs-built_in">md</span>            ← File issues
+├── <span class="hljs-number">05</span>-working-with-pull-requests.<span class="hljs-built_in">md</span>     ← Review PRs
+├── <span class="hljs-number">14</span>-accessible-code-review.<span class="hljs-built_in">md</span>         ← Day <span class="hljs-number">2</span> manual skill
+├── <span class="hljs-number">15</span>-issue-templates.<span class="hljs-built_in">md</span>                ← Design templates (manual)
+├── <span class="hljs-number">16</span>-agent-forge.<span class="hljs-built_in">md</span>                    ← Automate with agents
+└── appendix-a-glossary.<span class="hljs-built_in">md</span>               ← Term definitions</code></pre>
 <hr>
 <h2>YAML Template Structure (Quick Template)</h2>
-<pre><code class="language-yaml">name: Your Template Name
-description: One line description
-title: &quot;[TAG] &quot;
-labels: [&quot;label1&quot;, &quot;label2&quot;]
+<pre><code class="hljs language-yaml"><span class="hljs-attr">name:</span> <span class="hljs-string">Your</span> <span class="hljs-string">Template</span> <span class="hljs-string">Name</span>
+<span class="hljs-attr">description:</span> <span class="hljs-string">One</span> <span class="hljs-string">line</span> <span class="hljs-string">description</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">&quot;[TAG] &quot;</span>
+<span class="hljs-attr">labels:</span> [<span class="hljs-string">&quot;label1&quot;</span>, <span class="hljs-string">&quot;label2&quot;</span>]
 
-body:
-  - type: markdown
-    attributes:
-      value: |
+<span class="hljs-attr">body:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">markdown</span>
+    <span class="hljs-attr">attributes:</span>
+      <span class="hljs-attr">value:</span> <span class="hljs-string">|
         ## Before you begin
         Please search for existing issues.
+</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">input</span>
+    <span class="hljs-attr">id:</span> <span class="hljs-string">version</span>
+    <span class="hljs-attr">attributes:</span>
+      <span class="hljs-attr">label:</span> <span class="hljs-string">Version</span> <span class="hljs-string">Number</span>
+      <span class="hljs-attr">placeholder:</span> <span class="hljs-string">&quot;e.g., v2.4.1&quot;</span>
+    <span class="hljs-attr">validations:</span>
+      <span class="hljs-attr">required:</span> <span class="hljs-literal">true</span>
 
-  - type: input
-    id: version
-    attributes:
-      label: Version Number
-      placeholder: &quot;e.g., v2.4.1&quot;
-    validations:
-      required: true
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">textarea</span>
+    <span class="hljs-attr">id:</span> <span class="hljs-string">description</span>
+    <span class="hljs-attr">attributes:</span>
+      <span class="hljs-attr">label:</span> <span class="hljs-string">Description</span>
+      <span class="hljs-attr">description:</span> <span class="hljs-string">Explain</span> <span class="hljs-string">what</span> <span class="hljs-string">happened</span>
+      <span class="hljs-attr">placeholder:</span> <span class="hljs-string">&quot;I was trying to... then...&quot;</span>
+    <span class="hljs-attr">validations:</span>
+      <span class="hljs-attr">required:</span> <span class="hljs-literal">true</span>
 
-  - type: textarea
-    id: description
-    attributes:
-      label: Description
-      description: Explain what happened
-      placeholder: &quot;I was trying to... then...&quot;
-    validations:
-      required: true
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">dropdown</span>
+    <span class="hljs-attr">id:</span> <span class="hljs-string">browser</span>
+    <span class="hljs-attr">attributes:</span>
+      <span class="hljs-attr">label:</span> <span class="hljs-string">Browser</span>
+      <span class="hljs-attr">options:</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">Chrome</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">Firefox</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">Safari</span>
+    <span class="hljs-attr">validations:</span>
+      <span class="hljs-attr">required:</span> <span class="hljs-literal">true</span>
 
-  - type: dropdown
-    id: browser
-    attributes:
-      label: Browser
-      options:
-        - Chrome
-        - Firefox
-        - Safari
-    validations:
-      required: true
-
-  - type: checkboxes
-    id: checks
-    attributes:
-      label: Before Submitting
-      options:
-        - label: I searched for existing issues
-          required: true
-</code></pre>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">checkboxes</span>
+    <span class="hljs-attr">id:</span> <span class="hljs-string">checks</span>
+    <span class="hljs-attr">attributes:</span>
+      <span class="hljs-attr">label:</span> <span class="hljs-string">Before</span> <span class="hljs-string">Submitting</span>
+      <span class="hljs-attr">options:</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-attr">label:</span> <span class="hljs-string">I</span> <span class="hljs-string">searched</span> <span class="hljs-string">for</span> <span class="hljs-string">existing</span> <span class="hljs-string">issues</span>
+          <span class="hljs-attr">required:</span> <span class="hljs-literal">true</span></code></pre>
 <hr>
 <h2>Accessibility Testing Checklist (Quick)</h2>
 <ul>
@@ -448,7 +442,7 @@ body:
 </tr>
 <tr>
 <td>Resources &amp; setup</td>
-<td><code>RESOURCES.md</code></td>
+<td><code>docs/appendix-u-resources.md</code></td>
 </tr>
 <tr>
 <td>Glossary &amp; terms</td>
@@ -467,8 +461,8 @@ body:
 
   </main>
   <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
-    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
-    <p><a href="https://github.com">Back to GitHub</a></p>
+    <p>GitHub Learning Room — Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com/accesswatch/Learning-Room">View on GitHub</a></p>
   </footer>
 </body>
 </html>

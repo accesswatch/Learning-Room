@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
-  <title>Facilitator Guide - GitHub Learning Room</title>
+  <title>Facilitator Guide — GitHub Learning Room</title>
   <link rel="stylesheet" href="./styles/github-markdown.css">
   <link rel="stylesheet" href="./styles/highlight.css">
   <link rel="stylesheet" href="./styles/custom.css">
@@ -24,10 +24,11 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <nav aria-label="Breadcrumb" class="breadcrumb">
-    <a href="./index.html">Home</a>
+    <a href="./index.html">Home</a> <span aria-hidden="true">›</span> <span aria-current="page">Facilitator Guide</span>
   </nav>
-  <main class="markdown-body">
+  <main id="main-content" class="markdown-body">
     <h1>Facilitator Guide</h1>
 <h2>Open Source Assistive Technology Hackathon</h2>
 <blockquote>
@@ -36,60 +37,62 @@
 <hr>
 <h2>Repository Structure</h2>
 <p>This is the single repository students clone. Everything they need for both days is here:</p>
-<pre><code>learning-room/                  ← workshop repository root
-├── README.md                   ← participant-facing start page
-├── CONTRIBUTING.md             ← contribution guide
-├── CODE_OF_CONDUCT.md          ← community standards
-├── FACILITATOR.md              ← this file
-├── .gitignore
+<pre><code class="hljs">learning-room/                  ← workshop repository root
+├── README<span class="hljs-selector-class">.md</span>                   ← participant-facing start <span class="hljs-attribute">page</span>
+├── CONTRIBUTING<span class="hljs-selector-class">.md</span>             ← contribution guide
+├── CODE_OF_CONDUCT<span class="hljs-selector-class">.md</span>          ← community standards
+├── FACILITATOR<span class="hljs-selector-class">.md</span>              ← this file
+├── <span class="hljs-selector-class">.gitignore</span>
 ├── .github/
 │   ├── ISSUE_TEMPLATE/
-│   │   ├── config.yml          ← disables blank issues, links to Skills modules
-│   │   ├── accessibility-bug.yml ← accessibility bug report YAML form
-│   │   └── feature-request.yml ← feature/improvement request YAML form
-│   ├── PULL_REQUEST_TEMPLATE.md ← PR template with accessibility checklist
-│   ├── agents/                 ← Agent Forge — five Copilot agents
-│   │   ├── daily-briefing.agent.md
-│   │   ├── issue-tracker.agent.md
-│   │   ├── pr-review.agent.md
-│   │   ├── analytics.agent.md
-│   │   ├── insiders-a11y-tracker.agent.md
-│   │   └── preferences.example.md
-│   └── prompts/                ← 7 slash commands for Copilot Chat
-│       ├── accessibility-check.prompt.md
-│       ├── draft-reply.prompt.md
-│       ├── find-good-first-issues.prompt.md
-│       ├── find-issues.prompt.md
-│       ├── morning-briefing.prompt.md
-│       ├── pr-summary.prompt.md
-│       ├── release-notes.prompt.md
-│       └── review-comments.prompt.md
-├── docs/                       ← full workshop curriculum (16 lessons + 2 appendices)
-│   ├── 00-pre-workshop-setup.md
-│   ├── 01-understanding-github-web-structure.md
-│   ├── 02-day1-agenda.md
-│   ├── 03-navigating-repositories.md
-│   ├── 04-working-with-issues.md
-│   ├── 05-working-with-pull-requests.md
-│   ├── 06-merge-conflicts.md
-│   ├── 07-culture-etiquette.md
-│   ├── 08-labels-milestones-projects.md
-│   ├── 09-notifications.md
-│   ├── 10-day2-agenda.md
-│   ├── 11-vscode-copilot.md
-│   ├── 12-issue-templates.md
-│   ├── 13-resources.md
-│   ├── 14-github-actions-workflows.md
-│   ├── 15-accessible-code-review.md
-│   ├── appendix-a-screen-reader-cheatsheet.md  ← full shortcut reference
-│   └── appendix-b-glossary.md                  ← every term explained
-└── learning-room/              ← practice content (contribution sprint targets)
-    ├── README.md
+│   │   ├── config<span class="hljs-selector-class">.yml</span>          ← disables blank issues, links to Skills modules
+│   │   ├── accessibility-bug<span class="hljs-selector-class">.yml</span> ← accessibility bug report YAML <span class="hljs-selector-tag">form</span>
+│   │   └── feature-request<span class="hljs-selector-class">.yml</span> ← feature/improvement request YAML <span class="hljs-selector-tag">form</span>
+│   ├── PULL_REQUEST_TEMPLATE<span class="hljs-selector-class">.md</span> ← PR template with accessibility checklist
+│   ├── agents/                 ← Agent Forge — six Copilot agents
+│   │   ├── daily-briefing<span class="hljs-selector-class">.agent</span><span class="hljs-selector-class">.md</span>
+│   │   ├── issue-tracker<span class="hljs-selector-class">.agent</span><span class="hljs-selector-class">.md</span>
+│   │   ├── pr-review<span class="hljs-selector-class">.agent</span><span class="hljs-selector-class">.md</span>
+│   │   ├── analytics<span class="hljs-selector-class">.agent</span><span class="hljs-selector-class">.md</span>
+│   │   ├── insiders-a11y-tracker<span class="hljs-selector-class">.agent</span><span class="hljs-selector-class">.md</span>
+│   │   ├── template-builder<span class="hljs-selector-class">.agent</span><span class="hljs-selector-class">.md</span>
+│   │   └── preferences<span class="hljs-selector-class">.example</span><span class="hljs-selector-class">.md</span>
+│   └── prompts/                ← <span class="hljs-number">28</span> slash commands <span class="hljs-keyword">for</span> Copilot Chat
+│       ├── a11y-update<span class="hljs-selector-class">.prompt</span><span class="hljs-selector-class">.md</span>
+│       ├── create-issue<span class="hljs-selector-class">.prompt</span><span class="hljs-selector-class">.md</span>
+│       ├── daily-briefing<span class="hljs-selector-class">.prompt</span><span class="hljs-selector-class">.md</span>
+│       ├── explain-<span class="hljs-selector-tag">code</span><span class="hljs-selector-class">.prompt</span><span class="hljs-selector-class">.md</span>
+│       ├── review-pr<span class="hljs-selector-class">.prompt</span><span class="hljs-selector-class">.md</span>
+│       ├── triage<span class="hljs-selector-class">.prompt</span><span class="hljs-selector-class">.md</span>
+│       └── ... (<span class="hljs-number">22</span> more — see docs/appendix-w-agent-forge-reference.md)
+├── docs/                       ← full workshop curriculum (<span class="hljs-number">16</span> chapters + appendices A–X)
+│   ├── <span class="hljs-number">00</span>-pre-workshop-setup<span class="hljs-selector-class">.md</span>
+│   ├── <span class="hljs-number">01</span>-understanding-github-web-structure<span class="hljs-selector-class">.md</span>
+│   ├── <span class="hljs-number">02</span>-navigating-repositories<span class="hljs-selector-class">.md</span>
+│   ├── <span class="hljs-number">03</span>-the-learning-room<span class="hljs-selector-class">.md</span>
+│   ├── <span class="hljs-number">04</span>-working-with-issues<span class="hljs-selector-class">.md</span>
+│   ├── <span class="hljs-number">05</span>-working-with-pull-requests<span class="hljs-selector-class">.md</span>
+│   ├── <span class="hljs-number">06</span>-merge-conflicts<span class="hljs-selector-class">.md</span>
+│   ├── <span class="hljs-number">07</span>-culture-etiquette<span class="hljs-selector-class">.md</span>
+│   ├── <span class="hljs-number">08</span>-labels-milestones-projects<span class="hljs-selector-class">.md</span>
+│   ├── <span class="hljs-number">09</span>-notifications<span class="hljs-selector-class">.md</span>
+│   ├── <span class="hljs-number">10</span>-vscode-basics<span class="hljs-selector-class">.md</span>
+│   ├── <span class="hljs-number">11</span>-git-source-control<span class="hljs-selector-class">.md</span>
+│   ├── <span class="hljs-number">12</span>-github-pull-requests-extension<span class="hljs-selector-class">.md</span>
+│   ├── <span class="hljs-number">13</span>-github-copilot<span class="hljs-selector-class">.md</span>
+│   ├── <span class="hljs-number">14</span>-accessible-code-review<span class="hljs-selector-class">.md</span>
+│   ├── <span class="hljs-number">15</span>-issue-templates<span class="hljs-selector-class">.md</span>
+│   ├── <span class="hljs-number">16</span>-agent-forge<span class="hljs-selector-class">.md</span>
+│   ├── appendix-a-glossary<span class="hljs-selector-class">.md</span>              ← every term explained
+│   ├── appendix-b-screen-reader-cheatsheet<span class="hljs-selector-class">.md</span> ← full shortcut reference
+│   ├── appendix-c through appendix-<span class="hljs-attribute">x</span>      ← deep-dive references (C–X)
+│   └── (see appendix-u-resources<span class="hljs-selector-class">.md</span> <span class="hljs-keyword">for</span> complete file listing)
+└── learning-room/              ← practice <span class="hljs-attribute">content</span> (contribution sprint targets)
+    ├── README<span class="hljs-selector-class">.md</span>
     └── docs/
-        ├── welcome.md          ← has [TODO] gaps for participants to complete
-        ├── keyboard-shortcuts.md ← has intentional errors and a heading hierarchy problem
-        └── setup-guide.md      ← has a broken URL and [TODO] markers
-</code></pre>
+        ├── welcome<span class="hljs-selector-class">.md</span>          ← has <span class="hljs-selector-attr">[TODO]</span> gaps <span class="hljs-keyword">for</span> participants to complete
+        ├── keyboard-shortcuts<span class="hljs-selector-class">.md</span> ← has intentional errors and <span class="hljs-selector-tag">a</span> heading hierarchy problem
+        └── setup-guide<span class="hljs-selector-class">.md</span>      ← has <span class="hljs-selector-tag">a</span> broken URL and <span class="hljs-selector-attr">[TODO]</span> markers</code></pre>
 <hr>
 <h2>Two Weeks Before the Workshop</h2>
 <h3>Create the GitHub Organization and Repository</h3>
@@ -97,9 +100,8 @@
 <li>Create a GitHub org (recommended) or use your personal account</li>
 <li>Create a new repository named <code>learning-room</code> (or your preferred name)</li>
 <li>Make it <strong>Public</strong> — participants need read access without being org members</li>
-<li>Push the contents of this repository to it:<pre><code>git remote add origin https://github.com/[org]/learning-room
-git push -u origin main
-</code></pre>
+<li>Push the contents of this repository to it:<pre><code class="hljs">git remote add origin <span class="hljs-link">https://github.com/</span>[<span class="hljs-string">org</span>]/learning-room
+git push -u origin main</code></pre>
 </li>
 </ol>
 <h3>Configure the Repository</h3>
@@ -191,25 +193,24 @@ This allows you to create a fresh copy for each cohort with one click.</p>
 <p>Create one issue per participant, assigned to them. Each issue points to a specific problem in <code>learning-room/docs/</code>. Template:</p>
 <p><strong>Issue title:</strong> <code>Fix: [specific problem] in [filename]</code>
 <strong>Issue body:</strong></p>
-<pre><code class="language-markdown">## What to Fix
+<pre><code class="hljs language-markdown"><span class="hljs-section">## What to Fix</span>
 
 [Specific description of the problem — be precise enough that the participant knows exactly
 what line or section to look at.]
 
-## File to Edit
+<span class="hljs-section">## File to Edit</span>
 
-`learning-room/docs/[filename].md`
+<span class="hljs-code">`learning-room/docs/[filename].md`</span>
 
-## Acceptance Criteria
+<span class="hljs-section">## Acceptance Criteria</span>
 
-- [ ] [Specific thing that should be true when the fix is complete]
-- [ ] No new heading-level skips introduced
-- [ ] Link text is descriptive (not &quot;click here&quot;)
+<span class="hljs-bullet">-</span> [ ] [Specific thing that should be true when the fix is complete]
+<span class="hljs-bullet">-</span> [ ] No new heading-level skips introduced
+<span class="hljs-bullet">-</span> [ ] Link text is descriptive (not &quot;click here&quot;)
 
-## How to Contribute
+<span class="hljs-section">## How to Contribute</span>
 
-See [Working with Issues](docs/04-working-with-issues.md) and the [Day 1 Agenda](docs/02-day1-agenda.md) for the full contribution workflow.
-</code></pre>
+See [<span class="hljs-string">Working with Issues</span>](<span class="hljs-link">docs/04-working-with-issues.md</span>) and the [<span class="hljs-string">Day 1 Agenda</span>](<span class="hljs-link">DAY1_AGENDA.md</span>) for the full contribution workflow.</code></pre>
 <p><strong>Pre-seeded issues to create (by file):</strong></p>
 <table>
 <thead>
@@ -265,22 +266,21 @@ See [Working with Issues](docs/04-working-with-issues.md) and the [Day 1 Agenda]
 <p>Create this issue, unassigned, labeled <code>good first issue</code>:</p>
 <p><strong>Title:</strong> <code>Welcome! Introduce yourself</code>
 <strong>Body:</strong></p>
-<pre><code class="language-markdown">Welcome to the workshop repository! This issue is for introductions.
+<pre><code class="hljs language-markdown">Welcome to the workshop repository! This issue is for introductions.
 
-## How to participate
+<span class="hljs-section">## How to participate</span>
 
 Leave a comment on this issue introducing yourself:
 
-- Your name (first name or preferred name)
-- Your screen reader and operating system
-- One thing you are hoping to learn or do during this workshop
+<span class="hljs-bullet">-</span> Your name (first name or preferred name)
+<span class="hljs-bullet">-</span> Your screen reader and operating system
+<span class="hljs-bullet">-</span> One thing you are hoping to learn or do during this workshop
 
 Use Markdown in your comment:
-- Use `**bold**` to highlight your screen reader name
-- Use a task list (`- [ ]`) for things you want to accomplish
+<span class="hljs-bullet">-</span> Use <span class="hljs-code">`**bold**`</span> to highlight your screen reader name
+<span class="hljs-bullet">-</span> Use a task list (<span class="hljs-code">`- [ ]`</span>) for things you want to accomplish
 
-There is no wrong answer. This is practice, and it is also a real community.
-</code></pre>
+There is no wrong answer. This is practice, and it is also a real community.</code></pre>
 <h3>Create the Pre-Seeded PR</h3>
 <p>Create a PR from a <code>practice-review</code> branch with a meaningful change to <code>learning-room/docs/welcome.md</code> — add one paragraph, change one heading, correct one small issue. This PR exists so participants can practice reviewing in Block 4 before the contribution sprint.</p>
 <p>PR title: <code>Expand the &quot;What Is Open Source?&quot; section</code>
@@ -316,7 +316,7 @@ Description: Use the PR template. Fill in all fields.</p>
 <h2>Day 2 — Pre-Session Checklist</h2>
 <ul>
 <li><input disabled="" type="checkbox"> VS Code installed on any shared/demo machine</li>
-<li><input disabled="" type="checkbox"> GitHub Copilot extension installed and authenticated</li>
+<li><input disabled="" type="checkbox"> GitHub Copilot Chat extension installed and authenticated</li>
 <li><input disabled="" type="checkbox"> GitHub Pull Requests extension installed</li>
 <li><input disabled="" type="checkbox"> Agent Forge agents verified: open Copilot Chat → type <code>@daily-briefing morning briefing</code> → confirm a response</li>
 <li><input disabled="" type="checkbox"> Slash commands verified: type <code>/find-issues good first issue</code> → confirm a response</li>
@@ -376,25 +376,24 @@ Description: Use the PR template. Fill in all fields.</p>
 </ul>
 <h3>Before the Workshop: Configure Automation</h3>
 <p><strong>Update Student Roster</strong> (<code>.github/data/student-roster.json</code>)</p>
-<pre><code class="language-json">{
-  &quot;cohort&quot;: &quot;Your Cohort Name 2024&quot;,
-  &quot;facilitators&quot;: [&quot;your-github-username&quot;],
-  &quot;students&quot;: [
-    {
-      &quot;username&quot;: &quot;student-github-username&quot;,
-      &quot;name&quot;: &quot;Student Display Name&quot;,
-      &quot;timezone&quot;: &quot;America/Los_Angeles&quot;,
-      &quot;interests&quot;: [&quot;accessibility&quot;, &quot;frontend&quot;],
-      &quot;pronouns&quot;: &quot;they/them&quot;,
-      &quot;screenReader&quot;: false,
-      &quot;mergedPRs&quot;: 0,
-      &quot;currentLevel&quot;: &quot;Beginner&quot;,
-      &quot;badges&quot;: [],
-      &quot;joinedDate&quot;: &quot;2024-01-15&quot;
-    }
-  ]
-}
-</code></pre>
+<pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cohort&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Your Cohort Name 2024&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;facilitators&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">&quot;your-github-username&quot;</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;students&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">&quot;username&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;student-github-username&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Student Display Name&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;timezone&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;America/Los_Angeles&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;interests&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">&quot;accessibility&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;frontend&quot;</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;pronouns&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;they/them&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;screenReader&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;mergedPRs&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;currentLevel&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Beginner&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;badges&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;joinedDate&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2024-01-15&quot;</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">}</span></code></pre>
 <p><strong>Verify Workflows Are Enabled</strong></p>
 <ul>
 <li>Navigate to Actions tab</li>
@@ -601,8 +600,8 @@ Use feedback to improve validation scripts, messages, and workflows for next coh
 
   </main>
   <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
-    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
-    <p><a href="https://github.com">Back to GitHub</a></p>
+    <p>GitHub Learning Room — Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com/accesswatch/Learning-Room">View on GitHub</a></p>
   </footer>
 </body>
 </html>

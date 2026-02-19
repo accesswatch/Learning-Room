@@ -53,17 +53,32 @@ Step 3: Press NVDA+F7 (or VO+U) — scan headings to understand what's on the pa
 
 ## Navigating the Repository Tabs
 
-The five main tabs are Code, Issues, Pull Requests, Actions, and Settings (Settings only visible to maintainers).
+The main tabs are: **Code**, **Issues**, **Pull Requests**, **Discussions**, **Actions**, **Projects**, **Wiki**, **Security**, **Insights**, and **Settings** (Settings only visible to maintainers). Not all tabs appear on every repository — Discussions, Wiki, and Projects must be enabled by the repository owner.
 
 ### How to reach the tabs
 
-**NVDA/JAWS:**
-1. Press `D` to jump to the "Repository navigation" landmark
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+The tab bar is visible just below the repository name. Click the tab you want — **Code**, **Issues**, **Pull requests**, etc. The active tab is underlined. The number next to a tab (e.g., "Issues · 14") shows how many open items are in that section.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+
+1. Press `D` to jump to the **"Repository navigation"** landmark
 2. Press `K` or `Tab` to navigate between the tab links
 
-**VoiceOver:**
-1. `VO+U` → Landmarks rotor → navigate to "Repository navigation"
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver)</summary>
+
+1. `VO+U` → Landmarks rotor → navigate to **"Repository navigation"**
 2. `VO+Right` to move through items in the landmark
+
+</details>
 
 ### Reading the tab labels
 Each tab link reads with its name and the count of items: "Issues, 14 open" or "Pull requests, 3 open." The active tab is marked with `aria-selected="true"` — your screen reader will announce it as "selected" or "current."
@@ -76,7 +91,19 @@ The files table is the core of the Code tab — it shows every file and folder i
 
 ### Reaching the files table
 
-Press `T` to jump to the next table on the page. The first table you will hit is usually the files table. NVDA will announce: "Table with [N] rows and 3 columns."
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+The file table is the main panel of the Code tab, showing folders and files with their most recent commit message and how long ago each was changed. It’s visible immediately below the branch selector. Click any folder name to open it, or click a file name to view the file.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users</summary>
+
+Press `T` to jump to the next table on the page. The first table you will hit is usually the files table. NVDA will announce: “Table with [N] rows and 3 columns.”
+
+</details>
 
 The three columns are:
 1. **Name** — file or folder name
@@ -109,26 +136,157 @@ The branch selector button sits just above the files table. It lets you switch w
 
 ### How to open the branch selector
 
-**NVDA/JAWS:**
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+Mouse users see the current branch name as a button with a dropdown arrow (e.g., `main ▼`) just above the file table. Click it to open the branch list. Type to filter branches, then click a branch name to switch.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+
 1. After reaching the repository navigation landmark, press `B` to navigate to buttons
-2. The branch button reads: "[branch-name] branch" (e.g., "main branch")
+2. The branch button reads: “[branch-name] branch” (e.g., “main branch”)
 3. Press `Enter` to open the dropdown
 
-**VoiceOver:**
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver)</summary>
+
 1. `Tab` to the branch button (it will be labeled with the current branch name)
 2. `VO+Space` to open
+
+</details>
 
 ### Inside the branch dropdown
 
 ```
 Step 1: The dropdown panel opens — it is a live region
 Step 2: A search field appears — you can type to filter branches
-Step 3: Press ↓ to navigate the list of branches
-Step 4: Press Enter to switch to the selected branch
-Step 5: Press Escape to close without switching
+Step 3: Press Tab to move to the results list
+Step 4: Press ↓/↑ or Tab/Shift+Tab to navigate the list of branches
+Step 5: Press Enter to switch to the selected branch
+Step 6: Press Escape to close without switching
 ```
 
+To return to the search field from the list: navigate to the tabs control at the top of the dropdown ("Branches" and "Tags" tabs), then use `Shift+Tab`.
+
 **VoiceOver:** After activating the button, `VO+Down` to interact with the dropdown → `VO+Right` to navigate items.
+
+### Switching to a tag
+
+Tags mark specific releases or versions. The branch dropdown also provides tag navigation:
+
+1. Open the branch button (same steps as above)
+2. Inside the dropdown, navigate to the **tabs control** at the top (reads as "Branches tab" and "Tags tab")
+3. Use `←/→` to switch to the **Tags** tab
+4. `Tab` to move to the tags list
+5. Navigate with `↑/↓` and press `Enter` to select a tag
+
+The repository page reloads showing the code at that tagged version.
+
+---
+
+## Cloning a Repository
+
+Cloning copies the repository to your local machine so you can work with it in VS Code or the terminal.
+
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+1. On the repository’s main page (Code tab), find and click the green **Code** button above the file table
+2. A popover opens showing **HTTPS**, **SSH**, and **GitHub CLI** tabs
+3. Click the **HTTPS** tab (default) and click the **copy** icon next to the URL
+4. Open your terminal, `cd` to where you want the folder, and run `git clone <pasted-URL>`
+5. Alternatively, click **Download ZIP** to get a one-time archive without Git
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users</summary>
+
+1. Press `1` or `Shift+1` to navigate to the repository h1 heading
+2. Press `B` to navigate to the next button — look for the **“Code”** button
+3. Press `Enter` or `Space` to open the Code flyout panel
+4. The flyout has tabs: **HTTPS**, **SSH**, **GitHub CLI**
+5. `Tab` to the HTTPS tab or SSH tab according to your preference
+6. `Tab` to the “Copy url to clipboard” button and press `Enter`
+7. The URL is now in your clipboard — paste it into VS Code or your terminal
+
+**Alternative:** `Tab` further to find **Download ZIP** if you want a one-time copy without Git.
+
+> **VoiceOver:** After activating the Code button, interact with the flyout panel with `VO+Shift+Down`. Use `VO+Right` to move to HTTPS/SSH tabs and `VO+Space` to select.
+
+</details>
+
+---
+
+## Watching, Starring, and Forking
+
+These three actions let you follow, bookmark, or copy a repository.
+
+### Watching (subscribe to notifications)
+
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+The **Watch**, **Star**, and **Fork** buttons are at the top-right of the repository page, just below the global navigation bar. Click **Watch** to open a dropdown of subscription options: **Participating and @mentions**, **All Activity**, or **Ignore**. Select your preference and click **Apply**.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users</summary>
+
+1. Press `L` to navigate through list items to reach the **Main** landmark
+2. Continue pressing `L` until you find the **Watch** button (reads as “Watch this repository”)
+3. Press `Enter` to open the subscription submenu
+4. Press `↑/↓` to browse options: Participating, All Activity, Ignore
+5. Press `Enter` to confirm
+
+</details>
+
+### Forking (create your own copy)
+
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+Click the **Fork** button (top-right, next to Watch and Star). A page opens asking you to choose the owner and repository name for your fork. Fill in the details and click **Create fork**.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users</summary>
+
+1. Press `L` to navigate list items in the Main landmark
+2. Press `I` to navigate individual list items until you find “Fork your own copy”
+3. Press `Enter` to start the fork workflow
+4. The fork creation page lets you choose the owner and repository name
+5. Tab to “Create fork” and press `Enter`
+
+</details>
+
+### Starring (bookmarking)
+
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+Click the **Star** button (top-right). The button changes to **Starred** with a filled star icon to confirm. Click it again to unstar.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users</summary>
+
+1. Press `L` to navigate list items in the Main landmark
+2. Press `I` to navigate individual list items until you find “Star this repository”
+3. Press `Enter` or `Space` to star
+4. The button text changes to “Unstar” on the next focus
+
+> **Tip:** If the Watch/Fork/Star area is not immediately found with `L`, press `D` to navigate to the **Main** landmark first, then use `I` to browse list items within that region.
+
+</details>
 
 ---
 
@@ -173,6 +331,36 @@ Above the file content, there are buttons:
 
 **How to reach these buttons:**
 Press `B` from within the file area, OR use `D` to navigate to the "Repository files navigation" landmark.
+
+### Editing a file
+
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+1. Open the file you want to edit
+2. Click the **pencil icon** (Edit file) in the top-right of the file content area
+3. The file opens in a web editor — click in the content area and edit
+4. When done, scroll down to “Commit changes”, type a commit message, and click the green **Commit changes** button
+5. Choose “Commit directly to `main`” (or your branch) and confirm
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users</summary>
+
+1. Open the file you want to edit
+2. Press `K` to navigate links until you find the **“Edit file”** link (may be labeled with a pencil icon description)
+3. Press `Enter` to activate the link — the page opens in edit mode with a code editor textarea
+4. Switch to Focus Mode: press `NVDA+Space` (NVDA) or `Insert+Z` (JAWS)
+5. Make your changes using standard text editing keys
+6. When done, press `Escape` to exit the textarea
+7. Press `Shift+Tab` to navigate backwards to the **“Commit Changes”** button
+8. Press `Enter` to open the commit dialog
+9. Type your commit message in the dialog, then Tab to the confirm button and press `Enter`
+
+> **Note:** Switch back to Browse Mode after step 6 (`NVDA+Space`) to use `Shift+Tab` more reliably to reach the commit button.
+
+</details>
 
 ---
 
@@ -331,6 +519,24 @@ Quick way to check the project description, website link, and topics:
 
 ---
 
+## Try It: The Five-Tab Tour
+
+**Time:** 3 minutes | **What you need:** Browser with screen reader, signed in to GitHub
+
+Navigate to [github.com/accesswatch/agent-forge](https://github.com/accesswatch/agent-forge) and do this:
+
+1. **Code tab** — Press `D` to the "Repository navigation" landmark, then `K` to find "Code". Press `Enter`. You're on the file list.
+2. **Issues tab** — Press `G` then `I` (Focus Mode first: `NVDA+Space`). How many open issues are there? Press `3` to jump through issue titles.
+3. **Pull Requests tab** — Press `G` then `P`. Are there any open PRs?
+4. **Find a file** — Press `T` (in Focus Mode) to open the file finder. Type `README` and press `Enter`. You just navigated straight to a file without scrolling.
+5. **Read the README** — Press `1` to find the page title, then `2` to scan sections.
+
+**You're done.** You just toured a real repository using only your keyboard.
+
+> **What success feels like:** You visited four tabs and opened a file without touching a mouse. Every repository on GitHub has this same layout — you now know how to navigate all of them.
+
+---
+
 > ### 🔥 Day 2 Amplifier — Agent Forge: `@daily-briefing`
 >
 > **Navigate every folder of `agent-forge` manually today before using any agent.** Find `.github/agents/`, open a `.agent.md` file, and read it — that file is how an agent knows what to do. You must understand the structure before you can evaluate whether an agent understood it correctly.
@@ -344,6 +550,6 @@ Quick way to check the project description, website link, and topics:
 
 ---
 
-*Next: [Working with Issues](04-working-with-issues.md)*
-*Back: [Day 1 Agenda](../DAY1_AGENDA.md)*
+*Next: [The Learning Room](03-the-learning-room.md)*
+*Back: [Understanding GitHub's Web Structure](01-understanding-github-web-structure.md)*
 *Reference: [Screen Reader Cheat Sheet](appendix-b-screen-reader-cheatsheet.md)*

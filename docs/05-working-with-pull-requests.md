@@ -2,6 +2,17 @@
 ## Creating, Reviewing, and Merging Pull Requests with a Screen Reader
 
 > Pull requests are where your work becomes a contribution. This guide takes you through the full pull request workflow — from opening one to participating in review — using only your keyboard and screen reader.
+>
+> **Screen reader note — New Files Changed Experience:** This guide uses GitHub's improved Files Changed experience, which adds proper ARIA landmark structure to the Files Changed tab, including the file tree and diff navigation. This feature may already be active for your account — it has been broadly rolled out and may no longer appear as a Feature Preview toggle at all.
+>
+> **To verify:** Activate the **User Menu** button (top-right of any GitHub page) → activate **"Feature preview"** → scan the list for **"New Files Changed Experience"**:
+> - If listed and the toggle announces **"Pressed"** (or **"Disable"**) — already enabled, no action needed
+> - If listed but **not Pressed** (or **"Enable"**) — activate the toggle to enable it
+> - If not listed at all — the feature has graduated to the standard interface; it is active automatically
+>
+> Full step-by-step instructions with per-screen-reader commands are in [Pre-Workshop Setup, Step 4](00-pre-workshop-setup.md#6-step-4--check-github-feature-preview-settings).
+>
+> **Browse vs Focus Mode (NVDA):** Use **Browse Mode** (the default) for reading PR conversations, navigating headings, and reviewing diffs. Switch to **Focus Mode** (`NVDA+Space`) only when you need to type in comment boxes or search fields. Switch back to Browse Mode to resume navigation. Maximize your browser window for consistent landmark layout.
 
 ---
 
@@ -24,10 +35,30 @@ A PR shows:
 
 ## Navigating to Pull Requests
 
-### From a repository:
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+Click the **Pull requests** tab in the repository navigation bar. The tab shows the count of open PRs. Click any PR title to open it.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+
 1. `D` → "Repository navigation" landmark
 2. `K` to navigate tabs → "Pull requests, [N] open"
 3. `Enter` to open
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+1. `VO+U` → Landmarks → navigate to "Repository navigation"
+2. Quick Nav `K` or `VO+Right` to navigate tabs → "Pull requests"
+3. `VO+Space` to open
+
+</details>
 
 ### From a PR notification:
 If you received a notification about a PR, follow the notification link directly to the PR page.
@@ -39,8 +70,12 @@ If you received a notification about a PR, follow the notification link directly
 The PR list works identically to the Issues list:
 - `3` to navigate PR titles (they are h3 headings)
 - `I` to navigate list items
-- `F` to reach the search/filter field
+- `F` or `E` / `Shift+E` to reach the search/filter field
 - Filters work the same as Issues: `is:open`, `author:@me`, `review-requested:@me`, etc.
+
+> **Screen reader note — PR list semantics:** The PR list does **not** have individual ARIA item containers with per-item semantics. To read a PR's full detail (title, author, labels, status), you must navigate sequentially with `Tab` or arrow keys through the elements for each item. Starting from a PR title link, `Tab` forward to find the author, labels, and review status for that same PR before moving to the next title.
+>
+> **Hovercards:** Hovercards appear when you hover over usernames and links in the PR list, adding extra verbosity. To reduce this noise: go to your GitHub Profile → Accessibility settings → disable "Show link previews" and similar hover triggers. This makes sequential navigation significantly less cluttered.
 
 ---
 
@@ -80,18 +115,32 @@ A PR page has three main tabs:
 
 ## Navigating the PR Tab Bar
 
-The Conversation, Commits, and Files changed tabs are in a "Pull request navigation tabs" landmark.
+The Conversation, Commits, and Files changed tabs are in a “Pull request navigation tabs” landmark.
 
-```
-Step 1: Press D → navigate to "Pull request navigation tabs"
-Step 2: Press ← or → arrow keys to move between tab options
-Step 3: Press Enter to activate a tab
-```
+<details>
+<summary>🖥️ Visual / mouse users</summary>
 
-**VoiceOver:**
-1. `VO+U` → Landmarks → "Pull request navigation tabs"
+The three tabs — **Conversation**, **Commits**, and **Files changed** — appear just below the PR title. Click the tab you want. The active tab is underlined. The count on **Files changed** shows how many files were modified.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+
+1. Press `D` → navigate to “Pull request navigation tabs”
+2. Press `←` or `→` arrow keys to move between tab options
+3. Press `Enter` to activate a tab
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver)</summary>
+
+1. `VO+U` → Landmarks → “Pull request navigation tabs”
 2. `VO+Right` to move between tabs
 3. `VO+Space` to activate
+
+</details>
 
 Each tab link reads with its name and the count: "Files changed, 3 files changed."
 
@@ -108,16 +157,35 @@ Each tab link reads with its name and the count: "Files changed, 3 files changed
 ### Status Checks Section
 
 Below the description, the status checks summary shows whether automated tests passed. Look for:
-- "All checks have passed" / "Some checks failed" / "Checks pending"
-- A "Show all checks" button or link
+- “All checks have passed” / “Some checks failed” / “Checks pending”
+- A “Show all checks” button or link
 
-```
-Step 1: H or 2 to find the "Checks" or "Status checks" heading
-Step 2: K to navigate links for individual check names
-Step 3: Enter on a check to see details
-```
+<details>
+<summary>🖥️ Visual / mouse users</summary>
 
-See [GitHub Actions & Workflows](appendix-g-github-actions-workflows.md) for full guidance on reading status checks.
+Status checks appear as a coloured banner below the PR description — green tick for passed, red X for failed, yellow spinner for running. Click **Show all checks** to expand the full list. Click a check name to go to its run log.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+
+1. Press `H` or `2` to find the "Checks" or "Status checks" heading
+2. Press `K` to navigate links for individual check names
+3. Press `Enter` on a check to see its details
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+1. Quick Nav `H` or `VO+Cmd+H` to jump to the "Checks" or "Status checks" heading
+2. Quick Nav `K` to navigate check name links
+3. `VO+Space` on a check to see its details
+
+</details>
+
+See [GitHub Actions & Workflows](appendix-q-github-actions-workflows.md) for full guidance on reading status checks.
 
 ### Review Comments
 
@@ -152,17 +220,36 @@ Step 5: Enter on a commit to open its diff
 
 This is the core of a code review. You will read diffs — the before/after state of every file that changed.
 
-> **Note:** This guide uses GitHub's improved Files Changed experience (default as of January 2026), which includes proper screen reader landmarks and enhanced keyboard navigation.
+> **Note:** This guide uses GitHub's improved Files Changed experience. If your Files Changed tab doesn't match these steps, refer to the screen reader verification steps in the prerequisite callout at the top of this chapter — the feature may need to be enabled in Feature Preview, or it may already be active for your account with no action required.
 
 ### File Tree (left panel)
 
-The file tree lists every changed file. Use it to jump directly to a specific file's diff.
+The file tree lists every changed file. Use it to jump directly to a specific file’s diff.
 
-```
-Step 1: D → navigate to "File tree" region
-Step 2: ↑/↓ to navigate the file list
-Step 3: Enter to jump to that file's diff
-```
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+The file tree panel is on the left side of the Files Changed tab. It lists every modified file. Click a filename to scroll the diff view to that file. You can collapse or expand folders by clicking the arrow. Type in the filter box at the top to narrow the file list.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+
+1. `D` → navigate to "File tree" region
+2. `↑/↓` to navigate the file list
+3. `Enter` to jump to that file's diff
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+1. `VO+U` → Landmarks → navigate to "File tree" region
+2. `VO+Down` to move through the file list
+3. `VO+Space` to jump to that file's diff
+
+</details>
 
 ### The Diff for a File
 
@@ -178,35 +265,74 @@ Each changed file has:
 
 ### Navigating the diff with a screen reader
 
-**NVDA/JAWS — navigating the diff table:**
-```
-Step 1: T to jump to the next diff table
-Step 2: Switch to Focus Mode: Insert+Space (NVDA) or Insert+Z (JAWS)
-Step 3: ↓ to move through lines one by one
-Step 4: Ctrl+Alt+→ to read across columns (line number | change type | content)
-Step 5: The screen reader reads: "+  Add accessible name to submit button"
-```
+<details>
+<summary>🖥️ Visual / mouse users</summary>
 
-**VoiceOver — navigating the diff:**
-```
-Step 1: T or VO+U → Tables → select the diff table
-Step 2: VO+Shift+Down to enter the table
-Step 3: VO+Right/Left for columns, VO+Up/Down for rows
-```
+Each file’s diff shows added lines in green and removed lines in red. Scroll the page to read through changes. Unchanged context lines are shown in white/grey. Collapse a file’s diff by clicking the arrow next to its filename heading. Use `Ctrl+F` (browser Find) to search for specific text within visible diffs.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+
+1. `T` to jump to the next diff table
+2. Switch to Focus Mode: `Insert+Space` (NVDA) or `Insert+Z` (JAWS)
+3. `↓` to move through lines one by one
+4. `Ctrl+Alt+→` to read across columns (line number | change type | content)
+5. The screen reader reads: “+  Add accessible name to submit button”
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver)</summary>
+
+1. `T` or `VO+U` → Tables → select the diff table
+2. `VO+Shift+Down` to enter the table
+3. `VO+Right/Left` for columns, `VO+Up/Down` for rows
+
+</details>
 
 ### Placing an inline comment on a diff line
+
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+Hover over any line in the diff — a blue `+` button appears on the left margin. Click it to open a comment box for that line. Type your comment, then click **Add single comment** (posts immediately) or **Start a review** (batches the comment with others). To select a range of lines, click and drag across the line numbers on the left.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
 
 1. Navigate to the specific line in the diff (using the table navigation above)
 2. While focused on that line, a comment button appears — press `Enter` or `Space` to activate it
 3. A comment box opens below the line
 4. Focus Mode → type your comment
-5. Tab to "Add single comment" button (instant comment) OR "Start a review" (to batch comments)
+5. `Tab` to **Add single comment** button (instant comment) OR **Start a review** (to batch comments)
 
 **Multi-line comment:**
 1. Focus the first line you want to comment on
 2. Press `Shift+↓` to extend the selection to additional lines
 3. A comment button appears — activate it
 4. The comment applies to the full range of selected lines
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+1. Navigate to the specific line in the diff (using the table navigation above)
+2. While focused on that line, `VO+Space` on the comment button that appears
+3. A comment box opens below the line
+4. `VO+Shift+Down` to interact with the text area, then type your comment
+5. `VO+Shift+Up` to stop interacting, then `Tab` to **Add single comment** and `VO+Space`
+
+**Multi-line comment:**
+1. Focus the first line and `Shift+↓` to extend the selection
+2. `VO+Space` on the comment button that appears
+3. The comment applies to the full range of selected lines
+
+</details>
 
 ### Viewing comments within the diff
 
@@ -224,10 +350,36 @@ Inline comments appear as expandable threads within the diff table. Navigate to 
 
 ### From a fork or feature branch
 
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+1. Navigate to the repository on GitHub
+2. If you recently pushed, a yellow banner “Compare & pull request” appears at the top — click it
+3. If no banner appears: click the **Pull requests** tab → click the green **New pull request** button
+4. Use the branch dropdowns to choose your **base** branch (what to merge into) and your **compare** branch (your changes)
+5. Click **Create pull request**
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+
 1. Navigate to the repository
 2. A "Compare & pull request" banner may appear (if you recently pushed) — activate it
 3. OR: Navigate to Pull Requests tab → "New pull request"
 4. Choose your base branch (what to merge into) and compare branch (your changes)
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+1. Navigate to the repository
+2. Check for a "Compare & pull request" banner — Quick Nav `B` to find and `VO+Space` to activate it
+3. OR: navigate to Pull Requests tab (`VO+U` → Landmarks → Repository navigation) → Quick Nav `B` for "New pull request"
+4. Use the branch dropdowns (`VO+Space` to open, arrow keys to select) to choose base and compare branches
+
+</details>
 
 ### Filling out the PR form
 
@@ -336,6 +488,54 @@ When you are asked to review a PR, you have three options:
 ### Starting a review
 
 On the Files Changed tab, when you add inline comments, choose "Start a review" instead of "Add single comment." This batches all your comments into one review submission.
+
+### Completing and submitting a review
+
+After adding your inline comments via “Start a review,” you must submit the review to notify the PR author. The review is pending until you submit it.
+
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+1. Look for the **Finish your review** button in the top-right area of the Files Changed tab (it shows the number of pending comments)
+2. Click it — a popover appears with a summary text area and three radio buttons: **Comment**, **Approve**, **Request changes**
+3. Optionally type a summary comment
+4. Select your verdict by clicking the radio button
+5. Click **Submit review**
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+
+1. Press `1` to go to the h1 (PR title)
+2. Press `B` (or `Tab`) to navigate to the **“Submit review”** button and activate it (`Enter`/`Space`)
+3. A “Submit review” dialog/panel appears
+4. Switch to Focus Mode (`NVDA+Space`) if prompted to type
+5. Optionally type a summary comment in the “markdown value” textbox
+6. `Tab` to the “Review Event” radio group
+7. Use `↑/↓` to select one of:
+   - **Comment** — general feedback, does not block merge
+   - **Approve** — you are satisfied; signals merge readiness
+   - **Request changes** — must be addressed before merge
+8. `Tab` to the “Submit review” button and press `Enter`
+
+</details>
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+1. Quick Nav `H` or `VO+Cmd+H` to navigate to the PR title (h1)
+2. Quick Nav `B` or `Tab` to find the **"Submit review"** button → `VO+Space`
+3. A "Submit review" dialog/panel appears
+4. `VO+Shift+Down` to interact with the summary text area, type an optional comment
+5. `VO+Shift+Up` to stop interacting, then `Tab` to the "Review Event" radio group
+6. `VO+Left/Right` or arrow keys to select:
+   - **Comment** — general feedback, does not block merge
+   - **Approve** — you are satisfied; signals merge readiness
+   - **Request changes** — must be addressed before merge
+7. `Tab` to the "Submit review" button → `VO+Space`
+
+</details>
+> **Tip from accessibility.github.com:** If you submitted comments as "Add single comment" instead of "Start a review," each comment is already posted individually. The "Submit review" flow is only needed when you chose "Start a review" to batch comments together.
 
 ### GitHub shortcuts for pull requests
 
@@ -541,6 +741,24 @@ Merge box → Tab → "Disable auto-merge" button → Enter
 
 ---
 
+## Try It: Read a Real Pull Request
+
+**Time:** 3 minutes | **What you need:** Browser, signed in to GitHub
+
+Go to the Learning Room repository's Pull Requests tab and find any open or recently closed PR:
+
+1. Navigate to Pull Requests (`G` then `P` in Focus Mode)
+2. Open the first PR in the list (press `Enter` on its title)
+3. **Read the description** — press `2` to jump to the first section heading, then arrow down to read
+4. **Check the conversation** — press `3` to jump between comments. Read what the reviewer said and how the author responded.
+5. **Look at the diff** — press `D` to the "Pull request tabs" landmark, then navigate to "Files changed" and press `Enter`. Press `H` to scan the changed file headings.
+
+**You're done.** You just read a complete PR — description, conversation, and code changes.
+
+> **What success feels like:** You followed a PR from description to diff using only headings and landmarks. The next time you open a PR — yours or someone else's — you'll know exactly where everything is.
+
+---
+
 > ### 🔥 Day 2 Amplifier — Agent Forge: `@pr-review`
 >
 > **Review at least two pull requests manually before using any agent.** A review generated by `@pr-review` is only as useful as your ability to read, edit, and challenge it. The agent writes a first draft — you supply the context, the history, and the final judgment that no diff can contain.
@@ -556,4 +774,4 @@ Merge box → Tab → "Disable auto-merge" button → Enter
 
 *Next: [Merge Conflicts](06-merge-conflicts.md)*
 *Back: [Working with Issues](04-working-with-issues.md)*
-*Related: [Accessible Code Review](14-accessible-code-review.md) | [Screen Reader Cheat Sheet](appendix-b-screen-reader-cheatsheet.md) | [Culture & Etiquette](07-culture-etiquette.md) | [GitHub Actions](appendix-g-github-actions-workflows.md)*
+*Related: [Accessible Code Review](14-accessible-code-review.md) | [Screen Reader Cheat Sheet](appendix-b-screen-reader-cheatsheet.md) | [Culture & Etiquette](07-culture-etiquette.md) | [GitHub Actions](appendix-q-github-actions-workflows.md)*

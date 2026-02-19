@@ -33,18 +33,36 @@ For each repository, you choose how many notifications to receive:
 
 ### Changing your watch settings for a repo
 
-From the repository page:
-```
-Step 1: Find the "Watch" button in the repo header
-  • B to navigate buttons → find "Watch [N]" or "Unwatch" button
-  • Or use D → repository header landmark
-Step 2: Enter to open the dropdown
-Step 3: ↑/↓ to navigate the subscription options
-Step 4: Enter to select your preferred level
-Step 5: The button label updates to confirm your choice
-```
+<details>
+<summary>🖥️ Visual / mouse users</summary>
 
-**Recommended setting for most repos:** "Participating and @mentions only" — you stay in the loop on what involves you without noise.
+At the top of any repository page, find the **Watch** button (near Star and Fork). Click it to open a dropdown with levels: **Participating and @mentions**, **All Activity**, **Custom**, and **Ignore**. Click your preferred level — it takes effect immediately.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+
+1. Find the **Watch** button in the repo header (`B` to navigate buttons → find "Watch [N]" or "Unwatch" button)
+2. Press `Enter` to open the dropdown
+3. Press `↑/↓` to navigate the subscription options
+4. Press `Enter` to select your preferred level
+5. The button label updates to confirm your choice
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+1. Quick Nav `B` to find the **Watch** button in the repo header (listen for "Watch" or "Unwatch")
+2. `VO+Space` to open the dropdown
+3. `VO+Down` or arrow keys to navigate subscription options
+4. `VO+Space` to select your preferred level
+5. The button label updates to confirm your choice
+
+</details>
+
+**Recommended setting for most repos:** “Participating and @mentions only” — you stay in the loop on what involves you without noise.
 
 ---
 
@@ -64,21 +82,31 @@ Navigate to your inbox: `https://github.com/notifications` or press `G` then `N`
 
 ### Navigating the notification list
 
-**NVDA/JAWS:**
-```
-Step 1: D → main content landmark
-Step 2: H to navigate group headings (Today / Yesterday / This week / Older)
-Step 3: Tab through individual notifications
-   — each notification row announces: repo name, issue/PR title, event type, time
-Step 4: Enter to open the notification (goes to the issue/PR page)
-```
+<details>
+<summary>🖥️ Visual / mouse users</summary>
 
-**VoiceOver:**
-```
-Step 1: VO+U → Main → navigate to notification list
-Step 2: VO+Down to move through notifications
-Step 3: VO+Space to open a notification
-```
+The inbox shows notifications grouped by date (Today, Yesterday, This week, Older). Each row shows the repository, the issue or PR title, the event type, and the time. Click a row to open the notification and go to the issue or PR. Use the left sidebar filters to narrow the view. The **Mark all as done** button clears the entire inbox at once.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+
+1. `D` → main content landmark
+2. `H` to navigate group headings (Today / Yesterday / This week / Older)
+3. `Tab` through individual notifications — each row announces: repo name, issue/PR title, event type, time
+4. `Enter` to open the notification (goes to the issue/PR page)
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver)</summary>
+
+1. `VO+U` → Main → navigate to notification list
+2. `VO+Down` to move through notifications
+3. `VO+Space` to open a notification
+
+</details>
 
 ### What is announced per notification
 
@@ -124,12 +152,32 @@ The left sidebar has quick filters. Use `Tab` or `K` to navigate to them:
 
 At the top of the notification list there is a filter/search field:
 
-```
-Step 1: F or E to reach the filter input
-Step 2: Focus Mode → type repo name or org name
-Step 3: Results filter in real time
-Step 4: Esc to clear the filter
-```
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+Click the filter/search box at the top of the notification list and type a repository or organization name. The list narrows in real time. Press `Escape` or clear the box to reset.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+
+1. Press `F` or `E` to reach the filter input
+2. Focus Mode → type repo name or org name
+3. Results filter in real time
+4. Press `Esc` to clear the filter
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+1. Quick Nav `F` to reach the filter input
+2. `VO+Shift+Down` to interact → type repo or org name
+3. Results filter in real time
+4. Press `Esc` to clear the filter and `VO+Shift+Up` to stop interacting
+
+</details>
 
 ---
 
@@ -144,14 +192,37 @@ After a busy day or coming back from time away, clear your inbox methodically:
 
 ### Muting a noisy thread
 
-If a thread generates too many notifications (a heated discussion, a large PR with many comments):
-```
-Step 1: Open the notification
-Step 2: On the issue/PR page, find the "Unsubscribe" link
-  • Navigate sidebar → "Notifications" section
-  • Press Unsubscribe button
-Step 3: Or from the inbox: focus the notification → press M
-```
+If a thread generates too many notifications:
+
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+1. Open the issue or PR page
+2. In the right sidebar, scroll to the **Notifications** section
+3. Click **Unsubscribe** — you will stop receiving notifications from this thread
+4. Alternatively, from the inbox: hover over the notification row and click the **mute** icon (or the … menu)
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+
+1. Open the notification
+2. On the issue/PR page, navigate the sidebar to the **Notifications** section (`H` or `D`)
+3. Activate the **Unsubscribe** button
+4. Or from the inbox: focus the notification → press `M` to mute
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+1. Open the notification
+2. On the issue/PR page, `VO+U` → Landmarks or Quick Nav `H` to find the **Notifications** section in the sidebar
+3. Quick Nav `B` or `Tab` to find the **Unsubscribe** button → `VO+Space`
+4. Or from the inbox: focus the notification and press `M` to mute
+
+</details>
 
 ### Dealing with @mentions you didn't expect
 
@@ -264,6 +335,22 @@ GitHub has an iOS and Android app that supports push notifications. While the ap
 - Push notifications can alert you to review requests even when you're away from your computer
 - The mobile app does work with iOS VoiceOver and Android TalkBack
 - For primary contribution work, the desktop browser experience remains more fully featured
+
+---
+
+## Try It: Tame Your Inbox
+
+**Time:** 2 minutes | **What you need:** Browser, signed in to GitHub
+
+Go to [github.com/notifications](https://github.com/notifications) and practice:
+
+1. **Scan your inbox** — Press `H` and `Tab` to navigate through notifications. Each one shows the repo name, type (issue/PR), and title.
+2. **Mark one as done** — Find a notification you've already read. Press `E` to mark it as done. It disappears from the list.
+3. **Configure watching** — Go to the Learning Room repository. Press `D` to landmarks, find the repo nav area, then look for the "Watch" or "Unwatch" button (`B` to scan buttons). Choose your preferred watch level.
+
+**You're done.** You now control what GitHub tells you about and what it doesn't.
+
+> **What success feels like:** Your inbox has fewer items, and you chose what to watch. Notifications work *for* you now, not against you.
 
 ---
 

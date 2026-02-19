@@ -582,12 +582,12 @@ Create GitHub Pages site that reads `student-roster.json` and displays:
 ## 📚 Additional Resources
 
 ### For Students
-- [Automation Guide](AUTOMATION.md) — How the bot works
-- [Learning Paths](.github/docs/LEARNING_PATHS.md) — Skill progression details
-- [Available Challenges](learning-room/docs/CHALLENGES.md) — Challenge list
+- [Automation Guide](../../learning-room/AUTOMATION.md) — How the bot works
+- [Learning Paths](LEARNING_PATHS.md) — Skill progression details
+- [Available Challenges](../../learning-room/docs/CHALLENGES.md) — Challenge list
 
 ### For Facilitators
-- [FACILITATOR.md](FACILITATOR.md) — Workshop facilitation guide
+- [FACILITATOR.md](../../FACILITATOR.md) — Workshop facilitation guide
 - [GitHub Actions Docs](https://docs.github.com/en/actions) — Workflow reference
 - [GitHub GraphQL API](https://docs.github.com/en/graphql) — For advanced automation
 

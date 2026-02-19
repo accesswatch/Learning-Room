@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
-  <title>Contributing to This Workshop Repository - GitHub Learning Room</title>
+  <title>Contributing to This Workshop Repository — GitHub Learning Room</title>
   <link rel="stylesheet" href="./styles/github-markdown.css">
   <link rel="stylesheet" href="./styles/highlight.css">
   <link rel="stylesheet" href="./styles/custom.css">
@@ -24,10 +24,11 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <nav aria-label="Breadcrumb" class="breadcrumb">
-    <a href="./index.html">Home</a>
+    <a href="./index.html">Home</a> <span aria-hidden="true">›</span> <span aria-current="page">Contributing to This Workshop Repository</span>
   </nav>
-  <main class="markdown-body">
+  <main id="main-content" class="markdown-body">
     <h1>Contributing to This Workshop Repository</h1>
 <p>Thank you for helping improve this workshop. Whether you are a participant who found a typo, someone who wants to add a new exercise, or an educator adapting these materials for your own community — your contribution is meaningful and welcome.</p>
 <p>This guide covers contributing to <strong>this workshop learning repository</strong>. For contributing to Agent Forge itself (the project you work on during Day 2), see <a href="https://github.com/accesswatch/agent-forge/blob/main/CONTRIBUTING.md">Agent Forge&#39;s CONTRIBUTING.md</a>.</p>
@@ -49,7 +50,7 @@
 <hr>
 <h2>1. Who This Is For</h2>
 <p><strong>Workshop participants:</strong> You have already completed the contribution workflow during the workshop. This repository is an excellent first contribution target for applying what you practiced.</p>
-<p><strong>Educators and facilitators:</strong> You are welcome to fork the entire repository and adapt the materials for your own workshop program. Attribution is appreciated but not required (MIT license).</p>
+<p><strong>Educators and facilitators:</strong> You are welcome to fork the entire repository and adapt the materials for your own workshop program. Attribution is required under the CC BY 4.0 license — please include a credit line and link to the original repository.</p>
 <p><strong>Accessibility practitioners:</strong> If you have domain expertise in a particular screen reader or assistive technology and notice something that is incorrect or incomplete, please open an issue or submit a correction. Your expertise is exactly what this documentation needs.</p>
 <p><strong>People who find bugs:</strong> A broken link, a command that has stopped working, an exercise that cannot be completed — all of these are legitimate bugs. Open an issue the same way you would for any software project.</p>
 <hr>
@@ -97,38 +98,32 @@
 <li>VoiceOver: <code>VO+Right Arrow</code> to find &quot;Fork&quot; button, <code>VO+Space</code> to activate</li>
 </ul>
 <h3>Clone Your Fork</h3>
-<pre><code class="language-bash">git clone https://github.com/[your-username]/[workshop-repo-name].git
-cd [workshop-repo-name]
-</code></pre>
+<pre><code class="hljs language-bash">git <span class="hljs-built_in">clone</span> https://github.com/[your-username]/[workshop-repo-name].git
+<span class="hljs-built_in">cd</span> [workshop-repo-name]</code></pre>
 <h3>Add the Upstream Remote</h3>
 <p>This keeps your fork synchronized with the original repository:</p>
-<pre><code class="language-bash">git remote add upstream https://github.com/[original-owner]/[workshop-repo-name].git
-</code></pre>
+<pre><code class="hljs language-bash">git remote add upstream https://github.com/[original-owner]/[workshop-repo-name].git</code></pre>
 <p>Verify both remotes are configured:</p>
-<pre><code class="language-bash">git remote -v
-</code></pre>
+<pre><code class="hljs language-bash">git remote -v</code></pre>
 <p>Expected output:</p>
-<pre><code>origin    https://github.com/[your-username]/[workshop-repo-name].git (fetch)
-origin    https://github.com/[your-username]/[workshop-repo-name].git (push)
-upstream  https://github.com/[original-owner]/[workshop-repo-name].git (fetch)
-upstream  https://github.com/[original-owner]/[workshop-repo-name].git (push)
-</code></pre>
+<pre><code class="hljs">origin    <span class="hljs-link">https://github.com/</span>[<span class="hljs-string">your-username</span>]/[workshop-repo-name].git (fetch)
+origin    <span class="hljs-link">https://github.com/</span>[<span class="hljs-string">your-username</span>]/[workshop-repo-name].git (push)
+upstream  <span class="hljs-link">https://github.com/</span>[<span class="hljs-string">original-owner</span>]/[workshop-repo-name].git (fetch)
+upstream  <span class="hljs-link">https://github.com/</span>[<span class="hljs-string">original-owner</span>]/[workshop-repo-name].git (push)</code></pre>
 <hr>
 <h2>4. Contribution Workflow — Step by Step</h2>
 <p>This is the same workflow you practiced during the workshop, applied to a real contribution.</p>
 <h3>Step 1 — Sync with Upstream</h3>
 <p>Always start from a current copy of the main branch:</p>
-<pre><code class="language-bash">git checkout main
+<pre><code class="hljs language-bash">git checkout main
 git fetch upstream
 git merge upstream/main
-git push origin main
-</code></pre>
+git push origin main</code></pre>
 <h3>Step 2 — Create a Focused Branch</h3>
 <p>One issue or topic per branch. Branch names should describe the change:</p>
-<pre><code class="language-bash">git checkout -b fix-nvda-shortcut-section-05
+<pre><code class="hljs language-bash">git checkout -b fix-nvda-shortcut-section-05
 git checkout -b add-exercise-03-alternative-macos
-git checkout -b update-broken-links-resources
-</code></pre>
+git checkout -b update-broken-links-resources</code></pre>
 <h3>Step 3 — Make Your Changes</h3>
 <p>Edit the file or files. Limit your changes to what is described in your branch name. Unrelated improvements belong in separate branches and separate pull requests.</p>
 <p><strong>In VS Code:</strong></p>
@@ -146,23 +141,20 @@ git checkout -b update-broken-links-resources
 </ol>
 <h3>Step 4 — Commit Your Changes</h3>
 <p>Write a commit message that a future contributor can read and understand without context:</p>
-<pre><code class="language-bash">git add docs/04-working-with-issues.md
-git commit -m &quot;fix: correct NVDA virtual cursor toggle shortcut in Section 3
+<pre><code class="hljs language-bash">git add docs/04-working-with-issues.md
+git commit -m <span class="hljs-string">&quot;fix: correct NVDA virtual cursor toggle shortcut in Section 3
 
 The documented shortcut was NVDA+Space which is correct for switching
-between browse and focus mode, but the exercise called it &#39;reading mode&#39;
-which is not a term NVDA uses. Updated to match NVDA&#39;s own terminology.&quot;
-</code></pre>
+between browse and focus mode, but the exercise called it &#x27;reading mode&#x27;
+which is not a term NVDA uses. Updated to match NVDA&#x27;s own terminology.&quot;</span></code></pre>
 <p><strong>Commit message format:</strong></p>
-<pre><code>type: short summary (under 72 characters)
+<pre><code class="hljs">type: <span class="hljs-keyword">short</span> summary (under <span class="hljs-number">72</span> <span class="hljs-keyword">characters</span>)
 
-Optional longer explanation of why the change was made, not just what
-changed. What problem does this solve? What was wrong before?
-</code></pre>
+Optional longer explanation <span class="hljs-keyword">of</span> why <span class="hljs-keyword">the</span> change was made, <span class="hljs-keyword">not</span> just what
+changed. What problem does this solve? What was wrong <span class="hljs-keyword">before</span>?</code></pre>
 <p>Types: <code>fix</code>, <code>docs</code>, <code>exercise</code>, <code>style</code>, <code>chore</code></p>
 <h3>Step 5 — Push to Your Fork</h3>
-<pre><code class="language-bash">git push origin fix-nvda-shortcut-section-05
-</code></pre>
+<pre><code class="hljs language-bash">git push origin fix-nvda-shortcut-section-05</code></pre>
 <h3>Step 6 — Open a Pull Request</h3>
 <ol>
 <li>Navigate to your fork on GitHub</li>
@@ -248,13 +240,13 @@ changed. What problem does this solve? What was wrong before?
 </ul>
 <hr>
 <h2>7. HTML Documentation Build System</h2>
-<p>This repository automatically generates HTML versions of all markdown files. This ensures documentation is available in multiple formats for different access needs and distribution scenarios.</p>
+<p>This repository maintains HTML versions of all Markdown files. The HTML is built locally and committed alongside the Markdown source, so both formats are always in sync.</p>
 <h3>How It Works</h3>
-<p><strong>Automatic conversion:</strong></p>
+<p><strong>Local build, committed output:</strong></p>
 <ul>
-<li>When you edit any <code>.md</code> file and push to the main branch, a GitHub Actions workflow automatically converts all markdown files to HTML</li>
-<li>Generated HTML files are committed back to the <code>html/</code> directory</li>
-<li>No manual intervention needed — the system handles it automatically</li>
+<li>You edit <code>.md</code> files, then run <code>npm run build:html</code> before committing</li>
+<li>Both the Markdown changes and the updated <code>html/</code> output are committed together</li>
+<li>There is no CI pipeline — the build is your responsibility before pushing</li>
 </ul>
 <p><strong>What gets converted:</strong></p>
 <ul>
@@ -264,18 +256,17 @@ changed. What problem does this solve? What was wrong before?
 </ul>
 <h3>Local Development</h3>
 <p>You can build HTML files locally to preview your changes before pushing:</p>
-<pre><code class="language-bash"># Install dependencies (first time only)
+<pre><code class="hljs language-bash"><span class="hljs-comment"># Install dependencies (first time only)</span>
 npm install
 
-# Generate HTML files once
+<span class="hljs-comment"># Generate HTML files once</span>
 npm run build:html
 
-# Watch mode — rebuilds HTML automatically when you save markdown files
+<span class="hljs-comment"># Watch mode — rebuilds HTML automatically when you save markdown files</span>
 npm run watch:html
 
-# Clean generated HTML
-npm run clean
-</code></pre>
+<span class="hljs-comment"># Clean generated HTML</span>
+npm run clean</code></pre>
 <p>Generated HTML files will be in the <code>html/</code> directory with the same folder structure as the source markdown files.</p>
 <h3>HTML Features</h3>
 <p>The generated documentation includes:</p>
@@ -288,21 +279,24 @@ npm run clean
 <li><strong>High contrast mode support</strong> — respects user preferences</li>
 </ul>
 <h3>What You Need to Know When Contributing</h3>
-<p><strong>Committing markdown only:</strong>
-When you make a pull request, you only need to edit and commit the <code>.md</code> files. The HTML files will be automatically regenerated when your PR is merged to main.</p>
+<p><strong>Build before committing:</strong>
+After editing any <code>.md</code> file, run <code>npm run build:html</code> and include the updated <code>html/</code> files in your commit. A typical commit workflow:</p>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># Edit your .md files, then:</span>
+npm run build:html
+git add -A
+git commit -m <span class="hljs-string">&quot;docs: update chapter 5 and rebuild HTML&quot;</span></code></pre>
 <p><strong>Testing the HTML locally (optional):</strong>
-If you want to verify how your markdown will look in HTML:</p>
+If you want to verify how your Markdown will look in HTML before committing:</p>
 <ol>
 <li>Run <code>npm install</code> (first time only)</li>
 <li>Run <code>npm run build:html</code></li>
 <li>Open files in <code>html/</code> directory in your browser</li>
-<li>Do NOT commit the HTML files in your PR — they will be auto-generated</li>
 </ol>
 <p><strong>HTML files in the repository:</strong>
 The <code>html/</code> directory is committed to the repository so that:</p>
 <ul>
 <li>Documentation can be browsed directly from the repository</li>
-<li>HTML files are version-controlled alongside their markdown source</li>
+<li>HTML files are version-controlled alongside their Markdown source</li>
 <li>GitHub Pages can serve the documentation without a build step</li>
 </ul>
 <h3>Troubleshooting</h3>
@@ -314,14 +308,8 @@ You need to install Node.js first. Download from <a href="https://nodejs.org/">n
 <li>Check that code blocks use proper fence syntax (<code>```</code>)</li>
 <li>Look for unclosed brackets or parentheses in links</li>
 </ul>
-<p><strong>HTML not updating:</strong></p>
-<ul>
-<li>Check the Actions tab on GitHub to see if the workflow ran</li>
-<li>Look for the commit message &quot;Auto-generate HTML documentation from markdown&quot;</li>
-<li>Verify the workflow has permissions to push to the repository</li>
-</ul>
 <hr>
-<h2>9. Screen Reader Guidance for Commands in This Document</h2>
+<h2>8. Screen Reader Guidance for Commands in This Document</h2>
 <p>If you are reviewing this repository using a screen reader, here are the relevant reading patterns.</p>
 <h3>NVDA</h3>
 <ul>
@@ -345,31 +333,29 @@ You need to install Node.js first. Download from <a href="https://nodejs.org/">n
 <h2>9. Submitting Your Pull Request</h2>
 <h3>PR Template</h3>
 <p>When you open a pull request, fill in the template that appears. If no template appears, include:</p>
-<pre><code class="language-markdown">## What does this change?
+<pre><code class="hljs language-markdown"><span class="hljs-section">## What does this change?</span>
 
 &lt;!-- One or two sentences describing the change --&gt;
 
-## Why?
+<span class="hljs-section">## Why?</span>
 
 &lt;!-- What problem does this fix or what gap does it address? --&gt;
 
-## How to test / review
+<span class="hljs-section">## How to test / review</span>
 
 &lt;!-- What should a reviewer look at? Where is the change? --&gt;
 
-## Checklist
+<span class="hljs-section">## Checklist</span>
 
-- [ ] Heading levels are in sequence (no skips)
-- [ ] All links use descriptive text (no bare URLs in running text)
-- [ ] Command examples are in fenced code blocks
-- [ ] Tables have header rows
-- [ ] Spelling and grammar reviewed
-</code></pre>
+<span class="hljs-bullet">-</span> [ ] Heading levels are in sequence (no skips)
+<span class="hljs-bullet">-</span> [ ] All links use descriptive text (no bare URLs in running text)
+<span class="hljs-bullet">-</span> [ ] Command examples are in fenced code blocks
+<span class="hljs-bullet">-</span> [ ] Tables have header rows
+<span class="hljs-bullet">-</span> [ ] Spelling and grammar reviewed</code></pre>
 <h3>PR Title Format</h3>
-<pre><code>fix: correct JAWS shortcut for PR review in Section 3
-docs: add alternative macOS exercise for Section 6
-exercise: add bonus challenge for notifications day 2
-</code></pre>
+<pre><code class="hljs"><span class="hljs-symbol">fix:</span> correct JAWS shortcut for PR review <span class="hljs-keyword">in</span> Section <span class="hljs-number">3</span>
+<span class="hljs-symbol">docs:</span> <span class="hljs-keyword">add</span> alternative macOS exercise for Section <span class="hljs-number">6</span>
+<span class="hljs-symbol">exercise:</span> <span class="hljs-keyword">add</span> bonus challenge for notifications day <span class="hljs-number">2</span></code></pre>
 <h3>Size Guideline</h3>
 <p>Small, focused pull requests are reviewed faster and merged sooner. If you have multiple unrelated improvements, submit them as separate pull requests.</p>
 <hr>
@@ -390,12 +376,12 @@ exercise: add bonus challenge for notifications day 2
 <p><strong>For accessibility concerns:</strong> Tag your issue or comment with the <code>accessibility</code> label</p>
 <hr>
 <p><em>Workshops run better when participants contribute back. Every correction, every clarification, every additional exercise makes this material stronger for everyone who comes after you. Your name in the commit history is not the end of your participation — it is the beginning.</em></p>
-<p><em><a href="README.md">Back to README →</a> | <a href="docs/13-resources.md">Resources →</a> | <a href="CODE_OF_CONDUCT.md">Code of Conduct →</a></em></p>
+<p><em><a href="README.md">Back to README →</a> | <a href="docs/appendix-u-resources.md">Resources →</a> | <a href="CODE_OF_CONDUCT.md">Code of Conduct →</a></em></p>
 
   </main>
   <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
-    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
-    <p><a href="https://github.com">Back to GitHub</a></p>
+    <p>GitHub Learning Room — Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com/accesswatch/Learning-Room">View on GitHub</a></p>
   </footer>
 </body>
 </html>

@@ -74,7 +74,23 @@ Change the domain in any GitHub URL:
 
 **Method 3: From the Repository Page**
 
-Navigate to the "Code" button → press `Down Arrow` to open the menu → find "Open with github.dev" option.
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+1. Click the green **Code** button on any repository page
+2. In the dropdown, click **Open with github.dev**
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS / VoiceOver)</summary>
+
+1. Navigate to the Code button (press `B` or `Tab` until you hear "Code, button" or similar)
+2. Press `Enter` to open the dropdown menu
+3. Press `Down Arrow` to reach "Open with github.dev"
+4. Press `Enter`
+
+</details>
 
 ---
 
@@ -83,15 +99,15 @@ Navigate to the "Code" button → press `Down Arrow` to open the menu → find "
 Everything in the list below works **exactly like desktop VS Code**:
 
 ✅ **Full text editor with syntax highlighting**  
-✅ **All VS Code keyboard shortcuts** (see [Keyboard Reference](14-github-copilot.md#vs-code-keyboard-shortcuts--full-reference))  
-✅ **Screen reader mode** (`Shift+Alt+F1` to activate)  
-✅ **File Explorer** (`Ctrl+Shift+E`) — browse the entire repository  
-✅ **Search across files** (`Ctrl+Shift+F`)  
-✅ **Source Control (Git)** (`Ctrl+Shift+G`) — stage, commit, push changes  
-✅ **Markdown preview** (`Ctrl+Shift+V`)  
-✅ **Command Palette** (`Ctrl+Shift+P`) — access every VS Code command  
-✅ **Go to File** (`Ctrl+P`) — instant file picker  
-✅ **Go to Symbol** (`Ctrl+Shift+O`) — navigate by headings in Markdown  
+✅ **All VS Code keyboard shortcuts** (see [Keyboard Reference](13-github-copilot.md#8-keyboard-shortcuts-reference))  
+✅ **Screen reader mode** (`Shift+Alt+F1` to activate — Mac: `Shift+Option+F1`)  
+✅ **File Explorer** (`Ctrl+Shift+E` — Mac: `Cmd+Shift+E`) — browse the entire repository  
+✅ **Search across files** (`Ctrl+Shift+F` — Mac: `Cmd+Shift+F`)  
+✅ **Source Control (Git)** (`Ctrl+Shift+G` — Mac: `Cmd+Shift+G`) — stage, commit, push changes  
+✅ **Markdown preview** (`Ctrl+Shift+V` — Mac: `Cmd+Shift+V`)  
+✅ **Command Palette** (`Ctrl+Shift+P` — Mac: `Cmd+Shift+P`) — access every VS Code command  
+✅ **Go to File** (`Ctrl+P` — Mac: `Cmd+P`) — instant file picker  
+✅ **Go to Symbol** (`Ctrl+Shift+O` — Mac: `Cmd+Shift+O`) — navigate by headings in Markdown  
 ✅ **Multiple editor tabs and split view**  
 ✅ **Settings sync** — if you sign in, your VS Code settings apply here too
 
@@ -116,7 +132,7 @@ These limitations are why **desktop VS Code exists**. github.dev is for quick ed
 
 - Same keyboard shortcuts as desktop VS Code (you learn them once)
 - Same screen reader mode (you configure it once)
-- Same file navigation patterns (Explorer, Ctrl+P, Ctrl+Shift+O)
+- Same file navigation patterns (Explorer, `Ctrl+P` / Mac: `Cmd+P`, `Ctrl+Shift+O` / Mac: `Cmd+Shift+O`)
 - But accessible instantly from any GitHub page with one keystroke
 
 **Use github.dev when:**
@@ -138,7 +154,7 @@ These limitations are why **desktop VS Code exists**. github.dev is for quick ed
 **Activate screen reader mode immediately:**
 
 1. Press `.` on any GitHub repository to open github.dev
-2. Press `Shift+Alt+F1` to enable screen reader mode
+2. Press `Shift+Alt+F1` (Mac: `Shift+Option+F1`) to enable screen reader mode
 3. VS Code announces "Screen reader optimized"
 
 **What changes:**
@@ -172,11 +188,11 @@ Before reading the rest of this guide:
 1. Open [github.com/accesswatch/agent-forge](https://github.com/accesswatch/agent-forge) in your browser
 2. Press `.` (period key)
 3. github.dev opens
-4. Press `Shift+Alt+F1` to enable screen reader mode
-5. Press `Ctrl+Shift+E` to open the Explorer
+4. Press `Shift+Alt+F1` (Mac: `Shift+Option+F1`) to enable screen reader mode
+5. Press `Ctrl+Shift+E` (Mac: `Cmd+Shift+E`) to open the Explorer
 6. Navigate to `README.md` and press `Enter`
-7. Press `Ctrl+Home` to go to the top of the file
-8. Press `Ctrl+Shift+O` to see the outline (all headings)
+7. Press `Ctrl+Home` (Mac: `Cmd+Up`) to go to the top of the file
+8. Press `Ctrl+Shift+O` (Mac: `Cmd+Shift+O`) to see the outline (all headings)
 9. Close the tab when done
 
 **You just used VS Code.** The desktop version in the rest of this guide is the same experience — with Copilot and agents added.
@@ -185,18 +201,20 @@ Before reading the rest of this guide:
 
 ## 3. Screen Reader Mode in VS Code
 
+> **Who needs this section?** If you use NVDA, JAWS, VoiceOver, or another screen reader, read this section before continuing. If you are not using a screen reader, you can skip to [Section 4](#4-essential-keyboard-navigation-and-findfilter) — VS Code works fully without enabling this mode.
+
 VS Code has built-in accessibility support designed for screen reader users. It changes how focus moves, how announcements work, and how navigation behaves.
 
 ### Activating Screen Reader Mode
 
 | Method | Steps |
 |--------|-------|
-| Keyboard shortcut | `Shift+Alt+F1` |
-| Command Palette | `Ctrl+Shift+P` → type "screen reader" → select "Toggle Screen Reader Accessibility Mode" |
+| Keyboard shortcut | `Shift+Alt+F1` (Windows) / `Shift+Option+F1` (Mac) |
+| Command Palette | `Ctrl+Shift+P` (Windows) / `Cmd+Shift+P` (Mac) → type "screen reader" → select "Toggle Screen Reader Accessibility Mode" |
 | Auto-detection | VS Code detects NVDA and JAWS automatically on Windows; VoiceOver on macOS |
 
 **Verify it is active:**
-Open Settings (`Ctrl+,`) → search for `accessibility support` → confirm it shows `on` (not `auto`).
+Open Settings (`Ctrl+,` — Mac: `Cmd+,`) → search for `accessibility support` → confirm it shows `on` (not `auto`).
 
 ### What Changes in Screen Reader Mode
 
@@ -225,7 +243,7 @@ VS Code uses a web-based renderer. Configure NVDA for best results:
 
 ### VoiceOver-Specific Settings for VS Code (macOS)
 
-1. Open VS Code → `Shift+Alt+F1` to confirm screen reader mode
+1. Open VS Code → `Shift+Alt+F1` (Mac: `Shift+Option+F1`) to confirm screen reader mode
 2. In VoiceOver Utility: Verbosity → set "Punctuation" to "All" for reading code
 3. Use Quick Nav OFF (`Left+Right Arrow`) when inside the editor — standard cursor navigation is more predictable
 4. Use `VO+Shift+Down` to interact with the editor, `VO+Shift+Up` to stop interacting
@@ -236,7 +254,11 @@ VS Code uses a web-based renderer. Configure NVDA for best results:
 
 ### Panels and Areas
 
-| Area | Shortcut | What Gets Focus |
+> **Mac users:** Substitute `Cmd` for `Ctrl` and `Option` for `Alt` in all shortcuts below.
+>
+> For example: `Ctrl+Shift+E` → `Cmd+Shift+E`, `Ctrl+Backtick` → `Ctrl+Backtick` (same on Mac), `Ctrl+Shift+P` → `Cmd+Shift+P`.
+
+| Area | Shortcut (Windows) | What Gets Focus |
 |------|----------|----------------|
 | Explorer (file tree) | `Ctrl+Shift+E` | Folder/file list |
 | Search | `Ctrl+Shift+F` | Search input |
@@ -255,6 +277,8 @@ VS Code uses a web-based renderer. Configure NVDA for best results:
 | Go to beginning of file | `Ctrl+Home` |
 | Go to end of file | `Ctrl+End` |
 | Go to line N | `Ctrl+G` → type line number |
+| Go to line and column | `Ctrl+G` → type `N:C` (e.g., `10:5` for line 10, column 5) |
+| Go to character offset | `Ctrl+G` → type `::N` (e.g., `::599` for the 599th character in the file) |
 | Go to symbol (heading in Markdown) | `Ctrl+Shift+O` |
 | Go to definition | `F12` |
 | Find in file | `Ctrl+F` |
@@ -313,6 +337,27 @@ docs/*.md          → all Markdown files in the docs folder
 .github/**         → everything inside the .github folder
 !node_modules/**   → exclude the node_modules folder from results
 ```
+
+#### Finding Settings (`Ctrl+,`)
+
+The Settings editor has built-in search that filters by keyword as you type. Additional filter options:
+
+| Filter | What It Shows |
+|--------|---------------|
+| `@modified` | Only settings you have changed from their defaults |
+| `@tag:accessibility` | All accessibility-related settings |
+| `@tag:advanced` | Advanced settings — useful for finding less common configuration options |
+| `@tag:experimental` | Experimental features not enabled by default |
+
+Type any of these directly in the Settings search box (`Ctrl+,`).
+
+#### Terminal IntelliSense (`Ctrl+Space`)
+
+The VS Code integrated terminal now offers completions for shell commands, file paths, and arguments. Press `Ctrl+Space` while typing in the terminal to trigger the completion list. Navigate suggestions with `Up/Down Arrow`, accept with `Tab` or `Enter`.
+
+Enable with: Settings (`Ctrl+,`) → search `terminal.integrated.suggest.enabled` → set to `on`.
+
+**Screen reader note:** Terminal IntelliSense completions are announced via ARIA live regions. The completion popup behaves the same as editor IntelliSense.
 
 #### Type-to-Filter in Tree Views
 
@@ -469,29 +514,29 @@ This gives you the complete picture of what changed, in reading order, without v
 
 **Audio cues for diffs:**
 
-With `audioCues.diffLineInserted` and `audioCues.diffLineDeleted` both set to `on` in Settings, VS Code plays a distinct tone when your cursor moves over an added line (higher pitched) or a removed line (lower pitched). You receive change-type information through sound before the line text is announced.
+With `accessibility.signals.diffLineInserted` and `accessibility.signals.diffLineDeleted` both set to `on` in Settings, VS Code plays a distinct tone when your cursor moves over an added line (higher pitched) or a removed line (lower pitched). You receive change-type information through sound before the line text is announced.
 
 ---
 
 ## Accessibility Signals and Audio Cues
 
-VS Code can communicate editor state through audio cues — sounds that announce when you move past line breaks, reach the end of a file, land on an error, or complete a task. This is particularly useful for screen reader users who benefit from non-verbal state confirmation.
+VS Code can communicate editor state through accessibility signals — sounds that announce when you move past line breaks, reach the end of a file, land on an error, or complete a task. This is particularly useful for screen reader users who benefit from non-verbal state confirmation.
 
-### Enabling Audio Cues
+### Enabling Accessibility Signals
 
-Open Settings (`Ctrl+,`) → search "audio cue":
+Open Settings (`Ctrl+,`) → search "accessibility signals":
 
 | Setting | Recommended Value | What It Does |
 |---------|-------------------|-------------|
 | `editor.accessibilitySupport` | `on` | Full screen reader mode |
-| `audioCues.lineHasError` | `on` | Sound when cursor is on a line with an error |
-| `audioCues.lineHasWarning` | `auto` | Sound on warnings (lower pitch than errors) |
-| `audioCues.taskCompleted` | `on` | Sound when a terminal command completes |
-| `audioCues.taskFailed` | `on` | Different sound when a command fails |
-| `audioCues.diffLineInserted` | `on` | Sound when navigating over added lines in a diff |
-| `audioCues.diffLineDeleted` | `on` | Sound when navigating over deleted lines in a diff |
-| `audioCues.chatResponsePending` | `on` | Sound while Copilot is generating |
-| `audioCues.chatResponseReady` | `on` | Sound when Copilot response is complete |
+| `accessibility.signals.lineHasError` | `on` | Sound when cursor is on a line with an error |
+| `accessibility.signals.lineHasWarning` | `auto` | Sound on warnings (lower pitch than errors) |
+| `accessibility.signals.taskCompleted` | `on` | Sound when a terminal command completes |
+| `accessibility.signals.taskFailed` | `on` | Different sound when a command fails |
+| `accessibility.signals.diffLineInserted` | `on` | Sound when navigating over added lines in a diff |
+| `accessibility.signals.diffLineDeleted` | `on` | Sound when navigating over deleted lines in a diff |
+| `accessibility.signals.chatResponsePending` | `on` | Sound while Copilot is generating |
+| `accessibility.signals.chatResponseReceived` | `on` | Sound when Copilot response is complete |
 
 ### Recommended Profile for Screen Reader Users
 
@@ -500,12 +545,12 @@ Add this to your VS Code `settings.json` (Command Palette → "Open User Setting
 ```json
 {
   "editor.accessibilitySupport": "on",
-  "audioCues.lineHasError": "on",
-  "audioCues.taskCompleted": "on",
-  "audioCues.taskFailed": "on",
-  "audioCues.chatResponseReady": "on",
-  "audioCues.diffLineInserted": "on",
-  "audioCues.diffLineDeleted": "on",
+  "accessibility.signals.lineHasError": "on",
+  "accessibility.signals.taskCompleted": "on",
+  "accessibility.signals.taskFailed": "on",
+  "accessibility.signals.chatResponseReceived": "on",
+  "accessibility.signals.diffLineInserted": "on",
+  "accessibility.signals.diffLineDeleted": "on",
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "none",
   "editor.wordWrap": "on"
@@ -516,6 +561,6 @@ Add this to your VS Code `settings.json` (Command Palette → "Open User Setting
 
 ---
 
-*Next: [Git & Source Control in VS Code](12-git-source-control.md)*  
-*Back: [Day 2 Agenda](10-day2-agenda.md)*  
-*Related: [GitHub Pull Requests Extension](13-github-pull-requests-extension.md) | [GitHub Copilot](14-github-copilot.md)*
+*Next: [Git & Source Control in VS Code](11-git-source-control.md)*  
+*Back: [Day 2 Agenda](../DAY2_AGENDA.md)*  
+*Related: [GitHub Pull Requests Extension](12-github-pull-requests-extension.md) | [GitHub Copilot](13-github-copilot.md)*

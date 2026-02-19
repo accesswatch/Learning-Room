@@ -144,4 +144,4 @@ Press JAWS key + F5 to re-read the current page. If that does not help, refresh 
 GitHub issue list filtering updates via JavaScript. If VoiceOver does not announce the updated count, navigate to the heading of the list (H key) and read from there.
 
 **The diff table in Files Changed is hard to read:**
-The improved Files Changed experience has been enabled by default since January 2026, providing better screen reader landmarks and keyboard navigation. If you're experiencing issues, check your [Feature preview settings](https://github.com/settings/feature_previews) to ensure you haven't opted out.
+The improved Files Changed experience has been broadly rolled out and is likely already active for your account. If you are experiencing issues with diff navigation or missing landmarks, verify using your screen reader: activate the **User Menu** button → **"Feature preview"** → look for **"New Files Changed Experience"**. If it appears, the toggle announces **"Pressed"** when enabled — activate it if not. If it no longer appears in the Feature Preview list, it has graduated to the standard interface and is active automatically.

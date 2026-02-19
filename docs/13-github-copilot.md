@@ -5,7 +5,9 @@
 >
 > This guide covers GitHub Copilot: inline code suggestions, Copilot Chat (conversational assistance), custom instructions vs custom agents, effective prompting for non-code contributions, and using Accessible View to read AI-generated responses.
 >
-> **Prerequisites:** [VS Code Setup & Accessibility Basics](11-vscode-basics.md), [Git & Source Control in VS Code](12-git-source-control.md)
+> **Prerequisites:** [VS Code Setup & Accessibility Basics](10-vscode-basics.md), [Git & Source Control in VS Code](11-git-source-control.md)
+
+> **Mac keyboard shortcuts:** Throughout this chapter, all `Ctrl+` shortcuts use `Cmd+` on Mac, and `Alt+` shortcuts use `Option+` on Mac. Key equivalents: `Ctrl+Shift+I` → `Cmd+Shift+I` (Chat), `Ctrl+I` → `Cmd+I` (inline chat), `Alt+F2` → `Option+F2` (Accessible View), `Ctrl+/` → `Cmd+/` (insert suggestion). See the [Keyboard Shortcuts Reference](#8-keyboard-shortcuts-reference) at the end of this chapter for the complete list.
 
 ---
 
@@ -45,14 +47,14 @@ GitHub Copilot is an AI pair programmer that suggests code and text completions 
 
 ### Installation Steps
 
-1. Open Extensions sidebar: `Ctrl+Shift+X`
-2. Search for "GitHub Copilot"
-3. Find "GitHub Copilot" (publisher: GitHub)
+1. Open Extensions sidebar: `Ctrl+Shift+X` (Mac: `Cmd+Shift+X`)
+2. Search for "GitHub Copilot Chat"
+3. Find **GitHub Copilot Chat** (publisher: GitHub)
 4. Press `Enter` to open the extension detail page
 5. `Tab` to "Install" button → press `Enter`
 6. Wait for installation to complete
 
-**Additional extension:** "GitHub Copilot Chat" may install automatically. If not, install it separately (same process).
+**One extension, all features:** GitHub Copilot Chat is now the single all-in-one extension. It provides inline code suggestions, the Chat panel (`Ctrl+Shift+I` / Mac: `Cmd+Shift+I`), inline chat (`Ctrl+I` / Mac: `Cmd+I`), and all agent features. The older separate "GitHub Copilot" extension has been deprecated.
 
 ### Signing In
 
@@ -73,7 +75,7 @@ After installation:
 ### Checking Subscription Status
 
 **Command Palette:**
-1. `Ctrl+Shift+P`
+1. `Ctrl+Shift+P` (Mac: `Cmd+Shift+P`)
 2. Type "Copilot: Check Status"
 3. Select it to see your subscription tier (Free, Pro, Enterprise)
 
@@ -93,31 +95,52 @@ Copilot suggests completions as you type, displayed as gray "ghost text" after y
 **While typing:**
 1. Copilot analyzes your context (file content, cursor position, nearby files)
 2. Generates a suggestion
-3. Displays it as ghost text
+3. Presents the suggestion
 
-**Screen reader announcement:**
-- NVDA/JAWS: "Suggestion available" (or reads the suggestion text depending on verbosity settings)
-- VoiceOver: Announces suggestions in accessible form
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+The suggestion appears as **gray "ghost text"** after your cursor — a preview of what Copilot thinks you want to type next. It's there but not inserted; press `Tab` to accept it or `Escape` to dismiss.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS / VoiceOver)</summary>
+
+Suggestions are **announced via ARIA live regions** — ghost text is not visually meaningful to you so VS Code reads it instead:
+- **NVDA/JAWS:** "Suggestion available" (or reads the suggestion text, depending on verbosity settings)
+- **VoiceOver:** Announces suggestions in accessible form
+
+Press `Alt+F2` (Mac: `Option+F2`) to open the suggestion in **Accessible View** — this gives you the complete suggestion text in a static, fully readable panel without streaming.
+
+</details>
 
 ### Accepting Suggestions
 
-| Action | Shortcut |
-|--------|----------|
-| Accept entire suggestion | `Tab` |
-| Reject suggestion | `Escape` |
-| Accept one word at a time | `Ctrl+Right Arrow` |
-| Show next alternative suggestion | `Alt+]` |
-| Show previous alternative suggestion | `Alt+[` |
-| Open full suggestion list | `Ctrl+Enter` |
+| Action | Windows/Linux | Mac |
+|--------|---------------|-----|
+| Accept entire suggestion | `Tab` | `Tab` |
+| Reject suggestion | `Escape` | `Escape` |
+| Accept one word at a time | `Ctrl+Right Arrow` | `Cmd+Right Arrow` |
+| Show next alternative suggestion | `Alt+]` | `Option+]` |
+| Show previous alternative suggestion | `Alt+[` | `Option+[` |
+| Open full suggestion list | `Ctrl+Enter` | `Cmd+Enter` |
+| Open suggestion in Accessible View | `Alt+F2` | `Option+F2` |
+| Insert suggestion from Accessible View at cursor | `Ctrl+/` | `Cmd+/` |
 
-**Accepting word-by-word (`Ctrl+Right Arrow`) is particularly useful when:**
+**Accepting word-by-word (`Ctrl+Right Arrow` / Mac: `Cmd+Right Arrow`) is particularly useful when:**
 - The suggestion starts correctly but you want to finish differently
 - You want to review the suggestion incrementally
 - You're learning and want to see how Copilot structures responses
 
 ### Reading Suggestions with Screen Readers
 
-**If suggestions are too frequent or intrusive:**
+> **Visual users:** If Copilot's ghost text is getting in the way, skip to "Disabling Inline Suggestions" below.
+
+<details>
+<summary>🔊 Screen reader users — tuning announcement verbosity</summary>
+
+**If suggestions are announced too frequently or are intrusive:**
 
 **NVDA:**
 1. NVDA Menu → Preferences → Settings → Presentation
@@ -133,7 +156,9 @@ Copilot suggests completions as you type, displayed as gray "ghost text" after y
 2. Reduce "Announcements" level
 
 **Alternative: Use Accessible View**
-Press `Alt+F2` when a suggestion appears to read it in the Accessible View (full text, no streaming).
+Press `Alt+F2` (Mac: `Option+F2`) when a suggestion appears to read it in the Accessible View (full text, no streaming).
+
+</details>
 
 ### Prompting Through Comments
 
@@ -161,12 +186,29 @@ Type this comment, press `Enter`, and Copilot drafts content based on your instr
 
 If suggestions are distracting:
 
-**Temporarily (current file):**
-- Click the Copilot icon in status bar → "Disable Completions for [language]"
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+**Temporarily (current language):**
+- Click the Copilot icon in the status bar (bottom-right `><` icon)
+- Select "Disable Completions for [language]"
 
 **Permanently:**
-- Settings (`Ctrl+,`) → search "Copilot enable"
-- Uncheck "Enable Inline Suggestions"
+- Open Settings: `Ctrl+,` (Mac: `Cmd+,`) → search "Copilot enable" → uncheck "Enable Inline Suggestions"
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS / VoiceOver)</summary>
+
+**Temporarily (current language):**
+- `Ctrl+Shift+P` (Mac: `Cmd+Shift+P`) → type "Copilot: Disable Completions" → press `Enter`
+- Or navigate to the Copilot status bar item and activate it (depends on screen reader and focus)
+
+**Permanently:**
+- `Ctrl+,` (Mac: `Cmd+,`) → search "inline suggestions" → toggle off "GitHub Copilot: Enable Inline Completions"
+
+</details>
 
 ---
 
@@ -176,17 +218,51 @@ Copilot Chat is a full conversation interface where you ask questions, request e
 
 ### Opening Copilot Chat
 
-**Primary panel:** `Ctrl+Shift+I`
+**Primary panel:** `Ctrl+Shift+I` (Mac: `Cmd+Shift+I`)
 
 Opens the Chat panel on the right side of VS Code.
 
-**Inline chat (in-file):** `Ctrl+I`
+**Inline chat (in-file):** `Ctrl+I` (Mac: `Cmd+I`)
 
 Opens a chat prompt directly in the editor, anchored to your cursor. Results appear inline. Best for file-specific edits.
 
-**Quick Chat (floating):** `Ctrl+Shift+Alt+I` (Windows) / `Cmd+Shift+I` (macOS)
+**Quick Chat (floating):** `Ctrl+Shift+Alt+I` (Windows) / `Cmd+Shift+Ctrl+I` (macOS)
 
 Opens a floating chat dialog that doesn't take up sidebar space.
+
+### Chat Modes
+
+Copilot Chat has four modes, selected from a dropdown at the bottom of the Chat input area. Each mode changes how Copilot interprets your request and what it can do.
+
+| Mode | How It Works | Best For |
+|------|-------------|----------|
+| **Ask** (default) | Conversational Q&A — Copilot explains, suggests, and answers but does not edit files directly | Questions, explanations, understanding unfamiliar code, reviewing content |
+| **Edit** | You define a "working set" of files; Copilot proposes edits and shows a diff you approve or reject — nothing changes without your confirmation | Targeted, multi-file changes where you want full control |
+| **Agent** | Copilot works autonomously — it decides which files to open, reads and writes code, and runs terminal commands to complete the task | Larger tasks where you want Copilot to drive end-to-end |
+| **Plan** | Copilot produces a step-by-step implementation plan before writing any code; you review and approve the plan first | Complex features where you want to validate the approach before any changes are made |
+
+**Switching modes:**
+- The mode selector is a dropdown at the **bottom of the Chat input area**, just above the text field
+- Tab through the toolbar at the bottom of Chat to find it, or click on the current mode name
+- Screen reader users: the mode name is announced when you focus that control; press `Space` or `Enter` to open the dropdown, then `Arrow` keys to choose
+
+**Recommended mode for beginners:** Start with **Ask** to learn how Copilot responds to your questions, then explore **Edit** mode for making changes with full visibility into what Copilot touches. **Agent** mode is powerful but works best once you're comfortable reviewing its output.
+
+> **Note:** **Plan** mode was introduced in October 2025 (VS Code 1.106) and is available as a public preview. Plan mode lets you get an AI-generated implementation plan before any code is written — useful for understanding what a complex change will involve.
+
+### Choosing a Model
+
+Copilot gives you access to AI models from OpenAI, Anthropic (Claude), Google (Gemini), xAI (Grok), and others. The **model picker** is a button at the bottom of the Chat input area, next to the mode selector, showing the current model name (e.g., "Auto" or "Claude Sonnet 4.6").
+
+**When "Auto" is selected** (the default), Copilot automatically chooses the best model for each request — lighter models for quick questions, more capable models for complex reasoning. Auto mode has been generally available since December 2025. You can override it whenever you want a specific model.
+
+**Quick guidance:**
+- **Free-tier users:** GPT-4.1 and GPT-5 mini are available at no cost and handle most everyday tasks well
+- **Need deep reasoning/debugging?** Try Claude Sonnet 4.6 or GPT-5.2 (1× premium requests)
+- **Running Agent mode?** GPT-5.1-Codex-Max or GPT-5.2-Codex are optimized for autonomous tasks
+- **High cost to avoid unless needed:** Claude Opus 4.6 (3× cost) — powerful but reserve for the most demanding work
+
+For the complete model comparison, strengths, weaknesses, and plan availability, see [Appendix X: GitHub Copilot AI Models Reference](appendix-x-copilot-models.md).
 
 ### Chat Interface Structure
 
@@ -194,7 +270,7 @@ Opens a floating chat dialog that doesn't take up sidebar space.
 
 1. **Chat input field** (multi-line text area)
    - Type your prompt here
-   - Press `Ctrl+Enter` or `Enter` to send
+   - Press `Ctrl+Enter` (Mac: `Cmd+Enter`) or `Enter` to send
 
 2. **Model selector dropdown**
    - Choose which AI model to use (GPT-4, Claude, etc.)
@@ -233,7 +309,7 @@ Opens a floating chat dialog that doesn't take up sidebar space.
 
 | Goal | Example Prompt |
 |------|----------------|
-| Understand a file | `Explain what @11-vscode-basics.md covers in plain language` |
+| Understand a file | `Explain what @10-vscode-basics.md covers in plain language` |
 | Improve documentation | `This section is unclear. Rewrite it for a first-time contributor using a screen reader: [paste text]` |
 | Check tone | `Review this PR description for tone. Is it clear, respectful, and helpful? Suggest improvements.` |
 | Draft content | `Write a section on keyboard navigation in VS Code for screen reader users` |
@@ -277,10 +353,11 @@ Type `/` in Copilot Chat to see available commands:
 | `/tests` | Generates tests (for code files) |
 | `/help` | Shows all available commands |
 | `/clear` | Clears chat history |
+| `/savePrompt` | Saves the current chat conversation as a reusable `.prompt.md` file |
 
 **Example:**
 1. Select a block of complex Markdown
-2. Open Chat: `Ctrl+Shift+I`
+2. Open Chat: `Ctrl+Shift+I` (Mac: `Cmd+Shift+I`)
 3. Type `/explain`
 4. Copilot explains the structure and purpose
 
@@ -489,6 +566,91 @@ See [Chapter 16: Agent Forge](16-agent-forge.md) for complete agent documentatio
 
 ---
 
+### Writing Accessibility-Focused Custom Instructions
+
+> Source: [accessibility.github.com/documentation/guide/copilot-instructions/](https://accessibility.github.com/documentation/guide/copilot-instructions/)
+
+Custom instructions can be set at three levels. Each level cascades to narrower scopes:
+
+| Level | Where | Effect |
+|-------|-------|--------|
+| **Organization** | Copilot organization settings | Applies to all repositories in the org |
+| **Repository** | `.github/copilot-instructions.md` | Overrides org instructions; applies to one repo |
+| **Personal** | GitHub.com → Settings → Copilot → Instructions | Your own preferences; highest priority |
+
+#### Do's — What Makes Instructions Effective
+
+**Use normative language: MUST, MUST NOT, SHOULD, SHOULD NOT**
+
+Most language models respond well to normative language. These terms reduce ambiguity and make rules clearly mandatory versus optional — the same approach WCAG itself uses:
+
+```
+## Keyboard Navigation
+- Keyboard shortcuts SHOULD NOT override high-priority browser or OS shortcuts.
+- A keyboard shortcut MUST use at most 4 simultaneous keys.
+- All interactive components MUST be reachable by Tab key.
+```
+
+**Focus on team-specific standards, not generic principles**
+
+Copilot already knows WCAG. Tell it what *your team* does specifically:
+
+```
+This application MUST conform to WCAG 2.2 Level AA.
+DeprecatedButton SHOULD NOT be used; use NewAccessibleButton instead.
+```
+
+**Use lists and checklists to structure instructions**
+
+Lists provide clear guardrails — Copilot follows them step by step:
+
+```
+## Checklist for evaluating 1.3.1 Info and Relationships
+- [ ] role="presentation" MUST NOT be applied to semantic elements.
+- [ ] Error messages MUST be programmatically associated with inputs.
+- [ ] Name-value pairs MUST NOT use headings; use <p>.
+```
+
+**Reference and enforce your design system**
+
+Document which components to use and which are deprecated. Design systems evolve — keep instructions current:
+
+```
+Use AccessibleModal from @company/ui-kit@3.x.
+LegacyDialog MUST NOT be used in any new code.
+```
+
+#### Don'ts — Common Instruction Mistakes
+
+**Don't paste entire WCAG guidelines**
+
+Copilot is already trained on WCAG. Pasting the full text wastes context space and dilutes your specific instructions. Instead, write concise, actionable rules that give *net-new* information: your team's specific practices, exceptions, and priorities.
+
+**Don't reference external links**
+
+By default, Copilot does not access external links in custom instructions — this is a deliberate security feature. A URL like `https://www.w3.org/WAI/WCAG21/` will not be fetched. Write the relevant rule directly.
+
+**Don't reference private repositories**
+
+Copilot cannot access private repository content from within custom instructions unless the content is already present in the active repo.
+
+#### Additional Guidance
+
+**Role-based prompting** — You can give Copilot a persona to shape how it responds:
+
+```
+As the lead accessibility expert on your team, your primary focus is ensuring
+all UI is accessible by default, relying on semantic HTML before ARIA attributes.
+```
+
+Be specific about skills and responsibilities; avoid broad personas that may introduce unintended assumptions.
+
+**Keep instructions concise.** There is no hard character limit, but overly long instructions reduce precision. Summarize the most important, actionable rules rather than listing every possible guideline.
+
+**Contribute effective instructions** to [github.com/github/awesome-copilot](https://github.com/github/awesome-copilot) so others benefit from your organization's work.
+
+---
+
 ## 7. Using Accessible View with Copilot Responses
 
 Copilot Chat responses stream in token by token. This is visually nice but can fragment screen reader announcements. **Accessible View** provides complete, structured access to generated content.
@@ -501,7 +663,7 @@ Copilot Chat responses stream in token by token. This is visually nice but can f
 - Difficult to re-read specific parts
 - Context can be lost in streaming
 
-**With Accessible View (`Alt+F2`):**
+**With Accessible View (`Alt+F2` / Mac: `Option+F2`):**
 - Full complete response in a readable pane
 - Navigate with `Up/Down Arrow` at your own pace
 - Code blocks properly formatted
@@ -513,15 +675,17 @@ Copilot Chat responses stream in token by token. This is visually nice but can f
 **Every time you ask Copilot something:**
 
 1. Type your prompt in Chat input
-2. Press `Ctrl+Enter` to send
-3. Wait for response to finish (watch for typing indicator to stop)
-4. Press `Alt+F2` to open Accessible View
-5. Read the complete response with `Arrow` keys
+2. Press `Ctrl+Enter` (Mac: `Cmd+Enter`) to send
+3. Press `Alt+F2` (Mac: `Option+F2`) to open Accessible View — you can open it immediately after sending, before the response finishes
+4. Follow along as the response streams in the Accessible View in real-time
+5. Read or re-read any section with `Arrow` keys
 6. Press `Escape` to close Accessible View and return to Chat
 
+> **VS Code December 2025 update:** The Accessible View now updates dynamically as responses stream in. You no longer need to wait for a response to finish before opening it — open `Alt+F2` right after sending and follow the response as it arrives.
+
 **Benefits:**
-- You control the reading pace
-- You can re-read sections easily
+- Follow responses live without waiting
+- Navigate and re-read at your own pace
 - Code blocks and lists are properly structured
 - Headings are announced correctly
 
@@ -530,11 +694,13 @@ Copilot Chat responses stream in token by token. This is visually nice but can f
 **When a suggestion appears:**
 
 1. Don't accept it immediately
-2. Press `Alt+F2`
+2. Press `Alt+F2` (Mac: `Option+F2`)
 3. Accessible View shows: "Suggestion: [full text of the suggestion]"
 4. Read it completely
-5. Press `Escape`
-6. Press `Tab` to accept (or `Escape` to reject)
+5. To insert the suggestion at your cursor: press `Ctrl+/` (Mac: `Cmd+/`)
+6. To close without inserting: press `Escape`, then `Tab` to accept or `Escape` to reject
+
+**`Ctrl+/` (Mac: `Cmd+/`) inserts the suggestion directly from Accessible View** — you don’t need to close the view first and then press `Tab`. This is the recommended workflow for screen reader users.
 
 **This is especially useful for multi-line suggestions where the ghost text is hard to review.**
 
@@ -566,6 +732,8 @@ When Copilot suggests code or Markdown:
 | Next suggestion | `Alt+]` | `Option+]` |
 | Previous suggestion | `Alt+[` | `Option+[` |
 | Open suggestions list | `Ctrl+Enter` | `Cmd+Enter` |
+| Open suggestion in Accessible View | `Alt+F2` | `Option+F2` |
+| Insert suggestion from Accessible View | `Ctrl+/` | `Cmd+/` |
 
 ### Copilot Chat
 
@@ -597,7 +765,7 @@ When Copilot suggests code or Markdown:
 | Explorer | `Ctrl+Shift+E` | `Cmd+Shift+E` |
 | Terminal | `Ctrl+Backtick` | `Ctrl+Backtick` |
 
-**Complete keyboard reference:** See [Appendix F: VS Code Accessibility Reference](appendix-f-vscode-accessibility-reference.md)
+**Complete keyboard reference:** See [Appendix M: VS Code Accessibility Reference](appendix-m-vscode-accessibility-reference.md)
 
 ---
 
@@ -646,6 +814,21 @@ When Copilot suggests code or Markdown:
 
 ---
 
+## Try It: Your First Copilot Conversation
+
+**Time:** 3 minutes | **What you need:** VS Code with Copilot Chat extension installed
+
+1. **Open Copilot Chat** — Press `Ctrl+Shift+I` (Mac: `Cmd+Shift+I`). Your screen reader announces the chat panel.
+2. **Ask a question** — Type: `What does the CONTRIBUTING.md file in this repository say about how to submit a pull request?` Press `Enter`.
+3. **Read the response** — Press `Ctrl+Shift+A` to open the Accessible View if your screen reader doesn't read the response automatically. The response appears as plain text you can arrow through.
+4. **Try a follow-up** — Type: `Summarize that in 3 bullet points` and press `Enter`. Copilot remembers the context from your first question.
+
+**You're done.** You just had a conversation with an AI about your codebase.
+
+> **What success feels like:** Copilot answered a real question about real files in your repository. You can use this same pattern to ask about code, documentation, or anything else in the project — and the Accessible View ensures you can always read the response.
+
+---
+
 *Next: [Accessible Code Review](14-accessible-code-review.md)*
 *Back: [GitHub Pull Requests Extension](12-github-pull-requests-extension.md)*
-*Related: [VS Code Setup & Accessibility Basics](11-vscode-basics.md) | [Appendix F: VS Code Accessibility Reference](appendix-f-vscode-accessibility-reference.md)*
+*Related: [VS Code Setup & Accessibility Basics](10-vscode-basics.md) | [Appendix M: VS Code Accessibility Reference](appendix-m-vscode-accessibility-reference.md) | [Appendix W: GitHub Copilot Reference](appendix-w-github-copilot-reference.md) | [Appendix X: AI Models Reference](appendix-x-copilot-models.md)*

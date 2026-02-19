@@ -112,7 +112,7 @@ Resolves #42
 
 **Resources:**
 - [MDN: HTML Heading Elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements)
-- [Workshop: Accessible Code Review](../../docs/15-accessible-code-review.md)
+- [Workshop: Accessible Code Review](../docs/14-accessible-code-review.md)
 
 ---
 
@@ -160,7 +160,7 @@ Read the [GitHub accessibility documentation](https://example.com).
 
 **Resources:**
 - [Alternative Text - WebAIM](https://webaim.org/techniques/alttext/)
-- [Alt Text Workshop Section](../../docs/15-accessible-code-review.md#image-alt-text)
+- [Alt Text Workshop Section](../docs/14-accessible-code-review.md#image-alt-text)
 
 ---
 
@@ -373,10 +373,10 @@ By combining automation with peer review:
 
 ## 📚 Additional Resources
 
-- [Working with Pull Requests](../../docs/05-working-with-pull-requests.md)
-- [Accessible Code Review](../../docs/15-accessible-code-review.md)
-- [Culture & Etiquette](../../docs/07-culture-etiquette.md)
-- [Learning Paths](../../.github/docs/LEARNING_PATHS.md)
+- [Working with Pull Requests](../docs/05-working-with-pull-requests.md)
+- [Accessible Code Review](../docs/14-accessible-code-review.md)
+- [Culture & Etiquette](../docs/07-culture-etiquette.md)
+- [Learning Paths](../.github/docs/LEARNING_PATHS.md)
 - [Available Challenges](docs/CHALLENGES.md)
 
 ---
@@ -386,6 +386,23 @@ By combining automation with peer review:
 Found a bug? Have suggestions for improving the automation?
 
 Open an issue with label `automation-feedback` and let us know!
+
+---
+
+## Setting Up Automation for Your Workshop
+
+The automation features described above (PR validation, skills progression, student pairing) require GitHub Actions workflows that facilitators must configure for their own deployment. These workflows are not included in this repository because each workshop instance may have different requirements.
+
+**What facilitators need to create:**
+
+1. **PR validation workflow** — A GitHub Actions workflow (`.github/workflows/pr-validation.yml`) triggered on `pull_request` events that runs the checks described in the "PR Validation Bot" section above
+2. **Skills tracker** — A workflow or bot that monitors merged PRs and updates contributor progress
+3. **Reviewer assignment** — A workflow that auto-assigns peer reviewers when PRs are opened
+
+**Resources for building these:**
+- [GitHub Actions Workflows](../docs/appendix-q-github-actions-workflows.md) — Workshop appendix on Actions
+- [GitHub Actions Documentation](https://docs.github.com/en/actions) — Official reference
+- [Probot](https://probot.github.io/) — Framework for building GitHub bots
 
 ---
 

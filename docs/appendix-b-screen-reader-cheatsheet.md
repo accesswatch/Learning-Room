@@ -117,6 +117,84 @@ This is one of the most powerful tools for navigating complex pages. It opens a 
 
 ---
 
+## Per-Screen-Reader Command Reference
+
+A compact reference organized by screen reader. For task-based navigation guides (navigating a PR, leaving a comment, etc.), see the sections below.
+
+### NVDA (Windows)
+
+**Single-key navigation (Browse Mode)**
+
+| Key | Moves to |
+|-----|----------|
+| `H` / `Shift+H` | Next / previous heading |
+| `1`–`6` | Next heading of that level |
+| `K` | Next link |
+| `B` | Next button |
+| `F` or `E` | Next form field |
+| `T` | Next table |
+| `D` | Next landmark region |
+| `L` | Next list |
+| `I` | Next list item |
+
+**Mode switching and reading**
+
+| Key | Action |
+|-----|--------|
+| `Insert+Space` | Toggle Browse / Focus Mode |
+| `Insert+F7` | Elements list (headings, links, form fields, buttons) |
+| `NVDA+↓` | Start reading from cursor (Say All) |
+| `NVDA+↑` | Read current line |
+| `Ctrl` | Stop reading |
+
+### JAWS (Windows)
+
+**Single-key navigation (Virtual Cursor)**
+
+| Key | Moves to |
+|-----|----------|
+| `H` / `Shift+H` | Next / previous heading |
+| `1`–`6` | Next heading of that level |
+| `U` | Next unvisited link |
+| `K` | Next link |
+| `B` | Next button |
+| `F` | Next form field |
+| `T` | Next table |
+| `R` | Next landmark region |
+| `L` | Next list |
+| `I` | Next list item |
+
+**Mode switching and reading**
+
+| Key | Action |
+|-----|--------|
+| `Insert+Z` | Toggle Virtual PC Cursor (Browse / Focus) |
+| `Num Pad Plus` | Exit forms mode (open PC Cursor) |
+| `Insert+F6` | Headings list |
+| `Insert+F7` | Links list |
+| `Insert+↓` | Start reading from cursor (Say All) |
+| `Insert+↑` | Read current line |
+| `Ctrl` | Stop reading |
+
+### VoiceOver (macOS)
+
+Activate VoiceOver: `Cmd+F5`. The VO modifier key is `Control+Option` (abbreviated `VO`).
+
+**Rotor navigation:** Open with `VO+U`, use `←/→` to switch between element types (Headings, Links, Form Controls, Tables, Landmarks), and `↑/↓` to navigate within a type.
+
+| Command | Action |
+|---------|--------|
+| `VO+U` | Open Rotor |
+| `VO+Right` / `VO+Left` | Move forward / backward |
+| `VO+Space` | Activate current element |
+| `VO+Shift+Down` | Interact with element (enter Focus Mode) |
+| `VO+Shift+Up` | Stop interacting |
+| `VO+A` | Start reading from cursor |
+| `Ctrl` | Stop reading |
+| `Cmd+F5` | Start / stop VoiceOver |
+
+---
+
 ## Navigating Specific GitHub Pages
 
 ### Repository Main Page
@@ -195,9 +273,36 @@ This is one of the most powerful tools for navigating complex pages. It opens a 
 | Find a specific file | `E` to "Filter changed files" field, then type filename |
 | Navigate file tree | `2` to "file tree", then `Up Arrow` or `Down Arrow` |
 | Navigate diff lines | `NVDA+Space` for Focus mode, then arrow keys in the diff table |
+| Read across a diff row | `Ctrl+Alt+Right Arrow` (columns: line number, change type, content) |
 | Comment on a line | Focus the line, then `Enter` (activates comment mode) |
 | Multi-line comment | Focus start line, then `Shift+Down Arrow` to extend, then `Enter` |
 | Submit review | `1` then `B` to "Submit review" button |
+
+### Checking and Enabling Feature Previews
+
+GitHub Feature Previews are opt-in UI improvements. For screen reader users, two are especially important: **New Issues Experience** and **New Files Changed Experience**. Both may already be active — or may have graduated out of Feature Preview entirely.
+
+**NVDA / JAWS (Browse Mode):**
+
+| Goal | Key Sequence |
+|------|--------------|
+| Open User Menu | `B` repeatedly until "Open user navigation menu, button" → `Enter` |
+| Open Feature Preview panel | `↓` or `K` to "Feature preview" → `Enter` |
+| Navigate the feature list | `↓` or `I` (list items) |
+| Check if a feature is enabled | Toggle announces **"Pressed"** or **"Disable"** = enabled; **"not Pressed"** or **"Enable"** = disabled |
+| Enable a feature | `Enter` or `Space` on the toggle when it is not Pressed |
+| Feature not listed | Feature has graduated — active automatically, no action needed |
+
+**VoiceOver (macOS):**
+
+| Goal | Key Sequence |
+|------|--------------|
+| Open User Menu | `VO+U` → Buttons → "Open user navigation menu" → `Enter` |
+| Open Feature Preview panel | `VO+Down Arrow` to "Feature preview" → `VO+Space` |
+| Check if a feature is enabled | Toggle announces **"checked"** = enabled; **"unchecked"** = disabled |
+| Enable a feature | `VO+Space` on an unchecked toggle |
+
+> See [Pre-Workshop Setup, Step 4](00-pre-workshop-setup.md#6-step-4--check-github-feature-preview-settings) for full details on what each feature enables and why it matters for screen reader users.
 
 ---
 
@@ -511,6 +616,7 @@ Print or bookmark this section:
 - Disable hovercards in GitHub Accessibility Settings (see [Pre-Workshop Setup](00-pre-workshop-setup.md))
 - Adjust your screen reader verbosity settings
 - Use `NVDA+F7` / `VO+U` to get a filtered list rather than tabbing through everything
+- **NVDA reads GitHub too slowly:** In NVDA Settings → Browse Mode → increase "Maximum number of characters on one line" to 10000. This prevents NVDA from pausing to wrap long lines.
 
 ### "I pressed H but it's typing the letter H"
 
@@ -546,6 +652,37 @@ Print or bookmark this section:
 
 ---
 
-*Appendix A — keep this open as a reference throughout both days.*
+## Keyboard Shortcuts in Other Appendices
+
+This cheat sheet covers GitHub web navigation and screen reader commands. Additional keyboard shortcuts for specific tools are documented in:
+
+| Topic | Location |
+|-------|----------|
+| VS Code keyboard navigation and accessibility | [Appendix M — VS Code Accessibility Reference](appendix-m-vscode-accessibility-reference.md) |
+| GitHub Copilot Chat and inline suggestions | [Appendix W — GitHub Copilot Reference](appendix-w-github-copilot-reference.md) |
+| VS Code setup and configuration shortcuts | [Chapter 10 — VS Code Basics](10-vscode-basics.md) |
+| GitHub Copilot activation and model switching | [Chapter 13 — GitHub Copilot](13-github-copilot.md) |
+
+---
+
+## Screen Reader Compatibility Notes
+
+The commands in this cheat sheet have been written for and tested with the following screen readers:
+
+| Screen Reader | Platform | Version Tested | Notes |
+|---------------|----------|---------------|-------|
+| **NVDA** | Windows | 2025.3.3+ | Free, open source. Primary screen reader for this workshop. |
+| **JAWS** | Windows | 2026+ | Commercial. Trial available. |
+| **VoiceOver** | macOS | Built into macOS Sonoma+ | No installation required. |
+
+**If a command doesn't work as described:**
+1. Check that you are in the correct mode (Browse Mode vs. Focus Mode)
+2. Verify your screen reader version — older versions may use different key assignments
+3. Check GitHub's own shortcut dialog (`?` key) for the current page's shortcuts
+4. See [Troubleshooting](#troubleshooting-common-issues) above for common fixes
+
+---
+
+*Appendix B — keep this open as a reference throughout both days.*
 *Return to: [Day 1 Agenda](../DAY1_AGENDA.md) | [Understanding GitHub's Web Structure](01-understanding-github-web-structure.md)*
-*See also: [GitHub Concepts Glossary](appendix-b-glossary.md)*
+*See also: [GitHub Concepts Glossary](appendix-a-glossary.md)*

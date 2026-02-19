@@ -2,6 +2,17 @@
 ## Filing, Managing, and Participating in GitHub Issues
 
 > Issues are where open source collaboration begins. This guide covers everything from finding the right issue to file a perfect bug report — all with your keyboard and screen reader.
+>
+> **Screen reader note — New Issues Experience:** This guide uses GitHub's improved Issues experience, which provides better ARIA landmark structure and live-region announcements for screen readers. This feature may already be active for your account — it has been broadly rolled out and may no longer appear as a Feature Preview toggle at all.
+>
+> **To verify:** Activate the **User Menu** button (top-right of any GitHub page) → activate **"Feature preview"** → scan the list for **"New Issues Experience"**:
+> - If listed and the toggle announces **"Pressed"** (or **"Disable"**) — already enabled, no action needed
+> - If listed but **not Pressed** (or **"Enable"**) — activate the toggle to enable it
+> - If not listed at all — the feature has graduated to the standard interface; it is active automatically
+>
+> Full step-by-step instructions with per-screen-reader commands are in [Pre-Workshop Setup, Step 4](00-pre-workshop-setup.md#6-step-4--check-github-feature-preview-settings).
+>
+> **Browse vs Focus Mode (NVDA):** Toggle between modes with `NVDA+Space` (NVDA key = `Insert` or `Caps Lock`). Use **Browse Mode** (the default) for reading lists, headings, and issue content. Switch to **Focus Mode** when typing in text fields and search boxes. Use `NVDA+F7` at any time to open a list of all headings, links, form fields, buttons, and landmarks on the page — this is your orientation tool.
 
 ---
 
@@ -23,10 +34,32 @@ Every issue has a **number** (`#42`), a **state** (Open or Closed), a **title**,
 
 ### From a repository page
 
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+Click the **Issues** tab in the repository navigation bar below the repository name. The tab shows the open issue count (e.g., “Issues · 14”).
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+
 1. Press `D` to navigate to the "Repository navigation" landmark
 2. Press `K` or `Tab` to move through the tab links
 3. Find "Issues" — it will be announced with the count: "Issues, 14 open"
 4. Press `Enter` to open the Issues tab
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+1. `VO+U` → Landmarks → navigate to "Repository navigation"
+2. `VO+Right` or Quick Nav `K` to move through tab links
+3. Find "Issues" — VoiceOver announces the count: "Issues 14"
+4. `VO+Space` to activate the Issues tab
+
+</details>
 
 ### Direct URL
 
@@ -47,16 +80,31 @@ Navigate directly: `https://github.com/[owner]/[repo]/issues`
 
 ### How to read the issue list
 
-**NVDA/JAWS:**
-1. Press `D` to reach the "Search Results List" landmark
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+The issues list shows each issue as a row with its title, labels, number, assignee avatars, and comment count. Closed issues show a purple merged/closed badge. Click any issue title to open it. Use the **Open** and **Closed** toggle links above the list to switch between states.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+
+1. Press `D` to reach the “Search Results List” landmark
 2. Press `3` (h3) to navigate by issue titles — each issue title is an h3 link
 3. Press `I` to move between list items if you want more detail per item
 4. Press `Enter` on a title to open that issue
 
-**VoiceOver:**
-1. `VO+U` → Landmarks → navigate to "Search Results List"
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver)</summary>
+
+1. `VO+U` → Landmarks → navigate to “Search Results List”
 2. `VO+Down` to read through items
 3. `H` (with Quick Nav on) or `VO+U` → Headings to jump by issue title
+
+</details>
 
 ### What is announced per issue
 
@@ -93,16 +141,38 @@ is:open is:unread                   ← issues with unread activity
 
 ### Using the filter buttons
 
-Above the issue list, there are filter buttons for Labels, Milestones, Assignees, etc.
+Above the issue list, there is an **actions toolbar** with filter buttons for Labels, Milestones, Assignees, etc.
 
-```
-Step 1: Press B to navigate to the filter buttons
-Step 2: Find "Label" or "Milestone" button
-Step 3: Press Enter to open the dropdown
-Step 4: Use ↑/↓ to navigate options
-Step 5: Press Enter to select a label to filter by
-Step 6: Press Escape to close the dropdown (filter applies immediately)
-```
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+The filter bar sits above the issue list. Click **Label**, **Milestone**, or **Assignee** to open a dropdown, select the values you want, then click anywhere outside to close. The issue list updates immediately.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+
+1. Press `Tab` from the search bar (or `Shift+Tab` from the issue list) to reach the actions toolbar
+2. Press `←/→` to move between toolbar options (Label, Milestone, Assignee, Sort)
+3. Press `Enter` to open the selected dropdown
+4. Use `↑/↓` to navigate options in the dropdown
+5. Press `Enter` or `Space` to select
+6. Press `Escape` to close (filter applies immediately)
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+1. `Tab` forward from the search bar to reach the filter buttons, or use Quick Nav to find them
+2. `VO+Left/Right` to move between Label, Milestone, Assignee, Sort buttons
+3. `VO+Space` to open the selected dropdown
+4. `VO+Down` or arrow keys to navigate the dropdown options
+5. `VO+Space` to select/deselect
+6. `Escape` to close (filter applies immediately)
+
+</details>
 
 ### Open vs Closed filter
 
@@ -151,6 +221,8 @@ When you open an issue, the page structure is:
 2. Press `↓` to read the content line by line, OR
 3. Use `NVDA+↓` (NVDA say all) to have it read continuously
 
+> **Browse Mode recommended:** The issue detail page is primarily text-based. Stay in **Browse Mode** (not Focus Mode) for reading — it gives you full heading (`H`), section (`D`), and link (`K`) navigation throughout the page. Only switch to Focus Mode when you need to type in a comment box.
+
 Markdown in the description renders as proper HTML: headings become actual headings, bullets become lists, code blocks become `<code>` elements with the text "code block" announced.
 
 ### Reading comments and activity
@@ -172,28 +244,40 @@ Other timeline events (label added, PR linked, issue closed) appear between comm
 
 ### Step-by-step
 
-```
-Step 1: Navigate to the comment box
-  • D → "Add a comment" landmark
-  • OR press E or F to focus the text area
+<details>
+<summary>🖥️ Visual / mouse users</summary>
 
-Step 2: Enter Focus Mode (if not already active)
-  • NVDA: Insert+Space
-  • JAWS: Insert+Z (or automatic)
-  • VoiceOver: VO+Shift+Down to interact with the text area
+1. Scroll to the bottom of the issue page
+2. Click in the **Leave a comment** text area
+3. Type your comment (Markdown is supported — use the toolbar buttons above the text for bold, italic, code, etc.)
+4. Optionally click **Preview** to see how it will render
+5. Click the green **Comment** button to post
 
-Step 3: Type your comment
-  • Plain text is fine
-  • Use Markdown for formatting
+To close the issue while commenting: click the arrow on the **Close issue** button and choose **Close with comment**.
 
-Step 4: Check your text (optional)
-  • Tab to "Preview" button, press Enter
-  • Browse the preview, then Tab back to "Write" to continue editing
+</details>
 
-Step 5: Submit
-  • Ctrl+Enter (works from inside the text area)
-  • OR: Escape to stop interacting → Tab to "Comment" button → Enter
-```
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+
+1. Navigate to the comment box: `D` → "Add a comment" landmark, or press `E` or `F` to focus the text area
+2. Enter Focus Mode: NVDA: `Insert+Space` | JAWS: `Insert+Z`
+3. Type your comment (plain text or Markdown)
+4. To preview: `Tab` to the **Preview** button, press `Enter`; then `Tab` back to **Write** to continue editing
+5. Submit: press `Ctrl+Enter` from inside the text area, OR press `Escape` → `Tab` to the **Comment** button → `Enter`
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+1. Navigate to the comment box: `VO+U` → Landmarks → "Add a comment", or Quick Nav `F` to jump to the text area
+2. Interact with the text area: `VO+Shift+Down`
+3. Type your comment (plain text or Markdown)
+4. To preview: `VO+Shift+Up` to stop interacting, then `Tab` to the **Preview** button and `VO+Space`
+5. Submit: press `Cmd+Return` from inside the text area, OR `VO+Shift+Up` → `Tab` to the **Comment** button → `VO+Space`
+
+</details>
 
 ### Markdown formatting while typing
 
@@ -258,23 +342,32 @@ For the full shortcut system, see [Screen Reader Cheat Sheet — GitHub Shortcut
 
 ### Navigating to New Issue
 
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+From the Issues list page, click the green **New issue** button in the top-right of the issue list. If the repository has templates, a template picker page appears — click **Get started** next to the template that fits your needs, or click **Open a blank issue** to skip templates.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+
 From the Issues list:
 1. Press `K` to navigate links and find the "New issue" button/link
 2. Press `Enter`
+3. If a template picker appears: press `3` to navigate template names, read the description below each, then press `Enter` on "Get started" for the right template — or find "Open a blank issue." link if no template fits
 
-### Choosing a Template
+</details>
 
-If the repo has issue templates, you will see a template picker page:
-- A list of template names and descriptions
-- Each template has an "Get started" button
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
 
-```
-Step 1: Press 3 to navigate template names (they are h3 links or headings)
-Step 2: Read the description below each template
-Step 3: Press Enter on "Get started" for the right template
-   -- or --
-Step 3 alt: Find "Open a blank issue." link if no template fits
-```
+From the Issues list:
+1. Quick Nav `B` or `VO+U` → Buttons to find the "New issue" button
+2. `VO+Space` to activate it
+3. If a template picker appears: Quick Nav `H` or `VO+Cmd+H` to navigate template names, then `VO+Space` on "Get started" for the right template — or Quick Nav `K` to find the "Open a blank issue" link
+
+</details>
 
 ### Filling Out the Issue Form
 
@@ -308,7 +401,7 @@ Describe what should have happened.
 
 ## Environment
 
-- Screen reader: [NVDA 2024.1 / JAWS 2024 / VoiceOver macOS Sonoma]
+- Screen reader: [NVDA 2025.3.3 / JAWS 2026 / VoiceOver macOS Sonoma]
 - Browser: [Chrome 124 / Firefox 125 / Safari 17]
 - OS: [Windows 11 / macOS 14]
 - GitHub interface: [Modern experience (default since Jan 2026) / Classic experience]
@@ -322,14 +415,36 @@ Any other information, screenshots (with alt text), or links.
 
 While the form is open, the sidebar has dropdowns for Labels, Assignees, and Milestone.
 
-```
-Step 1: Tab away from the text area (or press Escape to leave Focus Mode)
-Step 2: Navigate to the sidebar — press H to find "Labels" heading
-Step 3: Press Enter on the Labels gear/button
-Step 4: Dropdown opens → ↑/↓ to navigate labels
-Step 5: Enter to select/deselect
-Step 6: Escape to close (selections save automatically)
-```
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+In the right sidebar, click the gear icon (⚙️) next to **Labels**. A dropdown opens — click a label to select it. Click outside to close. Repeat for **Assignees** and **Milestone**.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+
+1. `Tab` away from the text area (or press `Escape` to leave Focus Mode)
+2. Navigate to the sidebar — press `H` to find "Labels" heading
+3. Press `Enter` on the Labels gear/button
+4. Dropdown opens → `↑/↓` to navigate labels
+5. `Enter` to select/deselect
+6. `Escape` to close (selections save automatically)
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+1. `VO+Shift+Up` to stop interacting with the text area
+2. `VO+U` → Headings to find the "Labels" heading in the sidebar
+3. `VO+Space` on the Labels gear/button to open the dropdown
+4. `VO+Down` or arrow keys to navigate labels
+5. `VO+Space` to select/deselect
+6. `Escape` to close (selections save automatically)
+
+</details>
 
 **Submitting the issue:**
 1. Tab to "Submit new issue" button
@@ -429,10 +544,31 @@ Every child issue shows a "Parent issue" link near the top of the page (above th
 ## Managing Issues (for Maintainers and Triagers)
 
 ### Closing an issue
-1. Navigate to the issue page
-2. Tab to "Close issue" button (at the bottom of the page, near the comment box)
-3. Press `Enter`
-4. Optionally leave a closing comment first
+
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+Scroll to the bottom of the issue page. Click the **Close issue** button next to the comment box. Optionally type a closing comment first. If you want to record a reason, click the dropdown arrow on the button and choose **Close as completed** or **Close as not planned**.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+
+1. **Keyboard shortcut (fastest):** Navigate to the comment text area (`D` → "Add a comment" landmark), switch to Focus Mode, then press `Ctrl+Shift+Enter` to close the issue
+2. **Button approach:** `Tab` to the "Close issue" button (at the bottom of the page, near the comment box) and press `Enter`
+3. Optionally leave a closing comment first
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+1. **Keyboard shortcut (fastest):** `VO+U` → Landmarks → "Add a comment", interact with the text area (`VO+Shift+Down`), then press `Cmd+Shift+Return` to close the issue
+2. **Button approach:** Quick Nav `B` or `Tab` to find the "Close issue" button, then `VO+Space`
+3. Optionally leave a closing comment first
+
+</details>
 
 ### Reopening a closed issue
 If an issue is Closed, the "Close issue" button becomes "Reopen issue" — navigate and activate to reopen.
@@ -474,7 +610,7 @@ When looking for your first open source contribution:
 
 When filing accessibility bugs, these details help maintainers reproduce and fix the problem:
 
-1. **Screen reader and version** — "NVDA 2024.1" not just "screen reader"
+1. **Screen reader and version** — "NVDA 2025.3.3" not just "screen reader"
 2. **OS and version** — "Windows 11 22H2"
 3. **Browser and version** — "Chrome 124.0.6367.82"
 4. **GitHub interface** — "Modern experience (default since Jan 2026)" or "Classic experience (opted out)"
@@ -508,16 +644,34 @@ update indicating the results changed.
 6. Notice: no announcement that filtering has been applied
 
 ## Environment
-- Screen reader: NVDA 2024.1 (with NVDA+Chrome)
+- Screen reader: NVDA 2025.3.3 (with NVDA+Chrome)
 - Browser: Chrome 124.0.6367.82
 - OS: Windows 11 22H2
 - GitHub interface: Modern experience (default since Jan 2026)
 
 ## Additional context
-JAWS 2024 also does not announce. VoiceOver on macOS Sonoma with
+JAWS 2026 also does not announce. VoiceOver on macOS Sonoma with
 Safari 17 does announce "List updated" when filtering is applied,
 so the macOS behavior appears correct.
 ```
+
+---
+
+## Try It: File Your First Issue
+
+**Time:** 3 minutes | **What you need:** Browser, signed in to GitHub
+
+Go to the Learning Room repository and file a real issue:
+
+1. Navigate to the Issues tab (press `G` then `I` in Focus Mode)
+2. Find and activate the "New issue" button (`K` to links, or `Tab` to it)
+3. In the title field, type: **"Introduce myself — [Your Name]"**
+4. In the description, write 2-3 sentences: who you are, what screen reader you use, and one thing you're hoping to learn today
+5. Press `Ctrl+Enter` to submit (or Tab to the Submit button and press `Enter`)
+
+**You're done.** You just filed your first GitHub issue. Go read someone else's introduction and leave a friendly comment — press `3` to jump between issue titles on the Issues list.
+
+> **What success feels like:** Your issue is live. Other participants can see it. You just contributed to a real repository — and it took less than three minutes.
 
 ---
 
@@ -535,5 +689,5 @@ so the macOS behavior appears correct.
 ---
 
 *Next: [Working with Pull Requests](05-working-with-pull-requests.md)*
-*Back: [Navigating Repositories](03-navigating-repositories.md)*
-*Related: [Issue Templates Guide](16-issue-templates.md) | [Labels & Milestones](08-labels-milestones-projects.md) | [Culture & Etiquette](07-culture-etiquette.md)*
+*Back: [The Learning Room](03-the-learning-room.md)*
+*Related: [Issue Templates Guide](15-issue-templates.md) | [Labels & Milestones](08-labels-milestones-projects.md) | [Culture & Etiquette](07-culture-etiquette.md)*

@@ -357,11 +357,11 @@ Closed issues with merged PRs represent completed challenges. Great for inspirat
 
 ## 🆘 Need Help?
 
-### Resources
+### Appendix T: Resources
 - [Learning Paths Guide](../../.github/docs/LEARNING_PATHS.md) - Detailed challenge instructions
 - [Automation Guide](../AUTOMATION.md) - Understanding bot feedback
 - [PR Workflow](../../docs/05-working-with-pull-requests.md) - Step-by-step PR process
-- [Accessibility Guide](../../docs/15-accessible-code-review.md) - A11y principles
+- [Accessibility Guide](../../docs/14-accessible-code-review.md) - A11y principles
 
 ### Getting Unstuck
 1. **Read bot feedback** - It includes specific fixes

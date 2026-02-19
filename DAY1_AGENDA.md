@@ -29,7 +29,7 @@ Three modules run across Day 1. You will set each one up during the block where 
 
 ## ⭐ Read This BEFORE Day 1 Starts
 
-**[Chapter 02a: The Learning Room](03a-the-learning-room.md)** — Your complete guide to the shared repo, PR sharing workflow, and how the automation system works. Read this before Block 0 to understand the environment where you'll be making real contributions.
+**[Chapter 3: The Learning Room](docs/03-the-learning-room.md)** — Your complete guide to the shared repo, PR sharing workflow, and how the automation system works. Read this before Block 0 to understand the environment where you'll be making real contributions.
 
 ---
 
@@ -77,7 +77,7 @@ Make participants comfortable, set expectations, verify setups, and create a psy
 - Can everyone navigate to the repo URL?
 - Does everyone's screen reader announce page headings?
 - Is hovercards turned off? (If not — navigate to Accessibility Settings now)
-- Can everyone access GitHub Issues and Pull Requests? (Modern experience is default as of January 2026)
+- Can everyone access GitHub Issues and Pull Requests? (Modern experience may already be active — if not, verify via User Menu → Feature preview; see Step 4 in [Pre-Workshop Setup](docs/00-pre-workshop-setup.md))
 
 **Introductions:**
 - Each participant: your name, your screen reader and OS, what brings you here
@@ -136,7 +136,7 @@ Establish a shared navigation foundation AND set up the Introduction to GitHub S
 > This is the same mechanism used by open source projects with bot-assisted workflows — Dependabot, GitHub Actions CI, automated labelers. You are experiencing that pattern for the first time right now.
 
 ### Reference Document
-[Screen Reader Cheat Sheet](appendix-b-screen-reader-cheatsheet.md)
+[Screen Reader Cheat Sheet](docs/appendix-b-screen-reader-cheatsheet.md)
 
 ---
 
@@ -195,7 +195,7 @@ Find the answers to these questions using keyboard navigation in `learning-room`
 3. Find how the files differ from `main`
 
 ### Reference Document
-[Navigating Repositories](docs/03-navigating-repositories.md)
+[Navigating Repositories](docs/02-navigating-repositories.md)
 
 ---
 
@@ -360,7 +360,7 @@ Return to your `introduction-to-github` Skills repo. Mona has been waiting for y
 > 🌟 **Magic Moment #4:** The `introduction-to-github` course is now complete. Navigate to [github.com/skills/introduction-to-github](https://github.com/skills/introduction-to-github) — your completion badge appears on the course page. Your GitHub profile now shows this course as completed.
 
 ### Reference Document
-[Working with Pull Requests](05-working-with-pull-requests.md)
+[Working with Pull Requests](docs/05-working-with-pull-requests.md)
 
 ---
 
@@ -458,7 +458,7 @@ The automation bot validates these things:
 - HOW to fix it (with examples)
 - Links to learning resources
 
-📖 **See:** [Learning Room Automation Guide](../learning-room/AUTOMATION.md) for detailed explanation of bot feedback
+📖 **See:** [Learning Room Automation Guide](learning-room/AUTOMATION.md) for detailed explanation of bot feedback
 
 ### What to look for in the docs folder
 - Broken links and incorrect keyboard shortcuts
@@ -588,7 +588,7 @@ Tomorrow we move from the browser to **Visual Studio Code**. Here is what is com
 - **Ship a real PR upstream** — `accesswatch/agent-forge` is a live repository. Your name in its commit history is the Day 2 capstone.
 
 **Tonight (optional):**
-- Install VS Code and the GitHub Copilot extension (see [Pre-Workshop Setup](docs/00-pre-workshop-setup.md))
+- Install VS Code and the GitHub Copilot Chat extension (see [Pre-Workshop Setup](docs/00-pre-workshop-setup.md))
 - Complete any Markdown Skills module steps you didn't finish
 - Fork [agent-forge](https://github.com/accesswatch/agent-forge) — it will be ready and waiting when you open VS Code tomorrow
 
@@ -641,4 +641,4 @@ learning-room/
 ---
 
 *Day 2: [Day 2 Agenda](DAY2_AGENDA.md)*
-*Related: [Navigating Repositories](docs/03-navigating-repositories.md) | [Working with Issues](docs/04-working-with-issues.md) | [Working with Pull Requests](docs/05-working-with-pull-requests.md)*
+*Related: [Navigating Repositories](docs/02-navigating-repositories.md) | [Working with Issues](docs/04-working-with-issues.md) | [Working with Pull Requests](docs/05-working-with-pull-requests.md)*

@@ -78,7 +78,7 @@
 | Reload window | (see command palette) | (see command palette) |
 | Accessible Diff Viewer | `F7` | `F7` |
 | Accessible View | `Alt+F2` | `Option+F2` |
-| Format document | `Ctrl+Shift+F` | `Cmd+Shift+F` |
+| Format document | `Shift+Alt+F` | `Shift+Option+F` |
 
 ---
 
@@ -242,7 +242,7 @@ body:
 | Topic | File |
 |-------|------|
 | Troubleshooting | `TROUBLESHOOTING.md` |
-| Resources & setup | `RESOURCES.md` |
+| Resources & setup | `docs/appendix-u-resources.md` |
 | Glossary & terms | `docs/appendix-a-glossary.md` |
 | Screen reader guide | `docs/appendix-b-screen-reader-cheatsheet.md` |
 

@@ -29,14 +29,16 @@ GitHub has several accessibility settings that make navigation significantly eas
 
 ## Step 3 — GitHub Interface (No Action Needed)
 
-**Good news:** As of January 2026, GitHub's improved Issues and Pull Request experiences are enabled by default for all users. You don't need to enable any feature previews.
+GitHub's improved Issues and Pull Request experiences have been broadly rolled out and are likely already active for your account. However, some features may still appear as opt-in toggles in Feature Preview for some users.
 
-You automatically get:
+You should automatically have:
 - **Modern Issues experience** with proper heading hierarchy and better screen reader navigation
 - **Improved Pull Request Files Changed view** with accessible diff navigation
 - Better keyboard accessibility throughout GitHub
 
-If something doesn't match the workshop materials, try clearing your browser cache and reloading the page.
+**To verify:** Activate the **User Menu** button (top right) → **"Feature preview"** → scan the list. Each toggle announces **"Pressed"** when enabled. If neither "New Issues Experience" nor "New Files Changed Experience" appears in the list, both have graduated to the standard interface and are active automatically.
+
+If something doesn't match the workshop materials, verify your Feature Preview settings as above, then try clearing your browser cache and reloading the page.
 
 ---
 

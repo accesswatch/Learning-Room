@@ -51,7 +51,7 @@ Write it down. You will check it against reality at 5pm.
 ## Block 1 — VS Code Setup
 **9:30–10:30**
 
-> This block builds on [VS Code: Setup & Accessibility Basics](11-vscode-basics.md), [Git & Source Control in VS Code](12-git-source-control.md), and [GitHub Pull Requests Extension](13-github-pull-requests-extension.md) for full reference.
+> This block builds on [VS Code: Setup & Accessibility Basics](docs/10-vscode-basics.md), [Git & Source Control in VS Code](docs/11-git-source-control.md), and [GitHub Pull Requests Extension](docs/12-github-pull-requests-extension.md) for full reference.
 
 ### Purpose
 Move from browser-based GitHub to VS Code as your contribution environment. Set up screen reader mode. Open `agent-forge` as a workspace. Understand what you are looking at before any agent runs.
@@ -179,7 +179,7 @@ Agents are run in a specific sequence — from broadest to most specific, from o
 
 | Step | Agent | Skill It Amplifies | Day 1 Source |
 |------|-------|-------------------|-------------|
-| 1 | `@daily-briefing` | Reading your notification inbox and activity summary | [Navigating Repos](docs/03-navigating-repositories.md) + [Notifications](docs/09-notifications.md) |
+| 1 | `@daily-briefing` | Reading your notification inbox and activity summary | [Navigating Repos](docs/02-navigating-repositories.md) + [Notifications](docs/09-notifications.md) |
 | 2 | `@issue-tracker` | Triaging and prioritizing issues manually | [Working with Issues](docs/04-working-with-issues.md) + [Labels & Milestones](docs/08-labels-milestones-projects.md) |
 | 3 | `@pr-review` | Manually reviewing a PR diff and writing inline comments | [Working with Pull Requests](docs/05-working-with-pull-requests.md) |
 | 4 | `@insiders-a11y-tracker` | Filing accessibility bugs and applying WCAG labels | [Working with Issues](docs/04-working-with-issues.md) + [Issue Templates](docs/15-issue-templates.md) |
@@ -227,7 +227,7 @@ Participants answer from their Day 1 knowledge. Then the command runs. Then the 
 **Critical exercise:** Compare the agent's suggested comments to what you wrote manually in your Day 1 review.
 - Did the agent catch things you missed?
 - Did the agent miss context you knew from the issue thread?
-- Is the agent's tone aligned with the community standards from [Culture and Etiquette](07-culture-etiquette.md)?
+- Is the agent's tone aligned with the community standards from [Culture and Etiquette](docs/07-culture-etiquette.md)?
 
 Edit the agent's output before posting any of it. Your name goes on it.
 
@@ -246,7 +246,7 @@ This agent is quality assurance for the accessibility quality of your own contri
 ## Block 4 — GitHub Agentic Workflows
 **14:00–15:00**
 
-> **Reference:** [GitHub Actions and Workflows](18-github-actions-workflows.md) — read the "Day 2 Bridge" section at the bottom before this block.
+> **Reference:** [GitHub Actions and Workflows](docs/appendix-q-github-actions-workflows.md) — read the "Day 2 Bridge" section at the bottom before this block.
 
 ### The Cloud Extension: What Agentic Workflows Are
 
@@ -476,6 +476,6 @@ Do not rush the wrap-up. The moment of seeing your name in a public commit histo
 
 ---
 
-*Previous: [Notifications ←](09-notifications.md)*
-*Next: [VS Code: Setup & Accessibility Basics](11-vscode-basics.md)*
-*Related: [Day 1 Agenda](DAY1_AGENDA.md) | [GitHub Actions & Workflows](docs/appendix-g-github-actions-workflows.md) | [Resources](docs/appendix-q-resources.md)*
+*Previous: [Notifications ←](docs/09-notifications.md)*
+*Next: [VS Code: Setup & Accessibility Basics](docs/10-vscode-basics.md)*
+*Related: [Day 1 Agenda](DAY1_AGENDA.md) | [GitHub Actions & Workflows](docs/appendix-q-github-actions-workflows.md) | [Resources](docs/appendix-u-resources.md)*

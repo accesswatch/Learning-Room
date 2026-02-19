@@ -1,17 +1,17 @@
 # HTML Documentation Build System
 
-This repository automatically converts all markdown files to HTML format.
+This repository converts all Markdown files to accessible HTML. The HTML output is committed alongside the Markdown source so that both formats are always in sync.
 
 ## Quick Start
 
 ### View HTML Documentation
 
-After the first build, all HTML files are available in the `html/` directory:
-- Browse them directly in the repo
+All HTML files live in the `html/` directory:
 - Open `html/index.html` in your browser for the homepage
-- All markdown files maintain their directory structure
+- Browse the `html/docs/` folder for chapter and appendix pages
+- All internal links between documents are preserved
 
-### Local Development
+### Build Commands
 
 ```bash
 # Install dependencies (first time only)
@@ -29,13 +29,13 @@ npm run clean
 
 ## How It Works
 
-### Automatic Conversion (GitHub Actions)
+The build is run **locally** before committing. There is no CI pipeline — you build the HTML yourself and commit both the `.md` source and the `html/` output in the same commit.
 
-When you push changes to markdown files on the main branch:
-1. GitHub Actions workflow triggers automatically
-2. Builds HTML from all `.md` files
-3. Commits generated HTML back to the `html/` directory
-4. Commit message: "Auto-generate HTML documentation from markdown [skip ci]"
+**Typical workflow:**
+1. Edit one or more `.md` files
+2. Run `npm run build:html`
+3. Stage and commit everything: `git add -A && git commit -m "docs: update chapter 5 and rebuild HTML"`
+4. Push
 
 ### What Gets Converted
 
@@ -68,7 +68,6 @@ When you push changes to markdown files on the main branch:
 
 ## Configuration Files
 
-- **Workflow:** `.github/workflows/build-html.yml` — GitHub Actions automation
 - **Build script:** `scripts/build-html.js` — Conversion logic
 - **Dependencies:** `package.json` — Node.js packages (marked, highlight.js, etc.)
 
@@ -98,16 +97,6 @@ git commit -m "chore: update HTML build dependencies"
 
 ## Troubleshooting
 
-### Build Fails on GitHub Actions
-
-1. Check the **Actions** tab in the repository
-2. Click on the failed workflow run
-3. Review the error logs
-4. Common issues:
-   - Markdown syntax errors (unclosed brackets, invalid links)
-   - Missing dependencies in `package.json`
-   - Permissions issues (workflow needs write access)
-
 ### Local Build Errors
 
 **"Cannot find module 'marked'"**
@@ -122,31 +111,21 @@ git commit -m "chore: update HTML build dependencies"
 **Watch mode not detecting changes**
 → Ensure you're saving files (Ctrl+S in VS Code)
 
-### HTML Files Not Being Committed
+### HTML Files Not Appearing in Git
 
-Check `.gitignore` to ensure `html/` is NOT listed there. The `html/` directory should be tracked by git.
+Check `.gitignore` to ensure `html/` is NOT listed there. The `html/` directory must be tracked by Git so the built output is always available in the repository.
 
 ## For Contributors
 
 When submitting pull requests:
-- **Only edit markdown files** — don't commit HTML changes
-- HTML will be auto-generated when PR is merged
-- To preview HTML locally, run `npm run build:html`
-- Add the HTML files to `.gitignore` in your local clone if you don't want to accidentally commit them
-
-## CI/CD Strategy
-
-The `[skip ci]` tag in the auto-commit message prevents infinite loops:
-1. You push markdown changes
-2. GitHub Actions builds HTML and commits it with `[skip ci]`
-3. The commit with `[skip ci]` doesn't trigger another workflow run
-4. Clean, single automated commit per markdown update
+- **Edit the Markdown files**, then run `npm run build:html`
+- **Include both** the `.md` changes and the updated `html/` files in your commit
+- If you forget to rebuild, a reviewer will ask you to run the build before merging
 
 ## Additional Resources
 
 - [marked documentation](https://marked.js.org/) — Markdown parser
 - [highlight.js documentation](https://highlightjs.org/) — Syntax highlighting
-- [GitHub Actions docs](https://docs.github.com/en/actions) — CI/CD automation
 - [GitHub Markdown spec](https://github.github.com/gfm/) — GitHub Flavored Markdown
 
 ---

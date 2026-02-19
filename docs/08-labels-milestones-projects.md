@@ -32,41 +32,96 @@ Labels are announced as: "Label: bug" or "Labels: accessibility, good first issu
 ### Navigating to the Labels Page
 
 From a repository:
+
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+Go to the **Issues** tab, then click the **Labels** link/button (it’s in the filter toolbar above the issue list, next to Milestones). The Labels page shows every label with its colour, name, and description.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+
 1. Navigate to the Issues tab
 2. Press `K` to find the "Labels" link (near the "Milestones" link in the toolbar)
 3. Press `Enter`
 
-You will see a list of all labels with their name, color description, and description.
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+1. Navigate to the Issues tab
+2. Quick Nav `K` to find the "Labels" link (near the "Milestones" link in the toolbar)
+3. `VO+Space` to activate
+
+</details>
 
 ### Applying a Label to an Issue or PR
 
 From an open issue or PR:
 
-```
-Step 1: Navigate to the sidebar on the right
-  • Press H or 3 to find the "Labels" heading
-Step 2: Activate the Labels gear/edit button
-  • B until you hear "Labels" button → Enter
-Step 3: Dropdown opens showing all available labels
-  • ↑/↓ to navigate
-  • Enter to select or deselect a label
-  • Type to filter: type "access" to find "accessibility"
-Step 4: Press Escape to close — selections save automatically
-```
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+In the right sidebar, click the gear icon (⚙️) next to **Labels**. A dropdown opens showing all labels. Click a label to apply it (a checkmark appears). Click outside to close — the label appears immediately on the issue.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+
+1. Navigate to the sidebar → press `H` or `3` to find the "Labels" heading
+2. Activate the Labels gear/edit button (`B` until you hear "Labels" button → `Enter`)
+3. Dropdown opens showing all available labels: use `↑/↓` to navigate
+4. `Enter` to select or deselect a label; type to filter (e.g., type "access" to find "accessibility")
+5. Press `Escape` to close — selections save automatically
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+1. `VO+U` → Headings or Quick Nav `H` to find the "Labels" heading in the sidebar
+2. Quick Nav `B` to find the "Labels" gear/edit button → `VO+Space`
+3. Dropdown opens: `VO+Down` or arrow keys to navigate labels
+4. `VO+Space` to select or deselect; type to filter
+5. `Escape` to close — selections save automatically
+
+</details>
 
 ### Filtering Issues by Label
 
-From the Issues list:
-```
-Option A — Using the filter bar:
-  F → type: is:open label:accessibility → Enter
+<details>
+<summary>🖥️ Visual / mouse users</summary>
 
-Option B — Using the filter button:
-  B → "Label" dropdown button → Enter → ↑/↓ to choose → Enter → Esc
+- **Using the filter button:** From the Issues list, click the **Label** dropdown button above the issue list, choose the label(s) you want, then click outside to apply. The active filter shows in the search bar.
+- **Using the search bar:** Click in the search/filter bar and type `label:accessibility` (for example) along with any other filters.
 
-Option C — Combining labels:
-  is:open label:accessibility label:"good first issue"
-```
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+
+**Option A — Filter bar:** Press `F` → type `is:open label:accessibility` → `Enter`
+
+**Option B — Filter button:** `B` → "Label" dropdown button → `Enter` → `↑/↓` to choose → `Enter` → `Esc`
+
+**Option C — Combining labels:** `is:open label:accessibility label:"good first issue"`
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+**Option A — Filter bar:** Quick Nav `F` to find the search bar → `VO+Shift+Down` to interact → type `is:open label:accessibility` → `Return`
+
+**Option B — Filter button:** Quick Nav `B` → "Label" dropdown button → `VO+Space` → arrow keys to choose → `VO+Space` to select → `Esc`
+
+**Option C — Combining labels:** `is:open label:accessibility label:"good first issue"`
+
+</details>
 
 ### Creating a New Label
 
@@ -108,13 +163,32 @@ Each milestone is announced as a heading + progress information:
 
 ### Adding an Issue to a Milestone
 
-From an open issue:
-```
-Step 1: Navigate to the sidebar → "Milestone" heading (H or 3)
-Step 2: Activate the Milestone gear button
-Step 3: Select a milestone from the dropdown (↑/↓ → Enter)
-Step 4: Esc to close
-```
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+From the open issue, find the **Milestone** section in the right sidebar and click the gear icon. A dropdown lists available milestones — click one to assign it.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+
+1. Navigate to the sidebar → "Milestone" heading (`H` or `3`)
+2. Activate the Milestone gear button
+3. Select a milestone from the dropdown (`↑/↓` → `Enter`)
+4. `Esc` to close
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+1. Quick Nav `H` or `VO+Cmd+H` to find the "Milestone" heading in the sidebar
+2. Quick Nav `B` to find and activate the Milestone gear button (`VO+Space`)
+3. Select a milestone from the dropdown (`VO+Down` or arrow keys → `VO+Space`)
+4. `Esc` to close
+
+</details>
 
 ### Creating a Milestone
 
@@ -258,6 +332,21 @@ Description: All contributions made during Day 1 of the Open Source AT Hackathon
 3. Make changes → open PR → link to issue
 4. PR merged → issue closes automatically → milestone progress updates
 ```
+
+---
+
+## Try It: Label and Link
+
+**Time:** 2 minutes | **What you need:** Browser, signed in to GitHub
+
+Go to the Learning Room repository and do two things:
+
+1. **Add a label to an issue** — Open any issue (press `G` then `I`, then `Enter` on an issue title). Press `L` (in Focus Mode) to open the label picker. Type `documentation` to filter, then press `Enter` to apply it. Press `Esc` to close.
+2. **Use a cross-reference** — Leave a comment on that issue mentioning another issue number: `Related to #1` (or any issue number you've seen). Press `Ctrl+Enter` to submit.
+
+**You're done.** You just organized work using labels and connected two issues with a cross-reference.
+
+> **What success feels like:** The label now appears on the issue, and your cross-reference is a clickable link that connects the two issues. That's project management on GitHub — and you did it in under two minutes.
 
 ---
 

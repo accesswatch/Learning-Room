@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
-  <title>Culture, Etiquette, and Community Standards - GitHub Learning Room</title>
+  <title>Culture, Etiquette, and Community Standards — GitHub Learning Room</title>
   <link rel="stylesheet" href="./styles/github-markdown.css">
   <link rel="stylesheet" href="./styles/highlight.css">
   <link rel="stylesheet" href="./styles/custom.css">
@@ -24,10 +24,11 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <nav aria-label="Breadcrumb" class="breadcrumb">
-    <a href="./index.html">Home</a>
+    <a href="./index.html">Home</a> <span aria-hidden="true">›</span> <span aria-current="page">Culture, Etiquette, and Community Standards</span>
   </nav>
-  <main class="markdown-body">
+  <main id="main-content" class="markdown-body">
     <h1>Culture, Etiquette, and Community Standards</h1>
 <h2>How to Be an Effective and Respectful Open Source Contributor</h2>
 <blockquote>
@@ -37,32 +38,31 @@
 <h2>GitHub Flow — The Standard Contribution Workflow</h2>
 <p>Before diving into communication norms, it helps to understand the workflow that gives all of those conversations their context. <strong>GitHub Flow</strong> is the lightweight branching model recommended for open source contribution. It is simple by design and works whether you are making a one-line documentation fix or a major feature addition.</p>
 <h3>The Six Steps of GitHub Flow</h3>
-<pre><code>1. Create a branch
-   └─ Branch off main with a descriptive name
-      (e.g., fix/missing-alt-text, docs/update-contributing-guide)
+<pre><code class="hljs">1. <span class="hljs-keyword">Create</span> a branch
+   └─ Branch off main <span class="hljs-keyword">with</span> a descriptive name
+      (<span class="hljs-built_in">e</span>.g., fix/<span class="hljs-literal">missing</span>-alt-text, docs/<span class="hljs-keyword">update</span>-contributing-guide)
 
-2. Make your changes and commit
-   └─ Work in small, logical commits with clear messages
-      Each commit should represent one coherent, complete change
+<span class="hljs-number">2.</span> Make your changes <span class="hljs-keyword">and</span> <span class="hljs-keyword">commit</span>
+   └─ <span class="hljs-keyword">Work</span> <span class="hljs-keyword">in</span> small, logical commits <span class="hljs-keyword">with</span> clear messages
+      <span class="hljs-keyword">Each</span> <span class="hljs-keyword">commit</span> should represent one coherent, complete change
 
-3. Open a Pull Request
-   └─ Share your work early — even as a Draft PR
-      Describe what you changed, why, and how to test it
-      Link to the related issue (Closes #42)
+<span class="hljs-number">3.</span> Open a Pull Request
+   └─ Share your <span class="hljs-keyword">work</span> early — even <span class="hljs-keyword">as</span> a Draft PR
+      <span class="hljs-keyword">Describe</span> what you changed, why, <span class="hljs-keyword">and</span> how <span class="hljs-keyword">to</span> test it
+      Link <span class="hljs-keyword">to</span> the related issue (Closes #<span class="hljs-number">42</span>)
 
-4. Discuss and review
-   └─ Reviewers leave feedback → you refine your work
-      This is collaborative, not adversarial
+<span class="hljs-number">4.</span> Discuss <span class="hljs-keyword">and</span> review
+   └─ Reviewers leave feedback → you refine your <span class="hljs-keyword">work</span>
+      This <span class="hljs-keyword">is</span> collaborative, <span class="hljs-keyword">not</span> adversarial
 
-5. Pass status checks
-   └─ Automated tests and linting must pass
-      The project&#39;s quality gates exist to protect everyone
+<span class="hljs-number">5.</span> Pass status checks
+   └─ Automated tests <span class="hljs-keyword">and</span> linting must pass
+      The project<span class="hljs-string">&#x27;s quality gates exist to protect everyone
 
 6. Merge
    └─ A maintainer merges your PR into main
       The linked issue closes automatically
-      Your contribution is now part of the project ✅
-</code></pre>
+      Your contribution is now part of the project ✅</span></code></pre>
 <h3>Why This Model Works</h3>
 <ul>
 <li><strong><code>main</code> is always deployable.</strong> Nothing goes into <code>main</code> directly — every change goes through a PR and review. This protects the project and all its users.</li>
@@ -85,37 +85,47 @@
 <li><strong>Keep branches clean</strong> — start new PRs from an up-to-date main branch</li>
 </ul>
 <h3>Method 1: GitHub Web Interface (Easiest)</h3>
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
 <ol>
 <li>Navigate to your fork&#39;s main page: <code>github.com/your-username/repo-name</code></li>
 <li>Look for the sync indicator: &quot;This branch is X commits behind upstream/main&quot;</li>
-<li>Select the <strong>&quot;Sync fork&quot;</strong> button</li>
-<li>Select <strong>&quot;Update branch&quot;</strong></li>
+<li>Click the <strong>&quot;Sync fork&quot;</strong> button</li>
+<li>Click <strong>&quot;Update branch&quot;</strong></li>
 </ol>
 <p>GitHub merges the upstream changes into your fork automatically.</p>
-<p><strong>Screen reader navigation:</strong></p>
-<ul>
-<li>The sync button appears in the landmark containing the branch selector</li>
-<li>After pressing <code>D</code> to reach this landmark, press <code>B</code> to cycle buttons until you hear &quot;Sync fork&quot;</li>
-</ul>
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS / VoiceOver)</summary>
+
+<ol>
+<li>Navigate to your fork&#39;s main page: <code>github.com/your-username/repo-name</code></li>
+<li>The sync button appears in the landmark that contains the branch selector</li>
+<li>Press <code>D</code> to cycle through landmarks until you reach that region</li>
+<li>Press <code>B</code> to cycle buttons until you hear &quot;Sync fork&quot; → press <code>Enter</code></li>
+<li>A dialog or page update presents &quot;Update branch&quot; — activate it</li>
+</ol>
+</details>
+
 <h3>Method 2: Git Command Line (VS Code Terminal)</h3>
 <p>If you&#39;re working locally in VS Code:</p>
 <p><strong>One-time setup — add the upstream remote:</strong></p>
-<pre><code class="language-bash">git remote add upstream https://github.com/original-owner/repo-name.git
-git remote -v  # Verify it was added
-</code></pre>
+<pre><code class="hljs language-bash">git remote add upstream https://github.com/original-owner/repo-name.git
+git remote -v  <span class="hljs-comment"># Verify it was added</span></code></pre>
 <p><strong>Sync process:</strong></p>
-<pre><code class="language-bash"># 1. Switch to your main branch
+<pre><code class="hljs language-bash"><span class="hljs-comment"># 1. Switch to your main branch</span>
 git checkout main
 
-# 2. Fetch upstream changes
+<span class="hljs-comment"># 2. Fetch upstream changes</span>
 git fetch upstream
 
-# 3. Merge upstream&#39;s main into yours
+<span class="hljs-comment"># 3. Merge upstream&#x27;s main into yours</span>
 git merge upstream/main
 
-# 4. Push the updated main to your fork on GitHub
-git push origin main
-</code></pre>
+<span class="hljs-comment"># 4. Push the updated main to your fork on GitHub</span>
+git push origin main</code></pre>
 <p><strong>When to sync:</strong></p>
 <ul>
 <li>Before starting work on a new feature</li>
@@ -134,12 +144,11 @@ git push origin main
 <h2>Writing Good Commit Messages</h2>
 <p>Every commit you make includes a message describing what changed. Good commit messages make project history understandable months or years later. They also show professionalism and consideration for future contributors (including yourself).</p>
 <h3>The commit message format:</h3>
-<pre><code>&lt;type&gt;: &lt;short summary in imperative mood&gt;
+<pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">type</span>&gt;</span>: <span class="hljs-tag">&lt;<span class="hljs-name">short</span> <span class="hljs-attr">summary</span> <span class="hljs-attr">in</span> <span class="hljs-attr">imperative</span> <span class="hljs-attr">mood</span>&gt;</span>
 
-&lt;optional body: more detailed explanation&gt;
+<span class="hljs-tag">&lt;<span class="hljs-name">optional</span> <span class="hljs-attr">body:</span> <span class="hljs-attr">more</span> <span class="hljs-attr">detailed</span> <span class="hljs-attr">explanation</span>&gt;</span>
 
-&lt;optional footer: references to issues&gt;
-</code></pre>
+<span class="hljs-tag">&lt;<span class="hljs-name">optional</span> <span class="hljs-attr">footer:</span> <span class="hljs-attr">references</span> <span class="hljs-attr">to</span> <span class="hljs-attr">issues</span>&gt;</span></code></pre>
 <h3>The First Line (Required)</h3>
 <p><strong>Keep it under 50 characters.</strong> This is the commit summary that appears in logs and GitHub&#39;s commit list. Think of it as an email subject line.</p>
 <p><strong>Use the imperative mood:</strong> Write as if giving a command to the codebase.</p>
@@ -166,20 +175,18 @@ git push origin main
 </ul>
 <p>Leave a blank line between the summary and the body.</p>
 <p>Example:</p>
-<pre><code>feat: add keyboard shortcuts for issue navigation
+<pre><code class="hljs"><span class="hljs-symbol">feat:</span> add keyboard shortcuts <span class="hljs-keyword">for</span> issue navigation
 
-The previous interface required excessive tabbing to reach issue actions.
-This change adds G+I to jump to issues list and C to comment inline.
+The previous <span class="hljs-keyword">interface</span> required excessive tabbing <span class="hljs-keyword">to</span> reach issue actions.
+This change adds G+I <span class="hljs-keyword">to</span> jump <span class="hljs-keyword">to</span> issues list <span class="hljs-built_in">and</span> C <span class="hljs-keyword">to</span> comment inline.
 
-Shortcuts follow GitHub&#39;s existing pattern (G+letter for navigation).
-Tested with NVDA, JAWS, and VoiceOver.
-</code></pre>
+Shortcuts follow GitHub<span class="hljs-comment">&#x27;s existing pattern (G+letter for navigation).</span>
+Tested <span class="hljs-keyword">with</span> NVDA, JAWS, <span class="hljs-built_in">and</span> VoiceOver.</code></pre>
 <h3>The Footer (Optional)</h3>
 <p>Link commits to issues or PRs:</p>
-<pre><code>Closes #42
-Fixes #17
-Part of #89
-</code></pre>
+<pre><code class="hljs"><span class="hljs-keyword">Closes </span><span class="hljs-comment">#42</span>
+Fixes <span class="hljs-comment">#17</span>
+Part of <span class="hljs-comment">#89</span></code></pre>
 <p>When the commit is merged, GitHub automatically closes linked issues.</p>
 <h3>Atomic Commits</h3>
 <p>Each commit should represent <strong>one logical change</strong>. Don&#39;t bundle unrelated fixes into a single commit.</p>
@@ -194,20 +201,18 @@ Part of #89
 <li>Extremely long summaries that get cut off in logs</li>
 </ul>
 <h3>Good commit messages in practice:</h3>
-<pre><code>fix: prevent crash when username contains special characters
+<pre><code class="hljs">fix: prevent crash when username <span class="hljs-keyword">contains</span> special <span class="hljs-keyword">characters</span>
 
-Previously, usernames with @ or # caused a parsing error in the
-notification system. This escapes special characters before processing.
+Previously, usernames <span class="hljs-keyword">with</span> @ <span class="hljs-keyword">or</span> <span class="hljs-comment"># caused a parsing error in the</span>
+notification <span class="hljs-keyword">system</span>. This escapes special <span class="hljs-keyword">characters</span> <span class="hljs-keyword">before</span> processing.
 
-Fixes #142
-</code></pre>
-<pre><code>docs: add screen reader instructions to contribution guide
+Fixes <span class="hljs-comment">#142</span></code></pre>
+<pre><code class="hljs"><span class="hljs-symbol">docs:</span> <span class="hljs-keyword">add </span><span class="hljs-keyword">screen </span>reader <span class="hljs-keyword">instructions </span>to contribution guide
 
-New section covers NVDA, JAWS, and VoiceOver setup for contributors
-using assistive technology. Based on workshop feedback.
+New section covers NVDA, <span class="hljs-keyword">JAWS, </span><span class="hljs-keyword">and </span>VoiceOver setup for contributors
+using assistive technology. <span class="hljs-keyword">Based </span>on workshop feedback.
 
-Part of #200
-</code></pre>
+Part of <span class="hljs-comment">#200</span></code></pre>
 <p><strong>When you make a habit of writing good commit messages, you build trust.</strong> Maintainers see that you care about the project&#39;s long-term health, not just your immediate contribution.</p>
 <hr>
 <h2>The Nature of Open Source Communication</h2>
@@ -316,12 +321,11 @@ Part of #200
 <li>Edit as needed before submitting</li>
 </ol>
 <p><strong>Screen reader path:</strong></p>
-<pre><code>In a comment text area:
-→ Tab to the toolbar icons
-→ &quot;Saved replies&quot; button → Enter
-→ Filter by typing part of the title
-→ ↑/↓ to select → Enter to insert
-</code></pre>
+<pre><code class="hljs">In <span class="hljs-keyword">a</span> comment <span class="hljs-keyword">text</span> area:
+→ Tab <span class="hljs-built_in">to</span> <span class="hljs-keyword">the</span> toolbar icons
+→ <span class="hljs-string">&quot;Saved replies&quot;</span> button → Enter
+→ Filter <span class="hljs-keyword">by</span> typing part <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> title
+→ ↑/↓ <span class="hljs-built_in">to</span> select → Enter <span class="hljs-built_in">to</span> insert</code></pre>
 <p><strong>Limit:</strong> GitHub allows up to 100 saved replies per account.</p>
 <hr>
 <h2>Code Review Etiquette — For Reviewers</h2>
@@ -499,6 +503,29 @@ Part of #200
 </tr>
 </tbody></table>
 <hr>
+<h2>Try It: Rewrite One Comment</h2>
+<p><strong>Time:</strong> 2 minutes | <strong>What you need:</strong> Just your brain</p>
+<p>Read this code review comment and rewrite it to be constructive:</p>
+<blockquote>
+<p><strong>Original:</strong> &quot;This alt text is bad. Fix it.&quot;</p>
+</blockquote>
+<p>Use the five-step feedback anatomy from this chapter:</p>
+<ol>
+<li><strong>What</strong> you noticed</li>
+<li><strong>Why</strong> it matters</li>
+<li><strong>What</strong> you suggest</li>
+<li><strong>Why</strong> the suggestion helps</li>
+<li><strong>Encouragement</strong></li>
+</ol>
+<p>Here&#39;s one way:</p>
+<blockquote>
+<p><strong>Rewritten:</strong> &quot;The alt text on this image says &#39;image1.png&#39; — screen reader users will hear the filename instead of what&#39;s in the image. Could you describe what the screenshot shows, like &#39;Settings page with the Accessibility section expanded&#39;? That way everyone gets the same information. Nice catch adding the image though — it really helps illustrate the step!&quot;</p>
+</blockquote>
+<p>Notice: same feedback, completely different experience for the person receiving it.</p>
+<blockquote>
+<p><strong>What success feels like:</strong> You turned a two-word dismissal into help that someone would actually want to receive. That&#39;s the difference between a comment that fixes code and a comment that also keeps a contributor coming back.</p>
+</blockquote>
+<hr>
 <blockquote>
 <h3>🔥 Day 2 Amplifier — Agent Forge Outputs Are Your Responsibility</h3>
 <p><strong>Every communication principle in this guide applies with extra force when agents are involved.</strong> When <code>@pr-review</code> generates review comments, <em>you</em> are responsible for their tone before you post them. When <code>@issue-tracker</code> drafts a triage reply, <em>your</em> name appears on it in the repository&#39;s public history. The agent writes — the contributor publishes.</p>
@@ -517,8 +544,8 @@ Part of #200
 
   </main>
   <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
-    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
-    <p><a href="https://github.com">Back to GitHub</a></p>
+    <p>GitHub Learning Room — Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com/accesswatch/Learning-Room">View on GitHub</a></p>
   </footer>
 </body>
 </html>

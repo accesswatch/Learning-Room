@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
-  <title>Issue Templates - GitHub Learning Room</title>
+  <title>Issue Templates — GitHub Learning Room</title>
   <link rel="stylesheet" href="./styles/github-markdown.css">
   <link rel="stylesheet" href="./styles/highlight.css">
   <link rel="stylesheet" href="./styles/custom.css">
@@ -24,10 +24,11 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <nav aria-label="Breadcrumb" class="breadcrumb">
-    <a href="./index.html">Home</a>
+    <a href="./index.html">Home</a> <span aria-hidden="true">›</span> <span aria-current="page">Issue Templates</span>
   </nav>
-  <main class="markdown-body">
+  <main id="main-content" class="markdown-body">
     <h1>Issue Templates</h1>
 <h2>Structuring Contributions for Clarity and Quality</h2>
 <blockquote>
@@ -43,7 +44,7 @@
 <li><input disabled="" type="checkbox"> A GitHub repository where you have write access (your fork or personal repo)</li>
 <li><input disabled="" type="checkbox"> Terminal/Command line basic comfort (Chapter 5 mentions git workflows)</li>
 </ul>
-<p><strong>Day 2 Amplifier:</strong> Later in Chapter 15, you&#39;ll use <code>@template-builder</code> agent to automate template creation. Come back after Chapter 16 if you haven&#39;t completed it yet.</p>
+<p><strong>Day 2 Amplifier:</strong> In <a href="16-agent-forge.md">Chapter 16 (Agent Forge)</a>, you&#39;ll use <code>@template-builder</code> to automate template creation. Complete this chapter first, then come back to Chapter 16.</p>
 <p><strong>Estimated time for this chapter:</strong> 1.5 hours (including exercises)</p>
 <hr>
 <h2>Table of Contents</h2>
@@ -80,35 +81,46 @@
 <hr>
 <h2>2. How Templates Work on GitHub</h2>
 <p>Templates live in a specific folder in your repository:</p>
-<pre><code>your-repo/
+<pre><code class="hljs">your-repo/
 └── .github/
     ├── ISSUE_TEMPLATE/
-    │   ├── bug_report.md         ← Markdown template
-    │   ├── feature_request.md    ← Markdown template
-    │   ├── accessibility-bug.yml ← YAML form template
-    │   └── config.yml            ← Template chooser configuration
-    └── pull_request_template.md  ← PR template (singular)
-</code></pre>
+    │   ├── bug_report.md         ← Markdown <span class="hljs-keyword">template</span>
+    │   ├── feature_request.md    ← Markdown <span class="hljs-keyword">template</span>
+    │   ├── accessibility-bug.yml ← YAML form <span class="hljs-keyword">template</span>
+    │   └── config.yml            ← <span class="hljs-keyword">Template</span> chooser <span class="hljs-keyword">configuration</span>
+    └── pull_request_template.md  ← PR <span class="hljs-keyword">template</span> (singular)</code></pre>
 <p><strong>Markdown templates (<code>.md</code>):</strong> Traditional template format. Pre-fills a text editor with structured Markdown content. Contributors edit the template directly, replacing instructions and placeholder text with their own content.</p>
 <p><strong>YAML form templates (<code>.yml</code>):</strong> Modern form-based templates. Creates a proper form interface with labeled fields, dropdowns, checkboxes, and validation. Contributors fill in fields rather than editing freeform Markdown. Better for accessibility because each field has an explicit label announced by screen readers.</p>
 <p><strong><code>config.yml</code>:</strong> Controls the template chooser page — what templates appear, what their descriptions say, whether an external link (like a discussion forum) appears as an option, and crucially, <strong>whether contributors can bypass templates entirely with a blank issue</strong>.</p>
 <p>For accessibility projects, <code>config.yml</code> is important: disabling the blank issue option means every report arrives with the structure your project needs. A screen reader bug report without reproduction steps and AT version information is almost impossible to triage — the form prevents that by making those fields required.</p>
 <p><strong>Example <code>config.yml</code>:</strong></p>
-<pre><code class="language-yaml">blank_issues_enabled: false
-contact_links:
-  - name: Community Discussion
-    url: https://github.com/accesswatch/agent-forge/discussions
-    about: For questions and general discussion — not bugs
-  - name: Security Vulnerability
-    url: https://github.com/accesswatch/agent-forge/security/advisories/new
-    about: Please use private reporting for security issues
-</code></pre>
+<pre><code class="hljs language-yaml"><span class="hljs-attr">blank_issues_enabled:</span> <span class="hljs-literal">false</span>
+<span class="hljs-attr">contact_links:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Community</span> <span class="hljs-string">Discussion</span>
+    <span class="hljs-attr">url:</span> <span class="hljs-string">https://github.com/accesswatch/agent-forge/discussions</span>
+    <span class="hljs-attr">about:</span> <span class="hljs-string">For</span> <span class="hljs-string">questions</span> <span class="hljs-string">and</span> <span class="hljs-string">general</span> <span class="hljs-string">discussion</span> <span class="hljs-string">—</span> <span class="hljs-string">not</span> <span class="hljs-string">bugs</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Security</span> <span class="hljs-string">Vulnerability</span>
+    <span class="hljs-attr">url:</span> <span class="hljs-string">https://github.com/accesswatch/agent-forge/security/advisories/new</span>
+    <span class="hljs-attr">about:</span> <span class="hljs-string">Please</span> <span class="hljs-string">use</span> <span class="hljs-string">private</span> <span class="hljs-string">reporting</span> <span class="hljs-string">for</span> <span class="hljs-string">security</span> <span class="hljs-string">issues</span></code></pre>
 <p>With <code>blank_issues_enabled: false</code>, the &quot;Open a blank issue&quot; link disappears from the template chooser. Contributors must use one of your structured templates or one of the contact links. This is one of the most effective ways to improve the quality of incoming issues in any project you maintain.</p>
 <hr>
 <h2>3. Navigating the Template Picker</h2>
 <p>When a repository has multiple templates, GitHub shows a template chooser page before the issue editor.</p>
-<h3>With a Screen Reader</h3>
-<p><strong>NVDA/JAWS (Windows):</strong></p>
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+<ol>
+<li>Click the <strong>Issues</strong> tab on any repository</li>
+<li>Click the <strong>New issue</strong> button</li>
+<li>The template chooser page loads — templates appear as cards with a title, description, and &quot;Get started&quot; button</li>
+<li>Click <strong>&quot;Get started&quot;</strong> on the template you want</li>
+<li>The issue editor opens with that template&#39;s content pre-filled</li>
+</ol>
+</details>
+
+<details>
+<summary>🔊 Screen reader users — NVDA / JAWS (Windows)</summary>
+
 <ol>
 <li>Navigate to the Issues tab (press <code>T</code> from the repository tabs landmark)</li>
 <li>Activate &quot;New issue&quot; button</li>
@@ -118,7 +130,11 @@ contact_links:
 <li>Each template shows: name, description, &quot;Get started&quot; button</li>
 <li>Activate &quot;Get started&quot; on your chosen template</li>
 </ol>
-<p><strong>VoiceOver (macOS):</strong></p>
+</details>
+
+<details>
+<summary>🔊 Screen reader users — VoiceOver (macOS)</summary>
+
 <ol>
 <li>Navigate to the Issues tab (<code>VO+Right</code> from the tab bar landmark)</li>
 <li><code>VO+Space</code> to activate &quot;New issue&quot;</li>
@@ -126,7 +142,9 @@ contact_links:
 <li><code>VO+Right</code> to move between templates</li>
 <li><code>VO+Space</code> on &quot;Get started&quot; for your chosen template</li>
 </ol>
-<p><strong>Note:</strong> GitHub&#39;s improved Issues experience (default as of January 2026) provides proper keyboard accessibility for the template chooser.</p>
+</details>
+
+<p><strong>Note:</strong> GitHub&#39;s improved Issues experience provides proper keyboard accessibility for the template chooser. This feature may already be active in your account.</p>
 <h3>Bypassing the Chooser</h3>
 <p>If you want to file an issue without using a template:</p>
 <ul>
@@ -136,7 +154,20 @@ contact_links:
 <hr>
 <h2>4. The Agent Forge Issue Templates</h2>
 <p>Agent Forge uses templates to structure contributions. Navigate to <code>.github/ISSUE_TEMPLATE/</code> in the repository to read them.</p>
-<p><strong>To navigate there with a screen reader:</strong></p>
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+<ol>
+<li>Click the <strong>Code</strong> tab on the repository</li>
+<li>Click the <code>.github</code> folder in the file listing</li>
+<li>Click <code>ISSUE_TEMPLATE</code></li>
+<li>You&#39;ll see the template files — click any to read it</li>
+</ol>
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS / VoiceOver)</summary>
+
 <ol>
 <li>Open the Code tab</li>
 <li>Use <code>Ctrl+Alt+Down/Up</code> (NVDA/JAWS) or <code>VO+Arrow</code> (VoiceOver) in the files table to reach the <code>.github</code> folder</li>
@@ -144,6 +175,8 @@ contact_links:
 <li>Activate <code>ISSUE_TEMPLATE</code></li>
 <li>You will see the template files listed</li>
 </ol>
+</details>
+
 <h3>Reading a Template File</h3>
 <p>Open any template file (e.g., <code>bug_report.md</code>) in VS Code or in the GitHub web editor (pencil button — screen readers announce it as &quot;Edit this file&quot;).</p>
 <p>Look for:</p>
@@ -152,14 +185,13 @@ contact_links:
 <li><strong>Body</strong>: The template content with <code>##</code> headings, <code>&lt;!-- --&gt;</code> HTML comments as instructions, and placeholder text</li>
 </ul>
 <p><strong>Example frontmatter:</strong></p>
-<pre><code class="language-yaml">---
-name: Bug Report
-about: Report a problem with an agent or prompt
-title: &#39;[BUG] &#39;
-labels: bug
-assignees: &#39;&#39;
----
-</code></pre>
+<pre><code class="hljs language-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">name:</span> <span class="hljs-string">Bug</span> <span class="hljs-string">Report</span>
+<span class="hljs-attr">about:</span> <span class="hljs-string">Report</span> <span class="hljs-string">a</span> <span class="hljs-string">problem</span> <span class="hljs-string">with</span> <span class="hljs-string">an</span> <span class="hljs-string">agent</span> <span class="hljs-string">or</span> <span class="hljs-string">prompt</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">&#x27;[BUG] &#x27;</span>
+<span class="hljs-attr">labels:</span> <span class="hljs-string">bug</span>
+<span class="hljs-attr">assignees:</span> <span class="hljs-string">&#x27;&#x27;</span>
+<span class="hljs-meta">---</span></code></pre>
 <p>The <code>about</code> text appears in the template chooser. The <code>title</code> pre-fills the issue title field (the contributor replaces the placeholder). The <code>labels</code> array auto-applies labels when the issue is created.</p>
 <hr>
 <h2>5. Creating a New Template — Step by Step</h2>
@@ -235,39 +267,37 @@ assignees: &#39;&#39;
 <p>A Markdown template consists of two parts:</p>
 <p><strong>1. YAML Frontmatter</strong> (between <code>---</code> delimiters)</p>
 <p>Defines metadata about the template:</p>
-<pre><code class="language-yaml">---
-name: Bug Report                    # Name shown in template chooser
-about: Report a bug or error        # Description in template chooser
-title: &#39;[BUG] &#39;                     # Pre-filled issue title (user can edit)
-labels: [&#39;bug&#39;, &#39;needs-triage&#39;]     # Auto-applied labels
-assignees: &#39;&#39;                       # Auto-assigned maintainers (optional)
----
-</code></pre>
+<pre><code class="hljs language-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">name:</span> <span class="hljs-string">Bug</span> <span class="hljs-string">Report</span>                    <span class="hljs-comment"># Name shown in template chooser</span>
+<span class="hljs-attr">about:</span> <span class="hljs-string">Report</span> <span class="hljs-string">a</span> <span class="hljs-string">bug</span> <span class="hljs-string">or</span> <span class="hljs-string">error</span>        <span class="hljs-comment"># Description in template chooser</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">&#x27;[BUG] &#x27;</span>                     <span class="hljs-comment"># Pre-filled issue title (user can edit)</span>
+<span class="hljs-attr">labels:</span> [<span class="hljs-string">&#x27;bug&#x27;</span>, <span class="hljs-string">&#x27;needs-triage&#x27;</span>]     <span class="hljs-comment"># Auto-applied labels</span>
+<span class="hljs-attr">assignees:</span> <span class="hljs-string">&#x27;&#x27;</span>                       <span class="hljs-comment"># Auto-assigned maintainers (optional)</span>
+<span class="hljs-meta">---</span></code></pre>
 <p><strong>2. Markdown Body</strong></p>
 <p>The template content that pre-fills the issue editor:</p>
-<pre><code class="language-markdown">## Describe the Bug
+<pre><code class="hljs language-markdown"><span class="hljs-section">## Describe the Bug</span>
 A clear and concise description of what the bug is.
 
-## Steps to Reproduce
-1. Go to &#39;...&#39;
-2. Click on &#39;...&#39;
-3. Scroll down to &#39;...&#39;
-4. See error
+<span class="hljs-section">## Steps to Reproduce</span>
+<span class="hljs-bullet">1.</span> Go to &#x27;...&#x27;
+<span class="hljs-bullet">2.</span> Click on &#x27;...&#x27;
+<span class="hljs-bullet">3.</span> Scroll down to &#x27;...&#x27;
+<span class="hljs-bullet">4.</span> See error
 
-## Expected Behavior
+<span class="hljs-section">## Expected Behavior</span>
 What you expected to happen.
 
-## Actual Behavior
+<span class="hljs-section">## Actual Behavior</span>
 What actually happened.
 
-## Environment
-- **OS:** [e.g. Windows 11, macOS Sonoma]
-- **Browser:** [e.g. Chrome 124, Firefox 125]
-- **Screen Reader:** [e.g. NVDA 2024.1, VoiceOver]
+<span class="hljs-section">## Environment</span>
+<span class="hljs-bullet">-</span> <span class="hljs-strong">**OS:**</span> [e.g. Windows 11, macOS Sonoma]
+<span class="hljs-bullet">-</span> <span class="hljs-strong">**Browser:**</span> [e.g. Chrome 124, Firefox 125]
+<span class="hljs-bullet">-</span> <span class="hljs-strong">**Screen Reader:**</span> [e.g. NVDA 2025.3.3, VoiceOver]
 
-## Additional Context
-Add any other context about the problem here.
-</code></pre>
+<span class="hljs-section">## Additional Context</span>
+Add any other context about the problem here.</code></pre>
 <p><strong>Markdown template tips:</strong></p>
 <ul>
 <li>Use <code>##</code> headings to create clear sections</li>
@@ -281,39 +311,39 @@ Add any other context about the problem here.
 <h3>Complete Markdown Template Example</h3>
 <h3>Complete Markdown Template Example</h3>
 <p>Here&#39;s a complete accessibility bug report template in Markdown format. Save this as <code>.github/ISSUE_TEMPLATE/accessibility-bug-simple.md</code>:</p>
-<pre><code class="language-markdown">---
+<pre><code class="hljs language-markdown">---
 name: Accessibility Bug (Markdown)
 about: Report an accessibility issue using the simple Markdown template
-title: &#39;[A11Y] &#39;
-labels: [&#39;accessibility&#39;, &#39;needs-triage&#39;]
-assignees: &#39;&#39;
----
+title: &#x27;[A11Y] &#x27;
+labels: [&#x27;accessibility&#x27;, &#x27;needs-triage&#x27;]
+<span class="hljs-section">assignees: &#x27;&#x27;
+---</span>
 
 &lt;!-- 
 Thank you for reporting an accessibility issue. Please fill in all sections below.
 Screen reader and browser information is especially important for us to reproduce the issue.
 --&gt;
 
-## Component Affected
+<span class="hljs-section">## Component Affected</span>
 
 &lt;!-- Which agent, slash command, or feature has the accessibility issue? --&gt;
 
-- [ ] @daily-briefing
-- [ ] @issue-tracker
-- [ ] @pr-review
-- [ ] @analytics
-- [ ] @insiders-a11y-tracker
-- [ ] Slash command (specify below)
-- [ ] Documentation
-- [ ] Setup or configuration
-- [ ] Other: ___________
+<span class="hljs-bullet">-</span> [ ] @daily-briefing
+<span class="hljs-bullet">-</span> [ ] @issue-tracker
+<span class="hljs-bullet">-</span> [ ] @pr-review
+<span class="hljs-bullet">-</span> [ ] @analytics
+<span class="hljs-bullet">-</span> [ ] @insiders-a11y-tracker
+<span class="hljs-bullet">-</span> [ ] Slash command (specify below)
+<span class="hljs-bullet">-</span> [ ] Documentation
+<span class="hljs-bullet">-</span> [ ] Setup or configuration
+<span class="hljs-bullet">-</span> [ ] Other: <span class="hljs-strong">____</span><span class="hljs-strong">____</span><span class="hljs-strong">___
 
 ## Your Assistive Technology Setup
 
-**Screen Reader:** [e.g. NVDA 2024.1, JAWS 2025, VoiceOver macOS Sonoma]  
-**Browser:** [e.g. Chrome 124, Firefox 125, Safari 17]  
-**Operating System:** [e.g. Windows 11, macOS Sonoma 14.3, Ubuntu 22.04]  
-**Keyboard only (no screen reader):** [ ] Yes  [ ] No
+*<span class="hljs-emphasis">*Screen Reader:*</span>* [e.g. NVDA 2025.3.3, JAWS 2026, VoiceOver macOS Sonoma]  
+*<span class="hljs-emphasis">*Browser:*</span>* [e.g. Chrome 124, Firefox 125, Safari 17]  
+*<span class="hljs-emphasis">*Operating System:*</span>* [e.g. Windows 11, macOS Sonoma 14.3, Ubuntu 22.04]  
+*<span class="hljs-emphasis">*Keyboard only (no screen reader):*</span>* [ ] Yes  [ ] No
 
 ## Expected Behavior
 
@@ -344,21 +374,20 @@ Screen reader and browser information is especially important for us to reproduc
 - [ ] 2.4.3 Focus Order
 - [ ] 2.4.6 Headings and Labels
 - [ ] 4.1.2 Name, Role, Value
-- [ ] Other: ___________
-- [ ] Not sure
+- [ ] Other: __</span><span class="hljs-strong">____</span><span class="hljs-strong">____</span>_
+<span class="hljs-bullet">-</span> [ ] Not sure
 
-## Additional Context
+<span class="hljs-section">## Additional Context</span>
 
 &lt;!-- Screenshots (with alt text), links to related issues, workarounds, or suggested fixes --&gt;
 
 
 
-## Before Submitting
+<span class="hljs-section">## Before Submitting</span>
 
-- [ ] I searched for existing issues and this is not a duplicate
-- [ ] I can reliably reproduce this issue with the steps above
-- [ ] I have included my screen reader and browser versions
-</code></pre>
+<span class="hljs-bullet">-</span> [ ] I searched for existing issues and this is not a duplicate
+<span class="hljs-bullet">-</span> [ ] I can reliably reproduce this issue with the steps above
+<span class="hljs-bullet">-</span> [ ] I have included my screen reader and browser versions</code></pre>
 <p><strong>When to use this Markdown version instead of YAML:</strong></p>
 <ul>
 <li>Your contributors are comfortable with Markdown and prefer editing text</li>
@@ -376,13 +405,30 @@ Screen reader and browser information is especially important for us to reproduc
 </ul>
 <hr>
 <h3>Creating Markdown Templates: The Manual Workflow (Browser)</h3>
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+<ol>
+<li>Navigate to your fork of <code>agent-forge</code> on GitHub</li>
+<li>Click the <strong>Settings</strong> tab</li>
+<li>Scroll to the &quot;Features&quot; section → click the checkmark next to &quot;Issues&quot; → click <strong>&quot;Set up templates&quot;</strong></li>
+<li>Or navigate directly to <code>.github/ISSUE_TEMPLATE/</code> in your fork → click the <code>+</code> button → &quot;Create new file&quot;</li>
+<li>GitHub opens a template editor. Fill in the template name, about description, and body</li>
+<li>GitHub auto-populates the filename — you can change it</li>
+<li>Click <strong>&quot;Propose changes&quot;</strong> → create a PR to add the template</li>
+</ol>
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS / VoiceOver)</summary>
+
 <ol>
 <li><p>Navigate to your fork of <code>agent-forge</code> on GitHub</p>
 </li>
 <li><p>Go to the Settings tab (press <code>T</code> from the tabs landmark, then navigate to &quot;Settings&quot;)</p>
 </li>
 <li><p>Scroll to the &quot;Features&quot; section → find &quot;Issues&quot; → activate &quot;Set up templates&quot;</p>
-<p><em>Alternative:</em> Navigate directly to <code>.github/ISSUE_TEMPLATE/</code> in your fork → activatethe &quot;+&quot; button → &quot;Create new file&quot;</p>
+<p><em>Alternative:</em> Navigate directly to <code>.github/ISSUE_TEMPLATE/</code> → activate the &quot;+&quot; button → &quot;Create new file&quot;</p>
 </li>
 <li><p>GitHub opens a template editor. Fill in:</p>
 <ul>
@@ -391,11 +437,13 @@ Screen reader and browser information is especially important for us to reproduc
 <li>Template content: the Markdown body</li>
 </ul>
 </li>
-<li><p>GitHub auto-populates the filename based on your template name. You can change it.</p>
+<li><p>GitHub auto-populates the filename based on your template name</p>
 </li>
 <li><p>&quot;Propose changes&quot; → create a PR to add the template</p>
 </li>
 </ol>
+</details>
+
 <h3>Creating Markdown Templates: The VS Code Workflow</h3>
 <ol>
 <li>Open your <code>agent-forge</code> fork in VS Code</li>
@@ -422,26 +470,25 @@ Screen reader and browser information is especially important for us to reproduc
 <hr>
 <h3>YAML Template Structure</h3>
 <p>A YAML form template consists of several parts:</p>
-<pre><code class="language-yaml">name: Issue Template Name         # Shows in template chooser
-description: Longer description   # Shows in template chooser
-title: &quot;[TAG] &quot;                   # Pre-filled issue title
-labels: [&quot;label1&quot;, &quot;label2&quot;]      # Auto-applied labels
-assignees: [&quot;username&quot;]           # Auto-assigned (optional)
-body:                             # Array of form fields
-  - type: markdown
-    attributes:
-      value: |
+<pre><code class="hljs language-yaml"><span class="hljs-attr">name:</span> <span class="hljs-string">Issue</span> <span class="hljs-string">Template</span> <span class="hljs-string">Name</span>         <span class="hljs-comment"># Shows in template chooser</span>
+<span class="hljs-attr">description:</span> <span class="hljs-string">Longer</span> <span class="hljs-string">description</span>   <span class="hljs-comment"># Shows in template chooser</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">&quot;[TAG] &quot;</span>                   <span class="hljs-comment"># Pre-filled issue title</span>
+<span class="hljs-attr">labels:</span> [<span class="hljs-string">&quot;label1&quot;</span>, <span class="hljs-string">&quot;label2&quot;</span>]      <span class="hljs-comment"># Auto-applied labels</span>
+<span class="hljs-attr">assignees:</span> [<span class="hljs-string">&quot;username&quot;</span>]           <span class="hljs-comment"># Auto-assigned (optional)</span>
+<span class="hljs-attr">body:</span>                             <span class="hljs-comment"># Array of form fields</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">markdown</span>
+    <span class="hljs-attr">attributes:</span>
+      <span class="hljs-attr">value:</span> <span class="hljs-string">|
         Instructional text here
-  
-  - type: input
-    id: unique-field-id
-    attributes:
-      label: Field Label
-      description: Help text under the label
-      placeholder: Placeholder text in the field
-    validations:
-      required: true
-</code></pre>
+</span>  
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">input</span>
+    <span class="hljs-attr">id:</span> <span class="hljs-string">unique-field-id</span>
+    <span class="hljs-attr">attributes:</span>
+      <span class="hljs-attr">label:</span> <span class="hljs-string">Field</span> <span class="hljs-string">Label</span>
+      <span class="hljs-attr">description:</span> <span class="hljs-string">Help</span> <span class="hljs-string">text</span> <span class="hljs-string">under</span> <span class="hljs-string">the</span> <span class="hljs-string">label</span>
+      <span class="hljs-attr">placeholder:</span> <span class="hljs-string">Placeholder</span> <span class="hljs-string">text</span> <span class="hljs-string">in</span> <span class="hljs-string">the</span> <span class="hljs-string">field</span>
+    <span class="hljs-attr">validations:</span>
+      <span class="hljs-attr">required:</span> <span class="hljs-literal">true</span></code></pre>
 <p><strong>Top-level keys:</strong></p>
 <ul>
 <li><code>name</code> (required): Template name in chooser</li>
@@ -452,56 +499,54 @@ body:                             # Array of form fields
 <li><code>body</code> (array): The form fields (required)</li>
 </ul>
 <hr>
-<pre><code class="language-yaml">name: Accessibility Bug Report
-description: Report an accessibility issue in Agent Forge&#39;s output or interface
-title: &quot;[A11Y] &quot;
-labels: [&quot;accessibility&quot;, &quot;needs-triage&quot;]
-body:
-  - type: markdown
-    attributes:
-      value: |
+<pre><code class="hljs language-yaml"><span class="hljs-attr">name:</span> <span class="hljs-string">Accessibility</span> <span class="hljs-string">Bug</span> <span class="hljs-string">Report</span>
+<span class="hljs-attr">description:</span> <span class="hljs-string">Report</span> <span class="hljs-string">an</span> <span class="hljs-string">accessibility</span> <span class="hljs-string">issue</span> <span class="hljs-string">in</span> <span class="hljs-string">Agent</span> <span class="hljs-string">Forge&#x27;s</span> <span class="hljs-string">output</span> <span class="hljs-string">or</span> <span class="hljs-string">interface</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">&quot;[A11Y] &quot;</span>
+<span class="hljs-attr">labels:</span> [<span class="hljs-string">&quot;accessibility&quot;</span>, <span class="hljs-string">&quot;needs-triage&quot;</span>]
+<span class="hljs-attr">body:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">markdown</span>
+    <span class="hljs-attr">attributes:</span>
+      <span class="hljs-attr">value:</span> <span class="hljs-string">|
         Thank you for reporting an accessibility issue.
         Please fill in as much detail as possible.
+</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">dropdown</span>
+    <span class="hljs-attr">id:</span> <span class="hljs-string">screen-reader</span>
+    <span class="hljs-attr">attributes:</span>
+      <span class="hljs-attr">label:</span> <span class="hljs-string">Screen</span> <span class="hljs-string">Reader</span>
+      <span class="hljs-attr">description:</span> <span class="hljs-string">Which</span> <span class="hljs-string">screen</span> <span class="hljs-string">reader</span> <span class="hljs-string">are</span> <span class="hljs-string">you</span> <span class="hljs-string">using?</span>
+      <span class="hljs-attr">options:</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">NVDA</span> <span class="hljs-string">(Windows)</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">JAWS</span> <span class="hljs-string">(Windows)</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">VoiceOver</span> <span class="hljs-string">(macOS)</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">VoiceOver</span> <span class="hljs-string">(iOS)</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">TalkBack</span> <span class="hljs-string">(Android)</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">Narrator</span> <span class="hljs-string">(Windows)</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">Orca</span> <span class="hljs-string">(Linux)</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">None</span>
+    <span class="hljs-attr">validations:</span>
+      <span class="hljs-attr">required:</span> <span class="hljs-literal">true</span>
 
-  - type: dropdown
-    id: screen-reader
-    attributes:
-      label: Screen Reader
-      description: Which screen reader are you using?
-      options:
-        - NVDA (Windows)
-        - JAWS (Windows)
-        - VoiceOver (macOS)
-        - VoiceOver (iOS)
-        - TalkBack (Android)
-        - Narrator (Windows)
-        - Orca (Linux)
-        - None
-    validations:
-      required: true
-
-  - type: checkboxes
-    id: checked-existing
-    attributes:
-      label: Before Submitting
-      options:
-        - label: I searched for existing issues and this is not a duplicate
-          required: true
-        - label: I am using the modern GitHub Issues experience (default since Jan 2026)
-          required: false
-</code></pre>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">checkboxes</span>
+    <span class="hljs-attr">id:</span> <span class="hljs-string">checked-existing</span>
+    <span class="hljs-attr">attributes:</span>
+      <span class="hljs-attr">label:</span> <span class="hljs-string">Before</span> <span class="hljs-string">Submitting</span>
+      <span class="hljs-attr">options:</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-attr">label:</span> <span class="hljs-string">I</span> <span class="hljs-string">searched</span> <span class="hljs-string">for</span> <span class="hljs-string">existing</span> <span class="hljs-string">issues</span> <span class="hljs-string">and</span> <span class="hljs-string">this</span> <span class="hljs-string">is</span> <span class="hljs-string">not</span> <span class="hljs-string">a</span> <span class="hljs-string">duplicate</span>
+          <span class="hljs-attr">required:</span> <span class="hljs-literal">true</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-attr">label:</span> <span class="hljs-string">I</span> <span class="hljs-string">am</span> <span class="hljs-string">using</span> <span class="hljs-string">the</span> <span class="hljs-string">modern</span> <span class="hljs-string">GitHub</span> <span class="hljs-string">Issues</span> <span class="hljs-string">experience</span> <span class="hljs-string">(default</span> <span class="hljs-string">since</span> <span class="hljs-string">Jan</span> <span class="hljs-number">2026</span><span class="hljs-string">)</span>
+          <span class="hljs-attr">required:</span> <span class="hljs-literal">false</span></code></pre>
 <h3>YAML Field Types Reference</h3>
 <p>GitHub supports several field types in YAML form templates. Each has specific attributes and uses:</p>
 <h4>1. <code>markdown</code> — Instructional Text</h4>
 <p>Displays formatted Markdown content. Not editable by the contributor. Use for instructions, warnings, or explanations.</p>
-<pre><code class="language-yaml">- type: markdown
-  attributes:
-    value: |
+<pre><code class="hljs language-yaml"><span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">markdown</span>
+  <span class="hljs-attr">attributes:</span>
+    <span class="hljs-attr">value:</span> <span class="hljs-string">|
       ## Before You Begin
-      
-      Please search for [existing issues](../issues) before submitting.
-      Use this format for multi-line text.
-</code></pre>
+</span>      
+      <span class="hljs-string">Please</span> <span class="hljs-string">search</span> <span class="hljs-string">for</span> [<span class="hljs-string">existing</span> <span class="hljs-string">issues</span>]<span class="hljs-string">(../issues)</span> <span class="hljs-string">before</span> <span class="hljs-string">submitting.</span>
+      <span class="hljs-string">Use</span> <span class="hljs-string">this</span> <span class="hljs-string">format</span> <span class="hljs-string">for</span> <span class="hljs-string">multi-line</span> <span class="hljs-string">text.</span></code></pre>
 <p><strong>Attributes:</strong></p>
 <ul>
 <li><code>value</code> (required): Markdown content to display. Use <code>|</code> for multi-line text.</li>
@@ -511,15 +556,14 @@ body:
 <hr>
 <h4>2. <code>input</code> — Single-line Text Field</h4>
 <p>A single-line text input. Best for short answers like version numbers, URLs, or names.</p>
-<pre><code class="language-yaml">- type: input
-  id: version
-  attributes:
-    label: Version Number
-    description: Which version of the software are you using?
-    placeholder: e.g., v2.4.1
-  validations:
-    required: true
-</code></pre>
+<pre><code class="hljs language-yaml"><span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">input</span>
+  <span class="hljs-attr">id:</span> <span class="hljs-string">version</span>
+  <span class="hljs-attr">attributes:</span>
+    <span class="hljs-attr">label:</span> <span class="hljs-string">Version</span> <span class="hljs-string">Number</span>
+    <span class="hljs-attr">description:</span> <span class="hljs-string">Which</span> <span class="hljs-string">version</span> <span class="hljs-string">of</span> <span class="hljs-string">the</span> <span class="hljs-string">software</span> <span class="hljs-string">are</span> <span class="hljs-string">you</span> <span class="hljs-string">using?</span>
+    <span class="hljs-attr">placeholder:</span> <span class="hljs-string">e.g.,</span> <span class="hljs-string">v2.4.1</span>
+  <span class="hljs-attr">validations:</span>
+    <span class="hljs-attr">required:</span> <span class="hljs-literal">true</span></code></pre>
 <p><strong>Attributes:</strong></p>
 <ul>
 <li><code>label</code> (required): Field label, announced by screen readers</li>
@@ -534,22 +578,21 @@ body:
 <hr>
 <h4>3. <code>textarea</code> — Multi-line Text Area</h4>
 <p>A multi-line text input. Best for descriptions, reproduction steps, code snippets, or any long-form content.</p>
-<pre><code class="language-yaml">- type: textarea
-  id: description
-  attributes:
-    label: Describe the Issue
-    description: Provide as much detail as possible
-    placeholder: |
+<pre><code class="hljs language-yaml"><span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">textarea</span>
+  <span class="hljs-attr">id:</span> <span class="hljs-string">description</span>
+  <span class="hljs-attr">attributes:</span>
+    <span class="hljs-attr">label:</span> <span class="hljs-string">Describe</span> <span class="hljs-string">the</span> <span class="hljs-string">Issue</span>
+    <span class="hljs-attr">description:</span> <span class="hljs-string">Provide</span> <span class="hljs-string">as</span> <span class="hljs-string">much</span> <span class="hljs-string">detail</span> <span class="hljs-string">as</span> <span class="hljs-string">possible</span>
+    <span class="hljs-attr">placeholder:</span> <span class="hljs-string">|
       When I navigate to...
       The screen reader announces...
       I expected...
-    value: |
+</span>    <span class="hljs-attr">value:</span> <span class="hljs-string">|
       This text pre-fills the textarea.
       Contributors can edit or replace it.
-    render: markdown
-  validations:
-    required: true
-</code></pre>
+</span>    <span class="hljs-attr">render:</span> <span class="hljs-string">markdown</span>
+  <span class="hljs-attr">validations:</span>
+    <span class="hljs-attr">required:</span> <span class="hljs-literal">true</span></code></pre>
 <p><strong>Attributes:</strong></p>
 <ul>
 <li><code>label</code> (required): Field label</li>
@@ -566,21 +609,20 @@ body:
 <hr>
 <h4>4. <code>dropdown</code> — Select Menu</h4>
 <p>A dropdown menu with predefined options. Contributors select one choice. Best for bounded answer spaces like OS, browser, or severity.</p>
-<pre><code class="language-yaml">- type: dropdown
-  id: browser
-  attributes:
-    label: Browser
-    description: Which browser are you using?
-    options:
-      - Google Chrome
-      - Mozilla Firefox
-      - Microsoft Edge
-      - Apple Safari
-      - Other
-    multiple: false
-  validations:
-    required: true
-</code></pre>
+<pre><code class="hljs language-yaml"><span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">dropdown</span>
+  <span class="hljs-attr">id:</span> <span class="hljs-string">browser</span>
+  <span class="hljs-attr">attributes:</span>
+    <span class="hljs-attr">label:</span> <span class="hljs-string">Browser</span>
+    <span class="hljs-attr">description:</span> <span class="hljs-string">Which</span> <span class="hljs-string">browser</span> <span class="hljs-string">are</span> <span class="hljs-string">you</span> <span class="hljs-string">using?</span>
+    <span class="hljs-attr">options:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">Google</span> <span class="hljs-string">Chrome</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">Mozilla</span> <span class="hljs-string">Firefox</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">Microsoft</span> <span class="hljs-string">Edge</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">Apple</span> <span class="hljs-string">Safari</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">Other</span>
+    <span class="hljs-attr">multiple:</span> <span class="hljs-literal">false</span>
+  <span class="hljs-attr">validations:</span>
+    <span class="hljs-attr">required:</span> <span class="hljs-literal">true</span></code></pre>
 <p><strong>Attributes:</strong></p>
 <ul>
 <li><code>label</code> (required):Field label</li>
@@ -604,19 +646,18 @@ body:
 <hr>
 <h4>5. <code>checkboxes</code> — Checkbox Group</h4>
 <p>A group of checkboxes. Contributors can select multiple options or use as a verification checklist.</p>
-<pre><code class="language-yaml">- type: checkboxes
-  id: prerequisites
-  attributes:
-    label: Before Submitting
-    description: Please verify these items
-    options:
-      - label: I searched for existing issues
-        required: true
-      - label: I can reproduce this issue reliably
-        required: true
-      - label: I have attached relevant logs or screenshots
-        required: false
-</code></pre>
+<pre><code class="hljs language-yaml"><span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">checkboxes</span>
+  <span class="hljs-attr">id:</span> <span class="hljs-string">prerequisites</span>
+  <span class="hljs-attr">attributes:</span>
+    <span class="hljs-attr">label:</span> <span class="hljs-string">Before</span> <span class="hljs-string">Submitting</span>
+    <span class="hljs-attr">description:</span> <span class="hljs-string">Please</span> <span class="hljs-string">verify</span> <span class="hljs-string">these</span> <span class="hljs-string">items</span>
+    <span class="hljs-attr">options:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">label:</span> <span class="hljs-string">I</span> <span class="hljs-string">searched</span> <span class="hljs-string">for</span> <span class="hljs-string">existing</span> <span class="hljs-string">issues</span>
+        <span class="hljs-attr">required:</span> <span class="hljs-literal">true</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">label:</span> <span class="hljs-string">I</span> <span class="hljs-string">can</span> <span class="hljs-string">reproduce</span> <span class="hljs-string">this</span> <span class="hljs-string">issue</span> <span class="hljs-string">reliably</span>
+        <span class="hljs-attr">required:</span> <span class="hljs-literal">true</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">label:</span> <span class="hljs-string">I</span> <span class="hljs-string">have</span> <span class="hljs-string">attached</span> <span class="hljs-string">relevant</span> <span class="hljs-string">logs</span> <span class="hljs-string">or</span> <span class="hljs-string">screenshots</span>
+        <span class="hljs-attr">required:</span> <span class="hljs-literal">false</span></code></pre>
 <p><strong>Attributes:</strong></p>
 <ul>
 <li><code>label</code> (required): Group label</li>
@@ -693,223 +734,186 @@ body:
 <li>If you need to explain something → <code>markdown</code></li>
 </ul>
 <hr>
-<h3>YAML Field Types Summary Table</h3>
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>What It Creates</th>
-<th>Best For</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>markdown</code></td>
-<td>Instructional text, not user-editable</td>
-<td>Explanations, links, notes</td>
-</tr>
-<tr>
-<td><code>input</code></td>
-<td>Single-line text field</td>
-<td>Title, version numbers, URLs</td>
-</tr>
-<tr>
-<td><code>textarea</code></td>
-<td>Multi-line text area</td>
-<td>Descriptions, reproduction steps, code</td>
-</tr>
-<tr>
-<td><code>dropdown</code></td>
-<td>Select menu</td>
-<td>Browser, OS, screen reader, severity</td>
-</tr>
-<tr>
-<td><code>checkboxes</code></td>
-<td>Group of checkboxes</td>
-<td>Verification lists, multiple selections</td>
-</tr>
-</tbody></table>
-<hr>
 <h2>7. Building an Accessibility Bug Report Template</h2>
 <p>This is the hands-on activity. You will create a YAML form template specifically for accessibility bug reports in <code>agent-forge</code>.</p>
 <h3>Full Template</h3>
 <p>Save this as <code>.github/ISSUE_TEMPLATE/accessibility-bug.yml</code> in your fork:</p>
-<pre><code class="language-yaml">name: Accessibility Bug Report
-description: Report an issue where Agent Forge output or behavior is not accessible to screen reader users or keyboard-only users
-title: &quot;[A11Y] &quot;
-labels: [&quot;accessibility&quot;, &quot;needs-triage&quot;]
-body:
-  - type: markdown
-    attributes:
-      value: |
+<pre><code class="hljs language-yaml"><span class="hljs-attr">name:</span> <span class="hljs-string">Accessibility</span> <span class="hljs-string">Bug</span> <span class="hljs-string">Report</span>
+<span class="hljs-attr">description:</span> <span class="hljs-string">Report</span> <span class="hljs-string">an</span> <span class="hljs-string">issue</span> <span class="hljs-string">where</span> <span class="hljs-string">Agent</span> <span class="hljs-string">Forge</span> <span class="hljs-string">output</span> <span class="hljs-string">or</span> <span class="hljs-string">behavior</span> <span class="hljs-string">is</span> <span class="hljs-string">not</span> <span class="hljs-string">accessible</span> <span class="hljs-string">to</span> <span class="hljs-string">screen</span> <span class="hljs-string">reader</span> <span class="hljs-string">users</span> <span class="hljs-string">or</span> <span class="hljs-string">keyboard-only</span> <span class="hljs-string">users</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">&quot;[A11Y] &quot;</span>
+<span class="hljs-attr">labels:</span> [<span class="hljs-string">&quot;accessibility&quot;</span>, <span class="hljs-string">&quot;needs-triage&quot;</span>]
+<span class="hljs-attr">body:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">markdown</span>
+    <span class="hljs-attr">attributes:</span>
+      <span class="hljs-attr">value:</span> <span class="hljs-string">|
         ## Thank You for This Report
+</span>
+        <span class="hljs-string">Accessibility</span> <span class="hljs-string">bug</span> <span class="hljs-string">reports</span> <span class="hljs-string">are</span> <span class="hljs-string">some</span> <span class="hljs-string">of</span> <span class="hljs-string">the</span> <span class="hljs-string">most</span> <span class="hljs-string">important</span> <span class="hljs-string">contributions</span>
+        <span class="hljs-string">this</span> <span class="hljs-string">project</span> <span class="hljs-string">receives.</span> <span class="hljs-string">The</span> <span class="hljs-string">more</span> <span class="hljs-string">detail</span> <span class="hljs-string">you</span> <span class="hljs-string">provide,</span> <span class="hljs-string">the</span> <span class="hljs-string">faster</span> <span class="hljs-string">we</span> <span class="hljs-string">can</span>
+        <span class="hljs-string">reproduce</span> <span class="hljs-string">and</span> <span class="hljs-string">fix</span> <span class="hljs-string">the</span> <span class="hljs-string">issue.</span>
 
-        Accessibility bug reports are some of the most important contributions
-        this project receives. The more detail you provide, the faster we can
-        reproduce and fix the issue.
+        <span class="hljs-string">**Before</span> <span class="hljs-string">submitting:**</span> <span class="hljs-string">Please</span> <span class="hljs-string">check</span> <span class="hljs-string">existing</span> <span class="hljs-string">issues</span> <span class="hljs-string">to</span> <span class="hljs-string">avoid</span> <span class="hljs-string">duplicates.</span>
+        <span class="hljs-attr">You can search:</span> <span class="hljs-string">`is:open</span> <span class="hljs-string">is:issue</span> <span class="hljs-string">label:accessibility`</span>
 
-        **Before submitting:** Please check existing issues to avoid duplicates.
-        You can search: `is:open is:issue label:accessibility`
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">dropdown</span>
+    <span class="hljs-attr">id:</span> <span class="hljs-string">component</span>
+    <span class="hljs-attr">attributes:</span>
+      <span class="hljs-attr">label:</span> <span class="hljs-string">Which</span> <span class="hljs-string">Agent</span> <span class="hljs-string">or</span> <span class="hljs-string">Feature</span> <span class="hljs-string">Is</span> <span class="hljs-string">Affected?</span>
+      <span class="hljs-attr">options:</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;@daily-briefing&quot;</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;@issue-tracker&quot;</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;@pr-review&quot;</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;@analytics&quot;</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;@insiders-a11y-tracker&quot;</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;A slash command (specify below)&quot;</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;Documentation&quot;</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;Setup or configuration&quot;</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;Other&quot;</span>
+    <span class="hljs-attr">validations:</span>
+      <span class="hljs-attr">required:</span> <span class="hljs-literal">true</span>
 
-  - type: dropdown
-    id: component
-    attributes:
-      label: Which Agent or Feature Is Affected?
-      options:
-        - &quot;@daily-briefing&quot;
-        - &quot;@issue-tracker&quot;
-        - &quot;@pr-review&quot;
-        - &quot;@analytics&quot;
-        - &quot;@insiders-a11y-tracker&quot;
-        - &quot;A slash command (specify below)&quot;
-        - &quot;Documentation&quot;
-        - &quot;Setup or configuration&quot;
-        - &quot;Other&quot;
-    validations:
-      required: true
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">dropdown</span>
+    <span class="hljs-attr">id:</span> <span class="hljs-string">screen-reader</span>
+    <span class="hljs-attr">attributes:</span>
+      <span class="hljs-attr">label:</span> <span class="hljs-string">Screen</span> <span class="hljs-string">Reader</span>
+      <span class="hljs-attr">description:</span> <span class="hljs-string">Which</span> <span class="hljs-string">screen</span> <span class="hljs-string">reader</span> <span class="hljs-string">are</span> <span class="hljs-string">you</span> <span class="hljs-string">using?</span> <span class="hljs-string">Select</span> <span class="hljs-string">all</span> <span class="hljs-string">that</span> <span class="hljs-string">apply</span> <span class="hljs-string">by</span> <span class="hljs-string">filing</span> <span class="hljs-string">separate</span> <span class="hljs-string">issues,</span> <span class="hljs-string">or</span> <span class="hljs-string">list</span> <span class="hljs-string">multiple</span> <span class="hljs-string">in</span> <span class="hljs-string">&quot;Additional Context&quot;</span> <span class="hljs-string">below.</span>
+      <span class="hljs-attr">options:</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">NVDA</span> <span class="hljs-string">(Windows)</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">JAWS</span> <span class="hljs-string">(Windows)</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">VoiceOver</span> <span class="hljs-string">(macOS)</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">VoiceOver</span> <span class="hljs-string">(iOS</span> <span class="hljs-string">/</span> <span class="hljs-string">iPadOS)</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">TalkBack</span> <span class="hljs-string">(Android)</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">Narrator</span> <span class="hljs-string">(Windows)</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">Orca</span> <span class="hljs-string">(Linux)</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">Keyboard</span> <span class="hljs-string">only</span> <span class="hljs-string">(no</span> <span class="hljs-string">screen</span> <span class="hljs-string">reader)</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">None</span> <span class="hljs-string">of</span> <span class="hljs-string">the</span> <span class="hljs-string">above</span>
+    <span class="hljs-attr">validations:</span>
+      <span class="hljs-attr">required:</span> <span class="hljs-literal">true</span>
 
-  - type: dropdown
-    id: screen-reader
-    attributes:
-      label: Screen Reader
-      description: Which screen reader are you using? Select all that apply by filing separate issues, or list multiple in &quot;Additional Context&quot; below.
-      options:
-        - NVDA (Windows)
-        - JAWS (Windows)
-        - VoiceOver (macOS)
-        - VoiceOver (iOS / iPadOS)
-        - TalkBack (Android)
-        - Narrator (Windows)
-        - Orca (Linux)
-        - Keyboard only (no screen reader)
-        - None of the above
-    validations:
-      required: true
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">input</span>
+    <span class="hljs-attr">id:</span> <span class="hljs-string">screen-reader-version</span>
+    <span class="hljs-attr">attributes:</span>
+      <span class="hljs-attr">label:</span> <span class="hljs-string">Screen</span> <span class="hljs-string">Reader</span> <span class="hljs-string">Version</span>
+      <span class="hljs-attr">description:</span> <span class="hljs-string">For</span> <span class="hljs-string">example,</span> <span class="hljs-string">&quot;NVDA 2025.3.3&quot;</span> <span class="hljs-string">or</span> <span class="hljs-string">&quot;JAWS 2026&quot;</span>
+      <span class="hljs-attr">placeholder:</span> <span class="hljs-string">e.g.,</span> <span class="hljs-string">NVDA</span> <span class="hljs-number">2025.3</span><span class="hljs-number">.3</span>
+    <span class="hljs-attr">validations:</span>
+      <span class="hljs-attr">required:</span> <span class="hljs-literal">false</span>
 
-  - type: input
-    id: screen-reader-version
-    attributes:
-      label: Screen Reader Version
-      description: For example, &quot;NVDA 2024.1&quot; or &quot;JAWS 2025&quot;
-      placeholder: e.g., NVDA 2024.1
-    validations:
-      required: false
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">dropdown</span>
+    <span class="hljs-attr">id:</span> <span class="hljs-string">browser</span>
+    <span class="hljs-attr">attributes:</span>
+      <span class="hljs-attr">label:</span> <span class="hljs-string">Browser</span>
+      <span class="hljs-attr">options:</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">Google</span> <span class="hljs-string">Chrome</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">Microsoft</span> <span class="hljs-string">Edge</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">Mozilla</span> <span class="hljs-string">Firefox</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">Apple</span> <span class="hljs-string">Safari</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">Other</span>
+    <span class="hljs-attr">validations:</span>
+      <span class="hljs-attr">required:</span> <span class="hljs-literal">true</span>
 
-  - type: dropdown
-    id: browser
-    attributes:
-      label: Browser
-      options:
-        - Google Chrome
-        - Microsoft Edge
-        - Mozilla Firefox
-        - Apple Safari
-        - Other
-    validations:
-      required: true
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">input</span>
+    <span class="hljs-attr">id:</span> <span class="hljs-string">browser-version</span>
+    <span class="hljs-attr">attributes:</span>
+      <span class="hljs-attr">label:</span> <span class="hljs-string">Browser</span> <span class="hljs-string">Version</span>
+      <span class="hljs-attr">placeholder:</span> <span class="hljs-string">e.g.,</span> <span class="hljs-string">Chrome</span> <span class="hljs-number">124.0</span><span class="hljs-number">.6367</span><span class="hljs-number">.82</span>
 
-  - type: input
-    id: browser-version
-    attributes:
-      label: Browser Version
-      placeholder: e.g., Chrome 124.0.6367.82
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">dropdown</span>
+    <span class="hljs-attr">id:</span> <span class="hljs-string">os</span>
+    <span class="hljs-attr">attributes:</span>
+      <span class="hljs-attr">label:</span> <span class="hljs-string">Operating</span> <span class="hljs-string">System</span>
+      <span class="hljs-attr">options:</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">Windows</span> <span class="hljs-number">11</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">Windows</span> <span class="hljs-number">10</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">macOS</span> <span class="hljs-string">Sequoia</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">macOS</span> <span class="hljs-string">Sonoma</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">macOS</span> <span class="hljs-string">Ventura</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">iOS</span> <span class="hljs-string">/</span> <span class="hljs-string">iPadOS</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">Android</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">Linux</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">Other</span>
+    <span class="hljs-attr">validations:</span>
+      <span class="hljs-attr">required:</span> <span class="hljs-literal">true</span>
 
-  - type: dropdown
-    id: os
-    attributes:
-      label: Operating System
-      options:
-        - Windows 11
-        - Windows 10
-        - macOS Sequoia
-        - macOS Sonoma
-        - macOS Ventura
-        - iOS / iPadOS
-        - Android
-        - Linux
-        - Other
-    validations:
-      required: true
-
-  - type: textarea
-    id: expected
-    attributes:
-      label: Expected Behavior
-      description: What should happen? What should your screen reader announce?
-      placeholder: |
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">textarea</span>
+    <span class="hljs-attr">id:</span> <span class="hljs-string">expected</span>
+    <span class="hljs-attr">attributes:</span>
+      <span class="hljs-attr">label:</span> <span class="hljs-string">Expected</span> <span class="hljs-string">Behavior</span>
+      <span class="hljs-attr">description:</span> <span class="hljs-string">What</span> <span class="hljs-string">should</span> <span class="hljs-string">happen?</span> <span class="hljs-string">What</span> <span class="hljs-string">should</span> <span class="hljs-string">your</span> <span class="hljs-string">screen</span> <span class="hljs-string">reader</span> <span class="hljs-string">announce?</span>
+      <span class="hljs-attr">placeholder:</span> <span class="hljs-string">|
         When I activate the &quot;Get started&quot; button, my screen reader should announce
         &quot;Issue template: Accessibility Bug Report, heading level 2&quot; and move
         focus to the first form field.
-    validations:
-      required: true
+</span>    <span class="hljs-attr">validations:</span>
+      <span class="hljs-attr">required:</span> <span class="hljs-literal">true</span>
 
-  - type: textarea
-    id: actual
-    attributes:
-      label: Actual Behavior
-      description: What actually happens? What does your screen reader announce (or not announce)?
-      placeholder: |
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">textarea</span>
+    <span class="hljs-attr">id:</span> <span class="hljs-string">actual</span>
+    <span class="hljs-attr">attributes:</span>
+      <span class="hljs-attr">label:</span> <span class="hljs-string">Actual</span> <span class="hljs-string">Behavior</span>
+      <span class="hljs-attr">description:</span> <span class="hljs-string">What</span> <span class="hljs-string">actually</span> <span class="hljs-string">happens?</span> <span class="hljs-string">What</span> <span class="hljs-string">does</span> <span class="hljs-string">your</span> <span class="hljs-string">screen</span> <span class="hljs-string">reader</span> <span class="hljs-string">announce</span> <span class="hljs-string">(or</span> <span class="hljs-string">not</span> <span class="hljs-string">announce)?</span>
+      <span class="hljs-attr">placeholder:</span> <span class="hljs-string">|
         When I activate the &quot;Get started&quot; button, focus moves but my screen reader
         announces nothing. I have to navigate manually to find where I am.
-    validations:
-      required: true
+</span>    <span class="hljs-attr">validations:</span>
+      <span class="hljs-attr">required:</span> <span class="hljs-literal">true</span>
 
-  - type: textarea
-    id: steps
-    attributes:
-      label: Steps to Reproduce
-      description: Numbered steps to reproduce the issue
-      placeholder: |
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">textarea</span>
+    <span class="hljs-attr">id:</span> <span class="hljs-string">steps</span>
+    <span class="hljs-attr">attributes:</span>
+      <span class="hljs-attr">label:</span> <span class="hljs-string">Steps</span> <span class="hljs-string">to</span> <span class="hljs-string">Reproduce</span>
+      <span class="hljs-attr">description:</span> <span class="hljs-string">Numbered</span> <span class="hljs-string">steps</span> <span class="hljs-string">to</span> <span class="hljs-string">reproduce</span> <span class="hljs-string">the</span> <span class="hljs-string">issue</span>
+      <span class="hljs-attr">placeholder:</span> <span class="hljs-string">|
         1. Navigate to agent-forge on GitHub
         2. Activate &quot;New issue&quot;
         3. On the template chooser, Tab to &quot;Accessibility Bug Report&quot;
         4. Activate &quot;Get started&quot;
         5. Result: [what happens]
-    validations:
-      required: true
+</span>    <span class="hljs-attr">validations:</span>
+      <span class="hljs-attr">required:</span> <span class="hljs-literal">true</span>
 
-  - type: dropdown
-    id: wcag
-    attributes:
-      label: WCAG Success Criterion (if known)
-      description: Which accessibility standard does this appear to violate?
-      options:
-        - &quot;1.1.1 Non-text Content&quot;
-        - &quot;1.3.1 Info and Relationships&quot;
-        - &quot;1.3.2 Meaningful Sequence&quot;
-        - &quot;1.4.1 Use of Color&quot;
-        - &quot;1.4.3 Contrast (Minimum)&quot;
-        - &quot;2.1.1 Keyboard&quot;
-        - &quot;2.1.2 No Keyboard Trap&quot;
-        - &quot;2.4.1 Bypass Blocks&quot;
-        - &quot;2.4.3 Focus Order&quot;
-        - &quot;2.4.6 Headings and Labels&quot;
-        - &quot;2.4.7 Focus Visible&quot;
-        - &quot;3.3.1 Error Identification&quot;
-        - &quot;4.1.2 Name, Role, Value&quot;
-        - &quot;4.1.3 Status Messages&quot;
-        - &quot;Not sure&quot;
-        - &quot;Does not apply&quot;
-    validations:
-      required: false
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">dropdown</span>
+    <span class="hljs-attr">id:</span> <span class="hljs-string">wcag</span>
+    <span class="hljs-attr">attributes:</span>
+      <span class="hljs-attr">label:</span> <span class="hljs-string">WCAG</span> <span class="hljs-string">Success</span> <span class="hljs-string">Criterion</span> <span class="hljs-string">(if</span> <span class="hljs-string">known)</span>
+      <span class="hljs-attr">description:</span> <span class="hljs-string">Which</span> <span class="hljs-string">accessibility</span> <span class="hljs-string">standard</span> <span class="hljs-string">does</span> <span class="hljs-string">this</span> <span class="hljs-string">appear</span> <span class="hljs-string">to</span> <span class="hljs-string">violate?</span>
+      <span class="hljs-attr">options:</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;1.1.1 Non-text Content&quot;</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;1.3.1 Info and Relationships&quot;</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;1.3.2 Meaningful Sequence&quot;</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;1.4.1 Use of Color&quot;</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;1.4.3 Contrast (Minimum)&quot;</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;2.1.1 Keyboard&quot;</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;2.1.2 No Keyboard Trap&quot;</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;2.4.1 Bypass Blocks&quot;</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;2.4.3 Focus Order&quot;</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;2.4.6 Headings and Labels&quot;</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;2.4.7 Focus Visible&quot;</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;3.3.1 Error Identification&quot;</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;4.1.2 Name, Role, Value&quot;</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;4.1.3 Status Messages&quot;</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;Not sure&quot;</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;Does not apply&quot;</span>
+    <span class="hljs-attr">validations:</span>
+      <span class="hljs-attr">required:</span> <span class="hljs-literal">false</span>
 
-  - type: textarea
-    id: context
-    attributes:
-      label: Additional Context
-      description: Anything else — screenshots (with alt text), links to related issues, workarounds you found, or suggestions for a fix
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">textarea</span>
+    <span class="hljs-attr">id:</span> <span class="hljs-string">context</span>
+    <span class="hljs-attr">attributes:</span>
+      <span class="hljs-attr">label:</span> <span class="hljs-string">Additional</span> <span class="hljs-string">Context</span>
+      <span class="hljs-attr">description:</span> <span class="hljs-string">Anything</span> <span class="hljs-string">else</span> <span class="hljs-string">—</span> <span class="hljs-string">screenshots</span> <span class="hljs-string">(with</span> <span class="hljs-string">alt</span> <span class="hljs-string">text),</span> <span class="hljs-string">links</span> <span class="hljs-string">to</span> <span class="hljs-string">related</span> <span class="hljs-string">issues,</span> <span class="hljs-string">workarounds</span> <span class="hljs-string">you</span> <span class="hljs-string">found,</span> <span class="hljs-string">or</span> <span class="hljs-string">suggestions</span> <span class="hljs-string">for</span> <span class="hljs-string">a</span> <span class="hljs-string">fix</span>
 
-  - type: checkboxes
-    id: checklist
-    attributes:
-      label: Before Submitting
-      options:
-        - label: I searched existing issues and this is not a duplicate
-          required: true
-        - label: I can reliably reproduce this issue with the steps above
-          required: true
-        - label: I have included my screen reader and browser versions
-          required: false
-</code></pre>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">checkboxes</span>
+    <span class="hljs-attr">id:</span> <span class="hljs-string">checklist</span>
+    <span class="hljs-attr">attributes:</span>
+      <span class="hljs-attr">label:</span> <span class="hljs-string">Before</span> <span class="hljs-string">Submitting</span>
+      <span class="hljs-attr">options:</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-attr">label:</span> <span class="hljs-string">I</span> <span class="hljs-string">searched</span> <span class="hljs-string">existing</span> <span class="hljs-string">issues</span> <span class="hljs-string">and</span> <span class="hljs-string">this</span> <span class="hljs-string">is</span> <span class="hljs-string">not</span> <span class="hljs-string">a</span> <span class="hljs-string">duplicate</span>
+          <span class="hljs-attr">required:</span> <span class="hljs-literal">true</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-attr">label:</span> <span class="hljs-string">I</span> <span class="hljs-string">can</span> <span class="hljs-string">reliably</span> <span class="hljs-string">reproduce</span> <span class="hljs-string">this</span> <span class="hljs-string">issue</span> <span class="hljs-string">with</span> <span class="hljs-string">the</span> <span class="hljs-string">steps</span> <span class="hljs-string">above</span>
+          <span class="hljs-attr">required:</span> <span class="hljs-literal">true</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-attr">label:</span> <span class="hljs-string">I</span> <span class="hljs-string">have</span> <span class="hljs-string">included</span> <span class="hljs-string">my</span> <span class="hljs-string">screen</span> <span class="hljs-string">reader</span> <span class="hljs-string">and</span> <span class="hljs-string">browser</span> <span class="hljs-string">versions</span>
+          <span class="hljs-attr">required:</span> <span class="hljs-literal">false</span></code></pre>
 <h3>What Makes This Template Accessible</h3>
 <p>This template is itself an accessibility contribution:</p>
 <ul>
@@ -923,76 +927,75 @@ body:
 <h3>A Second Template: Feature Request Form</h3>
 <p>The bug report template above is specific to accessibility issues. Once you understand the pattern, you can create templates for any contribution type. Here is a Feature Request template you can add to your own projects — it follows the exact same YAML structure.</p>
 <p>Save as <code>.github/ISSUE_TEMPLATE/feature-request.yml</code>:</p>
-<pre><code class="language-yaml">name: Feature Request
-description: Suggest a new agent, slash command, or improvement to Agent Forge
-title: &quot;[FEAT] &quot;
-labels: [&quot;enhancement&quot;, &quot;needs-triage&quot;]
-body:
-  - type: markdown
-    attributes:
-      value: |
+<pre><code class="hljs language-yaml"><span class="hljs-attr">name:</span> <span class="hljs-string">Feature</span> <span class="hljs-string">Request</span>
+<span class="hljs-attr">description:</span> <span class="hljs-string">Suggest</span> <span class="hljs-string">a</span> <span class="hljs-string">new</span> <span class="hljs-string">agent,</span> <span class="hljs-string">slash</span> <span class="hljs-string">command,</span> <span class="hljs-string">or</span> <span class="hljs-string">improvement</span> <span class="hljs-string">to</span> <span class="hljs-string">Agent</span> <span class="hljs-string">Forge</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">&quot;[FEAT] &quot;</span>
+<span class="hljs-attr">labels:</span> [<span class="hljs-string">&quot;enhancement&quot;</span>, <span class="hljs-string">&quot;needs-triage&quot;</span>]
+<span class="hljs-attr">body:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">markdown</span>
+    <span class="hljs-attr">attributes:</span>
+      <span class="hljs-attr">value:</span> <span class="hljs-string">|
         ## Suggest a Feature
+</span>
+        <span class="hljs-string">Feature</span> <span class="hljs-string">requests</span> <span class="hljs-string">are</span> <span class="hljs-string">welcome.</span> <span class="hljs-string">The</span> <span class="hljs-string">more</span> <span class="hljs-string">specific</span> <span class="hljs-string">your</span> <span class="hljs-string">suggestion,</span>
+        <span class="hljs-string">the</span> <span class="hljs-string">easier</span> <span class="hljs-string">it</span> <span class="hljs-string">is</span> <span class="hljs-string">to</span> <span class="hljs-string">design</span> <span class="hljs-string">and</span> <span class="hljs-string">implement.</span>
 
-        Feature requests are welcome. The more specific your suggestion,
-        the easier it is to design and implement.
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">dropdown</span>
+    <span class="hljs-attr">id:</span> <span class="hljs-string">feature-area</span>
+    <span class="hljs-attr">attributes:</span>
+      <span class="hljs-attr">label:</span> <span class="hljs-string">Feature</span> <span class="hljs-string">Area</span>
+      <span class="hljs-attr">description:</span> <span class="hljs-string">Which</span> <span class="hljs-string">part</span> <span class="hljs-string">of</span> <span class="hljs-string">Agent</span> <span class="hljs-string">Forge</span> <span class="hljs-string">does</span> <span class="hljs-string">this</span> <span class="hljs-string">relate</span> <span class="hljs-string">to?</span>
+      <span class="hljs-attr">options:</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">New</span> <span class="hljs-string">agent</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">New</span> <span class="hljs-string">slash</span> <span class="hljs-string">command</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">Existing</span> <span class="hljs-string">agent</span> <span class="hljs-string">improvement</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">Output</span> <span class="hljs-string">format</span> <span class="hljs-string">/</span> <span class="hljs-string">accessibility</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">Documentation</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">Configuration</span> <span class="hljs-string">/</span> <span class="hljs-string">preferences</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">Other</span>
+    <span class="hljs-attr">validations:</span>
+      <span class="hljs-attr">required:</span> <span class="hljs-literal">true</span>
 
-  - type: dropdown
-    id: feature-area
-    attributes:
-      label: Feature Area
-      description: Which part of Agent Forge does this relate to?
-      options:
-        - New agent
-        - New slash command
-        - Existing agent improvement
-        - Output format / accessibility
-        - Documentation
-        - Configuration / preferences
-        - Other
-    validations:
-      required: true
-
-  - type: textarea
-    id: problem
-    attributes:
-      label: Problem or Gap
-      description: What is the problem you are trying to solve? What can you not currently do?
-      placeholder: |
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">textarea</span>
+    <span class="hljs-attr">id:</span> <span class="hljs-string">problem</span>
+    <span class="hljs-attr">attributes:</span>
+      <span class="hljs-attr">label:</span> <span class="hljs-string">Problem</span> <span class="hljs-string">or</span> <span class="hljs-string">Gap</span>
+      <span class="hljs-attr">description:</span> <span class="hljs-string">What</span> <span class="hljs-string">is</span> <span class="hljs-string">the</span> <span class="hljs-string">problem</span> <span class="hljs-string">you</span> <span class="hljs-string">are</span> <span class="hljs-string">trying</span> <span class="hljs-string">to</span> <span class="hljs-string">solve?</span> <span class="hljs-string">What</span> <span class="hljs-string">can</span> <span class="hljs-string">you</span> <span class="hljs-string">not</span> <span class="hljs-string">currently</span> <span class="hljs-string">do?</span>
+      <span class="hljs-attr">placeholder:</span> <span class="hljs-string">|
         I often need to... but there is no way to...
         I find that the current output of @daily-briefing does not...
-    validations:
-      required: true
+</span>    <span class="hljs-attr">validations:</span>
+      <span class="hljs-attr">required:</span> <span class="hljs-literal">true</span>
 
-  - type: textarea
-    id: solution
-    attributes:
-      label: Proposed Solution
-      description: How would you like this to work?
-      placeholder: |
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">textarea</span>
+    <span class="hljs-attr">id:</span> <span class="hljs-string">solution</span>
+    <span class="hljs-attr">attributes:</span>
+      <span class="hljs-attr">label:</span> <span class="hljs-string">Proposed</span> <span class="hljs-string">Solution</span>
+      <span class="hljs-attr">description:</span> <span class="hljs-string">How</span> <span class="hljs-string">would</span> <span class="hljs-string">you</span> <span class="hljs-string">like</span> <span class="hljs-string">this</span> <span class="hljs-string">to</span> <span class="hljs-string">work?</span>
+      <span class="hljs-attr">placeholder:</span> <span class="hljs-string">|
         A new slash command called /weekly-digest that...
         The @pr-review agent should additionally announce...
-    validations:
-      required: true
+</span>    <span class="hljs-attr">validations:</span>
+      <span class="hljs-attr">required:</span> <span class="hljs-literal">true</span>
 
-  - type: textarea
-    id: accessibility-impact
-    attributes:
-      label: Accessibility Considerations
-      description: How does this feature affect screen reader users or keyboard-only navigation?
-      placeholder: |
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">textarea</span>
+    <span class="hljs-attr">id:</span> <span class="hljs-string">accessibility-impact</span>
+    <span class="hljs-attr">attributes:</span>
+      <span class="hljs-attr">label:</span> <span class="hljs-string">Accessibility</span> <span class="hljs-string">Considerations</span>
+      <span class="hljs-attr">description:</span> <span class="hljs-string">How</span> <span class="hljs-string">does</span> <span class="hljs-string">this</span> <span class="hljs-string">feature</span> <span class="hljs-string">affect</span> <span class="hljs-string">screen</span> <span class="hljs-string">reader</span> <span class="hljs-string">users</span> <span class="hljs-string">or</span> <span class="hljs-string">keyboard-only</span> <span class="hljs-string">navigation?</span>
+      <span class="hljs-attr">placeholder:</span> <span class="hljs-string">|
         This would improve the experience because...
         Screen reader users would benefit by...
-
-  - type: checkboxes
-    id: checklist
-    attributes:
-      label: Before Submitting
-      options:
-        - label: I searched existing issues and discussions — this has not been suggested before
-          required: true
-        - label: This feature would benefit contributors beyond my personal workflow
-          required: false
-</code></pre>
+</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">checkboxes</span>
+    <span class="hljs-attr">id:</span> <span class="hljs-string">checklist</span>
+    <span class="hljs-attr">attributes:</span>
+      <span class="hljs-attr">label:</span> <span class="hljs-string">Before</span> <span class="hljs-string">Submitting</span>
+      <span class="hljs-attr">options:</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-attr">label:</span> <span class="hljs-string">I</span> <span class="hljs-string">searched</span> <span class="hljs-string">existing</span> <span class="hljs-string">issues</span> <span class="hljs-string">and</span> <span class="hljs-string">discussions</span> <span class="hljs-string">—</span> <span class="hljs-string">this</span> <span class="hljs-string">has</span> <span class="hljs-string">not</span> <span class="hljs-string">been</span> <span class="hljs-string">suggested</span> <span class="hljs-string">before</span>
+          <span class="hljs-attr">required:</span> <span class="hljs-literal">true</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-attr">label:</span> <span class="hljs-string">This</span> <span class="hljs-string">feature</span> <span class="hljs-string">would</span> <span class="hljs-string">benefit</span> <span class="hljs-string">contributors</span> <span class="hljs-string">beyond</span> <span class="hljs-string">my</span> <span class="hljs-string">personal</span> <span class="hljs-string">workflow</span>
+          <span class="hljs-attr">required:</span> <span class="hljs-literal">false</span></code></pre>
 <p><strong>Why this matters for your own projects:</strong> Every open source project you create or maintain can have issue templates. A project with good templates gets better bug reports and feature requests — which means less back-and-forth and faster, more confident triage. The templates you create here are skills you carry to every repository you own.</p>
 <hr>
 <h3>Designing Templates for Your Own Projects</h3>
@@ -1008,27 +1011,26 @@ body:
 <p><strong>File location:</strong> <code>.github/pull_request_template.md</code> (singular — only one PR template per repo)</p>
 <h3>Reading the Agent Forge PR Template</h3>
 <p>Open <code>.github/pull_request_template.md</code> in VS Code. You will see the standard sections the project expects:</p>
-<pre><code class="language-markdown">## Description
+<pre><code class="hljs language-markdown"><span class="hljs-section">## Description</span>
 &lt;!-- What does this PR add or fix? Why? --&gt;
 
-## Type of Change
-- [ ] New agent
-- [ ] New slash command
-- [ ] Bug fix
-- [ ] Documentation improvement
-- [ ] Accessibility improvement
-- [ ] Other (describe below)
+<span class="hljs-section">## Type of Change</span>
+<span class="hljs-bullet">-</span> [ ] New agent
+<span class="hljs-bullet">-</span> [ ] New slash command
+<span class="hljs-bullet">-</span> [ ] Bug fix
+<span class="hljs-bullet">-</span> [ ] Documentation improvement
+<span class="hljs-bullet">-</span> [ ] Accessibility improvement
+<span class="hljs-bullet">-</span> [ ] Other (describe below)
 
-## How to Test
+<span class="hljs-section">## How to Test</span>
 &lt;!-- How can a reviewer verify this works correctly? --&gt;
 
-## Accessibility Considerations
+<span class="hljs-section">## Accessibility Considerations</span>
 &lt;!-- Does this change affect screen reader output? WCAG compliance?
-     Keyboard navigation? If yes, describe what was tested. --&gt;
-
-## Related Issues
-&lt;!-- Use &quot;Closes #N&quot; to auto-close the issue when this PR is merged --&gt;
-</code></pre>
+<span class="hljs-code">     Keyboard navigation? If yes, describe what was tested. --&gt;
+</span>
+<span class="hljs-section">## Related Issues</span>
+&lt;!-- Use &quot;Closes #N&quot; to auto-close the issue when this PR is merged --&gt;</code></pre>
 <p><strong>Using it when opening a PR:</strong> The template auto-fills the PR description field. Tab through the sections with your screen reader and fill in each one. Delete placeholder comments (<code>&lt;!-- ... --&gt;</code>) — they will not appear in the rendered PR but can confuse screen readers if left in.</p>
 <hr>
 <h2>9. Hands-On Activity</h2>
@@ -1213,15 +1215,12 @@ body:
 <p><strong>What to do:</strong></p>
 <ol>
 <li>Open a terminal (PowerShell on Windows, Terminal on macOS/Linux)</li>
-<li>Navigate to a folder where you want to store the project:<pre><code class="language-bash">cd ~/projects
-</code></pre>
+<li>Navigate to a folder where you want to store the project:<pre><code class="hljs language-bash"><span class="hljs-built_in">cd</span> ~/projects</code></pre>
 (Or wherever you keep code projects)</li>
-<li>Clone your fork:<pre><code class="language-bash">git clone https://github.com/[YOUR-USERNAME]/agent-forge.git
-</code></pre>
+<li>Clone your fork:<pre><code class="hljs language-bash">git <span class="hljs-built_in">clone</span> https://github.com/[YOUR-USERNAME]/agent-forge.git</code></pre>
 Replace <code>[YOUR-USERNAME]</code> with your actual GitHub username</li>
 <li>Wait for the clone to complete (should take 10-30 seconds)</li>
-<li>Navigate into the folder:<pre><code class="language-bash">cd agent-forge
-</code></pre>
+<li>Navigate into the folder:<pre><code class="hljs language-bash"><span class="hljs-built_in">cd</span> agent-forge</code></pre>
 </li>
 </ol>
 <p><strong>What you should see:</strong></p>
@@ -1239,8 +1238,7 @@ Replace <code>[YOUR-USERNAME]</code> with your actual GitHub username</li>
 <h4>Step 2: Open Your Fork in VS Code</h4>
 <p><strong>What to do:</strong></p>
 <ol>
-<li>From the terminal, while in your <code>agent-forge</code> folder, type:<pre><code class="language-bash">code .
-</code></pre>
+<li>From the terminal, while in your <code>agent-forge</code> folder, type:<pre><code class="hljs language-bash">code .</code></pre>
 </li>
 <li>Press Enter</li>
 <li>VS Code opens with your fork loaded</li>
@@ -1334,17 +1332,13 @@ Replace <code>[YOUR-USERNAME]</code> with your actual GitHub username</li>
 <ol>
 <li>Open the terminal in VS Code: <strong>Terminal</strong> → <strong>New Terminal</strong> (or <code>Ctrl+</code> ` on Windows)</li>
 <li>You should be in the <code>agent-forge</code> folder already</li>
-<li>Create a new branch for this change:<pre><code class="language-bash">git checkout -b feat/add-accessibility-template
-</code></pre>
+<li>Create a new branch for this change:<pre><code class="hljs language-bash">git checkout -b feat/add-accessibility-template</code></pre>
 </li>
-<li>Add the file to git:<pre><code class="language-bash">git add .github/ISSUE_TEMPLATE/accessibility-bug.yml
-</code></pre>
+<li>Add the file to git:<pre><code class="hljs language-bash">git add .github/ISSUE_TEMPLATE/accessibility-bug.yml</code></pre>
 </li>
-<li>Commit with a message:<pre><code class="language-bash">git commit -m &quot;feat: add accessibility bug report template&quot;
-</code></pre>
+<li>Commit with a message:<pre><code class="hljs language-bash">git commit -m <span class="hljs-string">&quot;feat: add accessibility bug report template&quot;</span></code></pre>
 </li>
-<li>Push to your fork:<pre><code class="language-bash">git push origin feat/add-accessibility-template
-</code></pre>
+<li>Push to your fork:<pre><code class="hljs language-bash">git push origin feat/add-accessibility-template</code></pre>
 </li>
 </ol>
 <p><strong>What happens:</strong></p>
@@ -1494,39 +1488,37 @@ Replace <code>[YOUR-USERNAME]</code> with your actual GitHub username</li>
 <h4>Step 3: Write Your PR Title and Description</h4>
 <p><strong>Form fields to fill:</strong></p>
 <p><strong>Title:</strong></p>
-<pre><code>feat: add accessibility bug report template
-</code></pre>
+<pre><code class="hljs"><span class="hljs-symbol">feat:</span> <span class="hljs-keyword">add</span> accessibility bug report template</code></pre>
 <p><strong>Description:</strong>
 Write a clear description that explains what you&#39;re contributing:</p>
-<pre><code>## What Does This PR Do?
+<pre><code class="hljs"><span class="hljs-comment">## What Does This PR Do?</span>
 
 This PR adds a comprehensive GitHub issue template for filing accessibility 
 (a11y) bug reports. The template uses a form-based structure (YAML) to guide 
 contributors through providing crucial accessibility context.
 
-## Why Is This Useful?
+<span class="hljs-comment">## Why Is This Useful?</span>
 
-Accessibility issues are often under-reported because contributors don&#39;t know 
+Accessibility issues are often under-reported because contributors don&#x27;t know 
 what information maintainers need. This template standardizes that data:
-- Screen reader type (NVDA, JAWS, VoiceOver, etc.)
-- Browser and OS version
-- WCAG success criterion affected
-- Steps to reproduce the issue
-- Expected vs. actual behavior
+<span class="hljs-literal">-</span> Screen reader type (NVDA, JAWS, VoiceOver, etc.)
+<span class="hljs-literal">-</span> Browser and OS version
+<span class="hljs-literal">-</span> WCAG success criterion affected
+<span class="hljs-literal">-</span> Steps to reproduce the issue
+<span class="hljs-literal">-</span> Expected vs. actual behavior
 
-## How Was This Tested?
+<span class="hljs-comment">## How Was This Tested?</span>
 
-- ✅ YAML syntax validated (no errors)
-- ✅ Template displays correctly in GitHub web UI
-- ✅ All fields announced clearly with screen reader (NVDA/JAWS/VoiceOver)
-- ✅ Dropdown options are navigable
-- ✅ Required fields are properly marked
-- ✅ Form preview is accessible
+<span class="hljs-literal">-</span> ✅ YAML syntax validated (no errors)
+<span class="hljs-literal">-</span> ✅ Template displays correctly in GitHub web UI
+<span class="hljs-literal">-</span> ✅ All fields announced clearly with screen reader (NVDA/JAWS/VoiceOver)
+<span class="hljs-literal">-</span> ✅ Dropdown options are navigable
+<span class="hljs-literal">-</span> ✅ Required fields are properly marked
+<span class="hljs-literal">-</span> ✅ Form preview is accessible
 
-## Related Issue
+<span class="hljs-comment">## Related Issue</span>
 
-Closes #[issue number] (if there is an open issue requesting this feature)
-</code></pre>
+Closes <span class="hljs-comment">#[issue number] (if there is an open issue requesting this feature)</span></code></pre>
 <p><strong>What to do:</strong></p>
 <ol>
 <li>Copy the template above into the description field</li>
@@ -1584,17 +1576,15 @@ Closes #[issue number] (if there is an open issue requesting this feature)
 <li><strong>If changes are needed:</strong><ul>
 <li>Go back to your fork in VS Code</li>
 <li>Edit the <code>accessibility-bug.yml</code> file accordingly</li>
-<li>Commit and push:<pre><code class="language-bash">git add .github/ISSUE_TEMPLATE/accessibility-bug.yml
-git commit -m &quot;Address feedback from maintainers: [brief description]&quot;
-git push origin feat/add-accessibility-template
-</code></pre>
+<li>Commit and push:<pre><code class="hljs language-bash">git add .github/ISSUE_TEMPLATE/accessibility-bug.yml
+git commit -m <span class="hljs-string">&quot;Address feedback from maintainers: [brief description]&quot;</span>
+git push origin feat/add-accessibility-template</code></pre>
 </li>
 <li>Your changes automatically appear in the PR (linked to the branch)</li>
 </ul>
 </li>
-<li><strong>Leave a reply comment</strong> on the PR:<pre><code>Thanks for the feedback! I&#39;ve made the changes you requested 
-in commit [commit hash]. The template now includes [what you changed].
-</code></pre>
+<li><strong>Leave a reply comment</strong> on the PR:<pre><code class="hljs">Thanks for the feedback! I&#x27;ve made the changes you requested 
+in commit <span class="hljs-comment">[commit hash]</span>. The template now includes <span class="hljs-comment">[what you changed]</span>.</code></pre>
 </li>
 <li>Click <strong>Reply</strong></li>
 </ol>
@@ -1648,14 +1638,13 @@ in commit [commit hash]. The template now includes [what you changed].
 <li>A project that&#39;s important to your workplace</li>
 </ul>
 </li>
-<li><strong>Write down the project name</strong> and briefly why chose it:<pre><code>Project: [name]
-Why it matters to me: [1 sentence]
+<li><strong>Write down the project name</strong> and briefly why chose it:<pre><code class="hljs">Project: [<span class="hljs-built_in">name</span>]
+Why <span class="hljs-keyword">it</span> matters <span class="hljs-keyword">to</span> <span class="hljs-keyword">me</span>: [<span class="hljs-number">1</span> sentence]
 
-Current state: ☐ Exists, I maintain it
-               ☐ Exists, I contribute to it
-               ☐ I&#39;m planning to create it
-               ☐ Other: [describe]
-</code></pre>
+Current state: ☐ Exists, I maintain <span class="hljs-keyword">it</span>
+               ☐ Exists, I contribute <span class="hljs-keyword">to</span> <span class="hljs-keyword">it</span>
+               ☐ I&#x27;m planning <span class="hljs-keyword">to</span> create <span class="hljs-keyword">it</span>
+               ☐ Other: [describe]</code></pre>
 </li>
 </ol>
 <p><strong>What success looks like:</strong></p>
@@ -1677,14 +1666,13 @@ Current state: ☐ Exists, I maintain it
 <li>What information was <em>missing</em> that you had to ask for?</li>
 </ul>
 </li>
-<li><strong>Write down 3-5 patterns:</strong><pre><code>Issue Type 1: [what kind of issues are most common?]
-- Essential info needed: [what always helps?]
-- Often missing: [what do you always have to ask for?]
+<li><strong>Write down 3-5 patterns:</strong><pre><code class="hljs">Issue <span class="hljs-keyword">Type</span> <span class="hljs-number">1</span>: [what kind <span class="hljs-keyword">of</span> issues are most common?]
+- Essential <span class="hljs-keyword">info</span> needed: [what <span class="hljs-keyword">always</span> helps?]
+- Often missing: [what <span class="hljs-keyword">do</span> you <span class="hljs-keyword">always</span> have <span class="hljs-keyword">to</span> ask <span class="hljs-keyword">for</span>?]
 
-Issue Type 2: [second most common type]
-- Essential info needed: [what?]
-- Often missing: [what?]
-</code></pre>
+Issue <span class="hljs-keyword">Type</span> <span class="hljs-number">2</span>: [second most common <span class="hljs-keyword">type</span>]
+- Essential <span class="hljs-keyword">info</span> needed: [what?]
+- Often missing: [what?]</code></pre>
 </li>
 </ol>
 <p><strong>If your project doesn&#39;t exist yet or has no issues:</strong></p>
@@ -1697,14 +1685,13 @@ Issue Type 2: [second most common type]
 </ul>
 </li>
 <li>For each type, ask: &quot;If someone reported this issue, what would I need to know?&quot;</li>
-<li>Write down:<pre><code>Issue Type 1: [e.g., &quot;Bug Report&quot;]
-- Essential info needed: [e.g., &quot;What OS? Browser? Steps to reproduce?&quot;]
-- Questions I&#39;d ask: [What follow-ups would I need?]
+<li>Write down:<pre><code class="hljs">Issue <span class="hljs-keyword">Type</span> <span class="hljs-type">1: </span>[e.g., <span class="hljs-string">&quot;Bug Report&quot;</span>]
+- Essential info needed: [e.g., <span class="hljs-string">&quot;What OS? Browser? Steps to reproduce?&quot;</span>]
+- Questions I<span class="hljs-symbol">&#x27;d</span> ask: [What follow-ups would I need?]
 
-Issue Type 2: [e.g., &quot;Feature Request&quot;]
-- Essential info needed: [e.g., &quot;What problem does this solve?&quot;]
-- Questions I&#39;d ask: [e.g., &quot;Who else has asked for this?&quot;]
-</code></pre>
+Issue <span class="hljs-keyword">Type</span> <span class="hljs-type">2: </span>[e.g., <span class="hljs-string">&quot;Feature Request&quot;</span>]
+- Essential info needed: [e.g., <span class="hljs-string">&quot;What problem does this solve?&quot;</span>]
+- Questions I<span class="hljs-symbol">&#x27;d</span> ask: [e.g., <span class="hljs-string">&quot;Who else has asked for this?&quot;</span>]</code></pre>
 </li>
 </ol>
 <p><strong>What success looks like:</strong></p>
@@ -1719,9 +1706,8 @@ Issue Type 2: [e.g., &quot;Feature Request&quot;]
 <p><strong>Rule:</strong> Keep required fields minimal. If a field is required, you genuinely cannot triage without it.</p>
 <ol>
 <li><p>Create a table:</p>
-<pre><code>Field Name | Type (dropdown/input/textarea) | Why Required? | Options (if dropdown)
-[name]     | [type]                        | [reason]      | [choices]
-</code></pre>
+<pre><code class="hljs"><span class="hljs-keyword">Field</span> Name | <span class="hljs-type">Type</span> (dropdown/input/textarea) | <span class="hljs-type">Why</span> Required? | <span class="hljs-type">Options</span> (<span class="hljs-keyword">if</span> dropdown)
+[name]     | <span class="hljs-type">[type</span>]                        | <span class="hljs-type">[reason</span>]      | <span class="hljs-type">[choices</span>]</code></pre>
 </li>
 <li><p>For each issue type from Part 2, add 2-4 required fields:</p>
 <p><strong>Example for &quot;Bug Report&quot;:</strong></p>
@@ -1755,16 +1741,15 @@ Issue Type 2: [e.g., &quot;Feature Request&quot;]
 </tbody></table>
 </li>
 <li><p><strong>Write down at least 2 required fields:</strong></p>
-<pre><code>Required Field 1: [name]
-- Type: [dropdown / input / textarea?]
-- Why is it required? [explain as if to the issue reporter]
-- If dropdown, options: [list them]
+<pre><code class="hljs">Required Field <span class="hljs-number">1</span>: [<span class="hljs-type">name</span>]
+- <span class="hljs-keyword">Type</span>: [dropdown / <span class="hljs-keyword">input</span> / textarea?]
+- Why <span class="hljs-keyword">is</span> it required? [<span class="hljs-keyword">explain</span> <span class="hljs-keyword">as</span> <span class="hljs-keyword">if</span> <span class="hljs-keyword">to</span> the issue reporter]
+- <span class="hljs-keyword">If</span> dropdown, <span class="hljs-keyword">options</span>: [list them]
 
-Required Field 2: [name]
-- Type: [type]
-- Why is it required? [explain]
-- If dropdown, options: [list them]
-</code></pre>
+Required Field <span class="hljs-number">2</span>: [<span class="hljs-type">name</span>]
+- <span class="hljs-keyword">Type</span>: [<span class="hljs-keyword">type</span>]
+- Why <span class="hljs-keyword">is</span> it required? [<span class="hljs-keyword">explain</span>]
+- <span class="hljs-keyword">If</span> dropdown, <span class="hljs-keyword">options</span>: [list them]</code></pre>
 </li>
 </ol>
 <p><strong>What success looks like:</strong></p>
@@ -1794,14 +1779,13 @@ Required Field 2: [name]
 </ul>
 </li>
 <li><p><strong>Write down at least 2 optional fields:</strong></p>
-<pre><code>Optional Field 1: [name]
-- Type: [dropdown / input / textarea / checkboxes?]
-- Why include it? [what does it help with?]
+<pre><code class="hljs"><span class="hljs-keyword">Optional</span> Field <span class="hljs-number">1</span>: [<span class="hljs-keyword">name</span>]
+- <span class="hljs-keyword">Type</span>: [dropdown / input / textarea / checkboxes?]
+- Why <span class="hljs-keyword">include</span> it? [what does it help with?]
 
-Optional Field 2: [name]
-- Type: [type]
-- Why include it? [what insight does it provide?]
-</code></pre>
+<span class="hljs-keyword">Optional</span> Field <span class="hljs-number">2</span>: [<span class="hljs-keyword">name</span>]
+- <span class="hljs-keyword">Type</span>: [<span class="hljs-keyword">type</span>]
+- Why <span class="hljs-keyword">include</span> it? [what insight does it <span class="hljs-keyword">provide</span>?]</code></pre>
 </li>
 <li><p><strong>For each field, decide:</strong></p>
 <ul>
@@ -1828,32 +1812,30 @@ Optional Field 2: [name]
 <li><strong>Placeholder</strong> (example of what to type, for input/textarea fields)</li>
 </ol>
 <p><strong>Examples:</strong></p>
-<pre><code>Field: &quot;Steps to Reproduce&quot;
-Description: &quot;Numbered list of actions that trigger the bug&quot;
-Placeholder: &quot;1. Open the settings menu
-2. Click &#39;Advanced Options&#39;
+<pre><code class="hljs"><span class="hljs-attr">Field:</span> <span class="hljs-string">&quot;Steps to Reproduce&quot;</span>
+<span class="hljs-attr">Description:</span> <span class="hljs-string">&quot;Numbered list of actions that trigger the bug&quot;</span>
+<span class="hljs-attr">Placeholder:</span> <span class="hljs-string">&quot;1. Open the settings menu
+2. Click &#x27;Advanced Options&#x27;
 3. Toggle the switch
-4. The app crashes&quot;
+4. The app crashes&quot;</span>
 
----
-
-Field: &quot;Expected Behavior&quot;
-Description: &quot;What should happen if everything worked correctly?&quot;
-Placeholder: &quot;The settings should save silently and the app should remain open&quot;
-</code></pre>
+<span class="hljs-meta">---
+</span>
+<span class="hljs-attr">Field:</span> <span class="hljs-string">&quot;Expected Behavior&quot;</span>
+<span class="hljs-attr">Description:</span> <span class="hljs-string">&quot;What should happen if everything worked correctly?&quot;</span>
+<span class="hljs-attr">Placeholder:</span> <span class="hljs-string">&quot;The settings should save silently and the app should remain open&quot;</span></code></pre>
 <p><strong>Write these for at least 3 of your fields:</strong></p>
-<pre><code>Field 1: [name]
-Description: [guidance for the reporter]
-Placeholder: [example of good input]
+<pre><code class="hljs"><span class="hljs-attribute">Field</span> <span class="hljs-number">1</span>:<span class="hljs-meta"> [name]</span>
+<span class="hljs-attribute">Description</span>:<span class="hljs-meta"> [guidance for the reporter]</span>
+<span class="hljs-attribute">Placeholder</span>:<span class="hljs-meta"> [example of good input]</span>
 
-Field 2: [name]
-Description: [guidance]
-Placeholder: [example]
+<span class="hljs-attribute">Field</span> <span class="hljs-number">2</span>:<span class="hljs-meta"> [name]</span>
+<span class="hljs-attribute">Description</span>:<span class="hljs-meta"> [guidance]</span>
+<span class="hljs-attribute">Placeholder</span>:<span class="hljs-meta"> [example]</span>
 
-Field 3: [name]
-Description: [guidance]
-Placeholder: [example]
-</code></pre>
+<span class="hljs-attribute">Field</span> <span class="hljs-number">3</span>:<span class="hljs-meta"> [name]</span>
+<span class="hljs-attribute">Description</span>:<span class="hljs-meta"> [guidance]</span>
+<span class="hljs-attribute">Placeholder</span>:<span class="hljs-meta"> [example]</span></code></pre>
 <p><strong>What success looks like:</strong></p>
 <ul>
 <li>Placeholder text shows a real example, not just &quot;e.g., enter text here&quot;</li>
@@ -1954,30 +1936,26 @@ Placeholder: [example]
 <p>Write answers to these questions:</p>
 <ol>
 <li><p><strong>Decision-making:</strong> Which field did you debate including? Why did you finally decide yes or no?</p>
-<pre><code>Field: [name]
-Debate: [why was this hard to decide?]
-Decision: [required / optional / removed]
-Reason: [what made you decide?]
-</code></pre>
+<pre><code class="hljs"><span class="hljs-params">Field:</span> [name]
+<span class="hljs-params">Debate:</span> [why was this hard to decide<span class="hljs-operator">?</span>]
+<span class="hljs-params">Decision:</span> [required <span class="hljs-symbol">/</span> optional <span class="hljs-symbol">/</span> removed]
+<span class="hljs-params">Reason:</span> [what made you decide<span class="hljs-operator">?</span>]</code></pre>
 </li>
 <li><p><strong>Trade-offs:</strong> You can&#39;t ask for everything without overwhelming reporters. What information did you choose <em>not</em> to ask for? Why?</p>
-<pre><code>Information I didn&#39;t include: [example]
-Why I chose not to ask: [explanation]
-Would I change this? [yes/no] + why
-</code></pre>
+<pre><code class="hljs"><span class="hljs-built_in">Information</span> <span class="hljs-built_in">I</span> <span class="hljs-variable">didn</span><span class="hljs-operator">&#x27;</span><span class="hljs-variable">t</span> <span class="hljs-variable">include</span><span class="hljs-operator">:</span> <span class="hljs-punctuation">[</span><span class="hljs-variable">example</span><span class="hljs-punctuation">]</span>
+<span class="hljs-variable">Why</span> <span class="hljs-built_in">I</span> <span class="hljs-variable">chose</span> <span class="hljs-variable">not</span> <span class="hljs-variable">to</span> <span class="hljs-variable">ask</span><span class="hljs-operator">:</span> <span class="hljs-punctuation">[</span><span class="hljs-variable">explanation</span><span class="hljs-punctuation">]</span>
+<span class="hljs-variable">Would</span> <span class="hljs-built_in">I</span> <span class="hljs-variable">change</span> <span class="hljs-variable">this</span><span class="hljs-operator">?</span> <span class="hljs-punctuation">[</span><span class="hljs-variable">yes</span><span class="hljs-operator">/</span><span class="hljs-variable">no</span><span class="hljs-punctuation">]</span> <span class="hljs-operator">+</span> <span class="hljs-variable">why</span></code></pre>
 </li>
 <li><p><strong>Iteration:</strong> If you had user feedback (from Part 7), what did you learn?</p>
-<pre><code>Feedback: [what did your friend/colleague say?]
-Change you made: [how did you refine?]
-Why it helped: [what improved?]
-</code></pre>
+<pre><code class="hljs"><span class="hljs-params">Feedback:</span> [what did your friend<span class="hljs-symbol">/colleague</span> say<span class="hljs-operator">?</span>]
+Change you <span class="hljs-params">made:</span> [how did you refine<span class="hljs-operator">?</span>]
+Why it <span class="hljs-params">helped:</span> [what improved<span class="hljs-operator">?</span>]</code></pre>
 </li>
 <li><p><strong>Real-world readiness:</strong> Would you actually deploy this template to a real project?</p>
-<pre><code>Readiness: ☐ Yes, I&#39;m confident
-           ☐ Maybe, with more testing
-           ☐ No, I need to rethink some fields
-Next step: [what would you do next?]
-</code></pre>
+<pre><code class="hljs"><span class="hljs-symbol">Readiness:</span> ☐ Yes, I<span class="hljs-comment">&#x27;m confident</span>
+           ☐ Maybe, <span class="hljs-keyword">with</span> more testing
+           ☐ No, I need <span class="hljs-keyword">to</span> rethink some fields
+<span class="hljs-keyword">Next</span> <span class="hljs-keyword">step</span>: [what would you <span class="hljs-keyword">do</span> <span class="hljs-keyword">next</span>?]</code></pre>
 </li>
 </ol>
 <p><strong>What success looks like:</strong></p>
@@ -2017,16 +1995,15 @@ Next step: [what would you do next?]
 <p>Our 6th agent, <strong>@template-builder</strong>, is an interactive wizard that generates issue templates guided by your answers to simple questions. Instead of writing YAML by hand, you answer prompts and the agent produces a production-ready template in seconds.</p>
 <h3>How It Works</h3>
 <p><strong>In VS Code:</strong></p>
-<pre><code>You: @template-builder create accessibility template
-Agent: [Ask Questions interface]
-  • Template name? → &quot;Accessibility Bug Report&quot;
-  • What&#39;s this for? → &quot;Report screen reader and keyboard issues&quot;
-  • First field? → &quot;Screen Reader (dropdown)&quot;
-  • Options? → &quot;NVDA, JAWS, VoiceOver, TalkBack, Other&quot;
-  • Required? → &quot;Yes&quot;
-  [... continues field by field]
-Agent: Here&#39;s your YAML template [syntax-highlighted code block]
-</code></pre>
+<pre><code class="hljs"><span class="hljs-symbol">You:</span> @template-builder create accessibility template
+<span class="hljs-symbol">Agent:</span> [Ask Questions <span class="hljs-keyword">interface</span>]
+  • Template name? → <span class="hljs-string">&quot;Accessibility Bug Report&quot;</span>
+  • What<span class="hljs-comment">&#x27;s this for? → &quot;Report screen reader and keyboard issues&quot;</span>
+  • First field? → <span class="hljs-string">&quot;Screen Reader (dropdown)&quot;</span>
+  • Options? → <span class="hljs-string">&quot;NVDA, JAWS, VoiceOver, TalkBack, Other&quot;</span>
+  • Required? → <span class="hljs-string">&quot;Yes&quot;</span>
+  [... continues field <span class="hljs-keyword">by</span> field]
+<span class="hljs-symbol">Agent:</span> Here<span class="hljs-comment">&#x27;s your YAML template [syntax-highlighted code block]</span></code></pre>
 <p>Then you copy, paste to <code>.github/ISSUE_TEMPLATE/your-template.yml</code>, commit, and done.</p>
 <h3>Why It Matters</h3>
 <table>
@@ -2063,14 +2040,14 @@ Agent: Here&#39;s your YAML template [syntax-highlighted code block]
 <p><strong>Chapter 16 Exercise (Agent Forge):</strong> Use <code>@template-builder</code> to generate a template for a real project, then customize or extend it. See <a href="16-agent-forge.md#5-building-your-own-agent">Agent Forge: Building Your Own Agent</a>.</p>
 <p><strong>After the Workshop:</strong> Any repetitive GitHub task — templates, checklists, workflows — can be Agent Forged. The Template Builder shows how.</p>
 <hr>
-<p><em>Next: <a href="17-agent-forge.md">Agent Forge</a></em>
-<em>Back: <a href="15-accessible-code-review.md">Accessible Code Review</a></em>
-<em>Related: <a href="04-working-with-issues.md">Working with Issues</a> | <a href="07-culture-etiquette.md">Culture &amp; Etiquette</a> | <a href="17-agent-forge.md">Agent Forge</a></em></p>
+<p><em>Next: <a href="16-agent-forge.md">Agent Forge</a></em>
+<em>Back: <a href="14-accessible-code-review.md">Accessible Code Review</a></em>
+<em>Related: <a href="04-working-with-issues.md">Working with Issues</a> | <a href="07-culture-etiquette.md">Culture &amp; Etiquette</a> | <a href="16-agent-forge.md">Agent Forge</a></em></p>
 
   </main>
   <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
-    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
-    <p><a href="https://github.com">Back to GitHub</a></p>
+    <p>GitHub Learning Room — Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com/accesswatch/Learning-Room">View on GitHub</a></p>
   </footer>
 </body>
 </html>

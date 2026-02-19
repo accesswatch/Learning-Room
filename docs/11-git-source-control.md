@@ -5,7 +5,9 @@
 >
 > This guide covers all Git operations in VS Code: cloning repositories, navigating the Source Control panel with screen readers, branch management, staging changes (including individual lines), push/pull operations, viewing file history with Timeline, resolving merge conflicts, and stash management.
 >
-> **Prerequisites:** [VS Code Setup & Accessibility Basics](11-vscode-basics.md), [Working with Pull Requests](05-working-with-pull-requests.md), [Merge Conflicts](06-merge-conflicts.md)
+> **Prerequisites:** [VS Code Setup & Accessibility Basics](10-vscode-basics.md), [Working with Pull Requests](05-working-with-pull-requests.md), [Merge Conflicts](06-merge-conflicts.md)
+
+> **Mac keyboard shortcuts:** Throughout this chapter, all `Ctrl+` shortcuts use `Cmd+` on Mac, and `Alt+` shortcuts use `Option+`. Common equivalents: `Ctrl+Shift+G` → `Cmd+Shift+G`, `Ctrl+Shift+P` → `Cmd+Shift+P`, `Ctrl+Enter` → `Cmd+Enter`, `Ctrl+S` → `Cmd+S`.
 
 ---
 
@@ -32,7 +34,7 @@
 
 ### Method 1: Command Palette (Recommended for Screen Readers)
 
-1. Open Command Palette: `Ctrl+Shift+P`
+1. Open Command Palette: `Ctrl+Shift+P` (Mac: `Cmd+Shift+P`)
 2. Type "git clone"
 3. Select "Git: Clone"
 4. Paste the repository URL (example: `https://github.com/accesswatch/agent-forge.git`)
@@ -59,21 +61,21 @@
 
 1. On any GitHub repository page, click the green "Code" button
 2. Copy the HTTPS URL (recommended) or SSH URL
-3. Open VS Code → `Ctrl+Shift+P` → "Git: Clone"
+3. Open VS Code → `Ctrl+Shift+P` (Mac: `Cmd+Shift+P`) → "Git: Clone"
 4. Paste URL → `Enter`
 5. Choose destination → Open
 
-**Why HTTPS over SSH for this workshop:** HTTPS works immediately with no setup. SSH requires key generation and configuration (see [Appendix C: Git Authentication](appendix-c-git-authentication.md) for SSH setup).
+**Why HTTPS over SSH for this workshop:** HTTPS works immediately with no setup. SSH requires key generation and configuration (see [Appendix D: Git Authentication](appendix-d-git-authentication.md) for SSH setup).
 
 ---
 
 ## 2. The Source Control Panel — Complete Walkthrough
 
-The Source Control panel (`Ctrl+Shift+G`) is where all Git operations happen in VS Code. This section provides a complete screen reader walkthrough of every interactive element.
+The Source Control panel (`Ctrl+Shift+G` — Mac: `Cmd+Shift+G`) is where all Git operations happen in VS Code. This section provides a complete screen reader walkthrough of every interactive element.
 
 ### Opening the Source Control Panel
 
-**Shortcut:** `Ctrl+Shift+G`
+**Shortcut:** `Ctrl+Shift+G` (Mac: `Cmd+Shift+G`)
 
 **What opens:**
 - A sidebar panel on the left side of VS Code
@@ -90,7 +92,7 @@ The Source Control panel (`Ctrl+Shift+G`) is where all Git operations happen in 
    - Announced as "Source Control Input, edit, multi-line"
 
 3. **Commit button** (or "Publish Branch" if this is a new branch)
-   - Shortcut: `Ctrl+Enter` when focused in the message input
+   - Shortcut: `Ctrl+Enter` (Mac: `Cmd+Enter`) when focused in the message input
 
 4. **Changes section** (collapsible tree)
    - Lists all modified files not yet staged
@@ -163,19 +165,21 @@ Branches are how you organize work in Git. Every repository starts with a `main`
 ### Viewing the Current Branch
 
 **Where it's shown:**
-1. Bottom-left corner of VS Code (status bar)
+1. Bottom-left corner of VS Code (status bar) — visual users see it immediately
 2. Source Control panel title bar
-3. Command Palette: `Ctrl+Shift+P` → "Git: Show Git Output"
+3. Command Palette: `Ctrl+Shift+P` (Mac: `Cmd+Shift+P`) → "Git: Show Git Output"
 
 **Keyboard access to status bar:**
 - The status bar is not in the standard keyboard navigation flow
 - Use the Command Palette for branch operations instead
 
+> **Visual users:** You can also click the branch name in the bottom-left status bar to open the branch picker directly.
+
 ### Creating a New Branch
 
 **Command Palette method (recommended):**
 
-1. `Ctrl+Shift+P`
+1. `Ctrl+Shift+P` (Mac: `Cmd+Shift+P`)
 2. Type "git create branch"
 3. Select "Git: Create Branch..."
 4. Type the new branch name (example: `feature/improve-docs`)
@@ -195,7 +199,7 @@ VS Code:
 
 **Command Palette method:**
 
-1. `Ctrl+Shift+P`
+1. `Ctrl+Shift+P` (Mac: `Cmd+Shift+P`)
 2. Type "git checkout"
 3. Select "Git: Checkout to..."
 4. A list of all branches appears
@@ -213,7 +217,7 @@ VS Code:
 
 **After your PR is merged, you can delete the branch:**
 
-1. `Ctrl+Shift+P`
+1. `Ctrl+Shift+P` (Mac: `Cmd+Shift+P`)
 2. Type "git delete branch"
 3. Select "Git: Delete Branch..."
 4. Choose the branch to delete from the list
@@ -243,17 +247,30 @@ This lets you commit only part of your work, leaving the rest for a later commit
 
 ### Staging an Entire File
 
-**Keyboard method:**
+<details>
+<summary>🖥️ Visual / mouse users</summary>
 
-1. Open Source Control panel: `Ctrl+Shift+G`
+1. Open Source Control: `Ctrl+Shift+G` (Mac: `Cmd+Shift+G`)
+2. Hover over a file in the "Changes" list — a **+** icon appears to its right
+3. Click the **+** to stage that file
+4. Or right-click a file → "Stage Changes"
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS / VoiceOver)</summary>
+
+1. Open Source Control: `Ctrl+Shift+G` (Mac: `Cmd+Shift+G`)
 2. Navigate to the file in the "Changes" list
-3. Press `Ctrl+Enter` (stages immediately)
+3. Press `Ctrl+Enter` (Mac: `Cmd+Enter`) to stage immediately
 
 **Alternative:**
 - Focus the file → press `Space`
 
 **Alternative:**
-- Focus the file → press `Shift+F10` → select "Stage Changes"
+- Focus the file → press `Shift+F10` (Mac: `Ctrl+Return`) → select "Stage Changes"
+
+</details>
 
 **What happens:**
 - The file moves from "Changes" → "Staged Changes"
@@ -261,9 +278,9 @@ This lets you commit only part of your work, leaving the rest for a later commit
 
 ### Staging Multiple Files at Once
 
-1. `Ctrl+Shift+G` to open Source Control
+1. `Ctrl+Shift+G` (Mac: `Cmd+Shift+G`) to open Source Control
 2. Navigate to the "Changes" section heading
-3. Press `Shift+F10` to open context menu on the section itself
+3. Press `Shift+F10` (Mac: `Ctrl+Return`) to open context menu on the section itself
 4. Select "Stage All Changes"
 
 All modified files move to "Staged Changes."
@@ -274,12 +291,12 @@ All modified files move to "Staged Changes."
 
 **Workflow:**
 
-1. Open Source Control: `Ctrl+Shift+G`
+1. Open Source Control: `Ctrl+Shift+G` (Mac: `Cmd+Shift+G`)
 2. Navigate to a file in "Changes"
 3. Press `Enter` to open the diff view
 4. The diff shows your changes side-by-side or inline
 5. Navigate to a changed line (use `Arrow` keys or `F7` for next hunk)
-6. Press `Shift+F10` to open context menu
+6. Press `Shift+F10` (Mac: `Ctrl+Return`) to open context menu
 7. Select "Stage Selected Lines"
 
 **Result:** Only those lines are staged. The rest of the file remains in "Changes."
@@ -297,7 +314,7 @@ All modified files move to "Staged Changes."
 **Reverse the process:**
 
 1. Focus the file in "Staged Changes"
-2. Press `Ctrl+Enter` or `Space`
+2. Press `Ctrl+Enter` (Mac: `Cmd+Enter`) or `Space`
 3. File moves back to "Changes"
 
 ---
@@ -308,11 +325,11 @@ All modified files move to "Staged Changes."
 
 **Standard process:**
 
-1. Open Source Control: `Ctrl+Shift+G`
+1. Open Source Control: `Ctrl+Shift+G` (Mac: `Cmd+Shift+G`)
 2. Stage changes (see Section 4)
 3. Focus the commit message input (usually `Tab` or `Shift+Tab` to reach it)
 4. Type your commit message
-5. Press `Ctrl+Enter` to commit
+5. Press `Ctrl+Enter` (Mac: `Cmd+Enter`) to commit
 
 **Screen reader experience:**
 
@@ -320,7 +337,7 @@ All modified files move to "Staged Changes."
 - The commit input is announced as "Source Control Input, edit, multi-line"
 - You're automatically in Forms Mode — just start typing
 - The input expands as you type (supports multi-line messages)
-- Press `Ctrl+Enter` to commit (not `Enter`, which adds a new line)
+- Press `Ctrl+Enter` (Mac: `Cmd+Enter`) to commit (not `Enter`, which adds a new line)
 
 **VoiceOver:**
 - `VO+Tab` to navigate to the input
@@ -366,13 +383,13 @@ Fixes #42
 
 **After committing locally:**
 
-1. Open Source Control: `Ctrl+Shift+G`
+1. Open Source Control: `Ctrl+Shift+G` (Mac: `Cmd+Shift+G`)
 2. Look for the "Publish Branch" button (if this is a new branch) or "Sync Changes" button
 3. Press `Enter` on that button
 
 **Alternative: Command Palette**
 
-1. `Ctrl+Shift+P`
+1. `Ctrl+Shift+P` (Mac: `Cmd+Shift+P`)
 2. Type "git push"
 3. Select "Git: Push"
 4. VS Code pushes your commits to GitHub
@@ -383,7 +400,7 @@ Fixes #42
 
 **What to do if push fails:**
 - **Error: "No upstream branch"** → You need to publish the branch first (Command Palette → "Git: Publish Branch")
-- **Error: "Permission denied"** → Check your authentication (see [Appendix C: Git Authentication](appendix-c-git-authentication.md))
+- **Error: "Permission denied"** → Check your authentication (see [Appendix D: Git Authentication](appendix-d-git-authentication.md))
 - **Error: "Rejected — non-fast-forward"** → Someone else pushed changes; you need to pull first
 
 ### Pulling Changes from GitHub
@@ -395,7 +412,7 @@ Fixes #42
 
 **How to pull:**
 
-1. `Ctrl+Shift+P`
+1. `Ctrl+Shift+P` (Mac: `Cmd+Shift+P`)
 2. Type "git pull"
 3. Select "Git: Pull"
 4. VS Code fetches and merges remote changes
@@ -404,7 +421,7 @@ Fixes #42
 
 **Auto-fetch setting:**
 - VS Code can check for remote changes automatically every few minutes
-- Enable: Settings (`Ctrl+,`) → search "git autofetch" → set to `true`
+- Enable: Settings (`Ctrl+,` — Mac: `Cmd+,`) → search "git autofetch" → set to `true`
 
 ---
 
@@ -520,6 +537,24 @@ If you've made changes to the same files the upstream has changed, merge conflic
 
 If you're not sure whether you'll need these changes later, use **stash** (Section 10) instead of discard. Stash saves your changes temporarily without committing them.
 
+### Deleting a File from the Repository (Git Delete / git rm)
+
+**Git Delete** removes a file from both your working directory AND Git's tracking. This is different from discarding changes — it permanently removes the file from the repository history going forward.
+
+**How to use:**
+
+1. Open the file you want to remove in the editor
+2. `Ctrl+Shift+P` (Mac: `Cmd+Shift+P`)
+3. Type "Git: Delete"
+4. Confirm the deletion
+
+The file is staged for deletion — you still need to commit to record the removal.
+
+**When to use Git Delete vs. just deleting the file:**
+- Simply deleting a file from Explorer leaves it as an "untracked deletion" in Git
+- Using `Git: Delete` (git rm) stages the deletion in one step
+- Use `git rm` when you want to track the file removal as part of your next commit
+
 ---
 
 ## 8. Timeline View — File History and Blame
@@ -573,7 +608,7 @@ This is incredibly useful for understanding:
 1. Open a file in the editor
 2. `Ctrl+Shift+P`
 3. Type "git blame"
-4. Select "Git: Show Blame"
+4. Select "Git: Toggle Blame"
 
 **What appears:**
 - Inline annotations next to every line (visually)
@@ -583,6 +618,13 @@ This is incredibly useful for understanding:
 - The inline blame annotations can add noise
 - Use **Timeline view instead** to see recent changes to the whole file
 - Use `Ctrl+F` to search the Timeline list for a specific author or date
+
+**Useful blame settings** (add to `.vscode/settings.json` or user Settings):
+
+| Setting | Default | What It Does |
+|---------|---------|-------------|
+| `git.blame.ignoreWhitespace` | `false` | When `true`, whitespace-only changes (reformatting) are excluded from blame — useful when code was reformatted without logic changes |
+| `git.blame.editorDecoration.disableHover` | `false` | When `true`, disables the hover tooltip on blame annotations — reduces screen reader noise if you find the blame decorations intrusive |
 
 ---
 
@@ -636,7 +678,7 @@ When you open a file with conflicts, you see something like:
 
 5. **Commit the merge:**
    - Type commit message (or keep the auto-generated one: "Merge branch 'feature/...' into main")
-   - `Ctrl+Enter` to commit
+   - `Ctrl+Enter` (Mac: `Cmd+Enter`) to commit
 
 ### Using Accessible Diff for Conflict Review
 
@@ -876,9 +918,29 @@ git log                        # View commit history
 | Accessible Help | `Alt+H` (in any panel) |
 | Open Timeline view | `Ctrl+Shift+E` → navigate to Timeline section |
 | Integrated terminal | `Ctrl+Backtick` |
+| Delete file from repo (git rm) | `Ctrl+Shift+P` → "Git: Delete" |
 
 ---
 
-*Next: [GitHub Pull Requests Extension](13-github-pull-requests-extension.md)*  
-*Back: [VS Code Setup & Accessibility Basics](11-vscode-basics.md)*  
+## Try It: Clone, Branch, Commit
+
+**Time:** 5 minutes | **What you need:** VS Code with Git configured
+
+Do the complete Git workflow once, start to finish:
+
+1. **Clone** — Press `Ctrl+Shift+P`, type `Git: Clone`, press `Enter`. Paste the Learning Room URL and choose a folder. VS Code opens the repo.
+2. **Create a branch** — Click the branch name in the status bar (bottom left) or press `Ctrl+Shift+P` → `Git: Create Branch`. Name it `practice/your-name`.
+3. **Make a change** — Open `learning-room/docs/welcome.md`. Add a line at the bottom: `- [Your Name] was here!`
+4. **Stage** — Press `Ctrl+Shift+G` to open Source Control. Navigate to your changed file and press `Enter` to stage it (or use the `+` button).
+5. **Commit** — Tab to the message input, type `Add my name to the welcome file`, press `Ctrl+Enter`.
+6. **Push** — Press `Ctrl+Shift+P` → `Git: Push`.
+
+**You're done.** You just completed the full Git cycle: clone → branch → edit → stage → commit → push.
+
+> **What success feels like:** Your change is on GitHub. You can verify by visiting the repository and switching to your branch. Every future contribution follows this same six-step pattern.
+
+---
+
+*Next: [GitHub Pull Requests Extension](12-github-pull-requests-extension.md)*  
+*Back: [VS Code Setup & Accessibility Basics](10-vscode-basics.md)*  
 *Related: [Merge Conflicts](06-merge-conflicts.md) | [Culture & Etiquette](07-culture-etiquette.md)*

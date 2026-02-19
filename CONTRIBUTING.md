@@ -26,7 +26,7 @@ This guide covers contributing to **this workshop learning repository**. For con
 
 **Workshop participants:** You have already completed the contribution workflow during the workshop. This repository is an excellent first contribution target for applying what you practiced.
 
-**Educators and facilitators:** You are welcome to fork the entire repository and adapt the materials for your own workshop program. Attribution is appreciated but not required (MIT license).
+**Educators and facilitators:** You are welcome to fork the entire repository and adapt the materials for your own workshop program. Attribution is required under the CC BY 4.0 license — please include a credit line and link to the original repository.
 
 **Accessibility practitioners:** If you have domain expertise in a particular screen reader or assistive technology and notice something that is incorrect or incomplete, please open an issue or submit a correction. Your expertise is exactly what this documentation needs.
 
@@ -263,14 +263,14 @@ Every document in this repository is used by screen reader users. Accessibility 
 
 ## 7. HTML Documentation Build System
 
-This repository automatically generates HTML versions of all markdown files. This ensures documentation is available in multiple formats for different access needs and distribution scenarios.
+This repository maintains HTML versions of all Markdown files. The HTML is built locally and committed alongside the Markdown source, so both formats are always in sync.
 
 ### How It Works
 
-**Automatic conversion:**
-- When you edit any `.md` file and push to the main branch, a GitHub Actions workflow automatically converts all markdown files to HTML
-- Generated HTML files are committed back to the `html/` directory
-- No manual intervention needed — the system handles it automatically
+**Local build, committed output:**
+- You edit `.md` files, then run `npm run build:html` before committing
+- Both the Markdown changes and the updated `html/` output are committed together
+- There is no CI pipeline — the build is your responsibility before pushing
 
 **What gets converted:**
 - All markdown files in `docs/`
@@ -309,20 +309,26 @@ The generated documentation includes:
 
 ### What You Need to Know When Contributing
 
-**Committing markdown only:**
-When you make a pull request, you only need to edit and commit the `.md` files. The HTML files will be automatically regenerated when your PR is merged to main.
+**Build before committing:**
+After editing any `.md` file, run `npm run build:html` and include the updated `html/` files in your commit. A typical commit workflow:
+
+```bash
+# Edit your .md files, then:
+npm run build:html
+git add -A
+git commit -m "docs: update chapter 5 and rebuild HTML"
+```
 
 **Testing the HTML locally (optional):**
-If you want to verify how your markdown will look in HTML:
+If you want to verify how your Markdown will look in HTML before committing:
 1. Run `npm install` (first time only)
 2. Run `npm run build:html`
 3. Open files in `html/` directory in your browser
-4. Do NOT commit the HTML files in your PR — they will be auto-generated
 
 **HTML files in the repository:**
 The `html/` directory is committed to the repository so that:
 - Documentation can be browsed directly from the repository
-- HTML files are version-controlled alongside their markdown source
+- HTML files are version-controlled alongside their Markdown source
 - GitHub Pages can serve the documentation without a build step
 
 ### Troubleshooting
@@ -335,14 +341,9 @@ You need to install Node.js first. Download from [nodejs.org](https://nodejs.org
 - Check that code blocks use proper fence syntax (` ``` `)
 - Look for unclosed brackets or parentheses in links
 
-**HTML not updating:**
-- Check the Actions tab on GitHub to see if the workflow ran
-- Look for the commit message "Auto-generate HTML documentation from markdown"
-- Verify the workflow has permissions to push to the repository
-
 ---
 
-## 9. Screen Reader Guidance for Commands in This Document
+## 8. Screen Reader Guidance for Commands in This Document
 
 If you are reviewing this repository using a screen reader, here are the relevant reading patterns.
 
@@ -434,4 +435,4 @@ If two weeks pass with no response, feel free to leave a comment on the PR to ch
 
 *Workshops run better when participants contribute back. Every correction, every clarification, every additional exercise makes this material stronger for everyone who comes after you. Your name in the commit history is not the end of your participation — it is the beginning.*
 
-*[Back to README →](README.md) | [Resources →](docs/13-resources.md) | [Code of Conduct →](CODE_OF_CONDUCT.md)*
+*[Back to README →](README.md) | [Resources →](docs/appendix-u-resources.md) | [Code of Conduct →](CODE_OF_CONDUCT.md)*

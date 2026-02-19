@@ -15,7 +15,7 @@
 - [ ] A GitHub repository where you have write access (your fork or personal repo)
 - [ ] Terminal/Command line basic comfort (Chapter 5 mentions git workflows)
 
-**Day 2 Amplifier:** Later in Chapter 15, you'll use `@template-builder` agent to automate template creation. Come back after Chapter 16 if you haven't completed it yet.
+**Day 2 Amplifier:** In [Chapter 16 (Agent Forge)](16-agent-forge.md), you'll use `@template-builder` to automate template creation. Complete this chapter first, then come back to Chapter 16.
 
 **Estimated time for this chapter:** 1.5 hours (including exercises)
 
@@ -101,9 +101,20 @@ With `blank_issues_enabled: false`, the "Open a blank issue" link disappears fro
 
 When a repository has multiple templates, GitHub shows a template chooser page before the issue editor.
 
-### With a Screen Reader
+<details>
+<summary>🖥️ Visual / mouse users</summary>
 
-**NVDA/JAWS (Windows):**
+1. Click the **Issues** tab on any repository
+2. Click the **New issue** button
+3. The template chooser page loads — templates appear as cards with a title, description, and "Get started" button
+4. Click **"Get started"** on the template you want
+5. The issue editor opens with that template's content pre-filled
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users — NVDA / JAWS (Windows)</summary>
+
 1. Navigate to the Issues tab (press `T` from the repository tabs landmark)
 2. Activate "New issue" button
 3. The template chooser page loads
@@ -112,14 +123,20 @@ When a repository has multiple templates, GitHub shows a template chooser page b
 6. Each template shows: name, description, "Get started" button
 7. Activate "Get started" on your chosen template
 
-**VoiceOver (macOS):**
+</details>
+
+<details>
+<summary>🔊 Screen reader users — VoiceOver (macOS)</summary>
+
 1. Navigate to the Issues tab (`VO+Right` from the tab bar landmark)
 2. `VO+Space` to activate "New issue"
 3. The chooser page loads — templates appear as list items
 4. `VO+Right` to move between templates
 5. `VO+Space` on "Get started" for your chosen template
 
-**Note:** GitHub's improved Issues experience (default as of January 2026) provides proper keyboard accessibility for the template chooser.
+</details>
+
+**Note:** GitHub's improved Issues experience provides proper keyboard accessibility for the template chooser. This feature may already be active in your account.
 
 ### Bypassing the Chooser
 
@@ -133,12 +150,26 @@ If you want to file an issue without using a template:
 
 Agent Forge uses templates to structure contributions. Navigate to `.github/ISSUE_TEMPLATE/` in the repository to read them.
 
-**To navigate there with a screen reader:**
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+1. Click the **Code** tab on the repository
+2. Click the `.github` folder in the file listing
+3. Click `ISSUE_TEMPLATE`
+4. You'll see the template files — click any to read it
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS / VoiceOver)</summary>
+
 1. Open the Code tab
 2. Use `Ctrl+Alt+Down/Up` (NVDA/JAWS) or `VO+Arrow` (VoiceOver) in the files table to reach the `.github` folder
 3. Activate the folder
 4. Activate `ISSUE_TEMPLATE`
 5. You will see the template files listed
+
+</details>
 
 ### Reading a Template File
 
@@ -239,7 +270,7 @@ What actually happened.
 ## Environment
 - **OS:** [e.g. Windows 11, macOS Sonoma]
 - **Browser:** [e.g. Chrome 124, Firefox 125]
-- **Screen Reader:** [e.g. NVDA 2024.1, VoiceOver]
+- **Screen Reader:** [e.g. NVDA 2025.3.3, VoiceOver]
 
 ## Additional Context
 Add any other context about the problem here.
@@ -291,7 +322,7 @@ Screen reader and browser information is especially important for us to reproduc
 
 ## Your Assistive Technology Setup
 
-**Screen Reader:** [e.g. NVDA 2024.1, JAWS 2025, VoiceOver macOS Sonoma]  
+**Screen Reader:** [e.g. NVDA 2025.3.3, JAWS 2026, VoiceOver macOS Sonoma]  
 **Browser:** [e.g. Chrome 124, Firefox 125, Safari 17]  
 **Operating System:** [e.g. Windows 11, macOS Sonoma 14.3, Ubuntu 22.04]  
 **Keyboard only (no screen reader):** [ ] Yes  [ ] No
@@ -358,20 +389,36 @@ Screen reader and browser information is especially important for us to reproduc
 
 ### Creating Markdown Templates: The Manual Workflow (Browser)
 
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+1. Navigate to your fork of `agent-forge` on GitHub
+2. Click the **Settings** tab
+3. Scroll to the "Features" section → click the checkmark next to "Issues" → click **"Set up templates"**
+4. Or navigate directly to `.github/ISSUE_TEMPLATE/` in your fork → click the `+` button → "Create new file"
+5. GitHub opens a template editor. Fill in the template name, about description, and body
+6. GitHub auto-populates the filename — you can change it
+7. Click **"Propose changes"** → create a PR to add the template
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS / VoiceOver)</summary>
+
 1. Navigate to your fork of `agent-forge` on GitHub
 2. Go to the Settings tab (press `T` from the tabs landmark, then navigate to "Settings")
 3. Scroll to the "Features" section → find "Issues" → activate "Set up templates"
 
-   *Alternative:* Navigate directly to `.github/ISSUE_TEMPLATE/` in your fork → activatethe "+" button → "Create new file"
+   *Alternative:* Navigate directly to `.github/ISSUE_TEMPLATE/` → activate the "+" button → "Create new file"
 
-3. GitHub opens a template editor. Fill in:
+4. GitHub opens a template editor. Fill in:
    - Template name: what appears in the chooser heading
    - About: the description in the chooser
    - Template content: the Markdown body
+5. GitHub auto-populates the filename based on your template name
+6. "Propose changes" → create a PR to add the template
 
-4. GitHub auto-populates the filename based on your template name. You can change it.
-
-5. "Propose changes" → create a PR to add the template
+</details>
 
 ### Creating Markdown Templates: The VS Code Workflow
 
@@ -671,18 +718,6 @@ A group of checkboxes. Contributors can select multiple options or use as a veri
 
 ---
 
-### YAML Field Types Summary Table
-
-| Type | What It Creates | Best For |
-|------|----------------|---------|
-| `markdown` | Instructional text, not user-editable | Explanations, links, notes |
-| `input` | Single-line text field | Title, version numbers, URLs |
-| `textarea` | Multi-line text area | Descriptions, reproduction steps, code |
-| `dropdown` | Select menu | Browser, OS, screen reader, severity |
-| `checkboxes` | Group of checkboxes | Verification lists, multiple selections |
-
----
-
 ## 7. Building an Accessibility Bug Report Template
 
 This is the hands-on activity. You will create a YAML form template specifically for accessibility bug reports in `agent-forge`.
@@ -748,8 +783,8 @@ body:
     id: screen-reader-version
     attributes:
       label: Screen Reader Version
-      description: For example, "NVDA 2024.1" or "JAWS 2025"
-      placeholder: e.g., NVDA 2024.1
+      description: For example, "NVDA 2025.3.3" or "JAWS 2026"
+      placeholder: e.g., NVDA 2025.3.3
     validations:
       required: false
 
@@ -2025,6 +2060,6 @@ The Template Builder does not teach you to design templates — Section 5 taught
 
 ---
 
-*Next: [Agent Forge](17-agent-forge.md)*
-*Back: [Accessible Code Review](15-accessible-code-review.md)*
-*Related: [Working with Issues](04-working-with-issues.md) | [Culture & Etiquette](07-culture-etiquette.md) | [Agent Forge](17-agent-forge.md)*
+*Next: [Agent Forge](16-agent-forge.md)*
+*Back: [Accessible Code Review](14-accessible-code-review.md)*
+*Related: [Working with Issues](04-working-with-issues.md) | [Culture & Etiquette](07-culture-etiquette.md) | [Agent Forge](16-agent-forge.md)*

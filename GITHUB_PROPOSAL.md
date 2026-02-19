@@ -193,7 +193,7 @@ Result: 5-minute template creation vs. 30 minutes manual YAML editing
 ### 4. Supporting Documentation
 - **QUICK_REFERENCE.md** (1-page cheat sheet for commands, shortcuts, file locations)
 - **TROUBLESHOOTING.md** (20+ common problems with solutions)
-- **RESOURCES.md** (links to WCAG, screen readers, documentation)
+- **appendix-u-resources.md** (links to WCAG, screen readers, documentation)
 - **FAQ.md** (50+ questions organized by role and topic)
 - **PROGRESS_TRACKER.md** (printable checklist for learners)
 - **ACCESSIBILITY_TESTING.md** (checklist for testing templates & workflows)
@@ -275,26 +275,32 @@ docs/
 ├── 01-16-core-curriculum.md
 ├── appendix-a-glossary.md
 ├── appendix-b-screen-reader-cheatsheet.md
-├── appendix-c-git-authentication.md
-├── appendix-d-github-gists.md
-├── appendix-e-advanced-github-features.md
-├── appendix-f-vscode-accessibility-reference.md
-├── appendix-g-github-actions-workflows.md
-├── appendix-h-github-projects.md
-├── appendix-i-github-discussions.md
+├── appendix-c-keyboard-shortcuts.md
+├── appendix-c-accessibility-standards.md
+├── appendix-d-git-authentication.md
+├── appendix-e-github-flavored-markdown.md
+├── appendix-f-github-gists.md
+├── appendix-g-github-discussions.md
+├── appendix-h-releases-tags-insights.md
+├── appendix-i-github-projects.md
 ├── appendix-j-advanced-search.md
-├── appendix-k-releases-tags.md
-├── appendix-l-repository-insights.md
-├── appendix-n-github-flavored-markdown.md  [NEW]
-├── appendix-o-github-security-features.md  [NEW]
-├── appendix-p-branch-protection-rulesets.md [NEW]
-└── appendix-q-resources.md
+├── appendix-k-branch-protection-rulesets.md
+├── appendix-l-github-security-features.md
+├── appendix-m-vscode-accessibility-reference.md
+├── appendix-n-github-codespaces.md
+├── appendix-o-github-mobile.md
+├── appendix-p-github-pages.md
+├── appendix-q-github-actions-workflows.md
+├── appendix-r-github-profile-sponsors-wikis.md
+├── appendix-s-github-organizations-templates.md
+├── appendix-t-contributing-to-open-source.md
+└── appendix-u-resources.md
 
 Root/
 ├── README.md [Main entry point]
 ├── QUICK_REFERENCE.md [1-page cheat sheet]
 ├── TROUBLESHOOTING.md [20+ common issues]
-├── RESOURCES.md [External links & documentation]
+├── appendix-u-resources.md [External links & documentation]
 ├── FAQ.md [50+ questions by role]
 ├── PROGRESS_TRACKER.md [Printable checklist]
 ├── ACCESSIBILITY_TESTING.md [Testing checklist]
@@ -445,7 +451,7 @@ Open curriculum invites contributions:
 - **7 supporting guides** (HTML + Markdown formats)
   - QUICK_REFERENCE.md — 1-page cheat sheet
   - TROUBLESHOOTING.md — 20+ solutions
-  - RESOURCES.md — comprehensive manifest
+  - appendix-u-resources.md — comprehensive manifest
   - FAQ.md — 50+ questions
   - PROGRESS_TRACKER.md — printable checklist
   - ACCESSIBILITY_TESTING.md — testing workflow

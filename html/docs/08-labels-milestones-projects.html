@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
-  <title>Labels, Milestones, and Projects - GitHub Learning Room</title>
+  <title>Labels, Milestones, and Projects — GitHub Learning Room</title>
   <link rel="stylesheet" href="./styles/github-markdown.css">
   <link rel="stylesheet" href="./styles/highlight.css">
   <link rel="stylesheet" href="./styles/custom.css">
@@ -24,10 +24,11 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <nav aria-label="Breadcrumb" class="breadcrumb">
-    <a href="./index.html">Home</a>
+    <a href="./index.html">Home</a> <span aria-hidden="true">›</span> <span aria-current="page">Labels, Milestones, and Projects</span>
   </nav>
-  <main class="markdown-body">
+  <main id="main-content" class="markdown-body">
     <h1>Labels, Milestones, and Projects</h1>
 <h2>Organizing Work and Cross-Referencing on GitHub</h2>
 <blockquote>
@@ -93,35 +94,90 @@
 </tbody></table>
 <h3>Navigating to the Labels Page</h3>
 <p>From a repository:</p>
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+<p>Go to the <strong>Issues</strong> tab, then click the <strong>Labels</strong> link/button (it’s in the filter toolbar above the issue list, next to Milestones). The Labels page shows every label with its colour, name, and description.</p>
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+
 <ol>
 <li>Navigate to the Issues tab</li>
 <li>Press <code>K</code> to find the &quot;Labels&quot; link (near the &quot;Milestones&quot; link in the toolbar)</li>
 <li>Press <code>Enter</code></li>
 </ol>
-<p>You will see a list of all labels with their name, color description, and description.</p>
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+<ol>
+<li>Navigate to the Issues tab</li>
+<li>Quick Nav <code>K</code> to find the &quot;Labels&quot; link (near the &quot;Milestones&quot; link in the toolbar)</li>
+<li><code>VO+Space</code> to activate</li>
+</ol>
+</details>
+
 <h3>Applying a Label to an Issue or PR</h3>
 <p>From an open issue or PR:</p>
-<pre><code>Step 1: Navigate to the sidebar on the right
-  • Press H or 3 to find the &quot;Labels&quot; heading
-Step 2: Activate the Labels gear/edit button
-  • B until you hear &quot;Labels&quot; button → Enter
-Step 3: Dropdown opens showing all available labels
-  • ↑/↓ to navigate
-  • Enter to select or deselect a label
-  • Type to filter: type &quot;access&quot; to find &quot;accessibility&quot;
-Step 4: Press Escape to close — selections save automatically
-</code></pre>
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+<p>In the right sidebar, click the gear icon (⚙️) next to <strong>Labels</strong>. A dropdown opens showing all labels. Click a label to apply it (a checkmark appears). Click outside to close — the label appears immediately on the issue.</p>
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+
+<ol>
+<li>Navigate to the sidebar → press <code>H</code> or <code>3</code> to find the &quot;Labels&quot; heading</li>
+<li>Activate the Labels gear/edit button (<code>B</code> until you hear &quot;Labels&quot; button → <code>Enter</code>)</li>
+<li>Dropdown opens showing all available labels: use <code>↑/↓</code> to navigate</li>
+<li><code>Enter</code> to select or deselect a label; type to filter (e.g., type &quot;access&quot; to find &quot;accessibility&quot;)</li>
+<li>Press <code>Escape</code> to close — selections save automatically</li>
+</ol>
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+<ol>
+<li><code>VO+U</code> → Headings or Quick Nav <code>H</code> to find the &quot;Labels&quot; heading in the sidebar</li>
+<li>Quick Nav <code>B</code> to find the &quot;Labels&quot; gear/edit button → <code>VO+Space</code></li>
+<li>Dropdown opens: <code>VO+Down</code> or arrow keys to navigate labels</li>
+<li><code>VO+Space</code> to select or deselect; type to filter</li>
+<li><code>Escape</code> to close — selections save automatically</li>
+</ol>
+</details>
+
 <h3>Filtering Issues by Label</h3>
-<p>From the Issues list:</p>
-<pre><code>Option A — Using the filter bar:
-  F → type: is:open label:accessibility → Enter
+<details>
+<summary>🖥️ Visual / mouse users</summary>
 
-Option B — Using the filter button:
-  B → &quot;Label&quot; dropdown button → Enter → ↑/↓ to choose → Enter → Esc
+<ul>
+<li><strong>Using the filter button:</strong> From the Issues list, click the <strong>Label</strong> dropdown button above the issue list, choose the label(s) you want, then click outside to apply. The active filter shows in the search bar.</li>
+<li><strong>Using the search bar:</strong> Click in the search/filter bar and type <code>label:accessibility</code> (for example) along with any other filters.</li>
+</ul>
+</details>
 
-Option C — Combining labels:
-  is:open label:accessibility label:&quot;good first issue&quot;
-</code></pre>
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+
+<p><strong>Option A — Filter bar:</strong> Press <code>F</code> → type <code>is:open label:accessibility</code> → <code>Enter</code></p>
+<p><strong>Option B — Filter button:</strong> <code>B</code> → &quot;Label&quot; dropdown button → <code>Enter</code> → <code>↑/↓</code> to choose → <code>Enter</code> → <code>Esc</code></p>
+<p><strong>Option C — Combining labels:</strong> <code>is:open label:accessibility label:&quot;good first issue&quot;</code></p>
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+<p><strong>Option A — Filter bar:</strong> Quick Nav <code>F</code> to find the search bar → <code>VO+Shift+Down</code> to interact → type <code>is:open label:accessibility</code> → <code>Return</code></p>
+<p><strong>Option B — Filter button:</strong> Quick Nav <code>B</code> → &quot;Label&quot; dropdown button → <code>VO+Space</code> → arrow keys to choose → <code>VO+Space</code> to select → <code>Esc</code></p>
+<p><strong>Option C — Combining labels:</strong> <code>is:open label:accessibility label:&quot;good first issue&quot;</code></p>
+</details>
+
 <h3>Creating a New Label</h3>
 <p>If you have write access:</p>
 <ol>
@@ -159,12 +215,34 @@ Each milestone is announced as a heading + progress information:</p>
 <li>Navigate the list with <code>3</code> (issue titles) or <code>I</code> (list items)</li>
 </ol>
 <h3>Adding an Issue to a Milestone</h3>
-<p>From an open issue:</p>
-<pre><code>Step 1: Navigate to the sidebar → &quot;Milestone&quot; heading (H or 3)
-Step 2: Activate the Milestone gear button
-Step 3: Select a milestone from the dropdown (↑/↓ → Enter)
-Step 4: Esc to close
-</code></pre>
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+<p>From the open issue, find the <strong>Milestone</strong> section in the right sidebar and click the gear icon. A dropdown lists available milestones — click one to assign it.</p>
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS — Windows)</summary>
+
+<ol>
+<li>Navigate to the sidebar → &quot;Milestone&quot; heading (<code>H</code> or <code>3</code>)</li>
+<li>Activate the Milestone gear button</li>
+<li>Select a milestone from the dropdown (<code>↑/↓</code> → <code>Enter</code>)</li>
+<li><code>Esc</code> to close</li>
+</ol>
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+<ol>
+<li>Quick Nav <code>H</code> or <code>VO+Cmd+H</code> to find the &quot;Milestone&quot; heading in the sidebar</li>
+<li>Quick Nav <code>B</code> to find and activate the Milestone gear button (<code>VO+Space</code>)</li>
+<li>Select a milestone from the dropdown (<code>VO+Down</code> or arrow keys → <code>VO+Space</code>)</li>
+<li><code>Esc</code> to close</li>
+</ol>
+</details>
+
 <h3>Creating a Milestone</h3>
 <p>Requires write access:</p>
 <ol>
@@ -281,21 +359,19 @@ Step 4: Esc to close
 <li><code>Enter</code> to open a project</li>
 </ol>
 <h3>Navigating a Project — Table View</h3>
-<pre><code>Step 1: The main content is a large grid/table
-Step 2: T to jump to the table
-Step 3: Ctrl+Alt+↓ to navigate rows (each row is an issue or PR)
-Step 4: Ctrl+Alt+→ to navigate columns (Title, Status, Priority, etc.)
-Step 5: Enter on a row to open the issue/PR detail panel
-</code></pre>
+<pre><code class="hljs">Step <span class="hljs-number">1</span>: The main content <span class="hljs-keyword">is</span> a <span class="hljs-keyword">large</span> grid/<span class="hljs-keyword">table</span>
+Step <span class="hljs-number">2</span>: T <span class="hljs-keyword">to</span> jump <span class="hljs-keyword">to</span> the <span class="hljs-keyword">table</span>
+Step <span class="hljs-number">3</span>: Ctrl+Alt+↓ <span class="hljs-keyword">to</span> navigate <span class="hljs-keyword">rows</span> (<span class="hljs-keyword">each</span> <span class="hljs-keyword">row</span> <span class="hljs-keyword">is</span> an issue <span class="hljs-keyword">or</span> PR)
+Step <span class="hljs-number">4</span>: Ctrl+Alt+→ <span class="hljs-keyword">to</span> navigate <span class="hljs-keyword">columns</span> (Title, Status, Priority, etc.)
+Step <span class="hljs-number">5</span>: Enter <span class="hljs-keyword">on</span> a <span class="hljs-keyword">row</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">open</span> the issue/PR detail panel</code></pre>
 <p><strong>What is announced per row:</strong>
 &quot;Add keyboard navigation to carousel | Status: In Progress | Assignee: username | Priority: High&quot;</p>
 <h3>Navigating a Project — Board View</h3>
-<pre><code>Step 1: Switch to Board view using the view selector button
-Step 2: Each column (Todo / In Progress / Done) is a region
-Step 3: D to navigate between column landmarks
-Step 4: Within a column: 3 to navigate card titles, I for list items
-Step 5: Enter on a card to open the issue/PR panel
-</code></pre>
+<pre><code class="hljs">Step <span class="hljs-number">1</span>: Switch <span class="hljs-keyword">to</span> Board <span class="hljs-keyword">view</span> <span class="hljs-keyword">using</span> the <span class="hljs-keyword">view</span> selector button
+Step <span class="hljs-number">2</span>: <span class="hljs-keyword">Each</span> <span class="hljs-keyword">column</span> (Todo / <span class="hljs-keyword">In</span> Progress / Done) <span class="hljs-keyword">is</span> a region
+Step <span class="hljs-number">3</span>: D <span class="hljs-keyword">to</span> navigate <span class="hljs-keyword">between</span> <span class="hljs-keyword">column</span> landmarks
+Step <span class="hljs-number">4</span>: <span class="hljs-keyword">Within</span> a <span class="hljs-keyword">column</span>: <span class="hljs-number">3</span> <span class="hljs-keyword">to</span> navigate card titles, I <span class="hljs-keyword">for</span> list items
+Step <span class="hljs-number">5</span>: Enter <span class="hljs-keyword">on</span> a card <span class="hljs-keyword">to</span> <span class="hljs-keyword">open</span> the issue/PR panel</code></pre>
 <h3>Adding an Issue to a Project</h3>
 <p>From an open issue:</p>
 <ol>
@@ -313,25 +389,34 @@ Step 5: Enter on a card to open the issue/PR panel
 <h2>Practical Organization Strategy for the Hackathon</h2>
 <p>Here is a recommended structure for the <code>learning-room</code> sandbox project:</p>
 <h3>Labels to create</h3>
-<pre><code>accessibility      — all a11y-related work
-documentation      — docs-only changes
-good first issue   — for new contributors
-in progress        — being actively worked on
-needs review       — PR is open, review needed
-blocked            — waiting on something external
-help wanted        — community assistance requested
-</code></pre>
+<pre><code class="hljs">accessibility      — <span class="hljs-keyword">all</span> a11y-related work
+documentation      — docs-<span class="hljs-keyword">only</span> <span class="hljs-keyword">changes</span>
+good <span class="hljs-keyword">first</span> issue   — <span class="hljs-keyword">for</span> <span class="hljs-keyword">new</span> contributors
+in progress        — being actively worked <span class="hljs-keyword">on</span>
+needs review       — PR <span class="hljs-keyword">is</span> <span class="hljs-keyword">open</span>, review needed
+blocked            — waiting <span class="hljs-keyword">on</span> something external
+<span class="hljs-keyword">help</span> wanted        — community assistance requested</code></pre>
 <h3>Milestone to create</h3>
-<pre><code>Name: Hackathon Day 1 Deliverables
-Due: [Day 1 date]
-Description: All contributions made during Day 1 of the Open Source AT Hackathon
-</code></pre>
+<pre><code class="hljs">Name: Hackathon <span class="hljs-keyword">Day</span> <span class="hljs-number">1</span> Deliverables
+Due: [<span class="hljs-keyword">Day</span> <span class="hljs-number">1</span> <span class="hljs-type">date</span>]
+Description: <span class="hljs-keyword">All</span> contributions made during <span class="hljs-keyword">Day</span> <span class="hljs-number">1</span> <span class="hljs-keyword">of</span> the <span class="hljs-keyword">Open</span> Source <span class="hljs-keyword">AT</span> Hackathon</code></pre>
 <h3>Workflow</h3>
-<pre><code>1. File an issue → add label + milestone
-2. Comment &quot;I&#39;ll work on this&quot; → add &quot;in progress&quot; label
-3. Make changes → open PR → link to issue
-4. PR merged → issue closes automatically → milestone progress updates
-</code></pre>
+<pre><code class="hljs">1. <span class="hljs-keyword">File</span> <span class="hljs-keyword">an</span> issue → add <span class="hljs-keyword">label</span> + milestone
+2. Comment <span class="hljs-string">&quot;I&#x27;ll work on this&quot;</span> → add <span class="hljs-string">&quot;in progress&quot;</span> <span class="hljs-keyword">label</span>
+3. Make changes → <span class="hljs-keyword">open</span> <span class="hljs-keyword">PR</span> → link to issue
+4. <span class="hljs-keyword">PR</span> merged → issue closes automatically → milestone progress updates</code></pre>
+<hr>
+<h2>Try It: Label and Link</h2>
+<p><strong>Time:</strong> 2 minutes | <strong>What you need:</strong> Browser, signed in to GitHub</p>
+<p>Go to the Learning Room repository and do two things:</p>
+<ol>
+<li><strong>Add a label to an issue</strong> — Open any issue (press <code>G</code> then <code>I</code>, then <code>Enter</code> on an issue title). Press <code>L</code> (in Focus Mode) to open the label picker. Type <code>documentation</code> to filter, then press <code>Enter</code> to apply it. Press <code>Esc</code> to close.</li>
+<li><strong>Use a cross-reference</strong> — Leave a comment on that issue mentioning another issue number: <code>Related to #1</code> (or any issue number you&#39;ve seen). Press <code>Ctrl+Enter</code> to submit.</li>
+</ol>
+<p><strong>You&#39;re done.</strong> You just organized work using labels and connected two issues with a cross-reference.</p>
+<blockquote>
+<p><strong>What success feels like:</strong> The label now appears on the issue, and your cross-reference is a clickable link that connects the two issues. That&#39;s project management on GitHub — and you did it in under two minutes.</p>
+</blockquote>
 <hr>
 <blockquote>
 <h3>🔥 Day 2 Amplifier — Agent Forge: <code>@issue-tracker</code> with Labels</h3>
@@ -351,8 +436,8 @@ Description: All contributions made during Day 1 of the Open Source AT Hackathon
 
   </main>
   <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
-    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
-    <p><a href="https://github.com">Back to GitHub</a></p>
+    <p>GitHub Learning Room — Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com/accesswatch/Learning-Room">View on GitHub</a></p>
   </footer>
 </body>
 </html>

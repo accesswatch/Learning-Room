@@ -241,6 +241,24 @@ This diagram shows the layout of a repository home page. It is presented as ASCI
 
 Do this every time you land on a new GitHub page. It takes about 10 seconds once you are practiced. Make it automatic.
 
+<details>
+<summary>🖥️ Visual / mouse users — page orientation</summary>
+
+When you land on a GitHub page, scan these areas to orient yourself:
+
+1. **Browser tab title** — tells you the page type and repo context
+2. **Global nav bar** (top strip) — GitHub logo, search box, bells/icons
+3. **Repo tabs** (below global nav, visible only inside a repo) — Code, Issues, Pull Requests, etc.
+4. **H1 heading** — tells you exactly what page you're on (repo name / "Issues" / issue title / PR title)
+5. **Main content area** — file tree, issue list, PR diff, etc.
+
+That's your visual map. Click anything visible to navigate.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS) — 10-second orientation sequence</summary>
+
 ```
 Step 1: Press 1
         → Hear: what page type are you on? (repo name / "Issues" / issue title / PR title)
@@ -249,7 +267,7 @@ Step 2: Press D repeatedly
         → Hear: what landmark regions exist on this page?
         → Build a map: "Navigation Menu, Repository navigation, Main, Add a comment, Pagination"
 
-Step 3: Press NVDA+F7 (or VO+U for VoiceOver)
+Step 3: Press NVDA+F7 (NVDA) or Insert+F3 (JAWS)
         → Open the Elements List → choose "Headings" tab
         → Hear: the full heading outline of the page
         → This tells you every major section available
@@ -262,11 +280,45 @@ After these three steps, you know:
 
 From there, navigate with purpose: `D` to jump to regions, `H` or `3` to jump to content headings, `K` for links, `B` for buttons.
 
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS) — 10-second orientation sequence</summary>
+
+```
+Step 1: Quick Nav H (with Quick Nav on) or VO+Cmd+H → navigate to h1
+        → Hear: what page type are you on? (repo name / "Issues" / issue title / PR title)
+
+Step 2: VO+U → press Left/Right Arrow to choose "Landmarks" → Up/Down to explore
+        → Build a map: "Navigation Menu, Repository navigation, Main, Add a comment, Pagination"
+        → Escape to dismiss the rotor
+
+Step 3: VO+U → press Left/Right Arrow to choose "Headings"
+        → Hear: the full heading outline of the page
+        → Up/Down to navigate headings; Enter to jump to one
+```
+
+After these three steps, you know:
+- **What** page you are on (step 1)
+- **Where** the page regions are (step 2)
+- **What** content is available and how it is organized (step 3)
+
+From there, navigate with purpose: `VO+U → Landmarks` to jump to regions, Quick Nav `H` to jump to content headings, Quick Nav `K` for links, Quick Nav `B` for buttons.
+
+> **VoiceOver tip:** `VO` = `Control+Option`. Turn Quick Nav on/off by pressing `Left Arrow + Right Arrow` simultaneously. Quick Nav lets you use single keys (`H`, `B`, `K`, `T`) without holding `VO`, matching the feel of NVDA/JAWS browse mode.
+
+</details>
+
 ---
 
 ## 7. Landmark Structure by Page Type
 
 Each GitHub page type has a consistent landmark pattern. Knowing the pattern means you can skip steps 2 and 3 above for familiar pages.
+
+> **Landmark navigation quick reference:**
+> - **NVDA / JAWS:** Press `D` to cycle through landmarks, `Shift+D` to go backwards
+> - **VoiceOver (macOS):** Press `VO+U`, then Left/Right to select "Landmarks", then Up/Down to navigate
+
 
 ### Repository home page landmarks (in order)
 
@@ -436,12 +488,29 @@ You are never lost. You always have these three fallbacks.
 
 ---
 
+## Try It: The 60-Second Orientation
+
+**Time:** 1 minute | **What you need:** A browser with your screen reader running
+
+Open any GitHub repository — try [github.com/accesswatch/agent-forge](https://github.com/accesswatch/agent-forge) — and prove to yourself that the mental model works:
+
+1. Press `1` — your screen reader announces the repo name. You know where you are.
+2. Press `D` — you hear the first landmark. Press `D` again to hear the next one. You now know the rooms on this floor.
+3. Press `2` — you jump to the first section heading. Press `2` again to scan the page structure.
+4. Press `H` three times — you're moving through headings at any level. You're reading the outline.
+
+**You're done.** Four keys, under a minute. You just navigated a GitHub repository by ear.
+
+> **What success feels like:** You heard a repo name, at least two landmarks, and several headings. If you did, you can orient yourself on *any* GitHub page using these same four keys.
+
+---
+
 ## 🔥 Day 2 Amplifier
 
 > Once you have this mental model solid, the Agent Forge agents make more sense. The `@daily-briefing` agent reads your GitHub notifications and presents a structured report — but the report structure mirrors the landmark structure of GitHub itself: global activity, then per-repo activity, then per-issue and per-PR detail. The agent describes the same building you have already walked through manually.
 
 ---
 
-*Next: [Day 1 Agenda](../DAY1_AGENDA.md)*
+*Next: [Navigating Repositories](02-navigating-repositories.md)*
 *Back: [Pre-Workshop Setup](00-pre-workshop-setup.md)*
 *Reference: [Screen Reader Cheat Sheet](appendix-b-screen-reader-cheatsheet.md) | [GitHub Concepts Glossary](appendix-a-glossary.md)*

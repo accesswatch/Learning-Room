@@ -27,16 +27,14 @@
 
 | Agent | You Must Have Done First | Reference |
 |-------|--------------------------|----------|
-| `@daily-briefing` | Navigated repository, read issues and PRs, understood notifications | [Ch 3](03-navigating-repositories.md), [Ch 9](09-notifications.md) |
+| `@daily-briefing` | Navigated repository, read issues and PRs, understood notifications | [Ch 2](02-navigating-repositories.md), [Ch 9](09-notifications.md) |
 | `@issue-tracker` | Filed at least 2 issues, applied labels, triaged lists | [Ch 4](04-working-with-issues.md), [Ch 8](08-labels-milestones-projects.md) |
 | `@pr-review` | Manually reviewed 1+ PR diff, left inline comments | [Ch 5](05-working-with-pull-requests.md), [Ch 14](14-accessible-code-review.md) |
-| `@analytics` | Explored Insights tab, understand repo metrics | [Ch 3](03-navigating-repositories.md) |
+| `@analytics` | Explored Insights tab, understand repo metrics | [Ch 2](02-navigating-repositories.md) |
 | `@insiders-a11y-tracker` | Filed an accessibility bug, applied WCAG labels | [Ch 4](04-working-with-issues.md), [Ch 15](15-issue-templates.md) |
-| `@template-builder` | Designed a template manually, tested locally | [Ch 15](15-issue-templates.md#9-hands-on-activity) |
+| `@template-builder` | Designed a template manually, tested locally | [Ch 15](15-issue-templates.md#7-building-an-accessibility-bug-report-template) |
 
 **Estimated time for this chapter:** 1.5 hours (including exercises)
-
----
 
 ---
 
@@ -67,12 +65,12 @@ Every agent automates a sequence of steps you learned to do manually on Day 1. I
 
 | Agent | Skill You Must Have Done Manually First | See |
 |-------|----------------------------------------|-----|
-| `@daily-briefing` | Navigate repository activity, read notifications, understand issue and PR state | [Navigating Repos](03-navigating-repositories.md), [Notifications](09-notifications.md) |
+| `@daily-briefing` | Navigate repository activity, read notifications, understand issue and PR state | [Navigating Repos](02-navigating-repositories.md), [Notifications](09-notifications.md) |
 | `@issue-tracker` | File at least one issue using the full manual process; apply labels; triage a list | [Working with Issues](04-working-with-issues.md), [Labels & Milestones](08-labels-milestones-projects.md) |
 | `@pr-review` | Manually review at least one PR diff in the browser — read changed lines, leave inline comments | [Working with Pull Requests](05-working-with-pull-requests.md) |
-| `@analytics` | Explore Insights for a repository; understand what contribution velocity and churn mean | [Navigating Repos](03-navigating-repositories.md), [Working with Issues](04-working-with-issues.md) |
-| `@insiders-a11y-tracker` | File an accessibility bug report; apply WCAG labels; manually check a Markdown file for heading hierarchy | [Working with Issues](04-working-with-issues.md), [Issue Templates](16-issue-templates.md) |
-| `@template-builder` | Design a template manually (understand field types, YAML structure, testing); create a template for your own project | [Issue Templates](16-issue-templates.md#9-hands-on-activity) |
+| `@analytics` | Explore Insights for a repository; understand what contribution velocity and churn mean | [Navigating Repos](02-navigating-repositories.md), [Working with Issues](04-working-with-issues.md) |
+| `@insiders-a11y-tracker` | File an accessibility bug report; apply WCAG labels; manually check a Markdown file for heading hierarchy | [Working with Issues](04-working-with-issues.md), [Issue Templates](15-issue-templates.md) |
+| `@template-builder` | Design a template manually (understand field types, YAML structure, testing); create a template for your own project | [Issue Templates](15-issue-templates.md#7-building-an-accessibility-bug-report-template) |
 
 The facilitator introduces one agent at a time in Block 3, and always asks the same question before each one:
 
@@ -99,7 +97,7 @@ That question is not rhetorical. Answer it before running the agent. If you cann
 
 ### Prerequisites
 
-- GitHub Copilot extension installed (see [GitHub Copilot: Installation](14-github-copilot.md#2-installing-github-copilot))
+- GitHub Copilot Chat extension installed (see [GitHub Copilot: Installation](13-github-copilot.md#2-installing-github-copilot))
 - Signed in to GitHub via VS Code
 - A workspace open containing `.github/agents/` folder with `.agent.md` files
 
@@ -111,7 +109,7 @@ When you type `@` in Copilot Chat, VS Code scans:
 2. Any agents installed globally on your machine
 3. Agents defined by extensions
 
-The five Agent Forge agents come from `.github/agents/` in your fork of the `agent-forge` repository.
+The six Agent Forge agents come from `.github/agents/` in your fork of the `agent-forge` repository.
 
 ### Optional: Personalize Your Instance
 
@@ -158,24 +156,51 @@ Agent Forge agents run in VS Code. But the same `.agent.md` files can also be in
 
 **Option 1: Copilot Chat with Task mode**
 
-1. Open Copilot Chat on GitHub.com (icon in top-right navigation)
-2. Select **Task** from the mode picker in the chat interface
-3. Optionally select a custom agent from the agent picker
-4. Type your request and submit
-5. The agent analyzes the task and can create a branch and open a PR automatically
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+1. Open Copilot Chat on GitHub.com (icon in the top-right navigation bar)
+2. Click **Task** in the mode picker
+3. Optionally click the agent picker to select a custom agent
+4. Type your request and click Send
+5. Copilot analyzes the task and can create a branch and open a PR automatically
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS / VoiceOver)</summary>
+
+1. Open Copilot Chat on GitHub.com (navigate to icon in top-right navigation → `Enter`)
+2. The mode picker (Task vs Chat) is a set of radio buttons — navigate with `Arrow` keys to select "Task"
+3. The agent picker is a listbox — `Up/Down Arrow` to navigate, `Enter` to select
+4. Type your request in the chat input and press `Enter`
+5. Copilot response appears in the chat thread; press `H` to navigate to the response heading
+
+</details>
 
 **Option 2: Assign an issue to Copilot**
 
-1. Open any issue in the repository (or create a new one describing the task)
-2. In the **Assignees** section, assign **Copilot** as the assignee
-3. A dialog opens — optionally provide additional instructions and select a custom agent from the picker
-4. Select **Assign** to confirm
-5. Copilot (or the selected custom agent) creates a branch, makes changes, and opens a PR
+<details>
+<summary>🖥️ Visual / mouse users</summary>
 
-**Screen reader note for GitHub.com agent invocation:**
-- The agent picker in Copilot Chat is a listbox — navigate with `Up/Down Arrow` and press `Enter` to select
-- The mode picker (Task vs Chat) is a set of radio buttons — navigate with `Arrow` keys
-- Assigning Copilot in the Assignees section uses the standard assignee dropdown — `B` to reach the button (NVDA/JAWS), then navigate the popup with Arrow keys
+1. Open any issue (or create a new one describing the task)
+2. In the **Assignees** sidebar section, click the gear icon
+3. In the dropdown, click **Copilot** as the assignee
+4. A dialog opens — optionally provide additional instructions and select a custom agent
+5. Click **Assign** to confirm
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS / VoiceOver)</summary>
+
+1. Open any issue in the repository
+2. Press `B` to navigate to the Assignees gear button → `Enter` to open the popup
+3. Navigate the popup with `Arrow` keys → find "Copilot" → `Enter` to select
+4. A dialog opens with instruction text area and agent picker — fill as needed
+5. `Tab` to the **Assign** button → `Enter`
+
+</details>
 
 This is the bridge to Section 6 (The Cloud Extension). The same agent file, three execution contexts: your editor, GitHub.com interactively, and GitHub Actions on a schedule.
 
@@ -191,7 +216,16 @@ On any open pull request, GitHub adds a **"Summarize" button** in the PR descrip
 
 **When to use it:** Before doing a full accessible diff review (Chapter 14), read the Copilot summary first to orient yourself. This is especially helpful with large PRs.
 
-**Screen reader path:**
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+On any open PR page, look for a **"Summarize"** or **"Copilot summary"** button near the PR description area. Click it. The summary renders within a few seconds as a new section in the PR description.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+
 ```
 On any PR page:
 B → navigate buttons → find "Summarize" or "Copilot summary" button → Enter
@@ -199,6 +233,8 @@ Wait for the summary to render (usually 5–10 seconds)
 Copilot summary appears as a new blockquote or section above/below the description
 H or 2 → navigate to the summary heading to read it
 ```
+
+</details>
 
 #### Copilot PR Review
 
@@ -212,13 +248,24 @@ On any issue page, Copilot adds sidebar buttons that appear once the page loads:
 - **"Explain this issue"** — generates a plain-language explanation of a complex technical issue
 - **"Suggest fix"** — proposes an approach to resolving the issue (opens a task/PR workflow)
 
-**Screen reader path:**
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+Look in the right sidebar on any issue page for a **Copilot section** with "Explain" and "Suggest fix" buttons. Click the button you want; the response appears below it in the sidebar.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+
 ```
 On any issue page:
 H or 2 → navigate to "Copilot" section heading in the sidebar
 B → activate "Explain" or "Suggest fix" button
 Copilot response appears below the button; use H to navigate to it
 ```
+
+</details>
 
 #### GitHub Models — Free AI Playground
 
@@ -232,7 +279,16 @@ Copilot response appears below the button; use H to navigate to it
 
 **Why it matters for Agent Forge:** When you build custom agents and prompts, you can test your system prompts and prompt templates in GitHub Models before adding them to your `.prompt.md` files — rapid iteration without burning API credits.
 
-**Screen reader path to GitHub Models:**
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+Navigate to [github.com/marketplace/models](https://github.com/marketplace/models). Browse model cards and click one to open the chat playground. Type in the prompt field and press **Send**. Results appear in the response area.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+
 ```
 Navigate to https://github.com/marketplace/models
 H → "Models" h1, then model category headings
@@ -241,6 +297,8 @@ Enter on a model card → opens the chat playground
 In the playground: E or F → navigate to the prompt textarea → NVDA+Space (Focus Mode) → type prompt → Enter to submit
 Response appears below the Send button; use H to find the response section heading
 ```
+
+</details>
 
 #### Copilot-Drafted Release Notes
 
@@ -272,7 +330,7 @@ Many agents do both — they explain what they found (informational) and optiona
 
 **File:** `.github/agents/daily-briefing.agent.md`
 
-**Before you run this agent:** You should have manually navigated a repository's Issues tab, read your GitHub Notifications page, understood what a pull request waiting for review looks like, and know the difference between subscribed and participating notifications. If those steps are not familiar yet, return to [Navigating Repositories](03-navigating-repositories.md) and [Notifications](09-notifications.md) first. The briefing output only makes sense when you already know what each section of it is describing.
+**Before you run this agent:** You should have manually navigated a repository's Issues tab, read your GitHub Notifications page, understood what a pull request waiting for review looks like, and know the difference between subscribed and participating notifications. If those steps are not familiar yet, return to [Navigating Repositories](02-navigating-repositories.md) and [Notifications](09-notifications.md) first. The briefing output only makes sense when you already know what each section of it is describing.
 
 **What it does:**
 
@@ -467,7 +525,7 @@ This is a valuable addition to the guide. The three typos and one clarification 
 
 **File:** `.github/agents/analytics.agent.md`
 
-**Before you run this agent:** You should have explored the Insights tab of at least one repository — looked at the contribution graph, understood what commit frequency means, and thought about what "high-churn files" implies for a project's stability. The analytics output describes patterns in data you should already be able to read manually. Return to [Navigating Repositories](03-navigating-repositories.md) if the Insights tab is unfamiliar.
+**Before you run this agent:** You should have explored the Insights tab of at least one repository — looked at the contribution graph, understood what commit frequency means, and thought about what "high-churn files" implies for a project's stability. The analytics output describes patterns in data you should already be able to read manually. Return to [Navigating Repositories](02-navigating-repositories.md) if the Insights tab is unfamiliar.
 
 **What it does:**
 
@@ -531,7 +589,7 @@ Surfaces team contribution patterns, velocity metrics, and bottleneck detection:
 
 **File:** `.github/agents/insiders-a11y-tracker.agent.md`
 
-**Before you run this agent:** You should have filed at least one accessibility bug report using the workshop's issue template, applied a WCAG label to an issue, and manually reviewed a Markdown file for heading hierarchy — knowing what H1 → H2 → H3 means, what a skip means, and why it matters to screen reader navigation. The tracker flags accessibility issues in your contributions; you need to understand the standard it is measuring against before you can act on its output. Return to [Issue Templates](16-issue-templates.md) and [Working with Issues](04-working-with-issues.md) if these are not yet familiar.
+**Before you run this agent:** You should have filed at least one accessibility bug report using the workshop's issue template, applied a WCAG label to an issue, and manually reviewed a Markdown file for heading hierarchy — knowing what H1 → H2 → H3 means, what a skip means, and why it matters to screen reader navigation. The tracker flags accessibility issues in your contributions; you need to understand the standard it is measuring against before you can act on its output. Return to [Issue Templates](15-issue-templates.md) and [Working with Issues](04-working-with-issues.md) if these are not yet familiar.
 
 **What it does:**
 
@@ -634,7 +692,7 @@ For more information, [click here](https://example.com/guide).
 
 **File:** `.github/agents/template-builder.agent.md`
 
-**Before you run this agent:** You should have read [Issue Templates](16-issue-templates.md) thoroughly — understanding YAML field types, creating a template manually (Exercise B), and designing your own template (Exercise D). The Template Builder does not teach template design — it automates the YAML writing. You need to know what you want to ask for before the agent can guide you through the form structure.
+**Before you run this agent:** You should have read [Issue Templates](15-issue-templates.md) thoroughly — understanding YAML field types, creating a template manually (Exercise B), and designing your own template (Exercise D). The Template Builder does not teach template design — it automates the YAML writing. You need to know what you want to ask for before the agent can guide you through the form structure.
 
 **What it does:**
 
@@ -773,13 +831,91 @@ Load accessibility tracking configuration from `.github/agents/preferences.md`
 
 The six Agent Forge agents and 28 slash commands are starting points. The `.agent.md` format is open — you can create your own agents for any repeatable workflow.
 
-### Example: The Markdown Accessibility Assistant
+> Source: [accessibility.github.com/documentation/guide/getting-started-with-agents/](https://accessibility.github.com/documentation/guide/getting-started-with-agents/)
+
+### Two Types of Custom Agents
+
+**Informational agents** — conversational; search, analyze, and present results:
+- Perform GitHub searches with predefined scopes and filters
+- Present results in specific structured formats
+- Query GitHub API tools to answer questions
+
+**Task-oriented agents** — active; edit files, run commands, submit PRs:
+- Execute external tools (linters, test suites, axe-core)
+- Make direct file edits based on findings
+- Create pull requests with proposed changes
+- Combine both: explain issues (informational) and fix them (task-oriented)
+
+### Agent File Structure
+
+Every `.agent.md` file has two parts: **YAML frontmatter** (metadata) and a **system prompt** (markdown body).
+
+```markdown
+---
+name: agent-name
+description: One-sentence description of what the agent does
+tools:
+  - github/search_issues
+  - github/issue_read
+---
+
+## Purpose
+Brief explanation of when to use this agent
+
+## Your Capabilities
+- What the agent can find or do
+
+## Domain Knowledge
+Specific query patterns, filters, or product knowledge
+
+## Responsibilities
+Step-by-step behavioral rules
+
+## Response Guidelines
+How to format output
+```
+
+**Frontmatter fields:**
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| `name` | Recommended | How the agent appears in the agent picker |
+| `description` | Recommended | Shown in agent lists |
+| `tools` | Optional | Restricts tool access; omit to grant all tools |
+
+**Restricting tool access** is a security best practice — only grant what the agent actually needs:
+
+```yaml
+# Informational agent — read-only GitHub tools only
+tools: ["github/search_issues", "github/issue_read"]
+
+# Task-oriented agent — file editing, shell execution, and GitHub API
+tools:
+  - read
+  - edit
+  - search
+  - execute
+  - github/*
+```
+
+### Example: Informational Agent — `@insiders-a11y-tracker`
+
+This agent monitors VS Code Insiders releases for accessibility improvements. It searches the `microsoft/vscode` repository using predefined GitHub query syntax, so you never have to remember the exact filter parameters.
+
+**Use it:**
+1. Select `@insiders-a11y-tracker` from the agent picker
+2. Ask: `what shipped this month?` or `any keyboard navigation improvements in January?`
+3. The agent searches with `repo:microsoft/vscode is:closed milestone:"[Month] [Year]" label:accessibility label:insiders-released` and returns formatted results
+
+**Prerequisite:** GitHub MCP server installed ([github.com/github/github-mcp-server](https://github.com/github/github-mcp-server))
+
+### Example: Task-Oriented Agent — The Markdown Accessibility Assistant
 
 The GitHub Accessibility team published a complete walkthrough for building a **Markdown Accessibility Assistant** — a task-oriented agent that reviews Markdown files for accessibility issues and makes direct fixes. It:
 
 - Runs `markdownlint-cli2` to catch structural problems (heading skips, bare URLs, missing blank lines)
 - Reviews link text for descriptiveness
-- Flags missing or inadequate alt text and waits for your approval before changing it
+- Flags missing or inadequate alt text and **waits for your approval** before changing it (alt text requires human judgment)
 - Fixes heading hierarchy, list structure, and bare URL formatting directly
 - Works both locally in VS Code (editing files) and on GitHub.com (reviewing PRs and committing fixes)
 
@@ -807,44 +943,49 @@ This tiered approach — automate what can be objectively evaluated, flag what n
 - GitHub MCP server installed and configured ([github.com/github/github-mcp-server](https://github.com/github/github-mcp-server))
 - Node.js installed (for `npx markdownlint-cli2`)
 
-### Agent File Structure
+### Invoking Custom Agents
 
-Every `.agent.md` file follows this pattern:
+**From VS Code:**
+1. Open Copilot Chat (`Ctrl+Shift+I` / `Cmd+Shift+I` on macOS)
+2. In the Chat input toolbar, select the **Set Agent** button
+3. Select your custom agent from the agent picker
+4. Type your request — the agent executes in your local workspace
 
-```markdown
----
-name: agent-name
-description: One-sentence description of what the agent does
-tools:
-  - tool1
-  - tool2
----
+**From GitHub.com (Task mode):**
+1. Open Copilot Chat on GitHub.com
+2. Select **Task** from the mode picker
+3. Optionally select a custom agent from the agent picker
+4. Submit your request — the agent can create a PR automatically
 
-# Agent Name
+**From an issue (Issue Assignment):**
+1. Open any issue → **Assignees** → assign **Copilot**
+2. In the dialog, optionally select a custom agent
+3. Select **Assign** — Copilot creates a branch, makes changes, and opens a PR
 
-## Purpose
-Brief explanation of when to use this agent
+### Environment Setup for GitHub (Cloud Agents)
 
-## How It Works
-Step-by-step description of the agent's process
+When agents run on GitHub (not locally), they may need additional tools. Create a workflow file at `.github/workflows/copilot-setup-steps.yml` with a single job named `copilot-setup-steps`. GitHub runs this before the agent starts:
 
-## Example Commands
-- Example 1
-- Example 2
-
-## System Prompt
-Detailed instructions the agent follows...
+```yaml
+name: Copilot Setup Steps
+on: workflow_dispatch
+jobs:
+  copilot-setup-steps:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install accessibility tools
+        run: npm install -g markdownlint-cli2 axe-cli
 ```
 
-**To create your own:**
-1. Copy an existing `.agent.md` file
-2. Edit the YAML frontmatter (name, description, tools)
-3. Write clear instructions in the System Prompt section
-4. Save to `.github/agents/your-agent-name.agent.md`
-5. Restart VS Code (or reload window: `Ctrl+Shift+P` → "Reload Window")
-6. Type `@your-agent-name` in Copilot Chat
+**Windows users:** If your project requires a Windows development environment for Copilot coding agent sessions, you can switch the runner from Ubuntu to Windows. See [Switching Copilot to a Windows development environment](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment#switching-copilot-to-a-windows-development-environment) for configuration details.
 
-**Your agent is now available.**
+### To Create Your Own Agent
+
+1. Create `.github/agents/your-agent-name.agent.md`
+2. Write YAML frontmatter (`name`, `description`, `tools`)
+3. Write the system prompt — identity, capabilities, domain knowledge, behavioral rules, output format
+4. Save and reload VS Code (`Ctrl+Shift+P` → "Reload Window")
+5. Type `@your-agent-name` in Copilot Chat
 
 ### Exercise: Extend the Template Builder Agent
 
@@ -895,7 +1036,7 @@ You've built templates manually (Chapters 15-16) and seen them in action. Now se
 - You have access to all agents in `.github/agents/` (because you opened that folder)
 
 **If Copilot Chat doesn't open:**
-- Make sure GitHub Copilot extension is installed (Extensions sidebar → search "GitHub Copilot")
+- Make sure GitHub Copilot Chat extension is installed (Extensions sidebar → search "GitHub Copilot Chat")
 - Make sure you're signed into GitHub (top right of VS Code)
 - Restart VS Code if neither of the above is the problem
 
@@ -1625,6 +1766,6 @@ Run this command? (Y/n)
 
 ---
 
-*Next: [Issue Templates](16-issue-templates.md)*  
-*Back: [GitHub Copilot](14-github-copilot.md)*  
-*Related: [Culture & Etiquette](07-culture-etiquette.md) | [Working with Issues](04-working-with-issues.md) | [Appendix F: VS Code Accessibility Reference](appendix-f-vscode-accessibility-reference.md)*
+*Back: [Issue Templates](15-issue-templates.md)*  
+*Reference: [Appendix V: Agent Forge Reference](appendix-v-agent-forge-reference.md)*  
+*Related: [Culture & Etiquette](07-culture-etiquette.md) | [Working with Issues](04-working-with-issues.md) | [Appendix M: VS Code Accessibility Reference](appendix-m-vscode-accessibility-reference.md)*

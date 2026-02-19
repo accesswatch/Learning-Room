@@ -102,7 +102,7 @@ If assigned to a group, you'll receive an issue thread for communication.
 
 ## Code of Conduct
 
-All participants and contributors are expected to follow our [Code of Conduct](../../CODE_OF_CONDUCT.md). This is a welcoming, accessible space.
+All participants and contributors are expected to follow our [Code of Conduct](../CODE_OF_CONDUCT.md). This is a welcoming, accessible space.
 
 ---
 

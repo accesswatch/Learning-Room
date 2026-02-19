@@ -45,6 +45,16 @@ If the interface seems different from what's described here, clear your browser 
 
 From any pull request page:
 
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+Click the **Files changed** tab at the top of the PR page. The tab label shows the number of changed files (e.g., "Files changed 4").
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+
 ```
 Press D → navigate to "Pull request navigation tabs" landmark
 Press → or Tab → find "Files changed" link → Enter
@@ -52,11 +62,35 @@ Press → or Tab → find "Files changed" link → Enter
 
 The tab label announces the number of changed files: *"Files changed, 4 files changed"*
 
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+```
+VO+U → Landmarks → navigate to "Pull request navigation tabs"
+VO+Right or Quick Nav K → find "Files changed" link → VO+Space
+```
+
+VoiceOver announces the number of changed files: *"Files changed, 4 files changed"*
+
+</details>
+
 ---
 
 ### Step 2: Use the File Tree to Orient Yourself
 
 The file tree panel lists every changed file. Before reading any diff, scan this list to understand the scope of the PR.
+
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+The file tree is the left panel on the Files Changed page. Each file shows its name and a `+N / -N` badge (lines added/removed). Click any filename to scroll directly to its diff.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
 
 ```
 Press D → navigate to "File tree" region
@@ -65,7 +99,21 @@ Each file reads: "[filename] — [N additions, N deletions]"
 Press Enter on a file to scroll its diff into view
 ```
 
-**What to listen for:**
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+```
+VO+U → Landmarks → navigate to "File tree" region
+VO+Down to move through files
+Each file reads: "[filename] — [N additions, N deletions]"
+VO+Space on a file to scroll its diff into view
+```
+
+</details>
+
+**What to listen for / look for:**
 - How many files changed?
 - Which areas of the codebase are affected?
 - Are there unexpected files (generated files, lock files, configuration changes)?
@@ -76,6 +124,16 @@ Press Enter on a file to scroll its diff into view
 
 Each changed file in the main area is an `h3` heading containing the filename.
 
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+Scroll through the page or click a filename in the file tree on the left. Collapsed files can be expanded by clicking the file header.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+
 ```
 Press 3 to jump file-by-file through the diff
 Listen for: "learning-room/docs/keyboard-shortcuts.md — collapsed" or "expanded"
@@ -84,37 +142,74 @@ Press Enter or Space to expand a collapsed file
 
 If a diff is very long, the file tree is usually faster than pressing `3` repeatedly.
 
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+```
+Quick Nav H or VO+Cmd+H to jump file-by-file through the diff
+Listen for: "learning-room/docs/keyboard-shortcuts.md — collapsed" or "expanded"
+VO+Space to expand a collapsed file
+```
+
+If a diff is very long, the file tree is usually faster than using heading navigation.
+
+</details>
+
 ---
 
 ### Step 4: Read a Diff
 
 Each file's diff is a table. Every row is one line of code.
 
-**NVDA:**
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+- **Green highlighted lines** (with a `+`) = lines added
+- **Red highlighted lines** (with a `-`) = lines removed
+- **Plain/white lines** = unchanged context
+- Use `Ctrl+F` to search within the page for specific text in the diff
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users — NVDA</summary>
+
 ```
 Press T to jump to the diff table → Insert+Space (Focus Mode)
 Press ↓ to move through lines one at a time
 Press Ctrl+Alt+→ to read across columns: [line number] | [change type] | [code content]
 ```
 
-**JAWS:**
+</details>
+
+<details>
+<summary>🔊 Screen reader users — JAWS</summary>
+
 ```
 Press T to jump to the diff table → Insert+Z (Virtual PC Cursor off)
 Press ↓ to move through lines
 Press Ctrl+Alt+→ for column-by-column reading
 ```
 
-**VoiceOver (macOS):**
+</details>
+
+<details>
+<summary>🔊 Screen reader users — VoiceOver (macOS)</summary>
+
 ```
 Press T or VO+U → Tables → select the diff table
 VO+Shift+↓ to enter the table
 VO+→/← to navigate columns, VO+↑/↓ to navigate rows
 ```
 
-**What each line announces:**
-- Added lines: `"+ [code content]"` — or the screen reader reads "inserted" depending on how it handles the `+` character
-- Removed lines: `"- [code content]"` — or "deleted"
-- Context lines: the code without a `+` or `-`
+</details>
+
+**What each line announces / shows:**
+- Added lines: `"+ [code content]"` — or announced as "inserted"
+- Removed lines: `"- [code content]"` — or announced as "deleted"
+- Context lines: code without a `+` or `-`
 
 **Tip:** If the code on a line is very long, the screen reader will read the full line. For minified or generated files, consider collapsing the file in the tree and skipping it.
 
@@ -123,6 +218,19 @@ VO+→/← to navigate columns, VO+↑/↓ to navigate rows
 ### Step 5: Place an Inline Comment
 
 When you have a specific observation about a particular line, place an inline comment directly on it.
+
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+1. Hover your mouse over a line in the diff — a **blue `+`** (comment) button appears on the left
+2. Click it to open the inline comment box
+3. Type your comment
+4. Click **"Start a review"** (not "Add single comment" — see note below)
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
 
 ```
 Step 1: Navigate to the target line in the diff table (see Step 4)
@@ -135,9 +243,38 @@ Step 7: Tab to "Start a review" button (not "Add single comment" — see note be
 Step 8: Press Enter
 ```
 
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+```
+Step 1: Navigate to the target line in the diff table (see Step 4)
+Step 2: While focused on that line, Tab → look for a comment button
+Step 3: Alternatively: Quick Nav B → look for "Add a comment to this line"
+Step 4: VO+Space to open the inline comment box
+Step 5: VO+Shift+Down to interact with the text area
+Step 6: Type your comment
+Step 7: VO+Shift+Up to stop interacting → Tab to "Start a review" button
+Step 8: VO+Space
+```
+
+</details>
+
 > **Why "Start a review" instead of "Add single comment":** A single comment posts immediately and sends a notification for each one. "Start a review" batches all your comments and sends one notification when you submit — far less disruptive for the author.
 
 **Placing a multi-line comment:**
+
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+Click and drag across multiple line numbers in the diff gutter to select a range. A comment button appears for the selected range.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+
 ```
 Step 1: Navigate to the first line of the range
 Step 2: Press Shift+↓ to extend selection to additional lines
@@ -145,17 +282,37 @@ Step 3: A comment button appears for the selected range
 Step 4: Proceed as above
 ```
 
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+```
+Step 1: Navigate to the first line of the range
+Step 2: Shift+↓ to extend selection to additional lines
+Step 3: A comment button appears for the selected range
+Step 4: VO+Space to activate, then proceed as above
+```
+
+</details>
+
 ---
 
 ### Step 6: Read Existing Comments and Threads
 
-Inline comments from other reviewers appear as `h3` headings within the diff table. Navigate them with `3`.
+Inline comments from other reviewers appear as `h3` headings within the diff table. Each thread shows: reviewer username, comment body, replies, a "Reply" link and resolution button.
 
-Each thread reads:
-- Reviewer username
-- Comment body
-- Replies (if any)
-- A "Reply" link and resolution button
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+Comments appear inline within the diff as collapsible cards. Click **"Reply…"** to add to a thread. Click **"Resolve conversation"** to mark a thread done (requires write access).
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+
+Navigate them with `3` (jump to `h3` headings in the diff).
 
 To add to a thread:
 ```
@@ -170,11 +327,47 @@ To mark a thread as resolved (if you have write access):
 Tab to the "Resolve conversation" button → Enter
 ```
 
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+Navigate with Quick Nav `H` or `VO+Cmd+H` (jump to headings in the diff).
+
+To add to a thread:
+```
+Step 1: Quick Nav H to navigate to the thread heading
+Step 2: Tab to "Reply…" link
+Step 3: VO+Space → text area appears → VO+Shift+Down → type reply
+Step 4: Cmd+Return to submit the reply
+```
+
+To mark a thread as resolved (if you have write access):
+```
+Tab to the "Resolve conversation" button → VO+Space
+```
+
+</details>
+
 ---
 
 ### Step 7: Submit Your Review
 
 After adding all inline comments:
+
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+1. Click the **"Review changes"** button (top-right of the Files Changed page or bottom of the PR)
+2. A dialog opens with a summary text area and three radio buttons: Comment / Approve / Request changes
+3. Optionally type an overall summary in the text area
+4. Select your verdict
+5. Click **"Submit review"**
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
 
 ```
 Step 1: Press D → navigate to "Pull request navigation tabs"
@@ -182,17 +375,28 @@ Step 2: Press ← to return to the Conversation tab → Enter
 Step 3: Scroll to the bottom (End key, or ↓ repeatedly)
 Step 4: Alternatively: press B repeatedly → find "Review changes" button
 Step 5: Press Enter to open the review summary dialog
-```
-
-The review summary dialog contains:
-- A text area for an overall comment (optional but helpful)
-- Three radio buttons: "Comment", "Approve", "Request changes"
-
-```
 Step 6: Focus Mode → type your overall comment
 Step 7: Tab to the radio button group → ↑/↓ to select a verdict
 Step 8: Tab to "Submit review" button → Enter
 ```
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+```
+Step 1: VO+U → Landmarks → navigate to "Pull request navigation tabs"
+Step 2: VO+Left to return to the Conversation tab → VO+Space
+Step 3: VO+End or VO+Down to reach the bottom of the page
+Step 4: Alternatively: Quick Nav B → find "Review changes" button
+Step 5: VO+Space to open the review summary dialog
+Step 6: VO+Shift+Down → type your overall comment
+Step 7: VO+Shift+Up → Tab to the radio button group → VO+Left/Right to select a verdict
+Step 8: Tab to "Submit review" button → VO+Space
+```
+
+</details>
 
 **Verdicts and their meaning:**
 
@@ -207,11 +411,35 @@ Step 8: Tab to "Submit review" button → Enter
 ### Step 8: Re-request Review (for Authors)
 
 After you address review comments on your own PR:
+
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+Look in the right sidebar for the **Reviewers** section. Click the **re-request icon** (circular arrows) next to the reviewer's name to notify them that you've pushed changes.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+
 ```
 Step 1: From your PR's Conversation tab, find the reviewer's name in the sidebar (3 → "Reviewers" heading)
 Step 2: Activate the refresh/re-request icon next to their name
 Step 3: This re-notifies the reviewer that you've made changes
 ```
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+```
+Step 1: From your PR's Conversation tab, Quick Nav H or VO+Cmd+H to find the "Reviewers" heading in the sidebar
+Step 2: Tab or Quick Nav B to find the re-request icon ("Re-request review") next to the reviewer's name
+Step 3: VO+Space to activate — this re-notifies the reviewer that you've made changes
+```
+
+</details>
 
 ---
 
@@ -1024,5 +1252,6 @@ That's the power of "manual skill first, agent second." You're building that ski
 
 ---
 
-*Back: [Working with Pull Requests](05-working-with-pull-requests.md)*
-*Related: [Screen Reader Cheat Sheet](appendix-b-screen-reader-cheatsheet.md) | [Merge Conflicts](06-merge-conflicts.md) | [Git & Source Control in VS Code](12-git-source-control.md)*
+*Next: [Issue Templates](15-issue-templates.md)*
+*Back: [GitHub Copilot](13-github-copilot.md)*
+*Related: [Screen Reader Cheat Sheet](appendix-b-screen-reader-cheatsheet.md) | [Merge Conflicts](06-merge-conflicts.md) | [Git & Source Control in VS Code](11-git-source-control.md)*

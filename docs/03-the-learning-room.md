@@ -282,9 +282,23 @@ This is your collaboration space!
 
 ---
 
-## Screen Reader Tips for PR Sharing
+## Tips for PR Sharing
 
 ### Finding PRs to Review
+
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+1. Go to `github.com/[org]/learning-room`
+2. Click the **Pull Requests** tab
+3. Click the **Filters** dropdown → "Review requested" → your username
+4. Click any PR title to open it
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+
 ```
 1. Go to github.com/[org]/learning-room
 2. Press D → "Repository navigation"
@@ -294,7 +308,36 @@ This is your collaboration space!
 6. Press Enter to open a PR
 ```
 
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+```
+1. Go to github.com/[org]/learning-room
+2. VO+U → Landmarks → "Repository navigation"
+3. Quick Nav K → navigate to "Pull Requests" tab → VO+Space
+4. Filter: Quick Nav F, type "review-requested:@me", press Return
+5. Quick Nav H (or VO+Cmd+H) to navigate PR titles
+6. VO+Space to open a PR
+```
+
+</details>
+
 ### Reading a PR You're Assigned To
+
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+- **Conversation tab:** Scroll through the discussion. Reviewers are listed in the right sidebar.
+- **Files Changed tab:** Changed files are in a tree on the left. Click a filename to jump to its diff. Green = added lines, red = removed lines.
+- Line comments appear as inline cards within the diff.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+
 ```
 Conversation Tab (reading reviews):
   1. Press H → navigate headings
@@ -310,7 +353,43 @@ Files Changed Tab (what actually changed):
   4. Navigate line comments with H → nested headings
 ```
 
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+```
+Conversation Tab (reading reviews):
+  1. Quick Nav H or VO+Cmd+H → navigate headings
+  2. Listen for "Reviewers" heading
+  3. Your name appears as reviewer
+  4. VO+Down to read bot comment and peer feedback
+  
+Files Changed Tab (what actually changed):
+  1. Quick Nav H to navigate file headings
+  2. VO+U → Landmarks → "File tree" to explore files
+  3. VO+Shift+Down to interact with the diff table, then VO+Down for lines
+  4. Navigate line comments with Quick Nav H → nested headings
+```
+
+</details>
+
 ### Leaving a Review
+
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+1. Scroll to the comment box on the Conversation tab
+2. Type your review comment
+3. Click **"Review Changes"** (top-right of the Files Changed tab, or at the bottom of the PR page)
+4. Select your review type: Comment / Approve / Request changes
+5. Click **"Submit review"**
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+
 ```
 1. On Conversation tab, scroll to comment box
 2. Switch to Focus Mode (NVDA+Space / Insert+Z)
@@ -324,7 +403,41 @@ Files Changed Tab (what actually changed):
 7. Press Enter
 ```
 
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+```
+1. On Conversation tab, Quick Nav F or VO+U → Landmarks → "Add a comment"
+2. VO+Shift+Down to interact with the comment text area
+3. Type your review comment
+4. VO+Shift+Up → Tab to "Review Changes" button → VO+Space
+5. Select review type:
+   - "Comment" (just feedback)
+   - "Approve" (good to merge)
+   - "Request changes" (needs fixes)
+6. Tab to "Submit review" → VO+Space
+```
+
+</details>
+
 ### Responding to Feedback
+
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
+1. Open your PR (Pull Requests tab → click your PR)
+2. Read all comments and bot feedback
+3. Click in the comment box to reply
+4. Push your fixes to the same branch
+5. Comment: "Updates pushed, ready for review"
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS)</summary>
+
 ```
 1. Open your PR (find in Pull Requests tab)
 2. Read all comments and bot feedback
@@ -334,6 +447,23 @@ Files Changed Tab (what actually changed):
 6. Push your fixes to the same branch
 7. Comment: "Updates pushed, ready for review"
 ```
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (VoiceOver — macOS)</summary>
+
+```
+1. Open your PR (find in Pull Requests tab → Quick Nav H to navigate PR titles)
+2. Quick Nav H and VO+Down to read all comments and bot feedback
+3. VO+U → Landmarks → "Add a comment" to reach the comment box
+4. VO+Shift+Down → type your response
+5. Mention reviewers with @ if clarifying
+6. Push your fixes to the same branch
+7. Comment: "Updates pushed, ready for review"
+```
+
+</details>
 
 ---
 
@@ -386,4 +516,6 @@ This is not hypothetical. This is not simulation. This is real.
 
 ---
 
-*Next read: [Automation Guide](../learning-room/AUTOMATION.md) for detailed explanation of bot feedback, or [Available Challenges](../learning-room/docs/CHALLENGES.md) to find your first contribution.*
+*Next: [Working with Issues](04-working-with-issues.md)*
+*Back: [Navigating Repositories](02-navigating-repositories.md)*
+*Reference: [Automation Guide](../learning-room/AUTOMATION.md) | [Available Challenges](../learning-room/docs/CHALLENGES.md)*

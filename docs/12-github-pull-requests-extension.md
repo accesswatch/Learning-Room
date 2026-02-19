@@ -5,7 +5,9 @@
 >
 > This guide covers the GitHub Pull Requests and Issues extension: viewing open PRs, checking out PR branches for local testing, reviewing PRs with screen reader-accessible tools, creating PRs directly from VS Code, using PR templates, and syncing PR status with GitHub.
 >
-> **Prerequisites:** [Working with Pull Requests](05-working-with-pull-requests.md), [Git & Source Control in VS Code](12-git-source-control.md)
+> **Prerequisites:** [Working with Pull Requests](05-working-with-pull-requests.md), [Git & Source Control in VS Code](11-git-source-control.md)
+
+> **Mac keyboard shortcuts:** Throughout this chapter, all `Ctrl+` shortcuts use `Cmd+` on Mac, and `Alt+` shortcuts use `Option+` on Mac. For example: `Ctrl+Shift+P` → `Cmd+Shift+P`, `Ctrl+Shift+G` → `Cmd+Shift+G`, `Alt+F2` → `Option+F2`. Context menus (`Shift+F10` on Windows) use `Ctrl+Return` on Mac.
 
 ---
 
@@ -30,7 +32,7 @@ The GitHub Pull Requests and Issues extension integrates GitHub's PR workflow di
 
 **Method 1: Extensions Sidebar**
 
-1. Open Extensions sidebar: `Ctrl+Shift+X`
+1. Open Extensions sidebar: `Ctrl+Shift+X` (Mac: `Cmd+Shift+X`)
 2. Type "GitHub Pull Requests" in the search box
 3. Find "GitHub Pull Requests and Issues" (publisher: GitHub)
 4. Navigate to the extension in the results list
@@ -52,14 +54,14 @@ The GitHub Pull Requests and Issues extension integrates GitHub's PR workflow di
 After installation, VS Code prompts you to sign in:
 
 1. A notification appears: "Sign in to GitHub to use Pull Requests"
-2. Navigate to the notification (`Alt+N` or status bar navigation)
+2. Navigate to the notification (`Alt+N` / Mac: `Option+N`, or status bar navigation)
 3. Select "Sign in"
 4. VS Code opens your browser for GitHub OAuth authentication
 5. Authorize VS Code in the browser
 6. Return to VS Code — you're now signed in
 
 **Verify sign-in:**
-- Open Command Palette: `Ctrl+Shift+P`
+- Open Command Palette: `Ctrl+Shift+P` (Mac: `Cmd+Shift+P`)
 - Type "GitHub Pull Requests: Sign in"
 - If already signed in, the option shows "Sign out" instead
 
@@ -81,27 +83,31 @@ After installation, you gain:
 
 **Method 1: Activity Bar**
 
-1. Open Activity Bar (left-most sidebar icons)
-2. Navigate to the GitHub icon (usually 5th or 6th icon)
-3. Press `Enter`
+<details>
+<summary>🖥️ Visual / mouse users</summary>
 
-The GitHub view opens, showing two main sections:
+Click the **GitHub logo icon** in the Activity Bar (the vertical strip of icons on the far left). It's usually the 5th or 6th icon. The GitHub Pull Requests panel opens.
+
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS / VoiceOver)</summary>
+
+1. The Activity Bar is not always reachable by `Tab` from the editor
+2. Use `Ctrl+Shift+P` (Mac: `Cmd+Shift+P`) → type "GitHub Pull Requests: View Pull Request" or "Focus on Pull Requests View" → press `Enter`
+3. Alternatively press `Ctrl+Shift+G` (Mac: `Cmd+Shift+G`) to open Source Control, then `Tab` until you reach the Activity Bar icon strip
+
+The GitHub view opens, showing:
 - "Pull Requests"
 - "Issues"
 
+</details>
+
 **Method 2: Explorer Section**
 
-1. Open Explorer: `Ctrl+Shift+E`
-2. Scroll down (or navigate with `Arrow` keys)
-3. Find "GitHub Pull Requests" section
-4. Expand it with `Right Arrow`
-
-**Screen reader navigation:**
-- The panel is a collapsible tree view
-- Each PR is an expandable item
-- Use `Up/Down Arrow` to navigate PRs
-- Use `Right Arrow` to expand and see PR details
-- Use `Enter` to open the PR detail view
+1. Open Explorer: `Ctrl+Shift+E` (Mac: `Cmd+Shift+E`)
+2. Navigate with `Arrow` keys to find the "GitHub Pull Requests" section
+3. Expand it with `Right Arrow`
 
 ### Pull Request Tree Structure
 
@@ -182,12 +188,12 @@ VS Code:
 **Method 2: From the PR Tree**
 
 1. Navigate to the PR in the GitHub Pull Requests tree
-2. Press `Shift+F10` to open context menu
+2. Press `Shift+F10` (Mac: `Ctrl+Return`) to open context menu
 3. Select "Checkout Pull Request"
 
 **Method 3: Command Palette**
 
-1. `Ctrl+Shift+P`
+1. `Ctrl+Shift+P` (Mac: `Cmd+Shift+P`)
 2. Type "GitHub Pull Requests: Checkout"
 3. Select "GitHub Pull Requests: Checkout Pull Request"
 4. Choose the PR from the list
@@ -198,7 +204,7 @@ VS Code:
 
 After reviewing:
 
-1. `Ctrl+Shift+P`
+1. `Ctrl+Shift+P` (Mac: `Cmd+Shift+P`)
 2. Type "git checkout"
 3. Select "Git: Checkout to..."
 4. Choose your original branch (usually `main` or your feature branch)
@@ -236,7 +242,7 @@ When you open a file from "Files Changed":
 - Added lines shown with `+` prefix
 
 **To toggle between views:**
-- Command Palette: `Ctrl+Shift+P` → "Diff: Toggle Inline View"
+- Command Palette: `Ctrl+Shift+P` (Mac: `Cmd+Shift+P`) → "Diff: Toggle Inline View"
 
 ### Screen Reader Diff Review with Accessible Diff Viewer
 
@@ -244,7 +250,7 @@ When you open a file from "Files Changed":
 
 1. Open a changed file from the PR detail view
 2. Press `F7` to jump to the first diff hunk
-3. Press `Alt+F2` to open Accessible View
+3. Press `Alt+F2` (Mac: `Option+F2`) to open Accessible View
 4. Read the hunk content:
    - Unchanged lines (for context)
    - Removed lines (prefixed with `-`)
@@ -266,12 +272,14 @@ Hunk 1 of 3 — lines 12 to 18
 
 **This structured reading is far superior to navigating the visual diff manually.**
 
+> **VS Code October 2025 update:** Deleted lines (shown with the `-` prefix) are now fully selectable and copyable in the diff editor. Previously, deleted code could only be read, not selected. This is useful when you want to copy a deleted function signature, old variable name, or removed text for reference while writing your review comment.
+
 ### Flagging Issues During Review
 
 As you review, note any problems:
 
 1. Navigate to the specific line in the diff
-2. Press `Shift+F10` for context menu
+2. Press `Shift+F10` (Mac: `Ctrl+Return`) for context menu
 3. Select "Add Comment"
 4. Type your comment in the input that appears
 5. Choose "Single Comment" or "Start Review"
@@ -287,22 +295,22 @@ After you've pushed commits to a feature branch, you can create a PR without lea
 
 ### Prerequisites
 
-1. You've created a branch (see [Git & Source Control: Branch Management](12-git-source-control.md#3-branch-management))
+1. You've created a branch (see [Git & Source Control: Branch Management](11-git-source-control.md#3-branch-management))
 2. You've made commits
-3. You've pushed the branch to GitHub (`Ctrl+Shift+P` → "Git: Push")
+3. You've pushed the branch to GitHub (`Ctrl+Shift+P` / Mac: `Cmd+Shift+P` → "Git: Push")
 
 ### Creating the PR
 
 **Method 1: Command Palette (Recommended)**
 
-1. `Ctrl+Shift+P`
+1. `Ctrl+Shift+P` (Mac: `Cmd+Shift+P`)
 2. Type "GitHub Pull Requests: Create"
 3. Select "GitHub Pull Requests: Create Pull Request"
 4. A form opens in the editor
 
 **Method 2: Source Control Panel**
 
-1. Open Source Control: `Ctrl+Shift+G`
+1. Open Source Control: `Ctrl+Shift+G` (Mac: `Cmd+Shift+G`)
 2. After pushing, a "Create Pull Request" button appears
 3. Press `Enter` on that button
 
@@ -324,6 +332,7 @@ The form has these fields:
 - Explain what changed and why
 - Reference the issue you're fixing: "Fixes #42"
 - If a PR template exists, VS Code loads it here (see Section 6)
+- **Copilot-assisted description:** An AI sparkle icon in the description toolbar lets you generate a description from your commits. When a PR template exists, Copilot fills in the template sections intelligently rather than replacing the template — it populates the checklist items and description sections with content derived from your changes.
 
 **Base branch (target):**
 - Usually `main` or `develop`
@@ -415,7 +424,7 @@ When you create a PR in VS Code, the extension automatically loads the template 
 4. Replace each `<!-- comment -->` with your content
 5. Check checkboxes by typing `x` between the brackets: `- [x]`
 
-**Keyboard tip:** Use `Ctrl+F` to jump to each `<!--` placeholder, fill it in, then `F3` to jump to the next one.
+**Keyboard tip:** Use `Ctrl+F` (Mac: `Cmd+F`) to jump to each `<!--` placeholder, fill it in, then `F3` to jump to the next one.
 
 ---
 
@@ -431,7 +440,7 @@ When reviewing a PR, you can:
 
 1. Open a file from the PR's "Files Changed" list
 2. Navigate to the line you want to comment on
-3. Press `Shift+F10` to open context menu
+3. Press `Shift+F10` (Mac: `Ctrl+Return`) to open context menu
 4. Select "Add Comment"
 5. Type your comment
 6. Choose "Add Single Comment" (posts immediately) or "Start Review" (saves as a draft)
@@ -453,7 +462,7 @@ When reviewing a PR, you can:
 
 When you've reviewed all files:
 
-1. `Ctrl+Shift+P`
+1. `Ctrl+Shift+P` (Mac: `Cmd+Shift+P`)
 2. Type "GitHub Pull Requests: Submit Review"
 3. Select "GitHub Pull Requests: Finish Review"
 4. Choose review type:
@@ -486,6 +495,10 @@ Before merging, verify:
 3. No merge conflicts exist
 4. Branch is up to date with base branch (main)
 
+**Changing the base branch:** If the PR was opened against the wrong base branch, you can change it from the PR detail view in VS Code. Scroll to the base branch field in the PR detail view and activate the dropdown to select a different target branch. This saves opening the PR on GitHub.com.
+
+**Converting to/from draft:** You can also convert a ready PR back to a draft (or mark a draft as ready for review) directly from the PR detail view. Scroll to the Status section and use the context menu on the PR title or the "..." more actions button.
+
 ### Merging from VS Code
 
 **Method 1: PR Detail View**
@@ -499,7 +512,7 @@ Before merging, verify:
 
 **Method 2: Command Palette**
 
-1. `Ctrl+Shift+P`
+1. `Ctrl+Shift+P` (Mac: `Cmd+Shift+P`)
 2. Type "GitHub Pull Requests: Merge"
 3. Select "GitHub Pull Requests: Merge Pull Request"
 4. Choose the PR from the list
@@ -533,18 +546,20 @@ Ctrl+Shift+P → "Git: Checkout to..." → select "main"
 Ctrl+Shift+P → "Git: Pull"
 ```
 
+*(Mac users: use `Cmd+Shift+P` instead of `Ctrl+Shift+P`)*
+
 ### Deleting the Feature Branch
 
 After merging, the feature branch is no longer needed:
 
-1. `Ctrl+Shift+P`
+1. `Ctrl+Shift+P` (Mac: `Cmd+Shift+P`)
 2. Type "git delete branch"
 3. Select "Git: Delete Branch..."
 4. Choose the merged branch
 
 This deletes the branch locally. To delete it on GitHub too:
 
-1. `Ctrl+Shift+P`
+1. `Ctrl+Shift+P` (Mac: `Cmd+Shift+P`)
 2. Type "git push"
 3. Select "Git: Push (delete remote branch)"
 
@@ -552,16 +567,16 @@ This deletes the branch locally. To delete it on GitHub too:
 
 ## Keyboard Shortcuts — GitHub Pull Requests Extension
 
-| Action | Shortcut |
-|--------|----------|
-| Open GitHub view | Activity Bar → GitHub icon → `Enter` |
-| Create Pull Request | `Ctrl+Shift+P` → "GitHub Pull Requests: Create" |
-| Checkout PR | `Ctrl+Shift+P` → "GitHub Pull Requests: Checkout" |
-| Submit Review | `Ctrl+Shift+P` → "GitHub Pull Requests: Finish Review" |
-| Merge PR | `Ctrl+Shift+P` → "GitHub Pull Requests: Merge" |
-| Add inline comment | `Shift+F10` (in diff view) → "Add Comment" |
-| Navigate diff hunks | `F7` (next), `Shift+F7` (previous) |
-| Accessible Diff Viewer | `Alt+F2` (in diff view) |
+| Action | Windows | Mac |
+|--------|---------|-----|
+| Open GitHub view | Activity Bar → GitHub icon → `Enter` | Activity Bar → GitHub icon → `Enter` |
+| Create Pull Request | `Ctrl+Shift+P` → "GitHub Pull Requests: Create" | `Cmd+Shift+P` → "GitHub Pull Requests: Create" |
+| Checkout PR | `Ctrl+Shift+P` → "GitHub Pull Requests: Checkout" | `Cmd+Shift+P` → "GitHub Pull Requests: Checkout" |
+| Submit Review | `Ctrl+Shift+P` → "GitHub Pull Requests: Finish Review" | `Cmd+Shift+P` → "GitHub Pull Requests: Finish Review" |
+| Merge PR | `Ctrl+Shift+P` → "GitHub Pull Requests: Merge" | `Cmd+Shift+P` → "GitHub Pull Requests: Merge" |
+| Add inline comment | `Shift+F10` (in diff view) → "Add Comment" | `Ctrl+Return` (in diff view) → "Add Comment" |
+| Navigate diff hunks | `F7` (next), `Shift+F7` (previous) | `F7` (next), `Shift+F7` (previous) |
+| Accessible Diff Viewer | `Alt+F2` (in diff view) | `Option+F2` (in diff view) |
 
 ---
 
@@ -572,16 +587,16 @@ This deletes the branch locally. To delete it on GitHub too:
 **Issue:** The GitHub Pull Requests panel is empty.
 
 **Solutions:**
-1. Verify you're signed in: `Ctrl+Shift+P` → "GitHub Pull Requests: Sign in"
+1. Verify you're signed in: `Ctrl+Shift+P` (Mac: `Cmd+Shift+P`) → "GitHub Pull Requests: Sign in"
 2. Check you have a folder open containing a Git repository
-3. Refresh the panel: `Ctrl+Shift+P` → "GitHub Pull Requests: Refresh Pull Requests List"
+3. Refresh the panel: `Ctrl+Shift+P` (Mac: `Cmd+Shift+P`) → "GitHub Pull Requests: Refresh Pull Requests List"
 
 ### "Could not create pull request"
 
 **Issue:** PR creation fails.
 
 **Solutions:**
-1. Verify you've pushed your branch: `Ctrl+Shift+P` → "Git: Push"
+1. Verify you've pushed your branch: `Ctrl+Shift+P` (Mac: `Cmd+Shift+P`) → "Git: Push"
 2. Check you have write access to the repository
 3. Ensure your branch is ahead of the base branch (has new commits)
 
@@ -590,12 +605,28 @@ This deletes the branch locally. To delete it on GitHub too:
 **Issue:** VS Code can't connect to GitHub.
 
 **Solutions:**
-1. Sign out and sign back in: `Ctrl+Shift+P` → "GitHub Pull Requests: Sign out" → then sign in again
-2. Check your GitHub Personal Access Token (see [Appendix C: Git Authentication](appendix-c-git-authentication.md))
+1. Sign out and sign back in: `Ctrl+Shift+P` (Mac: `Cmd+Shift+P`) → "GitHub Pull Requests: Sign out" → then sign in again
+2. Check your GitHub Personal Access Token (see [Appendix D: Git Authentication](appendix-d-git-authentication.md))
 3. Verify network connection
 
 ---
 
-*Next: [GitHub Copilot](14-github-copilot.md)*  
-*Back: [Git & Source Control in VS Code](12-git-source-control.md)*  
-*Related: [Working with Pull Requests](05-working-with-pull-requests.md) | [Issue Templates](16-issue-templates.md)*
+## Try It: Review a PR from VS Code
+
+**Time:** 3 minutes | **What you need:** VS Code with GitHub Pull Requests extension installed and signed in
+
+1. **Open the PR view** — Press `Ctrl+Shift+P` → type `Pull Requests: Focus on GitHub Pull Requests View` → `Enter`.
+2. **Find a PR** — Navigate the tree with arrow keys. Expand a PR to see its changed files.
+3. **Open a diff** — Press `Enter` on a changed file. The diff editor opens.
+4. **Use the Accessible Diff Viewer** — Press `F7` to jump to the first change. Your screen reader announces what was added or removed. Press `F7` again to move to the next change.
+5. **Leave a comment** — Position your cursor on a line you want to comment on, then press `Ctrl+Shift+P` → `Pull Request: Add Comment on Current Diff Line`. Type a brief, constructive comment and submit.
+
+**You're done.** You just reviewed a pull request entirely from VS Code.
+
+> **What success feels like:** You read a diff, heard the changes announced by your screen reader, and left feedback — all without opening a browser. This is how many developers review code every day.
+
+---
+
+*Next: [GitHub Copilot](13-github-copilot.md)*  
+*Back: [Git & Source Control in VS Code](11-git-source-control.md)*  
+*Related: [Working with Pull Requests](05-working-with-pull-requests.md) | [Issue Templates](15-issue-templates.md)*

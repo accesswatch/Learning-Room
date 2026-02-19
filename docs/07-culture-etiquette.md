@@ -69,16 +69,28 @@ When you fork a repository, you get a snapshot of the project at that moment. Th
 
 ### Method 1: GitHub Web Interface (Easiest)
 
+<details>
+<summary>🖥️ Visual / mouse users</summary>
+
 1. Navigate to your fork's main page: `github.com/your-username/repo-name`
 2. Look for the sync indicator: "This branch is X commits behind upstream/main"
-3. Select the **"Sync fork"** button
-4. Select **"Update branch"**
+3. Click the **"Sync fork"** button
+4. Click **"Update branch"**
 
 GitHub merges the upstream changes into your fork automatically.
 
-**Screen reader navigation:**
-- The sync button appears in the landmark containing the branch selector
-- After pressing `D` to reach this landmark, press `B` to cycle buttons until you hear "Sync fork"
+</details>
+
+<details>
+<summary>🔊 Screen reader users (NVDA / JAWS / VoiceOver)</summary>
+
+1. Navigate to your fork's main page: `github.com/your-username/repo-name`
+2. The sync button appears in the landmark that contains the branch selector
+3. Press `D` to cycle through landmarks until you reach that region
+4. Press `B` to cycle buttons until you hear "Sync fork" → press `Enter`
+5. A dialog or page update presents "Update branch" — activate it
+
+</details>
 
 ### Method 2: Git Command Line (VS Code Terminal)
 
@@ -527,6 +539,31 @@ Specific instructions for how to contribute to this project:
 | "This is a major issue." | "This is a blocker for users who rely on keyboard navigation." |
 | "Can't you just..." | "One approach that might work is..." |
 | "No." | "I don't think this approach is right for this project because..." |
+
+---
+
+## Try It: Rewrite One Comment
+
+**Time:** 2 minutes | **What you need:** Just your brain
+
+Read this code review comment and rewrite it to be constructive:
+
+> **Original:** "This alt text is bad. Fix it."
+
+Use the five-step feedback anatomy from this chapter:
+1. **What** you noticed
+2. **Why** it matters
+3. **What** you suggest
+4. **Why** the suggestion helps
+5. **Encouragement**
+
+Here's one way:
+
+> **Rewritten:** "The alt text on this image says 'image1.png' — screen reader users will hear the filename instead of what's in the image. Could you describe what the screenshot shows, like 'Settings page with the Accessibility section expanded'? That way everyone gets the same information. Nice catch adding the image though — it really helps illustrate the step!"
+
+Notice: same feedback, completely different experience for the person receiving it.
+
+> **What success feels like:** You turned a two-word dismissal into help that someone would actually want to receive. That's the difference between a comment that fixes code and a comment that also keeps a contributor coming back.
 
 ---
 

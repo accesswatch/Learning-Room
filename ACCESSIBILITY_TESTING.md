@@ -292,10 +292,38 @@ Screen reader should announce: "Email address, edit text, required"
 Actual:
 Screen reader announces: "Edit text, required"
 
-Screen reader tested: NVDA 2026.1
+Screen reader tested: NVDA 2025.3.3
 Browser: Chrome 130
 OS: Windows 11
 ```
+
+---
+
+## Testing the Built HTML Output
+
+This repository includes a build system that converts all Markdown files to HTML (see `BUILD.md`). If participants will use the HTML versions, test them separately:
+
+### Heading Hierarchy
+- [ ] Each HTML page has exactly one `<h1>` element
+- [ ] Heading levels don't skip (no `<h1>` → `<h3>` jumps)
+- [ ] Navigation footers don't break the heading outline
+
+### Link Targets
+- [ ] Internal links resolve correctly (`.md` links are converted to `.html`)
+- [ ] Anchor links (`#section-name`) scroll to the correct position
+- [ ] External links open and are not broken
+
+### Landmark Structure
+- [ ] The `<main>` element wraps the primary content
+- [ ] Navigation elements are properly structured
+- [ ] Screen reader can identify page regions using landmarks (`D` key in NVDA/JAWS)
+
+### Validation
+- [ ] Run pages through the [W3C HTML Validator](https://validator.w3.org/) — check for errors
+- [ ] Run pages through [WAVE](https://wave.webaim.org/) — check for accessibility errors
+- [ ] Verify syntax-highlighted code blocks are readable (not color-only)
+
+**Quick test:** Open `html/index.html` in a browser, enable your screen reader, and navigate using `H` (headings) and `K` (links). Every heading and link should be announced clearly.
 
 ---
 
@@ -303,7 +331,7 @@ OS: Windows 11
 
 - **Having trouble testing?** See `TROUBLESHOOTING.md`
 - **Need screen reader help?** See `docs/appendix-b-screen-reader-cheatsheet.md`
-- **Want resources?** See `RESOURCES.md`
+- **Want resources?** See `docs/appendix-u-resources.md`
 
 ---
 

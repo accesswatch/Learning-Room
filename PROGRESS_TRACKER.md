@@ -52,25 +52,27 @@
 
 ---
 
-## Chapter 2: Day 1 Agenda
-**Time:** 2 hours (workshop context)  |  **What You'll Do:** Attend or follow Day 1 structure
+## Chapter 2: Navigating Repositories
+**Time:** 45 minutes  |  **What You'll Do:** Practice exploring real repositories
 
-- [ ] Understand workshop goals and schedule
-- [ ] Know what Day 2 will cover
-- [ ] Familiar with facilitator role (if applicable)
+- [ ] Read `docs/02-navigating-repositories.md`
+- [ ] Navigate to 3 different repos and identify key files
+- [ ] Use keyboard navigation (accessibility focus)
+- [ ] Found: README, CONTRIBUTING, License, Issues template
+- [ ] Understand the code structure and file tree
 
 **Status:** ☐ Not started  ☐ In progress  ☐ Complete
 
 ---
 
-## Chapter 3: Navigating Repositories
-**Time:** 45 minutes  |  **What You'll Do:** Practice exploring real repositories
+## Chapter 3: The Learning Room
+**Time:** 30 minutes  |  **What You'll Do:** Understand the shared practice environment
 
-- [ ] Read `docs/03-navigating-repositories.md`
-- [ ] Navigate to 3 different repos and find key files
-- [ ] Use keyboard navigation (accessibility focus)
-- [ ] Found: README, CONTRIBUTING, License, Issues template
-- [ ] Understand: What is the code structure?
+- [ ] Read `docs/03-the-learning-room.md`
+- [ ] Understand: How the Learning Room automation works
+- [ ] Know: Where to find your first contribution challenge
+- [ ] Reviewed: Available practice challenges
+- [ ] Understand: How bot feedback and peer review work
 
 **Status:** ☐ Not started  ☐ In progress  ☐ Complete
 
@@ -80,14 +82,13 @@
 **Time:** 1 hour  |  **What You'll Do:** Create, read, and comment on issues
 
 - [ ] Read `docs/04-working-with-issues.md`
-- [ ] ✅ **Exercise A:** Create an issue in a practice repo
-- [ ] ✅ **Exercise B:** Comment on someone else's issue
-- [ ] ✅ **Exercise C:** Add a label and assignment to an issue
+- [ ] Create an issue in a practice repo
+- [ ] Comment on someone else's issue
+- [ ] Add a label and assignment to an issue
 - [ ] Know how to: Search issues, filter by label, use issue templates
 - [ ] Understand: Issue lifecycle (Open → In Progress → Done)
 
-**Status:** ☐ Not started  ☐ In progress  ☐ Complete  
-**Exercises Completed:** ☐ A  ☐ B  ☐ C  ☐ All
+**Status:** ☐ Not started  ☐ In progress  ☐ Complete
 
 ---
 
@@ -95,14 +96,13 @@
 **Time:** 1 hour  |  **What You'll Do:** Submit, review, and merge PRs
 
 - [ ] Read `docs/05-working-with-pull-requests.md`
-- [ ] ✅ **Exercise A:** Create a pull request
-- [ ] ✅ **Exercise B:** Review a PR and add comments
-- [ ] ✅ **Exercise C:** Respond to PR feedback
+- [ ] Create a pull request
+- [ ] Review a PR and add comments
+- [ ] Respond to PR feedback
 - [ ] Know how to: See diff, leave suggestions, approve
 - [ ] Understand: PR merge strategies (Merge, Squash, Rebase)
 
-**Status:** ☐ Not started  ☐ In progress  ☐ Complete  
-**Exercises Completed:** ☐ A  ☐ B  ☐ C  ☐ All
+**Status:** ☐ Not started  ☐ In progress  ☐ Complete
 
 ---
 
@@ -158,70 +158,60 @@
 
 ---
 
-## Chapter 10: Day 2 Agenda
-**Time:** 2 hours (workshop context)  |  **What You'll Do:** Follow Day 2 structure (Agents & Advanced)
+## Chapter 10: VS Code Setup & Accessibility Basics
+**Time:** 45 minutes  |  **What You'll Do:** Set up VS Code for accessible development
 
-- [ ] Attended or watched Day 2 introduction
-- [ ] Understand: Day 2 focuses on Agent Forge (automation)
-- [ ] Ready to learn about: Copilot agents
+- [ ] Read `docs/10-vscode-basics.md`
+- [ ] Installed: VS Code with accessibility settings configured
+- [ ] Enabled: Screen reader mode and keyboard navigation
+- [ ] Know how to: Use the Command Palette (`Ctrl+Shift+P`)
+- [ ] Configured: Editor preferences for your workflow
 
 **Status:** ☐ Not started  ☐ In progress  ☐ Complete
 
 ---
 
-## Chapter 11: VS Code & Copilot
-**Time:** 45 minutes  |  **What You'll Do:** Set up AI-assisted coding
+## Chapter 11: Git & Source Control in VS Code
+**Time:** 1 hour  |  **What You'll Do:** Master Git operations within VS Code
 
-- [ ] Read `docs/11-vscode-copilot.md`
-- [ ] Installed: VS Code + GitHub Copilot extension
+- [ ] Read `docs/11-git-source-control.md`
+- [ ] Know how to: Clone, branch, commit, push from VS Code
+- [ ] Used: Source Control panel (`Ctrl+Shift+G`)
+- [ ] Understand: Staging, committing, and syncing changes
+- [ ] Configured: Git credentials and remote tracking
+
+**Status:** ☐ Not started  ☐ In progress  ☐ Complete
+
+---
+
+## Chapter 12: GitHub Pull Requests Extension
+**Time:** 45 minutes  |  **What You'll Do:** Review and create PRs from VS Code
+
+- [ ] Read `docs/12-github-pull-requests-extension.md`
+- [ ] Installed: GitHub Pull Requests and Issues extension
+- [ ] Know how to: View, review, and create PRs in VS Code
+- [ ] Understand: Inline code review workflow
+- [ ] Practice: Commented on a PR from within VS Code
+
+**Status:** ☐ Not started  ☐ In progress  ☐ Complete
+
+---
+
+## Chapter 13: GitHub Copilot
+**Time:** 1 hour  |  **What You'll Do:** Use AI-assisted coding and chat
+
+- [ ] Read `docs/13-github-copilot.md`
+- [ ] Installed: GitHub Copilot and Copilot Chat extensions
 - [ ] Verified: Copilot Chat works (`Ctrl+Shift+I`)
-- [ ] Know how to: Use code suggestions and explanations
-- [ ] Configured: Keyboard shortcuts for your workflow
+- [ ] Know how to: Use inline suggestions, chat, and custom instructions
+- [ ] Understand: Chat participants, agents, and model selection
 
 **Status:** ☐ Not started  ☐ In progress  ☐ Complete
 
 ---
 
-## Chapter 12: Issue Templates
-**Time:** 1 hour  |  **What You'll Do:** Design templates for your project
-
-- [ ] Read `docs/12-issue-templates.md`
-- [ ] Understand: YAML syntax for templates
-- [ ] Created: at least 1 custom template
-- [ ] Tested: Template appears when creating issue
-- [ ] Validated: YAML is syntactically correct
-
-**Status:** ☐ Not started  ☐ In progress  ☐ Complete
-
----
-
-## Chapter 13: Resources
-**Time:** Reference  |  **What You'll Do:** Know where to find help
-
-- [ ] Bookmarked: `RESOURCES.md`
-- [ ] Know how to: Use Quick Reference when stuck
-- [ ] Know how to: Check Troubleshooting Guide
-- [ ] Know how to: Access Glossary for definitions
-
-**Status:** ☐ Not started  ☐ In progress  ☐ Complete
-
----
-
-## Chapter 14: GitHub Actions & Workflows
-**Time:** 1 hour  |  **What You'll Do:** Automate your repository
-
-- [ ] Read `docs/14-github-actions-workflows.md`
-- [ ] Understand: What is a workflow? (YAML file that runs CI/CD)
-- [ ] Viewed: Workflow files in `.github/workflows/`
-- [ ] Triggered: A workflow by creating PR or commit
-- [ ] Know the difference: Workflow vs. Action
-
-**Status:** ☐ Not started  ☐ In progress  ☐ Complete
-
----
-
-## Chapter 15: Accessible Code Review
-**Time:** 1 hour + Exercises  |  **What You'll Do:** Review code accessibly
+## Chapter 14: Accessible Code Review
+**Time:** 1.5 hours + Exercises  |  **What You'll Do:** Review code accessibly
 
 ### Reading & Concepts
 - [ ] Read `docs/14-accessible-code-review.md`
@@ -230,53 +220,29 @@
 - [ ] Familiar with: VS Code Accessible Diff Viewer (F7)
 
 ### Exercises
-- [ ] ✅ **Exercise A:** Review issue accessibility using web reader
-  - [ ] Follow all 9 steps
-  - [ ] Test with your screen reader (NVDA/JAWS/VoiceOver)
-  - [ ] Complete reflection
-- [ ] ✅ **Exercise B:** Use VS Code Accessible Diff Viewer
-  - [ ] Follow all 9 steps
-  - [ ] Open a PR diff in F7 accessible mode
-  - [ ] Navigate diff using keyboard only
-- [ ] ✅ **Exercise C:** Comment on PR accessibility
-  - [ ] Follow all 6 steps + checkpoint
-  - [ ] Leave constructive feedback on actual PR
+- [ ] **Exercise A:** Review issue accessibility using web reader
+- [ ] **Exercise B:** Use VS Code Accessible Diff Viewer
+- [ ] **Exercise C:** Comment on PR accessibility
 
 **Status:** ☐ Not started  ☐ In progress  ☐ Complete  
 **Exercises Completed:** ☐ A  ☐ B  ☐ C  ☐ All
 
 ---
 
-## Chapter 16: Issue Templates (Advanced)
-**Time:** 1.5 hours + Exercises  |  **What You'll Do:** Create accessible templates
-
-### Day 2 Amplifier: Template Builder Preview
-- [ ] Understand: Template Builder agent automates template creation
-- [ ] Know what happens: Guided wizard walk-through
+## Chapter 15: Issue Templates
+**Time:** 1.5 hours + Exercises  |  **What You'll Do:** Create accessible issue templates
 
 ### Reading & Concepts
 - [ ] Read `docs/15-issue-templates.md`
-- [ ] Understand: Advanced template fields and validation
-- [ ] Know how to: Test templates locally before deploying
+- [ ] Understand: YAML syntax for templates
+- [ ] Know how to: Create and test custom templates
 - [ ] Understand: Form accessibility in templates
 
 ### Exercises
-- [ ] ✅ **Exercise A:** Create template using GitHub web UI
-  - [ ] Complete all 8 steps
-  - [ ] Verify template shows on issue creation page
-  - [ ] Reflection: What makes your template accessible?
-- [ ] ✅ **Exercise B:** Create template locally in VS Code
-  - [ ] Follow all 10 steps (clone → commit → merge)
-  - [ ] Syntax validation with YAML tool
-  - [ ] Test template on GitHub
-- [ ] ✅ **Exercise C:** Create PR for accessibility template
-  - [ ] Follow all 7 steps
-  - [ ] Respond to feedback
-  - [ ] Get it merged
-- [ ] ✅ **Exercise D:** Design custom template for your project
-  - [ ] Follow all 8 parts (requirements → test → evaluate)
-  - [ ] Field count: 4-6 fields recommended
-  - [ ] Includes required field validation
+- [ ] **Exercise A:** Create template using GitHub web UI
+- [ ] **Exercise B:** Create template locally in VS Code
+- [ ] **Exercise C:** Create PR for accessibility template
+- [ ] **Exercise D:** Design custom template for your project
 
 **Status:** ☐ Not started  ☐ In progress  ☐ Complete  
 **Exercises Completed:** ☐ A  ☐ B  ☐ C  ☐ D  ☐ All
@@ -322,6 +288,7 @@ Know what each does (read Chapter 16 for details):
 - [ ] **Appendix A: Glossary** — Read as needed for term definitions
   - [ ] Saved link or printed for reference
 - [ ] **Appendix B: Screen Reader Cheatsheet** — Bookmark this!
+- [ ] **Appendix Y: Accessing Workshop Materials** — How to download, read offline, and keep updated
   - [ ] NVDA commands bookmarked
   - [ ] JAWS commands bookmarked
   - [ ] VoiceOver commands bookmarked
@@ -330,12 +297,43 @@ Know what each does (read Chapter 16 for details):
 
 ## Overall Progress Summary
 
+### Exercises by Chapter
+
+The workshop includes structured exercises in the following chapters. Use this table to track your exercise completion separately from chapter reading:
+
+| Chapter | Exercise | Description | Done? |
+|---------|----------|-------------|-------|
+| **Ch 1** | 60-Second Orientation | Press `1`, `D`, `2`, `H` on a repo page — prove you can navigate by ear | ☐ |
+| **Ch 2** | Five-Tab Tour | Visit Code, Issues, PRs, file finder, and README on a real repo | ☐ |
+| **Ch 3** | Individual Challenges | 12 progressive challenges in `learning-room/docs/CHALLENGES.md` | ☐ |
+| **Ch 3** | Group Challenges | 7 collaborative exercises in `learning-room/docs/GROUP_CHALLENGES.md` | ☐ |
+| **Ch 4** | File Your First Issue | Create an introduction issue in the Learning Room | ☐ |
+| **Ch 5** | Read a Real PR | Navigate a PR's description, conversation, and diff | ☐ |
+| **Ch 6** | Read a Conflict | Read merge conflict markers and identify both versions | ☐ |
+| **Ch 7** | Rewrite One Comment | Transform a dismissive review comment into constructive feedback | ☐ |
+| **Ch 8** | Label and Link | Add a label to an issue and create a cross-reference | ☐ |
+| **Ch 9** | Tame Your Inbox | Mark a notification as done and configure watch settings | ☐ |
+| **Ch 10** | Try It Right Now | Open a repo in github.dev, enable screen reader mode, explore the interface | ☐ |
+| **Ch 11** | Clone, Branch, Commit | Complete the full Git cycle: clone → branch → edit → stage → commit → push | ☐ |
+| **Ch 12** | Review a PR from VS Code | Open a diff, use Accessible Diff Viewer (`F7`), leave a comment | ☐ |
+| **Ch 13** | First Copilot Conversation | Ask Copilot Chat a question about your repo and read the response | ☐ |
+| **Ch 14** | Exercise A | Complete a web-based PR review using screen reader navigation | ☐ |
+| **Ch 14** | Exercise B | Use the VS Code Accessible Diff Viewer on the same PR | ☐ |
+| **Ch 14** | Exercise C | Compare web vs. VS Code review and document findings | ☐ |
+| **Ch 15** | Exercise A | Use an existing issue template in Agent Forge | ☐ |
+| **Ch 15** | Exercise B | Create an accessibility bug report template locally | ☐ |
+| **Ch 15** | Exercise C | Submit your template upstream via a real PR | ☐ |
+| **Ch 15** | Exercise D | Design a custom template for your own project | ☐ |
+| **Ch 16** | Exercise 1 | Generate a template with the @template-builder agent | ☐ |
+| **Ch 16** | Exercise 2 | Extend the @template-builder agent with new workflows | ☐ |
+| **Ch 16** | Exercise 3 | Practice iterative refinement with agents | ☐ |
+
 ### Core Path (Recommended first)
-- Chapters 0-10: ☐ Not started  ☐ In progress  ☐ Complete
+- Chapters 0-9: ☐ Not started  ☐ In progress  ☐ Complete
 - **Time:** ~8 hours (includes workshop time)
 
 ### Advanced Path (Day 2)
-- Chapters 11-17: ☐ Not started  ☐ In progress  ☐ Complete
+- Chapters 10-16: ☐ Not started  ☐ In progress  ☐ Complete
 - **Time:** ~5 hours (includes exercises)
 
 ### Full Curriculum
@@ -349,8 +347,8 @@ Know what each does (read Chapter 16 for details):
 | Section | Time | Status |
 |---------|------|--------|
 | Pre-Workshop | 30 min | ☐ |
-| Day 1 Core (Ch 0-10) | 7.5 hrs | ☐ |
-| Day 2 Advanced (Ch 11-17) | 5 hrs | ☐ |
+| Day 1 Core (Ch 0-9) | 7.5 hrs | ☐ |
+| Day 2 Advanced (Ch 10-16) | 5 hrs | ☐ |
 | Reference/Appendices | As needed | ☐ |
 | **Total** | **~13 hrs** | ☐ |
 
@@ -364,24 +362,24 @@ Know what each does (read Chapter 16 for details):
 2. Ch 1 (Structure) — 1 hr
 3. Ch 4 (Issues) — 1 hr
 4. Ch 5 (PRs) — 1 hr
-5. Ch 15 (Accessible Review) — 1 hr
-6. Ch 17 (Agents for learning) — 1.5 hrs
+5. Ch 14 (Accessible Review) — 1.5 hrs
+6. Ch 16 (Agent Forge) — 1.5 hrs
 
-**Total: ~6 hours**
+**Total: ~6.5 hours**
 
 ### If You're a **Maintainer** (Manage projects)
 **Recommended order:**
 1. Ch 0 (Setup) — 30 min
 2. Ch 8 (Labels/Milestones) — 45 min
-3. Ch 16 (Templates) — 1.5 hrs
-4. Ch 14 (Workflows) — 1 hr
-5. Ch 17 (All 6 agents) — 1.5 hrs
+3. Ch 15 (Issue Templates) — 1.5 hrs
+4. Ch 14 (Accessible Code Review) — 1.5 hrs
+5. Ch 16 (Agent Forge) — 1.5 hrs
 
 **Total: ~5.5 hours**
 
 ### If You're a **Facilitator** (Teaching others)
 **Recommended order:**
-1. Full curriculum (0-17) — **11+ hours**
+1. Full curriculum (0-16) — **11+ hours**
 2. Read FACILITATOR.md
 3. Practice all exercises before leading workshop
 
@@ -414,7 +412,7 @@ Know what each does (read Chapter 16 for details):
 
 - **Check:** `TROUBLESHOOTING.md` (common issues & fixes)
 - **Search:** `QUICK_REFERENCE.md` (commands & shortcuts)
-- **Look up:** `RESOURCES.md` (external documentation)
+- **Look up:** `docs/appendix-u-resources.md` (external documentation)
 - **Define:** `docs/appendix-a-glossary.md` (term definitions)
 - **Ask:** Open an issue or discussion on GitHub
 

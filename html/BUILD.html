@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="GitHub Learning Room - Open Source Assistive Technology Hackathon">
-  <title>HTML Documentation Build System - GitHub Learning Room</title>
+  <title>HTML Documentation Build System — GitHub Learning Room</title>
   <link rel="stylesheet" href="./styles/github-markdown.css">
   <link rel="stylesheet" href="./styles/highlight.css">
   <link rel="stylesheet" href="./styles/custom.css">
@@ -24,41 +24,41 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <nav aria-label="Breadcrumb" class="breadcrumb">
-    <a href="./index.html">Home</a>
+    <a href="./index.html">Home</a> <span aria-hidden="true">›</span> <span aria-current="page">HTML Documentation Build System</span>
   </nav>
-  <main class="markdown-body">
+  <main id="main-content" class="markdown-body">
     <h1>HTML Documentation Build System</h1>
-<p>This repository automatically converts all markdown files to HTML format.</p>
+<p>This repository converts all Markdown files to accessible HTML. The HTML output is committed alongside the Markdown source so that both formats are always in sync.</p>
 <h2>Quick Start</h2>
 <h3>View HTML Documentation</h3>
-<p>After the first build, all HTML files are available in the <code>html/</code> directory:</p>
+<p>All HTML files live in the <code>html/</code> directory:</p>
 <ul>
-<li>Browse them directly in the repo</li>
 <li>Open <code>html/index.html</code> in your browser for the homepage</li>
-<li>All markdown files maintain their directory structure</li>
+<li>Browse the <code>html/docs/</code> folder for chapter and appendix pages</li>
+<li>All internal links between documents are preserved</li>
 </ul>
-<h3>Local Development</h3>
-<pre><code class="language-bash"># Install dependencies (first time only)
+<h3>Build Commands</h3>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># Install dependencies (first time only)</span>
 npm install
 
-# Build HTML once
+<span class="hljs-comment"># Build HTML once</span>
 npm run build:html
 
-# Watch mode — auto-rebuild on markdown changes
+<span class="hljs-comment"># Watch mode — auto-rebuild on markdown changes</span>
 npm run watch:html
 
-# Clean generated files
-npm run clean
-</code></pre>
+<span class="hljs-comment"># Clean generated files</span>
+npm run clean</code></pre>
 <h2>How It Works</h2>
-<h3>Automatic Conversion (GitHub Actions)</h3>
-<p>When you push changes to markdown files on the main branch:</p>
+<p>The build is run <strong>locally</strong> before committing. There is no CI pipeline — you build the HTML yourself and commit both the <code>.md</code> source and the <code>html/</code> output in the same commit.</p>
+<p><strong>Typical workflow:</strong></p>
 <ol>
-<li>GitHub Actions workflow triggers automatically</li>
-<li>Builds HTML from all <code>.md</code> files</li>
-<li>Commits generated HTML back to the <code>html/</code> directory</li>
-<li>Commit message: &quot;Auto-generate HTML documentation from markdown [skip ci]&quot;</li>
+<li>Edit one or more <code>.md</code> files</li>
+<li>Run <code>npm run build:html</code></li>
+<li>Stage and commit everything: <code>git add -A &amp;&amp; git commit -m &quot;docs: update chapter 5 and rebuild HTML&quot;</code></li>
+<li>Push</li>
 </ol>
 <h3>What Gets Converted</h3>
 <ul>
@@ -93,7 +93,6 @@ npm run clean
 </ul>
 <h2>Configuration Files</h2>
 <ul>
-<li><strong>Workflow:</strong> <code>.github/workflows/build-html.yml</code> — GitHub Actions automation</li>
 <li><strong>Build script:</strong> <code>scripts/build-html.js</code> — Conversion logic</li>
 <li><strong>Dependencies:</strong> <code>package.json</code> — Node.js packages (marked, highlight.js, etc.)</li>
 </ul>
@@ -103,29 +102,16 @@ npm run clean
 <h3>Change HTML Template</h3>
 <p>Edit the <code>htmlTemplate</code> function in <code>scripts/build-html.js</code> to modify the page structure.</p>
 <h3>Update Dependencies</h3>
-<pre><code class="language-bash"># Check for updates
+<pre><code class="hljs language-bash"><span class="hljs-comment"># Check for updates</span>
 npm outdated
 
-# Update packages
+<span class="hljs-comment"># Update packages</span>
 npm update
 
-# Commit package.json changes
+<span class="hljs-comment"># Commit package.json changes</span>
 git add package.json
-git commit -m &quot;chore: update HTML build dependencies&quot;
-</code></pre>
+git commit -m <span class="hljs-string">&quot;chore: update HTML build dependencies&quot;</span></code></pre>
 <h2>Troubleshooting</h2>
-<h3>Build Fails on GitHub Actions</h3>
-<ol>
-<li>Check the <strong>Actions</strong> tab in the repository</li>
-<li>Click on the failed workflow run</li>
-<li>Review the error logs</li>
-<li>Common issues:<ul>
-<li>Markdown syntax errors (unclosed brackets, invalid links)</li>
-<li>Missing dependencies in <code>package.json</code></li>
-<li>Permissions issues (workflow needs write access)</li>
-</ul>
-</li>
-</ol>
 <h3>Local Build Errors</h3>
 <p><strong>&quot;Cannot find module &#39;marked&#39;&quot;</strong>
 → Run <code>npm install</code> first</p>
@@ -135,29 +121,19 @@ git commit -m &quot;chore: update HTML build dependencies&quot;
 → Clear browser cache and reload</p>
 <p><strong>Watch mode not detecting changes</strong>
 → Ensure you&#39;re saving files (Ctrl+S in VS Code)</p>
-<h3>HTML Files Not Being Committed</h3>
-<p>Check <code>.gitignore</code> to ensure <code>html/</code> is NOT listed there. The <code>html/</code> directory should be tracked by git.</p>
+<h3>HTML Files Not Appearing in Git</h3>
+<p>Check <code>.gitignore</code> to ensure <code>html/</code> is NOT listed there. The <code>html/</code> directory must be tracked by Git so the built output is always available in the repository.</p>
 <h2>For Contributors</h2>
 <p>When submitting pull requests:</p>
 <ul>
-<li><strong>Only edit markdown files</strong> — don&#39;t commit HTML changes</li>
-<li>HTML will be auto-generated when PR is merged</li>
-<li>To preview HTML locally, run <code>npm run build:html</code></li>
-<li>Add the HTML files to <code>.gitignore</code> in your local clone if you don&#39;t want to accidentally commit them</li>
+<li><strong>Edit the Markdown files</strong>, then run <code>npm run build:html</code></li>
+<li><strong>Include both</strong> the <code>.md</code> changes and the updated <code>html/</code> files in your commit</li>
+<li>If you forget to rebuild, a reviewer will ask you to run the build before merging</li>
 </ul>
-<h2>CI/CD Strategy</h2>
-<p>The <code>[skip ci]</code> tag in the auto-commit message prevents infinite loops:</p>
-<ol>
-<li>You push markdown changes</li>
-<li>GitHub Actions builds HTML and commits it with <code>[skip ci]</code></li>
-<li>The commit with <code>[skip ci]</code> doesn&#39;t trigger another workflow run</li>
-<li>Clean, single automated commit per markdown update</li>
-</ol>
 <h2>Additional Resources</h2>
 <ul>
 <li><a href="https://marked.js.org/">marked documentation</a> — Markdown parser</li>
 <li><a href="https://highlightjs.org/">highlight.js documentation</a> — Syntax highlighting</li>
-<li><a href="https://docs.github.com/en/actions">GitHub Actions docs</a> — CI/CD automation</li>
 <li><a href="https://github.github.com/gfm/">GitHub Markdown spec</a> — GitHub Flavored Markdown</li>
 </ul>
 <hr>
@@ -165,8 +141,8 @@ git commit -m &quot;chore: update HTML build dependencies&quot;
 
   </main>
   <footer role="contentinfo" style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid #d0d7de;">
-    <p>GitHub Learning Room - Open Source Assistive Technology Hackathon</p>
-    <p><a href="https://github.com">Back to GitHub</a></p>
+    <p>GitHub Learning Room — Open Source Assistive Technology Hackathon</p>
+    <p><a href="https://github.com/accesswatch/Learning-Room">View on GitHub</a></p>
   </footer>
 </body>
 </html>
